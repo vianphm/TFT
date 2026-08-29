@@ -38,5 +38,15 @@
     "name": "vntft-trang-bi",
     "url": "https://vntft.com/trang-bi-tft",
     "render": true
+  },
+  {
+    "name": "vntft-phan-thuong-tien-hac-am",
+    "url": "https://vntft.com/phan-thuong-tien-hac-am-dtcl-mua-18",
+    "render": true
+  },
+  {
+    "name": "vntft-trang-bi-anh-sang",
+    "url": "https://vntft.com/trang-bi-anh-sang-tft",
+    "render": true
   }
 ]
