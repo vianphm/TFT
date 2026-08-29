@@ -8,12 +8,14 @@ const tables = require('../src/renderer/shared/tables.js');
 const importer = require('../src/main/comp-importer.js');
 
 let passed = 0;
+let failed = 0;
 function test(name, fn) {
   try {
     fn();
     passed++;
     console.log('  ok  ' + name);
   } catch (err) {
+    failed++;
     console.error('  LOI ' + name + '\n      ' + err.message);
     process.exitCode = 1;
   }
@@ -139,4 +141,5 @@ test('bao loi ro rang khi chua co du lieu set', () => {
   assert.throws(() => importer.importFromText('Ahri Yasuo Garen Lux', { champions: [] }), /Dong bo du lieu/);
 });
 
-console.log(`\n${passed} phep thu da qua.\n`);
+console.log(`\n${passed} phep thu da qua, ${failed} phep thu LOI.\n`);
+if (failed) console.error(`==> CO ${failed} PHEP THU KHONG QUA <==\n`);

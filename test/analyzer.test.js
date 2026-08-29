@@ -5,9 +5,10 @@ const analyzer = require('../src/renderer/shared/analyzer.js');
 const calc = require('../src/renderer/shared/calc.js');
 
 let passed = 0;
+let failed = 0;
 function test(name, fn) {
   try { fn(); passed++; console.log('  ok  ' + name); }
-  catch (err) { console.error('  LOI ' + name + '\n      ' + err.message); process.exitCode = 1; }
+  catch (err) { failed++; console.error('  LOI ' + name + '\n      ' + err.message); process.exitCode = 1; }
 }
 
 // Set gia lap: 3 toc he, moc 2/4/6 va 2/4
@@ -184,7 +185,10 @@ test('tu 0 XP thi 48 vang tien len cap dat hon la roll them', () => {
   // Ket qua do duoc: voi 60-120 vang, roll thang o cap 7 van hon len 8 truoc;
   // phai tren khoang 150 vang len cap moi bat dau co loi.
   const little = calc.rollVsLevel({ gold: 60, level: 7, xp: 0, cost: 4, copiesNeeded: 2, copiesTakenByOthers: 3 });
-  assert.strictEqual(little.best, 'roll');
+  const rollSmall = little.options.find((o) => o.key === 'roll');
+  const lvSmall = little.options.find((o) => o.key === 'level');
+  assert.ok(rollSmall.probability > lvSmall.probability,
+    `${rollSmall.probability} phai > ${lvSmall.probability}`);
   const lots = calc.rollVsLevel({ gold: 200, level: 7, xp: 0, cost: 4, copiesNeeded: 2, copiesTakenByOthers: 3 });
   const lvBig = lots.options.find((o) => o.key === 'level');
   const rollBig = lots.options.find((o) => o.key === 'roll');
@@ -232,4 +236,5 @@ test('khong dung chung mot mon cho hai tuong', () => {
   assert.strictEqual(plan.units[1].done.length, 0);
 });
 
-console.log(`\n${passed} phep thu da qua.\n`);
+console.log(`\n${passed} phep thu da qua, ${failed} phep thu LOI.\n`);
+if (failed) console.error(`==> CO ${failed} PHEP THU KHONG QUA <==\n`);
