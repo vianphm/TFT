@@ -67,11 +67,15 @@ app.whenReady().then(() => {
     mobile.start(store.get('mobile.port', 7333)).catch((err) => console.error('[mobile]', err.message));
   }
 
-  windows.createOverlay();
-  if (store.get('overlay.enabled', true)) windows.showOverlay();
-  if (!store.get('general.startMinimized', false)) windows.showDashboard();
-
-  if (process.env.TFT_SMOKE) require('../../scripts/smoke.js').attach(windows);
+  // Smoke test tu tao/hien cua so sau khi gan xong listener console, de khong
+  // bo lot loi phat sinh ngay luc trang tai (xem scripts/smoke.js).
+  if (process.env.TFT_SMOKE) {
+    require('../../scripts/smoke.js').attach(windows);
+  } else {
+    windows.createOverlay();
+    if (store.get('overlay.enabled', true)) windows.showOverlay();
+    if (!store.get('general.startMinimized', false)) windows.showDashboard();
+  }
 
   watcher = new GameWatcher({
     onChange: (status) => {

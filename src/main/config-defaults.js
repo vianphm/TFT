@@ -16,14 +16,16 @@ const DEFAULT_CONFIG = {
     opacity: 0.92,
     scale: 1,
     clickThrough: true,       // true = chuot xuyen qua overlay (dang choi)
+    // Mac dinh chi hien "Tro ly tu dong" cho gon man hinh - cac o tra cuu sau
+    // (ti le roll, kinh te, cong thuc do...) bat lai qua thanh HUD khi can.
     widgets: {
-      odds:     { visible: true,  x: 24,   y: 70,  collapsed: false },
-      econ:     { visible: true,  x: 24,   y: 470, collapsed: false },
-      timer:    { visible: true,  x: 350,  y: 70,  collapsed: false },
+      advisor:  { visible: true,  x: 24,   y: 70,  collapsed: false },
+      timer:    { visible: false, x: 350,  y: 70,  collapsed: false },
+      odds:     { visible: false, x: 24,   y: 470, collapsed: false },
+      econ:     { visible: false, x: 350,  y: 470, collapsed: false },
       items:    { visible: false, x: 680,  y: 70,  collapsed: false },
       augments: { visible: false, x: 350,  y: 330, collapsed: false },
-      advisor:  { visible: false, x: 680,  y: 270, collapsed: false },
-      comp:     { visible: false, x: 350,  y: 530, collapsed: false },
+      comp:     { visible: false, x: 680,  y: 270, collapsed: false },
       notes:    { visible: false, x: 680,  y: 470, collapsed: false }
     }
   },
@@ -63,7 +65,9 @@ const DEFAULT_CONFIG = {
     copiesOwned: 2,
     copiesTakenByOthers: 0,
     champsOutOfPool: 0,
-    notes: ''
+    notes: '',
+    shop: [],
+    components: []
   },
 
   comps: null,                // null = nap comp mau lan dau chay

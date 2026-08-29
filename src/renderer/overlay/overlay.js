@@ -3,6 +3,9 @@
  * - Keo tha widget, nho vi tri vao config
  * - Khi khoa: chuot xuyen qua vung trong, chi bat lai khi ro vao widget
  * - Cac o tinh toan dung chung module TFT.calc
+ * - Widget "Tu dong" (advisor) tu lam moi theo du lieu Live Client API / thao tac
+ *   cua nguoi choi, khong can bam nut - cac widget con lai mac dinh an bot de
+ *   gon man hinh, bat lai qua thanh HUD khi can tra cuu sau.
  */
 (function () {
   'use strict';
@@ -18,6 +21,7 @@
   var dataset = { champions: [], traits: [], augments: [] };
   var countdownTimer = null;
   var countdownLeft = 0;
+  var displays = [];
 
   document.addEventListener('DOMContentLoaded', init);
 
@@ -25,6 +29,7 @@
     config = await api.config.get();
     comps = await api.comps.list();
     dataset = await api.data.load();
+    displays = await api.displays.list();
 
     buildRecipeGrid();
     applyWidgetState();
@@ -53,33 +58,50 @@
       comps = next;
       fillCompPicker();
     });
+    api.on('displays:changed', async function () {
+      displays = await api.displays.list();
+    });
     api.on('live:game-data', function (liveData) {
-      if (liveData && liveData.round) {
+      if (!liveData) return;
+      // Bao nhap 'input' that de kich hoat render + luu trang thai cua tung o,
+      // khong tu tien tinh toan lai tai day de tranh trung logic.
+      if (liveData.round) {
         var rInput = document.getElementById('roundNow');
         if (rInput && rInput.value !== liveData.round) {
           rInput.value = liveData.round;
-          renderRound();
+          rInput.dispatchEvent(new Event('input'));
         }
       }
-      if (liveData && liveData.level) {
+      if (liveData.level) {
         var oLevel = document.getElementById('oddsLevel');
         if (oLevel && parseInt(oLevel.value, 10) !== liveData.level) {
           oLevel.value = liveData.level;
-          renderOdds();
+          oLevel.dispatchEvent(new Event('input'));
+        }
+        var eLevel = document.getElementById('econLevel');
+        if (eLevel && parseInt(eLevel.value, 10) !== liveData.level) {
+          eLevel.value = liveData.level;
+          eLevel.dispatchEvent(new Event('input'));
         }
       }
-      if (liveData && liveData.gold !== null && liveData.gold !== undefined) {
+      if (liveData.gold !== null && liveData.gold !== undefined) {
         var eGold = document.getElementById('econGold');
         if (eGold && parseInt(eGold.value, 10) !== liveData.gold) {
           eGold.value = liveData.gold;
-          renderEcon();
+          eGold.dispatchEvent(new Event('input'));
         }
       }
+      renderOverlayAdvice();
     });
     api.on('live:status', function (status) {
       var stateText = document.getElementById('hudState');
-      if (stateText && status.liveApiActive) {
-        stateText.textContent = 'Live Riot (2999)';
+      if (stateText) stateText.textContent = status.liveApiActive ? 'Live Riot (2999)' : (config.overlay.clickThrough ? 'Da khoa' : 'Dang mo khoa');
+      var liveTag = document.getElementById('advisorLiveTag');
+      if (liveTag) {
+        liveTag.textContent = status.liveApiActive ? '🟢 Live' : '⚪ Thu cong';
+        liveTag.title = status.liveApiActive
+          ? 'Dang doc vang/cap/vong tu Riot Live Client API'
+          : 'Chua vao tran hoac API chua san sang - nhap tay o duoi';
       }
     });
     api.on('hotkey:action', function (action) {
@@ -131,6 +153,172 @@
       window.addEventListener('mousemove', function (event) {
         if (!dragging) return;
         var x = Math.max(0, originX + (event.screenX - startX));
+        var y = Math.max(0, originY + (event.screenY - startY));
+        el.style.left = x + 'px';
+        el.style.top = y + 'px';
+      });
+      window.addEventListener('mouseup', function () {
+        if (!dragging) return;
+        dragging = false;
+        saveWidget(name, { x: parseInt(el.style.left, 10), y: parseInt(el.style.top, 10) });
+      });
+
+      el.querySelector('[data-collapse]').addEventListener('click', function () {
+        var collapsed = !el.classList.contains('collapsed');
+        el.classList.toggle('collapsed', collapsed);
+        saveWidget(name, { collapsed: collapsed });
+      });
+      el.querySelector('[data-close]').addEventListener('click', function () {
+        el.classList.add('hidden');
+        saveWidget(name, { visible: false });
+        var btn = document.querySelector('[data-widget-toggle="' + name + '"]');
+        if (btn) btn.setAttribute('aria-pressed', 'false');
+      });
+    });
+  }
+
+  /** Chuot vao vung [data-hit] -> mo tuong tac tam thoi, ra khoi -> tra lai xuyen chuot. */
+  var topZ = 10;
+  function bringToFront(el) {
+    topZ += 1;
+    el.style.zIndex = topZ;
+  }
+
+  function bindHitAreas() {
+    var inside = false;
+    document.addEventListener('mousemove', function (event) {
+      var hit = Boolean(event.target.closest('[data-hit]:not(.hidden)'));
+      if (hit === inside) return;
+      inside = hit;
+      api.overlay.setHover(hit);
+    });
+    document.addEventListener('mouseleave', function () {
+      inside = false;
+      api.overlay.setHover(false);
+    });
+  }
+
+  function bindHud() {
+    document.querySelectorAll('[data-widget-toggle]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var name = btn.dataset.widgetToggle;
+        var el = widgetEl(name);
+        var visible = el.classList.contains('hidden');
+        el.classList.toggle('hidden', !visible);
+        btn.setAttribute('aria-pressed', String(visible));
+        saveWidget(name, { visible: visible });
+      });
+    });
+
+    bindHudButton('hudLockBtn', function () {
+      api.overlay.setClickThrough(!config.overlay.clickThrough);
+    });
+    bindHudButton('hudTimerBtn', function () {
+      startCountdown(tables.ROUND_INFO.planningSeconds);
+    });
+    bindHudButton('hudOpacityBtn', function () {
+      var next = (config.overlay.opacity || 0.92) - 0.15;
+      if (next < 0.35) next = 0.92;
+      config.overlay.opacity = next;
+      api.overlay.setOpacity(next);
+    });
+    bindHudButton('hudScreenBtn', function () {
+      if (!displays || displays.length < 2) return;
+      var currentId = config.overlay.displayId;
+      var idx = displays.findIndex(function (d) { return d.id === currentId; });
+      var next = displays[(idx + 1) % displays.length];
+      config.overlay.displayId = next.id;
+      api.overlay.moveToDisplay(next.id);
+    });
+    bindHudButton('hudDashBtn', function () {
+      api.dashboard.show();
+    });
+    bindHudButton('hudHideBtn', function () {
+      api.overlay.toggle(false);
+    });
+  }
+
+  function bindHudButton(id, handler) {
+    var btn = document.getElementById(id);
+    if (btn) btn.addEventListener('click', handler);
+  }
+
+  function setLockUi(clickThrough) {
+    config.overlay.clickThrough = clickThrough;
+    var hud = document.getElementById('hud');
+    hud.classList.toggle('unlocked', !clickThrough);
+    var stateText = document.getElementById('hudState');
+    if (stateText && stateText.textContent.indexOf('Live') < 0) {
+      stateText.textContent = clickThrough ? 'Da khoa' : 'Dang mo khoa';
+    }
+    var lockBtn = document.getElementById('hudLockBtn');
+    if (lockBtn) lockBtn.textContent = clickThrough ? '🔒 Khoa chuot' : '🔓 Mo khoa';
+  }
+
+  // ------------------------------------------------------------------- odds
+
+  function bindOddsWidget() {
+    var state = config.state;
+    var level = document.getElementById('oddsLevel');
+    var cost = document.getElementById('oddsCost');
+    var owned = document.getElementById('oddsOwned');
+    var taken = document.getElementById('oddsTaken');
+    var rolls = document.getElementById('oddsRolls');
+
+    level.value = state.level;
+    cost.value = state.champCost;
+    owned.value = state.copiesOwned;
+    taken.value = state.copiesTakenByOthers;
+    rolls.value = state.rolls;
+
+    function render() {
+      var opts = {
+        level: +level.value,
+        cost: +cost.value,
+        copiesOwnedByYou: +owned.value,
+        copiesTakenByOthers: +taken.value,
+        rolls: +rolls.value,
+        copiesNeeded: 1
+      };
+      var out = calc.rollOutcome(opts);
+      document.getElementById('oddsRollsLabel').textContent = rolls.value;
+      document.getElementById('oddsGold').textContent = out.goldSpent;
+
+      var need2 = calc.rollOutcome(Object.assign({}, opts, { copiesNeeded: 2 }));
+      var need3 = calc.rollOutcome(Object.assign({}, opts, { copiesNeeded: 3 }));
+      document.getElementById('oddsResult').innerHTML =
+        '<div class="kv"><span>Trung it nhat 1 ban</span><b class="big">' + calc.percent(out.probabilityAtLeastOne, 0) + '</b></div>' +
+        '<div class="bar"><i style="width:' + (out.probabilityAtLeastOne * 100).toFixed(0) + '%"></i></div>' +
+        '<div class="kv"><span>Trung 2 ban / 3 ban</span><b>' + calc.percent(need2.probabilityAtLeastNeeded, 0) + ' / ' + calc.percent(need3.probabilityAtLeastNeeded, 0) + '</b></div>' +
+        '<div class="kv"><span>Ky vong so ban sao</span><b>' + out.expectedCopies.toFixed(2) + '</b></div>' +
+        '<div class="kv"><span>Vang trung binh de co 1 ban</span><b>' + (isFinite(out.expectedGoldForOne) ? Math.round(out.expectedGoldForOne) + 'v' : '-') + '</b></div>' +
+        '<div class="kv"><span>Con lai trong kho</span><b>' + out.copiesLeftInPool + ' ban</b></div>';
+
+      var odds = calc.shopOdds(+level.value);
+      document.getElementById('oddsTable').innerHTML =
+        '<tr>' + odds.map(function (p, i) {
+          return '<td class="cost-' + (i + 1) + '">' + (i + 1) + 'v</td>';
+        }).join('') + '</tr>' +
+        '<tr>' + odds.map(function (p) {
+          return '<td class="num">' + Math.round(p * 100) + '%</td>';
+        }).join('') + '</tr>';
+
+      api.config.patch({ state: {
+        level: +level.value, champCost: +cost.value,
+        copiesOwned: +owned.value, copiesTakenByOthers: +taken.value, rolls: +rolls.value
+      } });
+      renderOverlayAdvice();
+    }
+
+    [level, cost, owned, taken, rolls].forEach(function (el) {
+      el.addEventListener('input', debounce(render, 80));
+    });
+    render();
+  }
+
+  // ------------------------------------------------------------------- econ
+
+  function bindEconWidget() {
     var gold = document.getElementById('econGold');
     var streak = document.getElementById('econStreak');
     var level = document.getElementById('econLevel');
@@ -162,6 +350,7 @@
         }).join(' &middot; ');
 
       api.config.patch({ state: { gold: g, level: +level.value, xp: +xp.value } });
+      renderOverlayAdvice();
     }
 
     [gold, streak, level, xp].forEach(function (el) {
@@ -199,6 +388,7 @@
           '<div class="small muted">' + roadmap.note + '</div>' : '');
 
       api.config.patch({ state: { round: input.value } });
+      renderOverlayAdvice();
     }
 
     input.addEventListener('input', debounce(render, 120));
@@ -281,33 +471,10 @@
 
   function bindCompWidget() {
     fillCompPicker();
-    document.getElementById('compPick').addEventListener('change', renderComp);
-    renderComp();
-  }
-
-  function fillCompPicker() {
-    var pick = document.getElementById('compPick');
-    var current = pick.value;
-    pick.innerHTML = comps.map(function (c) {
-      return '<option value="' + c.id + '">' + escapeHtml(c.name) + '</option>';
-    }).join('');
+    document.getElementById('compPick').addEventListener('change', function () {
+      renderComp();
+      renderOverlayAdvice();
     });
-  }
-
-  function shortName(component) {
-    return component.vi.split(' ').map(function (w) { return w[0]; }).join('').slice(0, 3);
-  }
-
-  function shortItem(name) {
-    if (!name) return '';
-    return name.replace(/'s\b/, '').split(' ').map(function (w) { return w.slice(0, 4); }).join(' ').slice(0, 12);
-  }
-
-  // -------------------------------------------------------------------- comp
-
-  function bindCompWidget() {
-    fillCompPicker();
-    document.getElementById('compPick').addEventListener('change', renderComp);
     renderComp();
   }
 
@@ -432,10 +599,41 @@
   }
 
   // ---------------------------------------------------------------- advisor
+  //
+  // Widget duy nhat hien mac dinh: gop tom tat doi hinh muc tieu, hanh dong
+  // kinh te va uu tien nhat do vong di cho vao 1 the gon. Tu lam moi khi co
+  // du lieu Live Client moi hoac khi nguoi choi doi vong/vang/doi hinh - khong
+  // bat buoc phai bam nut. O "Cua hang" va "Linh kien dang cam" o duoi la
+  // phan nguoi choi tu quan sat va go tay (khong co API doc duoc man hinh dau
+  // trong hoac vi tri ban co), rieng vong di cho van can nguoi choi tu chon
+  // do tren san khau theo goi y "uu tien nhat".
 
   function bindAdvisorWidget() {
     var btn = document.getElementById('overlayAdviceBtn');
     if (btn) btn.addEventListener('click', renderOverlayAdvice);
+
+    var shopInput = document.getElementById('advisorShop');
+    if (shopInput) {
+      shopInput.value = (config.state.shop || []).join(', ');
+      shopInput.addEventListener('input', debounce(function () {
+        var list = shopInput.value.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+        api.config.patch({ state: { shop: list } });
+        config.state.shop = list;
+        renderOverlayAdvice();
+      }, 250));
+    }
+
+    var compInput = document.getElementById('advisorComponents');
+    if (compInput) {
+      compInput.value = (config.state.components || []).join(', ');
+      compInput.addEventListener('input', debounce(function () {
+        var list = compInput.value.split(',').map(function (s) { return s.trim().toLowerCase(); }).filter(Boolean);
+        api.config.patch({ state: { components: list } });
+        config.state.components = list;
+        renderOverlayAdvice();
+      }, 250));
+    }
+
     renderOverlayAdvice();
   }
 
@@ -449,8 +647,8 @@
     var state = {
       board: (activeComp && activeComp.units) || [],
       bench: [],
-      shop: [],
-      components: [],
+      shop: config.state.shop || [],
+      components: config.state.components || [],
       hp: config.state.hp || 100,
       gold: config.state.gold || 50,
       level: config.state.level || 8,
@@ -459,12 +657,23 @@
 
     var advice = analyzer.generateComprehensiveAdvice(state, dataset, comps);
     var carryUnit = activeComp && (activeComp.units || []).find(function (u) { return u.carry; });
-    var carouselItems = calc.carouselPriorities(activeComp, config.state.components || []);
+    var carouselItems = calc.carouselPriorities(activeComp, state.components);
+
+    var shopHtml = '';
+    if (advice.shopAdvice && advice.shopAdvice.length) {
+      shopHtml = '<div style="background:rgba(255,255,255,0.03);padding:4px 6px;border-radius:4px">' +
+        '<b>🛒 Cua hang:</b> ' + advice.shopAdvice.map(function (s) {
+          var color = s.action === 'buy' ? 'var(--green)' : s.action === 'hold' ? 'var(--gold)' : 'var(--muted)';
+          return '<span class="tag" style="border-color:' + color + ';color:' + color + ';margin-right:2px" title="' + escapeHtml(s.reason) + '">' + escapeHtml(s.name) + '</span>';
+        }).join('') +
+      '</div>';
+    }
 
     var carouselHtml = '';
-    if (carouselItems.length) {
+    var upcomingCarousel = calc.upcomingRounds(state.round, 3).find(function (r) { return r.carousel; });
+    if (carouselItems.length && upcomingCarousel) {
       carouselHtml = '<div style="background:rgba(59,130,246,0.1);color:#93c5fd;padding:4px 6px;border-radius:4px">' +
-        '<b>🎪 Ưu tiên nhặt chợ:</b> ' + carouselItems.slice(0, 3).map(function (c) {
+        '<b>🎪 Uu tien nhat do (' + upcomingCarousel.label + '):</b> ' + carouselItems.slice(0, 3).map(function (c) {
           return '<span class="tag" style="background:rgba(59,130,246,0.2);margin-right:2px">' + escapeHtml(c.name) + '</span>';
         }).join('') +
       '</div>';
@@ -479,6 +688,7 @@
         '<b>👑 Carry chính:</b> ' + escapeHtml(carryUnit ? carryUnit.name : 'Đa dụng') +
         (carryUnit && carryUnit.items ? ' • Đồ chuẩn: <span style="color:var(--gold)">' + carryUnit.items.map(function(it) { return escapeHtml((tables.ITEM_NAMES_VI && tables.ITEM_NAMES_VI[it]) || it); }).join(', ') + '</span>' : '') +
       '</div>' +
+      shopHtml +
       carouselHtml +
       '<div style="color:#68d391;background:rgba(104,211,145,0.1);padding:4px 6px;border-radius:4px">' +
         '<b>💡 Hành động vòng này:</b> ' + escapeHtml(advice.econDecision.message) +

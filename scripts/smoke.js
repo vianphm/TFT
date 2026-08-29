@@ -9,7 +9,8 @@ const fs = require('fs');
 const path = require('path');
 const { app } = require('electron');
 
-const LEVELS = ['log', 'warn', 'error'];
+// Electron truyen level theo chuan Chromium: 0 verbose, 1 info, 2 warning, 3 error.
+const LEVELS = ['verbose', 'info', 'warning', 'error'];
 
 function attach(windows) {
   const problems = [];
@@ -21,7 +22,7 @@ function attach(windows) {
     win.webContents.on('console-message', (event, level, message, line, source) => {
       const label = LEVELS[level] || level;
       console.log(`[${name}] ${label}: ${message} (${source}:${line})`);
-      if (label === 'error' || label === 'warn') problems.push(`${name}: ${message}`);
+      if (label === 'error' || label === 'warning') problems.push(`${name}: ${message}`);
     });
     win.webContents.on('render-process-gone', (event, details) => {
       problems.push(`${name}: renderer chet (${details.reason})`);

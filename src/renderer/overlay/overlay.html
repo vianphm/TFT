@@ -13,12 +13,12 @@
     <span class="dot" id="hudDot"></span>
     <span id="hudState">Da khoa</span>
     <span class="sep"></span>
+    <button class="mini" data-widget-toggle="advisor" title="Tro ly tu dong">⭐ Tu dong</button>
+    <button class="mini" data-widget-toggle="timer" title="Vong dau">Vong</button>
     <button class="mini" data-widget-toggle="odds" title="Ti le roll">Roll</button>
     <button class="mini" data-widget-toggle="econ" title="Kinh te">Vang</button>
-    <button class="mini" data-widget-toggle="timer" title="Vong dau">Vong</button>
     <button class="mini" data-widget-toggle="items" title="Cong thuc do">Do</button>
     <button class="mini" data-widget-toggle="augments" title="Loi nang cap">Loi</button>
-    <button class="mini" data-widget-toggle="advisor" title="Tu van tong hop">Tu van</button>
     <button class="mini" data-widget-toggle="comp" title="Doi hinh">Doi hinh</button>
     <button class="mini" data-widget-toggle="notes" title="Ghi chu">Ghi chu</button>
     <span class="sep"></span>
@@ -162,16 +162,26 @@
   <!-- Widget: tu van tong hop ---------------------------------------------- -->
   <section class="widget" data-widget="advisor" data-hit>
     <header class="widget-head">
-      <span class="grip">Tu van tong hop</span>
+      <span class="grip">Tro ly tu dong</span>
+      <span class="live-tag" id="advisorLiveTag">⚪ Thu cong</span>
       <button class="icon" data-collapse>-</button>
       <button class="icon" data-close>x</button>
     </header>
     <div class="widget-body">
-      <button id="overlayAdviceBtn" class="primary" style="width:100%;margin-bottom:6px">Cap nhat tu van</button>
       <div class="result" id="overlayAdviceResult"></div>
+      <div class="field" style="margin-top:8px">
+        <label>Cua hang hien tai (cach nhau dau phay)</label>
+        <input id="advisorShop" placeholder="Vi du: Jinx, Leona, Yasuo" />
+      </div>
+      <div class="field">
+        <label>Linh kien dang cam (cach nhau dau phay)</label>
+        <input id="advisorComponents" placeholder="Vi du: bf, glove, tear" />
+      </div>
+      <button id="overlayAdviceBtn" class="mini" style="width:100%">Lam moi ngay</button>
     </div>
   </section>
 
+  <script src="../shared/error-log.js"></script>
   <script src="../shared/tables.js"></script>
   <script src="../shared/calc.js"></script>
   <script src="../shared/analyzer.js"></script>
