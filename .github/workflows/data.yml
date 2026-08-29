@@ -1,0 +1,47 @@
+name: Cap nhat du lieu set
+
+# Tai danh sach tuong/toc he cua set dang choi tu Community Dragon roi commit vao repo,
+# de app co san du lieu ngay khi vua cai. Chay hang tuan va bam tay duoc.
+on:
+  schedule:
+    - cron: '17 3 * * 1'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/fetch-set-data.js'
+      - '.github/workflows/data.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Tai du lieu set
+        run: node scripts/fetch-set-data.js
+
+      - name: Kiem thu lai sau khi doi du lieu
+        run: npm test
+
+      - name: Commit neu co thay doi
+        run: |
+          if git diff --quiet -- src/shared/data/set-fallback.json; then
+            echo "Du lieu khong doi, khong can commit."
+            exit 0
+          fi
+          SUMMARY=$(node -e "
+            const d = require('./src/shared/data/set-fallback.json');
+            console.log(\`\${d.setName} - \${d.champions.length} tướng, \${d.traits.length} tộc hệ\`);
+          ")
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/shared/data/set-fallback.json
+          git commit -m "Cập nhật dữ liệu set: $SUMMARY" -m "Tải tự động từ Community Dragon."
+          git push

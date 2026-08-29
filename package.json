@@ -15,6 +15,7 @@
     "smoke": "TFT_SMOKE=1 electron . --no-sandbox",
     "icons": "node scripts/make-icons.js",
     "data:fallback": "node scripts/make-fallback.js",
+    "data:fetch": "node scripts/fetch-set-data.js",
     "build:mobile": "node scripts/build-mobile.js",
     "build:mobile:android": "node scripts/build-mobile.js android/app/src/main/assets/mobile"
   },
