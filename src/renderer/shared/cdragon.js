@@ -103,7 +103,9 @@
           name: c.name,
           cost: c.cost,
           traits: c.traits,
-          icon: toCdn(c.squareIcon || c.tileIcon)
+          icon: toCdn(c.squareIcon || c.tileIcon),
+          ability: readAbility(c),
+          stats: readStats(c)
         };
       })
       .sort(function (a, b) { return a.cost - b.cost || a.name.localeCompare(b.name); });
@@ -118,6 +120,8 @@
     });
 
     var allItems = raw.items || [];
+    var traitNames = {};
+    (set.traits || []).forEach(function (t) { traitNames[t.name] = true; });
     var items = allItems
       .filter(function (i) { return i.composition && i.composition.length === 2; })
       .map(function (i) {
@@ -126,6 +130,21 @@
           name: i.name,
           composition: i.composition,
           icon: toCdn(i.icon),
+          desc: stripTags(i.desc || ''),
+          emblem: isEmblem(i)
+        };
+      });
+
+    // An (bieu tuong toc he): ghep tu Xeng, cho tuong mang them mot toc he
+    var emblems = allItems
+      .filter(isEmblem)
+      .map(function (i) {
+        return {
+          apiName: i.apiName,
+          name: i.name,
+          icon: toCdn(i.icon),
+          composition: i.composition || [],
+          trait: guessTrait(i, traitNames),
           desc: stripTags(i.desc || '')
         };
       });
@@ -155,9 +174,54 @@
       champions: champions,
       traits: traits,
       items: items,
+      emblems: emblems,
       components: components,
       augments: augments
     };
+  }
+
+  /** Chieu thuc: ten, mo ta, anh, va cac chi so cua chieu neu co. */
+  function readAbility(champ) {
+    var ability = champ.ability;
+    if (!ability) return null;
+    return {
+      name: ability.name || null,
+      desc: stripTags(ability.desc || ''),
+      icon: toCdn(ability.icon),
+      variables: (ability.variables || [])
+        .filter(function (v) { return v && v.name && v.value; })
+        .map(function (v) { return { name: v.name, values: v.value }; })
+    };
+  }
+
+  /** Chi so co ban (mau, sat thuong, giap, khang phep, tam danh...). */
+  function readStats(champ) {
+    var st = champ.stats || {};
+    return {
+      hp: st.hp || null,
+      damage: st.damage || null,
+      armor: st.armor || null,
+      magicResist: st.magicResist || null,
+      attackSpeed: st.attackSpeed ? Math.round(st.attackSpeed * 100) / 100 : null,
+      critChance: st.critChance || null,
+      range: st.range || null,
+      mana: st.mana || null,
+      initialMana: st.initialMana || null
+    };
+  }
+
+  function isEmblem(item) {
+    if (!item || !item.name) return false;
+    return /emblem/i.test(item.apiName || '') || /\bEmblem\b/i.test(item.name);
+  }
+
+  /** Doan toc he ma an nay cho: lay ten toc he xuat hien trong ten an. */
+  function guessTrait(item, traitNames) {
+    var name = String(item.name || '');
+    var found = Object.keys(traitNames).filter(function (trait) {
+      return name.toLowerCase().indexOf(trait.toLowerCase()) >= 0;
+    });
+    return found.sort(function (a, b) { return b.length - a.length; })[0] || null;
   }
 
   function toCdn(iconPath) {

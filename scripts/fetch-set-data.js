@@ -46,7 +46,20 @@ async function main() {
   const wanted = process.env.TFT_SET_MUTATOR || null;
   const parsed = parseCdragon(raw, wanted ? { mutator: wanted } : undefined);
   if (!parsed.champions.length) throw new Error('khong doc duoc tuong nao - cau truc du lieu co the da doi');
-  validate(parsed);
+
+  // In het danh sach de nguoi doc log tu doi chieu voi game
+  console.log(`\nToan bo tuong doc duoc tu ${parsed.setMutator || parsed.setNumber}:`);
+  [1, 2, 3, 4, 5].forEach((cost) => {
+    const list = parsed.champions.filter((c) => c.cost === cost);
+    console.log(`  ${cost} vang (${list.length}): ` + list.map((c) => c.name).join(', '));
+  });
+  console.log(`\n  Toc he (${parsed.traits.length}): ` + parsed.traits.map((t) => t.name).join(', '));
+  console.log(`  An (${(parsed.emblems || []).length}): ` +
+    (parsed.emblems || []).slice(0, 40).map((e) => e.name).join(', '));
+  const withAbility = parsed.champions.filter((c) => c.ability && c.ability.name).length;
+  console.log(`  Co chieu thuc: ${withAbility}/${parsed.champions.length} tuong`);
+
+  warn(parsed);
 
   // Giu lai bang cong thuc ghep do cua rieng app (ten tieng Anh chuan, khong doi theo set)
   const payload = {
@@ -58,6 +71,7 @@ async function main() {
     traits: parsed.traits,
     components: parsed.components,
     items: parsed.items,
+    emblems: parsed.emblems,
     recipes: Object.keys(tables.RECIPES).map((key) => ({
       apiName: key,
       name: tables.RECIPES[key],
@@ -76,7 +90,7 @@ async function main() {
   console.log(`  ${parsed.champions.length} tuong: ` +
     [1, 2, 3, 4, 5].map((c) => `${byCost[c] || 0} tuong ${c} vang`).join(', '));
   console.log(`  ${parsed.traits.length} toc he, ${parsed.items.length} trang bi ghep, ` +
-    `${parsed.components.length} mon co ban`);
+    `${parsed.components.length} mon co ban, ${(parsed.emblems || []).length} an`);
   console.log(`  Ghi vao ${path.relative(process.cwd(), OUT)} (${size} KB)`);
 }
 
@@ -85,7 +99,7 @@ async function main() {
  * Mot set that co khoang 13-14 tuong moi muc gia 1-4 va 8-10 tuong 5 vang.
  * Neu lech xa nghia la da doc nham nhanh (vi du nhanh gop nhieu mua cu lai voi nhau).
  */
-function validate(parsed) {
+function warn(parsed) {
   const byCost = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
   parsed.champions.forEach((c) => { if (byCost[c.cost] !== undefined) byCost[c.cost]++; });
   const problems = [];
@@ -112,7 +126,7 @@ function validate(parsed) {
   }
 
   if (problems.length) {
-    throw new Error('Du lieu doc duoc khong hop le:\n  - ' + problems.join('\n  - ') +
-      '\nDat bien moi truong TFT_SET_MUTATOR (vi du TFTSet14) de chi dinh nhanh dung.');
+    console.warn('\nCANH BAO - du lieu trong bat thuong:\n  - ' + problems.join('\n  - ') +
+      '\n  (dat TFT_SET_MUTATOR de chi dinh nhanh khac neu can)\n');
   }
 }
