@@ -339,9 +339,27 @@
 
   // ----------------------------------------------------------------- items
 
+  function normalizeComponentId(id) {
+    if (!id) return '';
+    var str = String(id).toLowerCase().replace(/[-_\s]/g, '');
+    if (str === 'bf' || str === 'bfsword' || str === 'sword') return 'bf';
+    if (str === 'bow' || str === 'recurvebow') return 'bow';
+    if (str === 'rod' || str === 'largerod' || str === 'needlesslylargerod') return 'rod';
+    if (str === 'tear' || str === 'tearofthegoddess') return 'tear';
+    if (str === 'vest' || str === 'chainvest') return 'vest';
+    if (str === 'cloak' || str === 'negatroncloak' || str === 'negatron') return 'cloak';
+    if (str === 'belt' || str === 'giantsbelt') return 'belt';
+    if (str === 'glove' || str === 'gloves' || str === 'sparringgloves') return 'glove';
+    if (str === 'spatula' || str === 'spat') return 'spat';
+    if (str === 'pan' || str === 'fryingpan') return 'pan';
+    return String(id).toLowerCase();
+  }
+
   function recipeKey(a, b) {
+    var normA = normalizeComponentId(a);
+    var normB = normalizeComponentId(b);
     var order = T.COMPONENTS.map(function (c) { return c.id; });
-    var pair = [a, b].sort(function (x, y) { return order.indexOf(x) - order.indexOf(y); });
+    var pair = [normA, normB].sort(function (x, y) { return order.indexOf(x) - order.indexOf(y); });
     return pair[0] + '+' + pair[1];
   }
 
@@ -397,7 +415,7 @@
    * thi ghep duoc gi, con thua gi, con thieu gi.
    */
   function bestItemPlan(componentIds, wishlist) {
-    var pool = (componentIds || []).slice();
+    var pool = (componentIds || []).map(normalizeComponentId);
     var crafted = [];
     var missing = [];
 
@@ -543,10 +561,16 @@
 
   // ----------------------------------------------- chia trang bi cho tung tuong
 
-  function assignItems(componentIds, units) {
+  function assignItems(a, b) {
+    var isCompArray = function (arr) {
+      return Array.isArray(arr) && arr.every(function (x) { return typeof x === 'string'; });
+    };
+    var componentIds = (isCompArray(a) ? a : (isCompArray(b) ? b : []));
+    var units = (componentIds === a ? b : a) || [];
+
     var pool = (componentIds || []).slice();
-    var sortedUnits = (units || []).slice().sort(function (a, b) {
-      if (Boolean(b.carry) !== Boolean(a.carry)) return b.carry ? 1 : -1;
+    var sortedUnits = (units || []).slice().sort(function (u1, u2) {
+      if (Boolean(u2.carry) !== Boolean(u1.carry)) return u2.carry ? 1 : -1;
       return 0;
     });
 
@@ -557,13 +581,15 @@
       pool = plan.leftover;
       assignments.push({
         unit: unit.name,
+        name: unit.name,
         carry: Boolean(unit.carry),
+        done: plan.crafted,
         crafted: plan.crafted,
         missing: plan.missing
       });
     });
 
-    return { assignments: assignments, leftover: pool };
+    return { assignments: assignments, units: assignments, leftover: pool };
   }
 
   // ---------------------------------------------------- lich trinh vong dau

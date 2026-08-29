@@ -406,6 +406,7 @@
         winRate: winRate,
         top4: top4,
         metaScore: metaScore,
+        comp: comp,
         activeTraits: breakdown.active.map(function (t) { return t.name + ' ' + t.activeAt; }),
         // Ket hop suc manh/chuyen doi trong tran voi thong ke meta cua ban cap nhat.
         rank: Math.round((transitionScore + metaScore * 0.25) * 100) / 100
