@@ -1,0 +1,733 @@
+Tộc Hệ TFT Mùa 18: Mốc Kích Hoạt & Tướng – Bản cập nhật 18.1 | Blitz.gg
+Blitz.gg
+Liên Minh Huyền Thoại
+Đấu Trường Chân Lý
+VALORANT
+Counter-Strike 2
+Fortnite
+Escape From Tarkov
+Apex Legends
+Marvel Rivals
+Deadlock
+Tìm kiếm Hồ Sơ (Tên#Tag), Tướng, Trang Bị, Tộc Hệ, v.v.
+Ctrl
+K
+Go Ad-Free
+Log In
+Khách
+Đăng nhập/Đăng ký
+Tài Khoản
+Mua Premium
+Ngôn Ngữ
+Hỗ Trợ
+Điều Khoản Dịch Vụ
+Chính Sách Bảo Mật
+Đăng Nhập
+Download Blitz
+Trang Chủ
+Mùa 18
+MỚI
+Thông Tin Vùng Đất Phù Thủy
+Đội Hình
+Đội Hình Đầu Game
+Tướng
+Linh Hồn
+Tộc Hệ
+Lõi Công Nghệ
+Mùa 17
+Thông Tin Space Gods
+Đội Hình
+Tướng
+Vị Thần
+Tộc Hệ
+Lõi Công Nghệ
+Trang Bị
+Đội Hình
+Đội Hình
+Mùa 18
+Set 18 Early Comps
+Set 17 Revival Comps
+Thống Kê
+Chỉ Số Tướng
+Chỉ Số Tộc Hệ
+Chỉ Số Trang Bị
+Chỉ Số Lõi Công Nghệ
+Bảng Xếp Hạng
+BXH Tướng
+BXH Trang Bị
+BXH Lõi Công Nghệ
+Overlay
+TFT
+Mùa 18
+Tộc Hệ
+Tộc Hệ TFT Mùa 18
+Danh sách tộc hệ Bản cập nhật 18.1
+•
+Xem xét các mốc kích hoạt, hiệu ứng, tướng, chỉ số và đội hình
+Ăn Mòn
+1
+Sát thương Ăn Mòn sẽ Cào Xé và Phân Tách kẻ địch
+30
+% trong
+4
+giây.
+Cào Xé: Giảm Kháng Phép
+Phân Tách: Giảm Giáp
+Bá Chủ
+1
+Rồng Ngàn Tuổi chiếm
+2
+vị trí đội hình và tăng thêm
+2
+mốc vào tộc/hệ Quái Rừng.
+Cổ Thụ
+1
+Mỗi khi một kẻ địch trong
+3
+ô bị hạ gục, tướng Cổ Thụ mạnh nhất của bạn nhận
+30
+Máu tối đa vĩnh viễn.
+Hiện tại: 30/30/100
+Cự Thạch
+1
+Tướng Cự Thạch tăng
+10
+Giáp và Kháng Phép với mỗi kẻ địch đang nhắm vào họ.
+Đao Phủ
+Chuẩn Xác: Sát thương kỹ năng có thể chí mạng. Chỉ số Chuẩn Xác cộng thêm tăng 10% Sát Thương Chí Mạng.
+2
+Các tướng Đao Phủ nhận
+Chuẩn Xác
+và
+15%
+Tỉ Lệ Chí Mạng.
+3
+Ngoài ra, kẻ địch chảy máu chịu
+30%
+sát thương chuẩn cộng thêm trong vòng
+3
+giây.
+4
+Sát thương chảy máu tăng thành
+40%
+.
+Đấu Sĩ
+Đội của bạn nhận thêm
+120
+Máu tối đa. Tướng Đấu Sĩ nhận được nhiều hơn.
+2
+25%
+4
+40%
+6
+65%
+Dũng Sĩ
+Đội của bạn nhận Chống Chịu. Các Dũng Sĩ nhận được nhiều hơn.
+2
+4%
+hoặc
+20%
+4
+4%
+hoặc
+33%
+6
+8%
+hoặc
+45%
+Gai Đen
+The ally on the Blackthorn hex is sacrificed before combat, granting your champions Health.
+Blackthorn champions gain additional stats based on the sacrifice's Role, Star Level, and Cost.
+2
+175
+4
+300
+; Hiệu ứng sẽ mạnh hơn
+0%
+6
+550
+; Hiệu ứng sẽ mạnh hơn
+60%
+Hòa Hợp
+1
+Your strongest Alune cycles to a new phase of the moon after each cast. While the moon is at or below half full, your team gains
+7%
+Durabilty. While above, your team gains
+7%
+Damage Amp.
+Trăng Non
+7%
+Trăng Lưỡi Liềm
+7%
+Bán Nguyệt
+7%
+Trăng Khuyết
+7%
+Trăng Tròn
+7%
+Hoa Linh
+Sau giao tranh, các Tinh Linh của bạn được cường hóa.
+Các tướng Hoa Linh nhận Sức Mạnh Công Kích, Sức Mạnh Phép Thuật, và
+10%
+Máu tối đa.
+3
+Tinh Linh được nâng cấp,
+12%
+5
+Tinh Linh luôn xuất hiện trong cửa hàng,
+30%
+7
+Nhận
+4
+vàng sau khi mua Tinh Linh,
+45%
+9
+Bạn có thể mua 2 Tinh Linh mỗi vòng,
+50%
+11
+Tinh Linh tràn ngập sức mạnh,
+100%
+Hỏa Ngục
+Sát thương từ tướng Hỏa Ngục sẽ gây
+Thiêu Đốt
+và
+Vết Thương Sâu
+lên kẻ địch trong
+3
+giây. Thiêu Đốt của Hỏa Ngục cộng dồn với các hiệu ứng Thiêu Đốt khác.
+Thiêu Đốt: Gây sát thương chuẩn mỗi giây theo Máu tối đa của mục tiêu
+Vết Thương Sâu: Giảm hồi máu nhận được
+2
+Thiêu Đốt
+1
+%, Vết Thương Sâu
+33
+%
+3
+Sau giao tranh,
+1
+ô không chứa tướng Hỏa Ngục trong cửa hàng của bạn bốc cháy, đổi lại thành tướng cao hơn một bậc
+5
+Thiêu cháy
+2
+ô cửa hàng, Thiêu Đốt
+3
+%
+7
+Thiêu cháy
+4
+ô cửa hàng, Thiêu Đốt
+3.5
+%
+Khắc Tinh
+Chỉ kích hoạt khi triển khai 1 tướng Khắc Tinh trên sân.
+Chỉ áp dụng cho tướng Khắc Tinh mạnh nhất của bạn.
+1
+Tướng Khắc Tinh thu thập điểm hạ gục, nhận 3 điểm nếu họ tham gia hạ gục một tướng Khắc Tinh khác.
+2
+Các tướng Khắc Tinh có thể được triển khai cùng nhau, và kỹ năng của họ sẽ trao hiệu ứng thưởng cho nhau.
+Liên Kích
+Đội của bạn nhận thêm
+10%
+Tốc Độ Đánh. Tướng Liên Kích nhận thêm trên mỗi đòn đánh, tối đa
+10
+cộng dồn.
+2
++
+3%
+mỗi Đòn Đánh
+3
++
+5%
+mỗi Đòn Đánh
+4
++
+9%
+mỗi Đòn Đánh
+5
++
+15%
+mỗi Đòn Đánh
+Lục Bảo
+1
+Kéo một đồng minh vào Taric mạnh nhất của bạn để ghép đôi họ, ban cho đồng minh các hiệu ứng mạnh mẽ từ Kỹ Năng của Taric.
+Mặt Trăng
+Các tướng Mặt Trăng và đồng minh liền kề nhận Tốc Độ Đánh và Sức Mạnh Phép Thuật. Tướng Mặt Trăng nhận được nhiều hơn
+100%
+.
+Triển khai 3 tướng Mặt Trời và 3 tướng Mặt Trăng để kích hoạt Thiên Thực.
+2
+7%
+,
+7%
+3
+10%
+,
+10%
+4
+14%
+,
+14%
+5
+18%
+,
+18%
+Mặt Trời
+Triển khai 3 tướng Mặt Trời và 3 tướng Mặt Trăng để kích hoạt Thiên Thực.
+3
+Tướng của bạn nhận lá chắn bằng
+5%
+Máu tối đa và gây
+7%
+sát thương phép cộng thêm. Nhận thêm hiệu ứng bổ sung với mỗi tướng 3 sao độc nhất:
+1 : Tăng lá chắn và sát thương phép thêm 1.5% với mỗi tướng 3 sao.
+3 :
+18% và
+15
+5 : Chuyển đổi 40% sát thương phép cộng thêm thành sát thương chuẩn.
+8 : Mỗi 4 giây giao tranh, 1 tướng 3 sao sẽ thăng hoa lên 4 sao.
+Nguyên Sinh
+Chọn 1 trong 4 Phước Lành Nguyên Sinh.
+Sát thương Nguyên Sinh hành quyết những kẻ địch dưới
+12%
+Máu.
+Mỗi
+15
+lần tướng Nguyên Sinh tham gia hạ gục, nhận một trang bị thành phần. Tối đa 4.
+Sau
+6
+giây, tướng Nguyên Sinh nhận
+35%
+Tốc Độ Đánh và đội của bạn nhận
+15%
+Tốc Độ Đánh
+Đội của bạn hồi lại
+4%
+Máu tối đa của họ sau mỗi
+4
+giây.
+2
+Chọn một phước lành.
+4
+Chọn phước lành thứ hai.
+Quái Rừng
+3
+Sử Dụng Dấu Ấn Đầu Đàn để trao Bùa Lợi độc nhất cho một tướng Quái Rừng
+5
+Mỗi
+3
+giao tranh, cửa hàng tiếp theo của bạn sẽ tràn ngập tướng Quái Rừng.
+7
+Khi bắt đầu giao tranh và mỗi 5 giây, tướng Quái Rừng tăng trưởng và nhận
+6%
+6%
+6%
++
+5
++
+5
++
+50
++
+1
+10
++
+2
+số lượng tướng tối đa
+Săn Thưởng
+1
+Choose a bounty. Your strongest Draven can progress on the bounty to earn its reward. Upon completing a bounty, choose another.
+Nhiệm Vụ:
+Draven tung đòn đánh
+50
+lần.
+Phần Thưởng:
+1
+tướng 5 vàng ngẫu nhiên
+Nhiệm Vụ:
+Draven tung chiêu
+5
+lần.
+Phần Thưởng:
+2
+tướng 4 vàng ngẫu nhiên
+Nhiệm Vụ:
+Draven tung chiêu
+8
+lần.
+Phần Thưởng:
+10
+lượt đổi cửa hàng
+Nhiệm Vụ:
+Draven gây
+8000
+sát thương.
+Phần Thưởng:
+7
+vàng
+Nhiệm Vụ:
+Draven gây
+35000
+sát thương.
+Phần Thưởng:
+1
+Kiếm B.F.
+Nhiệm Vụ:
+Draven gây tối thiểu
+10000
+sát thương trong một giao tranh người chơi.
+Phần Thưởng:
+15
+vàng
+Nhiệm Vụ:
+Draven có được
+6
+mạng hạ gục.
+Phần Thưởng:
+12
+vàng
+Nhiệm Vụ:
+Draven có được
+15
+hạ gục.
+Phần Thưởng:
+1
+trang bị hoàn chỉnh ngẫu nhiên
+Nhiệm Vụ:
+Draven gây nhiều sát thương nhất đội của bạn trong giao tranh.
+Phần Thưởng:
+2
+lượt đổi cửa hàng
+Nhiệm Vụ:
+Draven sống sót qua
+3
+giao tranh người chơi.
+Phần Thưởng:
+2
+trang bị thành phần ngẫu nhiên
+Nhiệm Vụ:
+Draven tham gia hạ gục
+14
+lần.
+Phần Thưởng:
+10
+XP
+Tàn Phá
+Tướng Tàn Phá nhận
+10%
+Hút Máu Toàn Phần. Ngoài ra, các tướng Tàn Phá gây sát thương cộng thêm, tăng gấp đôi khi tấn công kẻ địch còn dưới
+50%
+Máu.
+2
+12%
+Sát Thương Cộng Thêm
+4
+25%
+Sát Thương Cộng Thêm
+6
+40%
+Sát Thương Cộng Thêm
+Thần Rừng
+Nhận cây Thần Rừng có thể di chuyển.
+Thực vật nhận
+25%
+Máu Tối Đa và
+10%
+Sức Mạnh Phép Thuật với mỗi Cấp Sao Thần Rừng.
+3
+1 Cây Vỏ Đá và 1 Hoa Sinh Mệnh
+5
+Có thêm Cây Vỏ Đá thứ hai và các Cây Vỏ Đá nhận
+200
+Máu
+7
+và Hộ Vệ Rừng
+9
+Các cây trở thành 2 sao
+11
+Các cây trở thành 3 sao và khu rừng được hình thành
+Thế Thần
+1
+Sở hữu một tướng Thế Thần sẽ biến mọi tướng Thế Thần khác trong cửa hàng của bạn về Tộc/Hệ của tướng Thế Thần đó.
+Tộc/Hệ được chọn của tướng Thế Thần sẽ được tính gấp đôi cho các mốc thưởng Tộc/Hệ.
+Thích Ứng
+Thiên Phú:
+Kỹ năng của tướng Thích Ứng sẽ thay đổi tùy theo việc Sức Mạnh Công Kích hay Sức Mạnh Phép Thuật của họ cao hơn.
+Tướng Thích Ứng nhận thêm Sức Mạnh Phép Thuật hoặc Sức Mạnh Công Kích, tùy vào chỉ số nào cao hơn.
+2
+25%
+HOẶC
+3
+35%
+HOẶC
+4
+50%
+HOẶC
+Thiên Thực
+0
+Sau
+10
+giây giao tranh, tướng Thiên Thực sẽ hạ gục kẻ địch có lượng Máu thấp nhất, lặp lại sau mỗi
+3.5
+giây.
+Thợ Săn
+Tướng Thợ Săn nhận Sức Mạnh Công Kích. Nếu tướng Thợ Săn không đổi mục tiêu trong
+4
+giây, họ nhận thêm
+10%
+Khuếch Đại Sát Thương.
+2
+20%
+3
+30%
+4
+45%
+5
+65%
+Thụ Thần
+1
+Nhận
+1
+hạt giống khi Ivern mạnh nhất của bạn thi triển, cộng thêm
+3
+mỗi giao tranh. Ivern dùng
+5
+hạt giống để nuôi lớn 1 ô trên bàn đấu của bạn, trao hiệu ứng cộng thêm cho đơn vị đứng trên ô đó.
+Hoa:
+10%
+/
+15%
+/
+200%
+Nấm:
+8%
+/
+12%
+/
+200%
+Đá:
+8
+/
+12
+/
+500
+Cây:
+8%
+/
+12%
+/
+200%
+Nước:
+1
+/
+2
+/
+30
+Thuật Sĩ
+Đội của bạn được tăng Hồi Năng Lượng, tướng Thuật Sĩ nhận được nhiều hơn.
+2
+1
+|
+3
+3
+1
+|
+4
+4
+2
+|
+6
+5
+2
+|
+9
+Thuật Sư
+Đội của bạn nhận
+10%
+Sức Mạnh Phép Thuật. Các tướng Thuật Sư nhận được nhiều hơn, và nhận thêm Sức Mạnh Phép Thuật mỗi khi một tướng Thuật Sư thi triển Kỹ Năng.
+2
+10%
+, +
+1%
+mỗi lần thi triển
+4
+30%
+, +
+1%
+mỗi lần thi triển
+6
+55%
+, +
+2%
+mỗi lần thi triển
+Thực Vật
+Các tướng Thực Vật thu hoạch kẻ địch khi tham gia hạ gục, nhận:
+1
+10
+Năng Lượng
+2
+và hồi
+8%
+Máu tối đa cho đồng minh thấp Máu nhất.
+Tiên Hắc Ám
+Nhận Tinh Hoa khi hạ gục tướng, và nhận thêm khi thua giao tranh người chơi.
+Bắt đầu từ mốc
+40
+Tinh Hoa, bạn có thể chọn chuyển đổi Tinh Hoa thành phần thưởng hoặc tiếp tục tích lũy. Mỗi phần thưởng yêu cầu lượng Tinh Hoa ngày càng tăng.
+3
+2
+Tinh Hoa mỗi mạng hạ gục,
+18
+Tinh Hoa mỗi trận thua
+4
+2
+mỗi hạ gục,
+18
+mỗi trận thua
+5
+3
+mỗi hạ gục,
+32
+mỗi lần thua
+7
+10
+mỗi hạ gục,
+60
+mỗi trận thua
+Tiên Linh
+Sát thương, hồi máu và tạo lá chắn của đội bạn sẽ thu hút các Pix.
+Mỗi Pix sẽ tăng Sức Mạnh Công Kích và Sức Mạnh Phép Thuật cho các tướng Tiên Linh, và sau khi họ tụt xuống dưới
+50%
+Máu, họ sẽ hồi máu với mỗi Pix.
+2
+5
+%
+và
+2.5
+% Hồi Máu.
+4
+8
+%
+và
+4
+% Hồi Máu. Sau khi thu hút 7 Pix, bạn sẽ bắt đầu thu hút Pix Hoàng Kim, những Pix Hoàng Kim này sẽ cho vàng.
+Tiên Phong
+Khi Bắt đầu giao tranh và khi xuống dưới
+50%
+Máu, các tướng Tiên Phong nhận một Lá Chắn theo Máu tối đa trong
+10
+giây.
+2
+18%
+Máu Tối Đa
+4
+30%
+Máu Tối Đa
+6
+40%
+Máu Tối Đa. Tăng
+5%
+Chống Chịu khi có Lá Chắn.
+Tinh Nghịch
+Nhận Lông Xù Khổng Lồ. Thả một tướng Tinh Nghịch lên LXKL để chọn làm Kỵ Sĩ.
+Các đòn đánh và Kỹ Năng của LXKL sẽ thay đổi tùy theo việc Kỵ Sĩ là tướng cận chiến hay đánh xa.
+3
+Kỵ Sĩ nhận được
+15%
+và
+15%
+5
+40%
+35%
+, và
+0%
+Kỹ Năng của LXKL áp dụng cho các tướng Tinh Nghịch của bạn.
+7
+45%
+45%
+, và
+100%
+Kỹ Năng của LXKL áp dụng cho các tướng Tinh Nghịch của bạn.
+Triệu Hồi
+Tướng Triệu Hồi cường hóa đơn vị triệu hồi của mình theo nhiều cách khác nhau.
+Yorick: +
+30%
+Máu
+Azir: +
+20%
+Sát Thương
+Chim Mẹ: +
+45%
+Sát Thương
+Zyra: +
+4
+Đòn Đánh Từ Cây
+2
+Cường Hóa Đơn Vị Triệu Hồi
+3
+Tăng mỗi hiệu ứng thêm 50%
+Vệ Quân
+Đội của bạn nhận
+12
+Giáp và Kháng Phép. Tướng Vệ Quân nhận được nhiều hơn.
+2
+25
+4
+60
+6
+120
+Vườn Gai
+1
+Đội của bạn nhận
+5%
+Chống Chịu, tăng lên thành
+10%
+nếu có tối thiểu
+6
+cây của Zyra đang còn sống.
+Download Blitz
+Công Ty
+Về Chúng Tôi
+Hợp Tác
+Tuyển Dụng
+Liên Hệ Hỗ Trợ
+Chính Sách Bảo Mật
+Mạng Xã Hội
+X/Twitter
+Discord
+Facebook
+Instagram
+TikTok
+Trò Chơi
+Liên Minh Huyền Thoại
+Đấu Trường Chân Lý
+VALORANT
+Counter-Strike 2
+Fortnite
+Escape From Tarkov
+Apex Legends
+Marvel Rivals
+Deadlock
+Được làm với rất nhiều Tình Yêu và Sự Cay Cú tại
+Pháp
+Tiếng Việt
+Điều Khoản Dịch Vụ
+Chính Sách Bảo Mật
+Gỡ bỏ quảng cáo với Premium
+English
+Deutsch
+Español
+Français
+Italiano
+Nederlands
+Português
+Polski
+Русский
+Türkçe
+Čeština
+Ελληνικά
+한국어
+日本語
+Tiếng Việt
+简体中文
+繁體中文

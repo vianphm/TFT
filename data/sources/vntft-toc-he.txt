@@ -87,7 +87,6 @@ Mute
 Play
 Powered by
 GliaStudios
-{"uid":"2","hostPeerName":"https://vntft.com","initialGeometry":"{\"windowCoords_t\":0,\"windowCoords_r\":1440,\"windowCoords_b\":2200,\"windowCoords_l\":0,\"frameCoords_t\":6181.578125,\"frameCoords_r\":32.5,\"frameCoords_b\":6182.578125,\"frameCoords_l\":31.5,\"styleZIndex\":\"auto\",\"allowedExpansion_t\":128.578125,\"allowedExpansion_r\":149.5,\"allowedExpansion_b\":120.421875,\"allowedExpansion_l\":31.5,\"xInView\":1,\"yInView\":1}","permissions":"{\"expandByOverlay\":true,\"expandByPush\":false,\"readCookie\":false,\"writeCookie\":false}","metadata":"{\"shared\":{\"sf_ver\":\"1-0-45\",\"ck_on\":1,\"flash_ver\":\"0\"}}","reportCreativeGeometry":false,"isDifferentSourceWindow":false,"goog_safeframe_hlt":{}}" scrolling="no" marginwidth="0" marginheight="0" width="1" height="1" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="private-state-token-redemption;attribution-reporting" aria-label="Advertisement" tabindex="0" data-google-container-id="2" style="border: 0px; vertical-align: bottom; width: 300px; height: 250px;">
 -->
 vnTFT
 ›
@@ -292,42 +291,42 @@ Chi tiết cập nhật DTCL 17.4 phiên bản TFT ngày 27/05/2026 mới nhất
 Bảng Xếp Hạng LCP 2026 mới nhất
 Cập nhật kết quả bảng xếp hạng LCP 2026 Split 2 mùa xuân LMHT (bxh lcp 2026), và…
 DTCL mùa 18
-Đội Hình Tristana Tinh Nghịch DTCL Mùa 18 mới nhất
-Hướng dẫn cách chơi đội hình Tristana Tinh Nghịch tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
-Đội Hình Nidalee Thuật Sĩ Tiên Phong DTCL Mùa 18 mới nhất
-Hướng dẫn cách chơi đội hình Nidalee Thuật Sĩ Tiên Phong tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
-Đội Hình Warwick Tàn Phá DTCL Mùa 18 mới nhất
-Hướng dẫn cách chơi đội hình Warwick Tàn Phá tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
-Đội Hình Chim Mẹ Triệu Hồi DTCL Mùa 18 mới nhất
-Hướng dẫn cách chơi đội hình Chim Mẹ Triệu Hồi tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
-Đội Hình Thợ Săn DTCL Mùa 18 mới nhất
-Cách chơi đội hình TIÊN DTCL mùa 17 mới nhất gồm: Vi, Sylas, Rhaast, Skarner, Jarvan và Leona.
-Đội Hình Hoa Linh DTCL Mùa 18 mới nhất
-Hướng dẫn cách chơi đội hình Hoa Linh tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
-Đội Hình Exodia DTCL Mùa 18 mới nhất
-Tổng hợp các đội hình Exodia DTCL mùa 18 mạnh nhất, hướng dẫn chi tiết phân tích cách chơi Exodia TFT leo rank hiệu quả vào top cao.
-Đội Hình Triệu Hồi DTCL Mùa 18 mới nhất
-Hướng dẫn cách chơi đội hình Triệu Hồi tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
-Đội Hình LeBlanc Thần Rừng DTCL Mùa 18 mới nhất
-Hướng dẫn cách chơi đội hình LeBlanc Thần Rừng tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
-Đội Hình Veigar Thuật Sư DTCL Mùa 18 mới nhất
-Hướng dẫn cách chơi đội hình Veigar Thuật Sư tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
-Đội Hình Ezreal Thần Rừng DTCL Mùa 18 mới nhất
-Hướng dẫn cách chơi đội hình Ezreal Thần Rừng tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
-Đội Hình Liên Kích DTCL Mùa 18 mới nhất
-Cách chơi đội hình TIÊN DTCL mùa 17 mới nhất gồm: Vi, Sylas, Rhaast, Skarner, Jarvan và Leona.
+Đội Hình Ahri + Morgana Thuật Sĩ DTCL Mùa 18 mới nhất
+Hướng dẫn cách chơi đội hình Ahri + Morgana Thuật Sĩ tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
+Đội Hình Draven Quái Rừng Exodia DTCL Mùa 18 mới nhất
+Hướng dẫn cách chơi đội hình Draven Quái Rừng Exodia tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
+Đội Hình Warwick Gai Đen DTCL Mùa 18 mới nhất
+Hướng dẫn cách chơi đội hình Warwick Gai Đen tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
+Đội Hình Yunara Đao Phủ DTCL Mùa 18 mới nhất
+Hướng dẫn cách chơi đội hình Yunara Đao Phủ tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
 Đội Hình Tristana Tiên Linh DTCL Mùa 18 mới nhất
 Hướng dẫn cách chơi đội hình Tristana Tiên Linh tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
-Đội Hình Kha'Zix Gai Đen DTCL Mùa 18 mới nhất
-Hướng dẫn cách chơi đội hình Kha'Zix Gai Đen tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
+Đội Hình Hỏa Ngục DTCL Mùa 18 mới nhất
+Cách chơi đội hình TIÊN DTCL mùa 17 mới nhất gồm: Vi, Sylas, Rhaast, Skarner, Jarvan và Leona.
+Đội Hình Triệu Hồi DTCL Mùa 18 mới nhất
+Hướng dẫn cách chơi đội hình Triệu Hồi tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
+Đội Hình Tiên Hắc Ám DTCL Mùa 18 mới nhất
+Cách chơi đội hình TIÊN DTCL mùa 17 mới nhất gồm: Vi, Sylas, Rhaast, Skarner, Jarvan và Leona.
+Đội Hình Sivir Thợ Săn DTCL Mùa 18 mới nhất
+Hướng dẫn cách chơi đội hình Sivir Thợ Săn tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
+Đội Hình Exodia DTCL Mùa 18 mới nhất
+Tổng hợp các đội hình Exodia DTCL mùa 18 mạnh nhất, hướng dẫn chi tiết phân tích cách chơi Exodia TFT leo rank hiệu quả vào top cao.
+Đội Hình Tinh Nghịch DTCL Mùa 18 mới nhất
+Cách chơi đội hình TIÊN DTCL mùa 17 mới nhất gồm: Vi, Sylas, Rhaast, Skarner, Jarvan và Leona.
+Đội Hình Ahri Thuật Sư DTCL Mùa 18 mới nhất
+Ahri hiện tại có khá nhiều form kẹp được với Morgana: anh em có thể đánh kèm cùng Thuật Sĩ, Thuật Sư hoặc Tiên Phong đều mạnh cả.
+Đội Hình Cassiopeia Cặp Đôi Hoàn Cảnh DTCL Mùa 18 mới nhất
+Hướng dẫn cách chơi đội hình Cassiopeia Cặp Đôi Hoàn Cảnh tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
+Đội Hình Dũng Sĩ DTCL Mùa 18 mới nhất
+Hướng dẫn cách chơi đội hình Dũng Sĩ tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
+Đội Hình Thuật Sư DTCL Mùa 18 mới nhất
+Cách chơi đội hình TIÊN DTCL mùa 17 mới nhất gồm: Vi, Sylas, Rhaast, Skarner, Jarvan và Leona.
+Đội Hình Tristana Tinh Nghịch DTCL Mùa 18 mới nhất
+Hướng dẫn cách chơi đội hình Tristana Tinh Nghịch tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
 Đội Hình Azir Gai Đen DTCL Mùa 18 mới nhất
 Hướng dẫn cách chơi đội hình Azir Gai Đen tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
-Đội Hình Kog'Maw Thích Ứng DTCL Mùa 18 mới nhất
-Hướng dẫn cách chơi đội hình Kog'Maw Thích Ứng tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
-Đội Hình Thuật Sĩ DTCL Mùa 18 mới nhất
-Hướng dẫn cách chơi đội hình Thuật Sĩ tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
-Đội Hình Cassiopeia Vệ Quân DTCL Mùa 18 mới nhất
-Hướng dẫn cách chơi đội hình Cassiopeia Vệ Quân tft mùa 16 mới nhất trong phiên bản dtcl 18.1.
+Đội Hình Thích Ứng DTCL Mùa 18 mới nhất
+Cách chơi đội hình TIÊN DTCL mùa 17 mới nhất gồm: Vi, Sylas, Rhaast, Skarner, Jarvan và Leona.
 vnTFT cập nhật hàng ngày thông tin Đấu Trường Chân Lý, các đội hình TFT mùa 18 mạnh, và hướng dẫn cách chơi lên đồ, build trang bị cho tướng theo meta © 2026 mới.
 Về chúng tôi
 Privacy Policy

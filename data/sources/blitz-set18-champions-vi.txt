@@ -1,0 +1,1705 @@
+Tướng TFT Mùa 18: Giá & Tộc Hệ – Bản cập nhật 18.1 | Blitz.gg
+Blitz.gg
+Liên Minh Huyền Thoại
+Đấu Trường Chân Lý
+VALORANT
+Counter-Strike 2
+Fortnite
+Escape From Tarkov
+Apex Legends
+Marvel Rivals
+Deadlock
+Tìm kiếm Hồ Sơ (Tên#Tag), Tướng, Trang Bị, Tộc Hệ, v.v.
+Ctrl
+K
+Go Ad-Free
+Log In
+Khách
+Đăng nhập/Đăng ký
+Tài Khoản
+Mua Premium
+Ngôn Ngữ
+Hỗ Trợ
+Điều Khoản Dịch Vụ
+Chính Sách Bảo Mật
+Đăng Nhập
+Download Blitz
+Trang Chủ
+Mùa 18
+MỚI
+Thông Tin Vùng Đất Phù Thủy
+Đội Hình
+Đội Hình Đầu Game
+Tướng
+Linh Hồn
+Tộc Hệ
+Lõi Công Nghệ
+Mùa 17
+Thông Tin Space Gods
+Đội Hình
+Tướng
+Vị Thần
+Tộc Hệ
+Lõi Công Nghệ
+Trang Bị
+Đội Hình
+Đội Hình
+Mùa 18
+Set 18 Early Comps
+Set 17 Revival Comps
+Thống Kê
+Chỉ Số Tướng
+Chỉ Số Tộc Hệ
+Chỉ Số Trang Bị
+Chỉ Số Lõi Công Nghệ
+Bảng Xếp Hạng
+BXH Tướng
+BXH Trang Bị
+BXH Lõi Công Nghệ
+Overlay
+TFT
+Mùa 18
+Tướng
+Tướng TFT Mùa 18
+Danh sách tướng Bản cập nhật 18.1
+•
+So sánh giá và tộc hệ, sau đó khám phá đội hình và chỉ số
+Tất cả
+1
+2
+3
+4
+5
+5
+Alune
+Thuật Sư Phép
+Hòa Hợp
+Mặt Trăng
+Thuật Sư
+Trăng Mờ
+0
+/
+35
+Gọi
+9
+mảnh trăng rơi xuống, chia đều cho
+3
+kẻ địch gần nhất, gây
+55/83/500
+sát thương phép với mỗi mục tiêu.
+Nếu trăng tròn, cả mặt trăng sẽ giáng xuống sân đấu, gây
+2350/3600/7500
+sát thương phép chia đều cho tất cả kẻ địch.
+5
+Ashe
+Thuật Sư Vật Lý
+Hoa Linh
+Thợ Săn
+Khe Nứt Tâm Linh
+20
+/
+80
+Bắn một mũi tên xuyên qua nhiều kẻ địch nhất theo đường thẳng, gây
+440/660/1000
+sát thương vật lý, giảm đi
+80%
+với mỗi kẻ địch trúng phải (tối thiểu
+20%
+).
+Mũi tên để lại một vệt dài trong
+4
+giây, gây
+7/11/220
++
+2%
+sát thương vật lý mỗi giây theo Máu tối đa lên các kẻ địch trong phạm vi, đồng thời
+Làm Chậm
+chúng đi
+20
+%.
+Làm Chậm: Giảm Tốc Độ Đánh
+Physical Damage:
+7/11/220
+5/8/200 ×
++
+2/3/20 ×
+5
+Draven
+Xạ Thủ Vật Lý
+Săn Thưởng
+Lốc Xoáy Tử Vong
+0
+/
+120
+Nội Tại:
+Đòn đánh nhắm vào kẻ địch ngẫu nhiên trong tầm đánh và áp dụng 1 cộng dồn chảy máu, gây
+140/210/3000
+sát thương vật lý trong vòng
+12
+giây. Mỗi đòn đánh có
+12%
+cơ hội gây
+50%
+sát thương vật lý cộng thêm và áp dụng
+2
+cộng dồn chảy máu.
+Kích Hoạt:
+Ném 2 chiếc rìu khổng lồ về phía kẻ địch bị chảy máu nhiều nhất. Gây
+100/150/400
+sát thương vật lý lên những kẻ địch trúng chiêu và tiêu hao cộng dồn chảy máu, lập tức gây ra toàn bộ lượng sát thương còn lại. Sau đó thu rìu về, gây
+30/45/100
+sát thương vật lý lên những kẻ địch trúng chiêu.
+5
+Gnar
+Đặc Thù Vật Lý
+Thần Rừng
+Tinh Nghịch
+Đấu Sĩ
+Đột Biến Gien
+0
+/
+70
+Nội Tại:
+Nhận
+5
+Nộ mỗi giây và
+5
+Nộ mỗi đòn đánh.
+Kích Hoạt:
+Biến hình thành Gnar Khổng Lồ và nhảy vào nhóm kẻ địch đông nhất trong phạm vi
+3
+ô. Sau đó, gây
+100/150/2000
+sát thương vật lý lên các kẻ địch trong phạm vi
+2
+ô, giảm Giáp và Kháng Phép của chúng đi
+15/20/100
+, và Làm Choáng chúng trong
+1
+giây. Gnar Khổng Lồ nhận thêm
+400/600/10000
+Máu và thay thế Kỹ Năng của mình bằng Nắm & Quăng.
+Nắm & Quăng:
+Quăng mục tiêu về phía kẻ địch xa nhất, gây
+380/570/9000
+sát thương vật lý lên mục tiêu và
+135/205/4500
+sát thương vật lý lên những kẻ địch mà mục tiêu bay xuyên qua. Nếu chỉ còn 1 kẻ địch, ném kẻ đó khỏi sàn đấu.
+5
+Ivern
+Thuật Sư Phép
+Thụ Thần
+Hạt Hư Hỏng
+50
+/
+80
+Nội Tại:
+Lá chắn từ Kỹ Năng này có thể chí mạng với
+Chuẩn Xác
+.
+Kích hoạt:
+Ban cho
+2
+đồng minh
+165/300/3000
+Lá Chắn và
+10%
+Khuếch Đại Sát Thương trong
+6
+giây. Sau đó gây
+140/210/2000
+sát thương phép lên kẻ địch liền kề chúng. Sau khi thi triển
+6
+lần, cũng sẽ cho mục tiêu
+100%
+Tốc Độ Đánh cộng dồn.
+Shield:
+165/300/3000
+165/300/3000 ×
+×
+5
+Kennen
+Sát Thủ Phép
+Hỏa Ngục
+Đao Phủ
+Bão Lửa
+0
+/
+40
+Tích tụ sức mạnh, nhận
+15%
+Sức Mạnh Phép Thuật cho mỗi kẻ địch bị
+Thiêu Đốt
+. Sau đó, nhận
+250/350/3000
+Lá Chắn trong
+2.5
+giây và lao qua một nhóm kẻ địch gần đó, gây
+80/120/1500
+sát thương phép lên mỗi kẻ địch.
+Sau khi lao tới, giải phóng một cơn bão lửa có phạm vi
+2
+Ô, gây tổng cộng
+475/715/5000
+sát thương phép, chia đều cho tất cả kẻ địch trúng phải trong vòng
+2
+giây.
+5
+Lux
+Thuật Sư Phép
+Thế Thần
+Default
+Blackthorn
+Blossom
+Coven
+Elderwood
+Fae
+Inferno
+Moonbeam
+Primal
+Sunbeam
+Cầu Vồng Tối Thượng
+20
+/
+70
+Nội Tại:
+Khi dùng chiêu, tất cả đồng minh có chung một tộc/hệ với Lux nhận
+3/3/100
+năng lượng.
+Kích Hoạt:
+Bắn một tia laser về phía có đông kẻ địch nhất gây
+330/520/5000
+sát thương phép, giảm đi
+25%
+với mỗi kẻ địch trúng chiêu.
+5
+Maokai
+Đỡ Đòn Phép
+Cổ Thụ
+Dũng Sĩ
+Gieo Hạt Giống
+40
+/
+100
+Nội Tại:
+Sau mỗi
+650
+sát thương chặn được, 1 chồi non nhảy về phía 1 kẻ địch lân cận và gây
+80.5/80.5/862.5
+sát thương phép. Khi bị hạ gục,
+3
+chồi non sẽ nhảy ra.
+Kích Hoạt:
+Gây
+69/69/1150
+sát thương phép lên mục tiêu và hồi lại
+330/400/2000
++
+10%
+Máu đã mất.
+Magic Damage:
+80.5/80.5/862.5
+7%/7%/75% ×
+Magic Damage:
+69/69/1150
+6%/6%/100% ×
+5
+Rồng Ngàn Tuổi
+Đấu Sĩ Vật Lý
+Bá Chủ
+Quái Rừng
+Sức Nóng Vô Song
+20
+/
+60
+Nội Tại:
+Đòn đánh gây
+75%
+sát thương lên những kẻ địch liền kề mục tiêu.
+Kích Hoạt:
+Trở nên bất tử và bay lên không trung. Khi quay lại, làm choáng tất cả kẻ địch trong
+1.25
+giây, nhận
+15%
+Hút Máu Toàn Phần, và Thiêu Đốt chúng trong
+3
+giây. Kẻ địch bị thiêu đốt chịu sát thương vật lý bằng
+2%
+Máu tối đa mỗi giây. Thay thế kỹ năng này bằng Hơi Thở Của Rồng và lập tức sử dụng kỹ năng này.
+Hơi Thở Của Rồng:
+Phun lửa theo đường thẳng xuyên qua mục tiêu, tấn công nhiều kẻ địch nhất có thể, gây
+305/465/7200
+sát thương vật lý, giảm đi
+20%
+với mỗi kẻ địch đã xuyên qua (tối thiểu
+20%
+.) Thiêu đốt kẻ địch trong
+3
+giây.
+Bùa Rồng Ngàn Tuổi:
+Gây sát thương lên kẻ địch dưới 12% Máu sẽ hành quyết mục tiêu.
+Physical Damage:
+305/465/7200
+285/435/7000 ×
++
+20/30/200 ×
+5
+Taric
+Đỡ Đòn Phép
+Lục Bảo
+Tiên Phong
+Lục Bảo Huy Hoàng
+0
+/
+65
+Nội Tại:
+Lần đầu tiên Taric hoặc đồng minh được ghép cặp giảm xuống dưới
+50%
+Máu, giải phóng năng lượng lục bảo từ cả hai, tạo
+305/480/11300
+Lá Chắn cho các đồng minh trong phạm vi
+3
+ô trong
+3
+giây.
+Kích Hoạt:
+Hồi
+200/300/3000
+Máu. Taric và đồng minh được ghép cặp gây
+100/150/1000
+sát thương phép cộng thêm trong
+2
+đòn đánh tiếp theo.
+Shield:
+305/480/11300
+10%/10%/100% ×
++ 175/350/10000
+4
+Ahri
+Thuật Sư Phép
+Hoa Linh
+Thuật Sư
+Quả Cầu Linh Hồn
+20
+/
+100
+Phóng một quả cầu linh hồn vào khu vực trong phạm vi
+4
+ô có nhiều kẻ địch xung quanh nhất. Quả cầu gây
+450/675/3500
+sát thương phép lên kẻ địch trong bán kính
+3
+ô, giảm đi
+20%
+mỗi ô cách xa tâm chấn.
+4
+Amumu
+Đỡ Đòn Phép
+Hỏa Ngục
+Dũng Sĩ
+Giận Dữ
+30
+/
+140
+Nội tại:
+Mỗi giây, hồi phục
+29.04/29.15/56
+Máu và gây
+12/18/150
+sát thương phép lên kẻ địch trong phạm vi
+1
+ô.
+Kích hoạt:
+Gây
+100/150/2000
+sát thương phép lên kẻ địch trong phạm vi
+2
+ô và Làm Choáng chúng trong
+1
+giây, tăng lên 1.5/1.5/9.0 giây nếu mục tiêu đang
+Bỏng
+.
+Bỏng: Gây sát thương chuẩn mỗi giây bằng một phần phần trăm Máu tối đa của mục tiêu.
+Hồi Máu:
+29.04/29.15/56
+2.2%/2.2%/4% ×
++
+20/25/100 ×
+4
+Aphelios
+Xạ Thủ Vật Lý
+Mặt Trăng
+Liên Kích
+Xung Kích Ánh Trăng
+20
+/
+70
+Trang bị Súng Huyết Tinh và quét mục tiêu
+5
+lần trong
+2
+giây, mỗi lần gây
+70/105/850
+sát thương vật lý.
+Sau khi đợt tấn công kết thúc, bắn ra một luồng năng lượng gây
+490/735/5225
+sát thương vật lý, chia đều cho tất cả kẻ địch trong bán kính 2 Ô.
+Lượt vuốt:
+5
+5 + 1 per 20% bonus
+Physical Damage:
+490/735/5225
+450/675/5000 ×
++
+40/60/225 ×
+4
+Bụi Gai Đỏ
+Đấu Sĩ Vật Lý
+Quái Rừng
+Tàn Phá
+Cuồng Nộ Rực Đỏ
+0
+/
+40
+Nội Tại:
+Khi mục tiêu bị hạ gục, nhảy tới mục tiêu tiếp theo, gây
+170/255/600
+sát thương vật lý.
+Kích Hoạt:
+Nhận thêm
+80%
+Sức Mạnh Công Kích trong
+8
+giây. Trong thời gian này, bỏ qua
+40%/40%/60%
+Giáp.
+Bùa Đỏ:
+Đòn Đánh gây
+Thiêu Đốt
+1%
+lên kẻ địch và hồi
+4%
+Máu tối đa cho Bụi Gai Đỏ.
+Bỏ Qua Giáp:
+40%/40%/60%
+10% +
+30%/30%/50% ×
+4
+Ezreal
+Thuật Sư Vật Lý
+Thần Rừng
+Đao Phủ
+Loạn Chiến Rừng Thẳm
+0
+/
+30
+Dịch chuyển tránh xa mục tiêu hiện tại, gây
+235/355/1200
+sát thương vật lý lên nạn nhân và nhận
+30%/30%/100%
+Tốc Độ Đánh.
+Mỗi lần thi triển thứ 4 sẽ tiêu hao Tốc Độ Đánh nhận được từ Thịnh Nộ Thiên Nhiên và bắn ra một luồng năng lượng xuyên qua khu vực đông kẻ địch nhất, gây
+385/580/2500
+sát thương vật lý, giảm đi
+25%
+với mỗi kẻ địch mà nó xuyên qua (tối thiểu
+50%
+).
+4
+Lillia
+Đỡ Đòn Phép
+Tiên Linh
+Vệ Quân
+Khúc Ru Rừng Thẳm
+40
+/
+140
+Hồi lại
+325/475/800
+Máu và phóng
+4
+cánh bướm về phía kẻ địch gần đó. Kẻ địch trúng chiêu chịu
+90/135/2000
+sát thương phép và bị Ngủ trong
+1.5
+giây. Nếu kẻ địch nhận
+1000
+sát thương, chúng sẽ tỉnh dậy và chịu thêm
+10%
+sát thương phép theo Máu tối đa.
+4
+Malphite
+Đỡ Đòn Phép
+Gai Đen
+Cự Thạch
+Vỏ Cây Hóa Đá
+30
+/
+80
+Nhận
+700/850/2000
+Lá Chắn trong
+4
+giây và trở nên hóa đá. Khi lá chắn vỡ, giải phóng một làn sóng năng lượng hắc ám, gây
+82/123/3398.6
+sát thương phép lên các kẻ địch trong phạm vi
+2
+ô.
+Magic Damage:
+82/123/3398.6
+40/60/2000 ×
++
+30%/45%/999% ×
++
+30%/45%/999% ×
+4
+Morgana
+Đấu Sĩ Phép
+Tiên Hắc Ám
+Thuật Sĩ
+Lời Nguyền Tàn Úa
+0
+/
+60
+Nội tại:
+Nhận
+25%
+Hút Máu Toàn Phần.
+Kích hoạt:
+Bắn một luồng hắc ám vào
+3
+kẻ địch gần đó, gây
+60/90/500
+sát thương phép và nguyền rủa chúng trong
+4
+giây. Sau đó, tạo ra một
+2
+vùng ép góc Ô héo mòn trong cùng khoảng thời gian, gây
+33/50/500
+sát thương phép mỗi giây. Kẻ địch bị Nguyền Rủa chịu thêm
+22/33/240
+sát thương cho mỗi lần bị nguyền.
+4
+Người Đá
+Đỡ Đòn Phép
+Quái Rừng
+Tiên Phong
+Thuật Sĩ
+Sóng Xung Kích Lam
+60
+/
+150
+Nhận
+530/630/2130
+Lá Chắn trong
+4
+giây Dậm xuống mặt đất, tạo ra một vết nứt hướng về phía có nhiều kẻ địch nhất. Kẻ địch trúng chiêu sẽ bị hất tung trong chốc lát, chịu
+100/150/3500
+sát thương phép và bị
+Phá Năng Lượng
+10
+.
+Bùa Xanh:
+Mỗi khi Người Đá tung chiêu, đồng minh nhận được
+2
+Hồi Năng Lượng.
+Phá Năng Lượng: Tăng tiêu hao Năng Lượng của lần dùng Kỹ Năng tiếp theo.
+Shield:
+530/630/2130
+10% ×
++
+400/500/2000 ×
+4
+Nidalee
+Xạ Thủ Phép
+Nguyên Sinh
+Thích Ứng
+AP
+AD
+Phóng Lao
+0
+/
+45
+Thích Ứng
+:
+Nhận
+150%
+Tốc Độ Đánh trong
+3
+đòn đánh tiếp theo. Những đòn đánh này được thay thế bằng phóng lao, gây
+170/255/2000
+sát thương phép. Đòn đánh thứ 3 sẽ nhắm vào kẻ địch xa nhất, có ít trang bị nhất và gây
+285/425/3000
+sát thương phép.
+Thích Ứng
+: Biến hình thành một Sát Thủ dạng báo Cận Chiến để tấn công kẻ địch.
+4
+Sett
+Đỡ Đòn Vật Lý
+Hoa Linh
+Đấu Sĩ
+Cuồng Long Quyền
+60
+/
+135
+Nội Tại:
+Khi xuống dưới
+40%
+Máu tối đa lần đầu tiên mỗi giao tranh, nhận 100 năng lượng.
+Kích Hoạt:
+Vung một cú đấm lớn, nhanh chóng hồi lại
+369/419/2144
+trước khi gây
+222/297/5072
+sát thương vật lý theo hình nón rộng.
+Hồi Máu:
+369/419/2144
+12% ×
++
+225/275/2000 ×
+Physical Damage:
+222/297/5072
+6% ×
++
+150/225/5000 ×
+4
+Sivir
+Thuật Sư Vật Lý
+Nguyên Sinh
+Thợ Săn
+Gươm Boomerang
+0
+/
+40
+Ném một phi tiêu chữ thập lớn gây
+205/305/1150
+sát thương vật lý lên mục tiêu hiện tại và nảy
+8
+lần giữa các kẻ địch lân cận, gây
+41/61/460
+sát thương vật lý mỗi lần nảy. Khi kỹ năng này hạ gục một kẻ địch, nảy thêm
+3
+lần nữa.
+Physical Damage:
+205/305/1150
+190/285/1050 ×
++
+15/20/100 ×
+Physical Damage:
+41/61/460
+20%/20%/40% × 205/305/1150
+4
+Soraka
+Thuật Sư Phép
+Thực Vật
+Đao Phủ
+Vẫn Tinh
+0
+/
+30
+Gọi xuống 1 tinh tú vào mục tiêu hiện tại, gây
+190/285/1000
+sát thương phép. Nếu một tinh tú trước đó đã rơi trúng mục tiêu, gọi xuống thêm
+3
+tinh tú, mỗi tinh tú gây
+100/150/1000
+sát thương phép.
+4
+Zyra
+Thuật Sư Phép
+Vườn Gai
+Triệu Hồi
+Sum Sê
+0
+/
+45
+Triệu hồi
+2
+cái cây quanh chiến trường để tấn công kẻ địch gần nhất
+10
+lần. Mỗi đòn đánh gây
+37/55/225
+sát thương phép.
+3
+Azir
+Xạ Thủ Phép
+Gai Đen
+Đao Phủ
+Triệu Hồi
+Trỗi Dậy!
+0
+/
+35
+Nhận
+150%
+Tốc Độ Đánh và triệu hồi
+2
+lính cát trong
+6
+đòn đánh tiếp theo. Những đòn đánh này được thay thế bằng các lệnh chỉ huy mỗi lính cát gây
+40/60/96
+sát thương phép mỗi đòn đánh.
+3
+Cassiopeia
+Thuật Sư Phép
+Tiên Hắc Ám
+Thuật Sư
+Vụ Nổ Độc Hại
+0
+/
+30
+Hạ độc mục tiêu và kẻ địch gần nhất chưa trúng độc, gây
+440/660/1050
+sát thương phép trong
+15
+giây. Độc có thể cộng dồn.
+3
+Chim Mẹ
+Xạ Thủ Vật Lý
+Quái Rừng
+Triệu Hồi
+Liên Kích
+Gia Đình Chim Biến Dị
+20
+/
+60
+Triệu hồi 4 Chim Non không thể bị chọn làm mục tiêu gần đó trong
+5.0
+giây. Mỗi khi Chim Mẹ tấn công, Chim Non cũng tấn công mục tiêu đó, gây
+20/30/48
+sát thương vật lý.
+Bùa Cam:
+Gây sát thương vật lý sẽ giảm Giáp của kẻ địch đi
+2
+.
+3
+Diana
+Đấu Sĩ Phép
+Mặt Trăng
+Tàn Phá
+Tiên Phong
+Lá Chắn Nhợt Nhạt
+0
+/
+40
+Nhận
+150/275/400
+lá chắn trong
+2
+giây và phóng ra
+6
+cầu ánh trăng tỏa ra kẻ địch trong phạm vi 2 ô, mỗi quả cầu gây
+70/105/170
+sát thương phép.
+3
+Fiddlesticks
+Đỡ Đòn Phép
+Thực Vật
+Vệ Quân
+Thuật Sư
+Thu Hoạch
+30
+/
+90
+Giảm Kháng Phép của
+3
+kẻ địch gần nhất đi
+10
+. Sau đó hút sinh lực từ chúng trong
+2
+giây, hồi phục
+410/485/850
+Máu và gây
+70/105/170
+sát thương phép lên mỗi mục tiêu trong suốt thời gian hiệu lực.
+3
+Hecarim
+Đỡ Đòn Phép
+Thần Rừng
+Tiên Phong
+Nhiếp Hồn Trận
+30
+/
+110
+Nhận
+50
+Giáp và Kháng Phép trong 3 giây và hồi lại
+375/475/685
+Máu trong thời gian hiệu lực. Phóng các bóng ma kị sĩ về phía
+3
+kẻ địch gần nhất, gây
+80/120/195
+sát thương phép và Làm Choáng chúng trong
+1.5
+giây.
+3
+Kha'Zix
+Sát Thủ Phép
+Khắc Tinh
+Nếm Mùi Sợ Hãi
+0
+/
+25
+Nhảy tới kẻ địch ở xa nhất trong phạm vi
+3
+Ô, gây
+285/400/580
+sát thương phép. Nếu kẻ địch không có đồng minh liền kề, thay vào đó, gây
+310/445/660
+sát thương phép và nhận
+10
+năng lượng.
+3
+Kog'Maw
+Thuật Sư Phép
+Ăn Mòn
+Thích Ứng
+Thuật Sĩ
+AP
+AD
+Đạn Pháo Oanh Tạc
+15
+/
+55
+Thích Ứng
+:
+Phóng axit vào mục tiêu và kẻ địch gần nhất còn lại, gây
+160/240/415
+sát thương phép và khiến chúng chịu thêm
+48/72/115
+sát thương phép trong vòng
+3
+giây.
+Thích Ứng:
+: Gây sát thương cộng thêm lên kẻ địch thấp Máu.
+3
+Master Yi
+Đặc Thù Phép
+Hoa Linh
+Thích Ứng
+AP
+AD
+Võ Thuật Wuju
+0
+/
+3
+Nội Tại:
+Mỗi đòn đánh thứ ba là một cú Chém Đôi, tấn công hai lần. Khi tham gia hạ gục, tăng mạnh tốc độ di chuyển trong thời gian ngắn.
+Thích Ứng
+: Chém Đôi gây
+140/210/335
+sát thương phép cộng thêm. Hồi Máu bằng
+35%
+lượng sát thương cộng thêm gây ra.
+Thích Ứng
+: Chém Đôi cho Tốc Độ Đánh cộng dồn.
+3
+Quái Đá Krug
+Đỡ Đòn Vật Lý
+Quái Rừng
+Đấu Sĩ
+Sức Mạnh Của Đá
+80
+/
+135
+Nội Tại:
+Khi hy sinh, tách thành 2 Quái Đá Nhỏ với
+182/232/312
+Máu, lập tức khiêu khích và buộc kẻ địch phải tấn công chúng.
+Kích Hoạt:
+Nhận
+175/225/325
+Máu tối đa, sau đó lăn vào mục tiêu, gây
+223/288/423
+sát thương.
+Bùa Đá Phiến:
+Khi hy sinh, Quái Đá và Quái Đá Nhỏ tạo Lá Chắn cho đồng minh bằng 8% Máu tối đa.
+Hồi Máu:
+182/232/312
+12% ×
++ 50/100/180
+Physical Damage:
+223/288/423
+8% ×
++
+135/200/335 ×
+3
+Rammus
+Đỡ Đòn Vật Lý
+Tinh Nghịch
+Vệ Quân
+Thế Thủ
+30
+/
+80
+Khiêu khích, buộc kẻ địch tấn công tướng này. Trong
+4
+giây, nhận
+350/450/550
+Lá Chắn cùng
+60
+Giáp và Kháng Phép.
+Khi Lá Chắn vỡ, gây
+50/75/120
+sát thương vật lý lên kẻ địch trong phạm vi
+2
+ô.
+Physical Damage:
+50/75/120
+50%/75%/120% ×
++
+50%/75%/120% ×
+3
+Rengar
+Đấu Sĩ Vật Lý
+Khắc Tinh
+Tàn Ác
+10
+/
+50
+Nhảy tới kẻ địch có phần trăm Máu thấp nhất trong phạm vi
+3
+ô và đâm nạn nhân, gây
+255/385/615
+sát thương vật lý. Sau đó hồi
+60/90/90
+máu, tăng lên tối đa thành
+120/180/180
+dựa trên lượng Máu đã mất của kẻ địch.
+3
+Tristana
+Xạ Thủ Vật Lý
+Tiên Linh
+Tinh Nghịch
+Thợ Săn
+Bọc Thuốc Nổ
+0
+/
+60
+Gắn một bọc thuốc súng lên mục tiêu, tồn tại trong
+4
+giây. Khi kích hoạt, nhận tầm đánh vô hạn và
+60%
+Tốc Độ Đánh. Sau khi hết thời gian, bọc thuốc súng phát nổ và chia sát thương lên tất cả kẻ địch trong phạm vi 2 ô, gây
+160/240/385
+sát thương vật lý +
+10/15/25
+cho mỗi đòn đánh trong lúc thi triển.
+Nếu kẻ địch đang dính bọc thuốc súng bị hạ gục, bọc thuốc súng sẽ gắn lên mục tiêu mới của Tristana.
+Tốc Độ Đánh:
+60%
+40% +
+20% ×
+3
+Vi
+Đỡ Đòn Vật Lý
+Nguyên Sinh
+Dũng Sĩ
+Nắm Đấm Cuồng Nộ
+0
+/
+60
+Nội Tại:
+Khi tung đòn đánh, hồi lại
+22
+Máu.
+Kích Hoạt:
+Phát ra một tiếng gầm nguyên thủy, hồi lại
+200/265/360
+Máu. Sau đó nhận
+85%
+Tốc Độ Đánh,
+15%
+Chống Chịu, và trở nên Không Thể Cản Phá trong
+3
+giây.
+Hồi Máu:
+22
+2% ×
+2
+Alistar
+Đỡ Đòn Phép
+Thần Rừng
+Đấu Sĩ
+Tiếng Gầm Chiến Thắng
+30
+/
+90
+Gầm thét, hồi lại
+276/336/396
+Máu, loại bỏ hiệu ứng khống chế, và hồi máu cho hai đồng minh có phần trăm Máu thấp nhất với
+80/105/130
+. Sau đó nện vào mục tiêu hiện tại, gây
+100/150/225
+sát thương phép và làm choáng chúng trong
+1.5
+giây.
+Hồi Máu:
+276/336/396
+8% ×
++
+200/260/320 ×
+2
+Caitlyn
+Đặc Thù Vật Lý
+Tiên Hắc Ám
+Thợ Săn
+Thiện Xạ
+0
+/
+3
+Nội Tại:
+Mỗi đòn đánh thứ ba được thay thế bằng phát bắn Thiện Xạ gây
+210/315/515
+sát thương vật lý.
+Physical Damage:
+210/315/515
+190/285/470 ×
++
+20/30/45 ×
+2
+Cóc Thành Tinh Gromp
+Thuật Sư Phép
+Quái Rừng
+Thích Ứng
+AP
+AD
+Bong Bóng Ợ Hơi
+0
+/
+45
+Thích Ứng
+:
+Phun ra một bong bóng độc hại về phía mục tiêu hiện tại, phát nổ khi trúng kẻ địch đầu tiên, gây
+225/340/535
+sát thương phép. Kẻ địch trong bán kính 1 ô quanh vụ nổ chịu
+160/240/360
+sát thương phép trong
+3
+giây.
+Thích Ứng
+: Làm chậm mạnh mục tiêu.
+Bùa Tím:
+Mỗi 5 giây, Cóc Thành Tinh Gromp nhận
+30%
+Sức Mạnh Phép Thuật.
+2
+Cua Kỳ Cục
+Đỡ Đòn Vật Lý
+Quái Rừng
+Dũng Sĩ
+Bạn Hiểu Mà Đúng Không?
+40
+/
+100
+Nội Tại:
+Đòn đánh được thay thế bằng một điệu nhảy gây
+50/75/112.5
+sát thương vật lý lên tất cả kẻ địch liền kề.
+Kích Hoạt:
+Chui xuống đất, nhận
+15%
+Chống Chịu trong
+3
+giây và hồi
+325/400/675
+Máu trong suốt thời gian này.
+Bùa Xanh Lá:
+Khi đồng minh xuống dưới 50% Máu, họ hồi lại
+15%
+Máu tối đa.
+2
+Elise
+Đỡ Đòn Phép
+Tiên Hắc Ám
+Tiên Phong
+Nữ Hoàng Nhền Nhện
+20
+/
+70
+Hóa thành nhện và nhận
+375
+Máu tối đa. Đòn đánh trong dạng nhện gây
+35/50/80
+sát thương phép cộng thêm và hồi
+55/90/170
+máu. Các lần tung chiêu tiếp theo nhận
+175%
+Tốc Độ Đánh giảm dần trong
+4
+giây.
+2
+Kayle
+Đặc Thù Phép
+Mặt Trời
+Liên Kích
+Phán Quyết Mặt Trời
+0
+/
+0
+Nội Tại:
+Kayle thăng hoa dựa trên cấp sao của mình, cho cô các hiệu ứng thưởng cộng dồn.
+Thăng Hoa 1:
+Đòn đánh gây
+56/84/98
+sát thương phép cộng thêm.
+Thăng Hoa 2:
+Đòn đánh gây
+Cào Xé
+20
+% lên kẻ địch trong
+2
+giây.
+Thăng Hoa 3:
+Đòn đánh phóng ra sóng năng lượng, gây
+40
+sát thương phép lên tất cả các đơn vị khác trúng đòn.
+Thăng Hoa 4:
+Nhận tầm đánh vô hạn. Mỗi đợt sóng thứ
+3
+sẽ lớn hơn nhiều.
+Cào Xé: Giảm Kháng Phép
+2
+LeBlanc
+Thuật Sư Phép
+Thần Rừng
+Thuật Sư
+Ảo Ảnh
+0
+/
+40
+Nội Tại:
+Sau giao tranh người chơi, LeBlanc mạnh nhất của bạn có
+10%
+cơ hội tạo ra 1 bản sao của 1 đồng minh trên bàn của bạn, tăng thêm
+4%
+cho mỗi lần tham gia hạ gục.
+Kích Hoạt:
+Phóng 1 ảo ảnh vào mục tiêu hiện tại, gây
+250/375/565
+sát thương phép và
+85/130/190
+sát thương lên những kẻ địch liền kề.
+2
+Sejuani
+Đỡ Đòn Phép
+Mặt Trời
+Dũng Sĩ
+Mặt Trời Thịnh Nộ
+40
+/
+100
+Nhận
+315/340/365
+Lá Chắn trong
+4
+giây. Sau đó, quét theo hình nón gây
+90/135/205
+sát thương phép và tấn công theo một đường thẳng, gây
+120/180/270
+sát thương phép lên những kẻ địch trúng chiêu.
+Shield:
+315/340/365
+10% ×
++
+225/250/275 ×
+2
+Shen
+Đỡ Đòn Phép
+Hỏa Ngục
+Vệ Quân
+Lá Chắn Kiếm Khí
+30
+/
+90
+Trao
+325/400/500
+Lá Chắn cho Shen và
+200/275/375
+Lá Chắn cho 1 đồng minh đã chịu sát thương gần đó trong
+4
+giây.
+3
+đòn đánh tiếp theo của cả hai được tăng
+40%
+Tốc Độ Đánh và gây
+35/55/80
+sát thương phép cộng thêm.
+2
+Sói Hắc Ám
+Sát Thủ Vật Lý
+Quái Rừng
+Tàn Phá
+Vuốt Xé
+0
+/
+40
+Nhảy đến kẻ địch thấp Máu nhất trong phạm vi
+3
+Ô và gây
+500/1050/2250
+sát thương vật lý.
+2
+đòn đánh tiếp theo được tăng
+175%
+Tốc Độ Đánh và gây
+60/90/135
+sát thương vật lý cộng thêm.
+Bùa Xám:
+Nhận Chuẩn Xác và
+25%
+Tỉ Lệ Chí Mạng, tăng lên tối đa 75% dựa trên Máu đã mất.
+Physical Damage:
+500/1050/2250
+100/150/225 ×
++
+20/30/45 ×
+2
+Teemo
+Thuật Sư Phép
+Tinh Nghịch
+Thuật Sĩ
+Nấm Nhỏ Nấm To
+0
+/
+50
+Throw 2 clusters of mushrooms that deal
+60/90/135
+magic damage to the
+3
+nearest enemies. Then hurl a giant mushroom that deals
+135/200/310
+magic damage to the target.
+Each cast has a
+10%
+chance to forage an extra mushroom that can be collected for bonus effects.
+Red:
+1
+Reroll
+(Reds Foraged:
+0
+)
+Green:
+1
+Tactician Health
+(Greens Foraged:
+?
+)
+Yellow:
+2
+XP
+(Yellows Foraged:
+?
+)
+2
+Warwick
+Đấu Sĩ Vật Lý
+Gai Đen
+Tàn Phá
+Cắn Xé
+0
+/
+40
+Cắn mục tiêu hiện tại, gây
+215/325/500
+sát thương vật lý và hồi máu bằng
+20%
+lượng sát thương gây ra. Nhận
+20%
+Tốc Độ Đánh cho đến hết giao tranh.
+2
+Yunara
+Thuật Sư Vật Lý
+Hoa Linh
+Đao Phủ
+Kết Linh Thành Châu
+0
+/
+35
+Lướt và phóng một quả cầu vào mục tiêu hiện tại, gây
+160/240/360
+sát thương vật lý và tách ra, gây
+56/84/126
+sát thương vật lý lên
+2
+kẻ địch ở gần.
+Physical Damage:
+160/240/360
+150/225/335 ×
++
+10/15/25 ×
+Physical Damage:
+56/84/126
+35% × 160/240/360
+1
+Akali
+Đấu Sĩ Phép
+Hỏa Ngục
+Thích Ứng
+Tàn Phá
+AP
+AD
+Phi Đao Song Kích
+0
+/
+25
+Thích Ứng
+:
+Phóng một loạt phi đao vào mục tiêu, gây
+140/210/365
+sát thương phép, tăng thêm
+50%
+nếu kẻ đó là tướng Đỡ Đòn. Nếu mục tiêu bị hạ gục, tung chiêu lần nữa với
+70%
+hiệu lực.
+Thích Ứng
+: Gây sát thương cộng thêm lên kẻ địch đang bị Thiêu Đốt.
+1
+Camille
+Đấu Sĩ Vật Lý
+Tiên Hắc Ám
+Tàn Phá
+Đá Quét Phòng Ngự
+0
+/
+25
+Chém mục tiêu gây
+170/255/435
+sát thương vật lý và nhận
+60
+Lá Chắn trong
+2
+giây.
+Physical Damage:
+170/255/435
+160/240/410 ×
++
+10/15/25 ×
+1
+Karma
+Thuật Sư Phép
+Hoa Linh
+Thuật Sư
+Liên Kết Nghiệp Duyên
+0
+/
+40
+Nối liên kết với mục tiêu hiện tại, gây
+280/420/630
+sát thương phép trong
+1.5
+giây. Rồi giải phóng một luồng sức mạnh xung quanh kẻ đó, gây
+120/180/270
+sát thương phép lên tất cả kẻ địch trong phạm vi
+1
+Ô và
+Làm Chậm
+chúng đi
+30
+% trong
+2
+giây.
+Làm Chậm: Giảm Tốc Độ Đánh
+1
+Kobuko
+Đỡ Đòn Phép
+Tinh Nghịch
+Đấu Sĩ
+Vũ Điệu Đời Thường
+30
+/
+90
+Hồi lại
+314/364/509
+Máu trong vòng
+2
+giây. Đòn đánh tiếp theo được thay thế bằng một cú nện gây
+140/175/220
+sát thương phép.
+Hồi Máu:
+314/364/509
+7% ×
++
+265/315/460 ×
+Magic Damage:
+140/175/220
+10% ×
++
+70/105/150 ×
+1
+Leona
+Đỡ Đòn Phép
+Mặt Trời
+Vệ Quân
+Nện Khiên
+40
+/
+100
+Nội Tại:
+Bắt đầu giao tranh với
+60/70/80
+Giáp và Kháng Phép cộng thêm, giảm dần trong
+12
+giây.
+Kích Hoạt:
+Đập vào mục tiêu hiện tại, gây
+60/108/162
+sát thương phép và Làm Choáng chúng trong
+1.5
+giây.
+Magic Damage:
+60/108/162
+150%/270%/405% ×
+1
+Mầm Non
+Thuật Sư Vật Lý
+Quái Rừng
+Thợ Săn
+Lá Sắc Lẹm
+0
+/
+50
+Triệu hồi 5 chiếc lá sắc như dao cạo đồng loạt tấn công vào mục tiêu hiện tại, gây tổng cộng
+370/555/835
+sát thương vật lý và áp dụng
+Vết Thương Sâu
+20
+% và
+Thiêu Đốt
+1
+% trong
+4
+giây.
+Bùa Đỏ:
+Mầm Non nhận
+22%
+Sức Mạnh Công Kích mỗi lần tung chiêu.
+Vết Thương Sâu: Giảm hồi máu nhận được.
+Thiêu Đốt: Gây sát thương chuẩn mỗi giây bằng một phần Máu tối đa của mục tiêu.
+Physical Damage:
+370/555/835
+340/510/765 ×
++
+30/45/70 ×
+1
+Ornn
+Đỡ Đòn Phép
+Thần Rừng
+Vệ Quân
+Thổi Bễ
+40
+/
+100
+Active:
+Gain
+400/460/550
+Shield for
+4
+seconds and deal
+200/300/450
+magic damage to enemies in a cone.
+Quest:
+Each player combat, Ornn stores damage blocked as Forge Power, doubled at 3-star. Gain an Artifact Anvil each time he gains enough Forge Power.
+(Forge Power:
+0
+/
+?
+)
+1
+Rakan
+Đỡ Đòn Phép
+Tiên Linh
+Dũng Sĩ
+Tiên Phong
+Điệu Vũ Mê Hồn
+35
+/
+105
+Nhận
+270/320/415
+Lá Chắn trong
+4
+giây. Sau đó, ban cho đồng minh đã gây nhiều sát thương nhất trong giao tranh này
+90%/100%/130%
+Tốc Độ Đánh giảm dần trong
+4
+giây.
+Tốc Độ Đánh:
+90%/100%/130%
+90%/100%/130% ×
+1
+Rek'Sai
+Đỡ Đòn Phép
+Gai Đen
+Đấu Sĩ
+Nhổ Rễ
+40
+/
+100
+Nội Tại:
+Hồi
+17/21/27
+Máu mỗi giây, tăng gấp ba trong
+3
+giây sau khi tung chiêu.
+Kích Hoạt:
+Lao lên từ mặt đất, Làm Choáng những kẻ địch liền kề trong
+1
+giây và gây
+70/105/160
+sát thương phép lên chúng.
+Hồi Máu:
+17/21/27
+1% ×
++ 10/14/20
+1
+Sỏi
+Thuật Sư Phép
+Quái Rừng
+Thuật Sĩ
+Tia Laze Lam
+30
+/
+70
+Bắt đầu tiêu thụ
+35%
+Năng Lượng tối đa mỗi giây và vận sức bắn laser vào mục tiêu. Mỗi giây trong khi thi triển, gây
+160/240/360
+sát thương phép và giảm Kháng Phép của kẻ địch đi
+3
+.
+Bùa Xanh Mòng Két:
+Nhận
+2
+Hồi Năng Lượng với mỗi 4 giây đã vận sức.
+1
+Varus
+Thuật Sư Vật Lý
+Hỏa Ngục
+Liên Kích
+Mũi Tên Xuyên Phá
+30
+/
+120
+Vận sức, sau đó bắn một mũi tên theo đường thẳng có nhiều kẻ địch nhất xuyên qua mục tiêu. Nó gây
+415/625/995
+sát thương vật lý lên các kẻ địch trúng đòn, giảm đi
+40%
+với mỗi kẻ địch nó đi qua (tối thiểu
+40%
+).
+Physical Damage:
+415/625/995
+385/580/925 ×
++
+30/45/70 ×
+1
+Veigar
+Thuật Sư Phép
+Gai Đen
+Tinh Nghịch
+Thuật Sư
+Vụ Nổ Vũ Trụ
+0
+/
+30
+Phóng ra một luồng năng lượng khổng lồ vào mục tiêu, gây
+175/265/395
+sát thương phép, tăng thành
+265/400/595
+nếu mục tiêu còn dưới
+30%
+Máu tối đa.
+Nếu mục tiêu bị hạ gục, nhận vĩnh viễn
+1.5
+% Sức Mạnh Phép Thuật.
+Thưởng hiện tại: 0%
+1
+Xayah
+Xạ Thủ Vật Lý
+Thần Rừng
+Tiên Linh
+Liên Kích
+Bộ Cánh Chết Người
+0
+/
+50
+Nhận
+50%
+Tốc Độ Đánh trong
+5
+đòn đánh tiếp theo. Những đòn đánh này được thay thế bằng các lông vũ gây
+68/102/155
+sát thương vật lý và giảm Giáp đi
+2
+.
+1
+Yorick
+Đỡ Đòn Vật Lý
+Hoa Linh
+Dũng Sĩ
+Triệu Hồi
+Tử Lễ
+50
+/
+110
+Nội Tại:
+Khi bị hạ gục, sinh ra 1 Lữ Khách với
+330/530/880
+Máu tối đa, lập tức khiêu khích và buộc kẻ địch phải tấn công nó.
+Kích Hoạt:
+Hồi lại
+280/325/435
+Máu và ra đòn lên mục tiêu, gây
+150/225/340
+sát thương vật lý.
+Hồi Máu:
+330/530/880
+20% ×
++ 200/400/750
+Download Blitz
+Công Ty
+Về Chúng Tôi
+Hợp Tác
+Tuyển Dụng
+Liên Hệ Hỗ Trợ
+Chính Sách Bảo Mật
+Mạng Xã Hội
+X/Twitter
+Discord
+Facebook
+Instagram
+TikTok
+Trò Chơi
+Liên Minh Huyền Thoại
+Đấu Trường Chân Lý
+VALORANT
+Counter-Strike 2
+Fortnite
+Escape From Tarkov
+Apex Legends
+Marvel Rivals
+Deadlock
+Được làm với rất nhiều Tình Yêu và Sự Cay Cú tại
+Pháp
+Tiếng Việt
+Điều Khoản Dịch Vụ
+Chính Sách Bảo Mật
+Gỡ bỏ quảng cáo với Premium
+English
+Deutsch
+Español
+Français
+Italiano
+Nederlands
+Português
+Polski
+Русский
+Türkçe
+Čeština
+Ελληνικά
+한국어
+日本語
+Tiếng Việt
+简体中文
+繁體中文
