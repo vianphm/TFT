@@ -48,5 +48,15 @@
     "name": "vntft-trang-bi-anh-sang",
     "url": "https://vntft.com/trang-bi-anh-sang-tft",
     "render": true
+  },
+  {
+    "name": "vntft-ghep-an",
+    "url": "https://vntft.com/ghep-an-tft",
+    "render": true
+  },
+  {
+    "name": "vntft-toc-he",
+    "url": "https://vntft.com/toc-he-dtcl",
+    "render": true
   }
 ]
