@@ -436,6 +436,7 @@
   function bindAdvisorWidget() {
     var btn = document.getElementById('overlayAdviceBtn');
     if (btn) btn.addEventListener('click', renderOverlayAdvice);
+    renderOverlayAdvice();
   }
 
   function renderOverlayAdvice() {
@@ -450,16 +451,27 @@
       bench: [],
       shop: [],
       components: [],
-      hp: 100,
+      hp: config.state.hp || 100,
       gold: config.state.gold || 50,
       level: config.state.level || 8,
       round: config.state.round || '3-2'
     };
 
     var advice = analyzer.generateComprehensiveAdvice(state, dataset, comps);
-    resultEl.innerHTML = '<div style="font-size:11px">' +
-      '<div style="color:var(--gold);font-weight:600">Doi hinh toi uu: ' + escapeHtml(advice.targetComp ? advice.targetComp.name : 'Chua ro') + '</div>' +
-      '<div style="margin-top:3px;color:#cbd5e0">' + escapeHtml(advice.econDecision.message) + '</div>' +
+    var carryUnit = activeComp && (activeComp.units || []).find(function (u) { return u.carry; });
+
+    resultEl.innerHTML = '<div style="font-size:11px;display:flex;flex-direction:column;gap:5px">' +
+      '<div style="display:flex;justify-content:space-between;align-items:center">' +
+        '<span style="color:var(--gold);font-weight:bold">🎯 ' + escapeHtml(advice.targetComp ? advice.targetComp.name : 'Chưa rõ') + '</span>' +
+        '<span class="badge" style="background:var(--gold-dim);color:var(--gold)">' + escapeHtml(activeComp ? activeComp.tier || 'A' : 'A') + ' Tier</span>' +
+      '</div>' +
+      '<div style="background:rgba(255,255,255,0.03);padding:4px 6px;border-radius:4px">' +
+        '<b>👑 Carry chính:</b> ' + escapeHtml(carryUnit ? carryUnit.name : 'Đa dụng') +
+        (carryUnit && carryUnit.items ? ' • Đồ chuẩn: <span style="color:var(--gold)">' + carryUnit.items.map(function(it) { return escapeHtml((tables.ITEM_NAMES_VI && tables.ITEM_NAMES_VI[it]) || it); }).join(', ') + '</span>' : '') +
+      '</div>' +
+      '<div style="color:#68d391;background:rgba(104,211,145,0.1);padding:4px 6px;border-radius:4px">' +
+        '<b>💡 Hành động vòng này:</b> ' + escapeHtml(advice.econDecision.message) +
+      '</div>' +
     '</div>';
   }
 
