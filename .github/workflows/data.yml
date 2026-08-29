@@ -26,13 +26,15 @@ jobs:
 
       - name: Tai du lieu set
         run: node scripts/fetch-set-data.js
+        env:
+          TFT_SET_MUTATOR: TFTSet18
 
       - name: Kiem thu lai sau khi doi du lieu
         run: npm test
 
       - name: Commit neu co thay doi
         run: |
-          if git diff --quiet -- src/shared/data/set-fallback.json; then
+          if git diff --quiet -- src/shared/data/; then
             echo "Du lieu khong doi, khong can commit."
             exit 0
           fi
@@ -42,6 +44,6 @@ jobs:
           ")
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/shared/data/set-fallback.json
+          git add src/shared/data/set-fallback.json src/shared/data/set18-raw.json
           git commit -m "Cập nhật dữ liệu set: $SUMMARY" -m "Tải tự động từ Community Dragon."
           git push

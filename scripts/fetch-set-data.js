@@ -12,8 +12,11 @@ const path = require('path');
 const { CDRAGON_URL, parseCdragon, diagnose } = require('../src/renderer/shared/cdragon.js');
 const tables = require('../src/renderer/shared/tables.js');
 
-const OUT = path.join(__dirname, '..', 'src', 'shared', 'data', 'set-fallback.json');
-const TIMEOUT_MS = 120000;
+const DATA_DIR = path.join(__dirname, '..', 'src', 'shared', 'data');
+const OUT = path.join(DATA_DIR, 'set-fallback.json');       // ban da rut gon, app dung truc tiep
+const RAW_OUT = path.join(DATA_DIR, 'set18-raw.json');      // nguyen ban tu Community Dragon
+const SET_MUTATOR = process.env.TFT_SET_MUTATOR || 'TFTSet18';
+const TIMEOUT_MS = 180000;
 
 main().catch((err) => {
   console.error('Loi:', err.message);
@@ -43,8 +46,11 @@ async function main() {
       ` gia: ${[1, 2, 3, 4, 5].map((k) => c.byCost[k]).join('/')}`);
   });
 
-  const wanted = process.env.TFT_SET_MUTATOR || null;
-  const parsed = parseCdragon(raw, wanted ? { mutator: wanted } : undefined);
+  const parsed = parseCdragon(raw, { mutator: SET_MUTATOR });
+  if (parsed.setMutator !== SET_MUTATOR) {
+    throw new Error(`khong tim thay nhanh ${SET_MUTATOR} trong du lieu (doc duoc: ${parsed.setMutator})`);
+  }
+  writeRaw(raw);
   if (!parsed.champions.length) throw new Error('khong doc duoc tuong nao - cau truc du lieu co the da doi');
 
   // In het danh sach de nguoi doc log tu doi chieu voi game
@@ -92,6 +98,32 @@ async function main() {
   console.log(`  ${parsed.traits.length} toc he, ${parsed.items.length} trang bi ghep, ` +
     `${parsed.components.length} mon co ban, ${(parsed.emblems || []).length} an`);
   console.log(`  Ghi vao ${path.relative(process.cwd(), OUT)} (${size} KB)`);
+}
+
+/**
+ * Ghi nguyen ban du lieu cua set can lay: toan bo tuong (ke ca truong ma app chua dung),
+ * toc he day du, trang bi, an va lo nang cap. De sau nay can them thu gi thi lay o day,
+ * khong phai tai lai tu dau.
+ */
+function writeRaw(raw) {
+  const entry = (raw.setData || []).find((s) => s.mutator === SET_MUTATOR);
+  if (!entry) throw new Error(`khong co nhanh ${SET_MUTATOR} trong setData`);
+
+  const payload = {
+    fetchedAt: new Date().toISOString(),
+    source: CDRAGON_URL,
+    mutator: entry.mutator,
+    name: entry.name,
+    number: entry.number,
+    champions: entry.champions || [],
+    traits: entry.traits || [],
+    items: raw.items || []
+  };
+
+  fs.writeFileSync(RAW_OUT, JSON.stringify(payload), 'utf8');
+  const mb = (fs.statSync(RAW_OUT).size / 1024 / 1024).toFixed(1);
+  console.log(`\n  Nguyen ban: ${payload.champions.length} tuong, ${payload.traits.length} toc he, ` +
+    `${payload.items.length} trang bi -> ${path.relative(process.cwd(), RAW_OUT)} (${mb} MB)`);
 }
 
 /**
