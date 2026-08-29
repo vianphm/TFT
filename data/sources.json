@@ -1,9 +1,42 @@
 [
-  { "name": "vntft-dtcl",              "url": "https://vntft.com/dtcl",                        "render": true },
-  { "name": "metatft-units",           "url": "https://metatft.gg/units/",                     "render": true },
-  { "name": "metatft-comps",           "url": "https://metatft.gg/comps",                      "render": true },
-  { "name": "doihinhtft-doi-hinh",     "url": "https://doihinhtft.vn/doi-hinh-mua-18/",        "render": false },
-  { "name": "doihinhtft-tuong",        "url": "https://doihinhtft.vn/tuong-tft-mua-18/",       "render": false },
-  { "name": "doihinhtft-toc-he",       "url": "https://doihinhtft.vn/toc-he-mua-18/",          "render": false },
-  { "name": "doihinhtft-loi-nang-cap", "url": "https://doihinhtft.vn/loi-nang-cap-tft-mua-18/","render": false }
+  {
+    "name": "vntft-dtcl",
+    "url": "https://vntft.com/dtcl",
+    "render": true
+  },
+  {
+    "name": "metatft-units",
+    "url": "https://metatft.gg/units/",
+    "render": true
+  },
+  {
+    "name": "metatft-comps",
+    "url": "https://metatft.gg/comps",
+    "render": true
+  },
+  {
+    "name": "doihinhtft-doi-hinh",
+    "url": "https://doihinhtft.vn/doi-hinh-mua-18/",
+    "render": false
+  },
+  {
+    "name": "doihinhtft-tuong",
+    "url": "https://doihinhtft.vn/tuong-tft-mua-18/",
+    "render": false
+  },
+  {
+    "name": "doihinhtft-toc-he",
+    "url": "https://doihinhtft.vn/toc-he-mua-18/",
+    "render": false
+  },
+  {
+    "name": "doihinhtft-loi-nang-cap",
+    "url": "https://doihinhtft.vn/loi-nang-cap-tft-mua-18/",
+    "render": false
+  },
+  {
+    "name": "vntft-trang-bi",
+    "url": "https://vntft.com/trang-bi-tft",
+    "render": true
+  }
 ]

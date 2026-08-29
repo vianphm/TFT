@@ -1,0 +1,2783 @@
+[
+ {
+  "id": "dhtft-0",
+  "name": "Cassiopeia Vệ Quân",
+  "tier": "S",
+  "style": "Lên cấp 7",
+  "difficulty": "Trung Bình",
+  "winRate": "12,6%",
+  "top4": "56,1%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 12,6%, Top 4 56,1%.",
+  "units": [
+   {
+    "name": "Cassiopeia",
+    "star": 3,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Fiddlesticks",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rammus",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Lillia",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Soraka",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Shen",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Leona",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ornn",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-1",
+  "name": "Rengar Tristana Tiên Linh",
+  "tier": "S",
+  "style": "Lên cấp 7",
+  "difficulty": "Trung Bình",
+  "winRate": "23,4%",
+  "top4": "53,5%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 23,4%, Top 4 53,5%.",
+  "units": [
+   {
+    "name": "Tristana",
+    "star": 3,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rengar",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rammus",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Sivir",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Lillia",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Vi",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Kobuko",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rakan",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-2",
+  "name": "Ahri Thuật Sư",
+  "tier": "S",
+  "style": "Fast 8",
+  "difficulty": "Trung Bình",
+  "winRate": "14,5%",
+  "top4": "55,9%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 14,5%, Top 4 55,9%.",
+  "units": [
+   {
+    "name": "Ahri",
+    "star": 2,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Người Đá Cổ Xưa",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Morgana",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Alune",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Taric",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Cassiopeia",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Diana",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Fiddlesticks",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Elise",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-3",
+  "name": "Veigar Tinh Nghịch",
+  "tier": "S",
+  "style": "Lên cấp 5",
+  "difficulty": "Trung Bình",
+  "winRate": "13,6%",
+  "top4": "55,4%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 13,6%, Top 4 55,4%.",
+  "units": [
+   {
+    "name": "Veigar",
+    "star": 3,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rek'Sai",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Teemo",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Kobuko",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Gnar",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Sett",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rammus",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Fiddlesticks",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-4",
+  "name": "Quái Đá Krug Quái Rừng",
+  "tier": "S",
+  "style": "Lên cấp 7",
+  "difficulty": "Dễ",
+  "winRate": "12,5%",
+  "top4": "55,4%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 12,5%, Top 4 55,4%.",
+  "units": [
+   {
+    "name": "Quái Đá Krug",
+    "star": 3,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Sỏi",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Chim Biến Dị",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Bụi Gai Đỏ",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Người Đá Cổ Xưa",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Cóc Thành Tinh",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Sói Hắc Ám",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Cua Kỳ Cục",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-5",
+  "name": "Master Yi Thích Ứng",
+  "tier": "S",
+  "style": "Lên cấp 7",
+  "difficulty": "Trung Bình",
+  "winRate": "12,1%",
+  "top4": "55,1%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 12,1%, Top 4 55,1%.",
+  "units": [
+   {
+    "name": "Master Yi",
+    "star": 3,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Kog'Maw",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Nidalee",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Vi",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Sett",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Quái Đá Krug",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Cóc Thành Tinh",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Yorick",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-6",
+  "name": "Aphelios Tiên Phong",
+  "tier": "A",
+  "style": "Fast 8",
+  "difficulty": "Trung Bình",
+  "winRate": "7,3%",
+  "top4": "49,9%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 7,3%, Top 4 49,9%.",
+  "units": [
+   {
+    "name": "Aphelios",
+    "star": 2,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Người Đá Cổ Xưa",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Bụi Gai Đỏ",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Chim Biến Dị",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Taric",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Zyra",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Diana",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Hecarim",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-7",
+  "name": "Sivir Thợ Săn",
+  "tier": "A",
+  "style": "Lên cấp 8",
+  "difficulty": "Trung Bình",
+  "winRate": "14,8%",
+  "top4": "52,9%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 14,8%, Top 4 52,9%.",
+  "units": [
+   {
+    "name": "Sivir",
+    "star": 2,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Amumu",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ashe",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Lillia",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ivern",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Kennen",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Tristana",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Vi",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Shen",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-8",
+  "name": "Người Đá Quái Rừng",
+  "tier": "A",
+  "style": "Cơ Bản",
+  "difficulty": "Dễ",
+  "winRate": "11,8%",
+  "top4": "54,3%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 11,8%, Top 4 54,3%.",
+  "units": [
+   {
+    "name": "Người Đá Cổ Xưa",
+    "star": 2,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rồng Ngàn Tuổi",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Bụi Gai Đỏ",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Quái Đá Krug",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Gnar",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Taric",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Sói Hắc Ám",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Sỏi",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-9",
+  "name": "Sett Đao Phủ",
+  "tier": "A",
+  "style": "Lên cấp 8",
+  "difficulty": "Dễ",
+  "winRate": "10,6%",
+  "top4": "53,4%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 10,6%, Top 4 53,4%.",
+  "units": [
+   {
+    "name": "Sett",
+    "star": 2,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ahri",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ezreal",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Soraka",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Gnar",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Kennen",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Fiddlesticks",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Yunara",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ornn",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-10",
+  "name": "Caitlyn Thợ Săn",
+  "tier": "A",
+  "style": "Lên cấp 6",
+  "difficulty": "Trung Bình",
+  "winRate": "8,3%",
+  "top4": "54,4%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 8,3%, Top 4 54,4%.",
+  "units": [
+   {
+    "name": "Caitlyn",
+    "star": 3,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Cua Kỳ Cục",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Sivir",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Sejuani",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ashe",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Tristana",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Vi",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rakan",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-11",
+  "name": "Draven Ezreal Đao Phủ",
+  "tier": "A",
+  "style": "Lên cấp 9",
+  "difficulty": "Khó",
+  "winRate": "20,6%",
+  "top4": "49,5%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 20,6%, Top 4 49,5%.",
+  "units": [
+   {
+    "name": "Draven",
+    "star": 2,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ezreal",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Maokai",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Kennen",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Gnar",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ivern",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Taric",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Amumu",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Alistar",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-12",
+  "name": "Aphelios Thần Rừng",
+  "tier": "A",
+  "style": "Fast 8",
+  "difficulty": "Dễ",
+  "winRate": "11,4%",
+  "top4": "49,4%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 11,4%, Top 4 49,4%.",
+  "units": [
+   {
+    "name": "Aphelios",
+    "star": 2,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Lillia",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Alune",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Gnar",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ivern",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Alistar",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "LeBlanc",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ornn",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Xayah",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-13",
+  "name": "Morgana Thuật Sĩ",
+  "tier": "A",
+  "style": "Lên cấp 8",
+  "difficulty": "Trung Bình",
+  "winRate": "13,0%",
+  "top4": "52,5%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 13,0%, Top 4 52,5%.",
+  "units": [
+   {
+    "name": "Morgana",
+    "star": 2,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Người Đá Cổ Xưa",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Bụi Gai Đỏ",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Alune",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Taric",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Diana",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Hecarim",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Kog'Maw",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Sỏi",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-14",
+  "name": "Sett Hoa Linh",
+  "tier": "A",
+  "style": "Lên cấp 8",
+  "difficulty": "Trung Bình",
+  "winRate": "12,7%",
+  "top4": "51,2%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 12,7%, Top 4 51,2%.",
+  "units": [
+   {
+    "name": "Sett",
+    "star": 2,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ahri",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ashe",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Sivir",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Gnar",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Zyra",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Vi",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Yorick",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Karma",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-15",
+  "name": "Sỏi Thuật Sĩ",
+  "tier": "A",
+  "style": "Lên cấp 5",
+  "difficulty": "Trung Bình",
+  "winRate": "12,7%",
+  "top4": "51,2%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 12,7%, Top 4 51,2%.",
+  "units": [
+   {
+    "name": "Sỏi",
+    "star": 3,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Người Đá Cổ Xưa",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Morgana",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Kog'Maw",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Maokai",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Taric",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Teemo",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Cua Kỳ Cục",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-16",
+  "name": "Sivir Nguyên Sinh",
+  "tier": "A",
+  "style": "Fast 8",
+  "difficulty": "Trung Bình",
+  "winRate": "9,0%",
+  "top4": "50,5%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 9,0%, Top 4 50,5%.",
+  "units": [
+   {
+    "name": "Sivir",
+    "star": 2,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Nidalee",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Malphite",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Người Đá Cổ Xưa",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Kog'Maw",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Quái Đá Krug",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rek'Sai",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Mầm Non Thành Tinh",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-17",
+  "name": "Sett Ahri Thuật Sư",
+  "tier": "B",
+  "style": "Lên cấp 9",
+  "difficulty": "Khó",
+  "winRate": "12,7%",
+  "top4": "49,9%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 12,7%, Top 4 49,9%.",
+  "units": [
+   {
+    "name": "Ahri",
+    "star": 2,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Sett",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Alune",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ashe",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Gnar",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Lillia",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Diana",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rammus",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Tristana",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-18",
+  "name": "Kha'Zix Khắc Tinh",
+  "tier": "B",
+  "style": "Lên cấp 7",
+  "difficulty": "Dễ",
+  "winRate": "13,4%",
+  "top4": "49,7%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 13,4%, Top 4 49,7%.",
+  "units": [
+   {
+    "name": "Kha'Zix",
+    "star": 3,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rengar",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Hecarim",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Diana",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Kennen",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Aphelios",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ezreal",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "LeBlanc",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-19",
+  "name": "Fiddlesticks Thuật Sư",
+  "tier": "B",
+  "style": "Lên cấp 7",
+  "difficulty": "Dễ",
+  "winRate": "11,1%",
+  "top4": "49,4%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 11,1%, Top 4 49,4%.",
+  "units": [
+   {
+    "name": "Fiddlesticks",
+    "star": 3,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ahri",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Cassiopeia",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Lillia",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Malphite",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rammus",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Shen",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Veigar",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-20",
+  "name": "Malphite Đao Phủ",
+  "tier": "B",
+  "style": "Lên cấp 8",
+  "difficulty": "Khó",
+  "winRate": "9,5%",
+  "top4": "49,5%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 9,5%, Top 4 49,5%.",
+  "units": [
+   {
+    "name": "Malphite",
+    "star": 2,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Soraka",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Zyra",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Kennen",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Amumu",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Azir",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Fiddlesticks",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Yorick",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-21",
+  "name": "Yunara Đao Phủ",
+  "tier": "B",
+  "style": "Lên cấp 6",
+  "difficulty": "Trung Bình",
+  "winRate": "9,9%",
+  "top4": "47,1%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 9,9%, Top 4 47,1%.",
+  "units": [
+   {
+    "name": "Yunara",
+    "star": 3,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Alistar",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ezreal",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Sett",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ahri",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Soraka",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Azir",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "LeBlanc",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-22",
+  "name": "Nidalee Thuật Sĩ",
+  "tier": "B",
+  "style": "Lên cấp 8",
+  "difficulty": "Trung Bình",
+  "winRate": "7,7%",
+  "top4": "48,8%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 7,7%, Top 4 48,8%.",
+  "units": [
+   {
+    "name": "Nidalee",
+    "star": 2,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Người Đá Cổ Xưa",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Morgana",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Kog'Maw",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Alune",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Taric",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Diana",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Vi",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rakan",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-23",
+  "name": "Kayle Liên Kích",
+  "tier": "B",
+  "style": "Lên cấp 6",
+  "difficulty": "Trung Bình",
+  "winRate": "15,8%",
+  "top4": "48,4%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 15,8%, Top 4 48,4%.",
+  "units": [
+   {
+    "name": "Kayle",
+    "star": 3,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Xayah",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ornn",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Sejuani",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Hecarim",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Leona",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rakan",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-24",
+  "name": "Rengar Tiên Phong",
+  "tier": "B",
+  "style": "Lên cấp 7",
+  "difficulty": "Trung Bình",
+  "winRate": "13,9%",
+  "top4": "46,6%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 13,9%, Top 4 46,6%.",
+  "units": [
+   {
+    "name": "Rengar",
+    "star": 3,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Hecarim",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Chim Biến Dị",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Diana",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Taric",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Aphelios",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Bụi Gai Đỏ",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Người Đá Cổ Xưa",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-25",
+  "name": "Tristana Tiên Linh",
+  "tier": "B",
+  "style": "Lên cấp 7",
+  "difficulty": "Trung Bình",
+  "winRate": "13,2%",
+  "top4": "47,0%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 13,2%, Top 4 47,0%.",
+  "units": [
+   {
+    "name": "Tristana",
+    "star": 3,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rammus",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Sivir",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Lillia",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Vi",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Kobuko",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rakan",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Xayah",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-26",
+  "name": "Teemo Tinh Nghịch",
+  "tier": "B",
+  "style": "Lên cấp 6",
+  "difficulty": "Dễ",
+  "winRate": "8,1%",
+  "top4": "45,3%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 8,1%, Top 4 45,3%.",
+  "units": [
+   {
+    "name": "Teemo",
+    "star": 3,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Rammus",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Tristana",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Lillia",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Morgana",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Người Đá Cổ Xưa",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Kobuko",
+    "star": 3,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Veigar",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-27",
+  "name": "Ahri Hoa Linh",
+  "tier": "B",
+  "style": "Cơ Bản",
+  "difficulty": "Dễ",
+  "winRate": "14,6%",
+  "top4": "44,1%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 14,6%, Top 4 44,1%.",
+  "units": [
+   {
+    "name": "Ahri",
+    "star": 2,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Sett",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Ashe",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Master Yi",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Gnar",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Maokai",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Yunara",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Yorick",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Karma",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-28",
+  "name": "Ezreal Đao Phủ",
+  "tier": "B",
+  "style": "Lên cấp 8",
+  "difficulty": "Trung Bình",
+  "winRate": "7,3%",
+  "top4": "46,0%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 7,3%, Top 4 46,0%.",
+  "units": [
+   {
+    "name": "Ezreal",
+    "star": 2,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Malphite",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Soraka",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Azir",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Zyra",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Amumu",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Fiddlesticks",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Yorick",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ },
+ {
+  "id": "dhtft-29",
+  "name": "Nidalee Thích Ứng",
+  "tier": "B",
+  "style": "Cơ Bản",
+  "difficulty": "Dễ",
+  "winRate": "5,4%",
+  "top4": "45,0%",
+  "traits": [],
+  "econ": {
+   "levelAt": {},
+   "rollDownAt": "",
+   "keepGold": 50
+  },
+  "notes": "Nguồn: doihinhtft.vn, tự động bóc từ trang. Win rate 5,4%, Top 4 45,0%.",
+  "units": [
+   {
+    "name": "Nidalee",
+    "star": 2,
+    "carry": true,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Bụi Gai Đỏ",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Amumu",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Người Đá Cổ Xưa",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Kog'Maw",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Vi",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Cóc Thành Tinh",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   },
+   {
+    "name": "Akali",
+    "star": 2,
+    "carry": false,
+    "cost": null,
+    "row": null,
+    "col": null,
+    "items": []
+   }
+  ]
+ }
+]
