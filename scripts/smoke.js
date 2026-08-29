@@ -45,6 +45,15 @@ function attach(windows) {
         try {
           const image = await win.webContents.capturePage();
           fs.writeFileSync(path.join(outDir, `${name}.png`), image.toPNG());
+          // Chup them phan duoi cua dashboard (khung phan tich nam duoi man hinh dau)
+          if (name === 'dashboard') {
+            await win.webContents.executeJavaScript(
+              "document.querySelector('.main').scrollTop = 99999; true"
+            );
+            await new Promise((resolve) => setTimeout(resolve, 400));
+            const bottom = await win.webContents.capturePage();
+            fs.writeFileSync(path.join(outDir, 'dashboard-bottom.png'), bottom.toPNG());
+          }
         } catch (err) {
           problems.push(`${name}: khong chup duoc anh (${err.message})`);
         }

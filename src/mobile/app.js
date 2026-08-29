@@ -91,12 +91,14 @@
   // --------------------------------------------------------------------- roll
 
   function bindRoll() {
-    var el = ids(['mLevel', 'mCost', 'mOwned', 'mTaken', 'mGold']);
+    var el = ids(['mLevel', 'mCost', 'mOwned', 'mTaken', 'mGold', 'mDvGold', 'mDvXp']);
     el.mLevel.value = state.level;
     el.mCost.value = state.cost;
     el.mOwned.value = state.owned;
     el.mTaken.value = state.taken;
     el.mGold.value = state.gold;
+    el.mDvGold.value = state.dvGold === undefined ? 50 : state.dvGold;
+    el.mDvXp.value = state.dvXp === undefined ? 0 : state.dvXp;
 
     document.getElementById('mNeed').addEventListener('click', function (e) {
       var btn = e.target.closest('button');
@@ -139,6 +141,8 @@
         row('Vang trung binh cho 1 ban', isFinite(out.expectedGoldForOne) ? Math.round(out.expectedGoldForOne) + 'v' : '-') +
         row('Con lai trong kho', out.copiesLeftInPool + ' ban');
 
+      renderDecision(opts);
+
       document.getElementById('mConfidence').innerHTML =
         '<tr><th>Chac chan</th><th class="num">Vang</th><th class="num">Lan roll</th></tr>' +
         [0.5, 0.75, 0.9, 0.95].map(function (c) {
@@ -148,9 +152,40 @@
         }).join('');
     }
 
-    ['mLevel', 'mCost', 'mOwned', 'mTaken', 'mGold'].forEach(function (id) {
+    ['mLevel', 'mCost', 'mOwned', 'mTaken', 'mGold', 'mDvGold', 'mDvXp'].forEach(function (id) {
       el[id].addEventListener('input', render);
     });
+
+    /** So sanh roll ngay / len cap / cho mot vong. */
+    function renderDecision(opts) {
+      state.dvGold = +el.mDvGold.value;
+      state.dvXp = +el.mDvXp.value;
+      var decision = calc.rollVsLevel({
+        gold: state.dvGold,
+        xp: state.dvXp,
+        level: opts.level,
+        cost: opts.cost,
+        copiesOwnedByYou: opts.copiesOwnedByYou,
+        copiesTakenByOthers: opts.copiesTakenByOthers,
+        copiesNeeded: opts.copiesNeeded,
+        expectedExtraTaken: 1
+      });
+      document.getElementById('mDecision').innerHTML = decision.options.map(function (o) {
+        var best = o.key === decision.best;
+        var label = o.key === 'roll' ? 'Roll ngay ở cấp ' + o.level
+          : o.key === 'level' ? 'Lên cấp ' + o.level + ' rồi roll'
+          : 'Chờ một vòng, ăn lãi';
+        return '<div style="margin-bottom:10px">' +
+          '<div class="kv"><span>' + (best ? '<b style="color:var(--gold)">' + esc(label) + '</b>' : esc(label)) +
+          '<div class="small muted">' + o.rolls + ' lần roll' +
+          (o.levelGold ? ', tốn ' + o.levelGold + 'v mua XP' : '') +
+          (o.income ? ', +' + o.income + 'v thu nhập' : '') + '</div></span>' +
+          '<b style="' + (best ? 'color:var(--gold)' : 'color:var(--muted)') + '">' +
+          calc.percent(o.probability, 0) + '</b></div>' +
+          '<div class="bar"><i style="width:' + (o.probability * 100).toFixed(0) + '%' + (best ? '' : ';opacity:.4') + '"></i></div>' +
+          '</div>';
+      }).join('');
+    }
 
     document.getElementById('mOddsTable').innerHTML =
       '<tr><th>Cap</th>' + [1, 2, 3, 4, 5].map(function (c) {

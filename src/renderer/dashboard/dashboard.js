@@ -17,6 +17,7 @@
   var activeCompId = null;
   var selectedUnitIndex = null;
   var bag = {}; // id mon co ban -> so luong
+  var lastBag = '';
 
   document.addEventListener('DOMContentLoaded', init);
 
@@ -208,7 +209,7 @@
 
     host.innerHTML =
       '<h3>Phan tich doi hinh</h3>' +
-      '<div class="two-col" style="gap:12px">' +
+      '<div class="analysis-cols">' +
         '<div>' +
           '<div class="small muted">Toc he dang bat (diem ' + breakdown.score + ')</div>' +
           (breakdown.active.length
@@ -229,10 +230,8 @@
           }).join('') +
         '</div>' +
       '</div>' +
-      (wishlist.length
-        ? '<div style="margin-top:10px"><div class="small muted">Bo do can gom (' + wishlist.length + ' mon): ' +
-          wishlist.map(esc).join(', ') + '</div></div>'
-        : '') +
+      (wishlist.length ? renderItemPlan(comp, wishlist) : '') +
+      renderPivots(comp) +
       '<div class="row" style="margin-top:12px">' +
         '<div class="field" style="max-width:120px"><label>So o (cap)</label><input type="number" id="optSize" min="3" max="10" value="' +
           Math.max(3, Math.min(10, comp.units.length || 8)) + '" /></div>' +
@@ -242,6 +241,8 @@
         '<div class="field"><label>&nbsp;</label><button id="optRun" style="width:100%">Tu tim to hop toi uu</button></div>' +
       '</div>' +
       '<div id="optResult"></div>';
+
+    bindItemPlanInput(comp);
 
     document.getElementById('optRun').addEventListener('click', function () {
       var size = Number(document.getElementById('optSize').value) || 8;
@@ -287,6 +288,60 @@
         });
       }, 30);
     });
+  }
+
+  /** Bo do can gom + chia cho tung tuong theo mon co ban dang co. */
+  function renderItemPlan(comp, wishlist) {
+    return '<div style="margin-top:12px">' +
+      '<div class="small muted">Bo do can gom (' + wishlist.length + ' mon): ' + wishlist.map(esc).join(', ') + '</div>' +
+      '<div class="row" style="margin-top:6px">' +
+        '<div class="field"><label>Mon co ban dang co (vd: bf, glove, tear, vest)</label>' +
+        '<input id="planBag" placeholder="bf, glove, tear" value="' + esc(lastBag) + '" /></div>' +
+      '</div>' +
+      '<div id="planResult"></div></div>';
+  }
+
+  function bindItemPlanInput(comp) {
+    var input = document.getElementById('planBag');
+    if (!input) return;
+    var render = function () {
+      lastBag = input.value;
+      var ids = input.value.split(/[,\s]+/).map(function (x) { return x.trim().toLowerCase(); })
+        .filter(function (x) { return tables.COMPONENTS.some(function (c) { return c.id === x; }); });
+      var plan = calc.assignItems(comp.units, ids);
+      document.getElementById('planResult').innerHTML = !ids.length
+        ? '<div class="small muted">Nhap ma mon co ban de xem chia cho ai: ' +
+          tables.COMPONENTS.map(function (c) { return c.id; }).join(', ') + '</div>'
+        : plan.units.filter(function (u) { return u.done.length || u.missing.length; }).map(function (u) {
+            return '<div class="kv"><span>' + (u.carry ? '<b class="cost-5">' : '') + esc(u.unit) + (u.carry ? '</b>' : '') +
+              '</span><span class="small">' +
+              u.done.map(function (d) { return '<span class="ok">' + esc(d.item) + '</span>'; }).join(', ') +
+              (u.done.length && u.missing.length ? ' - ' : '') +
+              u.missing.map(function (m) {
+                return '<span class="warn">' + esc(m.item) + ' (thieu ' + m.need.map(compName).join(', ') + ')</span>';
+              }).join(', ') + '</span></div>';
+          }).join('') +
+          (plan.leftover.length ? '<div class="small muted">Thua: ' + plan.leftover.map(compName).join(', ') + '</div>' : '');
+    };
+    input.addEventListener('input', render);
+    render();
+  }
+
+  /** Dang cam nhung tuong nay thi chuyen sang doi hinh nao re nhat. */
+  function renderPivots(comp) {
+    if (comps.length < 2) return '';
+    var others = comps.filter(function (c) { return c.id !== comp.id; });
+    var list = analyzer.pivotSuggestions(comp.units, others, dataset, {
+      level: config.state.level || 8, limit: 3
+    });
+    if (!list.length) return '';
+    return '<div style="margin-top:12px"><div class="small muted">Tu doi hinh nay, chuyen sang doi hinh khac:</div>' +
+      list.map(function (p) {
+        return '<div class="kv"><span>' + esc(p.name) +
+          '<div class="small muted">da co ' + p.overlap + '% - thieu ' + esc(p.missing.slice(0, 4).join(', ')) + '</div></span>' +
+          '<b class="' + (isFinite(p.estGold) ? 'cost-5' : 'muted') + '">' +
+          (isFinite(p.estGold) ? '~' + p.estGold + 'v' : '-') + '</b></div>';
+      }).join('') + '</div>';
   }
 
   function bindField(id, setter) {
@@ -603,6 +658,8 @@
             (isFinite(gold) ? gold / 2 : '-') + '</td></tr>';
         }).join('');
 
+      renderDecision(opts);
+
       api.config.patch({ state: {
         level: +el.dLevel.value, champCost: +el.dCost.value,
         copiesOwned: +el.dOwned.value, copiesTakenByOthers: +el.dTaken.value,
@@ -611,6 +668,39 @@
     }
 
     ids.forEach(function (id) { el[id].addEventListener('input', render); });
+    ['dvGold', 'dvXp', 'dvKeep'].forEach(function (id) {
+      document.getElementById(id).addEventListener('input', render);
+    });
+
+    /** So sanh ba phuong an va to dam phuong an tot nhat. */
+    function renderDecision(opts) {
+      var decision = calc.rollVsLevel({
+        gold: +document.getElementById('dvGold').value,
+        xp: +document.getElementById('dvXp').value,
+        keepGold: +document.getElementById('dvKeep').value,
+        level: opts.level,
+        cost: opts.cost,
+        copiesOwnedByYou: opts.copiesOwnedByYou,
+        copiesTakenByOthers: opts.copiesTakenByOthers,
+        championsOutOfPool: opts.championsOutOfPool,
+        copiesNeeded: opts.copiesNeeded,
+        expectedExtraTaken: 1
+      });
+
+      document.getElementById('dvResult').innerHTML = decision.options.map(function (o) {
+        var best = o.key === decision.best;
+        var label = decisionLabel(o);
+        return '<div style="margin-bottom:8px">' +
+          '<div class="kv"><span>' + (best ? '<b class="cost-5">' + esc(label) + '</b>' : esc(label)) +
+          '<div class="small muted">' + o.rolls + ' lan roll' +
+          (o.levelGold ? ', ton ' + o.levelGold + 'v mua XP' : '') +
+          (o.income ? ', +' + o.income + 'v thu nhap' : '') + '</div></span>' +
+          '<b class="' + (best ? 'cost-5' : 'muted') + '">' + calc.percent(o.probability, 1) + '</b></div>' +
+          '<div class="bar"><i style="width:' + (o.probability * 100).toFixed(0) + '%' +
+          (best ? '' : ';opacity:.45') + '"></i></div></div>';
+      }).join('') +
+      '<div class="small muted">Tinh theo so ban sao can o o "So ban sao can them" ben trai.</div>';
+    }
 
     document.getElementById('dOddsTable').innerHTML =
       '<tr><th>Cap</th>' + [1, 2, 3, 4, 5].map(function (c) {
@@ -877,6 +967,13 @@
 
     api.on('mobile:status', render);
     render(await api.mobile.status());
+  }
+
+  /** Ten tieng Viet cho tung phuong an quyet dinh. */
+  function decisionLabel(option) {
+    if (option.key === 'roll') return 'Roll ngay o cap ' + option.level;
+    if (option.key === 'level') return 'Len cap ' + option.level + ' roi roll';
+    return 'Cho mot vong, an lai';
   }
 
   function fillDisplaySelects() {

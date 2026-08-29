@@ -140,6 +140,25 @@ trang meta nào:
   vì bật rộng), tướng không đóng góp mốc nào bị trừ điểm, tổng giá cao bị trừ nhẹ.
 - **Kế hoạch ghép đồ** (`calc.bestItemPlan`): từ túi đồ hiện có và danh sách trang bị của đội hình,
   tính ghép được món nào trước, còn thiếu đúng món cơ bản nào, thừa gì.
+- **Chia đồ cho cả đội** (`calc.assignItems`): rải món cơ bản cho từng tướng, carry được ưu tiên,
+  không dùng trùng một món cho hai tướng.
+- **Nên chuyển sang đội hình nào** (`analyzer.pivotSuggestions`): với những tướng đang cầm, ước lượng
+  số vàng còn phải bỏ ra để gom đủ từng đội hình trong thư viện (theo tỉ lệ roll ở cấp hiện tại và số
+  bản sao cần cho mức sao), rồi xếp hạng theo điểm tộc hệ chia cho chi phí.
+- **Roll ngay, lên cấp, hay chờ** (`calc.rollVsLevel`): tính xác suất trúng của cả ba phương án với
+  cùng số vàng đang có.
+
+Vài con số rút ra từ chính mô hình này (săn tướng 4 vàng, cần 2 bản sao, 3 bản đã bị người khác cầm):
+
+| Vàng | Roll ở cấp 7 | Lên 8 (tốn 48v) rồi roll |
+|---|---|---|
+| 60 | 39.0% | 5.9% |
+| 100 | 65.7% | 51.2% |
+| 150 | 85.0% | 85.0% |
+| 200 | 93.9% | 96.1% |
+
+Nghĩa là từ 0 XP, tiền mua XP đắt đến mức phải trên khoảng 150 vàng thì lên cấp mới bắt đầu có lợi.
+Ngược lại nếu chỉ còn 4 XP nữa là lên cấp, lên cấp thắng ở mọi mức vàng (60v: 55.1% so với 39.0%).
 
 Muốn đổi khẩu vị thì sửa `DEFAULT_WEIGHTS` trong `analyzer.js`.
 

@@ -69,6 +69,24 @@
     <div class="card hero" id="mRollHero"></div>
     <div class="card"><table id="mRollTable"></table></div>
     <div class="card">
+      <h3>Nên roll, lên cấp, hay chờ?</h3>
+      <div class="stepper-grid">
+        <div class="stepper" data-for="mDvGold">
+          <label>Vàng đang có</label>
+          <div class="stepper-row">
+            <button data-step="-2">−</button><input type="number" id="mDvGold" value="50" min="0" /><button data-step="2">+</button>
+          </div>
+        </div>
+        <div class="stepper" data-for="mDvXp">
+          <label>XP đang có</label>
+          <div class="stepper-row">
+            <button data-step="-2">−</button><input type="number" id="mDvXp" value="0" min="0" /><button data-step="2">+</button>
+          </div>
+        </div>
+      </div>
+      <div id="mDecision" style="margin-top:10px"></div>
+    </div>
+    <div class="card">
       <h3>Vàng cần để chắc ăn</h3>
       <table id="mConfidence"></table>
     </div>

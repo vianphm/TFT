@@ -132,4 +132,104 @@ test('mon co ban thua duoc bao lai', () => {
   assert.deepStrictEqual(plan.leftover, ['belt']);
 });
 
+console.log('\nNen chuyen doi hinh nao');
+const compLib = [
+  { id: 'a', name: 'Dang danh do', units: [{ name: 'A', star: 3 }, { name: 'B', star: 3 }, { name: 'C', star: 2 }] },
+  { id: 'b', name: 'Lam lai tu dau', units: [{ name: 'E', star: 2 }, { name: 'F', star: 2 }, { name: 'G', star: 2 }] }
+];
+test('doi hinh da co san nhieu tuong duoc xep tren', () => {
+  const out = analyzer.pivotSuggestions([{ name: 'A' }, { name: 'B' }], compLib, dataset, { level: 8 });
+  assert.strictEqual(out[0].id, 'a');
+  assert.ok(out[0].rank > out[1].rank);
+});
+test('tinh dung ti le tuong da co va tuong con thieu', () => {
+  const out = analyzer.pivotSuggestions([{ name: 'A' }, { name: 'B' }], compLib, dataset, { level: 8 });
+  const first = out.find((x) => x.id === 'a');
+  assert.strictEqual(first.overlap, 67);
+  assert.deepStrictEqual(first.missing, ['C']);
+});
+test('gom tuong 3 sao ton nhieu vang hon 2 sao', () => {
+  const cheap = analyzer.pivotSuggestions([], [{ id: 'x', name: 'x', units: [{ name: 'A', star: 2 }] }], dataset, { level: 8 });
+  const pricey = analyzer.pivotSuggestions([], [{ id: 'y', name: 'y', units: [{ name: 'A', star: 3 }] }], dataset, { level: 8 });
+  assert.ok(pricey[0].estGold > cheap[0].estGold);
+});
+test('thu vien rong thi tra ve rong', () => {
+  assert.deepStrictEqual(analyzer.pivotSuggestions([{ name: 'A' }], [], dataset, {}), []);
+});
+
+console.log('\nRoll hay len cap');
+test('ba phuong an deu co xac suat trong khoang 0..1', () => {
+  const r = calc.rollVsLevel({ gold: 50, level: 7, xp: 0, cost: 4, copiesNeeded: 2 });
+  assert.strictEqual(r.options.length, 3);
+  r.options.forEach((o) => {
+    assert.ok(o.probability >= 0 && o.probability <= 1, o.label + ': ' + o.probability);
+  });
+});
+test('len cap 8 tu 0 XP ton 48 vang nen gan het vang de roll', () => {
+  const r = calc.rollVsLevel({ gold: 50, level: 7, xp: 0, cost: 4, copiesNeeded: 1 });
+  const lv = r.options.find((o) => o.key === 'level');
+  assert.strictEqual(lv.levelGold, 48);
+  assert.strictEqual(lv.rolls, 1);
+});
+test('gan du XP thi len cap roi roll an dut roll o cap thap', () => {
+  // Con 4 XP nua la len 8 -> chi ton 4 vang, doi lai ti le tuong 4 vang tu 15% len 22%
+  const r = calc.rollVsLevel({ gold: 60, level: 7, xp: 44, cost: 4, copiesNeeded: 2 });
+  const now = r.options.find((o) => o.key === 'roll');
+  const lv = r.options.find((o) => o.key === 'level');
+  assert.strictEqual(lv.levelGold, 4);
+  assert.ok(lv.probability > now.probability, `${lv.probability} phai > ${now.probability}`);
+  assert.strictEqual(r.best, 'level');
+});
+test('tu 0 XP thi 48 vang tien len cap dat hon la roll them', () => {
+  // Ket qua do duoc: voi 60-120 vang, roll thang o cap 7 van hon len 8 truoc;
+  // phai tren khoang 150 vang len cap moi bat dau co loi.
+  const little = calc.rollVsLevel({ gold: 60, level: 7, xp: 0, cost: 4, copiesNeeded: 2, copiesTakenByOthers: 3 });
+  assert.strictEqual(little.best, 'roll');
+  const lots = calc.rollVsLevel({ gold: 200, level: 7, xp: 0, cost: 4, copiesNeeded: 2, copiesTakenByOthers: 3 });
+  const lvBig = lots.options.find((o) => o.key === 'level');
+  const rollBig = lots.options.find((o) => o.key === 'roll');
+  assert.ok(lvBig.probability > rollBig.probability);
+});
+test('giu vang lai thi so lan roll giam', () => {
+  const all = calc.rollVsLevel({ gold: 60, level: 8, cost: 4, copiesNeeded: 1, keepGold: 0 });
+  const keep = calc.rollVsLevel({ gold: 60, level: 8, cost: 4, copiesNeeded: 1, keepGold: 30 });
+  assert.ok(keep.options[0].rolls < all.options[0].rolls);
+});
+test('cho mot vong thi doi thu vet bot ban sao', () => {
+  const safe = calc.rollVsLevel({ gold: 40, level: 8, cost: 4, copiesNeeded: 1, expectedExtraTaken: 0 });
+  const risky = calc.rollVsLevel({ gold: 40, level: 8, cost: 4, copiesNeeded: 1, expectedExtraTaken: 4 });
+  const a = safe.options.find((o) => o.key === 'wait').probability;
+  const b = risky.options.find((o) => o.key === 'wait').probability;
+  assert.ok(b < a);
+});
+
+console.log('\nChia trang bi cho tung tuong');
+const board = [
+  { name: 'Carry', carry: true, items: ['Infinity Edge', 'Last Whisper'] },
+  { name: 'Tank', carry: false, items: ['Bramble Vest'] }
+];
+test('carry duoc uu tien nhan do truoc', () => {
+  const plan = calc.assignItems(board, ['bf', 'glove', 'vest', 'vest']);
+  assert.strictEqual(plan.units[0].unit, 'Carry');
+  assert.strictEqual(plan.units[0].done[0].item, 'Infinity Edge');
+});
+test('bao dung tuong nao con thieu do gi', () => {
+  const plan = calc.assignItems(board, ['bf', 'glove']);
+  const tank = plan.units.find((u) => u.unit === 'Tank');
+  assert.strictEqual(tank.done.length, 0);
+  assert.strictEqual(tank.missing[0].item, 'Bramble Vest');
+});
+test('mon co ban thua duoc tra ve', () => {
+  const plan = calc.assignItems(board, ['bf', 'glove', 'vest', 'vest', 'belt']);
+  assert.deepStrictEqual(plan.leftover, ['belt']);
+});
+test('khong dung chung mot mon cho hai tuong', () => {
+  const plan = calc.assignItems(
+    [{ name: 'A', carry: true, items: ['Blue Buff'] }, { name: 'B', items: ['Blue Buff'] }],
+    ['tear', 'tear']
+  );
+  assert.strictEqual(plan.units[0].done.length, 1);
+  assert.strictEqual(plan.units[1].done.length, 0);
+});
+
 console.log(`\n${passed} phep thu da qua.\n`);

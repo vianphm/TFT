@@ -11,6 +11,12 @@
 (function (global) {
   'use strict';
 
+  var calc = (global.TFT && global.TFT.calc) ||
+    (typeof require !== 'undefined' ? require('./calc.js') : null);
+
+  // So ban sao can de len sao (tinh tu con so 0)
+  var COPIES_FOR_STAR = { 1: 1, 2: 3, 3: 9 };
+
   var DEFAULT_WEIGHTS = {
     tierBase: 10,      // diem cho moc dau tien cua mot toc he
     tierGrowth: 2.2,   // moc cao hon nhan them (luy thua) -> uu tien bat sau thay vi bat rong
@@ -188,6 +194,70 @@
     };
   }
 
+  // ------------------------------------------------------- nen chuyen doi hinh nao
+
+  /**
+   * Dang cam nhung tuong nay thi chuyen sang doi hinh nao la re nhat?
+   *
+   * Voi tung doi hinh trong thu vien: dem tuong da co, uoc luong so vang con phai
+   * bo ra de gom du tuong con thieu (theo ti le roll o cap hien tai va do sau kho tuong),
+   * roi xep hang theo diem toc he chia cho chi phi. Doi hinh manh ma dang do sang
+   * mot nua se dung tren doi hinh manh hon nhung phai lam lai tu dau.
+   */
+  function pivotSuggestions(currentUnits, comps, dataset, options) {
+    var opts = options || {};
+    var level = opts.level || 8;
+    var owned = {};
+    (currentUnits || []).forEach(function (u) { owned[String(u.name || '').toLowerCase()] = u; });
+
+    var champByName = {};
+    (dataset.champions || []).forEach(function (c) { champByName[c.name.toLowerCase()] = c; });
+
+    return (comps || []).map(function (comp) {
+      var units = comp.units || [];
+      var have = [];
+      var missing = [];
+
+      units.forEach(function (unit) {
+        var key = String(unit.name || '').toLowerCase();
+        if (owned[key]) have.push(unit.name);
+        else missing.push(unit);
+      });
+
+      var goldNeeded = 0;
+      var unreachable = false;
+      missing.forEach(function (unit) {
+        var champ = champByName[String(unit.name || '').toLowerCase()];
+        var cost = (champ && champ.cost) || unit.cost || 1;
+        var copies = COPIES_FOR_STAR[unit.star || 2] || 3;
+        var one = calc.rollOutcome({
+          level: level, cost: cost, rolls: 1, copiesNeeded: 1,
+          copiesOwnedByYou: 0, copiesTakenByOthers: opts.copiesTakenByOthers || 0
+        }).expectedGoldForOne;
+        if (!isFinite(one)) { unreachable = true; return; }
+        goldNeeded += one * copies;
+      });
+
+      var breakdown = traitBreakdown(units, dataset, opts);
+      var estGold = unreachable ? Infinity : Math.round(goldNeeded);
+      var ratio = units.length ? have.length / units.length : 0;
+
+      return {
+        id: comp.id,
+        name: comp.name,
+        tier: comp.tier || '',
+        have: have,
+        missing: missing.map(function (u) { return u.name; }),
+        overlap: Math.round(ratio * 100),
+        estGold: estGold,
+        traitScore: breakdown.score,
+        activeTraits: breakdown.active.map(function (t) { return t.name + ' ' + t.activeAt; }),
+        // Diem xep hang: doi hinh manh, dang co san nhieu tuong, con it vang phai bo ra
+        rank: Math.round((breakdown.score * (0.4 + 0.6 * ratio)) / (1 + (isFinite(estGold) ? estGold : 999) / 120) * 100) / 100
+      };
+    }).sort(function (a, b) { return b.rank - a.rank; }).slice(0, opts.limit || 5);
+  }
+
   // ------------------------------------------------------------------- utils
 
   function indexTraits(dataset) {
@@ -224,7 +294,9 @@
     DEFAULT_WEIGHTS: DEFAULT_WEIGHTS,
     traitBreakdown: traitBreakdown,
     suggestNextUnit: suggestNextUnit,
-    optimizeComp: optimizeComp
+    optimizeComp: optimizeComp,
+    pivotSuggestions: pivotSuggestions,
+    COPIES_FOR_STAR: COPIES_FOR_STAR
   };
 
   global.TFT = global.TFT || {};

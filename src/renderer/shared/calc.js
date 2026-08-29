@@ -260,6 +260,98 @@
     }, 0);
   }
 
+  // ------------------------------------------------ roll bay gio hay len cap?
+
+  /**
+   * So sanh ba lua chon quen thuoc khi dang san mot con tuong:
+   *   A. Roll het vang o cap hien tai
+   *   B. Mua XP len cap roi roll so vang con lai (ti le tot hon nhung it lan roll hon)
+   *   C. Giu vang an lai, vong sau roll (nhieu vang hon nhung cham mot vong,
+   *      va doi thu co the vet mat ban sao)
+   *
+   * Tra ve xac suat trung cua tung phuong an de nguoi choi tu quyet, kem goi y.
+   */
+  function rollVsLevel(opts) {
+    var gold = num(opts.gold);
+    var level = clampInt(opts.level, 1, 11);
+    var xp = num(opts.xp);
+    var need = Math.max(1, num(opts.copiesNeeded) || 1);
+    var keep = num(opts.keepGold);          // vang muon giu lai (an lai)
+    var base = {
+      cost: opts.cost,
+      copiesOwnedByYou: opts.copiesOwnedByYou,
+      copiesTakenByOthers: opts.copiesTakenByOthers,
+      championsOutOfPool: opts.championsOutOfPool,
+      copiesNeeded: need
+    };
+
+    var spendable = Math.max(0, gold - keep);
+
+    // A. roll ngay
+    var rollsNow = Math.floor(spendable / T.ROLL_COST);
+    var now = rollOutcome(Object.assign({}, base, { level: level, rolls: rollsNow }));
+
+    // B. len cap truoc
+    var up = levelCost(level, xp, level + 1);
+    var afterLevel = Math.max(0, spendable - up.gold);
+    var rollsAfter = Math.floor(afterLevel / T.ROLL_COST);
+    var levelled = rollOutcome(Object.assign({}, base, { level: level + 1, rolls: rollsAfter }));
+
+    // C. cho mot vong (co them thu nhap, doi thu co the lay them ban sao)
+    var income = incomeNextRound({ gold: gold, streak: num(opts.streak), win: Boolean(opts.win) });
+    var goldNextRound = gold + income.total;
+    var rollsLater = Math.floor(Math.max(0, goldNextRound - keep) / T.ROLL_COST);
+    var extraTaken = num(opts.expectedExtraTaken);  // uoc luong ban sao bi nguoi khac lay them
+    var later = rollOutcome(Object.assign({}, base, {
+      level: level,
+      rolls: rollsLater,
+      copiesTakenByOthers: num(opts.copiesTakenByOthers) + extraTaken
+    }));
+
+    // Chi tra ve so lieu; phan chu hien ra man hinh do giao dien tu dat.
+    var options = [
+      { key: 'roll', level: level, rolls: rollsNow, gold: rollsNow * T.ROLL_COST,
+        probability: now.probabilityAtLeastNeeded },
+      { key: 'level', level: level + 1, rolls: rollsAfter,
+        gold: up.gold + rollsAfter * T.ROLL_COST, levelGold: up.gold,
+        probability: levelled.probabilityAtLeastNeeded },
+      { key: 'wait', level: level, rolls: rollsLater, gold: rollsLater * T.ROLL_COST,
+        income: income.total, probability: later.probabilityAtLeastNeeded }
+    ];
+
+    var best = options.slice().sort(function (a, b) { return b.probability - a.probability; })[0];
+    return { options: options, best: best.key, bestOption: best };
+  }
+
+  // ----------------------------------------------- chia trang bi cho tung tuong
+
+  /**
+   * Chia mon co ban dang co cho cac tuong trong doi hinh.
+   * Uu tien carry truoc, roi den tuong dung dau danh sach; moi tuong toi da 3 mon.
+   * Tra ve tung tuong ghep duoc gi, con thieu gi, va phan con thua.
+   */
+  function assignItems(units, componentIds) {
+    var pool = (componentIds || []).slice();
+    var ordered = (units || []).slice().sort(function (a, b) {
+      return (b.carry ? 1 : 0) - (a.carry ? 1 : 0);
+    });
+
+    var rows = ordered.map(function (unit) {
+      var wishlist = (unit.items || []).slice(0, 3);
+      var plan = bestItemPlan(pool, wishlist);
+      pool = plan.leftover;
+      return {
+        unit: unit.name,
+        carry: Boolean(unit.carry),
+        done: plan.crafted,
+        missing: plan.missing,
+        complete: plan.missing.length === 0 && wishlist.length > 0
+      };
+    });
+
+    return { units: rows, leftover: pool };
+  }
+
   // ---------------------------------------------------------------- rounds
 
   /** Danh sach vong tiep theo kem ghi chu (chon do, lo bai tang, quai). */
@@ -324,6 +416,8 @@
     craftable: craftable,
     missingFor: missingFor,
     bestItemPlan: bestItemPlan,
+    rollVsLevel: rollVsLevel,
+    assignItems: assignItems,
     upcomingRounds: upcomingRounds,
     parseRound: parseRound,
     percent: percent
