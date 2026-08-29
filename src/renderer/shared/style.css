@@ -1,0 +1,127 @@
+/* Bang mau + thanh phan dung chung cho ca overlay, dashboard va cai dat */
+:root {
+  --bg: #0d1117;
+  --bg-soft: #151b23;
+  --bg-raise: #1c242e;
+  --line: #2a3441;
+  --text: #e6edf3;
+  --muted: #8b98a5;
+  --gold: #c8aa6e;
+  --gold-dim: #8a733f;
+  --blue: #4a9eda;
+  --green: #3fb950;
+  --red: #f85149;
+  --purple: #a371f7;
+  --cost1: #9aa4af;
+  --cost2: #3fb950;
+  --cost3: #4a9eda;
+  --cost4: #a371f7;
+  --cost5: #e3b341;
+  --radius: 10px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, .45);
+}
+
+* { box-sizing: border-box; }
+
+input[type="range"], input[type="checkbox"] { accent-color: var(--gold); }
+
+body {
+  margin: 0;
+  font: 13px/1.5 "Segoe UI", system-ui, -apple-system, "Noto Sans", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+h1, h2, h3, h4 { margin: 0 0 8px; font-weight: 600; }
+h1 { font-size: 18px; }
+h2 { font-size: 15px; }
+h3 { font-size: 13px; color: var(--gold); text-transform: uppercase; letter-spacing: .06em; }
+
+a { color: var(--blue); }
+
+button {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg-raise);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background .12s, border-color .12s;
+}
+button:hover { background: #26303c; border-color: var(--gold-dim); }
+button.primary { background: var(--gold); border-color: var(--gold); color: #1a1409; font-weight: 600; }
+button.primary:hover { background: #d9bd80; }
+button.ghost { background: transparent; }
+button.danger:hover { border-color: var(--red); color: var(--red); }
+button[aria-pressed="true"] { border-color: var(--gold); color: var(--gold); }
+
+input, select, textarea {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 9px;
+  width: 100%;
+}
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold-dim); }
+input[type="range"] { padding: 0; }
+textarea { resize: vertical; min-height: 70px; }
+label { display: block; font-size: 11px; color: var(--muted); margin-bottom: 3px; }
+
+.field { margin-bottom: 10px; }
+.row { display: flex; gap: 10px; }
+.row > * { flex: 1; min-width: 0; }
+.stack { display: flex; flex-direction: column; gap: 10px; }
+.muted { color: var(--muted); }
+.small { font-size: 11px; }
+.right { text-align: right; }
+.spacer { flex: 1; }
+.hidden { display: none !important; }
+
+.card {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  border: 1px solid var(--line);
+  background: var(--bg-raise);
+}
+.badge.s { color: #ff8a5b; border-color: #ff8a5b55; }
+.badge.a { color: var(--purple); border-color: #a371f755; }
+.badge.b { color: var(--blue); border-color: #4a9eda55; }
+
+.cost-1 { color: var(--cost1); }
+.cost-2 { color: var(--cost2); }
+.cost-3 { color: var(--cost3); }
+.cost-4 { color: var(--cost4); }
+.cost-5 { color: var(--cost5); }
+.bd-1 { border-color: var(--cost1); }
+.bd-2 { border-color: var(--cost2); }
+.bd-3 { border-color: var(--cost3); }
+.bd-4 { border-color: var(--cost4); }
+.bd-5 { border-color: var(--cost5); }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 5px 7px; text-align: left; border-bottom: 1px solid var(--line); }
+th { color: var(--muted); font-weight: 500; font-size: 11px; text-transform: uppercase; }
+tr:last-child td { border-bottom: none; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+.kv { display: flex; justify-content: space-between; gap: 8px; padding: 3px 0; }
+.kv b { font-variant-numeric: tabular-nums; }
+
+.bar { height: 6px; background: var(--bg-raise); border-radius: 999px; overflow: hidden; }
+.bar > i { display: block; height: 100%; background: linear-gradient(90deg, var(--gold-dim), var(--gold)); }
+
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-thumb { background: #2c3542; border-radius: 9px; }
+::-webkit-scrollbar-track { background: transparent; }

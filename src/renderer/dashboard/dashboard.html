@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'none'" />
+  <title>TFT Companion</title>
+  <link rel="stylesheet" href="../shared/style.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand"><span class="logo">T</span> TFT Companion</div>
+    <nav class="tabs">
+      <button class="tab" data-tab="comps">Doi hinh</button>
+      <button class="tab" data-tab="items">Trang bi</button>
+      <button class="tab" data-tab="odds">Ti le roll</button>
+      <button class="tab" data-tab="econ">Kinh te &amp; cap</button>
+      <button class="tab" data-tab="champs">Tuong trong set</button>
+      <button class="tab" data-tab="tools">Overlay &amp; cai dat</button>
+    </nav>
+    <div class="side-foot">
+      <div class="status"><span class="dot" id="gameDot"></span><span id="gameText">Chua chay game</span></div>
+      <div class="small muted" id="setInfo">Chua dong bo du lieu</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <!-- ================================================== DOI HINH -->
+    <section class="page" data-page="comps">
+      <div class="page-head">
+        <h1>Doi hinh</h1>
+        <div class="actions">
+          <button id="compNew">+ Tao moi</button>
+          <button id="compImport">Nhap tu web / van ban</button>
+          <button id="compExport">Xuat JSON</button>
+        </div>
+      </div>
+      <div class="comp-layout">
+        <div class="comp-list card" id="compList"></div>
+        <div class="comp-editor card" id="compEditor"></div>
+      </div>
+    </section>
+
+    <!-- ================================================== TRANG BI -->
+    <section class="page hidden" data-page="items">
+      <div class="page-head"><h1>Trang bi</h1></div>
+      <div class="two-col">
+        <div class="card">
+          <h3>Bang ghep do</h3>
+          <div class="grid-wrap"><table class="recipe-grid big" id="dashRecipeGrid"></table></div>
+          <div id="dashRecipeHint" class="muted small" style="margin-top:8px">Ro chuot vao o de xem chi tiet.</div>
+        </div>
+        <div class="stack">
+          <div class="card">
+            <h3>Tui do cua ban</h3>
+            <div class="chips" id="bagPicker"></div>
+            <div id="bagResult" style="margin-top:10px"></div>
+          </div>
+          <div class="card">
+            <h3>Can gi de ghep mon nay</h3>
+            <select id="itemTarget"></select>
+            <div id="itemNeed" style="margin-top:8px"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================== TI LE ROLL -->
+    <section class="page hidden" data-page="odds">
+      <div class="page-head"><h1>Ti le roll &amp; kho tuong</h1></div>
+      <div class="two-col">
+        <div class="card">
+          <h3>Tinh xac suat</h3>
+          <div class="row">
+            <div class="field"><label>Cap cua ban</label><input type="number" id="dLevel" min="1" max="11" /></div>
+            <div class="field"><label>Gia tuong can tim</label>
+              <select id="dCost"><option value="1">1 vang</option><option value="2">2 vang</option><option value="3">3 vang</option><option value="4">4 vang</option><option value="5">5 vang</option></select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="field"><label>Ban sao ban dang cam</label><input type="number" id="dOwned" min="0" /></div>
+            <div class="field"><label>Ban sao nguoi khac cam</label><input type="number" id="dTaken" min="0" /></div>
+          </div>
+          <div class="row">
+            <div class="field"><label>Tuong cung gia da bi vet</label><input type="number" id="dOut" min="0" /></div>
+            <div class="field"><label>So ban sao can them</label><input type="number" id="dNeed" min="1" max="9" /></div>
+          </div>
+          <div class="field">
+            <label>Vang danh de roll: <b id="dGoldLabel">40</b> (<span id="dRollsLabel">20</span> lan)</label>
+            <input type="range" id="dGold" min="2" max="120" step="2" />
+          </div>
+          <div id="dResult"></div>
+        </div>
+        <div class="stack">
+          <div class="card">
+            <h3>Vang can de dat muc chac chan</h3>
+            <table id="dConfidence"></table>
+          </div>
+          <div class="card">
+            <h3>Bang ti le cua hang theo cap</h3>
+            <table id="dOddsTable"></table>
+          </div>
+          <div class="card">
+            <h3>Kho tuong chung</h3>
+            <table id="dPoolTable"></table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================== KINH TE -->
+    <section class="page hidden" data-page="econ">
+      <div class="page-head"><h1>Kinh te &amp; len cap</h1></div>
+      <div class="two-col">
+        <div class="card">
+          <h3>Tinh thu nhap</h3>
+          <div class="row">
+            <div class="field"><label>Vang hien co</label><input type="number" id="eGold" min="0" /></div>
+            <div class="field"><label>Chuoi thang/thua</label><input type="number" id="eStreak" /></div>
+          </div>
+          <div class="row">
+            <div class="field"><label>Tieu moi vong</label><input type="number" id="eSpend" min="0" /></div>
+            <div class="field"><label>So vong du bao</label><input type="number" id="eRounds" min="1" max="15" /></div>
+          </div>
+          <div class="field"><label><input type="checkbox" id="eWin" style="width:auto" /> Thang vong nay</label></div>
+          <div id="eResult"></div>
+          <table id="eProjection" style="margin-top:10px"></table>
+        </div>
+        <div class="stack">
+          <div class="card">
+            <h3>Len cap het bao nhieu</h3>
+            <div class="row">
+              <div class="field"><label>Cap hien tai</label><input type="number" id="lLevel" min="1" max="10" /></div>
+              <div class="field"><label>XP dang co</label><input type="number" id="lXp" min="0" /></div>
+              <div class="field"><label>Muon len cap</label><input type="number" id="lTarget" min="2" max="11" /></div>
+            </div>
+            <div id="lResult"></div>
+          </div>
+          <div class="card">
+            <h3>Bang XP</h3>
+            <table id="lTable"></table>
+          </div>
+          <div class="card">
+            <h3>Lo trinh len cap tham khao</h3>
+            <table id="roadmapTable"></table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================== TUONG -->
+    <section class="page hidden" data-page="champs">
+      <div class="page-head">
+        <h1>Tuong trong set</h1>
+        <div class="actions">
+          <input id="champSearch" placeholder="Tim tuong hoac toc/he..." style="width:240px" />
+          <button id="syncData" class="primary">Dong bo du lieu set</button>
+        </div>
+      </div>
+      <div id="champBoard"></div>
+    </section>
+
+    <!-- ================================================== CAI DAT NHANH -->
+    <section class="page hidden" data-page="tools">
+      <div class="page-head"><h1>Overlay &amp; cai dat</h1></div>
+      <div class="two-col">
+        <div class="card">
+          <h3>Overlay</h3>
+          <div class="field"><label>Man hinh hien overlay</label><select id="overlayDisplay"></select></div>
+          <div class="field"><label>Do mo: <b id="opacityLabel">92%</b></label><input type="range" id="opacity" min="20" max="100" /></div>
+          <div class="row">
+            <button id="toggleOverlay">Bat/tat overlay</button>
+            <button id="toggleLock">Khoa/mo chuot</button>
+          </div>
+          <div class="field" style="margin-top:10px">
+            <label><input type="checkbox" id="autoShow" style="width:auto" /> Tu bat overlay khi phat hien game chay</label>
+          </div>
+          <h3 style="margin-top:14px">Widget hien tren overlay</h3>
+          <div class="chips" id="widgetToggles"></div>
+        </div>
+        <div class="stack">
+          <div class="card">
+            <h3>Dashboard nay</h3>
+            <div class="field"><label>Man hinh hien dashboard</label><select id="dashDisplay"></select></div>
+            <div class="small muted">Meo: de dashboard o man hinh phu, overlay o man hinh choi game.</div>
+          </div>
+          <div class="card">
+            <h3>Phim tat</h3>
+            <table id="hotkeyTable"></table>
+            <div class="small muted" style="margin-top:6px">Doi phim trong cua so Cai dat.</div>
+            <button id="openSettings" style="margin-top:8px">Mo cai dat day du</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Hop thoai nhap doi hinh -->
+<div class="modal hidden" id="importModal">
+  <div class="modal-box card">
+    <h2>Nhap doi hinh</h2>
+    <div class="field">
+      <label>Tu duong dan trang meta (metatft.gg, doihinhtft.vn, mobalytics...)</label>
+      <div class="row">
+        <input id="importUrl" placeholder="https://..." />
+        <button id="importUrlGo" style="flex:0 0 auto">Tai ve</button>
+      </div>
+    </div>
+    <div class="field">
+      <label>Hoac dan noi dung trang / JSON xuat tu app</label>
+      <textarea id="importText" rows="8" placeholder="Dan HTML, van ban hoac JSON vao day..."></textarea>
+    </div>
+    <div id="importMsg" class="small"></div>
+    <div class="row" style="margin-top:10px">
+      <button id="importTextGo" class="primary">Nhap tu van ban</button>
+      <button id="importClose">Dong</button>
+    </div>
+    <div class="small muted" style="margin-top:8px">
+      App do ten tuong theo du lieu set da dong bo, nen hay bam "Dong bo du lieu set" truoc khi nhap.
+      Ket qua la ban nhap - kiem tra lai vi tri va trang bi truoc khi dung.
+    </div>
+  </div>
+</div>
+
+<script src="../shared/tables.js"></script>
+<script src="../shared/calc.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

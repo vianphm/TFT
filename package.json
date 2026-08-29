@@ -1,0 +1,31 @@
+{
+  "name": "tft-companion",
+  "version": "0.1.0",
+  "description": "TFT Companion - overlay trong game + dashboard cho man hinh phu",
+  "main": "src/main/main.js",
+  "author": "vianphm",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "dist": "electron-builder",
+    "pack": "electron-builder --dir",
+    "test": "node test/calc.test.js",
+    "smoke": "TFT_SMOKE=1 electron . --no-sandbox",
+    "icons": "node scripts/make-icons.js",
+    "data:fallback": "node scripts/make-fallback.js"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.vianphm.tftcompanion",
+    "productName": "TFT Companion",
+    "files": ["src/**/*", "assets/**/*", "package.json"],
+    "win": { "target": ["nsis"] },
+    "mac": { "target": ["dmg"] },
+    "linux": { "target": ["AppImage"] }
+  }
+}

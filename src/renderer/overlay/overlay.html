@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'none'" />
+  <title>TFT Companion Overlay</title>
+  <link rel="stylesheet" href="../shared/style.css" />
+  <link rel="stylesheet" href="overlay.css" />
+</head>
+<body class="overlay-body">
+  <!-- Thanh trang thai nho o giua tren -->
+  <div class="hud" id="hud" data-hit>
+    <span class="dot" id="hudDot"></span>
+    <span id="hudState">Da khoa</span>
+    <span class="sep"></span>
+    <button class="mini" data-widget-toggle="odds" title="Ti le roll">Roll</button>
+    <button class="mini" data-widget-toggle="econ" title="Kinh te">Vang</button>
+    <button class="mini" data-widget-toggle="timer" title="Vong dau">Vong</button>
+    <button class="mini" data-widget-toggle="items" title="Cong thuc do">Do</button>
+    <button class="mini" data-widget-toggle="comp" title="Doi hinh">Doi hinh</button>
+    <button class="mini" data-widget-toggle="notes" title="Ghi chu">Ghi chu</button>
+    <span class="sep"></span>
+    <span class="hint" id="hudHint">Ctrl+Shift+E de mo khoa chuot</span>
+  </div>
+
+  <!-- Widget: ti le roll ------------------------------------------------ -->
+  <section class="widget" data-widget="odds" data-hit>
+    <header class="widget-head">
+      <span class="grip">Ti le roll</span>
+      <button class="icon" data-collapse>-</button>
+      <button class="icon" data-close>x</button>
+    </header>
+    <div class="widget-body">
+      <div class="row">
+        <div><label>Cap</label><input type="number" id="oddsLevel" min="1" max="11" /></div>
+        <div><label>Gia tuong</label>
+          <select id="oddsCost">
+            <option value="1">1 vang</option><option value="2">2 vang</option>
+            <option value="3">3 vang</option><option value="4">4 vang</option>
+            <option value="5">5 vang</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div><label>Minh dang cam</label><input type="number" id="oddsOwned" min="0" /></div>
+        <div><label>Nguoi khac cam</label><input type="number" id="oddsTaken" min="0" /></div>
+      </div>
+      <div class="field">
+        <label>So lan roll: <b id="oddsRollsLabel">10</b> (<span id="oddsGold">20</span> vang)</label>
+        <input type="range" id="oddsRolls" min="1" max="40" />
+      </div>
+      <div class="result" id="oddsResult"></div>
+      <table class="odds-table"><tbody id="oddsTable"></tbody></table>
+    </div>
+  </section>
+
+  <!-- Widget: kinh te ---------------------------------------------------- -->
+  <section class="widget" data-widget="econ" data-hit>
+    <header class="widget-head">
+      <span class="grip">Kinh te</span>
+      <button class="icon" data-collapse>-</button>
+      <button class="icon" data-close>x</button>
+    </header>
+    <div class="widget-body">
+      <div class="row">
+        <div><label>Vang</label><input type="number" id="econGold" min="0" /></div>
+        <div><label>Chuoi</label><input type="number" id="econStreak" /></div>
+      </div>
+      <div class="row">
+        <div><label>Cap</label><input type="number" id="econLevel" min="1" max="11" /></div>
+        <div><label>XP dang co</label><input type="number" id="econXp" min="0" /></div>
+      </div>
+      <div class="result" id="econResult"></div>
+      <div class="result small" id="econPlan"></div>
+    </div>
+  </section>
+
+  <!-- Widget: vong dau --------------------------------------------------- -->
+  <section class="widget" data-widget="timer" data-hit>
+    <header class="widget-head">
+      <span class="grip">Vong dau</span>
+      <button class="icon" data-collapse>-</button>
+      <button class="icon" data-close>x</button>
+    </header>
+    <div class="widget-body">
+      <div class="round-line">
+        <button class="icon" id="roundPrev">&lt;</button>
+        <input id="roundNow" class="round-input" />
+        <button class="icon" id="roundNext">&gt;</button>
+        <button class="icon" id="roundTimer" title="Bam de dem nguoc 30 giay">30s</button>
+        <span class="countdown" id="countdown"></span>
+      </div>
+      <div class="result" id="roundResult"></div>
+    </div>
+  </section>
+
+  <!-- Widget: cong thuc do ----------------------------------------------- -->
+  <section class="widget wide" data-widget="items" data-hit>
+    <header class="widget-head">
+      <span class="grip">Cong thuc do</span>
+      <button class="icon" data-collapse>-</button>
+      <button class="icon" data-close>x</button>
+    </header>
+    <div class="widget-body">
+      <div class="grid-wrap"><table class="recipe-grid" id="recipeGrid"></table></div>
+      <div class="result small" id="recipeHint">Ro chuot vao o de xem ten do.</div>
+    </div>
+  </section>
+
+  <!-- Widget: doi hinh --------------------------------------------------- -->
+  <section class="widget" data-widget="comp" data-hit>
+    <header class="widget-head">
+      <span class="grip">Doi hinh</span>
+      <button class="icon" data-collapse>-</button>
+      <button class="icon" data-close>x</button>
+    </header>
+    <div class="widget-body">
+      <select id="compPick"></select>
+      <div class="result" id="compBody"></div>
+    </div>
+  </section>
+
+  <!-- Widget: ghi chu ---------------------------------------------------- -->
+  <section class="widget" data-widget="notes" data-hit>
+    <header class="widget-head">
+      <span class="grip">Ghi chu / soi doi thu</span>
+      <button class="icon" data-collapse>-</button>
+      <button class="icon" data-close>x</button>
+    </header>
+    <div class="widget-body">
+      <textarea id="notes" placeholder="Vi du: nha 3 an Ahri, nha 7 tranh do phep..."></textarea>
+    </div>
+  </section>
+
+  <script src="../shared/tables.js"></script>
+  <script src="../shared/calc.js"></script>
+  <script src="overlay.js"></script>
+</body>
+</html>

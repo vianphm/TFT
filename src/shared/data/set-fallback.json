@@ -1,0 +1,472 @@
+{
+  "source": "bundled",
+  "syncedAt": null,
+  "setNumber": null,
+  "setName": "Chua dong bo du lieu set",
+  "champions": [],
+  "traits": [],
+  "components": [
+    {
+      "apiName": "bf",
+      "name": "B.F. Sword",
+      "vi": "Kiem B.F.",
+      "stat": "+10% Suc manh cong kich"
+    },
+    {
+      "apiName": "bow",
+      "name": "Recurve Bow",
+      "vi": "Cung Cong",
+      "stat": "+10% Toc do danh"
+    },
+    {
+      "apiName": "rod",
+      "name": "Needlessly Large Rod",
+      "vi": "Gay Phep Lon",
+      "stat": "+10 Suc manh phep thuat"
+    },
+    {
+      "apiName": "tear",
+      "name": "Tear of the Goddess",
+      "vi": "Giot Le Nu Than",
+      "stat": "+15 Nang luong"
+    },
+    {
+      "apiName": "vest",
+      "name": "Chain Vest",
+      "vi": "Ao Choang Xich",
+      "stat": "+20 Giap"
+    },
+    {
+      "apiName": "cloak",
+      "name": "Negatron Cloak",
+      "vi": "Ao Choang Negatron",
+      "stat": "+20 Khang phep"
+    },
+    {
+      "apiName": "belt",
+      "name": "Giant's Belt",
+      "vi": "Dai Lung Khong Lo",
+      "stat": "+150 Mau"
+    },
+    {
+      "apiName": "glove",
+      "name": "Sparring Gloves",
+      "vi": "Gang Tay Tap Luyen",
+      "stat": "+5% Chi mang, +5% Ne"
+    },
+    {
+      "apiName": "spat",
+      "name": "Spatula",
+      "vi": "Xeng",
+      "stat": "Ghep ra Bieu tuong toc"
+    }
+  ],
+  "items": [
+    {
+      "apiName": "bf+bf",
+      "name": "Deathblade",
+      "composition": [
+        "bf",
+        "bf"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "bf+bow",
+      "name": "Giant Slayer",
+      "composition": [
+        "bf",
+        "bow"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "bf+rod",
+      "name": "Hextech Gunblade",
+      "composition": [
+        "bf",
+        "rod"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "bf+tear",
+      "name": "Spear of Shojin",
+      "composition": [
+        "bf",
+        "tear"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "bf+vest",
+      "name": "Edge of Night",
+      "composition": [
+        "bf",
+        "vest"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "bf+cloak",
+      "name": "Bloodthirster",
+      "composition": [
+        "bf",
+        "cloak"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "bf+belt",
+      "name": "Sterak's Gage",
+      "composition": [
+        "bf",
+        "belt"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "bf+glove",
+      "name": "Infinity Edge",
+      "composition": [
+        "bf",
+        "glove"
+      ],
+      "desc": "Chuan cho xa thu chi mang. Can them chi mang de khong phi."
+    },
+    {
+      "apiName": "bow+bow",
+      "name": "Rapid Firecannon",
+      "composition": [
+        "bow",
+        "bow"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "bow+rod",
+      "name": "Guinsoo's Rageblade",
+      "composition": [
+        "bow",
+        "rod"
+      ],
+      "desc": "Cong don toc do danh, hop tuong danh nhanh len 3 sao."
+    },
+    {
+      "apiName": "bow+tear",
+      "name": "Statikk Shiv",
+      "composition": [
+        "bow",
+        "tear"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "bow+vest",
+      "name": "Titan's Resolve",
+      "composition": [
+        "bow",
+        "vest"
+      ],
+      "desc": "Chong chiu + sat thuong, hop tuong dung tuyen dau lau."
+    },
+    {
+      "apiName": "bow+cloak",
+      "name": "Runaan's Hurricane",
+      "composition": [
+        "bow",
+        "cloak"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "bow+belt",
+      "name": "Nashor's Tooth",
+      "composition": [
+        "bow",
+        "belt"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "bow+glove",
+      "name": "Last Whisper",
+      "composition": [
+        "bow",
+        "glove"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "rod+rod",
+      "name": "Rabadon's Deathcap",
+      "composition": [
+        "rod",
+        "rod"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "rod+tear",
+      "name": "Archangel's Staff",
+      "composition": [
+        "rod",
+        "tear"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "rod+vest",
+      "name": "Crownguard",
+      "composition": [
+        "rod",
+        "vest"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "rod+cloak",
+      "name": "Ionic Spark",
+      "composition": [
+        "rod",
+        "cloak"
+      ],
+      "desc": "Giam khang phep ca vung, khac che doi phap su."
+    },
+    {
+      "apiName": "rod+belt",
+      "name": "Morellonomicon",
+      "composition": [
+        "rod",
+        "belt"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "rod+glove",
+      "name": "Jeweled Gauntlet",
+      "composition": [
+        "rod",
+        "glove"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "tear+tear",
+      "name": "Blue Buff",
+      "composition": [
+        "tear",
+        "tear"
+      ],
+      "desc": "Cho phap su ton it nang luong, giam thoi gian len chieu."
+    },
+    {
+      "apiName": "tear+vest",
+      "name": "Protector's Vow",
+      "composition": [
+        "tear",
+        "vest"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "tear+cloak",
+      "name": "Adaptive Helm",
+      "composition": [
+        "tear",
+        "cloak"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "tear+belt",
+      "name": "Redemption",
+      "composition": [
+        "tear",
+        "belt"
+      ],
+      "desc": "Hoi mau vung, tot cho do dan dung tuyen."
+    },
+    {
+      "apiName": "tear+glove",
+      "name": "Hand of Justice",
+      "composition": [
+        "tear",
+        "glove"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "vest+vest",
+      "name": "Bramble Vest",
+      "composition": [
+        "vest",
+        "vest"
+      ],
+      "desc": "Chan sat thuong chi mang, khac che doi thuong."
+    },
+    {
+      "apiName": "vest+cloak",
+      "name": "Gargoyle Stoneplate",
+      "composition": [
+        "vest",
+        "cloak"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "vest+belt",
+      "name": "Sunfire Cape",
+      "composition": [
+        "vest",
+        "belt"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "vest+glove",
+      "name": "Steadfast Heart",
+      "composition": [
+        "vest",
+        "glove"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "cloak+cloak",
+      "name": "Dragon's Claw",
+      "composition": [
+        "cloak",
+        "cloak"
+      ],
+      "desc": "Chong phap su, dung khi doi thu danh phep manh."
+    },
+    {
+      "apiName": "cloak+belt",
+      "name": "Evenshroud",
+      "composition": [
+        "cloak",
+        "belt"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "cloak+glove",
+      "name": "Quicksilver",
+      "composition": [
+        "cloak",
+        "glove"
+      ],
+      "desc": "Mien khong che dau tran, cuu carry manh."
+    },
+    {
+      "apiName": "belt+belt",
+      "name": "Warmog's Armor",
+      "composition": [
+        "belt",
+        "belt"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "belt+glove",
+      "name": "Guardbreaker",
+      "composition": [
+        "belt",
+        "glove"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "glove+glove",
+      "name": "Thief's Gloves",
+      "composition": [
+        "glove",
+        "glove"
+      ],
+      "desc": "Random 2 trang bi moi vong, hop tuong 1 vang len 3 sao."
+    },
+    {
+      "apiName": "bf+spat",
+      "name": "Bieu tuong (tuy set)",
+      "composition": [
+        "bf",
+        "spat"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "bow+spat",
+      "name": "Bieu tuong (tuy set)",
+      "composition": [
+        "bow",
+        "spat"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "rod+spat",
+      "name": "Bieu tuong (tuy set)",
+      "composition": [
+        "rod",
+        "spat"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "tear+spat",
+      "name": "Bieu tuong (tuy set)",
+      "composition": [
+        "tear",
+        "spat"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "vest+spat",
+      "name": "Bieu tuong (tuy set)",
+      "composition": [
+        "vest",
+        "spat"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "cloak+spat",
+      "name": "Bieu tuong (tuy set)",
+      "composition": [
+        "cloak",
+        "spat"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "belt+spat",
+      "name": "Bieu tuong (tuy set)",
+      "composition": [
+        "belt",
+        "spat"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "glove+spat",
+      "name": "Bieu tuong (tuy set)",
+      "composition": [
+        "glove",
+        "spat"
+      ],
+      "desc": ""
+    },
+    {
+      "apiName": "spat+spat",
+      "name": "Force of Nature",
+      "composition": [
+        "spat",
+        "spat"
+      ],
+      "desc": ""
+    }
+  ],
+  "augments": []
+}

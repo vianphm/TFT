@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'none'" />
+  <title>Cai dat - TFT Companion</title>
+  <link rel="stylesheet" href="../shared/style.css" />
+  <style>
+    body { padding: 18px 20px 40px; }
+    .sec { margin-bottom: 16px; }
+    .hk { display: grid; grid-template-columns: 1fr 190px 70px; gap: 8px; align-items: center; margin-bottom: 6px; }
+    .hk input { text-align: center; font-family: ui-monospace, Consolas, monospace; }
+    .hk input.capturing { border-color: var(--gold); color: var(--gold); }
+    .foot { display: flex; gap: 8px; margin-top: 14px; }
+    .msg { min-height: 18px; font-size: 12px; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Cai dat</h1>
+
+  <div class="card sec">
+    <h3>Chung</h3>
+    <label><input type="checkbox" id="autoShow" style="width:auto" /> Tu bat overlay khi phat hien game dang chay</label>
+    <label><input type="checkbox" id="startMin" style="width:auto" /> Khoi dong chi hien o khay he thong (khong mo dashboard)</label>
+    <label><input type="checkbox" id="clickThrough" style="width:auto" /> Khoa overlay (chuot xuyen qua khi choi)</label>
+    <div class="field" style="margin-top:10px">
+      <label>Do mo overlay: <b id="opacityLabel"></b></label>
+      <input type="range" id="opacity" min="20" max="100" />
+    </div>
+    <div class="row">
+      <div class="field"><label>Man hinh cho overlay</label><select id="overlayDisplay"></select></div>
+      <div class="field"><label>Man hinh cho dashboard</label><select id="dashDisplay"></select></div>
+    </div>
+  </div>
+
+  <div class="card sec">
+    <h3>Phim tat toan cuc</h3>
+    <div class="small muted" style="margin-bottom:8px">
+      Bam vao o roi nhan to hop phim moi. Nhan Esc de huy, Delete de xoa phim tat.
+    </div>
+    <div id="hotkeys"></div>
+    <div class="msg" id="hotkeyMsg"></div>
+  </div>
+
+  <div class="card sec">
+    <h3>Du lieu set</h3>
+    <div class="small muted" id="dataInfo"></div>
+    <div class="foot">
+      <button id="sync" class="primary">Dong bo tu Community Dragon</button>
+      <button id="openDir">Mo thu muc cau hinh</button>
+    </div>
+    <div class="msg" id="dataMsg"></div>
+  </div>
+
+  <div class="card sec">
+    <h3>Khac</h3>
+    <div class="small muted" id="appInfo"></div>
+    <div class="foot">
+      <button id="reset" class="danger ghost">Khoi phuc mac dinh</button>
+      <button id="quit" class="danger ghost">Thoat ung dung</button>
+    </div>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>
