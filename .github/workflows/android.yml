@@ -12,6 +12,9 @@ on:
       - '.github/workflows/android.yml'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -39,8 +42,32 @@ jobs:
         working-directory: android
         run: gradle assembleDebug --no-daemon
 
+      - name: Dat ten file APK theo ngay va commit
+        id: apk
+        run: |
+          mkdir -p out
+          cp android/app/build/outputs/apk/debug/app-debug.apk \
+             "out/tft-companion-$(date +%Y%m%d)-${GITHUB_SHA::7}.apk"
+          echo "path=$(ls out/*.apk)" >> "$GITHUB_OUTPUT"
+
       - uses: actions/upload-artifact@v4
         with:
           name: tft-companion-apk
-          path: android/app/build/outputs/apk/debug/*.apk
+          path: out/*.apk
           if-no-files-found: error
+
+      # Dua APK len muc Releases de tai thang tren dien thoai, khong can dang nhap
+      - name: Cap nhat ban tai ve
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: android-latest
+          name: TFT Companion - ban Android moi nhat
+          body: |
+            APK moi nhat, build tu dong tu nhanh `${{ github.ref_name }}` (commit ${{ github.sha }}).
+
+            Tai file `.apk` ben duoi bang trinh duyet dien thoai roi mo ra de cai.
+            Lan dau Android se hoi cho phep cai tu nguon nay - dong y la xong.
+            Mo app, cap quyen "Hien thi tren ung dung khac", bam bat bong bong roi vao game.
+          files: out/*.apk
+          prerelease: true
+          make_latest: false
