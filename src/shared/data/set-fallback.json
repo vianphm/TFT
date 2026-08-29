@@ -1,472 +1,4578 @@
 {
-  "source": "bundled",
-  "syncedAt": null,
-  "setNumber": null,
-  "setName": "Chua dong bo du lieu set",
-  "champions": [],
-  "traits": [],
-  "components": [
-    {
-      "apiName": "bf",
-      "name": "B.F. Sword",
-      "vi": "Kiem B.F.",
-      "stat": "+10% Suc manh cong kich"
-    },
-    {
-      "apiName": "bow",
-      "name": "Recurve Bow",
-      "vi": "Cung Cong",
-      "stat": "+10% Toc do danh"
-    },
-    {
-      "apiName": "rod",
-      "name": "Needlessly Large Rod",
-      "vi": "Gay Phep Lon",
-      "stat": "+10 Suc manh phep thuat"
-    },
-    {
-      "apiName": "tear",
-      "name": "Tear of the Goddess",
-      "vi": "Giot Le Nu Than",
-      "stat": "+15 Nang luong"
-    },
-    {
-      "apiName": "vest",
-      "name": "Chain Vest",
-      "vi": "Ao Choang Xich",
-      "stat": "+20 Giap"
-    },
-    {
-      "apiName": "cloak",
-      "name": "Negatron Cloak",
-      "vi": "Ao Choang Negatron",
-      "stat": "+20 Khang phep"
-    },
-    {
-      "apiName": "belt",
-      "name": "Giant's Belt",
-      "vi": "Dai Lung Khong Lo",
-      "stat": "+150 Mau"
-    },
-    {
-      "apiName": "glove",
-      "name": "Sparring Gloves",
-      "vi": "Gang Tay Tap Luyen",
-      "stat": "+5% Chi mang, +5% Ne"
-    },
-    {
-      "apiName": "spat",
-      "name": "Spatula",
-      "vi": "Xeng",
-      "stat": "Ghep ra Bieu tuong toc"
-    }
-  ],
-  "items": [
-    {
-      "apiName": "bf+bf",
-      "name": "Deathblade",
-      "composition": [
-        "bf",
-        "bf"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "bf+bow",
-      "name": "Giant Slayer",
-      "composition": [
-        "bf",
-        "bow"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "bf+rod",
-      "name": "Hextech Gunblade",
-      "composition": [
-        "bf",
-        "rod"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "bf+tear",
-      "name": "Spear of Shojin",
-      "composition": [
-        "bf",
-        "tear"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "bf+vest",
-      "name": "Edge of Night",
-      "composition": [
-        "bf",
-        "vest"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "bf+cloak",
-      "name": "Bloodthirster",
-      "composition": [
-        "bf",
-        "cloak"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "bf+belt",
-      "name": "Sterak's Gage",
-      "composition": [
-        "bf",
-        "belt"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "bf+glove",
-      "name": "Infinity Edge",
-      "composition": [
-        "bf",
-        "glove"
-      ],
-      "desc": "Chuan cho xa thu chi mang. Can them chi mang de khong phi."
-    },
-    {
-      "apiName": "bow+bow",
-      "name": "Rapid Firecannon",
-      "composition": [
-        "bow",
-        "bow"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "bow+rod",
-      "name": "Guinsoo's Rageblade",
-      "composition": [
-        "bow",
-        "rod"
-      ],
-      "desc": "Cong don toc do danh, hop tuong danh nhanh len 3 sao."
-    },
-    {
-      "apiName": "bow+tear",
-      "name": "Statikk Shiv",
-      "composition": [
-        "bow",
-        "tear"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "bow+vest",
-      "name": "Titan's Resolve",
-      "composition": [
-        "bow",
-        "vest"
-      ],
-      "desc": "Chong chiu + sat thuong, hop tuong dung tuyen dau lau."
-    },
-    {
-      "apiName": "bow+cloak",
-      "name": "Runaan's Hurricane",
-      "composition": [
-        "bow",
-        "cloak"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "bow+belt",
-      "name": "Nashor's Tooth",
-      "composition": [
-        "bow",
-        "belt"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "bow+glove",
-      "name": "Last Whisper",
-      "composition": [
-        "bow",
-        "glove"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "rod+rod",
-      "name": "Rabadon's Deathcap",
-      "composition": [
-        "rod",
-        "rod"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "rod+tear",
-      "name": "Archangel's Staff",
-      "composition": [
-        "rod",
-        "tear"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "rod+vest",
-      "name": "Crownguard",
-      "composition": [
-        "rod",
-        "vest"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "rod+cloak",
-      "name": "Ionic Spark",
-      "composition": [
-        "rod",
-        "cloak"
-      ],
-      "desc": "Giam khang phep ca vung, khac che doi phap su."
-    },
-    {
-      "apiName": "rod+belt",
-      "name": "Morellonomicon",
-      "composition": [
-        "rod",
-        "belt"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "rod+glove",
-      "name": "Jeweled Gauntlet",
-      "composition": [
-        "rod",
-        "glove"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "tear+tear",
-      "name": "Blue Buff",
-      "composition": [
-        "tear",
-        "tear"
-      ],
-      "desc": "Cho phap su ton it nang luong, giam thoi gian len chieu."
-    },
-    {
-      "apiName": "tear+vest",
-      "name": "Protector's Vow",
-      "composition": [
-        "tear",
-        "vest"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "tear+cloak",
-      "name": "Adaptive Helm",
-      "composition": [
-        "tear",
-        "cloak"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "tear+belt",
-      "name": "Redemption",
-      "composition": [
-        "tear",
-        "belt"
-      ],
-      "desc": "Hoi mau vung, tot cho do dan dung tuyen."
-    },
-    {
-      "apiName": "tear+glove",
-      "name": "Hand of Justice",
-      "composition": [
-        "tear",
-        "glove"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "vest+vest",
-      "name": "Bramble Vest",
-      "composition": [
-        "vest",
-        "vest"
-      ],
-      "desc": "Chan sat thuong chi mang, khac che doi thuong."
-    },
-    {
-      "apiName": "vest+cloak",
-      "name": "Gargoyle Stoneplate",
-      "composition": [
-        "vest",
-        "cloak"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "vest+belt",
-      "name": "Sunfire Cape",
-      "composition": [
-        "vest",
-        "belt"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "vest+glove",
-      "name": "Steadfast Heart",
-      "composition": [
-        "vest",
-        "glove"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "cloak+cloak",
-      "name": "Dragon's Claw",
-      "composition": [
-        "cloak",
-        "cloak"
-      ],
-      "desc": "Chong phap su, dung khi doi thu danh phep manh."
-    },
-    {
-      "apiName": "cloak+belt",
-      "name": "Evenshroud",
-      "composition": [
-        "cloak",
-        "belt"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "cloak+glove",
-      "name": "Quicksilver",
-      "composition": [
-        "cloak",
-        "glove"
-      ],
-      "desc": "Mien khong che dau tran, cuu carry manh."
-    },
-    {
-      "apiName": "belt+belt",
-      "name": "Warmog's Armor",
-      "composition": [
-        "belt",
-        "belt"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "belt+glove",
-      "name": "Guardbreaker",
-      "composition": [
-        "belt",
-        "glove"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "glove+glove",
-      "name": "Thief's Gloves",
-      "composition": [
-        "glove",
-        "glove"
-      ],
-      "desc": "Random 2 trang bi moi vong, hop tuong 1 vang len 3 sao."
-    },
-    {
-      "apiName": "bf+spat",
-      "name": "Bieu tuong (tuy set)",
-      "composition": [
-        "bf",
-        "spat"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "bow+spat",
-      "name": "Bieu tuong (tuy set)",
-      "composition": [
-        "bow",
-        "spat"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "rod+spat",
-      "name": "Bieu tuong (tuy set)",
-      "composition": [
-        "rod",
-        "spat"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "tear+spat",
-      "name": "Bieu tuong (tuy set)",
-      "composition": [
-        "tear",
-        "spat"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "vest+spat",
-      "name": "Bieu tuong (tuy set)",
-      "composition": [
-        "vest",
-        "spat"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "cloak+spat",
-      "name": "Bieu tuong (tuy set)",
-      "composition": [
-        "cloak",
-        "spat"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "belt+spat",
-      "name": "Bieu tuong (tuy set)",
-      "composition": [
-        "belt",
-        "spat"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "glove+spat",
-      "name": "Bieu tuong (tuy set)",
-      "composition": [
-        "glove",
-        "spat"
-      ],
-      "desc": ""
-    },
-    {
-      "apiName": "spat+spat",
-      "name": "Force of Nature",
-      "composition": [
-        "spat",
-        "spat"
-      ],
-      "desc": ""
-    }
-  ],
-  "augments": []
+ "source": "communitydragon",
+ "syncedAt": "2026-08-29T18:02:52.564Z",
+ "setNumber": 18,
+ "setName": "Set10",
+ "champions": [
+  {
+   "apiName": "DA_18_Akali_AD",
+   "name": "Akali",
+   "cost": 1,
+   "traits": [
+    "Inferno",
+    "Adaptor",
+    "Ravager"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_akali/skins/base/images/tft18_akali_splash_tile_2.png"
+  },
+  {
+   "apiName": "DA_18_Camille",
+   "name": "Camille",
+   "cost": 1,
+   "traits": [
+    "Coven",
+    "Ravager"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_camille/skins/base/images/tft18_camille_splash_tile_2.png"
+  },
+  {
+   "apiName": "DA_Cinderling18",
+   "name": "Cinderling",
+   "cost": 1,
+   "traits": [
+    "Riftbeast",
+    "Hunter"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_cinderling/skins/base/images/t_18_cinderling_teamplannersplash.png"
+  },
+  {
+   "apiName": "DA_Karma18",
+   "name": "Karma",
+   "cost": 1,
+   "traits": [
+    "Blossom",
+    "Spellweaver"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_karma/skins/base/images/tft18_karma_splash_tile_70.png"
+  },
+  {
+   "apiName": "DA_18_Kobuko",
+   "name": "Kobuko",
+   "cost": 1,
+   "traits": [
+    "Sprykin",
+    "Brawler"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_kobuko/skins/base/images/tft18_kobuko_splash_tile_2.png"
+  },
+  {
+   "apiName": "DA_18_Leona",
+   "name": "Leona",
+   "cost": 1,
+   "traits": [
+    "Solar",
+    "Defender"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_leona/skins/base/images/tft18_leona_splash_tile_10.png"
+  },
+  {
+   "apiName": "DA_18_Ornn",
+   "name": "Ornn",
+   "cost": 1,
+   "traits": [
+    "Elderwood",
+    "Defender"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_ornn/skins/base/images/tft18_ornn_splash_tile_2.png"
+  },
+  {
+   "apiName": "DA_18_Sentry",
+   "name": "Pebbles",
+   "cost": 1,
+   "traits": [
+    "Riftbeast",
+    "Invoker"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_sentry/skins/base/images/t_18_sentry_teamplannersplash.png"
+  },
+  {
+   "apiName": "DA_18_Rakan",
+   "name": "Rakan",
+   "cost": 1,
+   "traits": [
+    "Fae",
+    "Juggernaut",
+    "Vanguard"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_rakan/skins/base/images/tft18_rakan_splash_tile_9.png"
+  },
+  {
+   "apiName": "DA_18_RekSai",
+   "name": "Rek'Sai",
+   "cost": 1,
+   "traits": [
+    "Blackthorn",
+    "Brawler"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_reksai/skins/base/images/tft18_reksai_splash_tile_17.png"
+  },
+  {
+   "apiName": "DA_18_Varus",
+   "name": "Varus",
+   "cost": 1,
+   "traits": [
+    "Inferno",
+    "Rapidfire"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_varus/skins/base/images/tft18_varus_splash_tile_9.png"
+  },
+  {
+   "apiName": "DA_18_Veigar",
+   "name": "Veigar",
+   "cost": 1,
+   "traits": [
+    "Blackthorn",
+    "Sprykin",
+    "Spellweaver"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_veigar/skins/base/images/tft18_veigar_splash_tile_13.png"
+  },
+  {
+   "apiName": "DA_18_Xayah",
+   "name": "Xayah",
+   "cost": 1,
+   "traits": [
+    "Elderwood",
+    "Fae",
+    "Rapidfire"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_xayah/skins/base/images/tft18_xayah_splash_tile_8.png"
+  },
+  {
+   "apiName": "DA_18_Yorick",
+   "name": "Yorick",
+   "cost": 1,
+   "traits": [
+    "Blossom",
+    "Juggernaut",
+    "Summoner"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_yorick/skins/base/images/tft18_yorick_splash_tile_30.png"
+  },
+  {
+   "apiName": "DA_18_Alistar",
+   "name": "Alistar",
+   "cost": 2,
+   "traits": [
+    "Elderwood",
+    "Brawler"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_alistar/skins/base/images/tft18_alistar_splash_tile_40.png"
+  },
+  {
+   "apiName": "DA_18_Caitlyn",
+   "name": "Caitlyn",
+   "cost": 2,
+   "traits": [
+    "Coven",
+    "Hunter"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_caitlyn/skins/base/images/tft18_caitlyn_splash_tile_30.png"
+  },
+  {
+   "apiName": "DA_18_Elise",
+   "name": "Elise",
+   "cost": 2,
+   "traits": [
+    "Coven",
+    "Vanguard"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_elise/skins/base/images/tft18_elise_splash_tile_24.png"
+  },
+  {
+   "apiName": "DA_Gromp18_AP",
+   "name": "Gromp",
+   "cost": 2,
+   "traits": [
+    "Riftbeast",
+    "Adaptor"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_gromp/skins/base/images/t_18_gromp_teamplannersplash.png"
+  },
+  {
+   "apiName": "DA_18_Kayle",
+   "name": "Kayle",
+   "cost": 2,
+   "traits": [
+    "Solar",
+    "Rapidfire"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_kayle/skins/base/images/tft18_kayle_splash_tile_42.png"
+  },
+  {
+   "apiName": "DA_18_LeBlanc",
+   "name": "LeBlanc",
+   "cost": 2,
+   "traits": [
+    "Elderwood",
+    "Spellweaver"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_leblanc/skins/base/images/tft18_leblanc_splash_tile_5.png"
+  },
+  {
+   "apiName": "DA_Murkwolf18",
+   "name": "Murkwolf",
+   "cost": 2,
+   "traits": [
+    "Riftbeast",
+    "Ravager"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_murkwolf/skins/base/images/t_18_murkwolf_teamplannersplash.png"
+  },
+  {
+   "apiName": "DA_Scuttlecrab18",
+   "name": "Scuttlecrab",
+   "cost": 2,
+   "traits": [
+    "Riftbeast",
+    "Juggernaut"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_scuttlecrab/skins/base/images/t_18_scuttlecrab_teamplannersplash.png"
+  },
+  {
+   "apiName": "DA_18_Sejuani",
+   "name": "Sejuani",
+   "cost": 2,
+   "traits": [
+    "Solar",
+    "Juggernaut"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_sejuani/skins/base/images/tft18_sejuani_splash_tile_26.png"
+  },
+  {
+   "apiName": "DA_18_Shen",
+   "name": "Shen",
+   "cost": 2,
+   "traits": [
+    "Inferno",
+    "Defender"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_shen/skins/base/images/tft18_shen_splash_tile_16.png"
+  },
+  {
+   "apiName": "DA_18_Teemo",
+   "name": "Teemo",
+   "cost": 2,
+   "traits": [
+    "Sprykin",
+    "Invoker"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_teemo/skins/base/images/tft18_teemo_splash_tile_0.png"
+  },
+  {
+   "apiName": "DA_18_Warwick",
+   "name": "Warwick",
+   "cost": 2,
+   "traits": [
+    "Blackthorn",
+    "Ravager"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_warwick/skins/base/images/tft18_warwick_splash_tile_35.png"
+  },
+  {
+   "apiName": "DA_18_Yunara",
+   "name": "Yunara",
+   "cost": 2,
+   "traits": [
+    "Blossom",
+    "Executioner"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_yunara/skins/base/images/tft18_yunara_splash_tile_0.png"
+  },
+  {
+   "apiName": "DA_18_Azir",
+   "name": "Azir",
+   "cost": 3,
+   "traits": [
+    "Blackthorn",
+    "Executioner",
+    "Summoner"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_azir/skins/base/images/tft18_azir_splash_tile_5.png"
+  },
+  {
+   "apiName": "DA_18_Cassiopeia",
+   "name": "Cassiopeia",
+   "cost": 3,
+   "traits": [
+    "Coven",
+    "Spellweaver"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_cassiopeia/skins/base/images/tft18_cassiopeia_splash_tile_18.png"
+  },
+  {
+   "apiName": "DA_18_Diana",
+   "name": "Diana",
+   "cost": 3,
+   "traits": [
+    "Lunar",
+    "Ravager",
+    "Vanguard"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_diana/skins/base/images/tft18_diana_splash_tile_0.png"
+  },
+  {
+   "apiName": "DA_Fiddlesticks18",
+   "name": "Fiddlesticks",
+   "cost": 3,
+   "traits": [
+    "Flora Fatalis",
+    "Defender",
+    "Spellweaver"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_fiddlesticks/skins/base/images/tft18_fiddlesticks_splash_tile_46.png"
+  },
+  {
+   "apiName": "DA_18_Hecarim",
+   "name": "Hecarim",
+   "cost": 3,
+   "traits": [
+    "Elderwood",
+    "Vanguard"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_hecarim/skins/base/images/tft18_hecarim_splash_tile_5.png"
+  },
+  {
+   "apiName": "DA_18_KhaZix",
+   "name": "Kha'Zix",
+   "cost": 3,
+   "traits": [
+    "Rival"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_khazix/skins/base/images/tft18_khazix_splash_tile_0.png"
+  },
+  {
+   "apiName": "DA_KogMaw18_AD",
+   "name": "Kog'Maw",
+   "cost": 3,
+   "traits": [
+    "Caustic",
+    "Adaptor",
+    "Invoker"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_kogmaw/skins/base/images/tft18_kogmaw_splash_tile_3.png"
+  },
+  {
+   "apiName": "DA_Krug18",
+   "name": "Krug",
+   "cost": 3,
+   "traits": [
+    "Riftbeast",
+    "Brawler"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_krug/skins/base/images/t_18_krug_teamplannersplash.png"
+  },
+  {
+   "apiName": "DA_CrimsonRaptor18",
+   "name": "Mama Beak",
+   "cost": 3,
+   "traits": [
+    "Riftbeast",
+    "Summoner",
+    "Rapidfire"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_raptor/skins/base/images/t_18_crimsonraptor_teamplannersplash.png"
+  },
+  {
+   "apiName": "DA_18_MasterYi_AD",
+   "name": "Master Yi",
+   "cost": 3,
+   "traits": [
+    "Blossom",
+    "Adaptor"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_masteryi/skins/base/images/tft18_masteryi_splash_tile_52.png"
+  },
+  {
+   "apiName": "DA_18_Rammus",
+   "name": "Rammus",
+   "cost": 3,
+   "traits": [
+    "Sprykin",
+    "Defender"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_rammus/skins/base/images/tft18_rammus_splash_tile_26.png"
+  },
+  {
+   "apiName": "DA_18_Rengar",
+   "name": "Rengar",
+   "cost": 3,
+   "traits": [
+    "Rival"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_rengar/skins/base/images/tft18_rengar_splash_tile_0.png"
+  },
+  {
+   "apiName": "DA_18_Tristana",
+   "name": "Tristana",
+   "cost": 3,
+   "traits": [
+    "Fae",
+    "Sprykin",
+    "Hunter"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_tristana/skins/base/images/tft18_tristana_splash_tile_61.png"
+  },
+  {
+   "apiName": "DA_Vi18",
+   "name": "Vi",
+   "cost": 3,
+   "traits": [
+    "Primal",
+    "Juggernaut"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_vi/skins/base/images/tft18_vi_splash_tile_39.png"
+  },
+  {
+   "apiName": "DA_18_Ahri",
+   "name": "Ahri",
+   "cost": 4,
+   "traits": [
+    "Blossom",
+    "Spellweaver"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_ahri/skins/base/images/tft18_ahri_splash_tile_27.png"
+  },
+  {
+   "apiName": "DA_Amumu18",
+   "name": "Amumu",
+   "cost": 4,
+   "traits": [
+    "Inferno",
+    "Juggernaut"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_amumu/skins/base/images/tft18_amumu_splash_tile_17.png"
+  },
+  {
+   "apiName": "DA_18_Aphelios",
+   "name": "Aphelios",
+   "cost": 4,
+   "traits": [
+    "Lunar",
+    "Rapidfire"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_aphelios/skins/base/images/tft18_aphelios_splash_tile_0.png"
+  },
+  {
+   "apiName": "DA_Brambleback18",
+   "name": "Brambleback",
+   "cost": 4,
+   "traits": [
+    "Riftbeast",
+    "Ravager"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_brambleback/skins/base/images/t_18_brambleback_teamplannersplash.png"
+  },
+  {
+   "apiName": "DA_18_Ezreal",
+   "name": "Ezreal",
+   "cost": 4,
+   "traits": [
+    "Elderwood",
+    "Executioner"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_ezreal/skins/base/images/tft18_ezreal_splash_tile_1.png"
+  },
+  {
+   "apiName": "DA_18_Lillia",
+   "name": "Lillia",
+   "cost": 4,
+   "traits": [
+    "Fae",
+    "Defender"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_lillia/skins/base/images/tft18_lillia_splash_tile_28.png"
+  },
+  {
+   "apiName": "DA_18_Malphite",
+   "name": "Malphite",
+   "cost": 4,
+   "traits": [
+    "Blackthorn",
+    "Monolith"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_malphite/skins/base/images/tft18_malphite_splash_tile_27.png"
+  },
+  {
+   "apiName": "DA_18_Morgana",
+   "name": "Morgana",
+   "cost": 4,
+   "traits": [
+    "Coven",
+    "Invoker"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_morgana/skins/base/images/tft18_morgana_splash_tile_26.png"
+  },
+  {
+   "apiName": "DA_Nidalee18_AP",
+   "name": "Nidalee",
+   "cost": 4,
+   "traits": [
+    "Primal",
+    "Adaptor"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_nidalee/skins/base/images/tft18_nidalee_splash_tile_0.png"
+  },
+  {
+   "apiName": "DA_Sentinel18",
+   "name": "Sentinel",
+   "cost": 4,
+   "traits": [
+    "Riftbeast",
+    "Vanguard",
+    "Invoker"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_sentinel/skins/base/images/t_18_sentinel_teamplannersplash.png"
+  },
+  {
+   "apiName": "DA_18_Sett",
+   "name": "Sett",
+   "cost": 4,
+   "traits": [
+    "Blossom",
+    "Brawler"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_sett/skins/base/images/tft18_sett_splash_tile_38.png"
+  },
+  {
+   "apiName": "DA_18_Sivir",
+   "name": "Sivir",
+   "cost": 4,
+   "traits": [
+    "Primal",
+    "Hunter"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_sivir/skins/base/images/tft18_sivir_splash_tile_61.png"
+  },
+  {
+   "apiName": "DA_18_Soraka",
+   "name": "Soraka",
+   "cost": 4,
+   "traits": [
+    "Flora Fatalis",
+    "Executioner"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_soraka/skins/base/images/tft18_soraka_splash_tile_53.png"
+  },
+  {
+   "apiName": "DA_18_Zyra",
+   "name": "Zyra",
+   "cost": 4,
+   "traits": [
+    "Thornmaiden",
+    "Summoner"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_zyra/skins/base/images/tft18_zyra_splash_tile_0.png"
+  },
+  {
+   "apiName": "DA_18_Alune",
+   "name": "Alune",
+   "cost": 5,
+   "traits": [
+    "Attuned",
+    "Lunar",
+    "Spellweaver"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_alune/skins/base/images/tft18_alune_splash_tile_15.png"
+  },
+  {
+   "apiName": "DA_18_Ashe",
+   "name": "Ashe",
+   "cost": 5,
+   "traits": [
+    "Blossom",
+    "Hunter"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_ashe/skins/base/images/tft18_ashe_splash_tile_76.png"
+  },
+  {
+   "apiName": "DA_Draven18",
+   "name": "Draven",
+   "cost": 5,
+   "traits": [
+    "Bounty Seeker"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_draven/skins/base/images/tft18_draven_splash_tile_5.png"
+  },
+  {
+   "apiName": "DA_18_ElderDragon",
+   "name": "Elder Dragon",
+   "cost": 5,
+   "traits": [
+    "Apex Predator",
+    "Riftbeast"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_elderdragon/skins/base/images/t_18_elderdragon_teamplannersplash.png"
+  },
+  {
+   "apiName": "DA_18_GnarSmall",
+   "name": "Gnar",
+   "cost": 5,
+   "traits": [
+    "Elderwood",
+    "Sprykin",
+    "Brawler"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_gnar/skins/base/images/tft18_gnar_splash_tile_0.png"
+  },
+  {
+   "apiName": "DA_18_Ivern",
+   "name": "Ivern",
+   "cost": 5,
+   "traits": [
+    "Greenfather"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_ivern/skins/base/images/tft18_ivern_splash_tile_0.png"
+  },
+  {
+   "apiName": "DA_18_Kennen",
+   "name": "Kennen",
+   "cost": 5,
+   "traits": [
+    "Inferno",
+    "Executioner"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_kennen/skins/base/images/tft18_kennen_splash_tile_8.png"
+  },
+  {
+   "apiName": "DA_Lux18_Base",
+   "name": "Lux",
+   "cost": 5,
+   "traits": [
+    "Avatar"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_lux/skins/base/images/tft18_lux_splash_tile_7.png"
+  },
+  {
+   "apiName": "DA_Lux18_Blackthorn",
+   "name": "Lux (Blackthorn)",
+   "cost": 5,
+   "traits": [
+    "Blackthorn",
+    "Avatar"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_lux/hud/splashes/t_18_lux_blackthorn_teamplanner.png"
+  },
+  {
+   "apiName": "DA_Lux18_Blossom",
+   "name": "Lux (Blossom)",
+   "cost": 5,
+   "traits": [
+    "Blossom",
+    "Avatar"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_lux/hud/splashes/t_18_lux_blossom_teamplanner.png"
+  },
+  {
+   "apiName": "DA_18_Lux_Coven",
+   "name": "Lux (Coven)",
+   "cost": 5,
+   "traits": [
+    "Coven",
+    "Avatar"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_lux/hud/splashes/t_18_lux_coven_teamplanner.png"
+  },
+  {
+   "apiName": "DA_18_Lux_Elderwood",
+   "name": "Lux (Elderwood)",
+   "cost": 5,
+   "traits": [
+    "Elderwood",
+    "Avatar"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_lux/hud/splashes/t_18_lux_elderwood_teamplanner.png"
+  },
+  {
+   "apiName": "DA_18_Lux_Fae",
+   "name": "Lux (Fae)",
+   "cost": 5,
+   "traits": [
+    "Fae",
+    "Avatar"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_lux/hud/splashes/t_18_lux_fae_teamplanner.png"
+  },
+  {
+   "apiName": "DA_18_Lux_Inferno",
+   "name": "Lux (Inferno)",
+   "cost": 5,
+   "traits": [
+    "Inferno",
+    "Avatar"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_lux/hud/splashes/t_18_lux_inferno_teamplanner.png"
+  },
+  {
+   "apiName": "DA_18_Lux_Moonbeam",
+   "name": "Lux (Lunar)",
+   "cost": 5,
+   "traits": [
+    "Lunar",
+    "Avatar"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_lux/hud/splashes/t_18_lux_moonbeam_teamplanner.png"
+  },
+  {
+   "apiName": "DA_18_Lux_Primal",
+   "name": "Lux (Primal)",
+   "cost": 5,
+   "traits": [
+    "Primal",
+    "Avatar"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_lux/hud/splashes/t_18_lux_primal_teamplanner.png"
+  },
+  {
+   "apiName": "DA_18_Lux_Sunbeam",
+   "name": "Lux (Solar)",
+   "cost": 5,
+   "traits": [
+    "Solar",
+    "Avatar"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_lux/hud/splashes/t_18_lux_sunbeam_teamplanner.png"
+  },
+  {
+   "apiName": "DA_18_Maokai",
+   "name": "Maokai",
+   "cost": 5,
+   "traits": [
+    "Old Growth",
+    "Juggernaut"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_maokai/skins/base/images/tft18_maokai_splash_tile_0.png"
+  },
+  {
+   "apiName": "DA_Taric18",
+   "name": "Taric",
+   "cost": 5,
+   "traits": [
+    "Emerald Aspect",
+    "Vanguard"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft18_taric/skins/base/images/tft18_taric_splash_tile_1.png"
+  }
+ ],
+ "traits": [
+  {
+   "apiName": "DA_18_Elderwood",
+   "name": "Elderwood",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_elderwood.png",
+   "breakpoints": [
+    3,
+    5,
+    7,
+    9,
+    11
+   ]
+  },
+  {
+   "apiName": "DA_18_LuxUniqueTrait",
+   "name": "Avatar",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_avatar.png",
+   "breakpoints": [
+    1
+   ]
+  },
+  {
+   "apiName": "DA_18_Slayer",
+   "name": "Ravager",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_ravager.png",
+   "breakpoints": [
+    2,
+    4,
+    6
+   ]
+  },
+  {
+   "apiName": "DA_DravenUniqueTrait18",
+   "name": "Bounty Seeker",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_bountyseeker.png",
+   "breakpoints": [
+    1
+   ]
+  },
+  {
+   "apiName": "DA_18_Solar",
+   "name": "Solar",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_solar.png",
+   "breakpoints": [
+    3
+   ]
+  },
+  {
+   "apiName": "DA_18_Sprykin",
+   "name": "Sprykin",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_sprykin.png",
+   "breakpoints": [
+    3,
+    5,
+    7
+   ]
+  },
+  {
+   "apiName": "DA_18_Adaptor",
+   "name": "Adaptor",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_adaptor.png",
+   "breakpoints": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "apiName": "DA_18_Coven",
+   "name": "Coven",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_coven.png",
+   "breakpoints": [
+    3,
+    4,
+    5,
+    7
+   ]
+  },
+  {
+   "apiName": "DA_18_Eclipse",
+   "name": "Eclipse",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_eclipse.png",
+   "breakpoints": [
+    null
+   ]
+  },
+  {
+   "apiName": "DA_18_Hunter",
+   "name": "Hunter",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_hunter.png",
+   "breakpoints": [
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  {
+   "apiName": "DA_18_Maokai_UniqueTrait",
+   "name": "Old Growth",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_oldgrowth.png",
+   "breakpoints": [
+    1
+   ]
+  },
+  {
+   "apiName": "DA_18_Battlemage",
+   "name": "Monolith",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_monolith.png",
+   "breakpoints": [
+    1
+   ]
+  },
+  {
+   "apiName": "DA_Primal18",
+   "name": "Primal",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_primal.png",
+   "breakpoints": [
+    2,
+    4
+   ]
+  },
+  {
+   "apiName": "DA_18_Greenfather",
+   "name": "Greenfather",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_greenfather.png",
+   "breakpoints": [
+    1
+   ]
+  },
+  {
+   "apiName": "DA_18_Invoker",
+   "name": "Invoker",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_invoker.png",
+   "breakpoints": [
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  {
+   "apiName": "DA_18_Rapidfire",
+   "name": "Rapidfire",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_rapidfire.png",
+   "breakpoints": [
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  {
+   "apiName": "DA_Juggernaut18",
+   "name": "Juggernaut",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_juggernaut.png",
+   "breakpoints": [
+    2,
+    4,
+    6
+   ]
+  },
+  {
+   "apiName": "DA_18_Inferno",
+   "name": "Inferno",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_inferno.png",
+   "breakpoints": [
+    2,
+    3,
+    5,
+    7
+   ]
+  },
+  {
+   "apiName": "DA_AluneUniqueTrait18",
+   "name": "Attuned",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_attuned.png",
+   "breakpoints": [
+    1
+   ]
+  },
+  {
+   "apiName": "DA_18_Rival",
+   "name": "Rival",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_rival.png",
+   "breakpoints": [
+    1,
+    1,
+    2
+   ]
+  },
+  {
+   "apiName": "DA_18_Vanguard",
+   "name": "Vanguard",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_vanguard.png",
+   "breakpoints": [
+    2,
+    4,
+    6
+   ]
+  },
+  {
+   "apiName": "DA_18_Brawler",
+   "name": "Brawler",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_brawler.png",
+   "breakpoints": [
+    2,
+    4,
+    6
+   ]
+  },
+  {
+   "apiName": "DA_18_Blackthorn",
+   "name": "Blackthorn",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_oldgod.png",
+   "breakpoints": [
+    2,
+    4,
+    6
+   ]
+  },
+  {
+   "apiName": "DA_18_Executioner",
+   "name": "Executioner",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_executioner.png",
+   "breakpoints": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "apiName": "DA_18_ApexPredator",
+   "name": "Apex Predator",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_apexpredator.png",
+   "breakpoints": [
+    1
+   ]
+  },
+  {
+   "apiName": "DA_Riftbeast18",
+   "name": "Riftbeast",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_riftbeast.png",
+   "breakpoints": [
+    3,
+    5,
+    7,
+    10
+   ]
+  },
+  {
+   "apiName": "DA_18_Caustic",
+   "name": "Caustic",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_caustic.png",
+   "breakpoints": [
+    1
+   ]
+  },
+  {
+   "apiName": "DA_18_Fae",
+   "name": "Fae",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_fae.png",
+   "breakpoints": [
+    2,
+    4
+   ]
+  },
+  {
+   "apiName": "DA_18_Lunar",
+   "name": "Lunar",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_lunar.png",
+   "breakpoints": [
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  {
+   "apiName": "DA_18_Defender",
+   "name": "Defender",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_defender.png",
+   "breakpoints": [
+    2,
+    4,
+    6
+   ]
+  },
+  {
+   "apiName": "DA_18_Spellweaver",
+   "name": "Spellweaver",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_spellweaver.png",
+   "breakpoints": [
+    2,
+    4,
+    6
+   ]
+  },
+  {
+   "apiName": "DA_18_ZyraUniqueTrait",
+   "name": "Thornmaiden",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_zyraorigin.png",
+   "breakpoints": [
+    1
+   ]
+  },
+  {
+   "apiName": "DA_FloraFatalis18",
+   "name": "Flora Fatalis",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_florafatalis.png",
+   "breakpoints": [
+    1,
+    2
+   ]
+  },
+  {
+   "apiName": "DA_18_Summoner",
+   "name": "Summoner",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_summoner.png",
+   "breakpoints": [
+    2,
+    3
+   ]
+  },
+  {
+   "apiName": "DA_18_Blossom",
+   "name": "Blossom",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_blossom.png",
+   "breakpoints": [
+    3,
+    5,
+    7,
+    9,
+    11
+   ]
+  },
+  {
+   "apiName": "DA_Emerald18",
+   "name": "Emerald Aspect",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_18_emeraldaspect.png",
+   "breakpoints": [
+    1
+   ]
+  }
+ ],
+ "components": [
+  {
+   "apiName": "TFT6_Merc_Book",
+   "name": "tft_item_name_Mercenary_Book",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenary_moon.png"
+  },
+  {
+   "apiName": "TFT6_Merc_Bag",
+   "name": "tft_item_name_Mercenary_Bag",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenary_bag.png"
+  },
+  {
+   "apiName": "TFT6_Merc_Spatula",
+   "name": "tft_item_name_Mercenary_Spatula",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenary_spatula.png"
+  },
+  {
+   "apiName": "TFT6_Merc_Fish",
+   "name": "tft_item_name_Mercenary_Fish",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenary_fish.png"
+  },
+  {
+   "apiName": "TFT6_Merc_Chest",
+   "name": "tft_item_name_Mercenary_Chest",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenary_chest.png"
+  },
+  {
+   "apiName": "TFT6_Merc_Sword",
+   "name": "tft_item_name_Mercenary_Sword",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenary_sword.png"
+  },
+  {
+   "apiName": "TFT6_Merc_Shell",
+   "name": "tft_item_name_Mercenary_Shell",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenary_shell.png"
+  },
+  {
+   "apiName": "TFT6_Merc_Kraken",
+   "name": "tft_item_name_Mercenary_Kraken",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenary_hydra.png"
+  },
+  {
+   "apiName": "TFT6_Merc_X",
+   "name": "tft_item_name_Mercenary_X",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenary_scratch.png"
+  },
+  {
+   "apiName": "TFT6_Merc_Ship",
+   "name": "tft_item_name_Mercenary_Ship",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenary_ship.png"
+  },
+  {
+   "apiName": "TFT6_Merc_Coin",
+   "name": "tft_item_name_Mercenary_Coin",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenary_coin.png"
+  },
+  {
+   "apiName": "TFT6_Merc_Soldier",
+   "name": "tft_item_name_Mercenary_Soldier",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenary_soldier.png"
+  },
+  {
+   "apiName": "TFTTutorial_Item_RecurveBow",
+   "name": "Recurve Bow",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/recurve_bow.png"
+  },
+  {
+   "apiName": "TFTTutorial_Item_NeedlesslyLargeRod",
+   "name": "Needlessly Large Rod",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/needlessly_large_rod.png"
+  },
+  {
+   "apiName": "TFTTutorial_Item_ChainVest",
+   "name": "Chain Vest",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/chain_vest.png"
+  },
+  {
+   "apiName": "TFTTutorial_Item_BFSword",
+   "name": "B.F. Sword",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/bf_sword.png"
+  },
+  {
+   "apiName": "TFT_Item_ChainVest",
+   "name": "Chain Vest",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_chainvest.png"
+  },
+  {
+   "apiName": "TFT_Item_RecurveBow",
+   "name": "Recurve Bow",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_recurvebow.png"
+  },
+  {
+   "apiName": "TFT_Item_CursedBlade",
+   "name": "tft_item_name_CursedBlade",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft_item_cursedblade.png"
+  },
+  {
+   "apiName": "TFT_Item_TearOfTheGoddess",
+   "name": "Tear of the Goddess",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_tearofthegoddess.png"
+  },
+  {
+   "apiName": "TFT_Item_NegatronCloak",
+   "name": "Negatron Cloak",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_negatroncloak.png"
+  },
+  {
+   "apiName": "TFT_Item_SparringGloves",
+   "name": "Sparring Gloves",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_sparringgloves.png"
+  },
+  {
+   "apiName": "TFT_Item_HextechChestguard",
+   "name": "tft_item_name_HextechChestguard",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft_item_hextechchestguard.png"
+  },
+  {
+   "apiName": "TFT_Item_Spatula",
+   "name": "Spatula",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spatula.png"
+  },
+  {
+   "apiName": "TFT_Item_BFSword",
+   "name": "B.F. Sword",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bfsword.png"
+  },
+  {
+   "apiName": "TFT_Item_GiantsBelt",
+   "name": "Giant's Belt",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_giantsbelt.png"
+  },
+  {
+   "apiName": "TFT_Item_NeedlesslyLargeRod",
+   "name": "Needlessly Large Rod",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_needlesslylargerod.png"
+  },
+  {
+   "apiName": "TFT_Item_FryingPan",
+   "name": "Frying Pan",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_fryingpan.png"
+  },
+  {
+   "apiName": "DA_Component_NegatronCloak",
+   "name": "Negatron Cloak",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_negatroncloak.png"
+  },
+  {
+   "apiName": "DA_Component_TearOfTheGoddess",
+   "name": "Tear Of The Goddess",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_tearofthegoddess.png"
+  },
+  {
+   "apiName": "DA_Component_BFSword",
+   "name": "B.F. Sword",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bfsword.png"
+  },
+  {
+   "apiName": "DA_Component_RecurveBow",
+   "name": "Recurve Bow",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_recurvebow.png"
+  },
+  {
+   "apiName": "DA_Component_GiantsBelt",
+   "name": "Giant's Belt",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_giantsbelt.png"
+  },
+  {
+   "apiName": "DA_Component_SparringGloves",
+   "name": "Sparring Gloves",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_sparringgloves.png"
+  },
+  {
+   "apiName": "DA_Component_NeedlesslyLargeRod",
+   "name": "Needlessly Large Rod",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_needlesslylargerod.png"
+  },
+  {
+   "apiName": "DA_Component_Spatula",
+   "name": "Spatula",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spatula.png"
+  },
+  {
+   "apiName": "DA_Component_ChainVest",
+   "name": "Chain Vest",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_chainvest.png"
+  },
+  {
+   "apiName": "DA_Component_FryingPan",
+   "name": "Frying Pan",
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_fryingpan.png"
+  }
+ ],
+ "items": [
+  {
+   "apiName": "TFT6_Merc_X_Fish",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_X",
+    "TFT6_Merc_Fish"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenarylootsilver.png",
+   "desc": "1 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Bag_Spatula",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Bag",
+    "TFT6_Merc_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "50 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_5MercChest",
+   "name": "Golden Chest",
+   "composition": [
+    "TFT6_Merc_Bag",
+    "TFT6_Merc_Bag"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "Gain a Spatula and an Item."
+  },
+  {
+   "apiName": "TFT6_Merc_Coin_Bag",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_Coin",
+    "TFT6_Merc_Bag"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "6 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_5MercBook",
+   "name": "Golden Book",
+   "composition": [
+    "TFT6_Merc_Bag",
+    "TFT6_Merc_Bag"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "Gain a Thieve's Gloves."
+  },
+  {
+   "apiName": "TFT6_Merc_Soldier_Ship",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Soldier",
+    "TFT6_Merc_Ship"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "3 4-cost champions are placed in your chest."
+  },
+  {
+   "apiName": "TFT6_5MercSword",
+   "name": "Golden Sword",
+   "composition": [
+    "TFT6_Merc_Bag",
+    "TFT6_Merc_Bag"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "Gain 1 5-cost champion and 12 gold."
+  },
+  {
+   "apiName": "TFT6_Merc_Fish_Bag",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_Fish",
+    "TFT6_Merc_Bag"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "5 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Book_Spatula",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Book",
+    "TFT6_Merc_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "1 Chalice of Power, 1 Zeke's Herald, and 10 gold are placed in your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_X_Spatula",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_X",
+    "TFT6_Merc_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenarylootsilver.png",
+   "desc": "1 Spatula has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_X_Book",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_X",
+    "TFT6_Merc_Book"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenarylootsilver.png",
+   "desc": "6 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Soldier_Kraken",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Soldier",
+    "TFT6_Merc_Kraken"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "A Loaded Dice and 2 gold are placed in your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_X_Soldier",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_X",
+    "TFT6_Merc_Soldier"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenarylootsilver.png",
+   "desc": "4 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Chest_Kraken",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Chest",
+    "TFT6_Merc_Kraken"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "1 Loaded Dice has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Coin_Shell",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Coin",
+    "TFT6_Merc_Shell"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "A defensive component and 2 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_5MercBag",
+   "name": "Golden Bag",
+   "composition": [
+    "TFT6_Merc_Bag",
+    "TFT6_Merc_Bag"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "Gain 2 items."
+  },
+  {
+   "apiName": "TFT6_5MercSoldier",
+   "name": "Golden Soldier",
+   "composition": [
+    "TFT6_Merc_Bag",
+    "TFT6_Merc_Bag"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "Gain 2 5-cost champions."
+  },
+  {
+   "apiName": "TFT6_Merc_Sword_Sword",
+   "name": "JACKPOT",
+   "composition": [
+    "TFT6_Merc_Sword",
+    "TFT6_Merc_Sword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "A Thief's Gloves has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Ship_Ship",
+   "name": "JACKPOT",
+   "composition": [
+    "TFT6_Merc_Ship",
+    "TFT6_Merc_Ship"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "2 5-cost champions are placed in your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Book_Kraken",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Book",
+    "TFT6_Merc_Kraken"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "1 utility component and 1 Neeko's Help has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Shell_Kraken",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Shell",
+    "TFT6_Merc_Kraken"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "1 defensive component and 1 Neeko's Help has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Coin_Coin",
+   "name": "JACKPOT",
+   "composition": [
+    "TFT6_Merc_Coin",
+    "TFT6_Merc_Coin"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "8 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Fish_Ship",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_Fish",
+    "TFT6_Merc_Ship"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "A 4-cost champion has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Chest_Soldier",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Chest",
+    "TFT6_Merc_Soldier"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "3 3-cost champions are placed in your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Coin_Ship",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Coin",
+    "TFT6_Merc_Ship"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "A 4-cost champion and 3 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Shell_Spatula",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Shell",
+    "TFT6_Merc_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "1 Dragon's Claw, 1 Bramblevest, and 10 gold are placed in your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Ship_Spatula",
+   "name": "JACKPOT",
+   "composition": [
+    "TFT6_Merc_Ship",
+    "TFT6_Merc_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "A 2-star 5-cost has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Fish_Fish",
+   "name": "JACKPOT",
+   "composition": [
+    "TFT6_Merc_Fish",
+    "TFT6_Merc_Fish"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "4 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_5MercShip",
+   "name": "Golden Ship",
+   "composition": [
+    "TFT6_Merc_Bag",
+    "TFT6_Merc_Bag"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "Gain 3 item components."
+  },
+  {
+   "apiName": "TFT6_Merc_Fish_Kraken",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Fish",
+    "TFT6_Merc_Kraken"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "1 Neeko's Help has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Sword_Kraken",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Sword",
+    "TFT6_Merc_Kraken"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "1 offensive component and 1 Neeko's Help has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_X_Ship",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_X",
+    "TFT6_Merc_Ship"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenarylootsilver.png",
+   "desc": "10 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Soldier_Spatula",
+   "name": "JACKPOT",
+   "composition": [
+    "TFT6_Merc_Soldier",
+    "TFT6_Merc_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "2 Loaded Dice and a 2-star 4-cost are placed in your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_X_Shell",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_X",
+    "TFT6_Merc_Shell"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenarylootsilver.png",
+   "desc": "6 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_X_X",
+   "name": "No Prize",
+   "composition": [
+    "TFT6_Merc_X",
+    "TFT6_Merc_X"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenary_scratch.png",
+   "desc": "Yarr!!! You got nothing. Try again next round."
+  },
+  {
+   "apiName": "TFT6_Merc_Coin_Kraken",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Coin",
+    "TFT6_Merc_Kraken"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "1 Neeko's Help and 2 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Fish_Soldier",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_Fish",
+    "TFT6_Merc_Soldier"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "2 2-cost champions are placed in your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Coin_Spatula",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Coin",
+    "TFT6_Merc_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "25 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_X_Kraken",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_X",
+    "TFT6_Merc_Kraken"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenarylootsilver.png",
+   "desc": "10 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Kraken_Kraken",
+   "name": "JACKPOT",
+   "composition": [
+    "TFT6_Merc_Kraken",
+    "TFT6_Merc_Kraken"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "1 item component and 1 Neeko's Help has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Bag_Ship",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Bag",
+    "TFT6_Merc_Ship"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "2 4-cost champions are placed in your chest."
+  },
+  {
+   "apiName": "TFT6_5MercMonster",
+   "name": "Golden Kraken",
+   "composition": [
+    "TFT6_Merc_Bag",
+    "TFT6_Merc_Bag"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "Gain 1 Neeko's Help and 12 gold."
+  },
+  {
+   "apiName": "TFT6_Merc_Coin_Chest",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Coin",
+    "TFT6_Merc_Chest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "10 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Fish_Sword",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Fish",
+    "TFT6_Merc_Sword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "1 offensive item component has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Fish_Coin",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_Fish",
+    "TFT6_Merc_Coin"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "3 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Book_Book",
+   "name": "JACKPOT",
+   "composition": [
+    "TFT6_Merc_Book",
+    "TFT6_Merc_Book"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "A Tome of Traits has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Fish_Book",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Fish",
+    "TFT6_Merc_Book"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "A utility item component has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Bag_Kraken",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Bag",
+    "TFT6_Merc_Kraken"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "1 Neeko's Help and 5 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_X_Chest",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_X",
+    "TFT6_Merc_Chest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenarylootsilver.png",
+   "desc": "4 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Sword_Ship",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Sword",
+    "TFT6_Merc_Ship"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "A 5-cost champion and 10 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_X_Coin",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_X",
+    "TFT6_Merc_Coin"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenarylootsilver.png",
+   "desc": "2 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Chest_Sword",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Chest",
+    "TFT6_Merc_Sword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "A 4-cost champion and 10 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Bag_Bag",
+   "name": "JACKPOT",
+   "composition": [
+    "TFT6_Merc_Bag",
+    "TFT6_Merc_Bag"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "1 item component has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Sword_Spatula",
+   "name": "JACKPOT",
+   "composition": [
+    "TFT6_Merc_Sword",
+    "TFT6_Merc_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "2 Thief's Gloves and 10 gold are placed in your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Chest_Spatula",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Chest",
+    "TFT6_Merc_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "1 random full item and 2 components are placed in your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Spatula_Spatula",
+   "name": "JACKPOT",
+   "composition": [
+    "TFT6_Merc_Spatula",
+    "TFT6_Merc_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "A Tactician's Crown has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Fish_Spatula",
+   "name": "JACKPOT",
+   "composition": [
+    "TFT6_Merc_Fish",
+    "TFT6_Merc_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "A Spatula has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Coin_Sword",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Coin",
+    "TFT6_Merc_Sword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "An offensive component and 2 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Fish_Shell",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Fish",
+    "TFT6_Merc_Shell"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "A defensive item component has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_X_Sword",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_X",
+    "TFT6_Merc_Sword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenarylootsilver.png",
+   "desc": "7 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Fish_Chest",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_Fish",
+    "TFT6_Merc_Chest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "8 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_X_Bag",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_X",
+    "TFT6_Merc_Bag"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenarylootsilver.png",
+   "desc": "3 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Soldier_Soldier",
+   "name": "JACKPOT",
+   "composition": [
+    "TFT6_Merc_Soldier",
+    "TFT6_Merc_Soldier"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "2 4-cost champions are placed in your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Chest_Chest",
+   "name": "JACKPOT",
+   "composition": [
+    "TFT6_Merc_Chest",
+    "TFT6_Merc_Chest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "2 item components are placed in your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Kraken_Spatula",
+   "name": "JACKPOT",
+   "composition": [
+    "TFT6_Merc_Kraken",
+    "TFT6_Merc_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "1 full item and 2 Neeko's Help have been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Sword_Soldier",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Sword",
+    "TFT6_Merc_Soldier"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "2 4-cost champions are placed in your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Chest_Ship",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Chest",
+    "TFT6_Merc_Ship"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "A 4-cost champion and 10 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Coin_Book",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Coin",
+    "TFT6_Merc_Book"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "A utility component and 2 gold has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_Merc_Bag_Soldier",
+   "name": "Large Prize",
+   "composition": [
+    "TFT6_Merc_Bag",
+    "TFT6_Merc_Soldier"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "2 3-cost champions are placed in your chest."
+  },
+  {
+   "apiName": "TFT6_5MercSpatula",
+   "name": "Golden Spatula",
+   "composition": [
+    "TFT6_Merc_Bag",
+    "TFT6_Merc_Bag"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "Gain a Tactician's Crown"
+  },
+  {
+   "apiName": "TFT6_Merc_Coin_Soldier",
+   "name": "Small Prize",
+   "composition": [
+    "TFT6_Merc_Coin",
+    "TFT6_Merc_Soldier"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "A 3-cost champion has been added to your chest."
+  },
+  {
+   "apiName": "TFT6_5MercShield",
+   "name": "Golden Shell",
+   "composition": [
+    "TFT6_Merc_Bag",
+    "TFT6_Merc_Bag"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/set6_mercenary/mercenaryloot.png",
+   "desc": "Gain 3 Frozen Hearts."
+  },
+  {
+   "apiName": "TFT_Item_RabadonsDeathcap",
+   "name": "Rabadon's Deathcap",
+   "composition": [
+    "TFT_Item_NeedlesslyLargeRod",
+    "TFT_Item_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.png",
+   "desc": "This humble hat can help you make, or unmake, the world itself.@TFTUnitProperty.:TFT_Augment_DeadlierCaps_TRAKey@"
+  },
+  {
+   "apiName": "TFT15_Item_EdgelordEmblemItem",
+   "name": "Edgelord Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set15/tft15_emblem_edgelord.png",
+   "desc": "The holder gains the Edgelord trait.Dealing physical damage to an enemy reduces their Armor by @ArmorPerDamage@."
+  },
+  {
+   "apiName": "TFT15_Item_SpellslingerEmblemItem",
+   "name": "Sorcerer Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set15/tft15_emblem_sorceror.png",
+   "desc": "The holder gains the Sorcerer trait.The holder gains @APIncrease*100@% more Ability Power from all sources."
+  },
+  {
+   "apiName": "TFT15_Item_BastionEmblemItem",
+   "name": "Bastion Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set15/tft15_emblem_bastion.png",
+   "desc": "The holder gains the Bastion trait.Gain @ResistConversionToADRatio*100@% of Armor as Attack Damage.Gain @ResistConversionToAPRatio*100@% of Magic Resistance as Ability Power."
+  },
+  {
+   "apiName": "TFT15_Item_ProdigyEmblemItem",
+   "name": "Prodigy Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set15/tft15_emblem_prodigy.png",
+   "desc": "The holder gains the Prodigy trait.On cast, shield the lowest percent Health ally for @ManaConversion*100@% of mana spent."
+  },
+  {
+   "apiName": "TFT15_Item_BattleAcademiaEmblemItem",
+   "name": "Battle Academia Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set15/tft15_emblem_battleacademia.png",
+   "desc": "The holder gains the Battle Academia trait, and @HealthPerPotential@ Health and @DAPerPotential*100@% Damage Amp per %i:set14AmpIcon%."
+  },
+  {
+   "apiName": "TFT15_Item_HeavyweightEmblemItem",
+   "name": "Heavyweight Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set15/tft15_emblem_heavyweight.png",
+   "desc": "The holder gains the Heavyweight trait, and gains @HealthPerTakedown@ max Health on takedown."
+  },
+  {
+   "apiName": "TFT15_Item_JuggernautEmblemItem",
+   "name": "Juggernaut Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set15/tft15_emblem_juggernaut.png",
+   "desc": "The holder gains the Juggernaut trait.While above @HealthBreakpoint*100@% Health, gain @AttackSpeed*100@% Attack Speed."
+  },
+  {
+   "apiName": "TFT15_Item_CrystalRoseEmblemItem",
+   "name": "Crystal Gambit Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set15/tft15_emblem_crystalgambit.png",
+   "desc": "The holder gains the Crystal Gambit trait."
+  },
+  {
+   "apiName": "TFT15_Item_ChallengerEmblemItem",
+   "name": "Duelist Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set15/tft15_emblem_duelist.png",
+   "desc": "The holder gains the Duelist trait.Attacks deal @BaseTrueDamage@ bonus true damage, plus @BonusTrueDamage@ bonus true damage for each time the target was damaged by this effect."
+  },
+  {
+   "apiName": "TFT15_Item_DestroyerEmblemItem",
+   "name": "Executioner Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set15/tft15_emblem_executioner.png",
+   "desc": "The holder gains the Executioner trait.Attacks and Abilities that critically strike deal @BleedDamage*100@% bonus true damage over @BleedDuration@ seconds."
+  },
+  {
+   "apiName": "TFT15_Item_SoulFighterEmblemItem",
+   "name": "Soul Fighter Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set15/tft15_emblem_soulfighter.png",
+   "desc": "The holder gains the Soul Fighter trait."
+  },
+  {
+   "apiName": "TFT15_Item_SupremeCellsEmblemItem",
+   "name": "Supreme Cells Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set15/tft15_emblem_supremecells.png",
+   "desc": "The holder gains the Supreme Cells trait."
+  },
+  {
+   "apiName": "TFT15_Item_EmpyreanEmblemItem",
+   "name": "Wraith Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set15/tft15_emblem_empyrean.png",
+   "desc": "The holder gains the Wraith trait."
+  },
+  {
+   "apiName": "TFT15_Item_ShotcallerEmblemItem",
+   "name": "Strategist Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set15/tft15_emblem_strategist.png",
+   "desc": "The holder gains the Strategist trait.Combat Start: The holder and allies within @NumHexes@ hex in the same row gain bonuses.Front 2 rows: @ResistBuff@ Armor and Magic ResistBack 2 rows: @ASBuff*100@% Attack Speed"
+  },
+  {
+   "apiName": "TFT15_Item_RingKingsEmblemItem",
+   "name": "Luchador Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set15/tft15_emblem_luchador.png",
+   "desc": "The holder gains the Luchador trait."
+  },
+  {
+   "apiName": "TFT15_Item_StarGuardianEmblemItem",
+   "name": "Star Guardian Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set15/tft15_emblem_starguardian.png",
+   "desc": "The holder gains the Star Guardian trait.Teamwork: Non-emblem Star Guardian bonuses are increased by @Percent@%. This effect stacks.[Unique - only 1 per champion.]"
+  },
+  {
+   "apiName": "TFT_Item_InfinityEdge",
+   "name": "Infinity Edge",
+   "composition": [
+    "TFT_Item_BFSword",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.png",
+   "desc": "Gain Precision.{{TFT_Keyword_Precision}}"
+  },
+  {
+   "apiName": "TFT_Item_FrozenHeart",
+   "name": "Protector's Vow",
+   "composition": [
+    "TFT_Item_TearOfTheGoddess",
+    "TFT_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.png",
+   "desc": "Combat Start: Gain @CombatStartMana@ Mana.At @HealthThreshold@% Health, gain @TriggerMana@ Mana and a Shield equal to @ShieldHealthPercent@% max Health."
+  },
+  {
+   "apiName": "TFT14_Item_EdgeRunnerEmblemItem",
+   "name": "Exotech Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set14/tft14_emblem_exotech.png",
+   "desc": "The holder gains the Exotech trait."
+  },
+  {
+   "apiName": "TFT14_Item_DarkWebEmblemItem",
+   "name": "Anima Squad Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set14/tft14_emblem_animasquad.png",
+   "desc": "The holder gains the Anima Squad trait."
+  },
+  {
+   "apiName": "TFT14_Item_StrongEmblemItem",
+   "name": "Slayer Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set14/tft14_emblem_slayer.png",
+   "desc": "The holder gains the Slayer trait.Healing received is increased by @HealAmp*100@%."
+  },
+  {
+   "apiName": "TFT14_Item_MarksmanEmblemItem",
+   "name": "Marksman Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set14/tft14_emblem_marksman.png",
+   "desc": "The holder gains the Marksman trait.Dealing physical damage to an enemy reduces their Armor by @ArmorPerDamage@."
+  },
+  {
+   "apiName": "TFT14_Item_ControllerEmblemItem",
+   "name": "Strategist Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set14/tft14_emblem_strategist.png",
+   "desc": "The holder gains the Strategist trait and @SecondaryEffectiveness*100@% of the other Strategist bonus."
+  },
+  {
+   "apiName": "TFT14_Item_TechieEmblemItem",
+   "name": "Techie Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set14/tft14_emblem_techie.png",
+   "desc": "The holder gains the Techie trait.The holder gains @APIncrease*100@% more Ability Power from all sources."
+  },
+  {
+   "apiName": "TFT14_Item_ThirstyEmblemItem",
+   "name": "Dynamo Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set14/tft14_emblem_dynamo.png",
+   "desc": "The holder gains the Dynamo trait.On cast, gain @AmpPer10*100@% Damage Amp per 10 Mana spent."
+  },
+  {
+   "apiName": "TFT14_Item_BallistekEmblemItem",
+   "name": "BoomBot Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set14/tft14_emblem_boombots.png",
+   "desc": "The holder gains the BoomBot trait."
+  },
+  {
+   "apiName": "TFT14_Item_StreetDemonEmblemItem",
+   "name": "Street Demon Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set14/tft14_emblem_streetdemon.png",
+   "desc": "The holder gains the Street Demon trait."
+  },
+  {
+   "apiName": "TFT14_Item_DivinicorpEmblemItem",
+   "name": "Divinicorp Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set14/tft14_emblem_divinicorp.png",
+   "desc": "The holder gains the Divinicorp trait."
+  },
+  {
+   "apiName": "TFT14_Item_ArmorcladEmblemItem",
+   "name": "Bastion Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set14/tft14_emblem_bastion.png",
+   "desc": "The holder gains the Bastion trait.Gain @ResistConversionToAPRatio*100@% of Armor and Magic Resistance as Ability Power."
+  },
+  {
+   "apiName": "TFT14_Item_SwiftEmblemItem",
+   "name": "Rapidfire Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set14/tft14_emblem_rapidfire.png",
+   "desc": "The holder gains the Rapidfire trait and @Range@ range."
+  },
+  {
+   "apiName": "TFT14_Item_BruiserEmblemItem",
+   "name": "Bruiser Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set14/tft14_emblem_bruiser.png",
+   "desc": "The holder gains the Bruiser trait.For every @HealthPerBonusDamage@ max Health, deal @BonusDamage*100@% bonus damage as magic damage."
+  },
+  {
+   "apiName": "TFT14_Item_MobEmblemItem",
+   "name": "Syndicate Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set14/tft14_emblem_syndicate.png",
+   "desc": "The holder gains the Syndicate trait.Kingpin bonus: +@AttackSpeed_T1*100@% Attack Speed and gain @Shield_T1*100@% max Health Shield at combat start.+@AttackSpeed_T2*100@% Attack Speed and gain @Shield_T2*100@% max Health Shield at combat start."
+  },
+  {
+   "apiName": "TFT14_Item_ImmortalEmblemItem",
+   "name": "Golden Ox Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set14/tft14_emblem_goldenox.png",
+   "desc": "The holder gains the Golden Ox trait."
+  },
+  {
+   "apiName": "TFT14_Item_CutterEmblemItem",
+   "name": "Executioner Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set14/tft14_emblem_executioner.png",
+   "desc": "The holder gains the Executioner trait.Critical Strikes ignore @ResistIgnore*100@% of the target's Armor and Magic Resist."
+  },
+  {
+   "apiName": "TFT7_Item_DragonmancerEmblemItem",
+   "name": "Dragonmancer Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set7/dragonmancer.png",
+   "desc": "The holder gains the Dragonmancer trait."
+  },
+  {
+   "apiName": "TFT7_Item_MageEmblemItem",
+   "name": "Mage Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set7/mage.png",
+   "desc": "The holder gains the Mage trait."
+  },
+  {
+   "apiName": "TFT7_Item_ShimmerscaleEmblemItem",
+   "name": "Shimmerscale Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set7/shimmerscale.png",
+   "desc": "The holder gains the Shimmerscale trait."
+  },
+  {
+   "apiName": "TFT7_Item_WarriorEmblemItem",
+   "name": "Warrior Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set7/warrior_craftable.png",
+   "desc": "The holder gains the Warrior trait."
+  },
+  {
+   "apiName": "TFT7_Item_BruiserEmblemItem",
+   "name": "Bruiser Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set7/bruiser_craftable.png",
+   "desc": "The holder gains the Bruiser trait."
+  },
+  {
+   "apiName": "TFT7_Item_CavalierEmblemItem",
+   "name": "Cavalier Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set7/cavalier.png",
+   "desc": "The holder gains the Cavalier trait."
+  },
+  {
+   "apiName": "TFT7_Item_GuildEmblemItem",
+   "name": "Guild Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set7/guild_craftable.png",
+   "desc": "The holder gains the Guild trait.Guild Bonus: @Omnivamp@% Omnivamp"
+  },
+  {
+   "apiName": "TFT7_Item_DarkflightEmblemItem",
+   "name": "Darkflight Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set7/darkflight_craftable.png",
+   "desc": "The holder gains the Darkflight trait."
+  },
+  {
+   "apiName": "TFT7_Item_SwiftshotEmblemItem",
+   "name": "Swiftshot Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set7/swiftshot_craftable.png",
+   "desc": "The holder gains the Swiftshot trait."
+  },
+  {
+   "apiName": "TFT7_Item_WhispersEmblemItem",
+   "name": "Whispers Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set7/whispers_craftable.png",
+   "desc": "The holder gains the Whispers trait."
+  },
+  {
+   "apiName": "TFT7_Item_TempestEmblemItem",
+   "name": "Tempest Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set7/tempest_craftable.png",
+   "desc": "The holder gains the Tempest trait."
+  },
+  {
+   "apiName": "TFT7_Item_GuardianEmblemItem",
+   "name": "Guardian Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set7/guardian.png",
+   "desc": "The holder gains the Guardian trait."
+  },
+  {
+   "apiName": "TFT7_Item_CannoneerEmblemItem",
+   "name": "Cannoneer Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set7/cannoneer_craftable.png",
+   "desc": "The holder gains the Cannoneer trait."
+  },
+  {
+   "apiName": "TFT7_Item_MirageEmblemItem",
+   "name": "Mirage Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set7/mirage.png",
+   "desc": "The holder gains the Mirage trait."
+  },
+  {
+   "apiName": "TFT7_Item_LagoonEmblemItem",
+   "name": "Lagoon Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set7/lagoon.png",
+   "desc": "The holder gains the Lagoon trait."
+  },
+  {
+   "apiName": "TFT7_Item_JadeEmblemItem",
+   "name": "Jade Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set7/jade_craftable.png",
+   "desc": "The holder gains the Jade trait."
+  },
+  {
+   "apiName": "TFT_Item_Redemption",
+   "name": "Spirit Visage",
+   "composition": [
+    "TFT_Item_TearOfTheGoddess",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
+   "desc": "Regenerate @MissingHealthHeal*100@% of missing Health each second."
+  },
+  {
+   "apiName": "TFT16_Item_BrawlerEmblemItem",
+   "name": "Bruiser Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set16/tft16_emblem_bruiser.png",
+   "desc": "The holder gains the Bruiser trait. Every second, deal @HealthRatio*100@% of the holder's max Health as magic damage in a @HexRadius@-hex radius."
+  },
+  {
+   "apiName": "TFT16_Item_InvokerEmblemItem",
+   "name": "Invoker Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set16/tft16_emblem_invoker.png",
+   "desc": "The holder gains the Invoker trait. On cast, gain Ability Power equal to @APPercent*100@% of Mana spent."
+  },
+  {
+   "apiName": "TFT16_Item_SlayerEmblemItem",
+   "name": "Slayer Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set16/tft16_emblem_slayer.png",
+   "desc": "The holder gains the Slayer trait. Upon dropping below @HealthThreshold*100@% max Health, Gain @ManaGain@ Mana and a @ShieldPercent*100@% max Health Shield."
+  },
+  {
+   "apiName": "TFT16_Item_VanquisherEmblemItem",
+   "name": "Vanquisher Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set16/tft16_emblem_vanquisher.png",
+   "desc": "The holder gains the Vanquisher trait and a @ChanceForGold@% chance to drop @GoldAmount@ gold on critical strikes.Cooldown: @ICD@ secondsGold generated this game: @TFTUnitProperty.item:TFT_Item_GoldGenerated@"
+  },
+  {
+   "apiName": "TFT16_Item_RapidfireEmblemItem",
+   "name": "Quickstriker Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set16/tft16_emblem_quickstriker.png",
+   "desc": "The holder gains the Quickstriker trait. On takedown, dash to the nearest target and heal for @HealPercent*100@% maximum Health."
+  },
+  {
+   "apiName": "TFT16_Item_YordleEmblemItem",
+   "name": "Yordle Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set16/tft16_emblem_yordle.png",
+   "desc": "The holder gains the Yordle trait."
+  },
+  {
+   "apiName": "TFT16_Item_VoidEmblemItem",
+   "name": "Void Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set16/tft16_emblem_void.png",
+   "desc": "The holder gains the Void trait."
+  },
+  {
+   "apiName": "TFT16_Item_JuggernautEmblemItem",
+   "name": "Juggernaut Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set16/tft16_emblem_juggernaut.png",
+   "desc": "The holder gains the Juggernaut trait and @PercentHealth*100@% of other Juggernaut's max Health when they die."
+  },
+  {
+   "apiName": "TFT16_Item_BilgewaterEmblemItem",
+   "name": "Bilgewater Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set16/tft16_emblem_bilgewater.png",
+   "desc": "The holder gains the Bilgewater trait."
+  },
+  {
+   "apiName": "TFT16_Item_FreljordEmblemItem",
+   "name": "Freljord Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set16/tft16_emblem_freljord.png",
+   "desc": "The holder gains the Freljord trait."
+  },
+  {
+   "apiName": "TFT16_Item_SorcererEmblemItem",
+   "name": "Arcanist Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set16/tft16_emblem_arcanist.png",
+   "desc": "The holder gains the Arcanist trait. On kill, refund @ManaRefundRatio*100@% of the holder's max Mana."
+  },
+  {
+   "apiName": "TFT16_Item_NoxusEmblemItem",
+   "name": "Noxus Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set16/tft16_emblem_noxus.png",
+   "desc": "The holder gains the Noxus trait."
+  },
+  {
+   "apiName": "TFT16_Item_ZaunEmblemItem",
+   "name": "Zaun Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set16/tft16_emblem_zaun.png",
+   "desc": "The holder gains the Zaun trait."
+  },
+  {
+   "apiName": "TFT16_Item_IoniaEmblemItem",
+   "name": "Ionia Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set16/tft16_emblem_ionia.png",
+   "desc": "The holder gains the Ionia trait."
+  },
+  {
+   "apiName": "TFT16_Item_DemaciaEmblemItem",
+   "name": "Demacia Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set16/tft16_emblem_demacia.png",
+   "desc": "The holder gains the Demacia trait."
+  },
+  {
+   "apiName": "TFT16_Item_DefenderEmblemItem",
+   "name": "Defender Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set16/tft16_emblem_defender.png",
+   "desc": "The holder gains the Defender trait. Combat Start: Gain @ResistGain*100@% more Armor OR Magic Resist from all sources, depending on whichever is higher."
+  },
+  {
+   "apiName": "TFT_Item_TacticiansRing",
+   "name": "Tactician's Cape",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_FryingPan"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_tacticiansring.png",
+   "desc": "Your team gains +@MaxArmySizeIncrease@ max team size.@PercentGoldChance@% chance to drop 1 gold after @Timer@ seconds of combat.\"...and a bit of Luck.\""
+  },
+  {
+   "apiName": "TFT_Item_ThiefsGloves",
+   "name": "Thief's Gloves",
+   "composition": [
+    "TFT_Item_SparringGloves",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.png",
+   "desc": "Each round: Equip 2 random items.[Consumes 3 item slots.]@TFTUnitProperty.:TFT_BindOnEquipTRA@"
+  },
+  {
+   "apiName": "TFT_Item_GuinsoosRageblade",
+   "name": "Guinsoo's Rageblade",
+   "composition": [
+    "TFT_Item_RecurveBow",
+    "TFT_Item_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.png",
+   "desc": "Gain @AttackSpeedPerStack@% stacking Attack Speed every second."
+  },
+  {
+   "apiName": "TFT_Item_IonicSpark",
+   "name": "Ionic Spark",
+   "composition": [
+    "TFT_Item_NeedlesslyLargeRod",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_ionicspark.png",
+   "desc": "@MRShred@% Shred enemies within @HexRange@ hexes. When enemies cast an Ability, deal magic damage equal to @ManaRatio@% of the Mana spentShred: Reduce Magic Resist"
+  },
+  {
+   "apiName": "TFT_Item_SteraksGage",
+   "name": "Sterak's Gage",
+   "composition": [
+    "TFT_Item_BFSword",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_steraksgage.png",
+   "desc": "At @HealthThreshold@% Health, gain a Shield equal to @PercentHealthShield*100@% of the wearer's maximum Health that rapidly decays over @ShieldDuration@ seconds."
+  },
+  {
+   "apiName": "TFT_Item_DragonsClaw",
+   "name": "Dragon's Claw",
+   "composition": [
+    "TFT_Item_NegatronCloak",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_dragonsclaw.png",
+   "desc": "Gain @PercentMaxHP*100@% max health.Every @HealthRegenInterval@ seconds, heal @PercentHealthDamage@% max Health."
+  },
+  {
+   "apiName": "TFT13_Item_AmbusherEmblemItem",
+   "name": "Ambusher Emblem",
+   "composition": [
+    "TFT_Item_SparringGloves",
+    "TFT_Item_FryingPan"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set13/tft_set13_emblem_ambusher.png",
+   "desc": "The holder gains the Ambusher trait."
+  },
+  {
+   "apiName": "TFT13_Item_RebelEmblemItem",
+   "name": "Rebel Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set13/tft_set13_emblem_rebel.png",
+   "desc": "The holder gains the Rebel trait."
+  },
+  {
+   "apiName": "TFT13_Item_SquadEmblemItem",
+   "name": "Enforcer Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set13/tft_set13_emblem_enforcer.png",
+   "desc": "The holder gains the Enforcer trait."
+  },
+  {
+   "apiName": "TFT13_Item_SorcererEmblemItem",
+   "name": "Sorcerer Emblem",
+   "composition": [
+    "TFT_Item_NeedlesslyLargeRod",
+    "TFT_Item_FryingPan"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set13/tft_set13_emblem_sorcerer.png",
+   "desc": "The holder gains the Sorcerer trait."
+  },
+  {
+   "apiName": "TFT13_Item_CabalEmblemItem",
+   "name": "Black Rose Emblem",
+   "composition": [
+    "TFT_Item_NeedlesslyLargeRod",
+    "TFT_Item_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set13/tft_set13_emblem_cabal.png",
+   "desc": "The holder gains the Black Rose trait."
+  },
+  {
+   "apiName": "TFT13_Item_ExperimentEmblemItem",
+   "name": "Experiment Emblem",
+   "composition": [
+    "TFT_Item_GiantsBelt",
+    "TFT_Item_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set13/tft_set13_emblem_experiment.png",
+   "desc": "The holder gains the Experiment trait.Experiment Bonus: After @SplitTime@ seconds or on death, summon a copy of this unit with @TFTUnitProperty.:TFT13_EmblemCurrentExperimentBonus@% max Health."
+  },
+  {
+   "apiName": "TFT13_Item_BruiserEmblemItem",
+   "name": "Bruiser Emblem",
+   "composition": [
+    "TFT_Item_GiantsBelt",
+    "TFT_Item_FryingPan"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set13/tft_set13_emblem_bruiser.png",
+   "desc": "The holder gains the Bruiser trait."
+  },
+  {
+   "apiName": "TFT13_Item_AutomataEmblemItem",
+   "name": "Automata Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set13/tft_set13_emblem_automata.png",
+   "desc": "The holder gains the Automata trait."
+  },
+  {
+   "apiName": "TFT13_Item_DemolitionistEmblemItem",
+   "name": "Artillerist Emblem",
+   "composition": [
+    "TFT_Item_BFSword",
+    "TFT_Item_FryingPan"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set13/tft_set13_emblem_artillerist.png",
+   "desc": "The holder gains the Artillerist trait."
+  },
+  {
+   "apiName": "TFT13_Item_HoverboardEmblemItem",
+   "name": "Firelight Emblem",
+   "composition": [
+    "TFT_Item_SparringGloves",
+    "TFT_Item_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set13/tft_set13_emblem_firelight.png",
+   "desc": "The holder gains the Firelight trait."
+  },
+  {
+   "apiName": "TFT13_Item_WarbandEmblemItem",
+   "name": "Conqueror Emblem",
+   "composition": [
+    "TFT_Item_BFSword",
+    "TFT_Item_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set13/tft_set13_emblem_conqueror.png",
+   "desc": "The holder gains the Conqueror trait."
+  },
+  {
+   "apiName": "TFT13_Item_ChallengerEmblemItem",
+   "name": "Quickstriker Emblem",
+   "composition": [
+    "TFT_Item_RecurveBow",
+    "TFT_Item_FryingPan"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set13/tft_set13_emblem_quickstriker.png",
+   "desc": "The holder gains the Quickstriker trait."
+  },
+  {
+   "apiName": "TFT13_Item_TitanEmblemItem",
+   "name": "Sentinel Emblem",
+   "composition": [
+    "TFT_Item_ChainVest",
+    "TFT_Item_FryingPan"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set13/tft_set13_emblem_sentinel.png",
+   "desc": "The holder gains the Sentinel trait."
+  },
+  {
+   "apiName": "TFT13_Item_PitFighterEmblemItem",
+   "name": "Pit Fighter Emblem",
+   "composition": [
+    "TFT_Item_NegatronCloak",
+    "TFT_Item_FryingPan"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set13/tft_set13_emblem_pitfighter.png",
+   "desc": "The holder gains the Pit Fighter trait."
+  },
+  {
+   "apiName": "TFT13_Item_InvokerEmblemItem",
+   "name": "Visionary Emblem",
+   "composition": [
+    "TFT_Item_TearOfTheGoddess",
+    "TFT_Item_FryingPan"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set13/tft_set13_emblem_visionary.png",
+   "desc": "The holder gains the Visionary trait."
+  },
+  {
+   "apiName": "TFT13_Item_FamilyEmblemItem",
+   "name": "Family Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set13/tft_set13_emblem_family.png",
+   "desc": "The holder gains the Family trait."
+  },
+  {
+   "apiName": "TFT_Item_PowerGauntlet",
+   "name": "Striker's Flail",
+   "composition": [
+    "TFT_Item_GiantsBelt",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.png",
+   "desc": "Critical Strikes grant @BuffDamageAmp*100@% Damage Amp for @Duration@ seconds, stacking up to @MaxStacks@ times."
+  },
+  {
+   "apiName": "TFT17_Item_FavoredEmblemItem",
+   "name": "Arbiter Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set17/tft17_emblem_arbiter.png",
+   "desc": "The holder gains the Arbiter trait."
+  },
+  {
+   "apiName": "TFT17_Item_ShieldTankEmblemItem",
+   "name": "Vanguard Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set17/tft17_emblem_vanguard.png",
+   "desc": "The holder gains the Vanguard trait. Gain @APGain@% Ability Power whenever an ally gains a shield."
+  },
+  {
+   "apiName": "TFT17_Item_PulsefireEmblemItem",
+   "name": "Timebreaker Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set17/tft17_emblem_timebreaker.png",
+   "desc": "The holder gains the Timebreaker trait."
+  },
+  {
+   "apiName": "TFT17_Item_DRXEmblemItem",
+   "name": "N.O.V.A. Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set17/tft17_emblem_nova.png",
+   "desc": "The holder gains the N.O.V.A. trait.N.O.V.A. Strike: Gain @ASStriker*100@% Attack Speed and @ArmorStriker@ Armor and Magic Resist. Other allies gain @ASTeam*100@% Attack Speed and @ArmorTeam@ Armor and Magic Resist."
+  },
+  {
+   "apiName": "TFT17_Item_AstronautEmblemItem",
+   "name": "Meeple Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set17/tft17_emblem_meeple.png",
+   "desc": "The holder gains the Meeple trait and @DamageAmpPerMeep*100@% Damage Amp and @HealthPerMeep@ Health per %i:set14AmpIcon%."
+  },
+  {
+   "apiName": "TFT17_Item_SummonTraitEmblemItem",
+   "name": "Shepherd Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set17/tft17_emblem_sheperd.png",
+   "desc": "The holder gains the Shepherd trait. On cast, grant @ManaSharePercent*100@% of max Mana to the Bond of the Stars."
+  },
+  {
+   "apiName": "TFT17_Item_HPTankEmblemItem",
+   "name": "Brawler Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set17/tft17_emblem_brawler.png",
+   "desc": "The holder gains the Brawler trait. Attacks deals @PercentHPAttack*100@% of the holder's max health as magic damage."
+  },
+  {
+   "apiName": "TFT17_Item_AssassinTraitEmblemItem",
+   "name": "Rogue Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set17/tft17_emblem_rogue.png",
+   "desc": "The holder gains the Rogue trait. At @HealthThreshold*100@% health, gain @Omnivamp*100@% Omnivamp and immunity to crowd control for @BuffDuration@ seconds."
+  },
+  {
+   "apiName": "TFT17_Item_ASTraitEmblemItem",
+   "name": "Challenger Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set17/tft17_emblem_challenger.png",
+   "desc": "The holder gains the Challenger trait. On takedown, the holder's next @NumAttacks@ attacks each heal for @PercentHealthHeal*100@% of max health."
+  },
+  {
+   "apiName": "TFT17_Item_DarkStarEmblemItem",
+   "name": "Dark Star Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set17/tft17_emblem_darkstar.png",
+   "desc": "The holder gains the Dark Star trait."
+  },
+  {
+   "apiName": "TFT17_Item_StargazerEmblemItem",
+   "name": "Stargazer Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set17/tft17_emblem_stargazer.png",
+   "desc": "The holder gains the Stargazer trait."
+  },
+  {
+   "apiName": "TFT17_Item_MeleeTraitEmblemItem",
+   "name": "Marauder Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set17/tft17_emblem_marauder.png",
+   "desc": "The holder gains the Marauder trait and has a @GoldDropChance@% chance to drop @GoldAmount@ gold on kill.Gold dropped this game: @TFTUnitProperty.item:TFT_Item_GoldGenerated@"
+  },
+  {
+   "apiName": "TFT17_Item_SpaceGrooveEmblemItem",
+   "name": "Space Groove Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set17/tft17_emblem_spacegroove.png",
+   "desc": "The holder gains the Space Groove trait. On cast, the holder enters {{TFT17_SpaceGroove_TheGroove}} for @GrooveDuration@ seconds.Can only occur once every @ICD@ seconds."
+  },
+  {
+   "apiName": "TFT17_Item_ResistTankEmblemItem",
+   "name": "Bastion Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set17/tft17_emblem_bastion.png",
+   "desc": "The holder gains the Bastion trait. After the first @Delay@ seconds of combat, the holder gains @AttackSpeed*100@% Attack Speed."
+  },
+  {
+   "apiName": "TFT17_Item_FlexTraitEmblemItem",
+   "name": "Voyager Emblem",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set17/tft17_emblem_voyager.png",
+   "desc": "The holder gains the Voyager trait. Combat Start: The holder and allies within 1 hex in the same row gain a bonus based on the holder's role.- Tanks: @BonusArmorMR@ Armor and Magic Resist- Fighters/Assassins: @BonusOmnivamp*100@% Omnivamp- Other Roles: @BonusAttackSpeed*100@% Attack Speed"
+  },
+  {
+   "apiName": "TFT17_Item_PrimordianEmblemItem",
+   "name": "Primordian Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set17/tft17_emblem_primordian.png",
+   "desc": "The holder gains the Primordian trait."
+  },
+  {
+   "apiName": "TFTTutorial_Item_GuinsoosRageblade",
+   "name": "Guinsoo's Rageblade",
+   "composition": [
+    "TFTTutorial_Item_NeedlesslyLargeRod",
+    "TFTTutorial_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/guinsoos_rageblade.png",
+   "desc": "Attacks grant %i:scaleAS% @AttackSpeedPerStack@% bonus Attack Speed. This effect stacks."
+  },
+  {
+   "apiName": "TFTTutorial_Item_GuardianAngel",
+   "name": "Guardian Angel",
+   "composition": [
+    "TFTTutorial_Item_BFSword",
+    "TFTTutorial_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/guardian_angel.png",
+   "desc": "Prevents the holder's first death, placing them in stasis instead. After @StasisDuration@ seconds, they return with @HealthRestore@ Health and shed all negative effects.[Unique - Only One Per Champion]"
+  },
+  {
+   "apiName": "TFT_Item_GargoyleStoneplate",
+   "name": "Gargoyle Stoneplate",
+   "composition": [
+    "TFT_Item_ChainVest",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.png",
+   "desc": "Gain @ArmorPerEnemy@ Armor and @MRPerEnemy@ Magic Resist for each enemy targeting the holder."
+  },
+  {
+   "apiName": "TFT_Item_BrambleVest",
+   "name": "Bramble Vest",
+   "composition": [
+    "TFT_Item_ChainVest",
+    "TFT_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bramblevest.png",
+   "desc": "Gain @PercentMaxHP*100@% max health.Take @AutoDamageReduction*100@% reduced damage from attacks. When struck by any attack, deal @1StarAoEDamage@ magic damage to all adjacent enemies.Cooldown: @ICD@ seconds"
+  },
+  {
+   "apiName": "TFT_Item_MadredsBloodrazor",
+   "name": "Giant Slayer",
+   "composition": [
+    "TFT_Item_BFSword",
+    "TFT_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.png",
+   "desc": "Gain @DamageAmp*100@% additional Damage Amp against Tanks."
+  },
+  {
+   "apiName": "TFT3_Item_BlademasterEmblem",
+   "name": "Blademaster Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set3/blademaster.png",
+   "desc": "The holder gains the Blademaster trait."
+  },
+  {
+   "apiName": "TFT3_Item_StarGuardianEmblem",
+   "name": "Star Guardian Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set3/starguardian.png",
+   "desc": "The holder gains the Star Guardian trait."
+  },
+  {
+   "apiName": "TFT3_Item_BattlecastEmblem",
+   "name": "Battlecast Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set3/battlecast.png",
+   "desc": "The holder gains the Battlecast trait."
+  },
+  {
+   "apiName": "TFT3_Item_InfiltratorEmblem",
+   "name": "Infiltrator Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set3/infiltrator.png",
+   "desc": "The holder gains the Infiltrator trait."
+  },
+  {
+   "apiName": "TFT3_Item_CelestialEmblem",
+   "name": "Celestial Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set3/celestial.png",
+   "desc": "The holder gains the Celestial trait."
+  },
+  {
+   "apiName": "TFT3_Item_RebelEmblem",
+   "name": "Rebel Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set3/rebel.png",
+   "desc": "The holder gains the Rebel trait."
+  },
+  {
+   "apiName": "TFT3_Item_DarkStarEmblem",
+   "name": "Dark Star Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set3/darkstar.png",
+   "desc": "The holder gains the Dark Star trait."
+  },
+  {
+   "apiName": "TFT3_Item_ProtectorEmblem",
+   "name": "Protector Emblem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set3/protector.png",
+   "desc": "The holder gains the Protector trait."
+  },
+  {
+   "apiName": "TFT_Item_RedBuff",
+   "name": "Sunfire Cape",
+   "composition": [
+    "TFT_Item_ChainVest",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.png",
+   "desc": "Gain @BonusPercentHP*100@% max Health. Every @ICD@ seconds, deal @BurnPercent@% Burn and @GrievousWoundsPercent@% Wound to an enemy within @HexRange@ hexes for @BurnDuration@ seconds.Burn: Deals a percent of the target's max Health as true damage every secondWound: Reduces healing received"
+  },
+  {
+   "apiName": "TFT_Item_UnstableConcoction",
+   "name": "Hand Of Justice",
+   "composition": [
+    "TFT_Item_TearOfTheGoddess",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_unstableconcoction.png",
+   "desc": "Gain 2 effects:@AD_NotStatBar*100@% Attack Damage and @AP_NotStatBar@% Ability Power.@StatOmnivamp_NotStatBar*100@% Omnivamp.While above @HealthThreshold*100@% health, double the Attack Damage and Ability Power. While below @HealthThreshold*100@% Health, double the Omnivamp."
+  },
+  {
+   "apiName": "TFT_Item_CursedBlade",
+   "name": "tft_item_name_CursedBlade",
+   "composition": [
+    "TFT_Item_CursedBlade",
+    "TFT_Item_CursedBlade"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft_item_cursedblade.png",
+   "desc": "TFT_item_description_CursedBlade"
+  },
+  {
+   "apiName": "TFT_Item_GuardianAngel",
+   "name": "Edge of Night",
+   "composition": [
+    "TFT_Item_BFSword",
+    "TFT_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.png",
+   "desc": "At @HealthThreshold@% Health, briefly become untargetable, shed negative effects, and heal @MissingHealthRestore*100@% missing health."
+  },
+  {
+   "apiName": "TFT_Item_TitansResolve",
+   "name": "Titan's Resolve",
+   "composition": [
+    "TFT_Item_ChainVest",
+    "TFT_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_titansresolve.png",
+   "desc": "Gain @StackingAD*100@% Attack Damage and @StackingSP@% Ability Power when attacking or taking damage, stacking up to @StackCap@ times. At full stacks, gain @StackedAmp*100@% Damage Amp and gain immunity to crowd control."
+  },
+  {
+   "apiName": "TFT_Item_RunaansHurricane",
+   "name": "Kraken's Fury",
+   "composition": [
+    "TFT_Item_NegatronCloak",
+    "TFT_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_krakenslayer.png",
+   "desc": "Attacks grant @ADOnAttack*100@% stacking Attack Damage, up to @MaxStacks@ attacks. After @MaxStacks@ attacks, gain @ASCapstone*100@% Attack Speed."
+  },
+  {
+   "apiName": "TFT_Item_Bloodthirster",
+   "name": "Bloodthirster",
+   "composition": [
+    "TFT_Item_BFSword",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.png",
+   "desc": "Once per combat at @HealthThreshold@% Health, gain a @ShieldHealthPercent@% max Health Shield that lasts up to @ShieldDuration@ seconds."
+  },
+  {
+   "apiName": "TFT_Item_ArchangelsStaff",
+   "name": "Archangel's Staff",
+   "composition": [
+    "TFT_Item_NeedlesslyLargeRod",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_archangelsstaff.png",
+   "desc": "Combat start: Gain @APPerInterval@% Ability Power every @IntervalSeconds@ seconds in combat."
+  },
+  {
+   "apiName": "TFT_Item_HextechChestguard",
+   "name": "tft_item_name_HextechChestguard",
+   "composition": [
+    "TFT_Item_HextechChestguard",
+    "TFT_Item_HextechChestguard"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft_item_hextechchestguard.png",
+   "desc": "tft_item_description_HextechChestguard"
+  },
+  {
+   "apiName": "TFT_Item_SpearOfShojin",
+   "name": "Spear of Shojin",
+   "composition": [
+    "TFT_Item_BFSword",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.png",
+   "desc": "Attacks grant @FlatManaRestore@ bonus Mana."
+  },
+  {
+   "apiName": "TFT_Item_SpectralGauntlet",
+   "name": "Evenshroud",
+   "composition": [
+    "TFT_Item_NegatronCloak",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spectralgauntlet.png",
+   "desc": "@ARReductionAmount@% Sunder enemies within @HexRange@ hexes. Gain @BonusResists@ Armor and Magic Resist for the first @BonusResistDuration@ seconds of combat.Sunder: Reduce Armor"
+  },
+  {
+   "apiName": "TFT_Item_Leviathan",
+   "name": "Nashor's Tooth",
+   "composition": [
+    "TFT_Item_RecurveBow",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_leviathan.png",
+   "desc": "Attacks grant @BaseManaOnHit@ bonus Mana, increased to @ManaOnCrit@ if they critically strike."
+  },
+  {
+   "apiName": "TFT_Item_Morellonomicon",
+   "name": "Morellonomicon",
+   "composition": [
+    "TFT_Item_NeedlesslyLargeRod",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.png",
+   "desc": "Attacks and Abilities deal @BurnPercent@% Burn and @GrievousWoundsPercent@% Wound to enemies for @BurnDuration@ seconds.Burn: Deals a percent of the target's max Health as true damage every secondWound: Reduces healing received"
+  },
+  {
+   "apiName": "TFT_Item_RapidFireCannon",
+   "name": "Red Buff",
+   "composition": [
+    "TFT_Item_RecurveBow",
+    "TFT_Item_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.png",
+   "desc": "Attacks and Abilities @BurnPercent@% Burn and @HealingReductionPct@% Wound enemies for @Duration@ seconds.Burn: Deals a percent of the target's max Health as true damage every secondWound: Reduces healing received"
+  },
+  {
+   "apiName": "TFT_Item_Crownguard",
+   "name": "Crownguard",
+   "composition": [
+    "TFT_Item_NeedlesslyLargeRod",
+    "TFT_Item_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.png",
+   "desc": "Combat Start: Gain a @ShieldSize@% max Health Shield for @ShieldDuration@ seconds.When the Shield expires, gain @ShieldBonusAP@% Ability Power."
+  },
+  {
+   "apiName": "TFT_Item_AdaptiveHelm",
+   "name": "Adaptive Helm",
+   "composition": [
+    "TFT_Item_NegatronCloak",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.png",
+   "desc": "Gain an additional @ManaPercIncrease*100@% Mana from all sources. The holder gains an additional bonus based on their Role:Tanks and Fighters: Gain @FrontlineResists@ Armor and Magic Resistance.Other Roles: Gain @BacklineADAP@% Attack Damage and Ability Power."
+  },
+  {
+   "apiName": "TFT_Item_BlueBuff",
+   "name": "Blue Buff",
+   "composition": [
+    "TFT_Item_TearOfTheGoddess",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.png",
+   "desc": "Gain @ModifiedADAP*100@% additional Attack Damage and Ability Power from all sources."
+  },
+  {
+   "apiName": "TFT_Item_LastWhisper",
+   "name": "Last Whisper",
+   "composition": [
+    "TFT_Item_RecurveBow",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_lastwhisper.png",
+   "desc": "Damage from attacks and Abilities @ArmorReductionPercent@% Sunder the target for @ArmorBreakDuration@ seconds. This effect does not stack.Sunder: Reduce Armor"
+  },
+  {
+   "apiName": "TFT_Item_JeweledGauntlet",
+   "name": "Jeweled Gauntlet",
+   "composition": [
+    "TFT_Item_NeedlesslyLargeRod",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.png",
+   "desc": "Gain Precision.{{TFT_Keyword_Precision}}"
+  },
+  {
+   "apiName": "TFT_Item_NightHarvester",
+   "name": "Steadfast Heart",
+   "composition": [
+    "TFT_Item_ChainVest",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_nightharvester.png",
+   "desc": "Gain @BaseDurability*100@% Durability. While above @ThresholdForEmpower*100@% Health, instead gain @EmpoweredDurability*100@% Durability.@TFTUnitProperty.:TFT_Augment_WarmogsBuckle_TRAKey@"
+  },
+  {
+   "apiName": "TFT_Item_ForceOfNature",
+   "name": "Tactician's Crown",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_forceofnature.png",
+   "desc": "Your team gains +@MaxArmySizeIncrease@ max team size.@PercentGoldChance@% chance to drop 1 gold when you win combat.\"...the Heart of a hero...\""
+  },
+  {
+   "apiName": "TFT_Item_Quicksilver",
+   "name": "Quicksilver",
+   "composition": [
+    "TFT_Item_SparringGloves",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_quicksilver.png",
+   "desc": "Combat Start: Gain immunity to crowd control for @SpellShieldDuration@ seconds.Gain @ProcAttackSpeed*100@% stacking Attack Speed every second."
+  },
+  {
+   "apiName": "TFT_Item_Deathblade",
+   "name": "Deathblade",
+   "composition": [
+    "TFT_Item_BFSword",
+    "TFT_Item_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.png",
+   "desc": "Perfect peace and calm for the holder - and all who face it.@TFTUnitProperty.:TFT_Augment_TragicalBlade_TRAKey@"
+  },
+  {
+   "apiName": "TFT_Item_TacticiansScepter",
+   "name": "Tactician's Shield",
+   "composition": [
+    "TFT_Item_FryingPan",
+    "TFT_Item_FryingPan"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_tacticiansscepter.png",
+   "desc": "Your team gains +@MaxArmySizeIncrease@ max team size.@PercentGoldChance@% chance to drop 1 gold when the holder dies.\"Imbued with a Philosopher's wisdom...\""
+  },
+  {
+   "apiName": "TFT_Item_WarmogsArmor",
+   "name": "Warmog's Armor",
+   "composition": [
+    "TFT_Item_GiantsBelt",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.png",
+   "desc": "Gain @BonusPercentHP*100@% max Health."
+  },
+  {
+   "apiName": "TFT_Item_StatikkShiv",
+   "name": "Void Staff",
+   "composition": [
+    "TFT_Item_RecurveBow",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
+   "desc": "Damage from attacks and Abilities @MRShred@% Shred the target for @MRShredDuration@ seconds. This effect does not stack.Shred: Reduce Magic Resist"
+  },
+  {
+   "apiName": "TFT_Item_HextechGunblade",
+   "name": "Hextech Gunblade",
+   "composition": [
+    "TFT_Item_BFSword",
+    "TFT_Item_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_hextechgunblade.png",
+   "desc": "Heal the lowest percent Health ally for @AllyHealing*100@% of damage dealt.Ally Healing: @TFTUnitProperty.item:TFT_Tracker_Value1@"
+  },
+  {
+   "apiName": "DA_RedBuff",
+   "name": "Red Buff",
+   "composition": [
+    "DA_Component_RecurveBow",
+    "DA_Component_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_Evenshroud",
+   "name": "Evenshroud",
+   "composition": [
+    "DA_Component_NegatronCloak",
+    "DA_Component_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spectralgauntlet.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_SpearOfShojin",
+   "name": "Spear of Shojin",
+   "composition": [
+    "DA_Component_TearOfTheGoddess",
+    "DA_Component_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_Quicksilver",
+   "name": "Quicksilver",
+   "composition": [
+    "DA_Component_NegatronCloak",
+    "DA_Component_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_quicksilver.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_18_EmblemVanguard",
+   "name": "Vanguard Emblem",
+   "composition": [
+    "DA_Component_FryingPan",
+    "DA_Component_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set18/tft18_emblem_vanguard.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_GargoyleStoneplate",
+   "name": "Gargoyle Stoneplate",
+   "composition": [
+    "DA_Component_ChainVest",
+    "DA_Component_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_18_EmblemBlackthorn",
+   "name": "Blackthorn Emblem",
+   "composition": [
+    "DA_Component_Spatula",
+    "DA_Component_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set18/tft18_emblem_blackthorn.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_NashorsTooth",
+   "name": "Nashor's Tooth",
+   "composition": [
+    "DA_Component_RecurveBow",
+    "DA_Component_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_leviathan.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_18_EmblemHunter",
+   "name": "Hunter Emblem",
+   "composition": [
+    "DA_Component_FryingPan",
+    "DA_Component_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set18/tft18_emblem_hunter.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_ThiefsGloves",
+   "name": "Thief's Gloves",
+   "composition": [
+    "DA_Component_SparringGloves",
+    "DA_Component_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_InfinityEdge",
+   "name": "Infinity Edge",
+   "composition": [
+    "DA_Component_BFSword",
+    "DA_Component_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_Morellonomicon",
+   "name": "Morellonomicon",
+   "composition": [
+    "DA_Component_GiantsBelt",
+    "DA_Component_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_18_EmblemPrimal",
+   "name": "Primal Emblem",
+   "composition": [
+    "DA_Component_Spatula",
+    "DA_Component_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set18/tft18_emblem_primal.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_ProtectorsVow",
+   "name": "Protector's Vow",
+   "composition": [
+    "DA_Component_ChainVest",
+    "DA_Component_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_WarmogsArmor",
+   "name": "Warmogs Armor",
+   "composition": [
+    "DA_Component_GiantsBelt",
+    "DA_Component_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_18_EmblemSlayer",
+   "name": "Ravager Emblem",
+   "composition": [
+    "DA_Component_FryingPan",
+    "DA_Component_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set18/tft18_emblem_ravager.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_VoidStaff",
+   "name": "Void Staff",
+   "composition": [
+    "DA_Component_RecurveBow",
+    "DA_Component_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_DragonsClaw",
+   "name": "Dragon's Claw",
+   "composition": [
+    "DA_Component_NegatronCloak",
+    "DA_Component_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_dragonsclaw.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_18_EmblemFae",
+   "name": "Fae Emblem",
+   "composition": [
+    "DA_Component_Spatula",
+    "DA_Component_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set18/tft18_emblem_fae.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_SpiritVisage",
+   "name": "Spirit Visage",
+   "composition": [
+    "DA_Component_GiantsBelt",
+    "DA_Component_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_EdgeOfNight",
+   "name": "Edge of Night",
+   "composition": [
+    "DA_Component_BFSword",
+    "DA_Component_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_18_EmblemSprykin",
+   "name": "Sprykin Emblem",
+   "composition": [
+    "DA_Component_Spatula",
+    "DA_Component_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set18/tft18_emblem_sprykin.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_TitansResolve",
+   "name": "Titan's Resolve",
+   "composition": [
+    "DA_Component_RecurveBow",
+    "DA_Component_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_titansresolve.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_18_EmblemInvoker",
+   "name": "Invoker Emblem",
+   "composition": [
+    "DA_Component_FryingPan",
+    "DA_Component_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set18/tft18_emblem_invoker.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_18_EmblemBrawler",
+   "name": "Brawler Emblem",
+   "composition": [
+    "DA_Component_FryingPan",
+    "DA_Component_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set18/tft18_emblem_brawler.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_TacticiansCape",
+   "name": "Tactician's Cape",
+   "composition": [
+    "DA_Component_Spatula",
+    "DA_Component_FryingPan"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_tacticiansring.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_HextechGunblade",
+   "name": "Hextech Gunblade",
+   "composition": [
+    "DA_Component_BFSword",
+    "DA_Component_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_hextechgunblade.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_HandOfJustice",
+   "name": "Hand Of Justice",
+   "composition": [
+    "DA_Component_TearOfTheGoddess",
+    "DA_Component_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_unstableconcoction.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_18_EmblemExecutioner",
+   "name": "Executioner Emblem",
+   "composition": [
+    "DA_Component_FryingPan",
+    "DA_Component_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set18/tft18_emblem_executioner.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_StrikersFlail",
+   "name": "Striker's Flail",
+   "composition": [
+    "DA_Component_GiantsBelt",
+    "DA_Component_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_18_EmblemLunar",
+   "name": "Lunar Emblem",
+   "composition": [
+    "DA_Component_Spatula",
+    "DA_Component_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set18/tft18_emblem_lunar.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_SteadfastHeart",
+   "name": "Steadfast Heart",
+   "composition": [
+    "DA_Component_ChainVest",
+    "DA_Component_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_nightharvester.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_GuinsoosRageblade",
+   "name": "Guinsoo's Rageblade",
+   "composition": [
+    "DA_Component_RecurveBow",
+    "DA_Component_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_18_EmblemRapidfire",
+   "name": "Rapidfire Emblem",
+   "composition": [
+    "DA_Component_FryingPan",
+    "DA_Component_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set18/tft18_emblem_rapidfire.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_Bloodthirster",
+   "name": "Bloodthirster",
+   "composition": [
+    "DA_Component_BFSword",
+    "DA_Component_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_IonicSpark",
+   "name": "Ionic Spark",
+   "composition": [
+    "DA_Component_NeedlesslyLargeRod",
+    "DA_Component_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_ionicspark.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_RabadonsDeathcap",
+   "name": "Rabadon's Deathcap",
+   "composition": [
+    "DA_Component_NeedlesslyLargeRod",
+    "DA_Component_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_18_EmblemElderwood",
+   "name": "Elderwood Emblem",
+   "composition": [
+    "DA_Component_Spatula",
+    "DA_Component_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set18/tft18_emblem_elderwood.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_TacticiansCrown",
+   "name": "Tacticians Crown",
+   "composition": [
+    "DA_Component_Spatula",
+    "DA_Component_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_forceofnature.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_LastWhisper",
+   "name": "Last Whisper",
+   "composition": [
+    "DA_Component_RecurveBow",
+    "DA_Component_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_lastwhisper.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_Crownguard",
+   "name": "Crownguard",
+   "composition": [
+    "DA_Component_NeedlesslyLargeRod",
+    "DA_Component_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_18_EmblemSpellweaver",
+   "name": "Spellweaver Emblem",
+   "composition": [
+    "DA_Component_FryingPan",
+    "DA_Component_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set18/tft18_emblem_spellweaver.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_SteraksGage",
+   "name": "Sterak's Gage",
+   "composition": [
+    "DA_Component_BFSword",
+    "DA_Component_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_steraksgage.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_SunfireCape",
+   "name": "Sunfire Cape",
+   "composition": [
+    "DA_Component_ChainVest",
+    "DA_Component_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_ArchangelsStaff",
+   "name": "Archangel's Staff",
+   "composition": [
+    "DA_Component_NeedlesslyLargeRod",
+    "DA_Component_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_archangelsstaff.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_AdaptiveHelm",
+   "name": "Adaptive Helm",
+   "composition": [
+    "DA_Component_TearOfTheGoddess",
+    "DA_Component_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_BrambleVest",
+   "name": "Bramble Vest",
+   "composition": [
+    "DA_Component_ChainVest",
+    "DA_Component_ChainVest"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bramblevest.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_JeweledGauntlet",
+   "name": "Jeweled Gauntlet",
+   "composition": [
+    "DA_Component_SparringGloves",
+    "DA_Component_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_TacticiansShield",
+   "name": "Tacticians Shield",
+   "composition": [
+    "DA_Component_FryingPan",
+    "DA_Component_FryingPan"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_tacticiansscepter.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_BlueBuff",
+   "name": "Blue Buff",
+   "composition": [
+    "DA_Component_TearOfTheGoddess",
+    "DA_Component_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_KrakensFury",
+   "name": "Kraken's Fury",
+   "composition": [
+    "DA_Component_RecurveBow",
+    "DA_Component_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_krakenslayer.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_GiantSlayer",
+   "name": "Giant Slayer",
+   "composition": [
+    "DA_Component_RecurveBow",
+    "DA_Component_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_18_EmblemBlossom",
+   "name": "Blossom Emblem",
+   "composition": [
+    "DA_Component_Spatula",
+    "DA_Component_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set18/tft18_emblem_blossom.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_Deathblade",
+   "name": "Deathblade",
+   "composition": [
+    "DA_Component_BFSword",
+    "DA_Component_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.png",
+   "desc": ""
+  },
+  {
+   "apiName": "DA_18_EmblemInferno",
+   "name": "Inferno Emblem",
+   "composition": [
+    "DA_Component_Spatula",
+    "DA_Component_RecurveBow"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/traits/spatula/set18/tft18_emblem_inferno.png",
+   "desc": ""
+  },
+  {
+   "apiName": "TFT3_Item_StarGuardianSpatulaItem",
+   "name": "tft_item_name_StarGuardianSpatulaItem",
+   "composition": [
+    "TFT_Item_TearOfTheGoddess",
+    "TFT_Item_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft3_item_starguardian.png",
+   "desc": "tft_item_description_StarGuardianSpatulaItem"
+  },
+  {
+   "apiName": "TFT3_Item_BlademasterSpatulaItem",
+   "name": "tft_item_name_UmbralGlaive",
+   "composition": [
+    "TFT_Item_BFSword",
+    "TFT_Item_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft3_item_blademaster.png",
+   "desc": "tft_item_description_SlicerSpatulaItem"
+  },
+  {
+   "apiName": "TFT3_Item_InfiltratorSpatulaItem",
+   "name": "tft_item_name_InfiltratorSpatulaItem",
+   "composition": [
+    "TFT_Item_RecurveBow",
+    "TFT_Item_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft3_item_infiltrator.png",
+   "desc": "tft_item_description_InfiltratorSpatulaItem"
+  },
+  {
+   "apiName": "TFT3_Item_CelestialSpatulaItem",
+   "name": "tft_item_name_CelestialSpatulaItem",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft3_item_celestial.png",
+   "desc": "tft_item_description_CelestialSpatulaItem"
+  },
+  {
+   "apiName": "TFT3_Item_ProtectorSpatulaItem",
+   "name": "Protector's Chestguard",
+   "composition": [
+    "TFT_Item_Spatula",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft3_item_protector.png",
+   "desc": "The holder gains the Protector trait.[Unique - only 1 per champion]"
+  },
+  {
+   "apiName": "TFT3_Item_DarkStarSpatulaItem",
+   "name": "tft_item_name_DarkStarSpatulaItem",
+   "composition": [
+    "TFT_Item_SparringGloves",
+    "TFT_Item_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft3_item_darkstar.png",
+   "desc": "tft_item_description_DarkStarSpatulaItem"
+  },
+  {
+   "apiName": "TFT3_Item_RebelSpatulaItem",
+   "name": "tft_item_name_RebelSpatulaItem",
+   "composition": [
+    "TFT_Item_ChainVest",
+    "TFT_Item_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft3_item_rebel.png",
+   "desc": "tft_item_description_RebelSpatulaItem"
+  },
+  {
+   "apiName": "TFT3_Item_BattlecastSpatulaItem",
+   "name": "Battlecast Plating",
+   "composition": [
+    "TFT_Item_NeedlesslyLargeRod",
+    "TFT_Item_Spatula"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft_item_battlecast.png",
+   "desc": "The wearer gains the Battlecast trait.[Unique - Only One Per Champion]"
+  },
+  {
+   "apiName": "TFT_Item_CorruptedJeweledGauntlet",
+   "name": "Jeweled Gauntlet",
+   "composition": [
+    "TFT_Item_NeedlesslyLargeRod",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.png",
+   "desc": "Gain Precision.{{TFT_Keyword_Precision}}"
+  },
+  {
+   "apiName": "TFT_Item_CorruptedInfinityEdge",
+   "name": "Infinity Edge",
+   "composition": [
+    "TFT_Item_BFSword",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.png",
+   "desc": "Gain Precision.{{TFT_Keyword_Precision}}"
+  },
+  {
+   "apiName": "TFT_Item_CorruptedSpearOfShojin",
+   "name": "Spear of Shojin",
+   "composition": [
+    "TFT_Item_BFSword",
+    "TFT_Item_TearOfTheGoddess"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.png",
+   "desc": "Attacks grant @FlatManaRestore@ bonus Mana."
+  },
+  {
+   "apiName": "TFT_Item_CorruptedRabadonsDeathcap",
+   "name": "Rabadon's Deathcap",
+   "composition": [
+    "TFT_Item_NeedlesslyLargeRod",
+    "TFT_Item_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.png",
+   "desc": "This humble hat can help you make, or unmake, the world itself.@TFTUnitProperty.:TFT_Augment_DeadlierCaps_TRAKey@"
+  },
+  {
+   "apiName": "TFT_Item_CorruptedHandOfJustice",
+   "name": "Hand Of Justice",
+   "composition": [
+    "TFT_Item_TearOfTheGoddess",
+    "TFT_Item_SparringGloves"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_unstableconcoction.png",
+   "desc": "Gain 2 effects:@AD_NotStatBar*100@% Attack Damage and @AP_NotStatBar@% Ability Power.@StatOmnivamp_NotStatBar*100@% Omnivamp.While above @HealthThreshold*100@% health, double the Attack Damage and Ability Power. While below @HealthThreshold*100@% Health, double the Omnivamp."
+  },
+  {
+   "apiName": "TFT_Item_CorruptedRedemption",
+   "name": "Spirit Visage",
+   "composition": [
+    "TFT_Item_TearOfTheGoddess",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
+   "desc": "Regenerate @MissingHealthHeal*100@% of missing Health each second."
+  },
+  {
+   "apiName": "TFT_Item_CorruptedWarmogsArmor",
+   "name": "Warmog's Armor",
+   "composition": [
+    "TFT_Item_GiantsBelt",
+    "TFT_Item_GiantsBelt"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.png",
+   "desc": "Gain @BonusPercentHP*100@% max Health."
+  },
+  {
+   "apiName": "TFT_Item_CorruptedGuinsoosRageblade",
+   "name": "Guinsoo's Rageblade",
+   "composition": [
+    "TFT_Item_RecurveBow",
+    "TFT_Item_NeedlesslyLargeRod"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.png",
+   "desc": "Gain @AttackSpeedPerStack@% stacking Attack Speed every second."
+  },
+  {
+   "apiName": "TFT_Item_CorruptedDeathblade",
+   "name": "Deathblade",
+   "composition": [
+    "TFT_Item_BFSword",
+    "TFT_Item_BFSword"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.png",
+   "desc": "Perfect peace and calm for the holder - and all who face it.@TFTUnitProperty.:TFT_Augment_TragicalBlade_TRAKey@"
+  },
+  {
+   "apiName": "TFT_Item_CorruptedGargoyleStoneplate",
+   "name": "Gargoyle Stoneplate",
+   "composition": [
+    "TFT_Item_ChainVest",
+    "TFT_Item_NegatronCloak"
+   ],
+   "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.png",
+   "desc": "Gain @ArmorPerEnemy@ Armor and @MRPerEnemy@ Magic Resist for each enemy targeting the holder."
+  }
+ ],
+ "recipes": [
+  {
+   "apiName": "bf+bf",
+   "name": "Deathblade",
+   "composition": [
+    "bf",
+    "bf"
+   ]
+  },
+  {
+   "apiName": "bf+bow",
+   "name": "Giant Slayer",
+   "composition": [
+    "bf",
+    "bow"
+   ]
+  },
+  {
+   "apiName": "bf+rod",
+   "name": "Hextech Gunblade",
+   "composition": [
+    "bf",
+    "rod"
+   ]
+  },
+  {
+   "apiName": "bf+tear",
+   "name": "Spear of Shojin",
+   "composition": [
+    "bf",
+    "tear"
+   ]
+  },
+  {
+   "apiName": "bf+vest",
+   "name": "Edge of Night",
+   "composition": [
+    "bf",
+    "vest"
+   ]
+  },
+  {
+   "apiName": "bf+cloak",
+   "name": "Bloodthirster",
+   "composition": [
+    "bf",
+    "cloak"
+   ]
+  },
+  {
+   "apiName": "bf+belt",
+   "name": "Sterak's Gage",
+   "composition": [
+    "bf",
+    "belt"
+   ]
+  },
+  {
+   "apiName": "bf+glove",
+   "name": "Infinity Edge",
+   "composition": [
+    "bf",
+    "glove"
+   ]
+  },
+  {
+   "apiName": "bow+bow",
+   "name": "Rapid Firecannon",
+   "composition": [
+    "bow",
+    "bow"
+   ]
+  },
+  {
+   "apiName": "bow+rod",
+   "name": "Guinsoo's Rageblade",
+   "composition": [
+    "bow",
+    "rod"
+   ]
+  },
+  {
+   "apiName": "bow+tear",
+   "name": "Statikk Shiv",
+   "composition": [
+    "bow",
+    "tear"
+   ]
+  },
+  {
+   "apiName": "bow+vest",
+   "name": "Titan's Resolve",
+   "composition": [
+    "bow",
+    "vest"
+   ]
+  },
+  {
+   "apiName": "bow+cloak",
+   "name": "Runaan's Hurricane",
+   "composition": [
+    "bow",
+    "cloak"
+   ]
+  },
+  {
+   "apiName": "bow+belt",
+   "name": "Nashor's Tooth",
+   "composition": [
+    "bow",
+    "belt"
+   ]
+  },
+  {
+   "apiName": "bow+glove",
+   "name": "Last Whisper",
+   "composition": [
+    "bow",
+    "glove"
+   ]
+  },
+  {
+   "apiName": "rod+rod",
+   "name": "Rabadon's Deathcap",
+   "composition": [
+    "rod",
+    "rod"
+   ]
+  },
+  {
+   "apiName": "rod+tear",
+   "name": "Archangel's Staff",
+   "composition": [
+    "rod",
+    "tear"
+   ]
+  },
+  {
+   "apiName": "rod+vest",
+   "name": "Crownguard",
+   "composition": [
+    "rod",
+    "vest"
+   ]
+  },
+  {
+   "apiName": "rod+cloak",
+   "name": "Ionic Spark",
+   "composition": [
+    "rod",
+    "cloak"
+   ]
+  },
+  {
+   "apiName": "rod+belt",
+   "name": "Morellonomicon",
+   "composition": [
+    "rod",
+    "belt"
+   ]
+  },
+  {
+   "apiName": "rod+glove",
+   "name": "Jeweled Gauntlet",
+   "composition": [
+    "rod",
+    "glove"
+   ]
+  },
+  {
+   "apiName": "tear+tear",
+   "name": "Blue Buff",
+   "composition": [
+    "tear",
+    "tear"
+   ]
+  },
+  {
+   "apiName": "tear+vest",
+   "name": "Protector's Vow",
+   "composition": [
+    "tear",
+    "vest"
+   ]
+  },
+  {
+   "apiName": "tear+cloak",
+   "name": "Adaptive Helm",
+   "composition": [
+    "tear",
+    "cloak"
+   ]
+  },
+  {
+   "apiName": "tear+belt",
+   "name": "Redemption",
+   "composition": [
+    "tear",
+    "belt"
+   ]
+  },
+  {
+   "apiName": "tear+glove",
+   "name": "Hand of Justice",
+   "composition": [
+    "tear",
+    "glove"
+   ]
+  },
+  {
+   "apiName": "vest+vest",
+   "name": "Bramble Vest",
+   "composition": [
+    "vest",
+    "vest"
+   ]
+  },
+  {
+   "apiName": "vest+cloak",
+   "name": "Gargoyle Stoneplate",
+   "composition": [
+    "vest",
+    "cloak"
+   ]
+  },
+  {
+   "apiName": "vest+belt",
+   "name": "Sunfire Cape",
+   "composition": [
+    "vest",
+    "belt"
+   ]
+  },
+  {
+   "apiName": "vest+glove",
+   "name": "Steadfast Heart",
+   "composition": [
+    "vest",
+    "glove"
+   ]
+  },
+  {
+   "apiName": "cloak+cloak",
+   "name": "Dragon's Claw",
+   "composition": [
+    "cloak",
+    "cloak"
+   ]
+  },
+  {
+   "apiName": "cloak+belt",
+   "name": "Evenshroud",
+   "composition": [
+    "cloak",
+    "belt"
+   ]
+  },
+  {
+   "apiName": "cloak+glove",
+   "name": "Quicksilver",
+   "composition": [
+    "cloak",
+    "glove"
+   ]
+  },
+  {
+   "apiName": "belt+belt",
+   "name": "Warmog's Armor",
+   "composition": [
+    "belt",
+    "belt"
+   ]
+  },
+  {
+   "apiName": "belt+glove",
+   "name": "Guardbreaker",
+   "composition": [
+    "belt",
+    "glove"
+   ]
+  },
+  {
+   "apiName": "glove+glove",
+   "name": "Thief's Gloves",
+   "composition": [
+    "glove",
+    "glove"
+   ]
+  },
+  {
+   "apiName": "bf+spat",
+   "name": "Bieu tuong (tuy set)",
+   "composition": [
+    "bf",
+    "spat"
+   ]
+  },
+  {
+   "apiName": "bow+spat",
+   "name": "Bieu tuong (tuy set)",
+   "composition": [
+    "bow",
+    "spat"
+   ]
+  },
+  {
+   "apiName": "rod+spat",
+   "name": "Bieu tuong (tuy set)",
+   "composition": [
+    "rod",
+    "spat"
+   ]
+  },
+  {
+   "apiName": "tear+spat",
+   "name": "Bieu tuong (tuy set)",
+   "composition": [
+    "tear",
+    "spat"
+   ]
+  },
+  {
+   "apiName": "vest+spat",
+   "name": "Bieu tuong (tuy set)",
+   "composition": [
+    "vest",
+    "spat"
+   ]
+  },
+  {
+   "apiName": "cloak+spat",
+   "name": "Bieu tuong (tuy set)",
+   "composition": [
+    "cloak",
+    "spat"
+   ]
+  },
+  {
+   "apiName": "belt+spat",
+   "name": "Bieu tuong (tuy set)",
+   "composition": [
+    "belt",
+    "spat"
+   ]
+  },
+  {
+   "apiName": "glove+spat",
+   "name": "Bieu tuong (tuy set)",
+   "composition": [
+    "glove",
+    "spat"
+   ]
+  },
+  {
+   "apiName": "spat+spat",
+   "name": "Force of Nature",
+   "composition": [
+    "spat",
+    "spat"
+   ]
+  }
+ ]
 }
