@@ -16,6 +16,7 @@
     "icons": "node scripts/make-icons.js",
     "data:fallback": "node scripts/make-fallback.js",
     "data:fetch": "node scripts/fetch-set-data.js",
+    "data:update-all": "node scripts/fetch-web-sources.js && node scripts/parse-vntft-items.js && node scripts/parse-doihinhtft-comps.js && node scripts/parse-datatft-charms.js && node scripts/fetch-set-data.js && npm test",
     "build:mobile": "node scripts/build-mobile.js",
     "build:mobile:android": "node scripts/build-mobile.js android/app/src/main/assets/mobile"
   },

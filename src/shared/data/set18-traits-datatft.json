@@ -1,0 +1,854 @@
+{
+ "source": "https://www.datatft.com/database#trait",
+ "dataVersion": "18.1",
+ "parsedAt": "2026-08-29T19:27:19.490Z",
+ "traits": [
+  {
+   "apiName": "DA_18_Spellweaver",
+   "description": "Your team gains 10% Ability Power. Spellweavers gain more, plus extra Ability Power whenever a Spellweaver casts an Ability.",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "10%, +1% per cast"
+    },
+    {
+     "activeAt": 4,
+     "description": "30%, +1% per cast"
+    },
+    {
+     "activeAt": 6,
+     "description": "55%, +2% per cast"
+    }
+   ],
+   "name": "Spellweaver",
+   "unitIds": [
+    "918043",
+    "918045",
+    "918007",
+    "918069",
+    "918009",
+    "918103",
+    "918955",
+    "918121"
+   ]
+  },
+  {
+   "apiName": "DA_18_Adaptor",
+   "description": "Innate: Adaptor abilities change depending on if their Attack Damage or Ability Power is higher.Adaptors gain Ability Power or Attack Damage, depending on which is higher.",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "25%  OR"
+    },
+    {
+     "activeAt": 3,
+     "description": "35%  OR"
+    },
+    {
+     "activeAt": 4,
+     "description": "50%  OR"
+    }
+   ],
+   "name": "Adaptor",
+   "unitIds": [
+    "918084",
+    "918991",
+    "918096",
+    "918011",
+    "918076"
+   ]
+  },
+  {
+   "apiName": "DA_18_Slayer",
+   "description": "Ravagers gain 10% Omnivamp. Additionally, Ravagers deal bonus damage, doubled against units below 50% Health.",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "12% Bonus Damage"
+    },
+    {
+     "activeAt": 4,
+     "description": "25% Bonus Damage"
+    },
+    {
+     "activeAt": 6,
+     "description": "40% Bonus Damage"
+    }
+   ],
+   "name": "Ravager",
+   "unitIds": [
+    "918164",
+    "918084",
+    "918992",
+    "918019",
+    "918131",
+    "918996",
+    "918121"
+   ]
+  },
+  {
+   "apiName": "DA_18_Brawler",
+   "description": "Your team gains 120 max Health. Brawlers gain more.",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "25%"
+    },
+    {
+     "activeAt": 4,
+     "description": "40%"
+    },
+    {
+     "activeAt": 6,
+     "description": "65%"
+    }
+   ],
+   "name": "Brawler",
+   "unitIds": [
+    "918954",
+    "918421",
+    "918012",
+    "918993",
+    "918875",
+    "918150"
+   ]
+  },
+  {
+   "apiName": "DA_18_Rapidfire",
+   "description": "Your team gains 10% Attack Speed. Rapidfire champions gain more on every attack, up to 10 stacks.",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "+3% per Attack"
+    },
+    {
+     "activeAt": 3,
+     "description": "+5% per Attack"
+    },
+    {
+     "activeAt": 4,
+     "description": "+9% per Attack"
+    },
+    {
+     "activeAt": 5,
+     "description": "+15% per Attack"
+    }
+   ],
+   "name": "Rapidfire",
+   "unitIds": [
+    "918498",
+    "918110",
+    "918010",
+    "918995",
+    "918523",
+    "918121"
+   ]
+  },
+  {
+   "apiName": "DA_18_Hunter",
+   "description": "Hunters gain Attack Damage. If a Hunter hasn't swapped targets for 4 seconds, they gain 10% Damage Amp.",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "20%"
+    },
+    {
+     "activeAt": 3,
+     "description": "30%"
+    },
+    {
+     "activeAt": 4,
+     "description": "45%"
+    },
+    {
+     "activeAt": 5,
+     "description": "65%"
+    }
+   ],
+   "name": "Hunter",
+   "unitIds": [
+    "918990",
+    "918051",
+    "918018",
+    "918015",
+    "918022"
+   ]
+  },
+  {
+   "apiName": "DA_18_Executioner",
+   "description": "Precision: Ability damage can critically strike. Extra Precision grants 10% Critical Strike Damage.",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "Executioners gain Precision and 15% Critical Strike Chance."
+    },
+    {
+     "activeAt": 3,
+     "description": "Additionally, enemies bleed for 30% bonus true damage over 3 seconds."
+    },
+    {
+     "activeAt": 4,
+     "description": "Bleed damage increased to 40%."
+    }
+   ],
+   "name": "Executioner",
+   "unitIds": [
+    "918804",
+    "918268",
+    "918016",
+    "918081",
+    "918085",
+    "918121"
+   ]
+  },
+  {
+   "apiName": "DA_18_Summoner",
+   "description": "Summoners empower their summons in different ways.Yorick: +30% HealthAzir: +20% DamageMama Beak: +45% DamageZyra: +4 Plant Attacks",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "Empower Summons"
+    },
+    {
+     "activeAt": 3,
+     "description": "Improve each effect by 50%"
+    }
+   ],
+   "name": "Summoner",
+   "unitIds": [
+    "918083",
+    "918995",
+    "918268",
+    "918143"
+   ]
+  },
+  {
+   "apiName": "DA_18_Vanguard",
+   "description": "At Combat Start and after dropping below 50% Health, Vanguards gain a max Health Shield for 10 seconds.",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "18% max Health"
+    },
+    {
+     "activeAt": 4,
+     "description": "30% max Health"
+    },
+    {
+     "activeAt": 6,
+     "description": "40% max Health. Gain 5% Durability while Shielded."
+    }
+   ],
+   "name": "Vanguard",
+   "unitIds": [
+    "918497",
+    "918060",
+    "918120",
+    "918131",
+    "918997",
+    "918044"
+   ]
+  },
+  {
+   "apiName": "DA_18_Defender",
+   "description": "Your team gains 12 Armor and Magic Resist. Defenders gain more.",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "25"
+    },
+    {
+     "activeAt": 4,
+     "description": "60"
+    },
+    {
+     "activeAt": 6,
+     "description": "120"
+    }
+   ],
+   "name": "Defender",
+   "unitIds": [
+    "918516",
+    "918089",
+    "918098",
+    "918033",
+    "918009",
+    "918876"
+   ]
+  },
+  {
+   "apiName": "DA_Juggernaut18",
+   "description": "Your team gains Durability. Juggernauts gain more.",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "4% or 20%"
+    },
+    {
+     "activeAt": 4,
+     "description": "6% or 33%"
+    },
+    {
+     "activeAt": 6,
+     "description": "8% or 45%"
+    }
+   ],
+   "name": "Juggernaut",
+   "unitIds": [
+    "918497",
+    "918083",
+    "918113",
+    "918994",
+    "918254",
+    "918032",
+    "918057"
+   ]
+  },
+  {
+   "apiName": "DA_18_Invoker",
+   "description": "Your team gains Mana Regen, increased for Invokers.",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "1 | 3"
+    },
+    {
+     "activeAt": 3,
+     "description": "1 | 4"
+    },
+    {
+     "activeAt": 4,
+     "description": "2 | 6"
+    },
+    {
+     "activeAt": 5,
+     "description": "2 | 9"
+    }
+   ],
+   "name": "Invoker",
+   "unitIds": [
+    "918989",
+    "918017",
+    "918096",
+    "918025",
+    "918997"
+   ]
+  },
+  {
+   "apiName": "DA_18_Blossom",
+   "description": "After combat, your Wisps are empowered.\nBlossom champions gain Attack Damage, Ability Power, and 10% max Health.",
+   "levels": [
+    {
+     "activeAt": 3,
+     "description": "Wisps are upgraded, 12%"
+    },
+    {
+     "activeAt": 5,
+     "description": "Wisps are in every shop, 30%"
+    },
+    {
+     "activeAt": 7,
+     "description": "Gain 4 gold after buying a Wisp, 45%"
+    },
+    {
+     "activeAt": 9,
+     "description": "You can buy 2 Wisps per round, 50%"
+    },
+    {
+     "activeAt": 11,
+     "description": "Wisps overflow with power, 100%"
+    }
+   ],
+   "name": "Blossom",
+   "unitIds": [
+    "918043",
+    "918083",
+    "918804",
+    "918011",
+    "918875",
+    "918103",
+    "918022",
+    "918099"
+   ]
+  },
+  {
+   "apiName": "DA_18_Inferno",
+   "description": "Inferno damage Burns and Wounds enemies for 3 seconds. Inferno Burns stack with other Burns.\nBurn: Deals a percent of the target’s max Health as true damage every second.\nWound: Reduces healing received.",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "1% Burn, 33% Wound"
+    },
+    {
+     "activeAt": 3,
+     "description": "After combat, 1 of your shop slots without an Inferno champion ignites, rolling a champion one tier higher"
+    },
+    {
+     "activeAt": 5,
+     "description": "Ignite 2 shop slots, 3% Burn"
+    },
+    {
+     "activeAt": 7,
+     "description": "Ignite 4 shop slots, 3.5% Burn"
+    }
+   ],
+   "name": "Inferno",
+   "unitIds": [
+    "918084",
+    "918110",
+    "918098",
+    "918032",
+    "918085",
+    "918099"
+   ]
+  },
+  {
+   "apiName": "DA_18_Sprykin",
+   "description": "Gain the Big Furry Friend. Drop a Sprykin on the BFF to pick its Rider.\nThe BFF’s attacks and Ability change if the Rider is melee or ranged.",
+   "levels": [
+    {
+     "activeAt": 3,
+     "description": "The Rider gains\n15%\n and 15%"
+    },
+    {
+     "activeAt": 5,
+     "description": "40%\n 35%\n, and 50% of the BFF's Ability applies to your Sprykin champions."
+    },
+    {
+     "activeAt": 7,
+     "description": "45%\n 45%\n, and 100% of the BFF's Ability applies to your Sprykin champions."
+    }
+   ],
+   "name": "Sprykin",
+   "unitIds": [
+    "918954",
+    "918045",
+    "918017",
+    "918033",
+    "918018",
+    "918150"
+   ]
+  },
+  {
+   "apiName": "DA_18_Elderwood",
+   "description": "Gain placeable Elderwood plants.\nPlants gain 25% Max Health and 10% Ability Power per Elderwood Star Level.",
+   "levels": [
+    {
+     "activeAt": 3,
+     "description": "A Stonebark Tree and a Lifebloom"
+    },
+    {
+     "activeAt": 5,
+     "description": "A second Stonebark Tree and Stonebark Trees gain 200 Health"
+    },
+    {
+     "activeAt": 7,
+     "description": "and the Deepwood Protector"
+    },
+    {
+     "activeAt": 9,
+     "description": "Plants star up to 2-star"
+    },
+    {
+     "activeAt": 11,
+     "description": "Plants star up to 3-star and the forest comes to life"
+    }
+   ],
+   "name": "Elderwood",
+   "unitIds": [
+    "918516",
+    "918498",
+    "918007",
+    "918012",
+    "918120",
+    "918081",
+    "918150",
+    "918099"
+   ]
+  },
+  {
+   "apiName": "DA_18_Blackthorn",
+   "description": "The ally on the Blackthorn hex is sacrificed before combat, granting your champions Health.\nBlackthorn champions gain additional stats based on the sacrifice's Role, Star Level, and Cost.",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "175"
+    },
+    {
+     "activeAt": 4,
+     "description": "300\n; Bonus is 30% stronger"
+    },
+    {
+     "activeAt": 6,
+     "description": "550\n; Bonus is 60% stronger"
+    }
+   ],
+   "name": "Blackthorn",
+   "unitIds": [
+    "918045",
+    "918421",
+    "918019",
+    "918268",
+    "918054",
+    "918099"
+   ]
+  },
+  {
+   "apiName": "DA_18_Coven",
+   "description": "Gather Essence by killing champions, plus more by losing player combat.\nBeginning at 40 Essence, choose to convert Essence to rewards or continue gathering Essence. Each reward requires increasing amounts of Essence.",
+   "levels": [
+    {
+     "activeAt": 3,
+     "description": "2 Essence per kill, 18 Essence per loss"
+    },
+    {
+     "activeAt": 4,
+     "description": "2 per kill, 25 per loss"
+    },
+    {
+     "activeAt": 5,
+     "description": "3 per kill, 32 per loss"
+    },
+    {
+     "activeAt": 7,
+     "description": "10 per kill, 60 per loss"
+    }
+   ],
+   "name": "Coven",
+   "unitIds": [
+    "918164",
+    "918060",
+    "918051",
+    "918069",
+    "918025",
+    "918099"
+   ]
+  },
+  {
+   "apiName": "DA_Riftbeast18",
+   "description": "",
+   "levels": [
+    {
+     "activeAt": 3,
+     "description": "Use the Alpha Mark to grant a Riftbeast their unique Buff"
+    },
+    {
+     "activeAt": 5,
+     "description": "Every 3 combats, your next shop is overrun with Riftbeasts."
+    },
+    {
+     "activeAt": 7,
+     "description": "On combat start and every 5 seconds Riftbeasts grow gaining\n6%\n 6%\n 6%\n\n+5\n +5\n +50\n +1"
+    },
+    {
+     "activeAt": 10,
+     "description": "+2 maximum team size"
+    }
+   ],
+   "name": "Riftbeast",
+   "unitIds": [
+    "918990",
+    "918989",
+    "918992",
+    "918994",
+    "918991",
+    "918993",
+    "918995",
+    "918997",
+    "918996",
+    "918998"
+   ]
+  },
+  {
+   "apiName": "DA_18_Rival",
+   "description": "Only applies to your strongest Rival.",
+   "levels": [
+    {
+     "activeAt": 1,
+     "description": "Only active while fielding 1 Rival.\nRivals collect takedowns, gaining 3 if they takedown another Rival."
+    },
+    {
+     "activeAt": 1,
+     "description": "Rivals collect takedowns, gaining 3 if they takedown another Rival.\nTakedowns evolve Kha'Zix, permanently granting him your choice of Executioner, Rapidfire, Ravager, or Spellweaver.\nRengar grants 2/3/5 gold every 8 takedowns. After 30 takedowns, your team gains 5% Attack Damage plus 0.2%\n per additional takedown."
+    },
+    {
+     "activeAt": 2,
+     "description": "Rivals can be fielded together, and their abilities grant each other bonuses."
+    }
+   ],
+   "name": "Rival",
+   "unitIds": [
+    "918107",
+    "918121"
+   ]
+  },
+  {
+   "apiName": "DA_18_Fae",
+   "description": "Your team's damage, healing, and shielding attracts Pixies.\nEach Pixie grants Fae champions Attack Damage and Ability Power, and after they fall below 50% Health, they heal for each Pixie.",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "5% \n and 2.5% Heal."
+    },
+    {
+     "activeAt": 4,
+     "description": "8% \n and 4% Heal. After attracting 7 Pixies, start attracting Golden Pixies instead which grant gold."
+    }
+   ],
+   "name": "Fae",
+   "unitIds": [
+    "918498",
+    "918497",
+    "918018",
+    "918876",
+    "918099"
+   ]
+  },
+  {
+   "apiName": "DA_Primal18",
+   "description": "Choose one of four Primal Blessings.\nBlessing of the Bear：Primal damage executes enemies below 12% Health.\nBlessing of the Phoenix：Every 15 Primal takedowns, gain a component. Max 4.\nBlessing of the Tiger：After 6 seconds, Primal champions gain 35% Attack Speed and your team gains 15% Attack Speed\nBlessing of the Turtle：Your team heals for 4% of their max Health every 4 seconds.",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "Choose a blessing."
+    },
+    {
+     "activeAt": 4,
+     "description": "Choose a second blessing."
+    }
+   ],
+   "name": "Primal",
+   "unitIds": [
+    "918254",
+    "918076",
+    "918015",
+    "918099"
+   ]
+  },
+  {
+   "apiName": "DA_FloraFatalis18",
+   "description": "Flora Fatalis champions harvest enemies on takedown, gaining:",
+   "levels": [
+    {
+     "activeAt": 1,
+     "description": "10 Mana"
+    },
+    {
+     "activeAt": 2,
+     "description": "and grant a 8% max Health heal to the lowest Health ally."
+    }
+   ],
+   "name": "Flora Fatalis",
+   "unitIds": [
+    "918009",
+    "918016"
+   ]
+  },
+  {
+   "apiName": "DA_18_Solar",
+   "description": "Field 3 Solar and 3 Lunar champions to activate Eclipse.",
+   "levels": [
+    {
+     "activeAt": 3,
+     "description": "Your champions gain a 5% max Health shield and deal 7% bonus magic damage. Gain additional bonuses for each unique 3-star champion:\n1 : Increase shield and magic damage by 1.5% for each 3-star.\n3 : 18%\n and 15\n\n5 : Convert 40% of the bonus magic damage to true damage.\n8 : Every 4 seconds of combat, a 3-star champion ascends to 4-star."
+    }
+   ],
+   "name": "Solar",
+   "unitIds": [
+    "918089",
+    "918010",
+    "918113",
+    "918099"
+   ]
+  },
+  {
+   "apiName": "DA_18_Lunar",
+   "description": "Lunar champions and adjacent allies gain Attack Speed and Ability Power. Lunar champions gain 100% more.\nField 3 Solar and 3 Lunar champions to activate Eclipse.",
+   "levels": [
+    {
+     "activeAt": 2,
+     "description": "7%\n, 7%"
+    },
+    {
+     "activeAt": 3,
+     "description": "10%\n, 10%"
+    },
+    {
+     "activeAt": 4,
+     "description": "14%\n, 14%"
+    },
+    {
+     "activeAt": 5,
+     "description": "18%\n, 18%"
+    }
+   ],
+   "name": "Lunar",
+   "unitIds": [
+    "918131",
+    "918523",
+    "918955",
+    "918099"
+   ]
+  },
+  {
+   "apiName": "DA_18_Eclipse",
+   "description": "",
+   "levels": [
+    {
+     "activeAt": 1,
+     "description": "After 10 seconds of combat, the Eclipse kills the lowest Health enemy, repeating every 3.5 seconds."
+    }
+   ],
+   "name": "Eclipse",
+   "unitIds": [
+    "918089",
+    "918010",
+    "918113",
+    "918131",
+    "918523",
+    "918955",
+    "918099"
+   ]
+  },
+  {
+   "apiName": "DA_18_Caustic",
+   "description": "",
+   "levels": [
+    {
+     "activeAt": 1,
+     "description": "Caustic damage 30% Shreds and Sunders enemies for 4 seconds.\nShred: Reduce Magic Resist\nSunder: Reduce Armor"
+    }
+   ],
+   "name": "Caustic",
+   "unitIds": [
+    "918096"
+   ]
+  },
+  {
+   "apiName": "DA_18_Battlemage",
+   "description": "",
+   "levels": [
+    {
+     "activeAt": 1,
+     "description": "Monoliths gain 10 Armor and Magic Resist for each enemy targeting them."
+    }
+   ],
+   "name": "Monolith",
+   "unitIds": [
+    "918054"
+   ]
+  },
+  {
+   "apiName": "DA_Emerald18",
+   "description": "",
+   "levels": [
+    {
+     "activeAt": 1,
+     "description": "Drag an ally onto your strongest Taric to pair them, granting the ally powerful bonuses from Taric's Ability."
+    }
+   ],
+   "name": "Emerald Aspect",
+   "unitIds": [
+    "918044"
+   ]
+  },
+  {
+   "apiName": "DA_18_Maokai_UniqueTrait",
+   "description": "",
+   "levels": [
+    {
+     "activeAt": 1,
+     "description": "Whenever an enemy within 3 hexes dies, your strongest Old Growth champion gains 30 permanent max Health."
+    }
+   ],
+   "name": "Old Growth",
+   "unitIds": [
+    "918057"
+   ]
+  },
+  {
+   "apiName": "DA_18_ZyraUniqueTrait",
+   "description": "",
+   "levels": [
+    {
+     "activeAt": 1,
+     "description": "Your team gains 5% Durability, increased to 10% if 6 or more Zyra plants are alive."
+    }
+   ],
+   "name": "Thornmaiden",
+   "unitIds": [
+    "918143"
+   ]
+  },
+  {
+   "apiName": "DA_18_Greenfather",
+   "description": "",
+   "levels": [
+    {
+     "activeAt": 1,
+     "description": "Gain 1 seed when your strongest Ivern casts, plus 3 every combat. Ivern uses 5 seeds to grow a hex on your board that grants a bonus to its occupant."
+    }
+   ],
+   "name": "Greenfather",
+   "unitIds": [
+    "918427"
+   ]
+  },
+  {
+   "apiName": "DA_AluneUniqueTrait18",
+   "description": "",
+   "levels": [
+    {
+     "activeAt": 1,
+     "description": "Your strongest Alune cycles to a new phase of the moon after each cast. While the moon is at or below half full, your team gains 7% Durabilty. While above, your team gains 7% Damage Amp."
+    }
+   ],
+   "name": "Attuned",
+   "unitIds": [
+    "918955"
+   ]
+  },
+  {
+   "apiName": "DA_DravenUniqueTrait18",
+   "description": "",
+   "levels": [
+    {
+     "activeAt": 1,
+     "description": "Choose a bounty. Your strongest Draven can progress on the bounty to earn its reward. Upon completing a bounty, choose another."
+    }
+   ],
+   "name": "Bounty Seeker",
+   "unitIds": [
+    "918119"
+   ]
+  },
+  {
+   "apiName": "DA_18_LuxUniqueTrait",
+   "description": "",
+   "levels": [
+    {
+     "activeAt": 1,
+     "description": "Having an Avatar on your bench or board transforms all other Avatars in your shop to the Trait of that Avatar.\nAn Avatar's chosen Trait is counted twice for Trait bonuses."
+    }
+   ],
+   "name": "Avatar",
+   "unitIds": [
+    "918099"
+   ]
+  },
+  {
+   "apiName": "DA_18_ApexPredator",
+   "description": "",
+   "levels": [
+    {
+     "activeAt": 1,
+     "description": "Elder Dragon takes up 2 team slots and grants +2 to the Riftbeast trait."
+    }
+   ],
+   "name": "Apex Predator",
+   "unitIds": [
+    "918998"
+   ]
+  }
+ ]
+}

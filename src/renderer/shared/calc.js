@@ -1,11 +1,12 @@
 /**
- * Toan bo phan tinh toan ho tro: ti le roll, kho tuong, kinh te, XP, ghep do.
+ * Toan bo phan tinh toan ho tro: ti le roll, kho tuong, kinh te, XP, ghep do,
+ * san tuong theo yeu cau, va ho tro reroll doi hinh da chot.
  * Khong dung DOM -> chay duoc ca trong node de kiem thu.
  */
 (function (global) {
   'use strict';
 
-  var T = (global.TFT && global.TFT.tables) || require('./tables.js');
+  var T = (global.TFT && global.TFT.tables) || (typeof require !== 'undefined' ? require('./tables.js') : null);
 
   // Kho tuong dang dung. Mac dinh la bang trong tables.js; khi app doc duoc du lieu
   // set that thi goi setPool() de thay so tuong moi muc gia cho dung set dang choi.
@@ -105,6 +106,176 @@
     return Math.min(1, Math.max(0, 1 - cum));
   }
 
+  // -------------------------------------------------- san tuong & ho tro reroll 3 sao
+
+  /**
+   * Tinh toan chi phi vang va xac suat de dat moc sao muc tieu (2 sao = 3 ban sao, 3 sao = 9 ban sao).
+   */
+  function goldToTargetStar(opts) {
+    var cost = clampInt(opts.cost, 1, 5);
+    var level = clampInt(opts.level, 1, 11);
+    var currentOwned = Math.max(0, num(opts.copiesOwned));
+    var targetStar = clampInt(opts.targetStar || 3, 2, 3);
+    var targetCopies = targetStar === 3 ? 9 : 3;
+    var copiesNeeded = Math.max(1, targetCopies - currentOwned);
+    var taken = num(opts.copiesTakenByOthers);
+
+    var p = slotProbability({
+      cost: cost,
+      level: level,
+      copiesOwnedByYou: currentOwned,
+      copiesTakenByOthers: taken
+    });
+
+    var pShop = 1 - Math.pow(1 - p, 5);
+    var expectedRolls = p > 0 ? (copiesNeeded / (5 * p)) : Infinity;
+    var expectedRollGold = isFinite(expectedRolls) ? Math.ceil(expectedRolls) * T.ROLL_COST : Infinity;
+    var buyGold = copiesNeeded * cost;
+    var totalExpectedGold = isFinite(expectedRollGold) ? expectedRollGold + buyGold : Infinity;
+
+    // Tinh vang can de dat 50%, 75%, 90% xac suat truoc khi roll
+    var confidence50 = goldForConfidence({ cost: cost, level: level, copiesOwnedByYou: currentOwned, copiesTakenByOthers: taken }, 0.50) + buyGold;
+    var confidence75 = goldForConfidence({ cost: cost, level: level, copiesOwnedByYou: currentOwned, copiesTakenByOthers: taken }, 0.75) + buyGold;
+    var confidence90 = goldForConfidence({ cost: cost, level: level, copiesOwnedByYou: currentOwned, copiesTakenByOthers: taken }, 0.90) + buyGold;
+
+    // Cap do toi uu nhat de roll tuong nay
+    var bestLevel = cost === 1 ? 5 : cost === 2 ? 6 : cost === 3 ? 7 : cost === 4 ? 8 : 9;
+
+    return {
+      cost: cost,
+      targetStar: targetStar,
+      targetCopies: targetCopies,
+      currentOwned: currentOwned,
+      copiesNeeded: copiesNeeded,
+      slotProbability: p,
+      shopProbability: pShop,
+      expectedRolls: Math.ceil(expectedRolls),
+      expectedRollGold: expectedRollGold,
+      buyGold: buyGold,
+      totalExpectedGold: totalExpectedGold,
+      confidence50: isFinite(confidence50) ? confidence50 : Infinity,
+      confidence75: isFinite(confidence75) ? confidence75 : Infinity,
+      confidence90: isFinite(confidence90) ? confidence90 : Infinity,
+      bestLevel: bestLevel,
+      copiesLeftInPool: Math.max(0, POOL[cost].copies - currentOwned - taken)
+    };
+  }
+
+  /**
+   * Danh gia toan bo danh sach tuong can mua (Shopping / Wishlist Tracker).
+   */
+  function evaluateShoppingList(targets, state) {
+    var list = targets || [];
+    var level = clampInt((state && state.level) || 7, 1, 11);
+    var currentGold = num((state && state.gold) || 50);
+
+    var evaluated = list.map(function (item) {
+      if (!item || !item.name) return null;
+      var cost = clampInt(item.cost || 3, 1, 5);
+      var owned = num(item.owned || 0);
+      var targetStar = clampInt(item.targetStar || 3, 2, 3);
+      var taken = num(item.taken || 0);
+
+      var calcResult = goldToTargetStar({
+        cost: cost,
+        level: level,
+        copiesOwned: owned,
+        targetStar: targetStar,
+        copiesTakenByOthers: taken
+      });
+
+      return {
+        name: item.name,
+        cost: cost,
+        owned: owned,
+        targetStar: targetStar,
+        progress: owned + '/' + calcResult.targetCopies,
+        percent: Math.min(100, Math.round((owned / calcResult.targetCopies) * 100)),
+        calculation: calcResult
+      };
+    }).filter(Boolean);
+
+    var totalBuyGold = evaluated.reduce(function (sum, item) { return sum + item.calculation.buyGold; }, 0);
+    var totalExpectedGold = evaluated.reduce(function (sum, item) { return sum + item.calculation.totalExpectedGold; }, 0);
+
+    // Kiem tra cua hang hien tai xem co tuong nao trong danh sach khong
+    var matchedInShop = [];
+    if (state && state.shop && state.shop.length) {
+      state.shop.forEach(function (champName, slotIdx) {
+        var match = evaluated.find(function (t) { return t.name.toLowerCase() === String(champName).toLowerCase(); });
+        if (match) {
+          matchedInShop.push({
+            slot: slotIdx + 1,
+            name: match.name,
+            cost: match.cost,
+            buyNow: currentGold >= match.cost,
+            reason: 'Tướng mục tiêu (' + match.progress + ')'
+          });
+        }
+      });
+    }
+
+    return {
+      items: evaluated,
+      totalBuyGold: totalBuyGold,
+      totalExpectedGold: isFinite(totalExpectedGold) ? totalExpectedGold : Infinity,
+      matchedInShop: matchedInShop,
+      canAffordAllImmediate: currentGold >= totalBuyGold
+    };
+  }
+
+  /**
+   * Tao ke hoach Reroll va Mua tuong tu mot Doi hinh da chot (Locked Comp Reroll Plan).
+   * comp: { name, tier, style, units: [{ name, cost, star, carry, items }] }
+   */
+  function buildCompRerollPlan(comp, currentOwnedMap, state) {
+    if (!comp || !comp.units) return null;
+    var ownedMap = currentOwnedMap || {};
+    var level = clampInt((state && state.level) || 7, 1, 11);
+    var currentGold = num((state && state.gold) || 50);
+
+    var shoppingTargets = comp.units.map(function (u) {
+      var owned = num(ownedMap[u.name.toLowerCase()] !== undefined ? ownedMap[u.name.toLowerCase()] : (u.star === 3 ? 9 : u.star === 2 ? 3 : 1));
+      var targetStar = u.carry ? 3 : (u.star || 2);
+      return {
+        name: u.name,
+        cost: u.cost || 3,
+        owned: owned,
+        targetStar: targetStar,
+        carry: Boolean(u.carry),
+        items: u.items || []
+      };
+    });
+
+    var evaluated = evaluateShoppingList(shoppingTargets, { level: level, gold: currentGold, shop: (state && state.shop) || [] });
+
+    // Tim cap do thich hop nhat cho toan bo doi hinh reroll
+    var carryUnit = shoppingTargets.find(function (t) { return t.carry; }) || shoppingTargets[0];
+    var recommendedRollLevel = carryUnit ? carryUnit.cost === 1 ? 5 : carryUnit.cost === 2 ? 6 : carryUnit.cost === 3 ? 7 : carryUnit.cost === 4 ? 8 : 9 : 8;
+
+    // Huong dan hanh dong roll:
+    var rollStrategy = '';
+    if (carryUnit && carryUnit.cost <= 3) {
+      rollStrategy = 'Đội hình Reroll ' + carryUnit.cost + ' vàng (' + carryUnit.name + '): Tích 50 vàng và Slow Roll (giữ mốc 50 vàng) ở cấp ' + recommendedRollLevel + '.';
+    } else {
+      rollStrategy = 'Đội hình Fast ' + recommendedRollLevel + ': Tích kinh tế lên cấp ' + recommendedRollLevel + ' rồi xả vàng roll tìm khung 2 sao.';
+    }
+
+    return {
+      compName: comp.name,
+      compTier: comp.tier || 'S',
+      compStyle: comp.style || '',
+      carryName: carryUnit ? carryUnit.name : '',
+      recommendedRollLevel: recommendedRollLevel,
+      rollStrategy: rollStrategy,
+      shoppingList: evaluated.items,
+      totalBuyGold: evaluated.totalBuyGold,
+      totalExpectedGold: evaluated.totalExpectedGold,
+      matchedInShop: evaluated.matchedInShop,
+      canAffordAllImmediate: evaluated.canAffordAllImmediate
+    };
+  }
+
   // ------------------------------------------------------------------ econ
 
   function interest(gold) {
@@ -178,13 +349,14 @@
     return T.RECIPES[recipeKey(a, b)] || null;
   }
 
-  /** Bang ghep 9x9 de ve luoi. */
+  /** Bang ghep 10x10 de ve luoi (co ca Xeng va Chao). */
   function recipeGrid() {
     return T.COMPONENTS.map(function (row) {
       return {
         component: row,
         cells: T.COMPONENTS.map(function (col) {
-          return { a: row.id, b: col.id, item: combine(row.id, col.id) };
+          var item = combine(row.id, col.id);
+          return { a: row.id, b: col.id, item: item, itemVi: (T.ITEM_NAMES_VI && T.ITEM_NAMES_VI[item]) || item };
         })
       };
     });
@@ -193,10 +365,11 @@
   /** Tu danh sach mon co ban dang co -> nhung do co the ghep ngay. */
   function craftable(componentIds) {
     var out = [];
-    for (var i = 0; i < componentIds.length; i++) {
-      for (var j = i + 1; j < componentIds.length; j++) {
-        var item = combine(componentIds[i], componentIds[j]);
-        if (item) out.push({ item: item, from: [componentIds[i], componentIds[j]] });
+    var have = (componentIds || []).slice();
+    for (var i = 0; i < have.length; i++) {
+      for (var j = i + 1; j < have.length; j++) {
+        var item = combine(have[i], have[j]);
+        if (item) out.push({ item: item, from: [have[i], have[j]] });
       }
     }
     return out;
@@ -204,7 +377,7 @@
 
   /** Thieu gi de ghep duoc mon do dang muon. */
   function missingFor(itemName, componentIds) {
-    var have = componentIds.slice();
+    var have = (componentIds || []).slice();
     var keys = Object.keys(T.RECIPES).filter(function (k) { return T.RECIPES[k] === itemName; });
     return keys.map(function (key) {
       var parts = key.split('+');
@@ -222,8 +395,6 @@
   /**
    * Lap ke hoach ghep do: co tung nay mon co ban, muon ra danh sach mon uu tien nay
    * thi ghep duoc gi, con thua gi, con thieu gi.
-   * Duyet theo thu tu uu tien; moi mon chon cong thuc dung mon co ban dang du nhat,
-   * de danh mon hiem cho cac mon phia sau.
    */
   function bestItemPlan(componentIds, wishlist) {
     var pool = (componentIds || []).slice();
@@ -241,7 +412,6 @@
 
       var doable = recipes.filter(function (parts) { return canTake(pool, parts); });
       if (doable.length) {
-        // Uu tien cong thuc dung mon dang co nhieu nhat trong tui
         doable.sort(function (a, b) { return abundance(pool, b) - abundance(pool, a); });
         var chosen = doable[0];
         chosen.forEach(function (part) { pool.splice(pool.indexOf(part), 1); });
@@ -280,21 +450,12 @@
 
   // ------------------------------------------------ roll bay gio hay len cap?
 
-  /**
-   * So sanh ba lua chon quen thuoc khi dang san mot con tuong:
-   *   A. Roll het vang o cap hien tai
-   *   B. Mua XP len cap roi roll so vang con lai (ti le tot hon nhung it lan roll hon)
-   *   C. Giu vang an lai, vong sau roll (nhieu vang hon nhung cham mot vong,
-   *      va doi thu co the vet mat ban sao)
-   *
-   * Tra ve xac suat trung cua tung phuong an de nguoi choi tu quyet, kem goi y.
-   */
   function rollVsLevel(opts) {
     var gold = num(opts.gold);
     var level = clampInt(opts.level, 1, 11);
     var xp = num(opts.xp);
     var need = Math.max(1, num(opts.copiesNeeded) || 1);
-    var keep = num(opts.keepGold);          // vang muon giu lai (an lai)
+    var keep = num(opts.keepGold);
     var base = {
       cost: opts.cost,
       copiesOwnedByYou: opts.copiesOwnedByYou,
@@ -304,29 +465,24 @@
     };
 
     var spendable = Math.max(0, gold - keep);
-
-    // A. roll ngay
     var rollsNow = Math.floor(spendable / T.ROLL_COST);
     var now = rollOutcome(Object.assign({}, base, { level: level, rolls: rollsNow }));
 
-    // B. len cap truoc
     var up = levelCost(level, xp, level + 1);
     var afterLevel = Math.max(0, spendable - up.gold);
     var rollsAfter = Math.floor(afterLevel / T.ROLL_COST);
     var levelled = rollOutcome(Object.assign({}, base, { level: level + 1, rolls: rollsAfter }));
 
-    // C. cho mot vong (co them thu nhap, doi thu co the lay them ban sao)
     var income = incomeNextRound({ gold: gold, streak: num(opts.streak), win: Boolean(opts.win) });
     var goldNextRound = gold + income.total;
     var rollsLater = Math.floor(Math.max(0, goldNextRound - keep) / T.ROLL_COST);
-    var extraTaken = num(opts.expectedExtraTaken);  // uoc luong ban sao bi nguoi khac lay them
+    var extraTaken = num(opts.expectedExtraTaken);
     var later = rollOutcome(Object.assign({}, base, {
       level: level,
       rolls: rollsLater,
       copiesTakenByOthers: num(opts.copiesTakenByOthers) + extraTaken
     }));
 
-    // Chi tra ve so lieu; phan chu hien ra man hinh do giao dien tu dat.
     var options = [
       { key: 'roll', level: level, rolls: rollsNow, gold: rollsNow * T.ROLL_COST,
         probability: now.probabilityAtLeastNeeded },
@@ -343,39 +499,34 @@
 
   // ----------------------------------------------- chia trang bi cho tung tuong
 
-  /**
-   * Chia mon co ban dang co cho cac tuong trong doi hinh.
-   * Uu tien carry truoc, roi den tuong dung dau danh sach; moi tuong toi da 3 mon.
-   * Tra ve tung tuong ghep duoc gi, con thieu gi, va phan con thua.
-   */
-  function assignItems(units, componentIds) {
+  function assignItems(componentIds, units) {
     var pool = (componentIds || []).slice();
-    var ordered = (units || []).slice().sort(function (a, b) {
-      return (b.carry ? 1 : 0) - (a.carry ? 1 : 0);
+    var sortedUnits = (units || []).slice().sort(function (a, b) {
+      if (Boolean(b.carry) !== Boolean(a.carry)) return b.carry ? 1 : -1;
+      return 0;
     });
 
-    var rows = ordered.map(function (unit) {
-      var wishlist = (unit.items || []).slice(0, 3);
-      var plan = bestItemPlan(pool, wishlist);
+    var assignments = [];
+    sortedUnits.forEach(function (unit) {
+      var desired = (unit.items || []).slice(0, 3);
+      var plan = bestItemPlan(pool, desired);
       pool = plan.leftover;
-      return {
+      assignments.push({
         unit: unit.name,
         carry: Boolean(unit.carry),
-        done: plan.crafted,
-        missing: plan.missing,
-        complete: plan.missing.length === 0 && wishlist.length > 0
-      };
+        crafted: plan.crafted,
+        missing: plan.missing
+      });
     });
 
-    return { units: rows, leftover: pool };
+    return { assignments: assignments, leftover: pool };
   }
 
-  // ---------------------------------------------------------------- rounds
+  // ---------------------------------------------------- lich trinh vong dau
 
-  /** Danh sach vong tiep theo kem ghi chu (chon do, lo bai tang, quai). */
-  function upcomingRounds(current, count) {
+  function upcomingRounds(currentRound, count) {
     var info = T.ROUND_INFO;
-    var parsed = parseRound(current);
+    var parsed = parseRound(currentRound);
     if (!parsed) return [];
     var out = [];
     var stage = parsed.stage;
@@ -398,6 +549,92 @@
     var m = /^\s*(\d+)\s*-\s*(\d+)\s*$/.exec(String(text || ''));
     if (!m) return null;
     return { stage: parseInt(m[1], 10), round: parseInt(m[2], 10) };
+  }
+
+  // -------------------------------------------------- phan loai & tuong thich trang bi
+
+  function classifyItem(itemName) {
+    return (T.ITEM_CATEGORIES && T.ITEM_CATEGORIES[itemName]) || ['utility'];
+  }
+
+  function itemSynergyWithChampion(itemName, champion) {
+    if (!itemName || !champion) return 50;
+    var tags = classifyItem(itemName);
+    var role = String(champion.role || (champion.datatft && champion.datatft.role) || '').toLowerCase();
+    var stats = champion.stats || {};
+    var isTank = /tank|vanguard|defender|brawler|guardian/i.test(role) || (stats.range === 1 && !/assassin|slayer/i.test(role));
+    var isAP = /mage|caster|arcanist|spell|invoker|sorcerer/i.test(role);
+    var isAD = /carry|marksman|sniper|hunter|executioner|slayer/i.test(role) && !isAP;
+
+    var score = 50;
+    if (isTank) {
+      if (tags.indexOf('tank') >= 0 || tags.indexOf('armor') >= 0 || tags.indexOf('mr') >= 0 || tags.indexOf('hp') >= 0) score += 40;
+      if (tags.indexOf('ad') >= 0 || tags.indexOf('ap') >= 0) score -= 30;
+    } else if (isAP) {
+      if (tags.indexOf('ap') >= 0 || tags.indexOf('mana') >= 0) score += 40;
+      if (tags.indexOf('ad') >= 0) score -= 25;
+      if (tags.indexOf('tank') >= 0) score -= 20;
+    } else if (isAD) {
+      if (tags.indexOf('ad') >= 0 || tags.indexOf('crit') >= 0 || tags.indexOf('as') >= 0 || tags.indexOf('sunder') >= 0) score += 40;
+      if (tags.indexOf('ap') >= 0) score -= 25;
+      if (tags.indexOf('tank') >= 0) score -= 20;
+    }
+
+    if (tags.indexOf('sustain') >= 0) score += 15;
+    return Math.max(0, Math.min(100, score));
+  }
+
+  function itemSlamWarning(itemName) {
+    var tags = classifyItem(itemName);
+    if (tags.indexOf('ad') >= 0 && tags.indexOf('crit') >= 0) {
+      return 'Ghép sớm khóa cứng hướng chơi tướng STVL chí mạng, khó xoay bài sang Pháp Sư.';
+    }
+    if (tags.indexOf('ap') >= 0 && tags.indexOf('mana') >= 0) {
+      return 'Ghép sớm khóa hướng chơi tướng SMPT dùng nhiều năng lượng.';
+    }
+    if (tags.indexOf('tank') >= 0) {
+      return 'Trang bị phòng thủ đa dụng, có thể ghép sớm giữ máu cho mọi đội hình.';
+    }
+    if (itemName === "Guinsoo's Rageblade" || itemName === 'Giant Slayer' || itemName === 'Hand of Justice') {
+      return 'Trang bị đa dụng, có thể dùng tốt cho cả tướng STVL lẫn SMPT.';
+    }
+    return null;
+  }
+
+  function suggestCompsFromComponents(components, compsLib, dataset, options) {
+    var pool = (components || []).slice();
+
+    return (compsLib || []).map(function (comp) {
+      var coreItems = [];
+      (comp.units || []).forEach(function (u) {
+        if (u.carry || (u.items && u.items.length)) {
+          (u.items || []).forEach(function (item) { coreItems.push({ item: item, holder: u.name }); });
+        }
+      });
+
+      var plan = bestItemPlan(pool, coreItems.map(function (x) { return x.item; }));
+      var matchCount = plan.crafted.length;
+      var totalNeeded = Math.max(1, coreItems.length);
+      var fitRatio = matchCount / totalNeeded;
+
+      var carryUnit = (comp.units || []).find(function (u) { return u.carry; });
+      var earlyHolders = [];
+      if (carryUnit && dataset && dataset.champions) {
+        earlyHolders = (dataset.champions || [])
+          .filter(function (c) { return (c.cost === 1 || c.cost === 2) && c.name !== carryUnit.name; })
+          .slice(0, 3)
+          .map(function (c) { return c.name; });
+      }
+
+      return {
+        comp: comp,
+        fitScore: Math.round(fitRatio * 100),
+        craftableNow: plan.crafted,
+        missing: plan.missing,
+        leftover: plan.leftover,
+        earlyHolders: earlyHolders
+      };
+    }).sort(function (a, b) { return b.fitScore - a.fitScore; });
   }
 
   // ----------------------------------------------------------------- utils
@@ -425,6 +662,9 @@
     rollOutcome: rollOutcome,
     goldForConfidence: goldForConfidence,
     binomialAtLeast: binomialAtLeast,
+    goldToTargetStar: goldToTargetStar,
+    evaluateShoppingList: evaluateShoppingList,
+    buildCompRerollPlan: buildCompRerollPlan,
     interest: interest,
     streakGold: streakGold,
     incomeNextRound: incomeNextRound,
@@ -437,6 +677,10 @@
     craftable: craftable,
     missingFor: missingFor,
     bestItemPlan: bestItemPlan,
+    classifyItem: classifyItem,
+    itemSynergyWithChampion: itemSynergyWithChampion,
+    itemSlamWarning: itemSlamWarning,
+    suggestCompsFromComponents: suggestCompsFromComponents,
     rollVsLevel: rollVsLevel,
     assignItems: assignItems,
     upcomingRounds: upcomingRounds,

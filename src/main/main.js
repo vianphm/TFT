@@ -8,6 +8,7 @@ const { DEFAULT_CONFIG } = require('./config-defaults');
 const { WindowManager } = require('./windows');
 const { HotkeyManager } = require('./hotkeys');
 const { GameWatcher } = require('./game-watcher');
+const { LiveClientService } = require('./live-client');
 const { DataService } = require('./data-service');
 const importer = require('./comp-importer');
 const { MobileServer } = require('./mobile-server');
@@ -77,6 +78,19 @@ app.whenReady().then(() => {
     }
   });
   watcher.start();
+
+  liveClient = new LiveClientService({
+    onData: (liveData) => {
+      windows.broadcast('live:game-data', liveData);
+    },
+    onStatus: (status) => {
+      windows.broadcast('live:status', status);
+      if (status.inGame && store.get('general.autoShowWithGame', true)) {
+        windows.toggleOverlay(true);
+      }
+    }
+  });
+  liveClient.start();
 
   // Cam/rut man hinh thi dat lai overlay cho dung cho.
   screen.on('display-added', () => refreshDisplays());

@@ -1,215 +1,79 @@
 # TFT Companion
 
 Tool hỗ trợ chơi Teamfight Tactics: một lớp **overlay trong suốt nằm đè lên game** (kiểu Blitz)
-và một **dashboard đầy đủ để đặt ở màn hình phụ**. Viết bằng Electron, chạy trên Windows / macOS / Linux.
+và một **dashboard đầy đủ để đặt ở màn hình phụ** cùng **bản Web App / PWA cho điện thoại**. Viết bằng Electron, chạy trên Windows / macOS / Linux.
 
 Toàn bộ dữ liệu nằm trên máy bạn. App **không đọc bộ nhớ game, không giả lập thao tác, không can thiệp
 vào client** — chỉ hiển thị thông tin bạn nhập cùng dữ liệu công khai của Riot (qua Community Dragon),
-nên không đụng tới điều khoản của Riot.
+nên hoàn toàn an toàn và không vi phạm điều khoản của Riot.
+
+---
 
 ## Tính năng
 
-**Overlay (đè lên game)**
-- 6 widget kéo thả, bật/tắt riêng từng cái, nhớ vị trí: Tỉ lệ roll, Kinh tế, Vòng đấu, Công thức đồ, Đội hình, Ghi chú.
-- Xuyên chuột: khi khoá, chuột đi thẳng vào game; rê vào widget thì tự bắt lại để bấm được, rời ra là trả lại cho game.
-- Chỉnh độ mờ, chuyển overlay sang màn hình khác, tất cả bằng phím tắt toàn cục.
-- Tự bật khi phát hiện tiến trình game đang chạy (đọc danh sách tiến trình, không đụng vào game).
+### 🪟 In-Game Overlay (đè lên game)
+- **8 widget kéo thả độc lập**, bật/tắt riêng từng cái, tự nhớ vị trí: Tỉ lệ roll, Kinh tế, Vòng đấu, Công thức đồ, Lõi nâng cấp, Tư vấn realtime, Đội hình, Ghi chú.
+- **Xuyên chuột (Click-through)**: khi khoá, chuột đi thẳng vào game; rê vào widget thì tự bắt lại để bấm được, rời ra là trả lại cho game.
+- Chỉnh độ mờ, chuyển overlay sang màn hình khác, tất cả bằng phím tắt toàn cục (`Ctrl+Shift+T`, `Ctrl+Shift+E`, `Ctrl+Shift+D`, `Ctrl+Shift+R`).
+- Tự bật khi phát hiện tiến trình game đang chạy.
 
-**Dashboard (màn hình phụ)**
-- *Đội hình*: bàn cờ 4×7 ô lục giác để lưu vị trí đứng, gắn trang bị cho từng tướng, đánh dấu carry,
-  ghi mốc roll/giữ vàng, nhập từ web hoặc JSON, xuất JSON.
-- *Trang bị*: bảng ghép 9×9 đầy đủ 45 công thức, "túi đồ" gợi ý ghép được gì ngay và còn thiếu gì.
-- *Tỉ lệ roll*: xác suất theo cấp + độ sâu kho tướng, tính cả số bản sao người khác đang cầm;
-  cho biết cần bao nhiêu vàng để đạt 50/75/90/95% chắc chắn.
-- *Kinh tế & cấp*: lãi, chuỗi, dự báo vàng vài vòng tới, chi phí XP lên cấp, lộ trình cấp tham khảo.
-- *Tướng trong set*: danh sách tướng theo giá kèm tộc/hệ, tìm kiếm, đồng bộ dữ liệu set mới.
+### 🖥️ Dashboard (màn hình phụ) & 📱 Mobile App (PWA)
+- **Lõi nâng cấp (Augments)**: Xếp hạng và chấm điểm 255 lõi Set 18 theo vòng đấu (`2-1`, `3-2`, `4-2`), lượng máu, vàng và tộc hệ đang kích hoạt, hiển thị lý do chi tiết bằng tiếng Việt.
+- **Tư vấn tổng hợp (Realtime Advisor)**: Phân tích toàn bộ trạng thái trong trận, đưa ra đội hình mục tiêu, gợi ý Mua / Bán / Giữ từng tướng trong cửa hàng, món đồ nên ghép ngay và quyết định kinh tế (Roll / Tích tiền / Lên cấp).
+- **Khung bài giữ máu đầu game**: Gợi ý chiến thuật chuỗi thắng (up cấp sớm 2-1/2-5, slam đồ) hoặc chuỗi thua (tích 10-20 vàng sớm, nhặt đồ chợ 2-4) và các khung bài giữ máu cơ bản.
+- **Trang bị theo đồ rơi**: Bảng ghép 10×10 đầy đủ 55 công thức Mùa 18, phân loại nhóm thuộc tính (`ad`, `ap`, `tank`, `as`, `mana`, `sustain`), chấm điểm tương thích role tướng, cảnh báo khóa hướng chơi.
+- **Wisp / Linh hồn**: Đầy đủ 27 Linh hồn Set 18 với phân loại, hiệu ứng nâng cấp và thuật toán xếp hạng theo máu/vàng.
+- **Đội hình meta**: Bàn cờ 4×7 ô lục giác lưu vị trí đứng, gắn trang bị cho từng tướng, đánh dấu carry, mốc roll/giữ vàng, nhập từ web hoặc JSON.
+- **Tỉ lệ roll**: Xác suất theo cấp + độ sâu kho tướng thật, tính số bản sao bị đối thủ giữ, tính vàng cần để đạt 50/75/90/95% chắc chắn.
 
-## Cài đặt
+---
 
-Cần Node.js 18 trở lên.
+## Cài đặt & Khởi chạy
+
+Yêu cầu Node.js 18 trở lên.
 
 ```bash
 npm install
-npm start          # chạy app
-npm test           # chạy kiểm thử phần tính toán (không cần Electron)
-npm run dist       # đóng gói (nsis / dmg / AppImage) bằng electron-builder
+npm start          # chạy ứng dụng Electron (Dashboard + Overlay)
+npm test           # chạy toàn bộ kiểm thử logic (calc, analyzer, db)
+npm run dist       # đóng gói ứng dụng (nsis / dmg / AppImage)
 npm run build:mobile          # gom bản web cho điện thoại vào dist-mobile/
-npm run build:mobile:android  # nhồi bản web đó vào assets của app Android
+npm run build:mobile:android  # nhồi bản web vào assets của app Android
 ```
 
-Lần đầu chạy, vào tab **Tướng trong set** hoặc cửa sổ **Cài đặt** bấm *Đồng bộ dữ liệu set* để tải
-danh sách tướng, tộc hệ, trang bị của set đang chơi từ Community Dragon (cache lại trong thư mục
-cấu hình, lần sau mở là có ngay). Chưa đồng bộ thì app vẫn dùng được với dữ liệu đóng gói sẵn
-(45 công thức ghép đồ, bảng tỉ lệ, bảng kinh tế/XP).
+---
 
 ## Phím tắt mặc định
 
 | Phím | Tác dụng |
 |---|---|
-| `Ctrl+Shift+T` | Bật/tắt overlay |
-| `Ctrl+Shift+E` | Khoá / mở chuột trên overlay |
-| `Ctrl+Shift+D` | Bật/tắt dashboard |
+| `Ctrl+Shift+T` | Bật / tắt overlay |
+| `Ctrl+Shift+E` | Khoá / mở chuột trên overlay (Click-through) |
+| `Ctrl+Shift+D` | Bật / tắt dashboard |
 | `Ctrl+Shift+R` | Đếm ngược 30 giây (giai đoạn chuẩn bị) |
 | `Ctrl+Shift+↑ / ↓` | Tăng / giảm độ mờ overlay |
 | `Ctrl+Shift+M` | Chuyển overlay sang màn hình kế tiếp |
 
-Đổi phím trong cửa sổ **Cài đặt** (bấm vào ô rồi nhấn tổ hợp mới). Phím nào bị ứng dụng khác chiếm
-thì app báo lại ngay để bạn chọn phím khác.
+Đổi phím trong tab **Overlay & cài đặt** trên Dashboard.
 
-## Dùng thế nào cho tiện
+---
 
-1. Để **dashboard ở màn hình phụ** (Cài đặt → *Màn hình cho dashboard*), **overlay ở màn hình chơi game**.
-2. Trong game chạy chế độ **Borderless / Windowed** — chế độ Fullscreen độc quyền sẽ che mất mọi overlay.
-3. Lúc đánh nhau cứ để overlay **khoá** (chuột xuyên qua). Cần gõ ghi chú thì `Ctrl+Shift+E` mở khoá.
-4. Chỉ bật widget nào thật sự cần — bấm các nút trên thanh HUD ở giữa trên màn hình.
+## Bản điện thoại (PWA & Android)
 
-## Nhập đội hình từ trang meta
+1. **Web App (PWA)**: Mở tab **Overlay & cài đặt** → bật **Cho điện thoại truy cập**. Mở địa chỉ IP hiện trên màn hình bằng điện thoại (cùng mạng Wi-Fi). Bấm *Thêm vào màn hình chính* để dùng như app độc lập.
+2. **Triển khai lên Vercel / GitHub Pages**: Repo có sẵn `vercel.json` và `api/tft-data.js` phục vụ dữ liệu set cắt gọn nhẹ không dính CORS.
+3. **App Android (Bong bóng nổi)**: Mã nguồn tại thư mục `android/` hỗ trợ cửa sổ nổi đè lên TFT Mobile.
 
-Tab **Đội hình → Nhập từ web / văn bản**:
+---
 
-- Dán URL (metatft.gg, doihinhtft.vn, mobalytics…) rồi bấm *Tải về*, hoặc copy nội dung trang dán thẳng vào ô văn bản.
-- App dò tên tướng theo dữ liệu set đã đồng bộ, dò tên trang bị theo bảng công thức, gom theo từng tiêu đề
-  trên trang, rồi tạo đội hình nháp: tướng nào đứng đâu, cầm đồ gì.
-- Kết quả là **bản nháp** — mỗi trang có cách trình bày khác nhau, nên xem lại vị trí đứng và trang bị
-  trước khi dùng. JSON xuất từ chính app này thì nhập lại chính xác 100%.
-
-## Bản điện thoại
-
-Có hai cách dùng trên điện thoại, dùng chung y hệt phần tính toán với bản PC.
-
-### 1a. Đưa lên Vercel — link dùng được cho cả Android lẫn iPhone
-
-Repo có sẵn `vercel.json` và một serverless function, import phát là chạy:
-
-1. Vào [vercel.com/new](https://vercel.com/new), chọn **Import Git Repository** → `vianphm/TFT`.
-2. Framework để **Other**; build command và output directory Vercel tự đọc từ `vercel.json`
-   (`node scripts/build-mobile.js dist-mobile` → `dist-mobile`). Bấm **Deploy**.
-3. Xong, mở link `*.vercel.app` trên điện thoại → **Thêm vào màn hình chính**. iPhone cũng cài được
-   theo cách này (Safari → nút Chia sẻ → Thêm vào MH chính).
-
-Kèm theo là `api/tft-data.js`: nó tải file dữ liệu của Community Dragon ở phía máy chủ, cắt còn vài
-trăm KB rồi trả về cho điện thoại kèm CORS và cache CDN 6 tiếng. Nhờ vậy điện thoại không phải tải
-file 10-30 MB và không dính chặn CORS. Bản web tự gọi endpoint này ngay lần mở đầu tiên.
-
-Muốn deploy bằng dòng lệnh: `npx vercel --prod` trong thư mục repo.
-
-### 1b. Web app (PWA) — chạy trên mọi máy, kể cả iPhone
-
-Trong app PC, tab **Overlay & cài đặt → Cho điện thoại truy cập → Bật**. App hiện địa chỉ dạng
-`http://192.168.1.x:7333`; gõ địa chỉ đó vào trình duyệt điện thoại (cùng wifi) là có ngay bản mobile,
-kèm toàn bộ đội hình và dữ liệu set đang dùng trên PC. Bấm *Thêm vào màn hình chính* để nó chạy như app
-thật, có icon riêng, mở được cả khi tắt máy tính (service worker giữ lại bản đã tải, dữ liệu nằm trong máy).
-
-Không muốn bật máy tính thì `npm run build:mobile` ra thư mục `dist-mobile/` — đưa lên GitHub Pages
-hay bất kỳ chỗ nào phục vụ file tĩnh là dùng được độc lập; đội hình nhập bằng cách dán JSON.
-
-### 2. App Android — bong bóng nổi đè lên TFT Mobile
-
-Đây mới là overlay thật trên điện thoại: một bong bóng luôn nổi trên game, kéo đi được, chạm vào thì
-bung ra bảng trợ thủ; nhấn Back hoặc nút – để thu lại, ✕ để tắt hẳn.
-
-- **Tải APK:** [github.com/vianphm/TFT/releases/tag/android-latest](https://github.com/vianphm/TFT/releases/tag/android-latest)
-  — mở link đó bằng trình duyệt điện thoại, tải file `.apk`, mở ra cài (Android sẽ hỏi cho phép cài từ
-  nguồn này). Mỗi lần push, GitHub Actions build lại và cập nhật đúng release đó.
-- **Tự build:** mở thư mục `android/` bằng Android Studio, chạy `npm run build:mobile:android` trước
-  để nhồi bản web vào assets, rồi Run.
-- Lần đầu chạy, app xin quyền **"Hiển thị trên ứng dụng khác"** — đây là quyền Android bắt buộc để vẽ
-  đè lên game. Cấp xong bấm *Bật bong bóng nổi trên game* rồi mở TFT.
-- App không đọc màn hình, không chạm hộ, không nối vào game — chỉ là một cửa sổ nổi hiển thị bảng tính
-  của chính bạn.
-
-> **iPhone không làm được overlay.** iOS không cho phép app vẽ đè lên app khác, không có cách nào lách.
-> Trên iPhone chỉ dùng được bản PWA ở mục 1 (chuyển qua lại giữa hai app, hoặc để trên iPad ở chế độ Slide Over).
-
-## Cấu trúc
+## Cấu trúc thư mục
 
 ```
-src/main/          tiến trình chính: cửa sổ, phím tắt, cấu hình, đồng bộ dữ liệu, nhập đội hình,
-                   máy chủ LAN cho điện thoại
-src/preload/       cầu nối IPC an toàn (contextIsolation, renderer không có Node)
-src/renderer/      giao diện PC: overlay/, dashboard/, settings/
-src/renderer/shared/  dùng chung cho tất cả: tables.js (số liệu), calc.js (xác suất, kinh tế, đồ),
-                   analyzer.js (tộc hệ, tối ưu đội hình), cdragon.js (đọc dữ liệu set)
-src/mobile/        bản web cho điện thoại (PWA), cũng là ruột của app Android
-api/               serverless function của Vercel: cầu lấy dữ liệu set, cắt gọn cho điện thoại
-src/shared/data/   dữ liệu đóng gói sẵn (đội hình mẫu, bộ dữ liệu dự phòng)
-android/           app Android: bong bóng nổi đè lên game (Kotlin + WebView)
-scripts/           tạo icon, dữ liệu dự phòng, gom bản mobile, smoke test giao diện
-test/              kiểm thử logic tính toán và bộ phân tích đội hình
+src/main/             Tiến trình chính: cửa sổ, phím tắt, cấu hình, đồng bộ dữ liệu, LAN server
+src/preload/          Cầu nối IPC an toàn giữa Main và Renderer
+src/renderer/         Giao diện PC: overlay/, dashboard/, settings/
+src/renderer/shared/  Logic lõi dùng chung: tables.js, calc.js, analyzer.js, db.js, cdragon.js
+src/mobile/           Giao diện Web App / PWA cho điện thoại
+src/shared/data/      Dữ liệu fallback đóng gói sẵn (set18-raw, wisps, sample comps)
+test/                 Kiểm thử logic tính toán, phân tích đội hình và database
 ```
-
-Cấu hình + cache lưu tại thư mục userData của Electron (Cài đặt → *Mở thư mục cấu hình*).
-
-## Số liệu trong app
-
-Bảng tỉ lệ cửa hàng theo cấp, kho tướng, XP, lãi và thưởng chuỗi nằm ở
-`src/renderer/shared/tables.js`. Riot có chỉnh các con số này giữa các set — sửa trực tiếp file đó
-là mọi phần tính toán cập nhật theo, không cần đổi gì khác.
-
-## Bộ phân tích đội hình
-
-`src/renderer/shared/analyzer.js` làm việc trên dữ liệu chính thức của set (tướng + tộc hệ), không cần
-trang meta nào:
-
-- **Tộc hệ đang bật**: đếm theo từng mốc, chỉ ra tộc hệ nào chỉ còn thiếu 1 tướng là lên mốc.
-- **Nên thêm tướng nào**: xếp hạng theo mức điểm tăng thêm, ưu tiên tướng rẻ khi điểm ngang nhau.
-- **Tự tìm tổ hợp tối ưu**: beam search chọn N tướng (N = cấp của bạn), giữ lại carry bạn đang cầm,
-  chặn theo giá tối đa. Cách chấm điểm: mốc càng cao điểm tăng càng nhanh (nên nó ưu tiên bật sâu thay
-  vì bật rộng), tướng không đóng góp mốc nào bị trừ điểm, tổng giá cao bị trừ nhẹ.
-- **Kế hoạch ghép đồ** (`calc.bestItemPlan`): từ túi đồ hiện có và danh sách trang bị của đội hình,
-  tính ghép được món nào trước, còn thiếu đúng món cơ bản nào, thừa gì.
-- **Chia đồ cho cả đội** (`calc.assignItems`): rải món cơ bản cho từng tướng, carry được ưu tiên,
-  không dùng trùng một món cho hai tướng.
-- **Nên chuyển sang đội hình nào** (`analyzer.pivotSuggestions`): với những tướng đang cầm, ước lượng
-  số vàng còn phải bỏ ra để gom đủ từng đội hình trong thư viện (theo tỉ lệ roll ở cấp hiện tại và số
-  bản sao cần cho mức sao), rồi xếp hạng theo điểm tộc hệ chia cho chi phí.
-- **Roll ngay, lên cấp, hay chờ** (`calc.rollVsLevel`): tính xác suất trúng của cả ba phương án với
-  cùng số vàng đang có.
-
-Vài con số rút ra từ chính mô hình này (săn tướng 4 vàng, cần 2 bản sao, 3 bản đã bị người khác cầm):
-
-| Vàng | Roll ở cấp 7 | Lên 8 (tốn 48v) rồi roll |
-|---|---|---|
-| 60 | 39.0% | 5.9% |
-| 100 | 65.7% | 51.2% |
-| 150 | 85.0% | 85.0% |
-| 200 | 93.9% | 96.1% |
-
-Nghĩa là từ 0 XP, tiền mua XP đắt đến mức phải trên khoảng 150 vàng thì lên cấp mới bắt đầu có lợi.
-Ngược lại nếu chỉ còn 4 XP nữa là lên cấp, lên cấp thắng ở mọi mức vàng (60v: 55.1% so với 39.0%).
-
-Muốn đổi khẩu vị thì sửa `DEFAULT_WEIGHTS` trong `analyzer.js`.
-
-### Database của set (`src/renderer/shared/db.js`)
-
-Dữ liệu thô từ Community Dragon chỉ là hai danh sách phẳng. Lớp này đánh chỉ mục (tướng theo giá,
-theo tộc hệ, tra cứu theo tên, mốc của từng tộc hệ) và **suy ngược số tướng mỗi mức giá từ dữ liệu
-thật** thay vì tin vào bảng cứng — con số đó đi thẳng vào công thức xác suất roll, mỗi set Riot lại
-đổi. Tab *Tỉ lệ roll* hiển thị luôn chỗ nào lệch với bảng mặc định. Số bản sao mỗi tướng
-(22/20/17/10/9) không có trong dữ liệu nên vẫn lấy từ `tables.js`.
-
-### Đo đạc phần tối ưu
-
-Trên 6 bộ dữ liệu giả lập cỡ thật (62 tướng, 12 tộc hệ, mốc khác nhau), đội hình 9 ô:
-
-| Bề rộng beam | Điểm trung bình | Đạt điểm cao nhất | Thời gian |
-|---|---|---|---|
-| 12 | 183.7 | 2/6 | 30 ms |
-| 24 | 184.3 | 3/6 | 54 ms |
-| 48 | 187.6 | 3/6 | 105 ms |
-| **96 (mặc định)** | **193.1** | **6/6** | **211 ms** |
-
-Beam rộng hơn cho kết quả tốt hơn rõ rệt, nên mặc định để 96. Sở dĩ chạy được mức đó là vì hàm chấm
-điểm trong vòng lặp (`analyzer.scoreUnits`) làm thẳng trên biến đếm thay vì dựng lại bảng tra cứu và
-mảng trung gian mỗi lần gọi — nhanh hơn khoảng 7 lần (beam 96 từ 1336 ms xuống 181 ms), và có phép
-thử đối chiếu để nó luôn ra đúng cùng con số với `traitBreakdown`.
-
-Bước local search (thử đổi từng tướng lấy tướng khác) hầu như không cải thiện thêm khi beam đã rộng,
-nhưng gần như không tốn thời gian nên vẫn giữ để chặn trường hợp beam đi lệch.
-
-## Chưa làm (nếu cần thì làm tiếp)
-
-- Bộ đọc riêng cho từng trang meta (chính xác hơn cách dò theo từ khoá hiện tại).
-- Lịch sử đấu / thống kê qua Riot API (cần API key).
-- Tự nhận diện vòng đấu và số vàng bằng OCR.
-- Gửi ngược đội hình sửa trên điện thoại về PC (hiện đang một chiều PC → điện thoại).

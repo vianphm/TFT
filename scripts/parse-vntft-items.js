@@ -17,13 +17,18 @@ const path = require('path');
 
 const DIR = path.join(__dirname, '..', 'data', 'sources');
 const OUT = path.join(DIR, 'vntft-items-parsed.json');
+const BUNDLED_OUT = path.join(__dirname, '..', 'src', 'shared', 'data', 'set18-items-vi.json');
 
-const baseItems = parseItemPage(read('vntft-trang-bi.txt'));
-const emblems = parseEmblemPage(read('vntft-ghep-an.txt'));
+const baseItems = parseItemPage(read('vntft-trang-bi.txt'), readHtml('vntft-trang-bi.html'));
+const emblems = parseEmblemPage(read('vntft-ghep-an.txt'), readHtml('vntft-ghep-an.html'));
 const lightItems = parseLightPage(read('vntft-trang-bi-anh-sang.txt'));
+const artifacts = parseHtmlCards(readHtml('vntft-trang-bi-tao-tac.html'), 'artifact', true);
+const supportItems = parseHtmlCards(readHtml('vntft-trang-bi-ho-tro.html'), 'support', false)
+  .map((item) => Object.assign(item, { active: false, inactiveReason: 'VNTFT ghi nhom Ho Tro da bi xoa tu mua 15' }));
 
-const result = { baseItems, emblems, lightItems };
+const result = { baseItems, emblems, lightItems, artifacts, supportItems };
 fs.writeFileSync(OUT, JSON.stringify(result, null, 1), 'utf8');
+fs.writeFileSync(BUNDLED_OUT, JSON.stringify(result, null, 1), 'utf8');
 
 console.log(`Trang bi co ban: ${baseItems.length}`);
 baseItems.slice(0, 5).forEach((i) => console.log(`  - ${i.name} [${i.category || '?'}]: ${i.stats.join(', ')}`));
@@ -31,12 +36,18 @@ console.log(`\nAn (${emblems.length}):`);
 emblems.forEach((e) => console.log(`  - ${e.name} -> toc he "${e.trait}"`));
 console.log(`\nDo Anh Sang (${lightItems.length}):`);
 lightItems.slice(0, 5).forEach((i) => console.log(`  - ${i.name} (tu ${i.upgradesFrom || '?'}): ${i.stats.join(', ')}`));
+console.log(`\nTao Tac: ${artifacts.length}; Ho Tro tham khao: ${supportItems.length}`);
 console.log(`\nGhi vao ${path.relative(process.cwd(), OUT)}`);
+console.log(`Dong goi vao ${path.relative(process.cwd(), BUNDLED_OUT)}`);
 
 // ---------------------------------------------------------------------------
 
 function read(name) {
   return fs.readFileSync(path.join(DIR, name), 'utf8').split('\n').map((l) => decodeEntities(l.trim()));
+}
+
+function readHtml(name) {
+  return fs.readFileSync(path.join(DIR, name), 'utf8');
 }
 
 /** Tim danh sach ten trong phan muc luc: nam giua "Trang bị tft"/"Trang bị..." va khoi noi dung dau tien. */
@@ -57,11 +68,13 @@ function findTocNames(lines, tocMarkerRegex, stopWhenSeenTwice) {
   return names;
 }
 
-function parseItemPage(lines) {
+function parseItemPage(lines, html) {
   const names = findTocNames(lines, /^Ánh Sáng$/, true);
+  const recipes = recipeMapFromHtml(html);
   return sliceBlocks(lines, names).map(({ name, block }) => ({
-    name,
+    name: name,
     category: null,
+    composition: recipes[name] || [],
     stats: cleanBlock(block).filter((l) => /^[+\-]/.test(l) && !/^\+$/.test(l)),
     desc: cleanBlock(block).filter((l) => !/^[+\-]/.test(l) && l !== '+').join(' ')
   }));
@@ -73,8 +86,9 @@ function cleanBlock(block) {
   return stop >= 0 ? block.slice(0, stop) : block;
 }
 
-function parseEmblemPage(lines) {
+function parseEmblemPage(lines, html) {
   const names = findTocNames(lines, /^Ấn Tiên Hắc Ám$/, true).filter((n) => n.startsWith('Ấn '));
+  const recipes = recipeMapFromHtml(html);
   return sliceBlocks(lines, names).map(({ name, block }) => {
     const traitLine = block.find((l) => /nhận(?: được| thêm)?\s*(?:tộc\/hệ|hệ|tộc)\s/i.test(l));
     const traitMatch = traitLine
@@ -85,10 +99,89 @@ function parseEmblemPage(lines) {
     return {
       name,
       trait: trait || null,
+      composition: recipes[name] || [],
       stats: clean.filter((l) => /^[+\-]/.test(l) && !/^\+$/.test(l)),
       desc: clean.filter((l) => !/^[+\-]/.test(l) && l !== '+').join(' ')
     };
   });
+}
+
+/** Doc hai nguyen lieu ngay trong h4 cua tung cong thuc VNTFT. */
+function recipeMapFromHtml(html) {
+  const out = {};
+  const card = /<h4[^>]*>([\s\S]*?)<\/h4>/gi;
+  let match;
+  while ((match = card.exec(html))) {
+    const nameMatch = /<a[^>]*>([^<]+)<\/a>/i.exec(match[1]);
+    if (!nameMatch) continue;
+    const ingredients = [];
+    const image = /<img[^>]+(?:alt|title)="([^"]+)"[^>]*>/gi;
+    let imageMatch;
+    while ((imageMatch = image.exec(match[1]))) {
+      const id = componentId(decodeEntities(imageMatch[1].trim()));
+      if (id) ingredients.push(id);
+    }
+    if (ingredients.length === 2) out[decodeEntities(nameMatch[1].trim())] = ingredients;
+  }
+  return out;
+}
+
+function componentId(name) {
+  const ids = {
+    'Kiếm BF': 'bf', 'Cung Gỗ': 'bow', 'Gậy Quá Khổ': 'rod',
+    'Nước Mắt Nữ Thần': 'tear', 'Giáp Lưới': 'vest', 'Áo Choàng Bạc': 'cloak',
+    'Đai Khổng Lồ': 'belt', 'Găng Đấu Tập': 'glove',
+    'Xẻng Vàng': 'spat', 'Chảo Vàng': 'pan'
+  };
+  return ids[name] || null;
+}
+
+/** Boc cac the chi tiet Tạo Tác/Hỗ Trợ từ HTML, giu ca icon va goi y tuong. */
+function parseHtmlCards(html, category, active) {
+  const out = [];
+  const card = /<li class="list_search[^>]*>([\s\S]*?)(?=<li class="list_search|<\/ul>\s*<\/div>)/gi;
+  let match;
+  while ((match = card.exec(html))) {
+    const block = match[1];
+    const heading = /<h4[^>]*>([\s\S]*?)<\/h4>/i.exec(block);
+    if (!heading) continue;
+    const name = decodeEntities(stripHtml(heading[1]));
+    if (!name || out.some((item) => item.name === name)) continue;
+    const iconMatch = /<img[^>]+src="([^"]+)"/i.exec(block);
+    const stats = [];
+    const statList = /<ul[^>]*>([\s\S]*?)<\/ul>/i.exec(block);
+    if (statList) {
+      const li = /<li[^>]*>([\s\S]*?)<\/li>/gi;
+      let stat;
+      while ((stat = li.exec(statList[1]))) stats.push(decodeEntities(stripHtml(stat[1])));
+    }
+    const descriptionParts = [];
+    const paragraph = /<p[^>]*>([\s\S]*?)<\/p>/gi;
+    let p;
+    while ((p = paragraph.exec(block))) {
+      if (/class="pt5"/i.test(p[0])) continue;
+      const text = decodeEntities(stripHtml(p[1]));
+      if (text && !stats.includes(text)) descriptionParts.push(text);
+    }
+    const recommendedMatch = /<p class="pt5"[^>]*>([\s\S]*?)<\/p>/i.exec(block);
+    const recommended = recommendedMatch
+      ? decodeEntities(stripHtml(recommendedMatch[1])).split(',').map((x) => x.trim()).filter(Boolean)
+      : [];
+    out.push({
+      name: name,
+      category: category,
+      active: active,
+      icon: iconMatch ? iconMatch[1] : null,
+      stats: stats,
+      desc: descriptionParts.join(' '),
+      recommendedChampions: recommended
+    });
+  }
+  return out;
+}
+
+function stripHtml(html) {
+  return String(html).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
 function parseLightPage(lines) {

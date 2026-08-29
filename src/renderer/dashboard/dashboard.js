@@ -34,6 +34,9 @@
     bindItems();
     bindOdds();
     bindEcon();
+    bindAugments();
+    bindReroll();
+    bindScout();
     bindChamps();
     bindTools();
     refreshGameStatus();
@@ -41,10 +44,46 @@
 
     api.on('comps:changed', function (next) { comps = next; renderCompList(); renderCompEditor(); });
     api.on('game:status', renderGameStatus);
+    api.on('live:status', function (status) {
+      if (status && status.liveApiActive) {
+        var dot = document.getElementById('gameDot');
+        var text = document.getElementById('gameText');
+        if (dot) dot.classList.add('on');
+        if (text) text.textContent = 'Live Riot (2999)';
+      }
+    });
+    api.on('live:game-data', function (liveData) {
+      if (liveData && liveData.round) {
+        config.state.round = liveData.round;
+        var rInput = document.getElementById('econRound');
+        if (rInput && rInput.value !== liveData.round) {
+          rInput.value = liveData.round;
+          renderEconPlan();
+        }
+      }
+      if (liveData && liveData.level) {
+        config.state.level = liveData.level;
+        var oLevel = document.getElementById('rollLevel');
+        if (oLevel && parseInt(oLevel.value, 10) !== liveData.level) {
+          oLevel.value = liveData.level;
+          renderOdds();
+        }
+      }
+      if (liveData && liveData.gold !== null && liveData.gold !== undefined) {
+        config.state.gold = liveData.gold;
+        var eGold = document.getElementById('gold');
+        if (eGold && parseInt(eGold.value, 10) !== liveData.gold) {
+          eGold.value = liveData.gold;
+          renderEconCalc();
+        }
+      }
+    });
     api.on('data:updated', async function () {
       dataset = await api.data.load();
       applyRealPool();
       renderSetInfo();
+      renderAugmentDatalist();
+      renderAugmentLibrary();
       renderChamps();
       renderPoolTable();
     });
@@ -315,7 +354,7 @@
         '<div class="field"><label>Mon co ban dang co (vd: bf, glove, tear, vest)</label>' +
         '<input id="planBag" placeholder="bf, glove, tear" value="' + esc(lastBag) + '" /></div>' +
       '</div>' +
-      '<div id="planResult"></div></div>';
+      '<div id="planResult"></div><div id="emblemResult"></div></div>';
   }
 
   function bindItemPlanInput(comp) {
@@ -339,6 +378,20 @@
               }).join(', ') + '</span></div>';
           }).join('') +
           (plan.leftover.length ? '<div class="small muted">Thua: ' + plan.leftover.map(compName).join(', ') + '</div>' : '');
+
+      var emblemHost = document.getElementById('emblemResult');
+      var emblemRows = analyzer.recommendEmblems({ units: comp.units, components: ids }, dataset, { limit: 5 });
+      emblemHost.innerHTML = !emblemRows.length ? '' :
+        '<div class="small muted" style="margin-top:10px">Gợi ý ghép ấn theo đội hình và đồ đang có:</div>' +
+        emblemRows.map(function (row) {
+          var state = row.craftable
+            ? '<span class="ok">ghép được ngay</span>'
+            : '<span class="muted">thiếu ' + row.missingComponents.map(compName).join(', ') + '</span>';
+          return '<div class="kv"><span><b>' + esc((tables.ITEM_NAMES_VI && tables.ITEM_NAMES_VI[row.name]) || row.name) + '</b>' +
+            '<div class="small muted">' + (row.holder ? 'lắp cho ' + esc(row.holder) : 'không còn ô đồ phù hợp') +
+            (row.unlocks ? ' · mở ' + esc(row.unlocks) : '') + '</div></span><span>' + state +
+            '<div class="small cost-5">+' + row.scoreGain + ' điểm</div></span></div>';
+        }).join('');
     };
     input.addEventListener('input', render);
     render();
@@ -355,7 +408,8 @@
     return '<div style="margin-top:12px"><div class="small muted">Tu doi hinh nay, chuyen sang doi hinh khac:</div>' +
       list.map(function (p) {
         return '<div class="kv"><span>' + esc(p.name) +
-          '<div class="small muted">da co ' + p.overlap + '% - thieu ' + esc(p.missing.slice(0, 4).join(', ')) + '</div></span>' +
+          '<div class="small muted">da co ' + p.overlap + '% - thieu ' + esc(p.missing.slice(0, 4).join(', ')) +
+          (p.winRate || p.top4 ? ' · WR ' + p.winRate + '% · Top 4 ' + p.top4 + '%' : '') + '</div></span>' +
           '<b class="' + (isFinite(p.estGold) ? 'cost-5' : 'muted') + '">' +
           (isFinite(p.estGold) ? '~' + p.estGold + 'v' : '-') + '</b></div>';
       }).join('') + '</div>';
@@ -611,7 +665,7 @@
     grid.forEach(function (row) {
       html += '<tr><td class="cell head">' + esc(row.component.vi) + '</td>' +
         row.cells.map(function (cell) {
-          return '<td class="cell" data-item="' + esc(cell.item || '') + '">' + esc(cell.item || '') + '</td>';
+          return '<td class="cell" data-item="' + esc(cell.item || '') + '">' + esc(cell.itemVi || cell.item || '') + '</td>';
         }).join('') + '</tr>';
     });
     table.innerHTML = html;
@@ -620,7 +674,8 @@
       if (!td || !hint) return;
       var name = td.dataset.item;
       var note = tables.ITEM_NOTES[name];
-      hint.innerHTML = '<b class="cost-5">' + esc(name) + '</b>' + (note ? ' &mdash; ' + esc(note) : '');
+      hint.innerHTML = '<b class="cost-5">' + esc((tables.ITEM_NAMES_VI && tables.ITEM_NAMES_VI[name]) || name) + '</b>' +
+        (note ? ' &mdash; ' + esc(note) : '');
     });
   }
 
@@ -1027,6 +1082,395 @@
         else api.dashboard.moveToDisplay(value);
       };
     });
+  }
+
+  // ----------------------------------------------------------- loi nang cap (augments)
+
+  function bindAugments() {
+    var searchInput = document.getElementById('augSearch');
+    var tierSelect = document.getElementById('augTierFilter');
+    var tagSelect = document.getElementById('augTagFilter');
+    var evalBtn = document.getElementById('augEvaluateBtn');
+
+    if (searchInput) searchInput.addEventListener('input', renderAugmentLibrary);
+    if (tierSelect) tierSelect.addEventListener('change', renderAugmentLibrary);
+    if (tagSelect) tagSelect.addEventListener('change', renderAugmentLibrary);
+    if (evalBtn) evalBtn.addEventListener('click', evaluateSelectedAugments);
+
+    renderAugmentDatalist();
+    renderAugmentLibrary();
+  }
+
+  function renderAugmentDatalist() {
+    var dl = document.getElementById('augDatalist');
+    if (!dl || !dataset || !dataset.augments) return;
+    dl.innerHTML = dataset.augments.map(function (a) {
+      return '<option value="' + esc(a.name) + '">' + esc(a.tier ? '[' + a.tier.toUpperCase() + '] ' : '') + esc(a.name) + '</option>';
+    }).join('');
+  }
+
+  function renderAugmentLibrary() {
+    var container = document.getElementById('augLibrary');
+    var countLabel = document.getElementById('augCountLabel');
+    if (!container || !dataset) return;
+
+    var query = (document.getElementById('augSearch') && document.getElementById('augSearch').value) || '';
+    var tier = (document.getElementById('augTierFilter') && document.getElementById('augTierFilter').value) || '';
+    var tag = (document.getElementById('augTagFilter') && document.getElementById('augTagFilter').value) || '';
+
+    var filtered = db.searchAugments(dataset, query, { tier: tier || null, tag: tag || null });
+    if (countLabel) countLabel.textContent = filtered.length;
+
+    if (!filtered.length) {
+      container.innerHTML = '<div class="muted small" style="padding:10px">Khong tim thay loi phu hop.</div>';
+      return;
+    }
+
+    container.innerHTML = filtered.map(function (a) {
+      var tierBadge = a.tier ? '<span class="badge badge-tier-' + esc(a.tier) + '">' + esc(a.tier) + '</span>' : '';
+      var tagBadges = (a.tags || []).map(function (t) { return '<span class="chip" style="padding:2px 6px;font-size:9px">' + esc(t) + '</span>'; }).join('');
+      var icon = a.icon ? '<img src="' + esc(a.icon) + '" alt="" loading="lazy" />' : '';
+      return '<div class="aug-card">' +
+        icon +
+        '<div class="aug-body">' +
+          '<div class="aug-title"><span class="aug-name">' + esc(a.name) + '</span>' + tierBadge + '</div>' +
+          '<div class="aug-desc">' + esc(a.desc || 'Chua co mo ta.') + '</div>' +
+          '<div class="aug-meta">' + tagBadges + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  function evaluateSelectedAugments() {
+    var p1 = (document.getElementById('augPick1') && document.getElementById('augPick1').value || '').trim();
+    var p2 = (document.getElementById('augPick2') && document.getElementById('augPick2').value || '').trim();
+    var p3 = (document.getElementById('augPick3') && document.getElementById('augPick3').value || '').trim();
+    var resultEl = document.getElementById('augRankResult');
+    if (!resultEl || !dataset || !dataset.augments) return;
+
+    var picks = [p1, p2, p3].filter(Boolean);
+    if (!picks.length) {
+      resultEl.innerHTML = '<div class="muted small">Vui long nhap hoac chon it nhat 1 loi de danh gia.</div>';
+      return;
+    }
+
+    var augs = picks.map(function (name) {
+      return (dataset.augments || []).find(function (a) {
+        return a.name.toLowerCase() === name.toLowerCase() ||
+               a.apiName.toLowerCase() === name.toLowerCase() ||
+               a.name.toLowerCase().indexOf(name.toLowerCase()) >= 0;
+      });
+    }).filter(Boolean);
+
+    if (!augs.length) {
+      resultEl.innerHTML = '<div class="warn small">Khong tim thay loi trong bo du lieu.</div>';
+      return;
+    }
+
+    var activeComp = comps.find(function (c) { return c.id === activeCompId; });
+    var state = {
+      stage: (document.getElementById('augStage') && document.getElementById('augStage').value) || '2-1',
+      hp: Number(document.getElementById('augHp') && document.getElementById('augHp').value) || 100,
+      gold: Number(document.getElementById('augGold') && document.getElementById('augGold').value) || 50,
+      board: (activeComp && activeComp.units) || []
+    };
+
+    var ranked = analyzer.rankAugments(augs, state, dataset);
+
+    var recLabels = {
+      must_pick: 'Tuyet voi (Nen chon)',
+      recommended: 'Khuyen dung',
+      situational: 'Tuy tinh huong',
+      avoid: 'Nen bo qua'
+    };
+
+    resultEl.innerHTML = '<h4>Ket qua xep hang (' + ranked.length + ' loi):</h4><div class="aug-grid" style="margin-top:8px">' +
+      ranked.map(function (r, idx) {
+        var recBadge = '<span class="badge badge-' + esc(r.recommendation) + '">' + esc(recLabels[r.recommendation] || r.recommendation) + '</span>';
+        var tierBadge = r.tier ? '<span class="badge badge-tier-' + esc(r.tier) + '">' + esc(r.tier) + '</span>' : '';
+        var icon = r.augment.icon ? '<img src="' + esc(r.augment.icon) + '" alt="" />' : '';
+        return '<div class="aug-card" style="border-left: 3px solid ' + (r.recommendation === 'must_pick' ? 'var(--green)' : r.recommendation === 'avoid' ? 'var(--red)' : 'var(--gold)') + '">' +
+          icon +
+          '<div class="aug-body">' +
+            '<div class="aug-title"><span class="aug-name">#' + (idx + 1) + ' ' + esc(r.augment.name) + ' (' + r.score + ' diem)</span><div>' + recBadge + ' ' + tierBadge + '</div></div>' +
+            '<div class="aug-desc">' + esc(r.augment.desc || '') + '</div>' +
+            '<div class="aug-reason"><b>Ly do:</b> ' + esc(r.reason) + '</div>' +
+          '</div>' +
+        '</div>';
+      }).join('') + '</div>';
+  }
+
+  // ------------------------------------------------------------------ reroll
+
+  var rerollOwnedMap = {};
+
+  function bindReroll() {
+    fillRerollCompSelect();
+    var select = document.getElementById('rerollCompSelect');
+    if (select) select.addEventListener('change', renderRerollPlan);
+    var refreshBtn = document.getElementById('rerollRefreshBtn');
+    if (refreshBtn) refreshBtn.addEventListener('click', renderRerollPlan);
+    var evalBtn = document.getElementById('evalShopBtn');
+    if (evalBtn) evalBtn.addEventListener('click', evaluateDashboardShop);
+
+    renderRerollPlan();
+  }
+
+  function fillRerollCompSelect() {
+    var select = document.getElementById('rerollCompSelect');
+    if (!select) return;
+    var current = select.value;
+    select.innerHTML = comps.map(function (c) {
+      return '<option value="' + esc(c.id) + '">' + esc(c.name) + ' (' + esc(c.tier || 'A') + ' Tier)</option>';
+    }).join('');
+    if (current) select.value = current;
+  }
+
+  function renderRerollPlan() {
+    var select = document.getElementById('rerollCompSelect');
+    var compId = select ? select.value : '';
+    var comp = comps.find(function (c) { return c.id === compId; }) || comps[0];
+    if (!comp) return;
+
+    var titleEl = document.getElementById('rerollCompTitle');
+    var badgeEl = document.getElementById('rerollStrategyBadge');
+    var textEl = document.getElementById('rerollStrategyText');
+    var listEl = document.getElementById('rerollUnitList');
+    var buyGoldEl = document.getElementById('rerollBuyGold');
+    var totalGoldEl = document.getElementById('rerollTotalGold');
+    var tipEl = document.getElementById('rerollLevelTip');
+
+    if (titleEl) titleEl.textContent = comp.name;
+
+    var currentShop = [
+      (document.getElementById('shopSlot1') && document.getElementById('shopSlot1').value || '').trim(),
+      (document.getElementById('shopSlot2') && document.getElementById('shopSlot2').value || '').trim(),
+      (document.getElementById('shopSlot3') && document.getElementById('shopSlot3').value || '').trim(),
+      (document.getElementById('shopSlot4') && document.getElementById('shopSlot4').value || '').trim(),
+      (document.getElementById('shopSlot5') && document.getElementById('shopSlot5').value || '').trim()
+    ].filter(Boolean);
+
+    var plan = calc.buildCompRerollPlan(comp, rerollOwnedMap, {
+      level: config.state.level || 7,
+      gold: config.state.gold || 50,
+      shop: currentShop
+    });
+
+    if (!plan) return;
+
+    if (badgeEl) badgeEl.textContent = 'Roll cấp ' + plan.recommendedRollLevel;
+    if (textEl) textEl.innerHTML = '<b>Chiến lược:</b> ' + esc(plan.rollStrategy);
+    if (buyGoldEl) buyGoldEl.textContent = plan.totalBuyGold + ' vàng';
+    if (totalGoldEl) totalGoldEl.textContent = (isFinite(plan.totalExpectedGold) ? plan.totalExpectedGold : '—') + ' vàng';
+    if (tipEl) {
+      tipEl.innerHTML = 'Cấp độ roll tối ưu: <b>Cấp ' + plan.recommendedRollLevel + '</b>. Khi săn tướng 3 sao, hãy tích đủ 50 vàng để tối ưu lợi tức 5 vàng mỗi round.';
+    }
+
+    if (listEl) {
+      listEl.innerHTML = plan.shoppingList.map(function (item) {
+        var isCarry = item.targetStar === 3 || item.cost >= 4;
+        var percent = Math.min(100, Math.round((item.owned / item.calculation.targetCopies) * 100));
+        var progressColor = percent >= 100 ? 'var(--green)' : percent >= 66 ? 'var(--gold)' : 'var(--blue)';
+
+        return '<div class="card" style="padding:8px 12px;background:rgba(255,255,255,0.02);border-left:3px solid ' + (item.carry ? 'var(--gold)' : 'var(--border)') + '">' +
+          '<div style="display:flex;justify-content:space-between;align-items:center">' +
+            '<div>' +
+              '<span class="cost-' + item.cost + '" style="font-weight:600">' + esc(item.name) + '</span> ' +
+              '<span class="small muted">(' + item.cost + ' vàng' + (item.carry ? ' • Carry chính' : '') + ')</span>' +
+            '</div>' +
+            '<div style="display:flex;align-items:center;gap:6px">' +
+              '<button class="mini reroll-dec" data-champ="' + esc(item.name.toLowerCase()) + '">-</button>' +
+              '<span style="font-weight:bold;min-width:32px;text-align:center">' + item.progress + '</span>' +
+              '<button class="mini reroll-inc" data-champ="' + esc(item.name.toLowerCase()) + '">+</button>' +
+              '<span class="badge" style="background:var(--bg-card);color:' + progressColor + '">' + item.targetStar + '★</span>' +
+            '</div>' +
+          '</div>' +
+          '<div style="margin-top:6px;background:rgba(0,0,0,0.3);height:6px;border-radius:3px;overflow:hidden">' +
+            '<div style="width:' + percent + '%;height:100%;background:' + progressColor + ';transition:width .2s"></div>' +
+          '</div>' +
+          '<div class="small muted" style="margin-top:4px;display:flex;justify-content:space-between">' +
+            '<span>Còn thiếu: ' + item.calculation.copiesNeeded + ' bản sao (' + item.calculation.buyGold + 'v)</span>' +
+            '<span>Trong kho: còn ' + item.calculation.copiesLeftInPool + ' con</span>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+
+      listEl.querySelectorAll('.reroll-inc').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var name = btn.dataset.champ;
+          var cur = rerollOwnedMap[name] !== undefined ? rerollOwnedMap[name] : 1;
+          rerollOwnedMap[name] = Math.min(9, cur + 1);
+          renderRerollPlan();
+        });
+      });
+
+      listEl.querySelectorAll('.reroll-dec').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var name = btn.dataset.champ;
+          var cur = rerollOwnedMap[name] !== undefined ? rerollOwnedMap[name] : 1;
+          rerollOwnedMap[name] = Math.max(0, cur - 1);
+          renderRerollPlan();
+        });
+      });
+    }
+  }
+
+  function evaluateDashboardShop() {
+    var select = document.getElementById('rerollCompSelect');
+    var compId = select ? select.value : '';
+    var comp = comps.find(function (c) { return c.id === compId; }) || comps[0];
+    var resultEl = document.getElementById('shopEvalResult');
+    if (!resultEl || !comp) return;
+
+    var shop = [
+      (document.getElementById('shopSlot1') && document.getElementById('shopSlot1').value || '').trim(),
+      (document.getElementById('shopSlot2') && document.getElementById('shopSlot2').value || '').trim(),
+      (document.getElementById('shopSlot3') && document.getElementById('shopSlot3').value || '').trim(),
+      (document.getElementById('shopSlot4') && document.getElementById('shopSlot4').value || '').trim(),
+      (document.getElementById('shopSlot5') && document.getElementById('shopSlot5').value || '').trim()
+    ].filter(Boolean);
+
+    if (!shop.length) {
+      resultEl.innerHTML = '<span class="muted">Hãy nhập ít nhất 1 tướng trong cửa hàng để kiểm tra.</span>';
+      return;
+    }
+
+    var plan = calc.buildCompRerollPlan(comp, rerollOwnedMap, {
+      level: config.state.level || 7,
+      gold: config.state.gold || 50,
+      shop: shop
+    });
+
+    if (plan.matchedInShop && plan.matchedInShop.length) {
+      resultEl.innerHTML = '<div style="padding:8px;background:rgba(34,197,94,0.1);border-left:3px solid var(--green);border-radius:4px">' +
+        '<b style="color:var(--green)">Có ' + plan.matchedInShop.length + ' tướng mục tiêu trong Shop:</b>' +
+        '<ul style="margin:4px 0 0 16px;padding:0">' +
+          plan.matchedInShop.map(function (m) {
+            return '<li><b>Ô ' + m.slot + ': ' + esc(m.name) + ' (' + m.cost + 'v)</b> — ' + esc(m.reason) + '</li>';
+          }).join('') +
+        '</ul>' +
+      '</div>';
+    } else {
+      resultEl.innerHTML = '<div style="padding:8px;background:rgba(255,255,255,0.04);border-radius:4px" class="muted">' +
+        'Không có tướng nào thuộc đội hình ' + esc(comp.name) + ' trong 5 ô này. Tiếp tục roll hoặc giữ tiền.' +
+      '</div>';
+    }
+  }
+
+  // ------------------------------------------------------------------- scout
+
+  var scoutOpponents = [
+    { id: 1, text: '' }, { id: 2, text: '' }, { id: 3, text: '' },
+    { id: 4, text: '' }, { id: 5, text: '' }, { id: 6, text: '' }, { id: 7, text: '' }
+  ];
+
+  function bindScout() {
+    renderOpponentInputs();
+    var analyzeBtn = document.getElementById('scoutAnalyzeBtn');
+    if (analyzeBtn) analyzeBtn.addEventListener('click', renderScoutAnalysis);
+    var resetBtn = document.getElementById('scoutResetBtn');
+    if (resetBtn) resetBtn.addEventListener('click', function () {
+      scoutOpponents.forEach(function (o) { o.text = ''; });
+      renderOpponentInputs();
+      renderScoutAnalysis();
+    });
+
+    renderScoutAnalysis();
+  }
+
+  function renderOpponentInputs() {
+    var container = document.getElementById('opponentsList');
+    if (!container) return;
+
+    var compOptions = comps.map(function (c) {
+      return '<option value="' + esc(c.name) + '">';
+    }).join('');
+
+    container.innerHTML = scoutOpponents.map(function (opp, idx) {
+      return '<div class="row" style="align-items:center;gap:8px">' +
+        '<span style="font-weight:bold;min-width:55px" class="small muted">Nhà #' + (idx + 1) + ':</span>' +
+        '<input class="opp-input" data-idx="' + idx + '" list="scoutCompList" placeholder="Nhập tên bài hoặc carry đối thủ..." value="' + esc(opp.text) + '" style="flex:1" />' +
+      '</div>';
+    }).join('') + '<datalist id="scoutCompList">' + compOptions + '</datalist>';
+
+    container.querySelectorAll('.opp-input').forEach(function (input) {
+      input.addEventListener('input', function () {
+        var i = parseInt(input.dataset.idx, 10);
+        scoutOpponents[i].text = input.value.trim();
+      });
+    });
+  }
+
+  function renderScoutAnalysis() {
+    var freeCompsEl = document.getElementById('freeCompsResult');
+    var counterEl = document.getElementById('counterAdviceResult');
+    if (!freeCompsEl || !counterEl) return;
+
+    var opps = scoutOpponents.map(function (o) { return o.text; }).filter(Boolean);
+    var analysis = analyzer.analyzeLobbyComps(opps, comps, dataset);
+
+    // 1. Render cac doi hinh trong bai (Free Comps / Uncontested)
+    if (analysis.topRecommendedComps.length) {
+      freeCompsEl.innerHTML = analysis.topRecommendedComps.map(function (item) {
+        var comp = item.comp;
+        var badgeColor = item.isFree ? 'var(--green)' : item.contestedScore <= 35 ? 'var(--gold)' : 'var(--red)';
+        var tierBadge = '<span class="badge" style="background:var(--gold-dim);color:var(--gold)">' + esc(item.tier) + ' Tier</span>';
+
+        return '<div class="card" style="padding:10px 12px;background:rgba(255,255,255,0.02);border-left:3px solid ' + badgeColor + '">' +
+          '<div style="display:flex;justify-content:space-between;align-items:center">' +
+            '<div>' +
+              '<b style="font-size:14px">' + esc(comp.name) + '</b> ' + tierBadge +
+            '</div>' +
+            '<span class="badge" style="background:rgba(0,0,0,0.3);color:' + badgeColor + '">' + esc(item.statusText) + '</span>' +
+          '</div>' +
+          '<div class="small muted" style="margin-top:4px">' +
+            'Carry: <b>' + esc(item.carryName || 'Đa dụng') + '</b> • Điểm khuyến nghị sảnh: <b style="color:var(--green)">' + item.lobbyScore + '/100</b>' +
+          '</div>' +
+          '<div style="margin-top:6px;display:flex;gap:6px">' +
+            '<button class="mini primary scout-select-comp" data-id="' + esc(comp.id) + '">Chốt bài này để Reroll</button>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+
+      freeCompsEl.querySelectorAll('.scout-select-comp').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var id = btn.dataset.id;
+          var sel = document.getElementById('rerollCompSelect');
+          if (sel) {
+            sel.value = id;
+            var tabBtn = document.querySelector('.tab[data-tab="reroll"]');
+            if (tabBtn) tabBtn.click();
+            renderRerollPlan();
+          }
+        });
+      });
+    } else {
+      freeCompsEl.innerHTML = '<div class="muted">Chưa có dữ liệu phân tích.</div>';
+    }
+
+    // 2. Render xu huong lobby & khac che
+    var dominance = analysis.lobbyDominance;
+    var counterHtml = '<div style="margin-bottom:10px;display:flex;gap:8px">' +
+      '<span class="badge" style="background:rgba(59,130,246,0.1);color:#60a5fa">SMPT (AP): ' + dominance.ap + ' nhà</span>' +
+      '<span class="badge" style="background:rgba(239,68,68,0.1);color:#f87171">STVL (AD): ' + dominance.ad + ' nhà</span>' +
+      '<span class="badge" style="background:rgba(234,179,8,0.1);color:#facc15">Reroll: ' + dominance.reroll + ' nhà</span>' +
+    '</div>';
+
+    var adviceList = analysis.counterAdvice.map(function (adv) {
+      return '<li style="margin-bottom:6px">' + esc(adv) + '</li>';
+    }).join('');
+
+    var itemsList = '';
+    if (analysis.recommendedCounterItems.length) {
+      itemsList = '<div style="margin-top:8px" class="small"><b>Trang bị khắc chế ưu tiên:</b> ' +
+        analysis.recommendedCounterItems.map(function (it) {
+          var itVi = (tables.ITEM_NAMES_VI && tables.ITEM_NAMES_VI[it]) || it;
+          return '<span class="tag" style="margin-right:4px">' + esc(itVi) + '</span>';
+        }).join('') +
+      '</div>';
+    }
+
+    counterEl.innerHTML = counterHtml + '<ul style="margin:0;padding-left:18px" class="small">' + adviceList + '</ul>' + itemsList;
   }
 
   // ------------------------------------------------------------------- misc

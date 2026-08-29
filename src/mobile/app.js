@@ -39,6 +39,9 @@
     bindItems();
     bindComps();
     bindRound();
+    bindAugments();
+    bindMobileReroll();
+    bindMobileScout();
     bindSync();
     renderTop();
     showTab(state.tab || 'roll');
@@ -315,7 +318,7 @@
       calc.recipeGrid().map(function (r) {
         return '<tr><td class="cell head">' + esc(r.component.vi) + '</td>' +
           r.cells.map(function (cell) {
-            return '<td class="cell" data-item="' + esc(cell.item || '') + '">' + esc(cell.item || '') + '</td>';
+            return '<td class="cell" data-item="' + esc(cell.item || '') + '">' + esc(cell.itemVi || cell.item || '') + '</td>';
           }).join('') + '</tr>';
       }).join('');
     grid.addEventListener('click', function (e) {
@@ -325,7 +328,8 @@
       td.classList.add('on');
       var note = tables.ITEM_NOTES[td.dataset.item];
       document.getElementById('mRecipeHint').innerHTML =
-        '<b class="cost-5">' + esc(td.dataset.item) + '</b>' + (note ? ' — ' + esc(note) : '');
+        '<b class="cost-5">' + esc((tables.ITEM_NAMES_VI && tables.ITEM_NAMES_VI[td.dataset.item]) || td.dataset.item) + '</b>' +
+        (note ? ' — ' + esc(note) : '');
     });
 
     renderBag();
@@ -657,6 +661,327 @@
 
   function msg(html) {
     document.getElementById('syncMsg').innerHTML = html;
+  }
+
+  // ----------------------------------------------------------- augments mobile
+
+  function bindAugments() {
+    var searchInput = document.getElementById('mAugSearch');
+    var tierSelect = document.getElementById('mAugTierFilter');
+    var tagSelect = document.getElementById('mAugTagFilter');
+    var evalBtn = document.getElementById('mAugEval');
+
+    var hpMinus = document.getElementById('mAugHpMinus');
+    var hpPlus = document.getElementById('mAugHpPlus');
+    var goldMinus = document.getElementById('mAugGoldMinus');
+    var goldPlus = document.getElementById('mAugGoldPlus');
+
+    if (hpMinus) hpMinus.onclick = function () {
+      var el = document.getElementById('mAugHp');
+      if (el) el.value = Math.max(1, (Number(el.value) || 100) - 10);
+    };
+    if (hpPlus) hpPlus.onclick = function () {
+      var el = document.getElementById('mAugHp');
+      if (el) el.value = Math.min(100, (Number(el.value) || 100) + 10);
+    };
+    if (goldMinus) goldMinus.onclick = function () {
+      var el = document.getElementById('mAugGold');
+      if (el) el.value = Math.max(0, (Number(el.value) || 50) - 10);
+    };
+    if (goldPlus) goldPlus.onclick = function () {
+      var el = document.getElementById('mAugGold');
+      if (el) el.value = (Number(el.value) || 50) + 10;
+    };
+
+    if (searchInput) searchInput.addEventListener('input', renderMobileAugLibrary);
+    if (tierSelect) tierSelect.addEventListener('change', renderMobileAugLibrary);
+    if (tagSelect) tagSelect.addEventListener('change', renderMobileAugLibrary);
+    if (evalBtn) evalBtn.addEventListener('click', evaluateMobileAugments);
+
+    renderMobileAugDatalist();
+    renderMobileAugLibrary();
+  }
+
+  function renderMobileAugDatalist() {
+    var dl = document.getElementById('mAugList');
+    if (!dl || !dataset || !dataset.augments) return;
+    dl.innerHTML = dataset.augments.map(function (a) {
+      return '<option value="' + esc(a.name) + '">' + esc(a.tier ? '[' + a.tier.toUpperCase() + '] ' : '') + esc(a.name) + '</option>';
+    }).join('');
+  }
+
+  function renderMobileAugLibrary() {
+    var container = document.getElementById('mAugLibrary');
+    if (!container || !dataset) return;
+
+    var query = (document.getElementById('mAugSearch') && document.getElementById('mAugSearch').value) || '';
+    var tier = (document.getElementById('mAugTierFilter') && document.getElementById('mAugTierFilter').value) || '';
+    var tag = (document.getElementById('mAugTagFilter') && document.getElementById('mAugTagFilter').value) || '';
+
+    var filtered = db.searchAugments(dataset, query, { tier: tier || null, tag: tag || null });
+
+    if (!filtered.length) {
+      container.innerHTML = '<div class="muted small" style="padding:10px">Không tìm thấy lõi phù hợp.</div>';
+      return;
+    }
+
+    container.innerHTML = filtered.map(function (a) {
+      var tierBadge = a.tier ? '<span class="badge badge-tier-' + esc(a.tier) + '">' + esc(a.tier) + '</span>' : '';
+      var icon = a.icon ? '<img src="' + esc(a.icon) + '" alt="" loading="lazy" style="width:32px;height:32px;border-radius:6px;flex-shrink:0" />' : '';
+      return '<div class="card" style="display:flex;gap:10px;align-items:flex-start;padding:8px 10px;margin-bottom:6px">' +
+        icon +
+        '<div style="flex:1;min-width:0">' +
+          '<div style="display:flex;justify-content:space-between;align-items:center;gap:6px">' +
+            '<b style="font-size:13px">' + esc(a.name) + '</b>' + tierBadge +
+          '</div>' +
+          '<div class="small muted" style="margin-top:2px;line-height:1.3">' + esc(a.desc || '') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  function evaluateMobileAugments() {
+    var p1 = (document.getElementById('mAug1') && document.getElementById('mAug1').value || '').trim();
+    var p2 = (document.getElementById('mAug2') && document.getElementById('mAug2').value || '').trim();
+    var p3 = (document.getElementById('mAug3') && document.getElementById('mAug3').value || '').trim();
+    var resultEl = document.getElementById('mAugResult');
+    if (!resultEl || !dataset || !dataset.augments) return;
+
+    var picks = [p1, p2, p3].filter(Boolean);
+    if (!picks.length) {
+      resultEl.innerHTML = '<div class="muted small">Vui lòng nhập hoặc chọn ít nhất 1 lõi để đánh giá.</div>';
+      return;
+    }
+
+    var augs = picks.map(function (name) {
+      return (dataset.augments || []).find(function (a) {
+        return a.name.toLowerCase() === name.toLowerCase() ||
+               a.apiName.toLowerCase() === name.toLowerCase() ||
+               a.name.toLowerCase().indexOf(name.toLowerCase()) >= 0;
+      });
+    }).filter(Boolean);
+
+    if (!augs.length) {
+      resultEl.innerHTML = '<div class="warn small">Không tìm thấy lõi trong bộ dữ liệu.</div>';
+      return;
+    }
+
+    var activeComp = comps.find(function (c) { return c.id === state.compId; }) || comps[0];
+    var augState = {
+      stage: (document.getElementById('mAugStage') && document.getElementById('mAugStage').value) || '2-1',
+      hp: Number(document.getElementById('mAugHp') && document.getElementById('mAugHp').value) || 100,
+      gold: Number(document.getElementById('mAugGold') && document.getElementById('mAugGold').value) || 50,
+      board: (activeComp && activeComp.units) || []
+    };
+
+    var ranked = analyzer.rankAugments(augs, augState, dataset);
+
+    var recLabels = {
+      must_pick: 'Tuyệt vời',
+      recommended: 'Khuyên dùng',
+      situational: 'Tùy tình huống',
+      avoid: 'Nên bỏ qua'
+    };
+
+    resultEl.innerHTML = '<h4 style="margin:6px 0">Kết quả đánh giá:</h4>' +
+      ranked.map(function (r, idx) {
+        var recBadge = '<span class="badge badge-' + esc(r.recommendation) + '">' + esc(recLabels[r.recommendation] || r.recommendation) + '</span>';
+        var icon = r.augment.icon ? '<img src="' + esc(r.augment.icon) + '" alt="" style="width:34px;height:34px;border-radius:6px;flex-shrink:0" />' : '';
+        return '<div class="card" style="display:flex;gap:10px;align-items:flex-start;padding:10px;margin-bottom:6px;border-left:3px solid ' +
+          (r.recommendation === 'must_pick' ? 'var(--green)' : r.recommendation === 'avoid' ? 'var(--red)' : 'var(--gold)') + '">' +
+          icon +
+          '<div style="flex:1;min-width:0">' +
+            '<div style="display:flex;justify-content:space-between;align-items:center;gap:6px">' +
+              '<b style="font-size:13px">#' + (idx + 1) + ' ' + esc(r.augment.name) + ' (' + r.score + 'đ)</b>' + recBadge +
+            '</div>' +
+            '<div class="small muted" style="margin-top:2px">' + esc(r.augment.desc || '') + '</div>' +
+            '<div class="small" style="color:#a1b8cc;margin-top:4px;background:rgba(0,0,0,.2);padding:3px 5px;border-radius:4px"><b>Lý do:</b> ' + esc(r.reason) + '</div>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+  }
+
+  // -------------------------------------------------------- mobile reroll plan
+
+  var mobileRerollOwnedMap = {};
+
+  function bindMobileReroll() {
+    fillMobileRerollCompSelect();
+    var sel = document.getElementById('mRerollCompSelect');
+    if (sel) sel.addEventListener('change', renderMobileRerollPlan);
+    renderMobileRerollPlan();
+  }
+
+  function fillMobileRerollCompSelect() {
+    var sel = document.getElementById('mRerollCompSelect');
+    if (!sel) return;
+    var cur = sel.value;
+    sel.innerHTML = comps.map(function (c) {
+      return '<option value="' + esc(c.id) + '">' + esc(c.name) + ' (' + esc(c.tier || 'A') + ' Tier)</option>';
+    }).join('');
+    if (cur) sel.value = cur;
+  }
+
+  function renderMobileRerollPlan() {
+    var sel = document.getElementById('mRerollCompSelect');
+    var compId = sel ? sel.value : '';
+    var comp = comps.find(function (c) { return c.id === compId; }) || comps[0];
+    if (!comp) return;
+
+    var stratEl = document.getElementById('mRerollStrategy');
+    var listEl = document.getElementById('mRerollList');
+    var lv = parseInt((document.getElementById('mLevel') && document.getElementById('mLevel').value) || '7', 10);
+    var gold = parseInt((document.getElementById('mGold') && document.getElementById('mGold').value) || '40', 10);
+
+    var plan = calc.buildCompRerollPlan(comp, mobileRerollOwnedMap, { level: lv, gold: gold });
+    if (!plan) return;
+
+    if (stratEl) {
+      stratEl.innerHTML = '<b>' + esc(plan.rollStrategy) + '</b><br/>' +
+        'Vàng mua tướng: <b style="color:var(--gold)">' + plan.totalBuyGold + 'v</b> • Dự kiến hoàn thiện: <b style="color:var(--green)">' + (isFinite(plan.totalExpectedGold) ? plan.totalExpectedGold : '—') + 'v</b>';
+    }
+
+    if (listEl) {
+      listEl.innerHTML = (plan.shoppingList || []).map(function (item) {
+        var isCarry = item.carry;
+        var percent = Math.min(100, Math.round((item.owned / item.calculation.targetCopies) * 100));
+        var progressColor = percent >= 100 ? 'var(--green)' : percent >= 66 ? 'var(--gold)' : 'var(--blue)';
+
+        return '<div style="padding:6px 8px;background:rgba(255,255,255,0.02);border-radius:4px;border-left:3px solid ' + (isCarry ? 'var(--gold)' : 'var(--border)') + '">' +
+          '<div style="display:flex;justify-content:space-between;align-items:center">' +
+            '<div>' +
+              '<span class="cost-' + item.cost + '" style="font-weight:600">' + esc(item.name) + '</span> ' +
+              (isCarry ? '<span style="color:var(--gold);font-size:10px">★Carry</span>' : '') +
+            '</div>' +
+            '<div style="display:flex;align-items:center;gap:4px">' +
+              '<button class="mini m-reroll-dec" data-champ="' + esc(item.name.toLowerCase()) + '" style="padding:2px 6px">-</button>' +
+              '<span style="font-weight:bold;min-width:28px;text-align:center">' + item.progress + '</span>' +
+              '<button class="mini m-reroll-inc" data-champ="' + esc(item.name.toLowerCase()) + '" style="padding:2px 6px">+</button>' +
+            '</div>' +
+          '</div>' +
+          '<div style="margin-top:4px;background:rgba(0,0,0,0.3);height:4px;border-radius:2px;overflow:hidden">' +
+            '<div style="width:' + percent + '%;height:100%;background:' + progressColor + '"></div>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+
+      listEl.querySelectorAll('.m-reroll-inc').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var name = btn.dataset.champ;
+          var cur = mobileRerollOwnedMap[name] !== undefined ? mobileRerollOwnedMap[name] : 1;
+          mobileRerollOwnedMap[name] = Math.min(9, cur + 1);
+          renderMobileRerollPlan();
+        });
+      });
+
+      listEl.querySelectorAll('.m-reroll-dec').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var name = btn.dataset.champ;
+          var cur = mobileRerollOwnedMap[name] !== undefined ? mobileRerollOwnedMap[name] : 1;
+          mobileRerollOwnedMap[name] = Math.max(0, cur - 1);
+          renderMobileRerollPlan();
+        });
+      });
+    }
+  }
+
+  // ---------------------------------------------------------------- scout (mobile)
+
+  var mobileScoutOpponents = [
+    { id: 1, text: '' }, { id: 2, text: '' }, { id: 3, text: '' },
+    { id: 4, text: '' }, { id: 5, text: '' }, { id: 6, text: '' }, { id: 7, text: '' }
+  ];
+
+  function bindMobileScout() {
+    renderMobileOpponentsList();
+    var analyzeBtn = document.getElementById('mScoutAnalyzeBtn');
+    if (analyzeBtn) analyzeBtn.addEventListener('click', renderMobileScoutAnalysis);
+    var resetBtn = document.getElementById('mScoutResetBtn');
+    if (resetBtn) resetBtn.addEventListener('click', function () {
+      mobileScoutOpponents.forEach(function (o) { o.text = ''; });
+      renderMobileOpponentsList();
+      renderMobileScoutAnalysis();
+    });
+    renderMobileScoutAnalysis();
+  }
+
+  function renderMobileOpponentsList() {
+    var container = document.getElementById('mOpponentsList');
+    if (!container) return;
+
+    var compOptions = comps.map(function (c) {
+      return '<option value="' + esc(c.name) + '">';
+    }).join('');
+
+    container.innerHTML = mobileScoutOpponents.map(function (opp, idx) {
+      return '<div class="row" style="align-items:center;gap:6px">' +
+        '<span style="font-weight:bold;min-width:48px;font-size:12px" class="muted">Nhà #' + (idx + 1) + ':</span>' +
+        '<input class="m-opp-input" data-idx="' + idx + '" list="mScoutDatalist" placeholder="Tên bài hoặc carry..." value="' + esc(opp.text) + '" style="flex:1;padding:8px" />' +
+      '</div>';
+    }).join('') + '<datalist id="mScoutDatalist">' + compOptions + '</datalist>';
+
+    container.querySelectorAll('.m-opp-input').forEach(function (input) {
+      input.addEventListener('input', function () {
+        var i = parseInt(input.dataset.idx, 10);
+        mobileScoutOpponents[i].text = input.value.trim();
+      });
+    });
+  }
+
+  function renderMobileScoutAnalysis() {
+    var freeCompsEl = document.getElementById('mFreeCompsResult');
+    var counterEl = document.getElementById('mCounterAdviceResult');
+    if (!freeCompsEl || !counterEl) return;
+
+    var opps = mobileScoutOpponents.map(function (o) { return o.text; }).filter(Boolean);
+    var analysis = analyzer.analyzeLobbyComps(opps, comps, dataset);
+
+    if (analysis.topRecommendedComps.length) {
+      freeCompsEl.innerHTML = analysis.topRecommendedComps.map(function (item) {
+        var comp = item.comp;
+        var badgeColor = item.isFree ? 'var(--green)' : item.contestedScore <= 35 ? 'var(--gold)' : 'var(--red)';
+
+        return '<div class="card" style="padding:10px;background:rgba(255,255,255,0.03);border-left:3px solid ' + badgeColor + '">' +
+          '<div style="display:flex;justify-content:space-between;align-items:center">' +
+            '<div><b>' + esc(comp.name) + '</b> <span class="tag">' + esc(item.tier) + '</span></div>' +
+            '<span class="small" style="color:' + badgeColor + ';font-weight:bold">' + esc(item.statusText) + '</span>' +
+          '</div>' +
+          '<div class="small muted" style="margin-top:4px">' +
+            'Carry: <b>' + esc(item.carryName || 'Đa dụng') + '</b> • Điểm sảnh: <b style="color:var(--green)">' + item.lobbyScore + '/100</b>' +
+          '</div>' +
+          '<div style="margin-top:8px">' +
+            '<button class="m-scout-select-btn" data-id="' + esc(comp.id) + '" style="width:100%;padding:6px;font-size:12px;background:var(--primary);color:#fff;border:none;border-radius:4px">Chốt bài này để Reroll</button>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+
+      freeCompsEl.querySelectorAll('.m-scout-select-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var id = btn.dataset.id;
+          var sel = document.getElementById('mRerollCompSelect');
+          if (sel) {
+            sel.value = id;
+            showTab('roll');
+            renderMobileRerollPlan();
+          }
+        });
+      });
+    } else {
+      freeCompsEl.innerHTML = '<div class="small muted">Chưa có dữ liệu phân tích.</div>';
+    }
+
+    var dominance = analysis.lobbyDominance;
+    var counterHtml = '<div style="margin-bottom:8px;display:flex;gap:6px;flex-wrap:wrap">' +
+      '<span class="tag" style="color:#60a5fa">SMPT (AP): ' + dominance.ap + ' nhà</span>' +
+      '<span class="tag" style="color:#f87171">STVL (AD): ' + dominance.ad + ' nhà</span>' +
+      '<span class="tag" style="color:#facc15">Reroll: ' + dominance.reroll + ' nhà</span>' +
+    '</div>';
+
+    var adviceList = analysis.counterAdvice.map(function (adv) {
+      return '<li style="margin-bottom:4px">' + esc(adv) + '</li>';
+    }).join('');
+
+    counterEl.innerHTML = counterHtml + '<ul style="margin:0;padding-left:16px" class="small">' + adviceList + '</ul>';
   }
 
   // ---------------------------------------------------------------- tien ich

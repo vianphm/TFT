@@ -12,6 +12,7 @@
  */
 
 const { CDRAGON_URL, parseCdragon } = require('../src/renderer/shared/cdragon.js');
+const bundled = require('../src/shared/data/set-fallback.json');
 
 // Giu lai trong bo nho cua instance de nhieu request lien tiep khong tai lai
 let cache = { at: 0, payload: null };
@@ -53,6 +54,12 @@ async function load() {
     const response = await fetch(CDRAGON_URL, { signal: controller.signal });
     if (!response.ok) throw new Error('Community Dragon tra ve ' + response.status);
     const parsed = parseCdragon(await response.json());
+    parsed.itemCatalog = bundled.itemCatalog || [];
+    parsed.charms = bundled.charms || [];
+    const roles = Object.fromEntries((bundled.champions || []).map((c) => [c.variantGroup || c.name, c.role]));
+    parsed.champions = (parsed.champions || []).map((c) => Object.assign({}, c, {
+      role: roles[c.variantGroup || c.name] || roles[c.name] || c.role || null
+    }));
     cache = { at: Date.now(), payload: parsed };
     return parsed;
   } finally {
@@ -73,6 +80,9 @@ function trim(data) {
     champions: data.champions,
     traits: data.traits,
     items: (data.items || []).map((i) => ({ name: i.name, composition: i.composition, icon: i.icon })),
-    components: data.components || []
+    components: data.components || [],
+    emblems: data.emblems || [],
+    charms: data.charms || [],
+    itemCatalog: data.itemCatalog || []
   };
 }

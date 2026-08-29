@@ -9,10 +9,13 @@
 
   var calc = window.TFT.calc;
   var tables = window.TFT.tables;
+  var analyzer = window.TFT.analyzer;
+  var db = window.TFT.db;
   var api = window.tft;
 
   var config = null;
   var comps = [];
+  var dataset = { champions: [], traits: [], augments: [] };
   var countdownTimer = null;
   var countdownLeft = 0;
 
@@ -21,6 +24,7 @@
   async function init() {
     config = await api.config.get();
     comps = await api.comps.list();
+    dataset = await api.data.load();
 
     buildRecipeGrid();
     applyWidgetState();
@@ -29,6 +33,8 @@
     bindOddsWidget();
     bindEconWidget();
     bindRoundWidget();
+    bindAugmentsWidget();
+    bindAdvisorWidget();
     bindCompWidget();
     bindNotesWidget();
     bindHud();
@@ -39,9 +45,42 @@
       config.overlay.widgets = widgets;
       applyWidgetState();
     });
+    api.on('data:updated', async function () {
+      dataset = await api.data.load();
+      renderAugmentDatalist();
+    });
     api.on('comps:changed', function (next) {
       comps = next;
       fillCompPicker();
+    });
+    api.on('live:game-data', function (liveData) {
+      if (liveData && liveData.round) {
+        var rInput = document.getElementById('roundNow');
+        if (rInput && rInput.value !== liveData.round) {
+          rInput.value = liveData.round;
+          renderRound();
+        }
+      }
+      if (liveData && liveData.level) {
+        var oLevel = document.getElementById('oddsLevel');
+        if (oLevel && parseInt(oLevel.value, 10) !== liveData.level) {
+          oLevel.value = liveData.level;
+          renderOdds();
+        }
+      }
+      if (liveData && liveData.gold !== null && liveData.gold !== undefined) {
+        var eGold = document.getElementById('econGold');
+        if (eGold && parseInt(eGold.value, 10) !== liveData.gold) {
+          eGold.value = liveData.gold;
+          renderEcon();
+        }
+      }
+    });
+    api.on('live:status', function (status) {
+      var stateText = document.getElementById('hudState');
+      if (stateText && status.liveApiActive) {
+        stateText.textContent = 'Live Riot (2999)';
+      }
     });
     api.on('hotkey:action', function (action) {
       if (action === 'resetTimer') startCountdown(tables.ROUND_INFO.planningSeconds);
@@ -92,137 +131,6 @@
       window.addEventListener('mousemove', function (event) {
         if (!dragging) return;
         var x = Math.max(0, originX + (event.screenX - startX));
-        var y = Math.max(0, originY + (event.screenY - startY));
-        el.style.left = x + 'px';
-        el.style.top = y + 'px';
-      });
-      window.addEventListener('mouseup', function () {
-        if (!dragging) return;
-        dragging = false;
-        saveWidget(name, { x: parseInt(el.style.left, 10), y: parseInt(el.style.top, 10) });
-      });
-
-      el.querySelector('[data-collapse]').addEventListener('click', function () {
-        var collapsed = !el.classList.contains('collapsed');
-        el.classList.toggle('collapsed', collapsed);
-        saveWidget(name, { collapsed: collapsed });
-      });
-      el.querySelector('[data-close]').addEventListener('click', function () {
-        el.classList.add('hidden');
-        saveWidget(name, { visible: false });
-        var btn = document.querySelector('[data-widget-toggle="' + name + '"]');
-        if (btn) btn.setAttribute('aria-pressed', 'false');
-      });
-    });
-  }
-
-  /** Chuot vao vung [data-hit] -> mo tuong tac tam thoi, ra khoi -> tra lai xuyen chuot. */
-  var topZ = 10;
-  function bringToFront(el) {
-    topZ += 1;
-    el.style.zIndex = topZ;
-  }
-
-  function bindHitAreas() {
-    var inside = false;
-    document.addEventListener('mousemove', function (event) {
-      var hit = Boolean(event.target.closest('[data-hit]:not(.hidden)'));
-      if (hit === inside) return;
-      inside = hit;
-      api.overlay.setHover(hit);
-    });
-    document.addEventListener('mouseleave', function () {
-      inside = false;
-      api.overlay.setHover(false);
-    });
-  }
-
-  function bindHud() {
-    document.querySelectorAll('[data-widget-toggle]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var name = btn.dataset.widgetToggle;
-        var el = widgetEl(name);
-        var visible = el.classList.contains('hidden');
-        el.classList.toggle('hidden', !visible);
-        btn.setAttribute('aria-pressed', String(visible));
-        saveWidget(name, { visible: visible });
-      });
-    });
-  }
-
-  function setLockUi(clickThrough) {
-    config.overlay.clickThrough = clickThrough;
-    var hud = document.getElementById('hud');
-    hud.classList.toggle('unlocked', !clickThrough);
-    document.getElementById('hudState').textContent = clickThrough ? 'Da khoa' : 'Dang mo khoa';
-    document.getElementById('hudHint').textContent = clickThrough
-      ? 'Ctrl+Shift+E de mo khoa chuot'
-      : 'Dang chan chuot vao game - Ctrl+Shift+E de khoa lai';
-  }
-
-  // ------------------------------------------------------------------- odds
-
-  function bindOddsWidget() {
-    var state = config.state;
-    var level = document.getElementById('oddsLevel');
-    var cost = document.getElementById('oddsCost');
-    var owned = document.getElementById('oddsOwned');
-    var taken = document.getElementById('oddsTaken');
-    var rolls = document.getElementById('oddsRolls');
-
-    level.value = state.level;
-    cost.value = state.champCost;
-    owned.value = state.copiesOwned;
-    taken.value = state.copiesTakenByOthers;
-    rolls.value = state.rolls;
-
-    function render() {
-      var opts = {
-        level: +level.value,
-        cost: +cost.value,
-        copiesOwnedByYou: +owned.value,
-        copiesTakenByOthers: +taken.value,
-        rolls: +rolls.value,
-        copiesNeeded: 1
-      };
-      var out = calc.rollOutcome(opts);
-      document.getElementById('oddsRollsLabel').textContent = rolls.value;
-      document.getElementById('oddsGold').textContent = out.goldSpent;
-
-      var need2 = calc.rollOutcome(Object.assign({}, opts, { copiesNeeded: 2 }));
-      var need3 = calc.rollOutcome(Object.assign({}, opts, { copiesNeeded: 3 }));
-      document.getElementById('oddsResult').innerHTML =
-        '<div class="kv"><span>Trung it nhat 1 ban</span><b class="big">' + calc.percent(out.probabilityAtLeastOne, 0) + '</b></div>' +
-        '<div class="bar"><i style="width:' + (out.probabilityAtLeastOne * 100).toFixed(0) + '%"></i></div>' +
-        '<div class="kv"><span>Trung 2 ban / 3 ban</span><b>' + calc.percent(need2.probabilityAtLeastNeeded, 0) + ' / ' + calc.percent(need3.probabilityAtLeastNeeded, 0) + '</b></div>' +
-        '<div class="kv"><span>Ky vong so ban sao</span><b>' + out.expectedCopies.toFixed(2) + '</b></div>' +
-        '<div class="kv"><span>Vang trung binh de co 1 ban</span><b>' + (isFinite(out.expectedGoldForOne) ? Math.round(out.expectedGoldForOne) + 'v' : '-') + '</b></div>' +
-        '<div class="kv"><span>Con lai trong kho</span><b>' + out.copiesLeftInPool + ' ban</b></div>';
-
-      var odds = calc.shopOdds(+level.value);
-      document.getElementById('oddsTable').innerHTML =
-        '<tr>' + odds.map(function (p, i) {
-          return '<td class="cost-' + (i + 1) + '">' + (i + 1) + 'v</td>';
-        }).join('') + '</tr>' +
-        '<tr>' + odds.map(function (p) {
-          return '<td class="num">' + Math.round(p * 100) + '%</td>';
-        }).join('') + '</tr>';
-
-      api.config.patch({ state: {
-        level: +level.value, champCost: +cost.value,
-        copiesOwned: +owned.value, copiesTakenByOthers: +taken.value, rolls: +rolls.value
-      } });
-    }
-
-    [level, cost, owned, taken, rolls].forEach(function (el) {
-      el.addEventListener('input', debounce(render, 80));
-    });
-    render();
-  }
-
-  // ------------------------------------------------------------------- econ
-
-  function bindEconWidget() {
     var gold = document.getElementById('econGold');
     var streak = document.getElementById('econStreak');
     var level = document.getElementById('econLevel');
@@ -334,15 +242,16 @@
 
   function buildRecipeGrid() {
     var grid = calc.recipeGrid();
-    var comps9 = tables.COMPONENTS;
-    var html = '<tr><td class="cell head"></td>' + comps9.map(function (c) {
+    var components = tables.COMPONENTS;
+    var html = '<tr><td class="cell head"></td>' + components.map(function (c) {
       return '<td class="cell head" title="' + c.name + '">' + shortName(c) + '</td>';
     }).join('') + '</tr>';
 
     grid.forEach(function (row) {
       html += '<tr><td class="cell head" title="' + row.component.name + '">' + shortName(row.component) + '</td>' +
         row.cells.map(function (cell) {
-          return '<td class="cell" data-item="' + escapeHtml(cell.item || '') + '">' + escapeHtml(shortItem(cell.item)) + '</td>';
+          return '<td class="cell" data-item="' + escapeHtml(cell.item || '') + '">' +
+            escapeHtml(shortItem(cell.itemVi || cell.item)) + '</td>';
         }).join('') + '</tr>';
     });
 
@@ -354,7 +263,34 @@
       var name = td.dataset.item;
       var note = tables.ITEM_NOTES[name];
       document.getElementById('recipeHint').innerHTML =
-        '<b class="cost-5">' + escapeHtml(name) + '</b>' + (note ? ' &mdash; ' + escapeHtml(note) : '');
+        '<b class="cost-5">' + escapeHtml((tables.ITEM_NAMES_VI && tables.ITEM_NAMES_VI[name]) || name) + '</b>' +
+        (note ? ' &mdash; ' + escapeHtml(note) : '');
+    });
+  }
+
+  function shortName(component) {
+    return component.vi.split(' ').map(function (w) { return w[0]; }).join('').slice(0, 3);
+  }
+
+  function shortItem(name) {
+    if (!name) return '';
+    return name.replace(/'s\b/, '').split(' ').map(function (w) { return w.slice(0, 4); }).join(' ').slice(0, 12);
+  }
+
+  // -------------------------------------------------------------------- comp
+
+  function bindCompWidget() {
+    fillCompPicker();
+    document.getElementById('compPick').addEventListener('change', renderComp);
+    renderComp();
+  }
+
+  function fillCompPicker() {
+    var pick = document.getElementById('compPick');
+    var current = pick.value;
+    pick.innerHTML = comps.map(function (c) {
+      return '<option value="' + c.id + '">' + escapeHtml(c.name) + '</option>';
+    }).join('');
     });
   }
 
@@ -385,6 +321,8 @@
     renderComp();
   }
 
+  var overlayOwnedMap = {};
+
   function renderComp() {
     var pick = document.getElementById('compPick');
     var comp = comps.find(function (c) { return c.id === pick.value; }) || comps[0];
@@ -393,14 +331,136 @@
       body.innerHTML = '<span class="muted">Chua co doi hinh nao. Mo dashboard de them.</span>';
       return;
     }
-    body.innerHTML = comp.units.map(function (u) {
-      return '<div class="unit-line ' + (u.carry ? 'carry' : '') + '">' +
-        '<span class="cost-' + u.cost + '">' + escapeHtml(u.name) + '</span>' +
-        '<span class="star">' + '*'.repeat(u.star || 2) + '</span>' +
-        '<span class="items">' + escapeHtml((u.items || []).join(', ')) + '</span>' +
-        '</div>';
-    }).join('') +
-    (comp.notes ? '<div class="small muted" style="margin-top:6px">' + escapeHtml(comp.notes) + '</div>' : '');
+
+    var plan = calc.buildCompRerollPlan(comp, overlayOwnedMap, {
+      level: config.state.level || 7,
+      gold: config.state.gold || 50
+    });
+
+    var headerHtml = '<div style="margin-bottom:6px;padding:4px;background:rgba(234,179,8,0.1);border-left:2px solid var(--gold);font-size:11px">' +
+      '<b>' + escapeHtml(plan.rollStrategy) + '</b>' +
+      '<div class="muted">Vang mua tuong con thieu: <b style="color:var(--gold)">' + plan.totalBuyGold + 'v</b></div>' +
+    '</div>';
+
+    var unitsHtml = (plan.shoppingList || []).map(function (item) {
+      var isCarry = item.carry;
+      return '<div class="unit-line ' + (isCarry ? 'carry' : '') + '" style="display:flex;justify-content:space-between;align-items:center">' +
+        '<div><span class="cost-' + item.cost + '">' + escapeHtml(item.name) + '</span> ' + (isCarry ? '<span style="color:var(--gold);font-size:10px">★Carry</span>' : '') + '</div>' +
+        '<div style="display:flex;align-items:center;gap:4px">' +
+          '<button class="mini overlay-dec" data-champ="' + escapeHtml(item.name.toLowerCase()) + '" style="padding:1px 4px">-</button>' +
+          '<span style="font-weight:bold;min-width:28px;text-align:center;font-size:11px">' + item.progress + '</span>' +
+          '<button class="mini overlay-inc" data-champ="' + escapeHtml(item.name.toLowerCase()) + '" style="padding:1px 4px">+</button>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    body.innerHTML = headerHtml + unitsHtml +
+      (comp.notes ? '<div class="small muted" style="margin-top:6px">' + escapeHtml(comp.notes) + '</div>' : '');
+
+    body.querySelectorAll('.overlay-inc').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var name = btn.dataset.champ;
+        var cur = overlayOwnedMap[name] !== undefined ? overlayOwnedMap[name] : 1;
+        overlayOwnedMap[name] = Math.min(9, cur + 1);
+        renderComp();
+      });
+    });
+
+    body.querySelectorAll('.overlay-dec').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var name = btn.dataset.champ;
+        var cur = overlayOwnedMap[name] !== undefined ? overlayOwnedMap[name] : 1;
+        overlayOwnedMap[name] = Math.max(0, cur - 1);
+        renderComp();
+      });
+    });
+  }
+
+  // ---------------------------------------------------------------- augments
+
+  function bindAugmentsWidget() {
+    var evalBtn = document.getElementById('overlayAugEval');
+    if (evalBtn) evalBtn.addEventListener('click', evaluateOverlayAugments);
+    renderAugmentDatalist();
+  }
+
+  function renderAugmentDatalist() {
+    var dl = document.getElementById('overlayAugList');
+    if (!dl || !dataset || !dataset.augments) return;
+    dl.innerHTML = dataset.augments.map(function (a) {
+      return '<option value="' + escapeHtml(a.name) + '">';
+    }).join('');
+  }
+
+  function evaluateOverlayAugments() {
+    var a1 = (document.getElementById('overlayAug1') && document.getElementById('overlayAug1').value || '').trim();
+    var a2 = (document.getElementById('overlayAug2') && document.getElementById('overlayAug2').value || '').trim();
+    var a3 = (document.getElementById('overlayAug3') && document.getElementById('overlayAug3').value || '').trim();
+    var resultEl = document.getElementById('overlayAugResult');
+    if (!resultEl || !dataset || !dataset.augments) return;
+
+    var picks = [a1, a2, a3].filter(Boolean);
+    if (!picks.length) {
+      resultEl.innerHTML = '<span class="muted">Chon it nhat 1 loi.</span>';
+      return;
+    }
+
+    var augs = picks.map(function (name) {
+      return (dataset.augments || []).find(function (a) {
+        return a.name.toLowerCase() === name.toLowerCase() ||
+               a.name.toLowerCase().indexOf(name.toLowerCase()) >= 0;
+      });
+    }).filter(Boolean);
+
+    var pickEl = document.getElementById('compPick');
+    var comp = comps.find(function (c) { return c.id === (pickEl && pickEl.value); }) || comps[0];
+    var state = {
+      stage: config.state.round || '2-1',
+      hp: 100,
+      gold: config.state.gold || 50,
+      board: (comp && comp.units) || []
+    };
+
+    var ranked = analyzer.rankAugments(augs, state, dataset);
+    resultEl.innerHTML = ranked.map(function (r, idx) {
+      var color = r.recommendation === 'must_pick' ? 'var(--green)' : r.recommendation === 'avoid' ? 'var(--red)' : 'var(--gold)';
+      return '<div style="margin-top:4px;padding:4px;border-left:2px solid ' + color + ';background:rgba(0,0,0,.3)">' +
+        '<b>#' + (idx + 1) + ' ' + escapeHtml(r.augment.name) + ' (' + r.score + 'd)</b>' +
+        '<div class="small muted">' + escapeHtml(r.reason) + '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  // ---------------------------------------------------------------- advisor
+
+  function bindAdvisorWidget() {
+    var btn = document.getElementById('overlayAdviceBtn');
+    if (btn) btn.addEventListener('click', renderOverlayAdvice);
+  }
+
+  function renderOverlayAdvice() {
+    var resultEl = document.getElementById('overlayAdviceResult');
+    if (!resultEl) return;
+
+    var pickEl = document.getElementById('compPick');
+    var activeComp = comps.find(function (c) { return c.id === (pickEl && pickEl.value); }) || comps[0];
+
+    var state = {
+      board: (activeComp && activeComp.units) || [],
+      bench: [],
+      shop: [],
+      components: [],
+      hp: 100,
+      gold: config.state.gold || 50,
+      level: config.state.level || 8,
+      round: config.state.round || '3-2'
+    };
+
+    var advice = analyzer.generateComprehensiveAdvice(state, dataset, comps);
+    resultEl.innerHTML = '<div style="font-size:11px">' +
+      '<div style="color:var(--gold);font-weight:600">Doi hinh toi uu: ' + escapeHtml(advice.targetComp ? advice.targetComp.name : 'Chua ro') + '</div>' +
+      '<div style="margin-top:3px;color:#cbd5e0">' + escapeHtml(advice.econDecision.message) + '</div>' +
+    '</div>';
   }
 
   // ------------------------------------------------------------------- notes

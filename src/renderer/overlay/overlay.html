@@ -17,10 +17,17 @@
     <button class="mini" data-widget-toggle="econ" title="Kinh te">Vang</button>
     <button class="mini" data-widget-toggle="timer" title="Vong dau">Vong</button>
     <button class="mini" data-widget-toggle="items" title="Cong thuc do">Do</button>
+    <button class="mini" data-widget-toggle="augments" title="Loi nang cap">Loi</button>
+    <button class="mini" data-widget-toggle="advisor" title="Tu van tong hop">Tu van</button>
     <button class="mini" data-widget-toggle="comp" title="Doi hinh">Doi hinh</button>
     <button class="mini" data-widget-toggle="notes" title="Ghi chu">Ghi chu</button>
     <span class="sep"></span>
-    <span class="hint" id="hudHint">Ctrl+Shift+E de mo khoa chuot</span>
+    <button class="mini" id="hudLockBtn" title="Bam de Khoa / Mo chuot">🔒 Khoa chuot</button>
+    <button class="mini" id="hudTimerBtn" title="Dem 30 giay chuan bi">⏱️ 30s</button>
+    <button class="mini" id="hudOpacityBtn" title="Doi do mo">☀️ Do mo</button>
+    <button class="mini" id="hudScreenBtn" title="Doi man hinh">🖥️ Man hinh</button>
+    <button class="mini" id="hudDashBtn" title="Mo Dashboard">📊 Dashboard</button>
+    <button class="mini" id="hudHideBtn" title="An Overlay" style="color:var(--red)">✕</button>
   </div>
 
   <!-- Widget: ti le roll ------------------------------------------------ -->
@@ -132,9 +139,43 @@
     </div>
   </section>
 
+  <!-- Widget: loi nang cap ------------------------------------------------ -->
+  <section class="widget" data-widget="augments" data-hit>
+    <header class="widget-head">
+      <span class="grip">Loi nang cap (Augments)</span>
+      <button class="icon" data-collapse>-</button>
+      <button class="icon" data-close>x</button>
+    </header>
+    <div class="widget-body">
+      <div class="field">
+        <label>Chon 3 loi dang xuat hien:</label>
+        <input id="overlayAug1" list="overlayAugList" placeholder="Loi 1..." style="margin-bottom:4px" />
+        <input id="overlayAug2" list="overlayAugList" placeholder="Loi 2..." style="margin-bottom:4px" />
+        <input id="overlayAug3" list="overlayAugList" placeholder="Loi 3..." style="margin-bottom:4px" />
+        <datalist id="overlayAugList"></datalist>
+        <button id="overlayAugEval" class="primary" style="width:100%;margin-top:4px">Danh gia loi</button>
+      </div>
+      <div class="result" id="overlayAugResult"></div>
+    </div>
+  </section>
+
+  <!-- Widget: tu van tong hop ---------------------------------------------- -->
+  <section class="widget" data-widget="advisor" data-hit>
+    <header class="widget-head">
+      <span class="grip">Tu van tong hop</span>
+      <button class="icon" data-collapse>-</button>
+      <button class="icon" data-close>x</button>
+    </header>
+    <div class="widget-body">
+      <button id="overlayAdviceBtn" class="primary" style="width:100%;margin-bottom:6px">Cap nhat tu van</button>
+      <div class="result" id="overlayAdviceResult"></div>
+    </div>
+  </section>
+
   <script src="../shared/tables.js"></script>
   <script src="../shared/calc.js"></script>
-<script src="../shared/db.js"></script>
+  <script src="../shared/analyzer.js"></script>
+  <script src="../shared/db.js"></script>
   <script src="overlay.js"></script>
 </body>
 </html>

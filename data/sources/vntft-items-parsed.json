@@ -3,6 +3,10 @@
   {
    "name": "Thịnh Nộ Thủy Quái",
    "category": null,
+   "composition": [
+    "bow",
+    "cloak"
+   ],
    "stats": [
     "+10% AD",
     "+10% Tốc độ đánh",
@@ -13,6 +17,10 @@
   {
    "name": "Giáp Tâm Linh",
    "category": null,
+   "composition": [
+    "tear",
+    "belt"
+   ],
    "stats": [
     "+300 Máu",
     "+10% Chống Chịu",
@@ -23,6 +31,10 @@
   {
    "name": "Lá Chắn Chiến Thuật",
    "category": null,
+   "composition": [
+    "pan",
+    "pan"
+   ],
    "stats": [
     "+1 kích cỡ đội hình"
    ],
@@ -31,6 +43,10 @@
   {
    "name": "Áo Choàng Chiến Thuật",
    "category": null,
+   "composition": [
+    "pan",
+    "spat"
+   ],
    "stats": [
     "+1 kích cỡ đội hình"
    ],
@@ -39,6 +55,10 @@
   {
    "name": "Bùa Đỏ",
    "category": null,
+   "composition": [
+    "bow",
+    "bow"
+   ],
    "stats": [
     "+45% Tốc Độ Đánh",
     "+6% Khuếch Đại Sát Thương"
@@ -48,6 +68,10 @@
   {
    "name": "Trái Tim Kiên Định",
    "category": null,
+   "composition": [
+    "glove",
+    "vest"
+   ],
    "stats": [
     "+250 Máu",
     "+25 Giáp",
@@ -58,6 +82,10 @@
   {
    "name": "Móng Vuốt Sterak",
    "category": null,
+   "composition": [
+    "belt",
+    "bf"
+   ],
    "stats": [
     "+300 Máu",
     "+40% AD"
@@ -67,6 +95,10 @@
   {
    "name": "Vương Miện Hoàng Gia",
    "category": null,
+   "composition": [
+    "rod",
+    "vest"
+   ],
    "stats": [
     "+100 Máu",
     "+20 AP",
@@ -77,6 +109,10 @@
   {
    "name": "Giáp Vai Nguyệt Thần",
    "category": null,
+   "composition": [
+    "cloak",
+    "belt"
+   ],
    "stats": [
     "+250 Máu",
     "+20 Kháng Phép"
@@ -86,6 +122,10 @@
   {
    "name": "Nanh Nashor",
    "category": null,
+   "composition": [
+    "bow",
+    "belt"
+   ],
    "stats": [
     "+150 Máu",
     "+18 AP",
@@ -97,6 +137,10 @@
   {
    "name": "Mũ Thích Nghi",
    "category": null,
+   "composition": [
+    "tear",
+    "cloak"
+   ],
    "stats": [
     "+20 Kháng Phép",
     "+3 Mana mỗi giây"
@@ -106,6 +150,10 @@
   {
    "name": "Vô Cực Kiếm",
    "category": null,
+   "composition": [
+    "glove",
+    "bf"
+   ],
    "stats": [
     "+35% AD",
     "+35% Tỉ Lệ Chí Mạng"
@@ -115,6 +163,10 @@
   {
    "name": "Vương Miện Chiến Thuật",
    "category": null,
+   "composition": [
+    "spat",
+    "spat"
+   ],
    "stats": [
     "+1 kích cỡ đội hình"
    ],
@@ -123,6 +175,10 @@
   {
    "name": "Áo Choàng Thủy Ngân",
    "category": null,
+   "composition": [
+    "glove",
+    "cloak"
+   ],
    "stats": [
     "+15% Tốc Độ Đánh",
     "+20% Tỉ Lệ Chí Mạng",
@@ -133,6 +189,10 @@
   {
    "name": "Áo Choàng Lửa",
    "category": null,
+   "composition": [
+    "belt",
+    "vest"
+   ],
    "stats": [
     "+150 Máu",
     "+20 Giáp"
@@ -142,6 +202,10 @@
   {
    "name": "Áo Choàng Gai",
    "category": null,
+   "composition": [
+    "vest",
+    "vest"
+   ],
    "stats": [
     "+65 Giáp"
    ],
@@ -150,6 +214,10 @@
   {
    "name": "Áo Choàng Bóng Tối",
    "category": null,
+   "composition": [
+    "vest",
+    "bf"
+   ],
    "stats": [
     "+10% AD",
     "+10 AP",
@@ -161,6 +229,10 @@
   {
    "name": "Vuốt Rồng",
    "category": null,
+   "composition": [
+    "cloak",
+    "cloak"
+   ],
    "stats": [
     "+75 Kháng Phép"
    ],
@@ -169,6 +241,10 @@
   {
    "name": "Thú Tượng Thạch Giáp",
    "category": null,
+   "composition": [
+    "cloak",
+    "vest"
+   ],
    "stats": [
     "+30 Giáp",
     "+30 Kháng Phép",
@@ -179,6 +255,10 @@
   {
    "name": "Quỷ thư Morello",
    "category": null,
+   "composition": [
+    "rod",
+    "belt"
+   ],
    "stats": [
     "+150 Máu",
     "+20 AP",
@@ -189,6 +269,10 @@
   {
    "name": "Quyền Trượng Thiên Thần",
    "category": null,
+   "composition": [
+    "tear",
+    "rod"
+   ],
    "stats": [
     "+30 AP",
     "+1 Mana mỗi giây"
@@ -198,6 +282,10 @@
   {
    "name": "Quyền Năng Khổng Lồ",
    "category": null,
+   "composition": [
+    "bow",
+    "vest"
+   ],
    "stats": [
     "+20 Giáp",
     "+10% Tốc Độ Đánh"
@@ -207,6 +295,10 @@
   {
    "name": "Nỏ Sét",
    "category": null,
+   "composition": [
+    "cloak",
+    "rod"
+   ],
    "stats": [
     "+250 Máu",
     "+15 AP",
@@ -217,6 +309,10 @@
   {
    "name": "Ngọn Giáo Shojin",
    "category": null,
+   "composition": [
+    "tear",
+    "bf"
+   ],
    "stats": [
     "+15% AD",
     "+15 AP",
@@ -227,6 +323,10 @@
   {
    "name": "Mũ Phù Thủy Rabadon",
    "category": null,
+   "composition": [
+    "rod",
+    "rod"
+   ],
    "stats": [
     "+50 AP",
     "+15% Khuếch Đại Sát Thương"
@@ -236,6 +336,10 @@
   {
    "name": "Lời Thề Hộ Vệ",
    "category": null,
+   "composition": [
+    "tear",
+    "vest"
+   ],
    "stats": [
     "+25 Giáp",
     "+25 Kháng Phép",
@@ -246,6 +350,10 @@
   {
    "name": "Kiếm Tử Thần",
    "category": null,
+   "composition": [
+    "bf",
+    "bf"
+   ],
    "stats": [
     "+55% AD",
     "+10% Khuếch Đại Sát Thương"
@@ -255,6 +363,10 @@
   {
    "name": "Kiếm Súng Hextech",
    "category": null,
+   "composition": [
+    "rod",
+    "bf"
+   ],
    "stats": [
     "+20 AP",
     "+20% AD",
@@ -266,6 +378,10 @@
   {
    "name": "Huyết Kiếm",
    "category": null,
+   "composition": [
+    "cloak",
+    "bf"
+   ],
    "stats": [
     "+15% AD",
     "+15 AP",
@@ -277,6 +393,10 @@
   {
    "name": "Găng Đạo Tặc",
    "category": null,
+   "composition": [
+    "glove",
+    "glove"
+   ],
    "stats": [
     "+150 Máu",
     "+20% Tỉ Lệ Chí Mạng"
@@ -286,6 +406,10 @@
   {
    "name": "Găng Bảo Thạch",
    "category": null,
+   "composition": [
+    "glove",
+    "rod"
+   ],
    "stats": [
     "+35 AP",
     "+35% Tỉ Lệ Chí Mạng"
@@ -295,6 +419,10 @@
   {
    "name": "Giáp Máu Warmog",
    "category": null,
+   "composition": [
+    "belt",
+    "belt"
+   ],
    "stats": [
     "+500 Máu",
     "+200 Máu",
@@ -306,6 +434,10 @@
   {
    "name": "Diệt Khổng Lồ",
    "category": null,
+   "composition": [
+    "bow",
+    "bf"
+   ],
    "stats": [
     "+15% AD",
     "+15 AP",
@@ -317,6 +449,10 @@
   {
    "name": "Trượng Hư Vô",
    "category": null,
+   "composition": [
+    "tear",
+    "bow"
+   ],
    "stats": [
     "+35 AP",
     "+15% Tốc Độ Đánh",
@@ -327,6 +463,10 @@
   {
    "name": "Cuồng Đao Guinsoo",
    "category": null,
+   "composition": [
+    "bow",
+    "rod"
+   ],
    "stats": [
     "+10 AP",
     "+10% Tốc Độ Đánh"
@@ -336,6 +476,10 @@
   {
    "name": "Cung Xanh",
    "category": null,
+   "composition": [
+    "glove",
+    "bow"
+   ],
    "stats": [
     "+15% AD",
     "+20% Tốc Độ Đánh",
@@ -346,6 +490,10 @@
   {
    "name": "Chùy Đoản Côn",
    "category": null,
+   "composition": [
+    "glove",
+    "belt"
+   ],
    "stats": [
     "+150 Máu",
     "+10% Tốc Độ Đánh",
@@ -357,6 +505,10 @@
   {
    "name": "Bùa Xanh",
    "category": null,
+   "composition": [
+    "tear",
+    "tear"
+   ],
    "stats": [
     "+15 AP",
     "+15% AD"
@@ -366,6 +518,10 @@
   {
    "name": "Bàn Tay Công Lý",
    "category": null,
+   "composition": [
+    "tear",
+    "glove"
+   ],
    "stats": [
     "+20% Tỉ Lệ Chí Mạng",
     "+1 Mana mỗi giây"
@@ -377,6 +533,7 @@
   {
    "name": "Ấn Tiên Hắc Ám",
    "trait": "Tiên Hắc Ám",
+   "composition": [],
    "stats": [
     "+150 Máu"
    ],
@@ -385,6 +542,10 @@
   {
    "name": "Ấn Tàn Phá",
    "trait": "Tàn Phá",
+   "composition": [
+    "pan",
+    "cloak"
+   ],
    "stats": [
     "+20 Giáp",
     "+20 Kháng Phép"
@@ -394,6 +555,10 @@
   {
    "name": "Ấn Nguyên Sinh",
    "trait": "Nguyên Sinh",
+   "composition": [
+    "spat",
+    "glove"
+   ],
    "stats": [
     "+20% Tỉ Lệ Chí Mạng"
    ],
@@ -402,6 +567,10 @@
   {
    "name": "Ấn Hỏa Ngục",
    "trait": "Hỏa Ngục",
+   "composition": [
+    "spat",
+    "bow"
+   ],
    "stats": [
     "+40% Tốc Độ Đánh"
    ],
@@ -410,6 +579,10 @@
   {
    "name": "Ấn Tinh Nghịch",
    "trait": "Tinh Nghịch",
+   "composition": [
+    "spat",
+    "cloak"
+   ],
    "stats": [
     "+20 Giáp",
     "+20 Kháng Phép"
@@ -419,12 +592,20 @@
   {
    "name": "Ấn Mặt Trăng",
    "trait": "Mặt Trăng",
+   "composition": [
+    "tear",
+    "spat"
+   ],
    "stats": [],
    "desc": "Hồi 3 Năng Lượng mỗi giây. Chủ sở hữu nhận thêm tộc/hệ Mặt Trăng."
   },
   {
    "name": "Ấn Hoa Linh",
    "trait": "Hoa Linh",
+   "composition": [
+    "spat",
+    "rod"
+   ],
    "stats": [
     "+10% AD",
     "+10% AP"
@@ -434,6 +615,7 @@
   {
    "name": "Ấn Thực Vật",
    "trait": "Thực Vật",
+   "composition": [],
    "stats": [
     "+250 Máu"
    ],
@@ -442,6 +624,10 @@
   {
    "name": "Ấn Đấu Sĩ",
    "trait": "Đấu Sĩ",
+   "composition": [
+    "pan",
+    "belt"
+   ],
    "stats": [
     "+250 Máu"
    ],
@@ -450,6 +636,10 @@
   {
    "name": "Ấn Thần Rừng",
    "trait": "Thần Rừng",
+   "composition": [
+    "spat",
+    "cloak"
+   ],
    "stats": [
     "+35 Giáp",
     "+35 Kháng Phép"
@@ -459,6 +649,10 @@
   {
    "name": "Ấn Vệ Quân",
    "trait": "Vệ Quân",
+   "composition": [
+    "pan",
+    "vest"
+   ],
    "stats": [
     "+30 Giáp",
     "+30 Kháng Phép"
@@ -468,12 +662,20 @@
   {
    "name": "Ấn Thuật Sĩ",
    "trait": "Thuật Sĩ",
+   "composition": [
+    "pan",
+    "tear"
+   ],
    "stats": [],
    "desc": "Hồi 3 Năng Lượng mỗi giây. Chủ sở hữu nhận thêm tộc/hệ Thuật Sĩ. Khi thi triển, nhận Sức Mạnh Phép Thuật tương đương 10% Năng Lượng tiêu hao."
   },
   {
    "name": "Ấn Thuật Sư",
    "trait": "Thuật Sư",
+   "composition": [
+    "pan",
+    "rod"
+   ],
    "stats": [
     "+25 AP"
    ],
@@ -482,6 +684,10 @@
   {
    "name": "Ấn Tiên Phong",
    "trait": "Tiên Phong",
+   "composition": [
+    "pan",
+    "cloak"
+   ],
    "stats": [
     "+30 Giáp",
     "+30 Kháng Phép"
@@ -491,6 +697,10 @@
   {
    "name": "Ấn Đao Phủ",
    "trait": "Đao Phủ",
+   "composition": [
+    "pan",
+    "glove"
+   ],
    "stats": [
     "+20% Tỉ lệ Chí Mạng"
    ],
@@ -499,6 +709,10 @@
   {
    "name": "Ấn Liên Kích",
    "trait": "Liên Kích",
+   "composition": [
+    "pan",
+    "bow"
+   ],
    "stats": [
     "+20% Tốc Độ Đánh"
    ],
@@ -507,6 +721,10 @@
   {
    "name": "Ấn Gai Đen",
    "trait": "Gai Đen",
+   "composition": [
+    "spat",
+    "belt"
+   ],
    "stats": [
     "+250 Máu"
    ],
@@ -515,6 +733,10 @@
   {
    "name": "Ấn Tiên Linh",
    "trait": "Tiên Linh",
+   "composition": [
+    "spat",
+    "bf"
+   ],
    "stats": [
     "+ 15% AD",
     "+ 15% AP"
@@ -524,6 +746,10 @@
   {
    "name": "Ấn Thợ Săn",
    "trait": "Thợ Săn",
+   "composition": [
+    "pan",
+    "bf"
+   ],
    "stats": [
     "+30% AD"
    ],
@@ -532,6 +758,7 @@
   {
    "name": "Ấn Dũng Sĩ",
    "trait": "Dũng Sĩ",
+   "composition": [],
    "stats": [
     "+150 Máu"
    ],
@@ -884,6 +1111,919 @@
     "+40% Tỉ lệ chí mạng"
    ],
    "desc": "Các đòn đánh giúp hồi lại 4 Năng Lượng, tăng lên 6 nếu là đòn chí mạng."
+  }
+ ],
+ "artifacts": [
+  {
+   "name": "Trực Giác Của Evelynn",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/truc-giac-cua-evelynn.png",
+   "stats": [
+    "+10 AP",
+    "+10% AD",
+    "+40% Tốc độ đánh",
+    "+15% Hút máu toàn phần"
+   ],
+   "desc": "+10 AP +10% AD +40% Tốc độ đánh +15% Hút máu toàn phần Khi đổi mục tiêu, dịch chuyển tới mục tiêu tiếp theo. Các đòn đánh và kỹ năng sẽ hành quyết mục tiêu của chủ sở hữu khi chúng còn dưới 12% Máu. Hạ gục sẽ cho chủ sở hữu 50% Tốc Độ Đánh, giảm dần trong 3 giây.",
+   "recommendedChampions": []
+  },
+  {
+   "name": "Nước Cappa",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/nuoc-cappa.png",
+   "stats": [
+    "+25 AP",
+    "+25% AD",
+    "+20% Tốc độ đánh"
+   ],
+   "desc": "+25 AP +25% AD +20% Tốc độ đánh Chủ sở hữu đội thêm 1 Mũ mỗi lần tham gia hạ gục. Chủ sở hữu nhận 1% Sức Mạnh Công Kích và Sức Mạnh Phép Thuật với mỗi Mũ. Mất 20% tổng số Mũ khi bị hạ gục.",
+   "recommendedChampions": [
+    "Ashe",
+    "Yunara",
+    "Aphelios"
+   ]
+  },
+  {
+   "name": "Trượng Darkin",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/truong-darkin.png",
+   "stats": [
+    "+40 AP",
+    "+2 Năng Lượng mỗi giây"
+   ],
+   "desc": "+40 AP +2 Năng Lượng mỗi giây Chủ sở hữu nhận thêm tộc/hệ Darkin. Với mỗi 20 Năng Lượng đã tiêu hao, tung ra một sợi xích vào các kẻ địch gần mục tiêu hiện tại, gây 50 sát thương phép. Sát thương tăng theo Giai Đoạn",
+   "recommendedChampions": [
+    "Fiddlesticks",
+    "Ahri"
+   ]
+  },
+  {
+   "name": "Lưỡi Hái Darkin",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/luoi-hai-darkin.png",
+   "stats": [
+    "+250 Máu",
+    "+25% AD"
+   ],
+   "desc": "+250 Máu +25% AD Chủ sở hữu nhận thêm tộc/hệ Darkin. Mỗi 4 giây, chém vào các kẻ địch liền kề, gây 200% Sức Mạnh Công Kích Cơ Bản dưới dạng sát thương vật lý. Khi tham gia hạ gục hoặc khi chủ sở hữu lướt đi, chém lần nữa. Lướt - Hồi Chiêu: 1.5 giây",
+   "recommendedChampions": [
+    "Diana"
+   ]
+  },
+  {
+   "name": "Khiên Darkin",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/khien-darkin.png",
+   "stats": [
+    "+200 Máu",
+    "+25 Giáp",
+    "+25 Kháng Phép"
+   ],
+   "desc": "+200 Máu +25 Giáp +25 Kháng Phép Chủ sở hữu nhận thêm tộc/hệ Darkin. Mỗi giây, gây sát thương phép tương đương 1% Máu tối đa của chủ sở hữu lên các kẻ địch trong phạm vi 2 ô. Khi có đơn vị hy sinh trong phạm vi đó, hồi lại 2% Máu tối đa.",
+   "recommendedChampions": [
+    "Ornn"
+   ]
+  },
+  {
+   "name": "Khiên Hoàng Hôn",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/khien-hoang-hon.png",
+   "stats": [
+    "+200 Máu",
+    "+70 Kháng Phép"
+   ],
+   "desc": "+200 Máu +70 Kháng Phép Mỗi 2.5 giây, đánh cắp 5 Kháng Phép từ kẻ địch trong phạm vi 1 ô và gây sát thương phép tương đương 15 Kháng Phép của chủ sở hữu. Nếu Khiên Hừng Đông đang được trang bị, thay vào đó kích hoạt hiệu ứng của trang bị này mỗi 1.25 giây. Sát thương tăng theo Giai Đoạn.",
+   "recommendedChampions": [
+    "Leona",
+    "Ornn"
+   ]
+  },
+  {
+   "name": "Khiên Hừng Đông",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/khien-hung-dong.png",
+   "stats": [
+    "+200 Máu",
+    "+50 Giáp"
+   ],
+   "desc": "+200 Máu +50 Giáp Mỗi 2.5 giây, đánh cắp 5 Giáp từ kẻ địch trong phạm vi 1 ô và hồi Máu tương đương 15 Giáp của chủ sở hữu. Nếu Khiên Hoàng Hôn đang được trang bị, thay vào đó kích hoạt hiệu ứng của trang bị này mỗi 1.25 giây. Hiệu ứng hồi Máu tăng theo Giai Đoạn.",
+   "recommendedChampions": [
+    "Leona",
+    "Ornn",
+    "Taric"
+   ]
+  },
+  {
+   "name": "Cung Darkin",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/cung-darkin.png",
+   "stats": [
+    "+10% AD",
+    "+25% Tốc độ đánh"
+   ],
+   "desc": "+10% AD +25% Tốc độ đánh Chủ sở hữu nhận thêm tộc/hệ Darkin. Mỗi 10 đòn đánh, bắn ra một mũi tên đi xuyên qua mục tiêu hiện tại, gây 500% Sức Mạnh Công Kích Cơ Bản dưới dạng sát thương vật lý, giảm đi 33% với mỗi kẻ địch trúng đòn.",
+   "recommendedChampions": [
+    "Yunara",
+    "Draven"
+   ]
+  },
+  {
+   "name": "Găng Hư Không",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/gang-hu-khong.png",
+   "stats": [
+    "+300 Máu",
+    "+10% Chống chịu"
+   ],
+   "desc": "+300 Máu +10% Chống chịu Bắt đầu giao tranh: Tích trữ 30% Máu tối đa và tích thêm 2.5% mỗi giây. Khi hy sinh, giải phóng sát thương phép tương đương lượng Máu đã tích trữ cho các kẻ địch trong phạm vi 4 ô. Duy Nhất - chỉ 1 mỗi tướng",
+   "recommendedChampions": [
+    "Ornn"
+   ]
+  },
+  {
+   "name": "Khế Ước Vĩnh Hằng",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/khe-uoc-vinh-hang.png",
+   "stats": [
+    "+40 AP",
+    "+1 Năng Lượng mỗi giây."
+   ],
+   "desc": "+40 AP +1 Năng Lượng mỗi giây. Bắt đầu giao tranh: Kết giao ước với tướng đồng minh nhiều Máu nhất, nếu họ hy sinh, nhận 10 hồi phục Năng Lượng và 40% Sức Mạnh Phép Thuật. Khi đồng minh dùng kỹ năng, nhận 6 Năng Lượng. Mỗi 6 giây, tạo lá chắn cho đồng minh bằng 150% Sức Mạnh Phép Thuật của chủ sở hữu.",
+   "recommendedChampions": [
+    "Lux",
+    "Sett",
+    "Azir",
+    "Fiddlesticks"
+   ]
+  },
+  {
+   "name": "Rìu Hỏa Ngục",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/riu-hoa-nguc.png",
+   "stats": [
+    "+20% AD",
+    "+150 Máu",
+    "+20% Hút máu toàn phần"
+   ],
+   "desc": "+20% AD +150 Máu +20% Hút máu toàn phần Các đòn đánh gây thêm sát thương vật lý bằng 2% Máu tối đa của chủ sở hữu. Với mỗi 1% Máu đã mất, nhận 1% Tốc Độ Đánh.",
+   "recommendedChampions": []
+  },
+  {
+   "name": "Bóng Phân Thân",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/bong-phan-than.png",
+   "stats": [
+    "+10% Tốc độ đánh",
+    "+10 Giáp",
+    "+10 Kháng Phép"
+   ],
+   "desc": "+10% Tốc độ đánh +10 Giáp +10 Kháng Phép Triệu hồi một phân thân sao chép các trang bị của chủ sở hữu. Phân thân sẽ có 70% Máu tối đa và gây 40% sát thương.",
+   "recommendedChampions": [
+    "Taric",
+    "Sett",
+    "Ornn",
+    "Fiddlesticks"
+   ]
+  },
+  {
+   "name": "Đao Chớp",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/dao-chop.png",
+   "stats": [
+    "+10 AP",
+    "+12% Tốc độ đánh"
+   ],
+   "desc": "+10 AP +12% Tốc độ đánh Đòn đánh cho 6% Tốc Độ Đánh cộng dồn. Mỗi 5 đòn đánh cũng sẽ cho 2% Sức Mạnh Công Kích và 2% Sức Mạnh Phép Thuật.",
+   "recommendedChampions": [
+    "Ashe",
+    "Yunara",
+    "Draven"
+   ]
+  },
+  {
+   "name": "Kính Nhắm Thiện Xạ",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/99.png",
+   "stats": [
+    "+25% AD",
+    "+25 AP",
+    "+20% Tốc Độ Đánh"
+   ],
+   "desc": "+25% AD +25 AP +20% Tốc Độ Đánh Nhận 40% Khuếch Đại Sát Thương lên các mục tiêu cách xa từ 4 ô trở lên.",
+   "recommendedChampions": [
+    "Ashe",
+    "Yunara"
+   ]
+  },
+  {
+   "name": "Bất Khuất",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/bat-khuat.png",
+   "stats": [
+    "+500 Máu",
+    "+20 Giáp",
+    "+20 Kháng Phép"
+   ],
+   "desc": "+500 Máu +20 Giáp +20 Kháng Phép Tốc Độ Di Chuyển của chủ sở hữu bị giảm đi đáng kể. Nhận 15% Máu tối đa, miễn nhiễm làm choáng và kéo mục tiêu hiện tại vào tầm cận chiến.",
+   "recommendedChampions": [
+    "Ornn"
+   ]
+  },
+  {
+   "name": "Lưỡng Cực Zhonya",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/100.png",
+   "stats": [
+    "+25 AP",
+    "+25 Giáp",
+    "+25 Kháng Phép"
+   ],
+   "desc": "+25 AP +25 Giáp +25 Kháng Phép Một lần mỗi giao tranh: Khi còn dưới 40% Máu, trở nên bất tử và không thể chỉ định trong 3 giây. Duy nhất - chỉ 1 mỗi tướng",
+   "recommendedChampions": [
+    "Ornn",
+    "Fiddlesticks",
+    "Azir"
+   ]
+  },
+  {
+   "name": "Thánh Kiếm Manazane",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/104.png",
+   "stats": [
+    "+15% AD",
+    "+10 AP",
+    "+15% Tốc Độ Đánh",
+    "Hồi 1 Năng Lượng mỗi giây."
+   ],
+   "desc": "+15% AD +10 AP +15% Tốc Độ Đánh Hồi 1 Năng Lượng mỗi giây. Sau khi tung kỹ năng lần đầu tiên trong giao tranh, hồi lại 100 Năng Lượng trong vòng 5 giây.",
+   "recommendedChampions": [
+    "Varus",
+    "Karma",
+    "Zyra"
+   ]
+  },
+  {
+   "name": "Pháo Xương Cá",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/sung-xuong-ca.png",
+   "stats": [
+    "+50% AD",
+    "+50% Tốc Độ Đánh"
+   ],
+   "desc": "+50% AD +50% Tốc Độ Đánh Đòn đánh của chủ sở hữu sẽ nhắm tới những kẻ địch ngẫu nhiên.",
+   "recommendedChampions": [
+    "Draven",
+    "Yunara"
+   ]
+  },
+  {
+   "name": "Gươm Biến Ảnh",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/guom-bien-anh.png",
+   "stats": [
+    "+40% AD",
+    "+40 Giáp",
+    "+40 Kháng Phép",
+    "+20% Tỉ Lệ Chí Mạng"
+   ],
+   "desc": "+40% AD +40 Giáp +40 Kháng Phép +20% Tỉ Lệ Chí Mạng Bắt đầu giao tranh: Dịch chuyển chủ sở hữu đến ô đối xứng trên bàn đấu của đối thủ. Sau 8 giây, chủ sở hữu sẽ trở lại vị trí ban đầu.",
+   "recommendedChampions": [
+    "Vi"
+   ]
+  },
+  {
+   "name": "Đá Hắc Hóa",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/da-hac-hoa.png",
+   "stats": [
+    "+60 AP",
+    "+2 Năng Lượng mỗi giây"
+   ],
+   "desc": "+60 AP +2 Năng Lượng mỗi giây Gây sát thương phép sẽ giảm Kháng Phép của mục tiêu đi 6. Nếu Kháng Phép của mục tiêu là 0, thay vào đó, tăng 2 Năng Lượng cho chủ sở hữu. Sát thương kỹ năng chỉ có thể kích hoạt lên mỗi kẻ địch 1 lần mỗi 0.5 giây.",
+   "recommendedChampions": [
+    "Lux",
+    "Fiddlesticks",
+    "Azir"
+   ]
+  },
+  {
+   "name": "Giáp Đại Hãn",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/73.png",
+   "stats": [
+    "+300 Máu"
+   ],
+   "desc": "+300 Máu Cho 1 Giáp, 1 Kháng Phép và 5 Máu khi nhận sát thương, cộng dồn tối đa 35 lần. Khi đạt cộng dồn tối đa, cho 1 vàng và tiếp tục cho thêm 1 vàng sau mỗi 12 giây. Duy Nhất - chỉ 1 mỗi tướng",
+   "recommendedChampions": [
+    "Leona"
+   ]
+  },
+  {
+   "name": "Bùa Đầu Lâu",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/79.png",
+   "stats": [
+    "+30 AP",
+    "+25% Khuếch Đại Sát Thương"
+   ],
+   "desc": "+30 AP +25% Khuếch Đại Sát Thương Bắt đầu giao tranh: Phóng lửa vào mục tiêu hiện tại, gây sát thương phép tương đương 40% Máu tối đa của kẻ đó. Lặp lại hiệu ứng này mỗi 13 giây.",
+   "recommendedChampions": [
+    "Ahri",
+    "Zyra",
+    "Karma"
+   ]
+  },
+  {
+   "name": "Móng Vuốt Ám Muội",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/mong-vuot-am-muoi.png",
+   "stats": [
+    "+200 Máu",
+    "+35% AD",
+    "+45% Tỉ Lệ Chí Mạng"
+   ],
+   "desc": "+200 Máu +35% AD +45% Tỉ Lệ Chí Mạng Sau khi hạ gục mục tiêu, loại bỏ hiệu ứng bất lợi và lướt tới mục tiêu xa nhất trong vòng 4 ô. Hai đòn đánh chí mạng tiếp theo gây thêm 50% Sát Thương Chí Mạng.",
+   "recommendedChampions": [
+    "Sett"
+   ]
+  },
+  {
+   "name": "Chùy Bạch Ngân",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/chuy-bach-ngan.png",
+   "stats": [
+    "+140% AD",
+    "+80 Giáp",
+    "+80 Kháng Phép"
+   ],
+   "desc": "+140% AD +80 Giáp +80 Kháng Phép Chủ sỡ hữu được miễn nhiễm Làm Choáng và đòn đánh của chủ sở hữu sẽ Làm Choáng kẻ địch trong 0.8 giây. Tốc Độ Đánh của chủ sở hữu được đặt cố định là 0.5.",
+   "recommendedChampions": [
+    "Ornn"
+   ]
+  },
+  {
+   "name": "Thần Búa Tiến Công",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/105.png",
+   "stats": [
+    "+50 Giáp",
+    "+50 Kháng Phép"
+   ],
+   "desc": "+50 Giáp +50 Kháng Phép Bắt Đầu Giao Tranh: Nếu không có đồng minh liền kề, được tăng 400 Máu, 10% Sức Mạnh Công Kích và 10% Sức Mạnh Phép Thuật.",
+   "recommendedChampions": [
+    "Taric",
+    "Sett",
+    "Ornn"
+   ]
+  },
+  {
+   "name": "Kính Nhắm Ma Pháp",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/kinh-nham-ma-phap.png",
+   "stats": [
+    "+250 Máu",
+    "+20 Giáp",
+    "+20 Kháng Phép",
+    "+2 Mana mỗi giây"
+   ],
+   "desc": "+250 Máu +20 Giáp +20 Kháng Phép +2 Mana mỗi giây Làm choáng kẻ địch sẽ triệu hồi sấm sét tấn công chúng, gây sát thương phép bằng 30% Máu tối đa của chúng. bị vô hiệu hóa phiên bản 17.3",
+   "recommendedChampions": [
+    "Rek'Sai",
+    "Maokai"
+   ]
+  },
+  {
+   "name": "Dây Chuyền Tự Lực",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/day-chuyen-tu-luc.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Chủ sở hữu tăng 2% tổng Năng Lượng mỗi khi bị trúng một đòn đánh. Mỗi lần thi triển kỹ năng hồi 20% Máu tối đa của chủ sở hữu trong 3 giây.",
+   "recommendedChampions": [
+    "Malphite",
+    "Rakan",
+    "Sett",
+    "Leona"
+   ]
+  },
+  {
+   "name": "Đao Tím",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/dao-tim.png",
+   "stats": [
+    "+400 Máu",
+    "+20 Giáp",
+    "+20 Kháng Phép",
+    "+25% Tốc Độ Đánh"
+   ],
+   "desc": "+400 Máu +20 Giáp +20 Kháng Phép +25% Tốc Độ Đánh Đòn đánh gây thêm 42/60/75/90/100 sát thương phép. Hồi máu cho chủ sở hữu bằng 30% tổng lượng sát thương phép đã gây ra. Sát thương tăng dựa theo Giai Đoạn.",
+   "recommendedChampions": [
+    "Azir",
+    "Ornn",
+    "Fiddlesticks",
+    "Diana"
+   ]
+  },
+  {
+   "name": "Bão Tố Luden",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/bao-to-luden.png",
+   "stats": [
+    "+60% AD",
+    "+60 AP"
+   ],
+   "desc": "+60% AD +60 AP Gây sát thương phép bằng 100% sát thương kết liễu vượt trội + 100 lên 2 kẻ địch gần mục tiêu nhất.",
+   "recommendedChampions": [
+    "Sett",
+    "Lux",
+    "Ahri",
+    "Fiddlesticks"
+   ]
+  },
+  {
+   "name": "Dao Điện Statikk",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/dao-dien-statikk.png",
+   "stats": [
+    "+15 AP",
+    "+50% Tốc Độ Đánh"
+   ],
+   "desc": "+15 AP +50% Tốc Độ Đánh Mỗi đòn đánh thứ ba gây thêm sát thương phép bằng 30 + 40% Sức Mạnh Phép Thuật của chủ sở hữu lên 4 kẻ địch.",
+   "recommendedChampions": [
+    "Ashe",
+    "Azir",
+    "Yunara"
+   ]
+  },
+  {
+   "name": "Rìu Đại Mãng Xà",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/riu-dai-mang-xa.png",
+   "stats": [
+    "+300 Máu",
+    "+20%AD",
+    "+20% Tốc độ đánh"
+   ],
+   "desc": "+300 Máu +20%AD +20% Tốc độ đánh Đòn đánh gây 4% Máu tối đa của chủ sở hữu + 6% Sức Mạnh Công Kích của họ thành sát thương vật lý cộng thêm lên mục tiêu và những kẻ địch liền kề.",
+   "recommendedChampions": []
+  },
+  {
+   "name": "Kiếm của Tay Bạc",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/74.png",
+   "stats": [
+    "+45% Tốc Độ Đánh"
+   ],
+   "desc": "+45% Tốc Độ Đánh Nhận 1% Tốc Độ Đánh cộng thêm với mỗi vàng đang sở hữu (tối đa 30 vàng). Mỗi đòn đánh có 6% cơ hội rớt ra 1 vàng. Duy Nhất - chỉ 1 mỗi tướng",
+   "recommendedChampions": [
+    "Aphelios",
+    "Ashe",
+    "Draven",
+    "Yunara"
+   ]
+  },
+  {
+   "name": "Đại Bác Liên Thanh",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/92.png",
+   "stats": [
+    "+65% Tốc Độ Đánh"
+   ],
+   "desc": "+65% Tốc Độ Đánh Tăng +1 Tầm Đánh, tăng thêm 1 mỗi khi chủ sở hữu hạ gục 1 kẻ địch.",
+   "recommendedChampions": [
+    "Azir"
+   ]
+  },
+  {
+   "name": "Huy Hiệu Thánh Khiên",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/huy-hieu-lightshield.png",
+   "stats": [
+    "+55 Giáp",
+    "+55 Kháng Phép"
+   ],
+   "desc": "+55 Giáp +55 Kháng Phép Mỗi 3 giây, tạo Lá Chắn cho đồng minh có phần trăm Máu thấp nhất, giá trị lá chắn bằng 70% tổng Giáp và Kháng Phép của chủ sở hữu trong 5 giây. Khi bị hạ gục, trao lá chắn này cho tất cả đồng minh.",
+   "recommendedChampions": [
+    "Taric",
+    "Ornn"
+   ]
+  },
+  {
+   "name": "Áo Choàng Diệt Vong",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/ao-choang-diet-vong.png",
+   "stats": [
+    "+350 Máu",
+    "+40 Giáp"
+   ],
+   "desc": "+350 Máu +40 Giáp Mỗi khi Lá Chắn của chủ sở hữu bị phá, gây sát thương phép bằng 150% giá trị ban đầu của Lá Chắn đó lên kẻ địch gần nhất.",
+   "recommendedChampions": [
+    "Shen",
+    "Leona",
+    "Kobuko"
+   ]
+  },
+  {
+   "name": "Găng Đấu Sĩ",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/gang-dau-si.png",
+   "stats": [
+    "+65% Tốc Độ Đánh"
+   ],
+   "desc": "+65% Tốc Độ Đánh Thu nhỏ chủ sở hữu, tăng tốc độ di chuyển và miễn nhiễm Tê Tái, Thiêu Đốt và Vết Thương Sâu. Tê Tái: giảm Tốc Độ Đánh Thiêu Đốt: Gây sát thương chuẩn mỗi giây theo Máu tối đa của mục tiêu Vết Thương Sâu: Giảm hồi máu nhận được",
+   "recommendedChampions": [
+    "Sett"
+   ]
+  },
+  {
+   "name": "Gương Lừa Gạt",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/97.png",
+   "stats": [
+    "+10 Giáp",
+    "+10 Kháng Phép",
+    "+10% Tốc Độ Đánh",
+    "+15% Tỉ Lệ Chí Mạng"
+   ],
+   "desc": "+10 Giáp +10 Kháng Phép +10% Tốc Độ Đánh +15% Tỉ Lệ Chí Mạng Triệu hồi 1 bản sao với 70% Máu Cơ Bản và +10% Năng Lượng tối đa. Bạn không thể lắp trang bị cho tướng nhân bản.",
+   "recommendedChampions": [
+    "Shen",
+    "Sett"
+   ]
+  },
+  {
+   "name": "Tam Luyện Kiếm",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/103.png",
+   "stats": [
+    "+300 Máu"
+   ],
+   "desc": "+300 Máu Tăng mọi chỉ số: +30 Giáp; +30 Kháng Phép; +30 AP; +30% AD; +30% Tốc độ đánh",
+   "recommendedChampions": [
+    "Sett",
+    "Yunara",
+    "Diana"
+   ]
+  },
+  {
+   "name": "Vũ Khúc Tử Thần",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/106.png",
+   "stats": [
+    "+25% AD",
+    "+40 Giáp",
+    "+15% Tốc Độ Đánh",
+    "+25% Hút Máu Toàn Phần"
+   ],
+   "desc": "+25% AD +40 Giáp +15% Tốc Độ Đánh +25% Hút Máu Toàn Phần 50% lượng sát thương chủ sở hữu nhận vào sẽ được gây ra theo dạng sát thương theo thời gian trong 4 giây. Duy nhất - chỉ 1 mỗi tướng",
+   "recommendedChampions": [
+    "Sett"
+   ]
+  },
+  {
+   "name": "Đại Bác Hải Tặc",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/107.png",
+   "stats": [
+    "+35% AD",
+    "+20% Tỉ Lệ Chí Mạng"
+   ],
+   "desc": "+35% AD +20% Tỉ Lệ Chí Mạng Các đòn đánh và kỹ năng sẽ hành quyết những kẻ địch còn dưới 12% Máu tối đa. Khi hành quyết có 33% xác suất rơi ra 1 vàng. Duy nhất - chỉ 1 mỗi tướng",
+   "recommendedChampions": [
+    "Ashe",
+    "Yunara"
+   ]
+  },
+  {
+   "name": "Kiếm Tai Ương",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/song-kiem-tai-uong.png",
+   "stats": [
+    "+55 AP",
+    "+10% Tốc độ đánh"
+   ],
+   "desc": "+55 AP +10% Tốc độ đánh Đòn đánh đầu tiên của chủ sở hữu sau mỗi lần thi triển Kỹ Năng sẽ gây thêm 240/320/400/480/540 sát thương phép. Sát thương tăng lên theo Giai Đoạn",
+   "recommendedChampions": [
+    "Azir",
+    "Fiddlesticks"
+   ]
+  },
+  {
+   "name": "Giáp Tay Seeker",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/giap-tay-seeker.png",
+   "stats": [
+    "+25 AP",
+    "+10 Giáp",
+    "+10 Kháng Phép",
+    "+20% Hút máu toàn phần"
+   ],
+   "desc": "+25 AP +10 Giáp +10 Kháng Phép +20% Hút máu toàn phần Tham gia hạ gục sẽ tăng 20 Sức Mạnh Phép Thuật, Giáp và Kháng Phép cho chủ sở hữu.",
+   "recommendedChampions": [
+    "Diana",
+    "Ornn",
+    "Fiddlesticks",
+    "Sett"
+   ]
+  },
+  {
+   "name": "Bùa Thăng Hoa",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/bua-thang-hoa.png",
+   "stats": [
+    "+450 Máu",
+    "+20 AP",
+    "+20% AD"
+   ],
+   "desc": "+450 Máu +20 AP +20% AD Sau 22 giây, tăng 100% Máu tối đa và 120% Khuếch Đại Sát Thương cho đến hết giao tranh.",
+   "recommendedChampions": [
+    "Ornn",
+    "Azir",
+    "Sett"
+   ]
+  },
+  {
+   "name": "Áo Choàng Mờ Ám",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/ao-choang-mo-am.png",
+   "stats": [
+    "+100 Máu",
+    "+15% Tốc Độ Đánh"
+   ],
+   "desc": "+100 Máu +15% Tốc Độ Đánh Một lần mỗi giao tranh, khi còn 60% Máu, chủ sở hữu phân thân thành 3 bản sao với 33% Máu tối đa. Duy Nhất - chỉ 1 mỗi tướng",
+   "recommendedChampions": [
+    "Vi"
+   ]
+  },
+  {
+   "name": "Lõi Bình Minh",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/loi-binh-minh.png",
+   "stats": [
+    "+15% AD",
+    "+15 AP",
+    "Hồi 2 mana mỗi giây"
+   ],
+   "desc": "+15% AD +15 AP Hồi 2 mana mỗi giây Giảm Năng Lượng tối đa của chủ sở hữu đi 10. Những lần thi triển kỹ năng tiếp theo sẽ giảm Năng Lượng tối đa đi 10%, xuống mức tối thiểu là 10.",
+   "recommendedChampions": [
+    "Lux",
+    "Ahri"
+   ]
+  },
+  {
+   "name": "Vương Miện Demacia",
+   "category": "artifact",
+   "active": true,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/vuong-mien-demacia.png",
+   "stats": [
+    "+300 Máu",
+    "+30% Tốc độ đánh"
+   ],
+   "desc": "+300 Máu +30% Tốc độ đánh Nếu tướng mang nó là tướng Đỡ Đòn, hồi lại 3 - 21% Máu tối đa mỗi 2 giây (tùy theo giai đoạn). Nếu không, nhận 10%AD Sức Mạnh Công Kích và Sức Mạnh Phép Thuật mỗi 2 giây. Nếu chủ sở hữu trang bị này hy sinh, bạn lập tức thua giao tranh. Bạn có thể gỡ bỏ trang bị này bằng cách chuyển chủ sở hữu về hàng dự bị.",
+   "recommendedChampions": [
+    "Kayle",
+    "Kog'Maw"
+   ]
+  }
+ ],
+ "supportItems": [
+  {
+   "name": "Cốc Sức Mạnh",
+   "category": "support",
+   "active": false,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/coc-suc-manh.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Bắt đầu giao tranh: Tăng 25 Sức Mạnh Phép Thuật và 10 Năng Lượng cho chủ sở hữu và đồng minh trong phạm vi 2 ô cùng hàng.",
+   "recommendedChampions": [],
+   "inactiveReason": "VNTFT ghi nhom Ho Tro da bi xoa tu mua 15"
+  },
+  {
+   "name": "Dây Chuyền Iron Solari",
+   "category": "support",
+   "active": false,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/day-chuyen-iron-solari.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Bắt đầu giao tranh: Chủ sở hữu và đồng minh trong phạm vi 2 ô cùng hàng nhận 250 Lá Chắn, 20 Giáp và 20 Kháng Phép trong 20 giây.",
+   "recommendedChampions": [],
+   "inactiveReason": "VNTFT ghi nhom Ho Tro da bi xoa tu mua 15"
+  },
+  {
+   "name": "Phong Kiếm",
+   "category": "support",
+   "active": false,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/phong-kiem.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Bắt đầu giao tranh: Triệu hồi lốc xoáy ở phía bên kia sân đấu, loại bỏ kẻ địch gần nhất khỏi sân đấu trong 5 giây. Đội của bạn nhận được 2% Tốc Độ Đánh.",
+   "recommendedChampions": [],
+   "inactiveReason": "VNTFT ghi nhom Ho Tro da bi xoa tu mua 15"
+  },
+  {
+   "name": "Thông Đạo Zz'rot",
+   "category": "support",
+   "active": false,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/thong-dao-zzrot.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Triệu hồi 1 Bọ Hư Không. Sức mạnh của nó tăng theo mỗi Giai Đoạn.",
+   "recommendedChampions": [],
+   "inactiveReason": "VNTFT ghi nhom Ho Tro da bi xoa tu mua 15"
+  },
+  {
+   "name": "Tụ Báo Zeke",
+   "category": "support",
+   "active": false,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/tu-bao-zeke.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Bắt đầu giao tranh: Tăng 30% Tốc Độ Đánh cho chủ sở hữu và đồng minh trong phạm vi 2 ô cùng hàng.",
+   "recommendedChampions": [],
+   "inactiveReason": "VNTFT ghi nhom Ho Tro da bi xoa tu mua 15"
+  },
+  {
+   "name": "Áo Choàng Tĩnh Lặng",
+   "category": "support",
+   "active": false,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/ao-choang-tinh-lang.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Bắt đầu giao tranh: Bắn một tia khiến kẻ địch chịu 30% Tăng Năng Lượng. Đội của bạn nhận được 60 Máu. Tăng Năng Lượng: Tăng Năng Lượng tối đa cho tới lần tung chiêu tiếp theo",
+   "recommendedChampions": [],
+   "inactiveReason": "VNTFT ghi nhom Ho Tro da bi xoa tu mua 15"
+  },
+  {
+   "name": "Khiên Băng Randuin",
+   "category": "support",
+   "active": false,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/khien-bang-randiun.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Bắt đầu giao tranh: Cho chủ sở hữu và tất cả đồng minh liền kề 30 Giáp và 30 Kháng Phép.",
+   "recommendedChampions": [],
+   "inactiveReason": "VNTFT ghi nhom Ho Tro da bi xoa tu mua 15"
+  },
+  {
+   "name": "Rìu Nham Tinh",
+   "category": "support",
+   "active": false,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/riu-nham-tinh.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Sát thương gây ra sẽ khiến kẻ địch chịu 30% Cào Xé và 30% Phân Tách trong 15 giây. Đội của bạn nhận 8% SMCK và 8 SMPT.",
+   "recommendedChampions": [],
+   "inactiveReason": "VNTFT ghi nhom Ho Tro da bi xoa tu mua 15"
+  },
+  {
+   "name": "Lá Chắn Quân Đoàn",
+   "category": "support",
+   "active": false,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/la-chan-quan-doan.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Bắt đầu giao tranh: Ban 25% Tốc Độ Đánh cũng như 15 Giáp và Kháng Phép cho chủ sở hữu, các đồng minh liền kề cùng hàng và tất cả đồng minh phía sau họ trong 12 giây.",
+   "recommendedChampions": [],
+   "inactiveReason": "VNTFT ghi nhom Ho Tro da bi xoa tu mua 15"
+  },
+  {
+   "name": "Dây Chuyền Chữ Thập",
+   "category": "support",
+   "active": false,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/day-chuyen-chu-thap.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Bắt đầu giao tranh: Trao cho chủ sở hữu và các đồng minh trong phạm vi 1 ô cùng hàng khả năng miễn nhiễm khống chế và 25% Tốc Độ Đánh trong 18 giây.",
+   "recommendedChampions": [],
+   "inactiveReason": "VNTFT ghi nhom Ho Tro da bi xoa tu mua 15"
+  },
+  {
+   "name": "Quyền Trượng Thánh Quang",
+   "category": "support",
+   "active": false,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/162.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Mỗi 5 giây, hồi lại cho đội của bạn 7% Máu tối đa. Khi chủ sở hữu bị hạ gục, lượng hồi máu tăng thành 14% Máu tối đa và được hồi thêm 2 lần.",
+   "recommendedChampions": [],
+   "inactiveReason": "VNTFT ghi nhom Ho Tro da bi xoa tu mua 15"
+  },
+  {
+   "name": "Rương Báu Bất Ổn",
+   "category": "support",
+   "active": false,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/ruong-do-bat-on.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Khi chủ sở hữu bị hạ gục, 4 đồng minh có phần trăm máu cao nhất nhận 1 trang bị hoàn chỉnh tạm thời.",
+   "recommendedChampions": [],
+   "inactiveReason": "VNTFT ghi nhom Ho Tro da bi xoa tu mua 15"
+  },
+  {
+   "name": "Ngọn Lửa Vĩnh Hằng",
+   "category": "support",
+   "active": false,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/ngon-lua-vinh-hang.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Khi tướng mang trang bị này sống sót, toàn bộ kẻ địch bị nhiễm 33% Vết Thương Sâu và tất cả đồng minh được tăng 8% Khuếch Đại Sát Thương. Hiệu ứng này tái thiết lập sau mỗi 5 giây. Vết Thương Sâu: Giảm hồi máu nhận được",
+   "recommendedChampions": [],
+   "inactiveReason": "VNTFT ghi nhom Ho Tro da bi xoa tu mua 15"
+  },
+  {
+   "name": "Lời Thề Hiệp Sĩ",
+   "category": "support",
+   "active": false,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/loi-the-hiep-si.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Bắt đầu giao tranh: Tăng 200 Máu và 15% Hút Máu Toàn Phần cho chủ sở hữu và đồng minh trong phạm vi 1 ô cùng hàng.",
+   "recommendedChampions": [],
+   "inactiveReason": "VNTFT ghi nhom Ho Tro da bi xoa tu mua 15"
+  },
+  {
+   "name": "Bất Chấp",
+   "category": "support",
+   "active": false,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/bat-chap.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Bắt đầu giao tranh: Chủ sở hữu và tất cả đồng minh liền kề nhận 15% Sức Mạnh Công Kích và 20 Sức Mạnh Phép Thuật. Khi chủ sở hữu tử trận, Làm Choáng tất cả kẻ địch ở 2 ô xung quanh trong 2 giây. xóa bỏ 14.5",
+   "recommendedChampions": [],
+   "inactiveReason": "VNTFT ghi nhom Ho Tro da bi xoa tu mua 15"
+  },
+  {
+   "name": "Bùa Nguyệt Thạch",
+   "category": "support",
+   "active": false,
+   "icon": "https://vntft.com/images/source/trang-bi-dtcl/bua-nguyet-thach.png",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "+150 Máu Mỗi 4 giây, ban 55-325 Lá Chắn (dựa theo Giai Đoạn) cho 2 đồng minh có phần trăm máu thấp nhất bằng trong vòng 4 giây.",
+   "recommendedChampions": [],
+   "inactiveReason": "VNTFT ghi nhom Ho Tro da bi xoa tu mua 15"
   }
  ]
 }

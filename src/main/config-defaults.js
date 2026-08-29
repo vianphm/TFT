@@ -17,12 +17,14 @@ const DEFAULT_CONFIG = {
     scale: 1,
     clickThrough: true,       // true = chuot xuyen qua overlay (dang choi)
     widgets: {
-      odds:  { visible: true,  x: 24,   y: 70,  collapsed: false },
-      econ:  { visible: true,  x: 24,   y: 470, collapsed: false },
-      timer: { visible: true,  x: 350,  y: 70,  collapsed: false },
-      items: { visible: false, x: 680,  y: 70,  collapsed: false },
-      comp:  { visible: false, x: 350,  y: 330, collapsed: false },
-      notes: { visible: false, x: 680,  y: 470, collapsed: false }
+      odds:     { visible: true,  x: 24,   y: 70,  collapsed: false },
+      econ:     { visible: true,  x: 24,   y: 470, collapsed: false },
+      timer:    { visible: true,  x: 350,  y: 70,  collapsed: false },
+      items:    { visible: false, x: 680,  y: 70,  collapsed: false },
+      augments: { visible: false, x: 350,  y: 330, collapsed: false },
+      advisor:  { visible: false, x: 680,  y: 270, collapsed: false },
+      comp:     { visible: false, x: 350,  y: 530, collapsed: false },
+      notes:    { visible: false, x: 680,  y: 470, collapsed: false }
     }
   },
 

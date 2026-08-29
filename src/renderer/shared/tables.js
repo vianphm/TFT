@@ -49,17 +49,18 @@
     { min: 0, gold: 0 }
   ];
 
-  // 9 mon do co ban
+  // 10 nguyen lieu mua 18: 8 mon co ban + Xeng Vang + Chao Vang.
   var COMPONENTS = [
     { id: 'bf',    name: 'B.F. Sword',            vi: 'Kiem B.F.',        stat: '+10% Suc manh cong kich' },
     { id: 'bow',   name: 'Recurve Bow',           vi: 'Cung Cong',        stat: '+10% Toc do danh' },
     { id: 'rod',   name: 'Needlessly Large Rod',  vi: 'Gay Phep Lon',     stat: '+10 Suc manh phep thuat' },
     { id: 'tear',  name: 'Tear of the Goddess',   vi: 'Giot Le Nu Than',  stat: '+15 Nang luong' },
     { id: 'vest',  name: 'Chain Vest',            vi: 'Ao Choang Xich',   stat: '+20 Giap' },
-    { id: 'cloak', name: 'Negatron Cloak',        vi: 'Ao Choang Negatron', stat: '+20 Khang phep' },
+    { id: 'cloak', name: 'Negatron Cloat',        vi: 'Ao Choang Negatron', stat: '+20 Khang phep' },
     { id: 'belt',  name: "Giant's Belt",          vi: 'Dai Lung Khong Lo', stat: '+150 Mau' },
-    { id: 'glove', name: 'Sparring Gloves',       vi: 'Gang Tay Tap Luyen', stat: '+5% Chi mang, +5% Ne' },
-    { id: 'spat',  name: 'Spatula',               vi: 'Xeng',             stat: 'Ghep ra Bieu tuong toc' }
+    { id: 'glove', name: 'Sparring Gloves',       vi: 'Găng Đấu Tập',      stat: '+20% Tỉ lệ chí mạng' },
+    { id: 'spat',  name: 'Spatula',               vi: 'Xẻng Vàng',         stat: 'Ghép Ấn tộc mùa 18' },
+    { id: 'pan',   name: 'Frying Pan',             vi: 'Chảo Vàng',         stat: 'Ghép Ấn hệ mùa 18' }
   ];
 
   // Cong thuc ghep. Khoa la 2 id sap xep theo thu tu trong COMPONENTS.
@@ -72,11 +73,11 @@
     'bf+cloak': 'Bloodthirster',
     'bf+belt': "Sterak's Gage",
     'bf+glove': 'Infinity Edge',
-    'bow+bow': 'Rapid Firecannon',
+    'bow+bow': 'Red Buff',
     'bow+rod': "Guinsoo's Rageblade",
-    'bow+tear': 'Statikk Shiv',
+    'bow+tear': 'Void Staff',
     'bow+vest': "Titan's Resolve",
-    'bow+cloak': "Runaan's Hurricane",
+    'bow+cloak': "Kraken's Fury",
     'bow+belt': "Nashor's Tooth",
     'bow+glove': 'Last Whisper',
     'rod+rod': "Rabadon's Deathcap",
@@ -88,7 +89,7 @@
     'tear+tear': 'Blue Buff',
     'tear+vest': "Protector's Vow",
     'tear+cloak': 'Adaptive Helm',
-    'tear+belt': 'Redemption',
+    'tear+belt': 'Spirit Visage',
     'tear+glove': 'Hand of Justice',
     'vest+vest': 'Bramble Vest',
     'vest+cloak': 'Gargoyle Stoneplate',
@@ -98,31 +99,115 @@
     'cloak+belt': 'Evenshroud',
     'cloak+glove': 'Quicksilver',
     'belt+belt': "Warmog's Armor",
-    'belt+glove': 'Guardbreaker',
+    'belt+glove': "Striker's Flail",
     'glove+glove': "Thief's Gloves",
-    'bf+spat': 'Bieu tuong (tuy set)',
-    'bow+spat': 'Bieu tuong (tuy set)',
-    'rod+spat': 'Bieu tuong (tuy set)',
-    'tear+spat': 'Bieu tuong (tuy set)',
-    'vest+spat': 'Bieu tuong (tuy set)',
-    'cloak+spat': 'Bieu tuong (tuy set)',
-    'belt+spat': 'Bieu tuong (tuy set)',
-    'glove+spat': 'Bieu tuong (tuy set)',
-    'spat+spat': 'Force of Nature'
+    'bf+spat': 'Fae Emblem',
+    'bow+spat': 'Inferno Emblem',
+    'rod+spat': 'Blossom Emblem',
+    'tear+spat': 'Lunar Emblem',
+    'vest+spat': 'Elderwood Emblem',
+    'cloak+spat': 'Sprykin Emblem',
+    'belt+spat': 'Blackthorn Emblem',
+    'glove+spat': 'Primal Emblem',
+    'bf+pan': 'Hunter Emblem',
+    'bow+pan': 'Rapidfire Emblem',
+    'rod+pan': 'Spellweaver Emblem',
+    'tear+pan': 'Invoker Emblem',
+    'vest+pan': 'Vanguard Emblem',
+    'cloak+pan': 'Ravager Emblem',
+    'belt+pan': 'Brawler Emblem',
+    'glove+pan': 'Executioner Emblem',
+    'spat+spat': "Tactician's Crown",
+    'spat+pan': "Tactician's Cape",
+    'pan+pan': "Tactician's Shield"
+  };
+
+  // Ten hien thi tieng Viet lay tu VNTFT; khoa van la ten tieng Anh cua CDragon
+  // de khong pha du lieu doi hinh cu va viec ghep voi API name.
+  var ITEM_NAMES_VI = {
+    'Red Buff': 'Bùa Đỏ', 'Spirit Visage': 'Giáp Tâm Linh',
+    "Tactician's Shield": 'Lá Chắn Chiến Thuật', "Tactician's Cape": 'Áo Choàng Chiến Thuật',
+    "Kraken's Fury": 'Thịnh Nộ Thủy Quái', 'Steadfast Heart': 'Trái Tim Kiên Định',
+    "Sterak's Gage": 'Móng Vuốt Sterak', 'Crownguard': 'Vương Miện Hoàng Gia',
+    'Evenshroud': 'Giáp Vai Nguyệt Thần', "Nashor's Tooth": 'Nanh Nashor',
+    'Adaptive Helm': 'Mũ Thích Nghi', 'Infinity Edge': 'Vô Cực Kiếm',
+    "Tactician's Crown": 'Vương Miện Chiến Thuật', 'Quicksilver': 'Áo Choàng Thủy Ngân',
+    'Sunfire Cape': 'Áo Choàng Lửa', 'Bramble Vest': 'Áo Choàng Gai',
+    'Edge of Night': 'Áo Choàng Bóng Tối', "Dragon's Claw": 'Vuốt Rồng',
+    'Gargoyle Stoneplate': 'Thú Tượng Thạch Giáp', 'Morellonomicon': 'Quỷ Thư Morello',
+    "Archangel's Staff": 'Quyền Trượng Thiên Thần', "Titan's Resolve": 'Quyền Năng Khổng Lồ',
+    'Ionic Spark': 'Nỏ Sét', 'Spear of Shojin': 'Ngọn Giáo Shojin',
+    "Rabadon's Deathcap": 'Mũ Phù Thủy Rabadon', "Protector's Vow": 'Lời Thề Hộ Vệ',
+    'Deathblade': 'Kiếm Tử Thần', 'Hextech Gunblade': 'Kiếm Súng Hextech',
+    'Bloodthirster': 'Huyết Kiếm', "Thief's Gloves": 'Găng Đạo Tặc',
+    'Jeweled Gauntlet': 'Găng Bảo Thạch', "Warmog's Armor": 'Giáp Máu Warmog',
+    'Giant Slayer': 'Diệt Khổng Lồ', 'Void Staff': 'Trượng Hư Vô',
+    "Guinsoo's Rageblade": 'Cuồng Đao Guinsoo', 'Last Whisper': 'Cung Xanh',
+    "Striker's Flail": 'Chùy Đoản Côn', 'Blue Buff': 'Bùa Xanh',
+    'Hand of Justice': 'Bàn Tay Công Lý',
+    'Fae Emblem': 'Ấn Tiên Linh', 'Inferno Emblem': 'Ấn Hỏa Ngục',
+    'Blossom Emblem': 'Ấn Hoa Linh', 'Lunar Emblem': 'Ấn Mặt Trăng',
+    'Elderwood Emblem': 'Ấn Thần Rừng', 'Sprykin Emblem': 'Ấn Tinh Nghịch',
+    'Blackthorn Emblem': 'Ấn Gai Đen', 'Primal Emblem': 'Ấn Nguyên Sinh',
+    'Hunter Emblem': 'Ấn Thợ Săn', 'Rapidfire Emblem': 'Ấn Liên Kích',
+    'Spellweaver Emblem': 'Ấn Thuật Sư', 'Invoker Emblem': 'Ấn Thuật Sĩ',
+    'Vanguard Emblem': 'Ấn Vệ Quân', 'Ravager Emblem': 'Ấn Tàn Phá',
+    'Brawler Emblem': 'Ấn Đấu Sĩ', 'Executioner Emblem': 'Ấn Đao Phủ'
   };
 
   // Mot vai goi y trang bi hay dung, hien khi bam vao o trong bang ghep.
   var ITEM_NOTES = {
-    'Infinity Edge': 'Chuan cho xa thu chi mang. Can them chi mang de khong phi.',
-    "Guinsoo's Rageblade": 'Cong don toc do danh, hop tuong danh nhanh len 3 sao.',
-    'Blue Buff': 'Cho phap su ton it nang luong, giam thoi gian len chieu.',
-    "Titan's Resolve": 'Chong chiu + sat thuong, hop tuong dung tuyen dau lau.',
-    'Bramble Vest': 'Chan sat thuong chi mang, khac che doi thuong.',
-    "Dragon's Claw": 'Chong phap su, dung khi doi thu danh phep manh.',
-    'Quicksilver': 'Mien khong che dau tran, cuu carry manh.',
-    'Redemption': 'Hoi mau vung, tot cho do dan dung tuyen.',
-    'Ionic Spark': 'Giam khang phep ca vung, khac che doi phap su.',
-    "Thief's Gloves": 'Random 2 trang bi moi vong, hop tuong 1 vang len 3 sao.'
+    'Infinity Edge': 'Chuẩn cho xạ thủ chí mạng. Cần thêm tỉ lệ chí mạng để tối ưu sát thương.',
+    "Guinsoo's Rageblade": 'Cộng dồn tốc độ đánh, hợp tướng tay dài gây sát thương duy trì.',
+    'Blue Buff': 'Cho tướng năng lượng thấp (<= 50) ra chiêu liên tục.',
+    'Spear of Shojin': 'Cho tướng năng lượng trung bình/cao hồi phục mana nhanh.',
+    "Titan's Resolve": 'Chống chịu + sát thương hỗn hợp, hợp đấu sĩ tuyến đầu.',
+    'Bramble Vest': 'Chống sát thương vật lý và chặn chí mạng.',
+    "Dragon's Claw": 'Kháng phép mạnh và hồi máu tối đa, khắc chế pháp sư.',
+    'Quicksilver': 'Miễn khống chế đầu trận, bảo vệ chủ lực.',
+    'Ionic Spark': 'Giảm kháng phép kẻ địch xung quanh, cực hợp đi cùng pháp sư.',
+    'Last Whisper': 'Giảm giáp kẻ địch khi gây sát thương vật lý, bắt buộc cho đội hình AD.',
+    'Sunfire Cape': 'Gây vết thương sâu và thiêu đốt đầu trận, giữ máu rất tốt.',
+    "Thief's Gloves": 'Random 2 trang bị mỗi vòng, tối ưu cho tướng phụ damage hoặc tướng 3 sao.'
+  };
+
+  // Phân loại trang bị theo nhóm thuộc tính / vai trò
+  var ITEM_CATEGORIES = {
+    'Deathblade': ['ad'],
+    'Infinity Edge': ['ad', 'crit'],
+    'Last Whisper': ['ad', 'sunder'],
+    'Giant Slayer': ['ad', 'ap', 'damage'],
+    'Bloodthirster': ['ad', 'sustain', 'shield'],
+    "Sterak's Gage": ['ad', 'tank', 'sustain'],
+    'Edge of Night': ['ad', 'sustain'],
+    "Kraken's Fury": ['ad', 'as'],
+    "Striker's Flail": ['ad', 'tank'],
+    "Rabadon's Deathcap": ['ap'],
+    'Jeweled Gauntlet': ['ap', 'crit'],
+    "Archangel's Staff": ['ap', 'mana'],
+    'Hextech Gunblade': ['ap', 'ad', 'sustain'],
+    'Morellonomicon': ['ap', 'burn'],
+    'Crownguard': ['ap', 'tank', 'shield'],
+    'Void Staff': ['ap', 'as'],
+    "Guinsoo's Rageblade": ['as', 'ap', 'ad'],
+    'Red Buff': ['as', 'burn'],
+    "Nashor's Tooth": ['as', 'ap'],
+    'Blue Buff': ['mana', 'damage'],
+    'Spear of Shojin': ['mana', 'ad', 'ap'],
+    'Adaptive Helm': ['mana', 'tank', 'ap'],
+    "Warmog's Armor": ['tank', 'hp'],
+    'Bramble Vest': ['tank', 'armor'],
+    "Dragon's Claw": ['tank', 'mr', 'sustain'],
+    'Gargoyle Stoneplate': ['tank', 'armor', 'mr'],
+    'Sunfire Cape': ['tank', 'burn'],
+    "Protector's Vow": ['tank', 'mana', 'shield'],
+    'Steadfast Heart': ['tank', 'damage_reduction'],
+    'Evenshroud': ['tank', 'sunder'],
+    'Ionic Spark': ['tank', 'shred', 'ap'],
+    'Spirit Visage': ['tank', 'sustain'],
+    'Quicksilver': ['as', 'cc_immunity'],
+    'Hand of Justice': ['ad', 'ap', 'sustain', 'mana'],
+    "Thief's Gloves": ['crit', 'random']
   };
 
   // Cau truc van dau: giai doan 2..7, moi giai doan 7 vong (x-4 la vong chon do).
@@ -160,6 +245,8 @@
     STREAK_TABLE: STREAK_TABLE,
     COMPONENTS: COMPONENTS,
     RECIPES: RECIPES,
+    ITEM_CATEGORIES: ITEM_CATEGORIES,
+    ITEM_NAMES_VI: ITEM_NAMES_VI,
     ITEM_NOTES: ITEM_NOTES,
     ROUND_INFO: ROUND_INFO,
     LEVEL_ROADMAP: LEVEL_ROADMAP

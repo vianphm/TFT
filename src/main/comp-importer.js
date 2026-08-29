@@ -17,8 +17,15 @@ const tables = require('../renderer/shared/tables.js');
  */
 
 const ITEM_NAMES = Array.from(new Set(
-  Object.values(tables.RECIPES).concat(tables.COMPONENTS.map((c) => c.name))
+  Object.values(tables.RECIPES)
+    .concat(Object.values(tables.ITEM_NAMES_VI || {}))
+    .concat(tables.COMPONENTS.reduce((all, c) => all.concat([c.name, c.vi]), []))
 )).filter((n) => n && !/tuy set/i.test(n));
+
+const VI_TO_CANONICAL = Object.keys(tables.ITEM_NAMES_VI || {}).reduce((out, en) => {
+  out[tables.ITEM_NAMES_VI[en]] = en;
+  return out;
+}, {});
 
 async function importFromUrl(url, dataset) {
   if (!/^https?:\/\//i.test(url)) throw new Error('Duong dan phai bat dau bang http:// hoac https://');
@@ -188,7 +195,7 @@ function itemsNear(itemHits, champHit, nextChampHit) {
   return itemHits
     .filter((item) => item.at > start && item.at < end)
     .slice(0, 3)
-    .map((item) => item.name);
+    .map((item) => VI_TO_CANONICAL[item.name] || item.name);
 }
 
 /** Xep tam vi tri: gia cao ra sau, do dan len truoc. */

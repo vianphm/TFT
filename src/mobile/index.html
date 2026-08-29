@@ -68,6 +68,17 @@
     </div>
     <div class="card hero" id="mRollHero"></div>
     <div class="card"><table id="mRollTable"></table></div>
+
+    <div class="card">
+      <h3>San tuong &amp; Reroll Doi hinh chot</h3>
+      <div class="field">
+        <label>Chot doi hinh</label>
+        <select id="mRerollCompSelect"></select>
+      </div>
+      <div id="mRerollStrategy" class="small muted" style="margin-bottom:8px;padding:6px;background:rgba(255,255,255,0.03);border-radius:4px"></div>
+      <div id="mRerollList" class="stack" style="gap:6px"></div>
+    </div>
+
     <div class="card">
       <h3>Nên roll, lên cấp, hay chờ?</h3>
       <div class="stepper-grid">
@@ -181,6 +192,87 @@
       <h3>Ghi chú / soi đối thủ</h3>
       <textarea id="mNotes" rows="6" placeholder="Nhà 3 ăn Ahri, nhà 7 tranh đồ phép..."></textarea>
     </div>
+  <!-- ============================================ LÕI NÂNG CẤP -->
+  <section class="page hidden" data-page="augments">
+    <div class="card">
+      <h3>Đánh giá 3 lựa chọn lõi</h3>
+      <div class="stepper-grid">
+        <div class="stepper">
+          <label>Máu</label>
+          <div class="stepper-row">
+            <button id="mAugHpMinus">−</button><input type="number" id="mAugHp" value="100" min="1" max="100" /><button id="mAugHpPlus">+</button>
+          </div>
+        </div>
+        <div class="stepper">
+          <label>Vàng</label>
+          <div class="stepper-row">
+            <button id="mAugGoldMinus">−</button><input type="number" id="mAugGold" value="50" min="0" /><button id="mAugGoldPlus">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="field" style="margin-top:10px">
+        <label>Vòng chọn</label>
+        <select id="mAugStage">
+          <option value="2-1">Vòng 2-1 (Đầu trận)</option>
+          <option value="3-2">Vòng 3-2 (Giữa trận)</option>
+          <option value="4-2">Vòng 4-2 (Cuối trận)</option>
+        </select>
+      </div>
+      <div class="field" style="margin-top:10px">
+        <label>Nhập 3 lõi đang xuất hiện:</label>
+        <input id="mAug1" list="mAugList" placeholder="Lõi 1..." style="margin-bottom:6px" />
+        <input id="mAug2" list="mAugList" placeholder="Lõi 2..." style="margin-bottom:6px" />
+        <input id="mAug3" list="mAugList" placeholder="Lõi 3..." style="margin-bottom:6px" />
+        <datalist id="mAugList"></datalist>
+        <button id="mAugEval" class="primary" style="width:100%;margin-top:6px;padding:12px">Đánh giá &amp; Xếp hạng</button>
+      </div>
+      <div id="mAugResult" style="margin-top:10px"></div>
+    </div>
+    <div class="card">
+      <h3>Tra cứu thư viện lõi</h3>
+      <input id="mAugSearch" placeholder="Tìm kiếm tên, mô tả..." style="margin-bottom:8px" />
+      <div class="row" style="gap:6px;margin-bottom:8px">
+        <select id="mAugTierFilter" style="flex:1">
+          <option value="">Tất cả bậc</option>
+          <option value="silver">Bạc</option>
+          <option value="gold">Vàng</option>
+          <option value="prismatic">Kim Cương</option>
+        </select>
+        <select id="mAugTagFilter" style="flex:1">
+          <option value="">Tất cả loại</option>
+          <option value="econ">Kinh tế</option>
+          <option value="combat">Giao tranh</option>
+          <option value="items">Trang bị</option>
+          <option value="emblem">Ấn</option>
+          <option value="reroll">Reroll</option>
+          <option value="xp">XP</option>
+        </select>
+      </div>
+      <div id="mAugLibrary" style="max-height:450px;overflow-y:auto"></div>
+    </div>
+  </section>
+
+  <!-- ============================================ SOI BÀI -->
+  <section class="page hidden" data-page="scout">
+    <div class="card">
+      <h3>Soi 7 đối thủ trong sảnh</h3>
+      <div class="small muted" style="margin-bottom:8px">Chạm chọn bài đối thủ để tìm bài ít trùng nhất:</div>
+      <div id="mOpponentsList" class="stack" style="gap:6px"></div>
+      <div class="row" style="margin-top:10px">
+        <button id="mScoutAnalyzeBtn" class="primary" style="flex:1">Phân tích sảnh</button>
+        <button id="mScoutResetBtn" style="flex:0 0 auto">Xóa</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Bài Meta đang TRỐNG (Không ai tranh)</h3>
+      <div id="mFreeCompsResult" class="stack" style="gap:6px"></div>
+    </div>
+
+    <div class="card">
+      <h3>Xu hướng sảnh &amp; Đồ khắc chế</h3>
+      <div id="mCounterAdviceResult"></div>
+    </div>
   </section>
 </main>
 
@@ -188,7 +280,9 @@
   <button class="tab on" data-tab="roll"><span>🎲</span>Roll</button>
   <button class="tab" data-tab="econ"><span>🪙</span>Vàng</button>
   <button class="tab" data-tab="items"><span>⚔️</span>Đồ</button>
+  <button class="tab" data-tab="augments"><span>🔮</span>Lõi</button>
   <button class="tab" data-tab="comps"><span>🧩</span>Đội hình</button>
+  <button class="tab" data-tab="scout"><span>👁️</span>Soi bài</button>
   <button class="tab" data-tab="round"><span>⏱</span>Vòng</button>
 </nav>
 

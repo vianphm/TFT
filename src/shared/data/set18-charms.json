@@ -1,0 +1,2642 @@
+{
+ "source": "https://www.datatft.com/database#charm",
+ "dataVersion": "18.1",
+ "parsedAt": "2026-08-29T19:23:28.882Z",
+ "charms": [
+  {
+   "category": "shop",
+   "cost": 0,
+   "description": "Reroll your shop with all 1-cost champions.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier1.png",
+   "name": "All Ones",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Reroll your shop with all 1-cost champions. Gain 1 Gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 0,
+   "description": "Gain 1 Item Reforger.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier1.png",
+   "name": "Early Fix",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Gain 2 Item Reforgers.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 1,
+   "description": "Fill your shop with Wisps. You can only buy one.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier1.png",
+   "name": "Forest Mage",
+   "rounds": "3-5 ~ 10-1",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Fill your shop with upgraded Wisps. You can only buy one.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "goldxp",
+   "cost": 0,
+   "description": "Gain 1 gold for every 12 missing Player Health.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/goldxp_tier2.png",
+   "name": "Life Debt",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Gain 1 gold for every 12 missing Player Health. Then heal 3 Health.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 0,
+   "description": "Your champions gain 4% Attack Damage and Ability Power.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Prolific Power",
+   "rounds": "4-2 ~ 10-1",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Your champions gain 6% Attack Damage and Ability Power.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 0,
+   "description": "Your champions gain 50 Health.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Verdant Vitality",
+   "rounds": "4-2 ~ 10-1",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Your champions gain 75 Health.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 0,
+   "description": "Sell your board and bench, gain 6 gold and 8 rerolls.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier3.png",
+   "name": "Abandon Ship",
+   "rounds": "3-1 ~ 3-4",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Sell your board and bench, gain 10 gold and 10 rerolls.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "item",
+   "cost": 2,
+   "description": "Lose 3 components, including ones built into items. Gain an Artifact anvil.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/item_tier2.png",
+   "name": "Artifactinate",
+   "rounds": "2-1 ~ 3-4",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Lose 3 components, including ones built into items. Gain an Artifact anvil and 1 Reforger.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "goldxp",
+   "cost": 0,
+   "description": "Flip a coin, gain 1 gold if it's heads.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/goldxp_tier1.png",
+   "name": "Coin Flip",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Flip 2 coins, gain 1 gold if it's heads.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 0,
+   "description": "Any units you bench have items removed and broken apart.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier1.png",
+   "name": "Salvager",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Any units you bench have items removed and broken apart. Gain 2 Gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "item",
+   "cost": 0,
+   "description": "Open a random item store. Random items cost 0 to 14 gold.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/item_tier2.png",
+   "name": "Peddler",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Open a random item store. Random items cost 0 to 14 gold. Gain 2 Gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "item",
+   "cost": 0,
+   "description": "Open an item store. Items cost 0 to 15 gold.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/item_tier2.png",
+   "name": "Curio Cart",
+   "rounds": "3-1 ~ 4-7",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Open an item store. Items cost 0 to 15 gold. Gain 2 Gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 0,
+   "description": "Your champions gain 150 shield for 10 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Bark Armor",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Your champions gain 225 shield for 10 seconds.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 0,
+   "description": "A random 4-cost you own permanently transforms into a 5-cost.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier2.png",
+   "name": "Major Polymorph",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "The highest star level 4-cost you own permanently transforms into a 5-cost.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 0,
+   "description": "A random 1-cost you own permanently transforms into a 2-cost.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier1.png",
+   "name": "Minor Polymorph",
+   "rounds": "2-1 ~ 3-4",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "The highest star level 1-cost you own permanently transforms into a 2-cost.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 0,
+   "description": "A random 2-cost you own permanently transforms into a 3-cost.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier1.png",
+   "name": "Polymorph",
+   "rounds": "2-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "The highest star level 2-cost you own permanently transforms into a 3-cost.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 0,
+   "description": "Gain 1 consumable that gives permanent Armor and Magic Resist or Health.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier1.png",
+   "name": "Doodad Jar",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Gain 2 consumables that give permanent Armor and Magic Resist or Health.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 0,
+   "description": "Gain a temporary Training Dummy with a Giant's Belt.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Found Friend",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Gain a Training Dummy with a Sunfire Cape.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 0,
+   "description": "Gain 1 consumable that gives permanent Attack Damage or Attack Speed.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier1.png",
+   "name": "Knick-Knack Jar",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Gain 2 consumables that give permanent Attack Damage or Attack Speed.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 0,
+   "description": "Gain 1 consumable that gives permanent Ability Power or Mana Regen.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier1.png",
+   "name": "Thingamajig Jar",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Gain 2 consumables that give permanent Ability Power or Mana Regen.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "goldxp",
+   "cost": 0,
+   "description": "The wilds couldn't find a wisp for you this roll. Gain 3 gold.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/goldxp_tier1.png",
+   "name": "Beggar's Wisp",
+   "rounds": "2-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "The wilds couldn't find a wisp for you this roll. Gain 5 gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "goldxp",
+   "cost": 0,
+   "description": "Gain 1 gold. Your opponent gains 1 gold.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/goldxp_tier1.png",
+   "name": "Truce",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Gain 2 gold. Your opponent gains 1 gold.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "Gain 100 gold. Your opponent gains 1 gold.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 0,
+   "description": "Lose 4 Player Health. Gain 2 Gold.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier2.png",
+   "name": "Sinister Deal",
+   "rounds": "2-1 ~ 3-4",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Lose 3 Player Health. Gain 3 Gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 1,
+   "description": "After 25 seconds, allies gain 300% Damage Amp.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Ultra Ascension",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "After 23 seconds, allies gain 300% Damage Amp.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 1,
+     "description": "After 12 seconds, allies gain 300% Damage Amp.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 1,
+   "description": "Your highest Attack Speed unit shrinks, gaining 20% Attack Speed.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Hummingbird",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Your highest Attack Speed unit shrinks, gaining 35% Attack Speed.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "Your 10 highest Attack Speed units shrink, gaining 100% Attack Speed.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 1,
+   "description": "30% Shred and Sunder enemies for 10 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Tattered Armor",
+   "rounds": "3-5 ~ 4-7",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "30% Shred and Sunder enemies for 15 seconds.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "90% Shred and Sunder enemies for 45 seconds.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 1,
+   "description": "Your highest Health unit grows, gaining 350 Health.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Hugify",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Your highest Health unit grows, gaining 600 Health.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "Your 10 highest Health units grow, gaining 2500 Health.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 1,
+   "description": "Reroll your shop with all 2-cost champions.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier1.png",
+   "name": "All Twos",
+   "rounds": "2-1 ~ 3-4",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Reroll your shop with all 2-cost champions. Gain 1 gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "goldxp",
+   "cost": 1,
+   "description": "Gain 2 XP.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/goldxp_tier1.png",
+   "name": "Experienced",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Gain 2 XP.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 1,
+   "description": "Gain 1 XP for each enemy that dies.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier1.png",
+   "name": "Fertilize",
+   "rounds": "2-1 ~ 3-4",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Gain 1 XP for each enemy that dies. Gain 2 XP.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "champion",
+   "cost": 1,
+   "description": "Gain a Tiny Champion Duplicator.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/champion_tier1.png",
+   "name": "Mitosis",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Gain a Tiny Champion Duplicator.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "goldxp",
+   "cost": 1,
+   "description": "Your one-star champions drop 1 gold on death.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/goldxp_tier1.png",
+   "name": "Pocket Change",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Your one-star champions drop 1 gold on death. Gain 1 gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 1,
+   "description": "The first 6 times you reroll your shop this round, the lowest cost champion becomes 2-star.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier1.png",
+   "name": "Starfall",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "The first 8 times you reroll your shop this round, the lowest cost champion becomes 2-star.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 1,
+   "description": "The first ally to die explodes, dealing 25% Max Health magic damage.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Big Boom",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "The first 2 allies to die explode, dealing 25% Max Health magic damage.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 1,
+   "description": "Gain a temporary equippable Blast Potion.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier1.png",
+   "name": "Blast Potion",
+   "rounds": "3-1 ~ 4-7",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Gain a temporary equippable Radiant Blast Potion.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 1,
+   "description": "A champion gains a temporary recommended item.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Borrowed Gear",
+   "rounds": "3-1 ~ 4-7",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "A champion gains a temporary recommended item and 250 Health.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 1,
+   "description": "Gain 50% bonus Coven Essence this combat.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier1.png",
+   "name": "Essence Theft",
+   "rounds": "2-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Gain 90% bonus Coven Essence this combat.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 1,
+   "description": "Flip a coin, gain 1 gold if it's heads. Continue until you flip tails.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier2.png",
+   "name": "Flip Frenzy",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Flip a coin, gain 1 gold if it's heads. Continue until you flip tails.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "goldxp",
+   "cost": 1,
+   "description": "Gain 1 gold for every 1700 damage your highest damage champion deals.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/goldxp_tier2.png",
+   "name": "Golden Goose",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Gain 1 gold for every 1000 damage your highest damage champion deals.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 1,
+   "description": "Gain a tempoary equippable Health Potion.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier1.png",
+   "name": "Health Potion",
+   "rounds": "3-1 ~ 4-7",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Gain a temporary equippable Radiant Health Potion.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 1,
+   "description": "Cast a random Wisp.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier1.png",
+   "name": "Lesser Chaos",
+   "rounds": "2-1 ~ 3-4",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Cast a random Wisp worth 1 or more gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 1,
+   "description": "Gain a temporary equippable Mana Potion.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier1.png",
+   "name": "Mana Potion",
+   "rounds": "3-1 ~ 4-7",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Gain a temporary equippable Radiant Mana Potion.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 1,
+   "description": "Your team gains 1 Mana Regen.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Rain",
+   "rounds": "3-1 ~ 4-7",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Your team gains 2 Mana Regen.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 0,
+   "description": "Your 2 strongest Fighters or Assassins are untargetable for 6 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Stealthy",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "2 random champions on the back row are untargetable for 10 seconds.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 1,
+   "description": "Kill EVERYONE without an item after 10 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Nature's Wrath",
+   "rounds": "6-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Kill EVERYONE without an item after 8 seconds.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 1,
+   "description": "Gain 2 consumables that give permanent Armor and Magic Resist or Health.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier1.png",
+   "name": "Doodad Bag",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Gain 3 consumables that give permanent Armor and Magic Resist or Health.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 1,
+   "description": "Gain 2 consumables that give permanent Attack Damage or Attack Speed.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier1.png",
+   "name": "Knick-Knack Bag",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Gain 3 consumables that give permanent Attack Damage or Attack Speed.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 1,
+   "description": "Gain 2 consumables that give permanent Ability Power or Mana Regen.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier1.png",
+   "name": "Thingamajig Bag",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Gain 3 consumables that give permanent Ability Power or Mana Regen.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 1,
+   "description": "If you lose and kill at least one enemy, gain 4 XP.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier1.png",
+   "name": "Take One With Ya",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "If you lose and kill at least one enemy, gain 6 XP.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 1,
+   "description": "If you win the next player combat, gain 2 Gold.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier1.png",
+   "name": "Minor Gambit",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "If you win the next player combat, gain 3 Gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 1,
+   "description": "Add 2 to your loss streak.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier1.png",
+   "name": "Drought",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Add 3 to your loss streak.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 1,
+   "description": "Add 1 to your win streak.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier1.png",
+   "name": "Flood",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Add 2 to your win streak.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "goldxp",
+   "cost": 2,
+   "description": "The next champion sold this round sells for 200% gold.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/goldxp_tier1.png",
+   "name": "Barter",
+   "rounds": "3-5 ~ 5-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "The next champion sold this round sells for 250% gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Increase all enemies' Max Mana by 15 until their next cast.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Counterspell",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Increase all enemies' Max Mana by 22 until their next cast.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "Increase all enemies' Max Mana by 150 until their next cast.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Gain a temporary Warmog's Armor.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Phantom Armor",
+   "rounds": "3-1 ~ 5-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Gain a temporary The Indomitable.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "Gain 6 temporary Radiant Warmog's Armors and 5 Removers.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "After 8 seconds, stun all enemies for 1.5 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Aftershock",
+   "rounds": "4-2 ~ 10-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "After 8 and 18 seconds, stun all enemies for 1.5 seconds.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 2,
+   "description": "Reroll your shop with all 3-cost champions.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier1.png",
+   "name": "All Threes",
+   "rounds": "3-5 ~ 4-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Reroll your shop with all 3-cost champions. Gain 2 gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "goldxp",
+   "cost": 2,
+   "description": "Gain 1 gold for every champion you kill.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/goldxp_tier1.png",
+   "name": "Blood Money",
+   "rounds": "3-1 ~ 4-7",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Gain 1 gold for every champion you kill. Gain 1 gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 2,
+   "description": "Gain 2 rerolls.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier1.png",
+   "name": "Freeroller",
+   "rounds": "2-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Gain 3 rerolls.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Deal 10% Max Health true damage to all enemies.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Lightning Strike",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Deal 18% Max Health true damage to all enemies.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "After 8 seconds, increase Lunar's effects by 100%.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Moonrise",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "After 8 seconds, increase Lunar's effects by 175%.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Your stacking items start next combat partially stacked.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Preppers",
+   "rounds": "3-1 ~ 5-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Your stacking items start next combat extra stacked.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "champion",
+   "cost": 2,
+   "description": "Gain a copy of the first allied champion to die.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/champion_tier2.png",
+   "name": "Propagate",
+   "rounds": "2-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Gain a copy of the first allied champion to die.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Tanks reduce instances of incoming damage by 10.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Resistant",
+   "rounds": "4-2 ~ 10-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Tanks reduce instances of incoming damage by 18.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Burn and Wound enemies for 10 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Sunfire Sorcery",
+   "rounds": "3-5 ~ 4-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Burn and Wound enemies for 15 seconds.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Your allies gain 7 temporary, non-removable Giant's Belts.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Bunch-o'-Belts",
+   "rounds": "3-5 ~ 4-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Your allies gain 10 temporary, non-removable Giant's Belts.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "goldxp",
+   "cost": 2,
+   "description": "Roll a six-sided die. Gain gold equal to the result.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/goldxp_tier1.png",
+   "name": "Die Roll",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Roll two six-sided dice. Gain gold equal to the result.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 2,
+   "description": "Reroll your shop. Inferno lights 2 shop slots on fire, upgrading them.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier1.png",
+   "name": "Flash Fire",
+   "rounds": "3-5 ~ 5-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Reroll your shop. Inferno lights 3 shop slots on fire, upgrading them.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Your Casters spawn a firefly per 20 Mana spent. Each deals 110 magic damage.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Homing Fireflies",
+   "rounds": "3-5 ~ 10-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Your Casters spawn a firefly per 15 Mana spent. Each deals 110 magic damage.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Your Fighters gain 1 range.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Improved Reach",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Your Fighters gain 2 range.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Your front center champion gains 6% Max Health per front-row unit.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Iron Core",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Your front center champion gains 8% Max Health per front-row unit.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Your first 3 champions to die stun their killer for 1.5 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Killer's Regret",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Your first 4 champions to die stun their killer for 1.75 second.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Every 4 seconds, roots stun an enemy for 1 second.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Living Soil",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Every 4 seconds, roots stun 2 enemies for 1 second.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Your Marksmen's attacks grant 3% stacking Attack Speed.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Marksmen's Gale",
+   "rounds": "4-2 ~ 10-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Your Marksmen's attacks grant 5% stacking Attack Speed.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Your lowest star 1-cost or 2-cost champion stars up in combat.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Moonlight Ritual",
+   "rounds": "3-1 ~ 4-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Your two lowest star 1-cost or 2-cost champions star up in combat.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Every 3 ally deaths, summon a random Riftbeast.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Nature's Ally",
+   "rounds": "4-2 ~ 10-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Every 3 ally deaths, summon a random Riftbeast that's sometimes 2-star.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Your first champion to die turns into a 900 Health dummy with their defenses.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Petrified Dummy",
+   "rounds": "3-1 ~ 4-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Your first champion to die turns into a 1350 Health dummy with their defenses.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "10% Slow enemies and reduce their shields by 0.8 for 10 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Petrify Shields",
+   "rounds": "4-2 ~ 4-7, 6-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "10% Slow enemies and reduce their shields by 0.7 for 10 seconds.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Combat start: Up to 2 inactive traits activate at the lowest level.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Phantom Splash",
+   "rounds": "4-2 ~ 10-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Combat Start: Up to 4 inactive traits activate at the lowest level.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Gain a temporary Bramble Vest.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Phantom Vest",
+   "rounds": "3-1 ~ 5-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Gain a temporary Aegis of Dawn.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Shields are 15% stronger. Allies gain 150 shield for 10 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Plated Shields",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Shields are 20% stronger. Allies gain 300 shield for 10 seconds.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 2,
+   "description": "Gain 7 seeds at start of combat.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier1.png",
+   "name": "Terraforming",
+   "rounds": "4-2 ~ 10-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Gain 10 seeds at start of combat.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 2,
+   "description": "Next player combat, your Rivals' takedowns count twice.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier1.png",
+   "name": "Trophy Hunter",
+   "rounds": "2-1 ~ 4-7",
+   "variants": [
+    {
+     "cost": 0,
+     "description": "Next player combat, your Rivals' takedowns count twice.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "Your Tanks reflect 12% of damage taken to adjacent enemies every 4 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Wrapped In Thorns",
+   "rounds": "3-5 ~ 10-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Your Tanks reflect 18% of damage taken to adjacent enemies every 4 seconds.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 2,
+   "description": "On cast, your champions gain 30% Attack Speed for 4 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Quicken",
+   "rounds": "3-5 ~ 4-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "On cast, your champions gain 40% Attack Speed for 5 seconds.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 2,
+   "description": "Heal 5 Player Health.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier2.png",
+   "name": "Healing Pool",
+   "rounds": "2-1 ~ 3-4",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Heal 7 Player Health.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 2,
+   "description": "After 3 player combats, gain 2 Gold per fight won.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier2.png",
+   "name": "Golden Road",
+   "rounds": "2-1 ~ 3-4",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "After 3 player combats, gain 2 Gold per fight won plus 1 Gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Your team gains 2 Mana Regen.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Downpour",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Your team gains 3 Mana Regen.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "Your team gains 15 Mana Regen.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 3,
+   "description": "Every 5 seconds, your champions have a 15% chance to drop 1 Gold.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier2.png",
+   "name": "Cutpurse",
+   "rounds": "3-5 ~ 4-7",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Every 4 seconds, your champions have a 15% chance to drop 1 Gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Your champions are Unstoppable and gain 15% Attack Speed for 10 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier1.png",
+   "name": "Flow",
+   "rounds": "4-2 ~ 10-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Your champions are Unstoppable and gain 15% Attack Speed for 15 seconds.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Your team heals 1% max Health per second.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Regeneration",
+   "rounds": "3-5 ~ 4-7",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Your team heals 2% max Health per second.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Champions alone in their row gain 15% Health and 15% Damage Amp.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Stand Alone",
+   "rounds": "3-5 ~ 10-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Champions alone in their row gain 22% Health and 22% Damage Amp.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "Champions alone in their row gain 100% Health and 150% Damage Amp.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "goldxp",
+   "cost": 3,
+   "description": "Gain 4 XP.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/goldxp_tier2.png",
+   "name": "Bronze Spoon",
+   "rounds": "2-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Gain 4 XP.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "champion",
+   "cost": 3,
+   "description": "Gain a Rengar or a Kha'Zix. They gain 3 takedowns.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/champion_tier1.png",
+   "name": "Heated Rivalry",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Gain a Rengar or a Kha'Zix. They gain 7 takedowns.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Fighters execute targets under 12% Health. They gain 15% Attack Speed on kill.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Killing Frenzy",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Fighters execute targets under 15% Health. They gain 40% Attack Speed on kill.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "champion",
+   "cost": 3,
+   "description": "Gain 3 gold worth of random champions.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/champion_tier1.png",
+   "name": "Lost Travelers",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 4,
+     "description": "Gain 4 gold worth of random champions.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Gain 3% Damage Amp for every 10 gold you have.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Mercenary Force",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Gain 4.5% Damage Amp for every 10 gold you have.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Allies with Precision gain 25% Critical Strike Damage.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Supercritical",
+   "rounds": "4-2 ~ 10-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Allies with Precision gain 40% Critical Strike Damage.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Allies have a 99% chance to dodge attacks for 4 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Yordle Spirit",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Allies have a 99% chance to dodge attacks for 5 seconds.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "champion",
+   "cost": 3,
+   "description": "Gain a random 2-star 1-cost champion.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/champion_tier2.png",
+   "name": "Apprentice",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Gain a random 2-star 1-cost champion.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "item",
+   "cost": 3,
+   "description": "After 20 champion deaths, gain a component anvil.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/item_tier2.png",
+   "name": "Blood and Iron",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "After 16 champion deaths, gain a component anvil.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Your Tanks gain a 20% Max Health shield upon falling below 50% Health.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Bulwark",
+   "rounds": "4-2 ~ 10-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Your Tanks gain a 30% Max Health shield upon falling below 50% Health.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 3,
+   "description": "Gain 3 consumables that give permanent Armor and Magic Resist or Health.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier2.png",
+   "name": "Doodad Sack",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Gain 4 consumables that give permanent Armor and Magic Resist or Health.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Enemies attacking your highest health champion deal 14% less damage.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Ironwood",
+   "rounds": "4-2 ~ 10-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Enemies attacking your highest health champion deal 20% less damage.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 3,
+   "description": "Gain 3 consumables that give permanent Attack Damage or Attack Speed.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier2.png",
+   "name": "Knick-Knack Sack",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Gain 4 consumables that give permanent Attack Damage or Attack Speed.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Your Casters have 0.82 reduced Max Mana.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Mana-Rich Soil",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Your Casters have 0.75 reduced Max Mana.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Your Marksmen have a 30% chance to double attack.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Marksmen's Marks",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Your Marksmen have a 45% chance to double attack.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Gain a temporary Thief's Gloves.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Phantom Gloves",
+   "rounds": "3-1 ~ 5-7",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Gain a temporary Mittens.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 3,
+   "description": "Gain three temporary equippable Potions.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier2.png",
+   "name": "Potioncraft",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Gain three temporary equippable Radiant Potions.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Whenever an ally dies, your champions gain 4% stacking Damage Amp.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Revenge",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Whenever an ally dies, your champions gain 6% stacking Damage Amp.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 3,
+   "description": "The next 2 rerolls this round will have 2+ champions fielded last combat.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier3.png",
+   "name": "Ride the Wave",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "The next 3 rerolls this round will have 2+ champions fielded last combat.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 3,
+   "description": "You have a 50% chance to get a free reroll with each kill.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier2.png",
+   "name": "Rolling Bones",
+   "rounds": "3-1 ~ 4-7",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "60% chance to get a reroll with each kill, and 1 more if you win.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Combat start: 2 champions without items gain a temporary recommended item.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Scrappy",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Combat Start: 3 champions without items gain a temporary recommended item.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 3,
+   "description": "Each of your shops has a 4-cost in it this round until you buy one.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier1.png",
+   "name": "Search Party",
+   "rounds": "3-5 ~ 4-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Each of your shops has a 4-cost in it this round until you buy one.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Champions with no adjacent allies gain 10% Max Health and 10% Damage Amp.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Solitude's Cloak",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Champions with no adjacent allies gain 15% Max Health and 15% Damage Amp.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 3,
+   "description": "Gain 3 consumables that give permanent Ability Power or Mana Regen.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier2.png",
+   "name": "Thingamajig Sack",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Gain 4 consumables that give permanent Ability Power or Mana Regen.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Gain 2 Training Dummies each with a random tank item.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Training Yard",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Gain 3 Training Dummies each with a random tank item.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Your team gains 30 Health for each active non-unique trait.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Diversified",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Your team gains 45 Health for each active non-unique trait.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 3,
+   "description": "Reroll your shop with all 2-star 1-cost champions.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier3.png",
+   "name": "Starting Town",
+   "rounds": "2-1 ~ 3-4",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "Reroll your shop with all 2-star 1-cost champions.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "Gain a temporary emblem of your most active trait.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Phantom Emblem",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 1,
+     "description": "Gain a temporary emblem of your most active trait.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 3,
+   "description": "Lose 3 Player Health. Gain a Lesser Champion Duplicator.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier2.png",
+   "name": "Minor Blood Ritual",
+   "rounds": "2-1 ~ 3-4",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Lose 1 Player Health. Gain a Lesser Champion Duplicator.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 3,
+   "description": "If you win the next player combat, gain 8 Gold.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier2.png",
+   "name": "Major Gambit",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "If you win next combat, gain 10 Gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 4,
+   "description": "For each ally champion that survives combat, gain 2 Gold.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier2.png",
+   "name": "Payday",
+   "rounds": "3-5 ~ 4-7",
+   "variants": [
+    {
+     "cost": 4,
+     "description": "For each ally champion that survives combat, gain 3 Gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 4,
+   "description": "For each ally champion alive after 18 seconds, gain a reroll.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier2.png",
+   "name": "Roly-Polys",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 4,
+     "description": "For each ally champion alive after 16 seconds, gain a reroll.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "goldxp",
+   "cost": 4,
+   "description": "For each ally champion alive after 15 seconds, gain 2 XP.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/goldxp_tier2.png",
+   "name": "Slow Study",
+   "rounds": "3-5 ~ 4-7",
+   "variants": [
+    {
+     "cost": 4,
+     "description": "For each ally champion alive after 12 seconds, gain 2 XP.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 4,
+   "description": "Every 8 seconds, Stun enemies for 1 second.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Tremors",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 4,
+     "description": "Every 8 seconds, Stun enemies for 1.5 seconds.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "Every 3 seconds, Stun enemies for 1.5 seconds.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 4,
+   "description": "Reroll your shop with all 4-cost champions.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier1.png",
+   "name": "All Fours",
+   "rounds": "5-1 ~ 5-7",
+   "variants": [
+    {
+     "cost": 4,
+     "description": "Reroll your shop with all 4-cost champions. Gain 2 gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 3,
+   "description": "A random back row champion gains 85% Attack Speed for 7 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Backrow Star",
+   "rounds": "4-2 ~ 10-1",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "A random back row champion gains 115% Attack Speed for 8 seconds.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 4,
+   "description": "Champions gain 4% Max Health Shield and 4% Damage Amp per adjacent ally.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Fellowship",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 4,
+     "description": "Champions gain 6% Max Health Shield and 6% Damage Amp per adjacent ally.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 4,
+   "description": "Your highest Health unit grows, gaining 750 Health.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Giant Growth",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 4,
+     "description": "Your 2 highest Health units grow, gaining 750 Health.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "champion",
+   "cost": 4,
+   "description": "Gain 2 copies of a 2-cost champion you don't have.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/champion_tier2.png",
+   "name": "Forest Twins",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 5,
+     "description": "Gain 3 copies of a 2-cost champion you don't have.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 4,
+   "description": "Cast 2 random Wisps.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier3.png",
+   "name": "Greater Chaos",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 4,
+     "description": "Cast 2 random Wisps worth 2 or more gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 4,
+   "description": "After 8 seconds, the leftmost benched champion joins combat and gains 2 recommended items.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Hero's Entrance",
+   "rounds": "6-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 4,
+     "description": "After 5 seconds, the leftmost benched champion joins combat and gains 2 recommended items.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "item",
+   "cost": 4,
+   "description": "A component on your bench turns into a completed item it builds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/item_tier2.png",
+   "name": "Idle Craftsman",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "A component on your bench turns into a completed item it builds.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 4,
+   "description": "Overrun the shop with Riftbeasts.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier2.png",
+   "name": "Jungling",
+   "rounds": "3-1 ~ 4-7",
+   "variants": [
+    {
+     "cost": 3,
+     "description": "Overrun the shop with Riftbeasts.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 4,
+   "description": "Allies gain 1250 Shield, decaying over 6 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Barrier",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 4,
+     "description": "Allies gain 1250 Shield, decaying over 9 seconds.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "Allies gain 7500 Shield, decaying over 30 seconds.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 4,
+   "description": "If you win the next player combat, gain a random component.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier1.png",
+   "name": "Component Bounty",
+   "rounds": "3-1 ~ 4-7",
+   "variants": [
+    {
+     "cost": 2,
+     "description": "If you win the next player combat, gain a random component.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 5,
+   "description": "Every 1 second deal 5% Max Health true damage to an enemy.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Lightning Storm",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 5,
+     "description": "Every 1 seconds deal 7% Max Health true damage to an enemy.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "Every 0.15 seconds deal 5% Max Health true damage to an enemy.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 5,
+   "description": "Fire spreads across the board, dealing true damage to enemies.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Blaze",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 5,
+     "description": "Fire spreads across the board, dealing more true damage to enemies.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "Spread a raging fire across the board!",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 5,
+   "description": "Clone your highest damage champion. The clone deals 20% damage.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Clone Companion",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 5,
+     "description": "Clone your highest damage champion. The clone deals 30% damage.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "Clone your highest damage champion. The clone deals 100% damage.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 5,
+   "description": "Your champions explode on death, dealing 15% Max Health magic damage.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Combust",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 5,
+     "description": "Your champions explode on death, dealing 22% Max Health magic damage.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "Your champions explode on death, dealing 100% Max Health magic damage.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 5,
+   "description": "Your highest Health ally deals 2% max Health damage per second in an area.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Giant's Aura",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 5,
+     "description": "Your highest Health ally deals 3% max Health damage per second in an area.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "Your highest Health ally becomes an absolute menace.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 5,
+   "description": "A temporary 1-star 5-cost with 1 recommended items joins your team.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Hireling",
+   "rounds": "6-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 5,
+     "description": "A temporary 1-star 5-cost with 2 recommended items joins your team.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "3 temporary 2-star 5-costs with 2 recommended items each join your team.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 5,
+   "description": "Archers fire from the trees, dealing 500 physical damage every 3 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Treetop Archers",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 5,
+     "description": "Archers fire from the trees, dealing 900 physical damage every 3 seconds.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "An implausible number of archers fire from the trees.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 5,
+   "description": "Your 3 strongest Champions gain HEROIC POWER, but other allies are sacrificed.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Heroic Sacrifice",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 5,
+     "description": "Your 3 strongest Champions gain HEROIC POWER, but other allies are sacrificed.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "champion",
+   "cost": 5,
+   "description": "Gain a random 4-cost champion.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/champion_tier3.png",
+   "name": "Forest Guide",
+   "rounds": "2-1 ~ 2-7",
+   "variants": [
+    {
+     "cost": 4,
+     "description": "Gain a random 4-cost champion.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 4,
+   "description": "After 8 seconds, 1 random equipped item temporarily becomes Radiant.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Radiantize",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 4,
+     "description": "After 5 seconds, 1 random equipped item temporarily becomes Radiant.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "risky",
+   "cost": 5,
+   "description": "For the next 3 player combats, gain 4 XP if you lose.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/risky_tier2.png",
+   "name": "Good Loss",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 5,
+     "description": "For the next 3 player combats, gain 6 XP if you lose.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "champion",
+   "cost": 6,
+   "description": "Gain a Leona, Sejuani, and Kayle",
+   "icon": "https://static.datatft.com/images/web/charm/s18/champion_tier2.png",
+   "name": "Solar Gift",
+   "rounds": "2-1 ~ 3-4",
+   "variants": [
+    {
+     "cost": 4,
+     "description": "Gain a Leona, Sejuani, and Kayle",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 6,
+   "description": "Up to 2 1-star champions temporarily star up during combat.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier2.png",
+   "name": "Booster Shot",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 6,
+     "description": "Up to 3 1-star champions temporarily star up during combat.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 6,
+   "description": "Slow, Burn, Shred, and Sunder enemies for 8 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Infliction",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 6,
+     "description": "Slow, Burn, Shred, and Sunder enemies for 12 seconds.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 6,
+   "description": "A temporary 3-star 1-cost joins your team.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Late Bloomer",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 6,
+     "description": "A temporary 3-star 1-cost with 1recommend item joins your team.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "A squad of 5 temporary 4-star 1-costs joins your team.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 6,
+   "description": "Reroll your shop with all 2-star 2-cost champions.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier3.png",
+   "name": "Border Village",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 4,
+     "description": "Reroll your shop with all 2-star 2-cost champions.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "combat",
+   "cost": 6,
+   "description": "Your team gains Baron Buff, increasing their stats.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/combat_tier3.png",
+   "name": "Hand Of Baron",
+   "rounds": "5-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 6,
+     "description": "Your team gains Baron Buff, greatly increasing their stats.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "champion",
+   "cost": 6,
+   "description": "Gain a random 2-star 2-cost champion.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/champion_tier2.png",
+   "name": "Journeyman",
+   "rounds": "2-1 ~ 3-4",
+   "variants": [
+    {
+     "cost": 5,
+     "description": "Gain a random 2-star 2-cost champion.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 6,
+   "description": "Reroll your shop with all 2-star 3-cost champions.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier2.png",
+   "name": "Middle Path",
+   "rounds": "3-5 ~ 4-7",
+   "variants": [
+    {
+     "cost": 4,
+     "description": "Reroll your shop with all 2-star 3-cost champions.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 6,
+   "description": "Gain a free reroll per star level of each unique Solar champion.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier2.png",
+   "name": "Refreshing Light",
+   "rounds": "3-5 ~ 4-7",
+   "variants": [
+    {
+     "cost": 5,
+     "description": "Gain a free reroll per star level of each unique Solar champion.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "misc",
+   "cost": 6,
+   "description": "Lose 10 Player Health. Gain a Champion Duplicator.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/misc_tier3.png",
+   "name": "Blood Ritual",
+   "rounds": "4-2 ~ 4-7",
+   "variants": [
+    {
+     "cost": 6,
+     "description": "Lose 8 Player Health. Gain a Champion Duplicator.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 7,
+   "description": "Gain 7 shop rerolls.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier2.png",
+   "name": "Lucky 7",
+   "rounds": "6-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 7,
+     "description": "Gain 10 shop rerolls.",
+     "type": "upgrade"
+    },
+    {
+     "cost": 0,
+     "description": "Gain 777 shop rerolls.",
+     "type": "prismatic"
+    }
+   ]
+  },
+  {
+   "category": "champion",
+   "cost": 7,
+   "description": "Gain a random 5 cost champion.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/champion_tier3.png",
+   "name": "Smurfing",
+   "rounds": "3-5 ~ 4-1",
+   "variants": [
+    {
+     "cost": 6,
+     "description": "Gain a random 5-cost champion.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "goldxp",
+   "cost": 7,
+   "description": "Gain 10 XP.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/goldxp_tier2.png",
+   "name": "Grow Up",
+   "rounds": "3-1 ~ 4-7",
+   "variants": [
+    {
+     "cost": 7,
+     "description": "Gain 12 XP.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "champion",
+   "cost": 8,
+   "description": "Gain a Tiny Champion Duplicator for each unique one-cost fielded last round.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/champion_tier2.png",
+   "name": "Field of Mice",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 8,
+     "description": "Gain a Tiny Duplicator and a gold for each unique 1-cost champion you fielded last round.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 8,
+   "description": "For 18 seconds, your shop rerolls for free every 2 seconds.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier2.png",
+   "name": "Animate Shop",
+   "rounds": "4-2 ~ 5-7",
+   "variants": [
+    {
+     "cost": 8,
+     "description": "For 26 seconds, your shop rerolls for free every 2 seconds.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "champion",
+   "cost": 8,
+   "description": "Gain 2 random 1-star 4-cost champions.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/champion_tier2.png",
+   "name": "Big Guns",
+   "rounds": "4-2 ~ 4-7",
+   "variants": [
+    {
+     "cost": 7,
+     "description": "Gain 2 random 1-star 4-cost champions.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "champion",
+   "cost": 9,
+   "description": "Gain a random 2-star 3-cost champion.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/champion_tier2.png",
+   "name": "Three Me",
+   "rounds": "3-1 ~ 4-1",
+   "variants": [
+    {
+     "cost": 8,
+     "description": "Gain a random 2-star 3-cost champion.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "shop",
+   "cost": 10,
+   "description": "Reroll your shop with all 5-cost champions.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/shop_tier3.png",
+   "name": "All Fives",
+   "rounds": "6-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 10,
+     "description": "Reroll your shop with all 5-cost champions. Gain 5 gold.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "champion",
+   "cost": 18,
+   "description": "Gain a random 2-star 5-cost champion.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/champion_tier3.png",
+   "name": "Grandmaster",
+   "rounds": "6-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 14,
+     "description": "Gain a random 2-star 5-cost champion.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "champion",
+   "cost": 35,
+   "description": "Gain a 5-cost champion. Gain them again each round FOREVER.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/champion_tier3.png",
+   "name": "Hero Of Prophecy",
+   "rounds": "6-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 33,
+     "description": "Gain a 5-cost champion. Gain them again each round FOREVER.",
+     "type": "upgrade"
+    }
+   ]
+  },
+  {
+   "category": "champion",
+   "cost": 45,
+   "description": "Gain one of each 5-cost champion.",
+   "icon": "https://static.datatft.com/images/web/charm/s18/champion_tier3.png",
+   "name": "Circle of Elders",
+   "rounds": "6-1 ~ 10-1",
+   "variants": [
+    {
+     "cost": 40,
+     "description": "Gain one of each 5-cost champion.",
+     "type": "upgrade"
+    }
+   ]
+  }
+ ]
+}

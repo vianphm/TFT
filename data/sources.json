@@ -15,6 +15,46 @@
     "render": true
   },
   {
+    "name": "blitz-set18-comps-vi",
+    "url": "https://blitz.gg/vi/tft/comps",
+    "render": true
+  },
+  {
+    "name": "blitz-set18-champion-stats-vi",
+    "url": "https://blitz.gg/vi/tft/set18/stats/champions",
+    "render": true
+  },
+  {
+    "name": "blitz-set18-early-comps-vi",
+    "url": "https://blitz.gg/vi/tft/set18/comps-early",
+    "render": true
+  },
+  {
+    "name": "blitz-set18-champions-vi",
+    "url": "https://blitz.gg/vi/tft/set18/champions",
+    "render": true
+  },
+  {
+    "name": "blitz-set18-wisps-vi",
+    "url": "https://blitz.gg/vi/tft/set18/wisps",
+    "render": true
+  },
+  {
+    "name": "blitz-set18-traits-vi",
+    "url": "https://blitz.gg/vi/tft/set18/traits",
+    "render": true
+  },
+  {
+    "name": "blitz-set18-augments-vi",
+    "url": "https://blitz.gg/vi/tft/set18/augments",
+    "render": true
+  },
+  {
+    "name": "blitz-set18-augment-stats-vi",
+    "url": "https://blitz.gg/vi/tft/set18/stats/augments",
+    "render": true
+  },
+  {
     "name": "doihinhtft-doi-hinh",
     "url": "https://doihinhtft.vn/doi-hinh-mua-18/",
     "render": false
@@ -35,8 +75,48 @@
     "render": false
   },
   {
+    "name": "datatft-database-units",
+    "url": "https://www.datatft.com/database#unit",
+    "render": true
+  },
+  {
+    "name": "datatft-database-items",
+    "url": "https://www.datatft.com/database#item",
+    "render": true
+  },
+  {
+    "name": "datatft-database-traits",
+    "url": "https://www.datatft.com/database#trait",
+    "render": true
+  },
+  {
+    "name": "datatft-database-augments",
+    "url": "https://www.datatft.com/database#augment",
+    "render": true
+  },
+  {
+    "name": "datatft-database-charms",
+    "url": "https://www.datatft.com/database#charm",
+    "render": true
+  },
+  {
+    "name": "datatft-database-roles",
+    "url": "https://www.datatft.com/database#role",
+    "render": true
+  },
+  {
     "name": "vntft-trang-bi",
     "url": "https://vntft.com/trang-bi-tft",
+    "render": true
+  },
+  {
+    "name": "vntft-trang-bi-tao-tac",
+    "url": "https://vntft.com/trang-bi-tao-tac-tft",
+    "render": true
+  },
+  {
+    "name": "vntft-trang-bi-ho-tro",
+    "url": "https://vntft.com/trang-bi-ho-tro-tft",
     "render": true
   },
   {

@@ -257,5 +257,157 @@ test('khong dung chung mot mon cho hai tuong', () => {
   assert.strictEqual(plan.units[1].done.length, 0);
 });
 
+console.log('\nGoi y an va toi uu theo trang thai tran');
+test('uu tien an ghep duoc va kich moc toc he', () => {
+  const withEmblems = Object.assign({}, dataset, {
+    emblems: [
+      { name: 'An Sat Thu', trait: 'Sat Thu', composition: ['spat', 'bf'] },
+      { name: 'An Ve Binh', trait: 'Ve Binh', composition: ['pan', 'vest'] }
+    ]
+  });
+  const rows = analyzer.recommendEmblems({
+    units: [{ name: 'A' }, { name: 'E' }],
+    components: ['spat', 'bf']
+  }, withEmblems);
+  const assassin = rows.find((row) => row.trait === 'Sat Thu');
+  assert.ok(assassin.craftable);
+  assert.ok(assassin.holder);
+  assert.ok(assassin.scoreGain > 0);
+});
+test('tra ve mot goi phan tich day du theo cap va tuong dang giu', () => {
+  const result = analyzer.optimizeForState({
+    level: 5,
+    gold: 40,
+    units: [{ name: 'A', carry: true }, { name: 'B' }],
+    components: []
+  }, dataset);
+  assert.strictEqual(result.strongest.units.length, 5);
+  assert.ok(result.nextUnits.length > 0);
+  assert.deepStrictEqual(result.assumptions.required, ['A']);
+});
+
+console.log('\nXep hang va danh gia Loi (Augments)');
+test('xep hang loi dau tran (2-1) uu tien loi kinh te/xp', () => {
+  const augs = [
+    { name: 'Kinh te dau tran', tier: 'silver', tags: ['econ'], desc: 'Nhan 20 vang' },
+    { name: 'Giao tranh', tier: 'silver', tags: ['combat'], desc: 'Tang 10% sat thuong' }
+  ];
+  const ranked = analyzer.rankAugments(augs, { stage: '2-1', hp: 100, gold: 10, board: [] }, dataset);
+  assert.strictEqual(ranked[0].augment.name, 'Kinh te dau tran');
+  assert.ok(ranked[0].score > ranked[1].score);
+  assert.ok(ranked[0].reason.includes('2-1'));
+});
+
+test('xep hang loi cuoi tran khi mau thap (<40) uu tien giao tranh va tranh loi kinh te cham', () => {
+  const augs = [
+    { name: 'Kinh te cham', tier: 'gold', tags: ['econ'], desc: 'Moi vong nhan lai' },
+    { name: 'Giao tranh ngay', tier: 'gold', tags: ['combat'], desc: 'Tang 30% giap va khang phep' }
+  ];
+  const ranked = analyzer.rankAugments(augs, { stage: '4-2', hp: 30, gold: 20, board: [{ name: 'A' }] }, dataset);
+  assert.strictEqual(ranked[0].augment.name, 'Giao tranh ngay');
+  assert.ok(ranked[0].score >= 70);
+  assert.ok(ranked[1].score < ranked[0].score);
+  assert.ok(ranked[1].reason.includes('Máu quá thấp') || ranked[1].reason.includes('Máu thấp'));
+});
+
+test('loi kich hoat dung toc he dang choi duoc diem cao', () => {
+  const augs = [
+    { name: 'An Ve Binh', tier: 'gold', tags: ['emblem'], associatedTraits: ['Ve Binh'], desc: 'Nhan 1 An Ve Binh' },
+    { name: 'An Sat Thu', tier: 'gold', tags: ['emblem'], associatedTraits: ['Sat Thu'], desc: 'Nhan 1 An Sat Thu' }
+  ];
+  const ranked = analyzer.rankAugments(augs, { stage: '3-2', hp: 75, board: [{ name: 'C', traits: ['Ve Binh'] }] }, dataset);
+  assert.strictEqual(ranked[0].augment.name, 'An Ve Binh');
+  assert.ok(ranked[0].score > ranked[1].score);
+  assert.ok(ranked[0].reason.includes('Ve Binh') || ranked[0].reason.includes('ve binh'));
+});
+
+console.log('\nGoi y doi hinh dau game');
+test('goi y chuoi thang khi co tuong 2 sao va do slam duoc', () => {
+  const board = [{ name: 'Leona', star: 2 }, { name: 'Shen', star: 2 }, { name: 'Tristana', star: 1 }];
+  const components = ['vest', 'belt']; // Ghep Sunfire Cape
+  const out = analyzer.suggestEarlyGameComps(board, [], components, dataset);
+  assert.strictEqual(out.strategy.type, 'win_streak');
+  assert.ok(out.boardStrength >= 45);
+  assert.strictEqual(out.suggestedArchetypes[0].name, 'Vệ Quân + Xạ Thủ (AD/Tank)');
+  assert.ok(out.suggestedArchetypes[0].score > 50);
+});
+
+test('goi y chuoi thua/tich tien khi bai yeu toan 1 sao va khong co do', () => {
+  const board = [{ name: 'Kobuko', star: 1 }];
+  const out = analyzer.suggestEarlyGameComps(board, [], [], dataset);
+  assert.strictEqual(out.strategy.type, 'loss_streak');
+  assert.ok(out.strategy.levelAdvice.includes('Không up cấp sớm'));
+});
+
+console.log('\nXep hang Wisp / Linh hon');
+test('xep hang wisp theo mau thap (<35) uu tien linh hon giao tranh, tranh mat mau', () => {
+  const wisps = [
+    { id: 'sinister-deal', name: 'Sinister Deal', cost: 0, category: 'risky' },
+    { id: 'prolific-power', name: 'Prolific Power', cost: 0, category: 'combat' }
+  ];
+  const ranked = analyzer.rankWisps(wisps, { hp: 20, gold: 20, stage: '4-2' });
+  assert.strictEqual(ranked[0].wisp.id, 'prolific-power');
+  assert.ok(ranked[0].score > ranked[1].score);
+  assert.strictEqual(ranked[1].recommendation, 'skip');
+  assert.ok(ranked[1].reason.includes('nguy hiểm'));
+});
+
+test('wisp 0 vang duoc uu tien khi it tien', () => {
+  const wisps = [
+    { id: 'early-fix', name: 'Early Fix', cost: 0, category: 'items' },
+    { id: 'artifactinate', name: 'Artifactinate', cost: 2, category: 'items' }
+  ];
+  const ranked = analyzer.rankWisps(wisps, { hp: 80, gold: 0, stage: '2-3' });
+  assert.strictEqual(ranked[0].wisp.id, 'early-fix');
+  assert.ok(ranked[0].score > ranked[1].score);
+});
+
+console.log('\nBo khuyen nghi tong hop');
+test('generateComprehensiveAdvice tra ve day du loi khuyen comp, shop, do, loi, wisp va kinh te', () => {
+  const compList = [
+    { id: 'c1', name: 'Cassiopeia Comp', units: [{ name: 'Cassiopeia', carry: true, items: ['Blue Buff'] }, { name: 'Shen' }] }
+  ];
+  const gameState = {
+    board: [{ name: 'Cassiopeia', star: 2 }],
+    bench: [{ name: 'Shen', star: 1 }],
+    shop: ['Cassiopeia', 'Leona', 'Yasuo'],
+    components: ['tear', 'tear'],
+    hp: 80,
+    gold: 50,
+    round: '3-2'
+  };
+  const advice = analyzer.generateComprehensiveAdvice(gameState, dataset, compList);
+  assert.strictEqual(advice.targetComp.name, 'Cassiopeia Comp');
+  assert.strictEqual(advice.shopAdvice[0].name, 'Cassiopeia');
+  assert.strictEqual(advice.shopAdvice[0].action, 'buy');
+  assert.strictEqual(advice.econDecision.action, 'slow_roll_or_level');
+});
+
+console.log('\nPhan tich Lobby & Soi doi thu it trung bai');
+test('analyzeLobbyComps uu tien doi hinh tier cao khong bi tranh trong lobby', () => {
+  const comps = [
+    { name: 'Comp A', tier: 'S', units: [{ name: 'Cassiopeia', carry: true }] },
+    { name: 'Comp B', tier: 'S', units: [{ name: 'Tristana', carry: true }] },
+    { name: 'Comp C', tier: 'A', units: [{ name: 'Veigar', carry: true }] }
+  ];
+  // 3 nha doi thu dang choi Comp A (Cassiopeia), khong ai choi Comp B (Tristana)
+  const opponents = [
+    { compName: 'Comp A', carry: 'Cassiopeia' },
+    { compName: 'Comp A', carry: 'Cassiopeia' },
+    { compName: 'Comp A', carry: 'Cassiopeia' }
+  ];
+
+  const analysis = analyzer.analyzeLobbyComps(opponents, comps, dataset);
+  assert.strictEqual(analysis.topRecommendedComps[0].comp.name, 'Comp B');
+  assert.strictEqual(analysis.topRecommendedComps[0].isFree, true);
+  assert.strictEqual(analysis.freeComps.length, 2); // Comp B & Comp C
+  assert.ok(analysis.topRecommendedComps[0].lobbyScore > analysis.allEvaluatedComps.find(c => c.comp.name === 'Comp A').lobbyScore);
+});
+
 console.log(`\n${passed} phep thu da qua, ${failed} phep thu LOI.\n`);
 if (failed) console.error(`==> CO ${failed} PHEP THU KHONG QUA <==\n`);
+
+
+
+
+

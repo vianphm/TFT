@@ -118,5 +118,50 @@ test('tom tat set', () => {
   assert.strictEqual(s.biggestTraits[0].name, 'Tinh Linh');
 });
 
+console.log('\nChi muc va tra cuu Augments');
+const datasetWithAugments = Object.assign({}, dataset, {
+  augments: [
+    { name: 'Kinh Te I', tier: 'silver', tags: ['econ'], desc: 'Vang' },
+    { name: 'Giao Tranh II', tier: 'gold', tags: ['combat'], desc: 'Sat thuong' },
+    { name: 'An Tinh Linh', tier: 'gold', tags: ['emblem'], associatedTraits: ['Tinh Linh'], desc: 'Nhan An' },
+    { name: 'Sieu Cap III', tier: 'prismatic', tags: ['combat', 'items'], desc: 'Do anh sang' }
+  ]
+});
+
+test('nhom augment theo tier va tag', () => {
+  const idx = db.index(datasetWithAugments);
+  assert.strictEqual(idx.augmentsByTier.silver.length, 1);
+  assert.strictEqual(idx.augmentsByTier.gold.length, 2);
+  assert.strictEqual(idx.augmentsByTier.prismatic.length, 1);
+  assert.strictEqual(idx.augmentsByTag.combat.length, 2);
+  assert.strictEqual(idx.augmentsByTag.econ.length, 1);
+  assert.strictEqual(idx.augmentsByTag.emblem.length, 1);
+});
+
+test('tra cuu va tim kiem augment theo ten, tier, tag', () => {
+  const resultsByQuery = db.searchAugments(datasetWithAugments, 'Giao Tranh');
+  assert.strictEqual(resultsByQuery.length, 1);
+  assert.strictEqual(resultsByQuery[0].tier, 'gold');
+
+  const resultsByTier = db.searchAugments(datasetWithAugments, '', { tier: 'prismatic' });
+  assert.strictEqual(resultsByTier.length, 1);
+  assert.strictEqual(resultsByTier[0].name, 'Sieu Cap III');
+
+  const resultsByTrait = db.searchAugments(datasetWithAugments, '', { trait: 'Tinh Linh' });
+  assert.strictEqual(resultsByTrait.length, 1);
+  assert.strictEqual(resultsByTrait[0].name, 'An Tinh Linh');
+});
+
+console.log('\nTra cuu Toc He');
+test('searchTraits tim kiem va tra ve day du ten tieng Viet, breakpoints va tuong', () => {
+  const traits = db.searchTraits(dataset, 'Tinh Linh');
+  assert.strictEqual(traits.length, 1);
+  assert.strictEqual(traits[0].name, 'Tinh Linh');
+  assert.deepStrictEqual(traits[0].breakpoints, [2, 4, 6]);
+  assert.strictEqual(traits[0].champions.length, 3);
+});
+
 console.log(`\n${passed} phep thu da qua, ${failed} phep thu LOI.\n`);
 if (failed) console.error(`==> CO ${failed} PHEP THU KHONG QUA <==\n`);
+
+

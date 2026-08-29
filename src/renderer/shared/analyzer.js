@@ -385,6 +385,14 @@
       var breakdown = traitBreakdown(units, dataset, opts);
       var estGold = unreachable ? Infinity : Math.round(goldNeeded);
       var ratio = units.length ? have.length / units.length : 0;
+      var winRate = parseFloat(String(comp.winRate || '').replace(',', '.')) || 0;
+      var top4 = parseFloat(String(comp.top4 || '').replace(',', '.')) || 0;
+      var tierBonus = ({ S: 12, A: 6, B: 2 })[String(comp.tier || '').toUpperCase()] || 0;
+      // Meta chi la mot phan cua diem: doi hinh co thong ke cao van phai phu hop
+      // voi ban co, vang va cap hien tai cua nguoi choi.
+      var metaScore = Math.round((winRate * 0.35 + top4 * 0.65 + tierBonus) * 100) / 100;
+      var transitionScore = (breakdown.score * (0.4 + 0.6 * ratio)) /
+        (1 + (isFinite(estGold) ? estGold : 999) / 120);
 
       return {
         id: comp.id,
@@ -395,11 +403,117 @@
         overlap: Math.round(ratio * 100),
         estGold: estGold,
         traitScore: breakdown.score,
+        winRate: winRate,
+        top4: top4,
+        metaScore: metaScore,
         activeTraits: breakdown.active.map(function (t) { return t.name + ' ' + t.activeAt; }),
-        // Diem xep hang: doi hinh manh, dang co san nhieu tuong, con it vang phai bo ra
-        rank: Math.round((breakdown.score * (0.4 + 0.6 * ratio)) / (1 + (isFinite(estGold) ? estGold : 999) / 120) * 100) / 100
+        // Ket hop suc manh/chuyen doi trong tran voi thong ke meta cua ban cap nhat.
+        rank: Math.round((transitionScore + metaScore * 0.25) * 100) / 100
       };
     }).sort(function (a, b) { return b.rank - a.rank; }).slice(0, opts.limit || 5);
+  }
+
+  // ---------------------------------------------------- goi y an theo tran hien tai
+
+  /**
+   * Xep hang an theo doi hinh dang co va linh kien trong tui.
+   * Khong chi dem "con thieu 1 moc": moi phuong an duoc cham lai bang cung ham
+   * traitBreakdown cua bo toi uu doi hinh, nen an day len moc cao se duoc uu tien.
+   */
+  function recommendEmblems(state, dataset, options) {
+    var opts = options || {};
+    var rawUnits = (state && state.units) || [];
+    var byName = {};
+    (dataset.champions || []).forEach(function (champ) { byName[champ.name.toLowerCase()] = champ; });
+    var units = rawUnits.map(function (unit) {
+      var known = byName[String(unit.name || '').toLowerCase()] || unit;
+      return Object.assign({}, known, unit, { traits: (known.traits || unit.traits || []).slice() });
+    }).filter(function (unit) { return unit.name; });
+    var base = traitBreakdown(units, dataset, opts);
+    var inventory = componentCounts((state && state.components) || []);
+    var traitDefs = indexTraits(dataset);
+
+    return (dataset.emblems || []).filter(function (emblem) {
+      return emblem && emblem.trait;
+    }).map(function (emblem) {
+      var recipe = (emblem.composition || []).map(componentId).filter(Boolean);
+      var recipeState = recipeAvailability(recipe, inventory);
+      var holders = units.filter(function (unit) {
+        return unit.traits.indexOf(emblem.trait) < 0 && (!unit.items || unit.items.length < 3);
+      }).sort(function (a, b) {
+        return (a.carry ? 1 : 0) - (b.carry ? 1 : 0) ||
+          ((a.items || []).length - (b.items || []).length) ||
+          (b.cost || 1) - (a.cost || 1);
+      });
+      var holder = holders[0] || null;
+      var gain = 0;
+      var after = base;
+      if (holder) {
+        var simulated = units.map(function (unit) {
+          if (unit !== holder) return unit;
+          return Object.assign({}, unit, { traits: unit.traits.concat([emblem.trait]) });
+        });
+        after = traitBreakdown(simulated, dataset, opts);
+        gain = Math.round((after.score - base.score) * 100) / 100;
+      }
+      var beforeRow = base.all.find(function (row) { return row.name === emblem.trait; });
+      var afterRow = after.all.find(function (row) { return row.name === emblem.trait; });
+      var candidates = (dataset.champions || []).filter(function (champ) {
+        return (champ.traits || []).indexOf(emblem.trait) >= 0 &&
+          !units.some(function (unit) { return unit.name === champ.name; });
+      }).sort(function (a, b) { return a.cost - b.cost || a.name.localeCompare(b.name); }).slice(0, 4);
+      return {
+        name: emblem.name,
+        trait: emblem.trait,
+        icon: emblem.icon || null,
+        recipe: recipe,
+        craftable: recipe.length === 2 && recipeState.missing.length === 0,
+        missingComponents: recipeState.missing,
+        holder: holder ? holder.name : null,
+        scoreGain: gain,
+        before: beforeRow ? beforeRow.count : 0,
+        after: afterRow ? afterRow.count : (beforeRow ? beforeRow.count : 0),
+        unlocks: afterRow && (!beforeRow || afterRow.tier > beforeRow.tier)
+          ? emblem.trait + ' ' + afterRow.activeAt : null,
+        nextUnits: candidates.map(function (champ) { return { name: champ.name, cost: champ.cost }; }),
+        rank: Math.round((gain * 10 + (recipeState.missing.length === 0 ? 5 : 0) - recipeState.missing.length) * 100) / 100
+      };
+    }).sort(function (a, b) {
+      return b.rank - a.rank || b.scoreGain - a.scoreGain || a.name.localeCompare(b.name);
+    }).slice(0, opts.limit || 10);
+  }
+
+  /** Mot lan goi cho UI: suc manh hien tai, doi hinh tran, tuong tiep theo va an. */
+  function optimizeForState(state, dataset, options) {
+    var opts = options || {};
+    var currentUnits = (state && state.units) || [];
+    var level = Math.max(1, Math.min(10, Number(state && state.level) || 8));
+    var required = currentUnits.filter(function (u) { return u.locked || u.carry; })
+      .map(function (u) { return u.name; });
+    var ownedEmblemTraits = ((state && state.emblems) || []).map(function (emblem) {
+      return typeof emblem === 'string' ? emblem : emblem.trait;
+    }).filter(Boolean);
+    var maxCost = opts.maxCost || (level <= 5 ? 3 : level <= 7 ? 4 : 5);
+    var strongest = optimizeComp(dataset, {
+      size: level,
+      maxCost: maxCost,
+      required: required,
+      exclude: opts.exclude || [],
+      wantTraits: ownedEmblemTraits,
+      weights: opts.weights,
+      beamWidth: opts.beamWidth
+    });
+    return {
+      current: traitBreakdown(currentUnits, dataset, opts),
+      strongest: strongest,
+      nextUnits: suggestNextUnit(currentUnits, dataset, {
+        maxCost: maxCost,
+        wantTraits: ownedEmblemTraits,
+        limit: opts.unitLimit || 8
+      }),
+      emblems: recommendEmblems(state || {}, dataset, { limit: opts.emblemLimit || 10 }),
+      assumptions: { level: level, maxCost: maxCost, required: required }
+    };
   }
 
   // ------------------------------------------------------------------- utils
@@ -431,7 +545,561 @@
   }
 
   function unitKey(unit) {
-    return String(unit.apiName || unit.name || '').toLowerCase();
+    // Cac dang Lux mua 18 la lua chon cua cung mot tuong trong shop, khong phai
+    // nhieu slot doc lap. variantGroup ngan bo toi uu chon hai dang Lux cung luc.
+    return String(unit.variantGroup || unit.apiName || unit.name || '').toLowerCase();
+  }
+
+  function componentId(value) {
+    var text = String(value || '').toLowerCase();
+    if (text === 'bf' || /bfsword/.test(text)) return 'bf';
+    if (text === 'bow' || /recurvebow/.test(text)) return 'bow';
+    if (text === 'rod' || /needlesslylargerod/.test(text)) return 'rod';
+    if (text === 'tear' || /tearofthegoddess/.test(text)) return 'tear';
+    if (text === 'vest' || /chainvest/.test(text)) return 'vest';
+    if (text === 'cloak' || /negatroncloak/.test(text)) return 'cloak';
+    if (text === 'belt' || /giantsbelt/.test(text)) return 'belt';
+    if (text === 'glove' || /sparringgloves/.test(text)) return 'glove';
+    if (text === 'spat' || /spatula/.test(text)) return 'spat';
+    if (text === 'pan' || /fryingpan/.test(text)) return 'pan';
+    return null;
+  }
+
+  function componentCounts(parts) {
+    var out = {};
+    (parts || []).map(componentId).filter(Boolean).forEach(function (id) { out[id] = (out[id] || 0) + 1; });
+    return out;
+  }
+
+  function recipeAvailability(recipe, inventory) {
+    var used = {};
+    var missing = [];
+    (recipe || []).forEach(function (id) {
+      used[id] = (used[id] || 0) + 1;
+      if (used[id] > (inventory[id] || 0)) missing.push(id);
+    });
+    return { missing: missing };
+  }
+
+  // ------------------------------------------------------------- danh gia / xep hang Augment
+
+  /**
+   * Xep hang va dua ra ly do lua chon cho danh sach loi (Augments).
+   * augments: danh sach loi can danh gia [{name, desc, tier, tags, associatedTraits, ...}]
+   * state: { board: [...], bench: [...], stage: '2-1'|'3-2'|'4-2', hp: 100, gold: 50, level: 7, items: [...], streak: 0 }
+   * dataset: bo du lieu set (champions, traits, augments)
+   */
+  function rankAugments(augments, state, dataset, options) {
+    var opts = options || {};
+    var st = state || {};
+    var currentUnits = (st.board || st.units || []);
+    var hp = typeof st.hp === 'number' ? st.hp : 100;
+    var gold = typeof st.gold === 'number' ? st.gold : 50;
+    var stage = String(st.stage || '2-1');
+    var items = (st.items || st.inventory || []);
+
+    var breakdown = dataset ? traitBreakdown(currentUnits, dataset) : { active: [], inactive: [] };
+    var activeTraitNames = (breakdown.active || []).map(function (t) { return t.name.toLowerCase(); });
+    var inactiveTraitNames = (breakdown.inactive || []).map(function (t) { return t.name.toLowerCase(); });
+
+    var results = (augments || []).map(function (aug) {
+      if (!aug) return null;
+      var score = 50;
+      var reasons = [];
+      var tags = aug.tags || [];
+      var tier = aug.tier || 'gold';
+      var text = (String(aug.name || '') + ' ' + String(aug.desc || '')).toLowerCase();
+
+      // 1. Giai doan tran dau (Stage)
+      if (stage.indexOf('2-') === 0) {
+        if (tags.indexOf('econ') >= 0 || tags.indexOf('xp') >= 0) {
+          score += 25;
+          reasons.push('Đầu trận (2-1) chọn lõi kinh tế/kinh nghiệm giúp tích luỹ lợi tức và lên cấp sớm');
+        }
+        if (tags.indexOf('reroll') >= 0) {
+          score += 15;
+          reasons.push('Phù hợp nếu định hướng chơi bài reroll tướng 1-2 vàng');
+        }
+      } else if (stage.indexOf('3-') === 0) {
+        if (tags.indexOf('emblem') >= 0) {
+          score += 20;
+          reasons.push('Giữa trận (3-2) lấy Ấn/Mốc tộc hệ giúp định hình khung bài vững chắc');
+        }
+        if (tags.indexOf('combat') >= 0) {
+          score += 15;
+          reasons.push('Tăng cường sức mạnh giao tranh giữ máu giữa trận');
+        }
+      } else if (stage.indexOf('4-') === 0 || stage.indexOf('5-') === 0) {
+        if (tags.indexOf('combat') >= 0) {
+          score += 30;
+          reasons.push('Cuối trận (4-2+) ưu tiên tối đa chỉ số giao tranh để tranh top');
+        }
+        if (tags.indexOf('items') >= 0) {
+          score += 20;
+          reasons.push('Bổ sung trang bị hoàn chỉnh cho các chủ lực cuối trận');
+        }
+        if (tags.indexOf('econ') >= 0 && hp < 50) {
+          score -= 25;
+          reasons.push('Máu thấp ở cuối trận không nên chọn lõi kinh tế chậm');
+        }
+      }
+
+      // 2. Máu và Vàng hiện tại
+      if (hp <= 40) {
+        if (tags.indexOf('combat') >= 0 || tags.indexOf('items') >= 0) {
+          score += 25;
+          reasons.push('Máu đang ở ngưỡng nguy hiểm (<40), cần sức mạnh tức thì để tránh bị loại');
+        }
+        if (tags.indexOf('econ') >= 0 && text.indexOf('gain') < 0 && text.indexOf('nhận ngay') < 0) {
+          score -= 30;
+          reasons.push('Máu quá thấp, không đủ thời gian phát huy lõi tăng trưởng kinh tế');
+        }
+      } else if (hp >= 80) {
+        if (tags.indexOf('econ') >= 0 || tags.indexOf('xp') >= 0) {
+          score += 15;
+          reasons.push('Máu dồi dào (>80), an toàn để đánh chuỗi hoặc tích luỹ kinh tế mạnh mẽ');
+        }
+      }
+
+      if (gold < 15 && tags.indexOf('econ') >= 0) {
+        score += 15;
+        reasons.push('Kinh tế đang thiếu hụt, lõi hỗ trợ hồi phục tài chính');
+      }
+
+      // 3. Tương thích Tộc/Hệ (Trait synergy)
+      var assocTraits = (aug.associatedTraits || []).map(function (t) { return String(t).toLowerCase(); });
+      var traitMatch = false;
+      assocTraits.forEach(function (t) {
+        if (activeTraitNames.indexOf(t) >= 0) {
+          score += 35;
+          traitMatch = true;
+          reasons.push('Kích hoạt và bổ trợ trực tiếp cho tộc hệ đang chơi (' + t + ')');
+        } else if (inactiveTraitNames.indexOf(t) >= 0) {
+          score += 15;
+          traitMatch = true;
+          reasons.push('Có thể kích hoạt thêm mốc cho tộc hệ dự bị (' + t + ')');
+        }
+      });
+
+      if (tags.indexOf('emblem') >= 0 && !traitMatch && assocTraits.length > 0) {
+        score -= 30;
+        reasons.push('Ấn tộc hệ không khớp với bất kỳ tướng nào trên sân');
+      }
+
+      // 4. Nhãn khuyên dùng
+      var recommendation = 'situational';
+      if (score >= 80) recommendation = 'must_pick';
+      else if (score >= 65) recommendation = 'recommended';
+      else if (score < 40) recommendation = 'avoid';
+
+      return {
+        augment: aug,
+        score: Math.max(0, Math.min(100, Math.round(score))),
+        tier: tier,
+        tags: tags,
+        recommendation: recommendation,
+        reason: reasons.join('. ') || 'Lõi cân bằng chỉ số tổng thể.'
+      };
+    }).filter(Boolean);
+
+    results.sort(function (a, b) { return b.score - a.score; });
+    return results;
+  }
+
+  /**
+   * Goi y khung bai giu mau dau game (Stage 2 - 3) tu tuong 1-2 vang, sao va do roi.
+   */
+  function suggestEarlyGameComps(board, bench, components, dataset, options) {
+    var opts = options || {};
+    var allUnits = (board || []).concat(bench || []);
+    var pool = (dataset && dataset.champions) || [];
+
+    // Tim cac tuong 1-2 vang da co 2 sao hoac dang cam
+    var star2Units = allUnits.filter(function (u) { return (u.star || 1) >= 2; });
+    var lowCostUnits = allUnits.filter(function (u) {
+      var champ = pool.find(function (c) { return c.name.toLowerCase() === u.name.toLowerCase(); });
+      return champ ? champ.cost <= 2 : (u.cost || 1) <= 2;
+    });
+
+    // Do co the slam ngay
+    var calcApi = (global.TFT && global.TFT.calc) || (typeof require !== 'undefined' ? require('./calc.js') : null);
+    var craftableList = calcApi && calcApi.craftable ? calcApi.craftable(components || []) : [];
+    var slammable = craftableList.filter(function (c) {
+      return ['Sunfire Cape', "Warmog's Armor", 'Gargoyle Stoneplate', 'Infinity Edge', 'Blue Buff', "Guinsoo's Rageblade", 'Statikk Shiv', 'Ionic Spark'].indexOf(c.item) >= 0;
+    });
+
+    // Danh gia suc manh dau tran (Board strength)
+    var boardStrength = 0;
+    boardStrength += star2Units.length * 25;
+    boardStrength += (board || []).length * 10;
+    boardStrength += slammable.length * 15;
+
+    var strategy = {
+      type: boardStrength >= 45 ? 'win_streak' : 'loss_streak',
+      title: boardStrength >= 45 ? 'Đánh Chuỗi Thắng (Giữ máu)' : 'Đánh Chuỗi Thua (Tích tiền & Chợ)',
+      levelAdvice: boardStrength >= 45
+        ? 'Lên cấp 4 ở 2-1 (hoặc 2-2) và lên cấp 5 ở 2-5 để giữ chuỗi thắng, ghép đồ ngay.'
+        : 'Không up cấp sớm, giữ mốc 10-20 vàng sớm nhất, ưu tiên nhặt mảnh đồ chuẩn ở vòng chợ 2-4.',
+      itemAdvice: slammable.length
+        ? 'Có thể ghép ngay: ' + slammable.map(function (s) { return s.item; }).join(', ') + ' để tối ưu sức mạnh.'
+        : 'Chưa có đồ ghép tối ưu, nên chờ thêm mảnh ở quái đá hoặc vòng chọn chung.'
+    };
+
+    // Khung bài đầu game gợi ý (2-3 archetypes)
+    var earlyArchetypes = [
+      {
+        name: 'Vệ Quân + Xạ Thủ (AD/Tank)',
+        coreUnits: ['Leona', 'Shen', 'Tristana', 'Cassiopeia'],
+        synergies: '2 Vệ Quân (Tuyến trước trâu) + 2 Xạ Thủ / Thợ Săn (Sát thương tầm xa)',
+        targetLategame: 'Chuyển sang Cassiopeia Vệ Quân hoặc Tristana Tiên Linh'
+      },
+      {
+        name: 'Đấu Sĩ + Thuật Sư (AP/Tank)',
+        coreUnits: ['Kobuko', 'Rakan', 'Ahri', 'Veigar'],
+        synergies: '2 Đấu Sĩ (Tăng máu diện rộng) + 2 Thuật Sư / Pháp Sư (Sát thương phép)',
+        targetLategame: 'Chuyển sang Veigar Tinh Nghịch hoặc Soraka Tiên Linh'
+      },
+      {
+        name: 'Tiên Linh / Thần Rừng Giữ Máu',
+        coreUnits: ['Rakan', 'Kobuko', 'Lillia', 'Rengar'],
+        synergies: '3 Tiên Linh / Thần Rừng kích hoạt mốc chỉ số sớm',
+        targetLategame: 'Chuyển sang Rengar Tiên Linh hoặc Lillia Quái Thú'
+      }
+    ];
+
+    // Chấm điểm độ phù hợp của từng khung bài với bài hiện có
+    var haveNames = allUnits.map(function (u) { return u.name.toLowerCase(); });
+    var scoredArchetypes = earlyArchetypes.map(function (arch) {
+      var matchCount = 0;
+      arch.coreUnits.forEach(function (name) {
+        if (haveNames.indexOf(name.toLowerCase()) >= 0) matchCount++;
+      });
+      return {
+        name: arch.name,
+        matchCount: matchCount,
+        coreUnits: arch.coreUnits,
+        synergies: arch.synergies,
+        targetLategame: arch.targetLategame,
+        score: Math.round((matchCount / arch.coreUnits.length) * 100)
+      };
+    }).sort(function (a, b) { return b.score - a.score; });
+
+    return {
+      strategy: strategy,
+      boardStrength: Math.min(100, boardStrength),
+      star2Count: star2Units.length,
+      slammableItems: slammable,
+      suggestedArchetypes: scoredArchetypes
+    };
+  }
+
+  /**
+   * Xep hang va danh gia Wisp / Linh Hon theo vong dau, mau va kinh te.
+   */
+  function rankWisps(wisps, state, options) {
+    var s = state || {};
+    var hp = s.hp !== undefined ? Number(s.hp) : 100;
+    var gold = s.gold !== undefined ? Number(s.gold) : 50;
+    var stage = String(s.stage || '3-2');
+
+    var list = (wisps || []).map(function (wisp) {
+      if (!wisp) return null;
+      var score = 50;
+      var reasons = [];
+      var cat = wisp.category || 'misc';
+
+      // 1. Gia va chi phi
+      if (wisp.cost === 0) {
+        score += 20;
+        reasons.push('Linh hồn miễn phí (0 vàng)');
+      } else if (wisp.cost > gold) {
+        score -= 40;
+        reasons.push('Không đủ vàng để mua');
+      }
+
+      // 2. Tinh trang mau
+      if (hp <= 35) {
+        if (cat === 'combat') {
+          score += 30;
+          reasons.push('Máu thấp, cần sức mạnh giao tranh ngay lập tức');
+        }
+        if (wisp.id === 'sinister-deal') {
+          score -= 50;
+          reasons.push('Máu quá thấp (<35), mua giao kèo mất máu cực kỳ nguy hiểm');
+        }
+        if (wisp.id === 'life-debt') {
+          score += 25;
+          reasons.push('Máu đã mất nhiều, nhận lượng vàng bù đắp lớn');
+        }
+      } else if (hp >= 80) {
+        if (cat === 'econ' || cat === 'shop') {
+          score += 15;
+          reasons.push('Máu an toàn (>80), tối ưu để gia tăng kinh tế hoặc đổi tướng');
+        }
+      }
+
+      // 3. Giai doan tran dau
+      if (stage.indexOf('2-') === 0) {
+        if (wisp.id === 'all-ones' || wisp.id === 'minor-polymorph' || wisp.id === 'experienced') {
+          score += 25;
+          reasons.push('Rất mạnh ở giai đoạn đầu trận (Stage 2)');
+        }
+      } else if (stage.indexOf('4-') === 0 || stage.indexOf('5-') === 0) {
+        if (wisp.id === 'major-polymorph' || wisp.id === 'salvager' || wisp.id === 'prolific-power') {
+          score += 25;
+          reasons.push('Rất giá trị ở giai đoạn giữa - cuối trận');
+        }
+      }
+
+      var recommendation = 'situational';
+      if (score >= 80) recommendation = 'must_buy';
+      else if (score >= 65) recommendation = 'recommended';
+      else if (score < 40) recommendation = 'skip';
+
+      return {
+        wisp: wisp,
+        score: Math.max(0, Math.min(100, Math.round(score))),
+        recommendation: recommendation,
+        reason: reasons.join('. ') || 'Linh hồn hỗ trợ tình huống.'
+      };
+    }).filter(Boolean);
+
+    list.sort(function (a, b) { return b.score - a.score; });
+    return list;
+  }
+
+  /**
+   * Bo khuyen nghi tong hop realtime: tich hop toan bo trang thai tran dau
+   * (doi hinh, shop, do, loi, wisp, kinh te, vi tri).
+   */
+  function generateComprehensiveAdvice(gameState, dataset, compsLib, options) {
+    var state = gameState || {};
+    var comps = compsLib || [];
+    var board = state.board || [];
+    var bench = state.bench || [];
+    var allUnits = board.concat(bench);
+    var components = state.components || [];
+    var level = Number(state.level || 7);
+    var gold = Number(state.gold || 50);
+    var hp = Number(state.hp || 100);
+    var round = String(state.round || '3-2');
+    var calcApi = (global.TFT && global.TFT.calc) || (typeof require !== 'undefined' ? require('./calc.js') : null);
+
+    // 1. Doi hinh muc tieu & phuong an du phong
+    var pivots = pivotSuggestions(allUnits, comps, dataset, { level: level });
+    var targetComp = pivots[0] ? pivots[0].comp : (comps[0] || null);
+    var backupComps = pivots.slice(1, 3).map(function (p) { return p.comp; });
+
+    // 2. Goi y mua/ban tu cua hang hien tai
+    var shopAdvice = [];
+    if (state.shop && state.shop.length && targetComp) {
+      var targetUnitNames = (targetComp.units || []).map(function (u) { return u.name.toLowerCase(); });
+      var backupUnitNames = backupComps.reduce(function (acc, c) {
+        return acc.concat((c.units || []).map(function (u) { return u.name.toLowerCase(); }));
+      }, []);
+
+      shopAdvice = state.shop.map(function (champName) {
+        if (!champName) return null;
+        var nameLower = String(champName).toLowerCase();
+        var copiesOnBoard = allUnits.filter(function (u) { return u.name.toLowerCase() === nameLower; }).length;
+
+        if (targetUnitNames.indexOf(nameLower) >= 0) {
+          return {
+            name: champName,
+            action: 'buy',
+            priority: copiesOnBoard === 2 ? 'must_buy' : 'recommended',
+            reason: copiesOnBoard === 2 ? 'Mua ngay để nâng lên 2 sao cho đội hình chính!' : 'Tướng thuộc khung bài chính (' + targetComp.name + ')'
+          };
+        } else if (copiesOnBoard === 2) {
+          return {
+            name: champName,
+            action: 'buy',
+            priority: 'recommended',
+            reason: 'Đang có 2 bản sao trên sân/hàng chờ, mua để lên 2 sao giữ máu'
+          };
+        } else if (backupUnitNames.indexOf(nameLower) >= 0) {
+          return {
+            name: champName,
+            action: 'hold',
+            priority: 'situational',
+            reason: 'Tướng thuộc phương án dự phòng'
+          };
+        } else {
+          return {
+            name: champName,
+            action: 'skip',
+            priority: 'skip',
+            reason: 'Không thuộc khung bài đang chơi'
+          };
+        }
+      }).filter(Boolean);
+    }
+
+    // 3. Toi uu trang bi tu linh kien
+    var itemAdvice = null;
+    if (calcApi && calcApi.suggestCompsFromComponents && targetComp) {
+      var itemPlans = calcApi.suggestCompsFromComponents(components, [targetComp], dataset);
+      if (itemPlans && itemPlans.length) {
+        itemAdvice = itemPlans[0];
+      }
+    }
+
+    // 4. Danh gia Loi / Wisp neu dang co lua chon
+    var augmentAdvice = [];
+    if (state.currentAugmentChoices && state.currentAugmentChoices.length) {
+      augmentAdvice = rankAugments(state.currentAugmentChoices, state, dataset);
+    }
+
+    var wispAdvice = [];
+    if (state.currentWispChoices && state.currentWispChoices.length) {
+      wispAdvice = rankWisps(state.currentWispChoices, state);
+    }
+
+    // 5. Quyet dinh Kinh te & Roll
+    var econDecision = {
+      action: gold >= 50 ? 'slow_roll_or_level' : hp <= 35 ? 'roll_now' : 'save_gold',
+      message: hp <= 35
+        ? 'Máu nguy hiểm (<35): Xả tiền roll nâng cấp 2 sao các tướng chủ lực để giữ mạng.'
+        : gold >= 50
+        ? 'Kinh tế vững (>50 vàng): Tích lũy lợi tức tối đa, roll chậm hoặc lên cấp theo lộ trình.'
+        : 'Tích tiền lên mốc 50 vàng, không roll lẻ tẻ.'
+    };
+
+    return {
+      targetComp: targetComp,
+      pivots: pivots,
+      shopAdvice: shopAdvice,
+      itemAdvice: itemAdvice,
+      augmentAdvice: augmentAdvice,
+      wispAdvice: wispAdvice,
+      econDecision: econDecision,
+      round: round,
+      hp: hp,
+      gold: gold
+    };
+  }
+
+  /**
+   * Phan tich doi hinh doi thu trong lobby (7 nha con lai):
+   * - Tinh do tranh bai cua tung doi hinh meta.
+   * - Loc va xep hang cac doi hinh TOP META IT BI TRANH NHAT (Uncontested / Free Comps).
+   * - Phan tich xu huong lobby (AP / AD / Tank / Reroll) va dua ra chien luoc khac che + trang bi khuyen dung.
+   */
+  function analyzeLobbyComps(opponents, compsLib, dataset, playerState) {
+    var oppList = opponents || [];
+    var comps = compsLib || [];
+
+    // 1. Dem so lan xuat hien cua cac tuong va toc he o cac nha doi thu
+    var contestedChampCounts = {};
+    var contestedTraitCounts = {};
+    var opponentCompNames = [];
+
+    oppList.forEach(function (opp) {
+      if (!opp) return;
+      if (typeof opp === 'string') {
+        var strLower = opp.toLowerCase();
+        opponentCompNames.push(strLower);
+        contestedChampCounts[strLower] = (contestedChampCounts[strLower] || 0) + 1;
+      } else {
+        if (opp.compName) opponentCompNames.push(opp.compName.toLowerCase());
+        if (opp.carry) {
+          var cLower = opp.carry.toLowerCase();
+          contestedChampCounts[cLower] = (contestedChampCounts[cLower] || 0) + 1;
+        }
+        (opp.units || []).forEach(function (u) {
+          var uName = (typeof u === 'string' ? u : u.name || '').toLowerCase();
+          if (uName) contestedChampCounts[uName] = (contestedChampCounts[uName] || 0) + 1;
+        });
+        (opp.traits || []).forEach(function (t) {
+          var tName = (typeof t === 'string' ? t : t.name || '').toLowerCase();
+          if (tName) contestedTraitCounts[tName] = (contestedTraitCounts[tName] || 0) + 1;
+        });
+      }
+    });
+
+    // 2. Tinh do tranh bai cho tung doi hinh meta
+    var evaluatedComps = comps.map(function (comp) {
+      var compNameLower = (comp.name || '').toLowerCase();
+      var directContested = opponentCompNames.filter(function (name) {
+        return name.indexOf(compNameLower) >= 0 || compNameLower.indexOf(name) >= 0;
+      }).length;
+
+      var carryUnit = (comp.units || []).find(function (u) { return u.carry; });
+      var carryContested = carryUnit ? (contestedChampCounts[carryUnit.name.toLowerCase()] || 0) : 0;
+
+      var totalUnitsContested = (comp.units || []).reduce(function (sum, u) {
+        return sum + (contestedChampCounts[u.name.toLowerCase()] || 0);
+      }, 0);
+
+      var contestedScore = Math.max(directContested * 35, carryContested * 30 + totalUnitsContested * 10);
+      var isFree = contestedScore === 0;
+
+      // Diem tier meta co ban (S=100, A=85, B=70, C=50)
+      var tierScore = comp.tier === 'S' ? 100 : comp.tier === 'A' ? 85 : comp.tier === 'B' ? 70 : 55;
+
+      // Diem tong hop (Uu tien bài tier cao va IT BI TRANH)
+      var lobbyRecommendationScore = Math.max(0, Math.round(tierScore * 0.6 + (100 - Math.min(100, contestedScore)) * 0.4));
+
+      var statusText = isFree ? 'Hoàn toàn trống bài (1 mình 1 chợ)' :
+        contestedScore <= 35 ? 'Tranh nhẹ (1 nhà cùng hướng)' :
+        'Bị tranh nặng (' + (directContested || carryContested) + ' nhà chơi trùng)';
+
+      return {
+        comp: comp,
+        tier: comp.tier || 'A',
+        isFree: isFree,
+        contestedScore: contestedScore,
+        statusText: statusText,
+        lobbyScore: lobbyRecommendationScore,
+        carryName: carryUnit ? carryUnit.name : '',
+        directContested: directContested,
+        carryContested: carryContested
+      };
+    });
+
+    evaluatedComps.sort(function (a, b) { return b.lobbyScore - a.lobbyScore; });
+
+    // 3. Phan tich xu huong Lobby & Chien thuat khac che (Anti-Meta Strategy)
+    var apCount = 0;
+    var adCount = 0;
+    var rerollCount = 0;
+
+    evaluatedComps.forEach(function (e) {
+      if (e.directContested > 0) {
+        var style = (e.comp.style || '').toLowerCase();
+        if (style.indexOf('ap') >= 0 || style.indexOf('pháp sư') >= 0 || style.indexOf('magic') >= 0) apCount += e.directContested;
+        if (style.indexOf('ad') >= 0 || style.indexOf('xạ thủ') >= 0 || style.indexOf('attack') >= 0) adCount += e.directContested;
+        if (style.indexOf('reroll') >= 0 || style.indexOf('3 sao') >= 0) rerollCount += e.directContested;
+      }
+    });
+
+    var counterAdvice = [];
+    var recommendedCounterItems = [];
+
+    if (apCount >= 2) {
+      counterAdvice.push('Lobby có nhiều nhà chơi Sát Thương Phép (SMPT): Ưu tiên kẹp tộc hệ Kháng Phép/Bí Ẩn và ghép Vuốt Rồng (Dragon Claw) cho Tank chính.');
+      recommendedCounterItems.push("Dragon's Claw", "Ionic Spark");
+    }
+
+    if (adCount >= 2) {
+      counterAdvice.push('Lobby có nhiều nhà chơi Sát Thương Vật Lý (STVL / Chí mạng): Ưu tiên kẹp Vệ Quân/Hộ Vệ và ghép Giáp Gai (Bramble Vest), Tim Băng.');
+      recommendedCounterItems.push("Bramble Vest", "Frozen Heart");
+    }
+
+    if (rerollCount >= 3) {
+      counterAdvice.push('Lobby có nhiều nhà Slow Roll giữ tiền ở cấp 6/7: Kho tướng 4 và 5 vàng đang rất dồi dào! Chiến lược khuyên dùng là Fast 8 / Fast 9 để giành bài đắt tiền.');
+    } else {
+      counterAdvice.push('Lobby giữ nhịp độ lên cấp bình thường: Bám sát bài ít trùng để tối ưu tỉ lệ vào Top 4.');
+    }
+
+    return {
+      topRecommendedComps: evaluatedComps.slice(0, 5),
+      freeComps: evaluatedComps.filter(function (e) { return e.isFree && (e.tier === 'S' || e.tier === 'A'); }),
+      allEvaluatedComps: evaluatedComps,
+      lobbyDominance: { ap: apCount, ad: adCount, reroll: rerollCount },
+      counterAdvice: counterAdvice,
+      recommendedCounterItems: recommendedCounterItems
+    };
   }
 
   var api = {
@@ -442,6 +1110,13 @@
     scoreUnits: scoreUnits,
     prepare: prepare,
     pivotSuggestions: pivotSuggestions,
+    recommendEmblems: recommendEmblems,
+    rankAugments: rankAugments,
+    suggestEarlyGameComps: suggestEarlyGameComps,
+    rankWisps: rankWisps,
+    generateComprehensiveAdvice: generateComprehensiveAdvice,
+    analyzeLobbyComps: analyzeLobbyComps,
+    optimizeForState: optimizeForState,
     COPIES_FOR_STAR: COPIES_FOR_STAR
   };
 

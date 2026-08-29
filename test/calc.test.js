@@ -1,6 +1,6 @@
 'use strict';
 /**
- * Kiem thu logic tinh toan - chay bang: npm test  (khong can Electron)
+ * Kiem thu logic tinh toan - chay bang: npm test (khong can Electron)
  */
 const assert = require('assert');
 const calc = require('../src/renderer/shared/calc.js');
@@ -94,11 +94,11 @@ test('cong don nhieu cap', () => {
 console.log('\nTrang bi');
 test('BF + Gang = Vo Cuc Kiem', () => assert.strictEqual(calc.combine('bf', 'glove'), 'Infinity Edge'));
 test('ghep khong phu thuoc thu tu', () => assert.strictEqual(calc.combine('glove', 'bf'), calc.combine('bf', 'glove')));
-test('du 45 cong thuc', () => assert.strictEqual(Object.keys(tables.RECIPES).length, 45));
-test('luoi ghep 9x9', () => {
+test('du 55 cong thuc mua 18', () => assert.strictEqual(Object.keys(tables.RECIPES).length, 55));
+test('luoi ghep 10x10', () => {
   const grid = calc.recipeGrid();
-  assert.strictEqual(grid.length, 9);
-  assert.strictEqual(grid[0].cells.length, 9);
+  assert.strictEqual(grid.length, 10);
+  assert.strictEqual(grid[0].cells.length, 10);
   assert.ok(grid.every((row) => row.cells.every((c) => c.item)));
 });
 test('goi y do ghep duoc tu tui do', () => {
@@ -141,5 +141,77 @@ test('bao loi ro rang khi chua co du lieu set', () => {
   assert.throws(() => importer.importFromText('Ahri Yasuo Garen Lux', { champions: [] }), /Dong bo du lieu/);
 });
 
+console.log('\nPhan loai & Toi uu trang bi');
+test('phan loai dung nhom trang bi (AD, AP, Tank, AS, Mana)', () => {
+  assert.ok(calc.classifyItem('Infinity Edge').includes('ad'));
+  assert.ok(calc.classifyItem("Rabadon's Deathcap").includes('ap'));
+  assert.ok(calc.classifyItem("Warmog's Armor").includes('tank'));
+  assert.ok(calc.classifyItem('Blue Buff').includes('mana'));
+  assert.ok(calc.classifyItem("Guinsoo's Rageblade").includes('as'));
+});
+
+test('cham diem tuong thich do cho tuong theo role', () => {
+  const tankChamp = { name: 'Garen', role: 'tank', stats: { range: 1 } };
+  const apChamp = { name: 'Ahri', role: 'caster', stats: { range: 4 } };
+  const adChamp = { name: 'Jinx', role: 'marksman', stats: { range: 4 } };
+
+  assert.ok(calc.itemSynergyWithChampion("Warmog's Armor", tankChamp) >= 80);
+  assert.ok(calc.itemSynergyWithChampion('Infinity Edge', tankChamp) <= 40);
+
+  assert.ok(calc.itemSynergyWithChampion("Rabadon's Deathcap", apChamp) >= 80);
+  assert.ok(calc.itemSynergyWithChampion('Deathblade', apChamp) <= 40);
+
+  assert.ok(calc.itemSynergyWithChampion('Infinity Edge', adChamp) >= 80);
+});
+
+test('canh bao ghep do som khoa huong choi', () => {
+  const adWarning = calc.itemSlamWarning('Infinity Edge');
+  assert.ok(adWarning && adWarning.includes('khóa cứng hướng chơi'));
+
+  const tankWarning = calc.itemSlamWarning("Warmog's Armor");
+  assert.ok(tankWarning && tankWarning.includes('đa dụng'));
+});
+
+test('goi y doi hinh phu hop nhat tu linh kien trong tui', () => {
+  const comps = [
+    { name: 'AD Comp', units: [{ name: 'Jinx', carry: true, items: ['Infinity Edge', 'Last Whisper'] }] },
+    { name: 'AP Comp', units: [{ name: 'Ahri', carry: true, items: ["Rabadon's Deathcap", 'Blue Buff'] }] }
+  ];
+  // Co [bf, glove, bow] -> ghep duoc Infinity Edge hoac Last Whisper cho AD Comp
+  const suggestions = calc.suggestCompsFromComponents(['bf', 'glove', 'bow'], comps, { champions: [] });
+  assert.strictEqual(suggestions[0].comp.name, 'AD Comp');
+  assert.ok(suggestions[0].fitScore > suggestions[1].fitScore);
+});
+
+console.log('\nHo tro Reroll & Săn tướng theo yêu cầu');
+test('goldToTargetStar tinh dung so ban sao con thieu va vang mua', () => {
+  // Dang co 5 con 3 vang, can len 3 sao (9 con) -> thieu 4 con
+  const res = calc.goldToTargetStar({ cost: 3, level: 7, copiesOwned: 5, targetStar: 3 });
+  assert.strictEqual(res.copiesNeeded, 4);
+  assert.strictEqual(res.buyGold, 12); // 4 * 3
+  assert.ok(res.expectedRollGold > 0);
+  assert.strictEqual(res.bestLevel, 7);
+});
+
+test('buildCompRerollPlan tao ke hoach reroll cho doi hinh da chot', () => {
+  const comp = {
+    name: 'Cassiopeia Reroll',
+    tier: 'S',
+    units: [
+      { name: 'Cassiopeia', cost: 3, carry: true, items: ['Blue Buff', 'Jeweled Gauntlet'] },
+      { name: 'Shen', cost: 2, star: 3 },
+      { name: 'Leona', cost: 1, star: 2 }
+    ]
+  };
+  const plan = calc.buildCompRerollPlan(comp, { 'cassiopeia': 6, 'shen': 3 }, { level: 7, gold: 60, shop: ['Cassiopeia', 'Yasuo'] });
+  assert.strictEqual(plan.compName, 'Cassiopeia Reroll');
+  assert.strictEqual(plan.carryName, 'Cassiopeia');
+  assert.strictEqual(plan.recommendedRollLevel, 7);
+  assert.strictEqual(plan.matchedInShop.length, 1);
+  assert.strictEqual(plan.matchedInShop[0].name, 'Cassiopeia');
+  assert.strictEqual(plan.matchedInShop[0].buyNow, true);
+});
+
 console.log(`\n${passed} phep thu da qua, ${failed} phep thu LOI.\n`);
 if (failed) console.error(`==> CO ${failed} PHEP THU KHONG QUA <==\n`);
+

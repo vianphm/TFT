@@ -1,0 +1,303 @@
+{
+  "source": "datatft",
+  "patch": "18.1",
+  "wisps": [
+    {
+      "id": "all-ones",
+      "name": "All Ones",
+      "nameVi": "Toàn Bộ 1 Vàng",
+      "cost": 0,
+      "category": "shop",
+      "categoryVi": "Cửa Hàng",
+      "rounds": "2-1 ~ 2-7",
+      "desc": "Đổi lại cửa hàng của bạn thành toàn bộ tướng 1 vàng.",
+      "upgradeDesc": "Đổi lại cửa hàng thành toàn bộ tướng 1 vàng. Nhận thêm 1 vàng."
+    },
+    {
+      "id": "all-twos",
+      "name": "All Twos",
+      "nameVi": "Toàn Bộ 2 Vàng",
+      "cost": 1,
+      "category": "shop",
+      "categoryVi": "Cửa Hàng",
+      "rounds": "2-1 ~ 3-4",
+      "desc": "Đổi lại cửa hàng của bạn thành toàn bộ tướng 2 vàng.",
+      "upgradeDesc": "Đổi lại cửa hàng thành toàn bộ tướng 2 vàng. Nhận thêm 1 vàng."
+    },
+    {
+      "id": "early-fix",
+      "name": "Early Fix",
+      "nameVi": "Sửa Chữa Sớm",
+      "cost": 0,
+      "category": "items",
+      "categoryVi": "Trang Bị",
+      "rounds": "2-1 ~ 2-7",
+      "desc": "Nhận 1 Búa Rèn Trang Bị.",
+      "upgradeDesc": "Nhận 2 Búa Rèn Trang Bị."
+    },
+    {
+      "id": "forest-mage",
+      "name": "Forest Mage",
+      "nameVi": "Pháp Sư Rừng Xanh",
+      "cost": 1,
+      "category": "misc",
+      "categoryVi": "Đặc Biệt",
+      "rounds": "3-5 ~ 10-1",
+      "desc": "Làm đầy cửa hàng bằng các Linh Hồn. Bạn chỉ có thể mua 1 cái.",
+      "upgradeDesc": "Làm đầy cửa hàng bằng các Linh Hồn nâng cấp. Bạn chỉ có thể mua 1 cái."
+    },
+    {
+      "id": "life-debt",
+      "name": "Life Debt",
+      "nameVi": "Nợ Máu",
+      "cost": 0,
+      "category": "econ",
+      "categoryVi": "Kinh Tế",
+      "rounds": "5-1 ~ 10-1",
+      "desc": "Nhận 1 vàng cho mỗi 12 máu Linh Thú đã mất.",
+      "upgradeDesc": "Nhận 1 vàng cho mỗi 12 máu đã mất. Hồi lại 3 máu Linh Thú."
+    },
+    {
+      "id": "prolific-power",
+      "name": "Prolific Power",
+      "nameVi": "Sức Mạnh Sinh Sôi",
+      "cost": 0,
+      "category": "combat",
+      "categoryVi": "Giao Tranh",
+      "rounds": "4-2 ~ 10-1",
+      "desc": "Các tướng nhận 4% Sức mạnh công kích và Sức mạnh phép thuật.",
+      "upgradeDesc": "Các tướng nhận 6% Sức mạnh công kích và Sức mạnh phép thuật."
+    },
+    {
+      "id": "verdant-vitality",
+      "name": "Verdant Vitality",
+      "nameVi": "Sức Sống Xanh",
+      "cost": 0,
+      "category": "combat",
+      "categoryVi": "Giao Tranh",
+      "rounds": "4-2 ~ 10-1",
+      "desc": "Các tướng nhận thêm 50 Máu.",
+      "upgradeDesc": "Các tướng nhận thêm 75 Máu."
+    },
+    {
+      "id": "abandon-ship",
+      "name": "Abandon Ship",
+      "nameVi": "Bỏ Tàu Cứu Thân",
+      "cost": 0,
+      "category": "risky",
+      "categoryVi": "Liều Lĩnh",
+      "rounds": "3-1 ~ 3-4",
+      "desc": "Bán toàn bộ sân đấu và hàng chờ, nhận 6 vàng và 8 lượt roll miễn phí.",
+      "upgradeDesc": "Bán toàn bộ sân đấu và hàng chờ, nhận 10 vàng và 10 lượt roll miễn phí."
+    },
+    {
+      "id": "artifactinate",
+      "name": "Artifactinate",
+      "nameVi": "Chế Tạo Tạo Tác",
+      "cost": 2,
+      "category": "items",
+      "categoryVi": "Trang Bị",
+      "rounds": "2-1 ~ 3-4",
+      "desc": "Mất 3 mảnh trang bị (kể cả đã ghép thành món). Nhận 1 Đe Trang Bị Tạo Tác.",
+      "upgradeDesc": "Mất 3 mảnh trang bị. Nhận 1 Đe Tạo Tác và 1 Búa Rèn."
+    },
+    {
+      "id": "coin-flip",
+      "name": "Coin Flip",
+      "nameVi": "Tung Đồng Xu",
+      "cost": 0,
+      "category": "econ",
+      "categoryVi": "Kinh Tế",
+      "rounds": "2-1 ~ 2-7",
+      "desc": "Tung đồng xu, nhận 1 vàng nếu mặt ngửa.",
+      "upgradeDesc": "Tung 2 đồng xu, nhận 1 vàng cho mỗi mặt ngửa."
+    },
+    {
+      "id": "salvager",
+      "name": "Salvager",
+      "nameVi": "Tách Đồ",
+      "cost": 0,
+      "category": "items",
+      "categoryVi": "Trang Bị",
+      "rounds": "4-2 ~ 5-7",
+      "desc": "Bất kỳ tướng nào đưa lên hàng chờ sẽ bị gỡ đồ và tách thành mảnh cơ bản.",
+      "upgradeDesc": "Tách đồ thành mảnh cơ bản khi đưa lên hàng chờ. Nhận thêm 2 vàng."
+    },
+    {
+      "id": "bark-armor",
+      "name": "Bark Armor",
+      "nameVi": "Giáp Vỏ Cây",
+      "cost": 0,
+      "category": "combat",
+      "categoryVi": "Giao Tranh",
+      "rounds": "2-1 ~ 2-7",
+      "desc": "Các tướng nhận 150 lá chắn trong 10 giây đầu giao tranh.",
+      "upgradeDesc": "Các tướng nhận 225 lá chắn trong 10 giây đầu giao tranh."
+    },
+    {
+      "id": "major-polymorph",
+      "name": "Major Polymorph",
+      "nameVi": "Biến Hình Đại Cấp",
+      "cost": 0,
+      "category": "shop",
+      "categoryVi": "Cửa Hàng",
+      "rounds": "4-2 ~ 5-7",
+      "desc": "Một tướng 4 vàng ngẫu nhiên vĩnh viễn biến đổi thành một tướng 5 vàng.",
+      "upgradeDesc": "Tướng 4 vàng có số sao cao nhất vĩnh viễn biến thành tướng 5 vàng."
+    },
+    {
+      "id": "minor-polymorph",
+      "name": "Minor Polymorph",
+      "nameVi": "Biến Hình Tiểu Cấp",
+      "cost": 0,
+      "category": "shop",
+      "categoryVi": "Cửa Hàng",
+      "rounds": "2-1 ~ 3-4",
+      "desc": "Một tướng 1 vàng ngẫu nhiên vĩnh viễn biến đổi thành một tướng 2 vàng.",
+      "upgradeDesc": "Tướng 1 vàng có số sao cao nhất vĩnh viễn biến thành tướng 2 vàng."
+    },
+    {
+      "id": "polymorph",
+      "name": "Polymorph",
+      "nameVi": "Biến Hình",
+      "cost": 0,
+      "category": "shop",
+      "categoryVi": "Cửa Hàng",
+      "rounds": "2-1 ~ 4-1",
+      "desc": "Một tướng 2 vàng ngẫu nhiên vĩnh viễn biến đổi thành một tướng 3 vàng.",
+      "upgradeDesc": "Tướng 2 vàng có số sao cao nhất vĩnh viễn biến thành tướng 3 vàng."
+    },
+    {
+      "id": "doodad-jar",
+      "name": "Doodad Jar",
+      "nameVi": "Hũ Vụn Vặt Phòng Ngự",
+      "cost": 0,
+      "category": "combat",
+      "categoryVi": "Giao Tranh",
+      "rounds": "2-1 ~ 2-7",
+      "desc": "Nhận 1 bình thuốc tăng vĩnh viễn Giáp và Kháng Phép hoặc Máu cho tướng.",
+      "upgradeDesc": "Nhận 2 bình thuốc tăng vĩnh viễn Giáp và Kháng Phép hoặc Máu."
+    },
+    {
+      "id": "knick-knack-jar",
+      "name": "Knick-Knack Jar",
+      "nameVi": "Hũ Vụn Vặt Tấn Công",
+      "cost": 0,
+      "category": "combat",
+      "categoryVi": "Giao Tranh",
+      "rounds": "2-1 ~ 2-7",
+      "desc": "Nhận 1 bình thuốc tăng vĩnh viễn STVL hoặc Tốc Độ Đánh cho tướng.",
+      "upgradeDesc": "Nhận 2 bình thuốc tăng vĩnh viễn STVL hoặc Tốc Độ Đánh."
+    },
+    {
+      "id": "thingamajig-jar",
+      "name": "Thingamajig Jar",
+      "nameVi": "Hũ Vụn Vặt Phép Thuật",
+      "cost": 0,
+      "category": "combat",
+      "categoryVi": "Giao Tranh",
+      "rounds": "2-1 ~ 2-7",
+      "desc": "Nhận 1 bình thuốc tăng vĩnh viễn SMPT hoặc Hồi Phục Năng Lượng.",
+      "upgradeDesc": "Nhận 2 bình thuốc tăng vĩnh viễn SMPT hoặc Hồi Phục Năng Lượng."
+    },
+    {
+      "id": "found-friend",
+      "name": "Found Friend",
+      "nameVi": "Người Bạn Đồng Hành",
+      "cost": 0,
+      "category": "combat",
+      "categoryVi": "Giao Tranh",
+      "rounds": "2-1 ~ 2-7",
+      "desc": "Nhận 1 Hình Nhân Tạm Thời cầm Đai Lưng Khổng Lồ.",
+      "upgradeDesc": "Nhận 1 Hình Nhân Tạm Thời cầm Áo Choàng Lửa."
+    },
+    {
+      "id": "truce",
+      "name": "Truce",
+      "nameVi": "Đình Chiến",
+      "cost": 0,
+      "category": "econ",
+      "categoryVi": "Kinh Tế",
+      "rounds": "2-1 ~ 2-7",
+      "desc": "Nhận 1 vàng. Đối thủ của bạn cũng nhận 1 vàng.",
+      "upgradeDesc": "Nhận 2 vàng. Đối thủ nhận 1 vàng."
+    },
+    {
+      "id": "sinister-deal",
+      "name": "Sinister Deal",
+      "nameVi": "Giao Kèo Ma Quái",
+      "cost": 0,
+      "category": "risky",
+      "categoryVi": "Liều Lĩnh",
+      "rounds": "2-1 ~ 3-4",
+      "desc": "Mất 4 Máu Linh Thú. Nhận 2 Vàng.",
+      "upgradeDesc": "Mất 3 Máu Linh Thú. Nhận 3 Vàng."
+    },
+    {
+      "id": "ultra-ascension",
+      "name": "Ultra Ascension",
+      "nameVi": "Siêu Thăng Hoa",
+      "cost": 1,
+      "category": "combat",
+      "categoryVi": "Giao Tranh",
+      "rounds": "3-1 ~ 4-1",
+      "desc": "Sau 25 giây giao tranh, đồng minh nhận 300% Khuếch Đại Sát Thương.",
+      "upgradeDesc": "Sau 23 giây giao tranh, đồng minh nhận 300% Khuếch Đại Sát Thương."
+    },
+    {
+      "id": "hummingbird",
+      "name": "Hummingbird",
+      "nameVi": "Chim Ruồi Nhỏ Bé",
+      "cost": 1,
+      "category": "combat",
+      "categoryVi": "Giao Tranh",
+      "rounds": "3-1 ~ 4-1",
+      "desc": "Tướng có Tốc độ đánh cao nhất bị thu nhỏ, nhận thêm 20% Tốc độ đánh.",
+      "upgradeDesc": "Tướng có Tốc độ đánh cao nhất thu nhỏ, nhận thêm 35% Tốc độ đánh."
+    },
+    {
+      "id": "tattered-armor",
+      "name": "Tattered Armor",
+      "nameVi": "Giáp Rách Rưới",
+      "cost": 1,
+      "category": "combat",
+      "categoryVi": "Giao Tranh",
+      "rounds": "3-5 ~ 4-7",
+      "desc": "Giảm 30% Giáp và Kháng phép toàn bộ kẻ địch trong 10 giây.",
+      "upgradeDesc": "Giảm 30% Giáp và Kháng phép kẻ địch trong 15 giây."
+    },
+    {
+      "id": "hugify",
+      "name": "Hugify",
+      "nameVi": "Phóng To Khổng Lồ",
+      "cost": 1,
+      "category": "combat",
+      "categoryVi": "Giao Tranh",
+      "rounds": "3-1 ~ 4-1",
+      "desc": "Tướng nhiều Máu nhất được phóng to, nhận thêm 350 Máu.",
+      "upgradeDesc": "Tướng nhiều Máu nhất phóng to, nhận thêm 600 Máu."
+    },
+    {
+      "id": "experienced",
+      "name": "Experienced",
+      "nameVi": "Dạn Dày Kinh Nghiệm",
+      "cost": 1,
+      "category": "econ",
+      "categoryVi": "Kinh Tế",
+      "rounds": "2-1 ~ 2-7",
+      "desc": "Nhận 2 XP.",
+      "upgradeDesc": "Nhận 2 XP."
+    },
+    {
+      "id": "mitosis",
+      "name": "Mitosis",
+      "nameVi": "Phân Bào",
+      "cost": 1,
+      "category": "shop",
+      "categoryVi": "Cửa Hàng",
+      "rounds": "2-1 ~ 2-7",
+      "desc": "Nhận 1 Máy Nhân Bản Tướng Cỡ Nhỏ (dưới 3 vàng).",
+      "upgradeDesc": "Nhận 1 Máy Nhân Bản Tướng Cỡ Nhỏ."
+    }
+  ]
+}

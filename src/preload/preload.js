@@ -21,6 +21,8 @@ const EVENTS = [
   'displays:changed',
   'data:updated',
   'game:status',
+  'live:game-data',
+  'live:status',
   'comps:changed',
   'mobile:status',
   'hotkey:action'

@@ -1,0 +1,1832 @@
+{
+ "source": "https://blitz.gg/vi/tft/set18/stats/champions",
+ "patch": "18.1",
+ "filters": {
+  "region": "world",
+  "queue": "ranked",
+  "rank": "platinum+"
+ },
+ "parsedAt": "2026-08-29T19:34:26.084Z",
+ "champions": [
+  {
+   "apiName": "DA_Sentinel18",
+   "avgPlace": 3.9,
+   "name": "Người Đá",
+   "pickRate": 28.1,
+   "rank": 1,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_ProtectorsVow",
+     "name": "Lời Thề Hộ Vệ"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    }
+   ],
+   "tier": "1",
+   "top4": 61.5,
+   "winRate": 16.6
+  },
+  {
+   "apiName": "DA_18_GnarSmall",
+   "avgPlace": 3.2,
+   "name": "Gnar",
+   "pickRate": 22,
+   "rank": 2,
+   "recommendedItems": [
+    {
+     "apiName": "DA_SteraksGage",
+     "name": "Móng Vuốt Sterak"
+    },
+    {
+     "apiName": "DA_Bloodthirster",
+     "name": "Huyết Kiếm"
+    },
+    {
+     "apiName": "DA_ThiefsGloves",
+     "name": "Găng Đạo Tặc"
+    },
+    {
+     "apiName": "DA_TitansResolve",
+     "name": "Quyền Năng Khổng Lồ"
+    }
+   ],
+   "tier": "1",
+   "top4": 73.7,
+   "winRate": 26.8
+  },
+  {
+   "apiName": "DA_Taric18",
+   "avgPlace": 3.4,
+   "name": "Taric",
+   "pickRate": 21,
+   "rank": 3,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_ProtectorsVow",
+     "name": "Lời Thề Hộ Vệ"
+    }
+   ],
+   "tier": "1",
+   "top4": 69.8,
+   "winRate": 24.8
+  },
+  {
+   "apiName": "DA_18_Sett",
+   "avgPlace": 3.9,
+   "name": "Sett",
+   "pickRate": 20.1,
+   "rank": 4,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_DragonsClaw",
+     "name": "Vuốt Rồng"
+    }
+   ],
+   "tier": "1",
+   "top4": 61.5,
+   "winRate": 16.8
+  },
+  {
+   "apiName": "DA_Brambleback18",
+   "avgPlace": 3.9,
+   "name": "Bụi Gai Đỏ",
+   "pickRate": 18.9,
+   "rank": 5,
+   "recommendedItems": [
+    {
+     "apiName": "DA_EdgeOfNight",
+     "name": "Áo Choàng Bóng Tối"
+    },
+    {
+     "apiName": "DA_SteraksGage",
+     "name": "Móng Vuốt Sterak"
+    },
+    {
+     "apiName": "DA_Quicksilver",
+     "name": "Áo Choàng Thủy Ngân"
+    },
+    {
+     "apiName": "DA_Bloodthirster",
+     "name": "Huyết Kiếm"
+    }
+   ],
+   "tier": "1",
+   "top4": 61.6,
+   "winRate": 14.8
+  },
+  {
+   "apiName": "DA_18_Aphelios",
+   "avgPlace": 3.9,
+   "name": "Aphelios",
+   "pickRate": 17.8,
+   "rank": 6,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GuinsoosRageblade",
+     "name": "Cuồng Đao Guinsoo"
+    },
+    {
+     "apiName": "DA_KrakensFury",
+     "name": "Thịnh Nộ Thủy Quái"
+    },
+    {
+     "apiName": "DA_GiantSlayer",
+     "name": "Diệt Khổng Lồ"
+    },
+    {
+     "apiName": "DA_InfinityEdge",
+     "name": "Vô Cực Kiếm"
+    }
+   ],
+   "tier": "1",
+   "top4": 62.3,
+   "winRate": 18.2
+  },
+  {
+   "apiName": "DA_18_Lillia",
+   "avgPlace": 3.8,
+   "name": "Lillia",
+   "pickRate": 17.6,
+   "rank": 7,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_ProtectorsVow",
+     "name": "Lời Thề Hộ Vệ"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SunfireCape",
+     "name": "Áo Choàng Lửa"
+    }
+   ],
+   "tier": "1",
+   "top4": 62.8,
+   "winRate": 18.2
+  },
+  {
+   "apiName": "DA_18_Ahri",
+   "avgPlace": 4,
+   "name": "Ahri",
+   "pickRate": 16,
+   "rank": 8,
+   "recommendedItems": [
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    },
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_StrikersFlail",
+     "name": "Chùy Đoản Côn"
+    },
+    {
+     "apiName": "DA_NashorsTooth",
+     "name": "Nanh Nashor"
+    }
+   ],
+   "tier": "1",
+   "top4": 59.4,
+   "winRate": 17.1
+  },
+  {
+   "apiName": "DA_18_Alune",
+   "avgPlace": 3.3,
+   "name": "Alune",
+   "pickRate": 14.6,
+   "rank": 9,
+   "recommendedItems": [
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    },
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_BlueBuff",
+     "name": "Bùa Xanh"
+    },
+    {
+     "apiName": "DA_VoidStaff",
+     "name": "Trượng Hư Vô"
+    }
+   ],
+   "tier": "1",
+   "top4": 72.8,
+   "winRate": 25.1
+  },
+  {
+   "apiName": "DA_18_Ashe",
+   "avgPlace": 3.4,
+   "name": "Ashe",
+   "pickRate": 11.3,
+   "rank": 10,
+   "recommendedItems": [
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_RedBuff",
+     "name": "Bùa Đỏ"
+    },
+    {
+     "apiName": "DA_LastWhisper",
+     "name": "Cung Xanh"
+    },
+    {
+     "apiName": "DA_InfinityEdge",
+     "name": "Vô Cực Kiếm"
+    }
+   ],
+   "tier": "1",
+   "top4": 70.2,
+   "winRate": 23.1
+  },
+  {
+   "apiName": "DA_18_Ornn",
+   "avgPlace": 4.3,
+   "name": "Ornn",
+   "pickRate": 24.4,
+   "rank": 11,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SunfireCape",
+     "name": "Áo Choàng Lửa"
+    }
+   ],
+   "tier": "2",
+   "top4": 54.7,
+   "winRate": 15.8
+  },
+  {
+   "apiName": "DA_18_Hecarim",
+   "avgPlace": 4.2,
+   "name": "Hecarim",
+   "pickRate": 23.8,
+   "rank": 12,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_SunfireCape",
+     "name": "Áo Choàng Lửa"
+    }
+   ],
+   "tier": "2",
+   "top4": 55.9,
+   "winRate": 15.2
+  },
+  {
+   "apiName": "DA_Fiddlesticks18",
+   "avgPlace": 4.2,
+   "name": "Fiddlesticks",
+   "pickRate": 21.1,
+   "rank": 13,
+   "recommendedItems": [
+    {
+     "apiName": "DA_SunfireCape",
+     "name": "Áo Choàng Lửa"
+    },
+    {
+     "apiName": "DA_IonicSpark",
+     "name": "Nỏ Sét"
+    },
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    }
+   ],
+   "tier": "2",
+   "top4": 57.2,
+   "winRate": 14.5
+  },
+  {
+   "apiName": "DA_Vi18",
+   "avgPlace": 4.1,
+   "name": "Vi",
+   "pickRate": 19.3,
+   "rank": 14,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_SunfireCape",
+     "name": "Áo Choàng Lửa"
+    }
+   ],
+   "tier": "2",
+   "top4": 57.9,
+   "winRate": 15.8
+  },
+  {
+   "apiName": "DA_Krug18",
+   "avgPlace": 4.1,
+   "name": "Quái Đá Krug",
+   "pickRate": 18.2,
+   "rank": 15,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_SunfireCape",
+     "name": "Áo Choàng Lửa"
+    }
+   ],
+   "tier": "2",
+   "top4": 58.9,
+   "winRate": 13.8
+  },
+  {
+   "apiName": "DA_18_Rammus",
+   "avgPlace": 4,
+   "name": "Rammus",
+   "pickRate": 15.8,
+   "rank": 16,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_SteadfastHeart",
+     "name": "Trái Tim Kiên Định"
+    }
+   ],
+   "tier": "2",
+   "top4": 59.6,
+   "winRate": 15.1
+  },
+  {
+   "apiName": "DA_18_Ivern",
+   "avgPlace": 3.4,
+   "name": "Ivern",
+   "pickRate": 14.1,
+   "rank": 17,
+   "recommendedItems": [
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_BlueBuff",
+     "name": "Bùa Xanh"
+    },
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    },
+    {
+     "apiName": "DA_ThiefsGloves",
+     "name": "Găng Đạo Tặc"
+    }
+   ],
+   "tier": "2",
+   "top4": 69.3,
+   "winRate": 27.9
+  },
+  {
+   "apiName": "DA_18_Kennen",
+   "avgPlace": 3.5,
+   "name": "Kennen",
+   "pickRate": 13.3,
+   "rank": 18,
+   "recommendedItems": [
+    {
+     "apiName": "DA_ThiefsGloves",
+     "name": "Găng Đạo Tặc"
+    },
+    {
+     "apiName": "DA_HandOfJustice",
+     "name": "Bàn Tay Công Lý"
+    },
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    },
+    {
+     "apiName": "DA_RabadonsDeathcap",
+     "name": "Mũ Phù Thủy Rabadon"
+    }
+   ],
+   "tier": "2",
+   "top4": 67.6,
+   "winRate": 24.7
+  },
+  {
+   "apiName": "DA_18_Maokai",
+   "avgPlace": 3.7,
+   "name": "Maokai",
+   "pickRate": 13,
+   "rank": 19,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_ProtectorsVow",
+     "name": "Lời Thề Hộ Vệ"
+    }
+   ],
+   "tier": "2",
+   "top4": 64.5,
+   "winRate": 24.3
+  },
+  {
+   "apiName": "DA_18_Ezreal",
+   "avgPlace": 4,
+   "name": "Ezreal",
+   "pickRate": 12.8,
+   "rank": 20,
+   "recommendedItems": [
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_InfinityEdge",
+     "name": "Vô Cực Kiếm"
+    },
+    {
+     "apiName": "DA_LastWhisper",
+     "name": "Cung Xanh"
+    },
+    {
+     "apiName": "DA_Deathblade",
+     "name": "Kiếm Tử Thần"
+    }
+   ],
+   "tier": "2",
+   "top4": 58.7,
+   "winRate": 19.6
+  },
+  {
+   "apiName": "DA_18_Sivir",
+   "avgPlace": 3.9,
+   "name": "Sivir",
+   "pickRate": 12.7,
+   "rank": 21,
+   "recommendedItems": [
+    {
+     "apiName": "DA_InfinityEdge",
+     "name": "Vô Cực Kiếm"
+    },
+    {
+     "apiName": "DA_LastWhisper",
+     "name": "Cung Xanh"
+    },
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_Deathblade",
+     "name": "Kiếm Tử Thần"
+    }
+   ],
+   "tier": "2",
+   "top4": 61.5,
+   "winRate": 18.3
+  },
+  {
+   "apiName": "DA_18_Morgana",
+   "avgPlace": 4.2,
+   "name": "Morgana",
+   "pickRate": 11.6,
+   "rank": 22,
+   "recommendedItems": [
+    {
+     "apiName": "DA_Morellonomicon",
+     "name": "Quỷ Thư Morello"
+    },
+    {
+     "apiName": "DA_VoidStaff",
+     "name": "Trượng Hư Vô"
+    },
+    {
+     "apiName": "DA_RabadonsDeathcap",
+     "name": "Mũ Phù Thủy Rabadon"
+    },
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    }
+   ],
+   "tier": "2",
+   "top4": 56.1,
+   "winRate": 15.7
+  },
+  {
+   "apiName": "DA_18_Soraka",
+   "avgPlace": 3.9,
+   "name": "Soraka",
+   "pickRate": 11.6,
+   "rank": 23,
+   "recommendedItems": [
+    {
+     "apiName": "DA_RabadonsDeathcap",
+     "name": "Mũ Phù Thủy Rabadon"
+    },
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_NashorsTooth",
+     "name": "Nanh Nashor"
+    },
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    }
+   ],
+   "tier": "2",
+   "top4": 62.9,
+   "winRate": 17
+  },
+  {
+   "apiName": "DA_Lux18_Base",
+   "avgPlace": 3.3,
+   "name": "Lux",
+   "pickRate": 9.2,
+   "rank": 24,
+   "recommendedItems": [
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    },
+    {
+     "apiName": "DA_RabadonsDeathcap",
+     "name": "Mũ Phù Thủy Rabadon"
+    },
+    {
+     "apiName": "DA_BlueBuff",
+     "name": "Bùa Xanh"
+    }
+   ],
+   "tier": "2",
+   "top4": 72.5,
+   "winRate": 28.7
+  },
+  {
+   "apiName": "DA_18_ElderDragon",
+   "avgPlace": 3.4,
+   "name": "Rồng Ngàn Tuổi",
+   "pickRate": 7.8,
+   "rank": 25,
+   "recommendedItems": [
+    {
+     "apiName": "DA_InfinityEdge",
+     "name": "Vô Cực Kiếm"
+    },
+    {
+     "apiName": "DA_Bloodthirster",
+     "name": "Huyết Kiếm"
+    },
+    {
+     "apiName": "DA_SteraksGage",
+     "name": "Móng Vuốt Sterak"
+    },
+    {
+     "apiName": "DA_HandOfJustice",
+     "name": "Bàn Tay Công Lý"
+    }
+   ],
+   "tier": "2",
+   "top4": 69.7,
+   "winRate": 23.7
+  },
+  {
+   "apiName": "DA_18_Diana",
+   "avgPlace": 4.2,
+   "name": "Diana",
+   "pickRate": 21.2,
+   "rank": 26,
+   "recommendedItems": [
+    {
+     "apiName": "DA_ThiefsGloves",
+     "name": "Găng Đạo Tặc"
+    },
+    {
+     "apiName": "DA_HandOfJustice",
+     "name": "Bàn Tay Công Lý"
+    },
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    },
+    {
+     "apiName": "DA_Bloodthirster",
+     "name": "Huyết Kiếm"
+    }
+   ],
+   "tier": "3",
+   "top4": 56.1,
+   "winRate": 15
+  },
+  {
+   "apiName": "DA_18_Xayah",
+   "avgPlace": 4.4,
+   "name": "Xayah",
+   "pickRate": 18.9,
+   "rank": 27,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GuinsoosRageblade",
+     "name": "Cuồng Đao Guinsoo"
+    },
+    {
+     "apiName": "DA_Deathblade",
+     "name": "Kiếm Tử Thần"
+    },
+    {
+     "apiName": "DA_InfinityEdge",
+     "name": "Vô Cực Kiếm"
+    },
+    {
+     "apiName": "DA_KrakensFury",
+     "name": "Thịnh Nộ Thủy Quái"
+    }
+   ],
+   "tier": "3",
+   "top4": 51.8,
+   "winRate": 15.3
+  },
+  {
+   "apiName": "DA_18_Yorick",
+   "avgPlace": 4.2,
+   "name": "Yorick",
+   "pickRate": 18.2,
+   "rank": 28,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SunfireCape",
+     "name": "Áo Choàng Lửa"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    }
+   ],
+   "tier": "3",
+   "top4": 55.9,
+   "winRate": 14.9
+  },
+  {
+   "apiName": "DA_18_Leona",
+   "avgPlace": 4.3,
+   "name": "Leona",
+   "pickRate": 16.8,
+   "rank": 29,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SunfireCape",
+     "name": "Áo Choàng Lửa"
+    }
+   ],
+   "tier": "3",
+   "top4": 54.4,
+   "winRate": 15.4
+  },
+  {
+   "apiName": "DA_Amumu18",
+   "avgPlace": 4,
+   "name": "Amumu",
+   "pickRate": 15.7,
+   "rank": 30,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_SunfireCape",
+     "name": "Áo Choàng Lửa"
+    }
+   ],
+   "tier": "3",
+   "top4": 57.9,
+   "winRate": 19.1
+  },
+  {
+   "apiName": "DA_18_Alistar",
+   "avgPlace": 4.2,
+   "name": "Alistar",
+   "pickRate": 15.6,
+   "rank": 31,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_SunfireCape",
+     "name": "Áo Choàng Lửa"
+    }
+   ],
+   "tier": "3",
+   "top4": 54.6,
+   "winRate": 17.7
+  },
+  {
+   "apiName": "DA_CrimsonRaptor18",
+   "avgPlace": 4.1,
+   "name": "Chim Mẹ",
+   "pickRate": 14.5,
+   "rank": 32,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GuinsoosRageblade",
+     "name": "Cuồng Đao Guinsoo"
+    },
+    {
+     "apiName": "DA_LastWhisper",
+     "name": "Cung Xanh"
+    },
+    {
+     "apiName": "DA_InfinityEdge",
+     "name": "Vô Cực Kiếm"
+    },
+    {
+     "apiName": "DA_KrakensFury",
+     "name": "Thịnh Nộ Thủy Quái"
+    }
+   ],
+   "tier": "3",
+   "top4": 57.8,
+   "winRate": 13.2
+  },
+  {
+   "apiName": "DA_18_Zyra",
+   "avgPlace": 4,
+   "name": "Zyra",
+   "pickRate": 14.3,
+   "rank": 33,
+   "recommendedItems": [
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    },
+    {
+     "apiName": "DA_VoidStaff",
+     "name": "Trượng Hư Vô"
+    },
+    {
+     "apiName": "DA_Morellonomicon",
+     "name": "Quỷ Thư Morello"
+    }
+   ],
+   "tier": "3",
+   "top4": 60.4,
+   "winRate": 16.1
+  },
+  {
+   "apiName": "DA_18_Sentry",
+   "avgPlace": 4,
+   "name": "Sỏi",
+   "pickRate": 13.7,
+   "rank": 34,
+   "recommendedItems": [
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    },
+    {
+     "apiName": "DA_BlueBuff",
+     "name": "Bùa Xanh"
+    },
+    {
+     "apiName": "DA_RabadonsDeathcap",
+     "name": "Mũ Phù Thủy Rabadon"
+    },
+    {
+     "apiName": "DA_ArchangelsStaff",
+     "name": "Quyền Trượng Thiên Thần"
+    }
+   ],
+   "tier": "3",
+   "top4": 60.5,
+   "winRate": 15.5
+  },
+  {
+   "apiName": "DA_Scuttlecrab18",
+   "avgPlace": 4.1,
+   "name": "Cua Kỳ Cục",
+   "pickRate": 13.7,
+   "rank": 35,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_SunfireCape",
+     "name": "Áo Choàng Lửa"
+    }
+   ],
+   "tier": "3",
+   "top4": 58.1,
+   "winRate": 13.1
+  },
+  {
+   "apiName": "DA_18_Sejuani",
+   "avgPlace": 4.5,
+   "name": "Sejuani",
+   "pickRate": 13,
+   "rank": 36,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SunfireCape",
+     "name": "Áo Choàng Lửa"
+    }
+   ],
+   "tier": "3",
+   "top4": 50.7,
+   "winRate": 14.1
+  },
+  {
+   "apiName": "DA_18_Cassiopeia",
+   "avgPlace": 4.3,
+   "name": "Cassiopeia",
+   "pickRate": 11.4,
+   "rank": 37,
+   "recommendedItems": [
+    {
+     "apiName": "DA_HextechGunblade",
+     "name": "Kiếm Súng Hextech"
+    },
+    {
+     "apiName": "DA_ArchangelsStaff",
+     "name": "Quyền Trượng Thiên Thần"
+    },
+    {
+     "apiName": "DA_BlueBuff",
+     "name": "Bùa Xanh"
+    },
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    }
+   ],
+   "tier": "3",
+   "top4": 53.6,
+   "winRate": 13.9
+  },
+  {
+   "apiName": "DA_18_Kayle",
+   "avgPlace": 4.6,
+   "name": "Kayle",
+   "pickRate": 11.4,
+   "rank": 38,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GuinsoosRageblade",
+     "name": "Cuồng Đao Guinsoo"
+    },
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    },
+    {
+     "apiName": "DA_RabadonsDeathcap",
+     "name": "Mũ Phù Thủy Rabadon"
+    },
+    {
+     "apiName": "DA_GiantSlayer",
+     "name": "Diệt Khổng Lồ"
+    }
+   ],
+   "tier": "3",
+   "top4": 49.3,
+   "winRate": 14.2
+  },
+  {
+   "apiName": "DA_KogMaw18_AD",
+   "avgPlace": 4.1,
+   "name": "Kog'Maw",
+   "pickRate": 10.3,
+   "rank": 39,
+   "recommendedItems": [
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_InfinityEdge",
+     "name": "Vô Cực Kiếm"
+    },
+    {
+     "apiName": "DA_RedBuff",
+     "name": "Bùa Đỏ"
+    },
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    }
+   ],
+   "tier": "3",
+   "top4": 59.7,
+   "winRate": 14.8
+  },
+  {
+   "apiName": "DA_Draven18",
+   "avgPlace": 3.9,
+   "name": "Draven",
+   "pickRate": 7.5,
+   "rank": 40,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GuinsoosRageblade",
+     "name": "Cuồng Đao Guinsoo"
+    },
+    {
+     "apiName": "DA_KrakensFury",
+     "name": "Thịnh Nộ Thủy Quái"
+    },
+    {
+     "apiName": "DA_Deathblade",
+     "name": "Kiếm Tử Thần"
+    },
+    {
+     "apiName": "DA_InfinityEdge",
+     "name": "Vô Cực Kiếm"
+    }
+   ],
+   "tier": "3",
+   "top4": 60.2,
+   "winRate": 24.2
+  },
+  {
+   "apiName": "DA_Nidalee18_AP",
+   "avgPlace": 4,
+   "name": "Nidalee",
+   "pickRate": 6.9,
+   "rank": 41,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GuinsoosRageblade",
+     "name": "Cuồng Đao Guinsoo"
+    },
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    },
+    {
+     "apiName": "DA_StrikersFlail",
+     "name": "Chùy Đoản Côn"
+    },
+    {
+     "apiName": "DA_RabadonsDeathcap",
+     "name": "Mũ Phù Thủy Rabadon"
+    }
+   ],
+   "tier": "3",
+   "top4": 60.3,
+   "winRate": 13.6
+  },
+  {
+   "apiName": "DA_18_Rengar",
+   "avgPlace": 4.2,
+   "name": "Rengar",
+   "pickRate": 5.4,
+   "rank": 42,
+   "recommendedItems": [
+    {
+     "apiName": "DA_EdgeOfNight",
+     "name": "Áo Choàng Bóng Tối"
+    },
+    {
+     "apiName": "DA_TitansResolve",
+     "name": "Quyền Năng Khổng Lồ"
+    },
+    {
+     "apiName": "DA_GuinsoosRageblade",
+     "name": "Cuồng Đao Guinsoo"
+    },
+    {
+     "apiName": "DA_Bloodthirster",
+     "name": "Huyết Kiếm"
+    }
+   ],
+   "tier": "3",
+   "top4": 55.7,
+   "winRate": 18.2
+  },
+  {
+   "apiName": "DA_18_Rakan",
+   "avgPlace": 4.5,
+   "name": "Rakan",
+   "pickRate": 15.9,
+   "rank": 43,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_ThiefsGloves",
+     "name": "Găng Đạo Tặc"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    }
+   ],
+   "tier": "4",
+   "top4": 51.4,
+   "winRate": 14.2
+  },
+  {
+   "apiName": "DA_18_LeBlanc",
+   "avgPlace": 4.3,
+   "name": "LeBlanc",
+   "pickRate": 13.7,
+   "rank": 44,
+   "recommendedItems": [
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    },
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_BlueBuff",
+     "name": "Bùa Xanh"
+    },
+    {
+     "apiName": "DA_RabadonsDeathcap",
+     "name": "Mũ Phù Thủy Rabadon"
+    }
+   ],
+   "tier": "4",
+   "top4": 54.2,
+   "winRate": 16.9
+  },
+  {
+   "apiName": "DA_18_Shen",
+   "avgPlace": 4.2,
+   "name": "Shen",
+   "pickRate": 12.7,
+   "rank": 45,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_ThiefsGloves",
+     "name": "Găng Đạo Tặc"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    }
+   ],
+   "tier": "4",
+   "top4": 56.5,
+   "winRate": 14.3
+  },
+  {
+   "apiName": "DA_Karma18",
+   "avgPlace": 4.2,
+   "name": "Karma",
+   "pickRate": 11.6,
+   "rank": 46,
+   "recommendedItems": [
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    },
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_VoidStaff",
+     "name": "Trượng Hư Vô"
+    },
+    {
+     "apiName": "DA_RabadonsDeathcap",
+     "name": "Mũ Phù Thủy Rabadon"
+    }
+   ],
+   "tier": "4",
+   "top4": 55.1,
+   "winRate": 15.5
+  },
+  {
+   "apiName": "DA_Murkwolf18",
+   "avgPlace": 4.1,
+   "name": "Sói Hắc Ám",
+   "pickRate": 10.7,
+   "rank": 47,
+   "recommendedItems": [
+    {
+     "apiName": "DA_HandOfJustice",
+     "name": "Bàn Tay Công Lý"
+    },
+    {
+     "apiName": "DA_EdgeOfNight",
+     "name": "Áo Choàng Bóng Tối"
+    },
+    {
+     "apiName": "DA_Bloodthirster",
+     "name": "Huyết Kiếm"
+    },
+    {
+     "apiName": "DA_InfinityEdge",
+     "name": "Vô Cực Kiếm"
+    }
+   ],
+   "tier": "4",
+   "top4": 58.4,
+   "winRate": 13.4
+  },
+  {
+   "apiName": "DA_18_Tristana",
+   "avgPlace": 4.2,
+   "name": "Tristana",
+   "pickRate": 9.5,
+   "rank": 48,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GuinsoosRageblade",
+     "name": "Cuồng Đao Guinsoo"
+    },
+    {
+     "apiName": "DA_InfinityEdge",
+     "name": "Vô Cực Kiếm"
+    },
+    {
+     "apiName": "DA_KrakensFury",
+     "name": "Thịnh Nộ Thủy Quái"
+    },
+    {
+     "apiName": "DA_GiantSlayer",
+     "name": "Diệt Khổng Lồ"
+    }
+   ],
+   "tier": "4",
+   "top4": 55.8,
+   "winRate": 13.2
+  },
+  {
+   "apiName": "DA_Gromp18_AP",
+   "avgPlace": 4.1,
+   "name": "Cóc Thành Tinh Gromp",
+   "pickRate": 9.2,
+   "rank": 49,
+   "recommendedItems": [
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    },
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_BlueBuff",
+     "name": "Bùa Xanh"
+    },
+    {
+     "apiName": "DA_RabadonsDeathcap",
+     "name": "Mũ Phù Thủy Rabadon"
+    }
+   ],
+   "tier": "4",
+   "top4": 59.3,
+   "winRate": 13.6
+  },
+  {
+   "apiName": "DA_18_MasterYi_AD",
+   "avgPlace": 4.4,
+   "name": "Master Yi",
+   "pickRate": 8.6,
+   "rank": 50,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GuinsoosRageblade",
+     "name": "Cuồng Đao Guinsoo"
+    },
+    {
+     "apiName": "DA_EdgeOfNight",
+     "name": "Áo Choàng Bóng Tối"
+    },
+    {
+     "apiName": "DA_TitansResolve",
+     "name": "Quyền Năng Khổng Lồ"
+    },
+    {
+     "apiName": "DA_Bloodthirster",
+     "name": "Huyết Kiếm"
+    }
+   ],
+   "tier": "4",
+   "top4": 53.1,
+   "winRate": 12.2
+  },
+  {
+   "apiName": "DA_18_Kobuko",
+   "avgPlace": 4.3,
+   "name": "Kobuko",
+   "pickRate": 8.2,
+   "rank": 51,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SunfireCape",
+     "name": "Áo Choàng Lửa"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    }
+   ],
+   "tier": "4",
+   "top4": 54.1,
+   "winRate": 12.7
+  },
+  {
+   "apiName": "DA_18_Veigar",
+   "avgPlace": 4.5,
+   "name": "Veigar",
+   "pickRate": 7.7,
+   "rank": 52,
+   "recommendedItems": [
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    },
+    {
+     "apiName": "DA_BlueBuff",
+     "name": "Bùa Xanh"
+    },
+    {
+     "apiName": "DA_NashorsTooth",
+     "name": "Nanh Nashor"
+    },
+    {
+     "apiName": "DA_RabadonsDeathcap",
+     "name": "Mũ Phù Thủy Rabadon"
+    }
+   ],
+   "tier": "4",
+   "top4": 51.1,
+   "winRate": 10.5
+  },
+  {
+   "apiName": "DA_18_Malphite",
+   "avgPlace": 4.4,
+   "name": "Malphite",
+   "pickRate": 7.5,
+   "rank": 53,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_Crownguard",
+     "name": "Vương Miện Hoàng Gia"
+    }
+   ],
+   "tier": "4",
+   "top4": 52.7,
+   "winRate": 11.1
+  },
+  {
+   "apiName": "DA_Cinderling18",
+   "avgPlace": 4,
+   "name": "Mầm Non",
+   "pickRate": 7.4,
+   "rank": 54,
+   "recommendedItems": [
+    {
+     "apiName": "DA_InfinityEdge",
+     "name": "Vô Cực Kiếm"
+    },
+    {
+     "apiName": "DA_LastWhisper",
+     "name": "Cung Xanh"
+    },
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_BlueBuff",
+     "name": "Bùa Xanh"
+    }
+   ],
+   "tier": "4",
+   "top4": 60.8,
+   "winRate": 14.8
+  },
+  {
+   "apiName": "DA_18_Teemo",
+   "avgPlace": 4.1,
+   "name": "Teemo",
+   "pickRate": 5.7,
+   "rank": 55,
+   "recommendedItems": [
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_VoidStaff",
+     "name": "Trượng Hư Vô"
+    },
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    },
+    {
+     "apiName": "DA_Morellonomicon",
+     "name": "Quỷ Thư Morello"
+    }
+   ],
+   "tier": "4",
+   "top4": 58.2,
+   "winRate": 13
+  },
+  {
+   "apiName": "DA_18_KhaZix",
+   "avgPlace": 4.4,
+   "name": "Kha'Zix",
+   "pickRate": 4.4,
+   "rank": 56,
+   "recommendedItems": [
+    {
+     "apiName": "DA_HandOfJustice",
+     "name": "Bàn Tay Công Lý"
+    },
+    {
+     "apiName": "DA_EdgeOfNight",
+     "name": "Áo Choàng Bóng Tối"
+    },
+    {
+     "apiName": "DA_RabadonsDeathcap",
+     "name": "Mũ Phù Thủy Rabadon"
+    },
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    }
+   ],
+   "tier": "4",
+   "top4": 53.3,
+   "winRate": 14.7
+  },
+  {
+   "apiName": "DA_18_Azir",
+   "avgPlace": 4.6,
+   "name": "Azir",
+   "pickRate": 8.5,
+   "rank": 57,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GuinsoosRageblade",
+     "name": "Cuồng Đao Guinsoo"
+    },
+    {
+     "apiName": "DA_JeweledGauntlet",
+     "name": "Găng Bảo Thạch"
+    },
+    {
+     "apiName": "DA_VoidStaff",
+     "name": "Trượng Hư Vô"
+    },
+    {
+     "apiName": "DA_GiantSlayer",
+     "name": "Diệt Khổng Lồ"
+    }
+   ],
+   "tier": "5",
+   "top4": 49.8,
+   "winRate": 10.5
+  },
+  {
+   "apiName": "DA_18_RekSai",
+   "avgPlace": 4.6,
+   "name": "Rek'Sai",
+   "pickRate": 7.4,
+   "rank": 58,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_SunfireCape",
+     "name": "Áo Choàng Lửa"
+    }
+   ],
+   "tier": "5",
+   "top4": 49.5,
+   "winRate": 9.9
+  },
+  {
+   "apiName": "DA_18_Elise",
+   "avgPlace": 5,
+   "name": "Elise",
+   "pickRate": 7,
+   "rank": 59,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GargoyleStoneplate",
+     "name": "Thú Tượng Thạch Giáp"
+    },
+    {
+     "apiName": "DA_WarmogsArmor",
+     "name": "Giáp Máu Warmog"
+    },
+    {
+     "apiName": "DA_SpiritVisage",
+     "name": "Giáp Tâm Linh"
+    },
+    {
+     "apiName": "DA_SunfireCape",
+     "name": "Áo Choàng Lửa"
+    }
+   ],
+   "tier": "5",
+   "top4": 40.7,
+   "winRate": 10.4
+  },
+  {
+   "apiName": "DA_18_Yunara",
+   "avgPlace": 4.6,
+   "name": "Yunara",
+   "pickRate": 5.7,
+   "rank": 60,
+   "recommendedItems": [
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_Deathblade",
+     "name": "Kiếm Tử Thần"
+    },
+    {
+     "apiName": "DA_InfinityEdge",
+     "name": "Vô Cực Kiếm"
+    },
+    {
+     "apiName": "DA_GuinsoosRageblade",
+     "name": "Cuồng Đao Guinsoo"
+    }
+   ],
+   "tier": "5",
+   "top4": 47.7,
+   "winRate": 10.9
+  },
+  {
+   "apiName": "DA_18_Varus",
+   "avgPlace": 4.7,
+   "name": "Varus",
+   "pickRate": 5.6,
+   "rank": 61,
+   "recommendedItems": [
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_InfinityEdge",
+     "name": "Vô Cực Kiếm"
+    },
+    {
+     "apiName": "DA_GuinsoosRageblade",
+     "name": "Cuồng Đao Guinsoo"
+    },
+    {
+     "apiName": "DA_Deathblade",
+     "name": "Kiếm Tử Thần"
+    }
+   ],
+   "tier": "5",
+   "top4": 46.3,
+   "winRate": 10.7
+  },
+  {
+   "apiName": "DA_18_Caitlyn",
+   "avgPlace": 5,
+   "name": "Caitlyn",
+   "pickRate": 4.9,
+   "rank": 62,
+   "recommendedItems": [
+    {
+     "apiName": "DA_GuinsoosRageblade",
+     "name": "Cuồng Đao Guinsoo"
+    },
+    {
+     "apiName": "DA_KrakensFury",
+     "name": "Thịnh Nộ Thủy Quái"
+    },
+    {
+     "apiName": "DA_InfinityEdge",
+     "name": "Vô Cực Kiếm"
+    },
+    {
+     "apiName": "DA_Deathblade",
+     "name": "Kiếm Tử Thần"
+    }
+   ],
+   "tier": "5",
+   "top4": 41.4,
+   "winRate": 8
+  },
+  {
+   "apiName": "DA_18_Akali_AD",
+   "avgPlace": 4.9,
+   "name": "Akali",
+   "pickRate": 3.9,
+   "rank": 63,
+   "recommendedItems": [
+    {
+     "apiName": "DA_Bloodthirster",
+     "name": "Huyết Kiếm"
+    },
+    {
+     "apiName": "DA_HandOfJustice",
+     "name": "Bàn Tay Công Lý"
+    },
+    {
+     "apiName": "DA_TitansResolve",
+     "name": "Quyền Năng Khổng Lồ"
+    },
+    {
+     "apiName": "DA_ThiefsGloves",
+     "name": "Găng Đạo Tặc"
+    }
+   ],
+   "tier": "5",
+   "top4": 43,
+   "winRate": 7.7
+  },
+  {
+   "apiName": "DA_18_Camille",
+   "avgPlace": 5.6,
+   "name": "Camille",
+   "pickRate": 3.8,
+   "rank": 64,
+   "recommendedItems": [
+    {
+     "apiName": "DA_Bloodthirster",
+     "name": "Huyết Kiếm"
+    },
+    {
+     "apiName": "DA_TitansResolve",
+     "name": "Quyền Năng Khổng Lồ"
+    },
+    {
+     "apiName": "DA_SteraksGage",
+     "name": "Móng Vuốt Sterak"
+    },
+    {
+     "apiName": "DA_ThiefsGloves",
+     "name": "Găng Đạo Tặc"
+    }
+   ],
+   "tier": "5",
+   "top4": 30.2,
+   "winRate": 5.2
+  },
+  {
+   "apiName": "DA_18_Warwick",
+   "avgPlace": 5.1,
+   "name": "Warwick",
+   "pickRate": 3.7,
+   "rank": 65,
+   "recommendedItems": [
+    {
+     "apiName": "DA_TitansResolve",
+     "name": "Quyền Năng Khổng Lồ"
+    },
+    {
+     "apiName": "DA_SteraksGage",
+     "name": "Móng Vuốt Sterak"
+    },
+    {
+     "apiName": "DA_SpearOfShojin",
+     "name": "Ngọn Giáo Shojin"
+    },
+    {
+     "apiName": "DA_Bloodthirster",
+     "name": "Huyết Kiếm"
+    }
+   ],
+   "tier": "5",
+   "top4": 40.7,
+   "winRate": 5.3
+  }
+ ]
+}

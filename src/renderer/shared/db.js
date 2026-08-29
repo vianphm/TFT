@@ -4,7 +4,7 @@
  * Du lieu tho tu Community Dragon chi la hai danh sach phang (tuong, toc he).
  * File nay dung chi muc de tra cuu nhanh, va quan trong hon: SUY NGUOC vai con so
  * ma bang cung trong tables.js hay bi lac hau sau moi set - so tuong moi muc gia,
- * cac moc cua tung toc he, tuong nao thuoc toc he nao.
+ * cac moc cua tung toc he, tuong nao thuoc toc he nao, va chi muc loi nang cap (Augments).
  *
  * Chay duoc ca trong Node lan trinh duyet.
  */
@@ -25,10 +25,12 @@
     var byCost = { 1: [], 2: [], 3: [], 4: [], 5: [] };
     var byTrait = {};
     var byName = {};
+    var uniqueByCost = { 1: {}, 2: {}, 3: {}, 4: {}, 5: {} };
 
     champions.forEach(function (champ) {
       var cost = Math.min(5, Math.max(1, champ.cost || 1));
       byCost[cost].push(champ);
+      uniqueByCost[cost][String(champ.variantGroup || champ.name).toLowerCase()] = true;
       byName[champ.name.toLowerCase()] = champ;
       (champ.traits || []).forEach(function (trait) {
         if (!byTrait[trait]) byTrait[trait] = [];
@@ -53,17 +55,38 @@
       traitDefs[name] = { name: name, icon: null, breakpoints: [], champions: byTrait[name] };
     });
 
+    var augments = (dataset && dataset.augments) || [];
+    var augmentsByTier = { silver: [], gold: [], prismatic: [] };
+    var augmentsByTag = { econ: [], combat: [], items: [], emblem: [], reroll: [], xp: [] };
+    var augmentsByName = {};
+
+    augments.forEach(function (aug) {
+      var tier = aug.tier || 'gold';
+      if (augmentsByTier[tier]) augmentsByTier[tier].push(aug);
+      (aug.tags || []).forEach(function (tag) {
+        if (augmentsByTag[tag]) augmentsByTag[tag].push(aug);
+      });
+      if (aug.name) augmentsByName[aug.name.toLowerCase()] = aug;
+      if (aug.apiName) augmentsByName[aug.apiName.toLowerCase()] = aug;
+    });
+
     return {
       setName: (dataset && dataset.setName) || null,
       setNumber: (dataset && dataset.setNumber) || null,
       champions: champions,
+      traits: traits,
+      augments: augments,
+      augmentsByTier: augmentsByTier,
+      augmentsByTag: augmentsByTag,
+      augmentsByName: augmentsByName,
       byCost: byCost,
       byTrait: byTrait,
       byName: byName,
       traitDefs: traitDefs,
       countByCost: {
-        1: byCost[1].length, 2: byCost[2].length, 3: byCost[3].length,
-        4: byCost[4].length, 5: byCost[5].length
+        1: Object.keys(uniqueByCost[1]).length, 2: Object.keys(uniqueByCost[2]).length,
+        3: Object.keys(uniqueByCost[3]).length, 4: Object.keys(uniqueByCost[4]).length,
+        5: Object.keys(uniqueByCost[5]).length
       }
     };
   }
@@ -135,6 +158,37 @@
       .slice(0, count || 1);
   }
 
+  /** Tra cuu hoac loc Augments theo dieu kien. */
+  function searchAugments(dataset, query, options) {
+    var opts = options || {};
+    var idx = dataset.augmentsByName ? dataset : index(dataset);
+    var list = idx.augments || [];
+
+    if (opts.tier) {
+      list = list.filter(function (a) { return a.tier === opts.tier; });
+    }
+    if (opts.tag) {
+      list = list.filter(function (a) { return (a.tags || []).indexOf(opts.tag) >= 0; });
+    }
+    if (opts.trait) {
+      var tLower = opts.trait.toLowerCase();
+      list = list.filter(function (a) {
+        return (a.associatedTraits || []).some(function (t) { return t.toLowerCase() === tLower; });
+      });
+    }
+
+    if (query && query.trim()) {
+      var q = query.trim().toLowerCase();
+      list = list.filter(function (a) {
+        return (a.name && a.name.toLowerCase().indexOf(q) >= 0) ||
+               (a.desc && a.desc.toLowerCase().indexOf(q) >= 0) ||
+               (a.apiName && a.apiName.toLowerCase().indexOf(q) >= 0);
+      });
+    }
+
+    return list;
+  }
+
   /** Tom tat de hien len giao dien: set nay co gi. */
   function summary(dataset) {
     var idx = index(dataset);
@@ -145,11 +199,58 @@
       champions: idx.champions.length,
       countByCost: idx.countByCost,
       traits: traitNames.length,
+      augments: (idx.augments || []).length,
+      augmentsByTier: {
+        silver: idx.augmentsByTier.silver.length,
+        gold: idx.augmentsByTier.gold.length,
+        prismatic: idx.augmentsByTier.prismatic.length
+      },
       biggestTraits: traitNames
         .map(function (name) { return { name: name, champions: idx.traitDefs[name].champions.length }; })
         .sort(function (a, b) { return b.champions - a.champions; })
         .slice(0, 5)
     };
+  }
+
+  var TRAIT_NAMES_VI = {
+    'Fae': 'Tiên Linh', 'Inferno': 'Hỏa Ngục', 'Blossom': 'Hoa Linh', 'Lunar': 'Mặt Trăng',
+    'Elderwood': 'Thần Rừng', 'Sprykin': 'Tinh Nghịch', 'Blackthorn': 'Gai Đen', 'Primal': 'Nguyên Sinh',
+    'Hunter': 'Thợ Săn', 'Rapidfire': 'Liên Kích', 'Spellweaver': 'Thuật Sư', 'Invoker': 'Thuật Sĩ',
+    'Vanguard': 'Vệ Quân', 'Ravager': 'Tàn Phá', 'Brawler': 'Đấu Sĩ', 'Executioner': 'Đao Phủ',
+    'Adaptor': 'Thích Ứng', 'Defender': 'Hộ Vệ', 'Sorcerer': 'Pháp Sư', 'Monolith': 'Cự Thạch',
+    'Old Growth': 'Cổ Thụ', 'Harvester': 'Kẻ Thu Hoạch', 'Rebel': 'Nổi Loạn', 'Sentinel': 'Vệ Binh',
+    'Caretaker': 'Người Nuôi Dưỡng', 'Wild': 'Hoang Dã', 'Mystic': 'Bí Ẩn'
+  };
+
+  /** Tra cuu toc he theo tu khoa ten hoac mo ta. */
+  function searchTraits(dataset, query) {
+    var idx = index(dataset);
+    var traits = (dataset && dataset.traits) || [];
+    var q = (query || '').trim().toLowerCase();
+
+    var list = traits.map(function (t) {
+      var nameVi = TRAIT_NAMES_VI[t.name] || t.name;
+      var champs = idx.byTrait[t.name] || [];
+      return {
+        name: t.name,
+        nameVi: nameVi,
+        icon: t.icon || null,
+        desc: t.desc || t.description || '',
+        breakpoints: (t.breakpoints || []).filter(function (b) { return b > 0; }),
+        levels: (t.datatft && t.datatft.levels) || (t.effects || []),
+        champions: champs
+      };
+    });
+
+    if (q) {
+      list = list.filter(function (t) {
+        return t.name.toLowerCase().indexOf(q) >= 0 ||
+               t.nameVi.toLowerCase().indexOf(q) >= 0 ||
+               t.desc.toLowerCase().indexOf(q) >= 0;
+      });
+    }
+
+    return list;
   }
 
   var api = {
@@ -158,6 +259,9 @@
     poolDiff: poolDiff,
     traitsOf: traitsOf,
     cheapestForTrait: cheapestForTrait,
+    searchAugments: searchAugments,
+    searchTraits: searchTraits,
+    TRAIT_NAMES_VI: TRAIT_NAMES_VI,
     summary: summary
   };
 

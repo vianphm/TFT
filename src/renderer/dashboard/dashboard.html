@@ -16,6 +16,9 @@
       <button class="tab" data-tab="items">Trang bi</button>
       <button class="tab" data-tab="odds">Ti le roll</button>
       <button class="tab" data-tab="econ">Kinh te &amp; cap</button>
+      <button class="tab" data-tab="augments">Loi nang cap</button>
+      <button class="tab" data-tab="reroll">San tuong &amp; Reroll</button>
+      <button class="tab" data-tab="scout">Soi doi thu &amp; Khac che</button>
       <button class="tab" data-tab="champs">Tuong trong set</button>
       <button class="tab" data-tab="tools">Overlay &amp; cai dat</button>
     </nav>
@@ -156,6 +159,156 @@
           <div class="card">
             <h3>Lo trinh len cap tham khao</h3>
             <table id="roadmapTable"></table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================== LOI NANG CAP (AUGMENTS) -->
+    <section class="page hidden" data-page="augments">
+      <div class="page-head">
+        <h1>Lõi nâng cấp (Augments)</h1>
+        <div class="actions">
+          <input id="augSearch" placeholder="Tìm kiếm tên, mô tả, tộc hệ..." style="width:260px" />
+          <select id="augTierFilter">
+            <option value="">Tất cả bậc</option>
+            <option value="silver">Bạc (Tier 1)</option>
+            <option value="gold">Vàng (Tier 2)</option>
+            <option value="prismatic">Kim Cương (Tier 3)</option>
+          </select>
+          <select id="augTagFilter">
+            <option value="">Tất cả loại</option>
+            <option value="econ">Kinh tế / Vàng</option>
+            <option value="combat">Giao tranh / Chỉ số</option>
+            <option value="items">Trang bị / Linh kiện</option>
+            <option value="emblem">Ấn / Tộc hệ</option>
+            <option value="reroll">Reroll / Đổi lại</option>
+            <option value="xp">Kinh nghiệm / Cấp</option>
+          </select>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="card">
+          <h3>Đánh giá 3 lựa chọn lõi</h3>
+          <div class="row">
+            <div class="field"><label>Vòng chọn</label>
+              <select id="augStage">
+                <option value="2-1">Vòng 2-1 (Đầu trận)</option>
+                <option value="3-2">Vòng 3-2 (Giữa trận)</option>
+                <option value="4-2">Vòng 4-2 (Cuối trận)</option>
+              </select>
+            </div>
+            <div class="field"><label>Máu hiện tại</label><input type="number" id="augHp" value="100" min="1" max="100" /></div>
+            <div class="field"><label>Vàng hiện có</label><input type="number" id="augGold" value="50" min="0" /></div>
+          </div>
+          <div class="field">
+            <label>Chọn 3 lõi đang xuất hiện:</label>
+            <div class="row" style="margin-bottom:6px">
+              <input id="augPick1" list="augDatalist" placeholder="Lõi 1..." style="flex:1" />
+              <input id="augPick2" list="augDatalist" placeholder="Lõi 2..." style="flex:1" />
+              <input id="augPick3" list="augDatalist" placeholder="Lõi 3..." style="flex:1" />
+            </div>
+            <datalist id="augDatalist"></datalist>
+            <button id="augEvaluateBtn" class="primary" style="margin-top:6px;width:100%">Đánh giá &amp; Xếp hạng</button>
+          </div>
+          <div id="augRankResult" style="margin-top:12px"></div>
+        </div>
+        <div class="stack">
+          <div class="card">
+            <h3>Thư viện lõi mùa này (<span id="augCountLabel">0</span>)</h3>
+            <div id="augLibrary" class="aug-grid" style="max-height:600px;overflow-y:auto"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================== SAN TUONG & REROLL -->
+    <section class="page hidden" data-page="reroll">
+      <div class="page-head">
+        <h1>San tuong &amp; Ho tro Reroll Doi hinh da chot</h1>
+        <div class="actions">
+          <label style="display:flex;align-items:center;gap:6px">Chot doi hinh:
+            <select id="rerollCompSelect" style="min-width:220px"></select>
+          </label>
+          <button id="rerollRefreshBtn" class="primary">Cap nhat tien do</button>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <!-- Cot trai: Danh sach tuong can mua & tien do -->
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <h3 style="margin:0" id="rerollCompTitle">Danh sach tuong can mua</h3>
+            <span id="rerollStrategyBadge" class="tag" style="background:var(--gold-dim);color:var(--gold)">Reroll Plan</span>
+          </div>
+
+          <div id="rerollStrategyText" class="small muted" style="margin-bottom:14px;padding:8px;background:rgba(255,255,255,0.03);border-radius:4px"></div>
+
+          <div id="rerollUnitList" class="stack" style="gap:8px"></div>
+        </div>
+
+        <!-- Cot phai: Tinh toan chi phi, xac suat va kiem tra cua hang -->
+        <div class="stack">
+          <div class="card">
+            <h3>Chi phi &amp; Xac suat hoan thien</h3>
+            <div class="stats-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
+              <div class="stat-box" style="padding:10px;background:rgba(0,0,0,0.2);border-radius:4px">
+                <div class="small muted">Vang mua tat ca tuong</div>
+                <div id="rerollBuyGold" style="font-size:20px;font-weight:bold;color:var(--gold)">0 vàng</div>
+              </div>
+              <div class="stat-box" style="padding:10px;background:rgba(0,0,0,0.2);border-radius:4px">
+                <div class="small muted">Vang du kien (Roll + Mua)</div>
+                <div id="rerollTotalGold" style="font-size:20px;font-weight:bold;color:var(--green)">0 vàng</div>
+              </div>
+            </div>
+            <div class="small muted" id="rerollLevelTip"></div>
+          </div>
+
+          <div class="card">
+            <h3>Kiem tra Cua hang nhanh (5 o)</h3>
+            <div class="small muted" style="margin-bottom:8px">Nhap 5 tuong xuat hien trong shop de he thong canh bao tuong can mua / len sao:</div>
+            <div style="display:grid;grid-template-columns:repeat(5, 1fr);gap:6px;margin-bottom:10px">
+              <input id="shopSlot1" placeholder="O 1..." />
+              <input id="shopSlot2" placeholder="O 2..." />
+              <input id="shopSlot3" placeholder="O 3..." />
+              <input id="shopSlot4" placeholder="O 4..." />
+              <input id="shopSlot5" placeholder="O 5..." />
+            </div>
+            <button id="evalShopBtn" style="width:100%">Kiem tra cua hang</button>
+            <div id="shopEvalResult" style="margin-top:10px"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================== SOI DOI THU & KHAC CHE -->
+    <section class="page hidden" data-page="scout">
+      <div class="page-head">
+        <h1>Soi doi thu &amp; Chon bai Tranh trung meta</h1>
+        <div class="actions">
+          <button id="scoutAnalyzeBtn" class="primary">Phan tich Lobby</button>
+          <button id="scoutResetBtn">Xoa het</button>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <!-- Cot trai: Nhap nhanh 7 doi thu trong sanh -->
+        <div class="card">
+          <h3>7 Nha doi thu trong Lobby</h3>
+          <div class="small muted" style="margin-bottom:12px">Chon hoac go nhanh ten bai / carry cua tung nha doi thu:</div>
+          <div id="opponentsList" class="stack" style="gap:8px"></div>
+        </div>
+
+        <!-- Cot phai: Ket qua phan tich & Doi hinh khong bi tranh -->
+        <div class="stack">
+          <div class="card">
+            <h3>Doi hinh Meta dang TRONG BAI (Khong ai tranh)</h3>
+            <div id="freeCompsResult" class="stack" style="gap:8px;margin-top:8px"></div>
+          </div>
+
+          <div class="card">
+            <h3>Xu huong Lobby &amp; Chien thuat Khac che</h3>
+            <div id="counterAdviceResult" style="margin-top:8px"></div>
           </div>
         </div>
       </div>

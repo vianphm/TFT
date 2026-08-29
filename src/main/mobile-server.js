@@ -119,7 +119,9 @@ class MobileServer {
         setName: data.setName,
         setNumber: data.setNumber,
         champions: data.champions || [],
-        traits: data.traits || []
+        traits: data.traits || [],
+        augments: data.augments || [],
+        wisps: data.charms || data.wisps || []
       },
       state: this.store.get('state', {})
     }));
@@ -136,7 +138,11 @@ class MobileServer {
       champions: data.champions || [],
       traits: data.traits || [],
       items: data.items || [],
-      components: data.components || []
+      components: data.components || [],
+      emblems: data.emblems || [],
+      augments: data.augments || [],
+      charms: data.charms || [],
+      itemCatalog: data.itemCatalog || []
     }));
   }
 
@@ -168,20 +174,28 @@ class MobileServer {
     else if (/^\/icon(-\d+)?\.png$/.test(pathname)) file = path.join(ASSETS, path.basename(pathname));
     else file = path.join(ROOT, path.basename(pathname));
 
-    // Chan di ra ngoai cac thu muc duoc phep
-    const allowed = [ROOT, SHARED, ASSETS].some((dir) => file.startsWith(dir + path.sep));
-    if (!allowed) return send(res, 403, 'text/plain', 'khong duoc phep');
-
-    fs.readFile(file, (err, content) => {
-      if (err) return send(res, 404, 'text/plain', 'khong tim thay');
-      send(res, 200, TYPES[path.extname(file)] || 'application/octet-stream', content);
+    fs.stat(file, (err, stats) => {
+      if (err || !stats.isFile()) return send(res, 404, 'text/plain', 'Khong tim thay file');
+      const ext = path.extname(file).toLowerCase();
+      const type = TYPES[ext] || 'application/octet-stream';
+      res.writeHead(200, {
+        'Content-Type': type,
+        'Content-Length': stats.size,
+        // Shell app khong cache de sua code la dien thoai nhan ngay
+        'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=3600'
+      });
+      fs.createReadStream(file).pipe(res);
     });
   }
 }
 
-function send(res, code, type, body) {
-  res.writeHead(code, { 'Content-Type': type, 'Cache-Control': 'no-store' });
-  res.end(body);
+function send(res, status, type, body) {
+  const buf = Buffer.isBuffer(body) ? body : Buffer.from(body);
+  res.writeHead(status, {
+    'Content-Type': type,
+    'Content-Length': buf.length
+  });
+  res.end(buf);
 }
 
 module.exports = { MobileServer };

@@ -44,6 +44,16 @@ class DataService {
   async sync() {
     const raw = await fetchJson(CDRAGON_URL);
     const parsed = parseCdragon(raw);
+    const bundled = this._bundled();
+    // VNTFT cung cap ban dich + nhom trang bi; CDragon cung cap ID/icon du lieu song.
+    // Giu catalog da dong goi khi dong bo de khong lam mat phan tieng Viet.
+    parsed.itemCatalog = (bundled && bundled.itemCatalog) || [];
+    parsed.charms = (bundled && bundled.charms) || [];
+    const roles = Object.fromEntries(((bundled && bundled.champions) || [])
+      .map((champion) => [champion.variantGroup || champion.name, champion.role]));
+    parsed.champions = (parsed.champions || []).map((champion) => Object.assign({}, champion, {
+      role: roles[champion.variantGroup || champion.name] || roles[champion.name] || champion.role || null
+    }));
     fs.mkdirSync(path.dirname(this.cacheFile), { recursive: true });
     fs.writeFileSync(this.cacheFile, JSON.stringify(parsed), 'utf8');
     this.cache = parsed;
@@ -54,6 +64,9 @@ class DataService {
       champions: parsed.champions.length,
       items: parsed.items.length,
       traits: parsed.traits.length,
+      augments: (parsed.augments || []).length,
+      charms: (parsed.charms || []).length,
+      catalogItems: parsed.itemCatalog.length,
       syncedAt: parsed.syncedAt
     };
   }
