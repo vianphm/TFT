@@ -1,0 +1,889 @@
+{
+ "baseItems": [
+  {
+   "name": "Thịnh Nộ Thủy Quái",
+   "category": null,
+   "stats": [
+    "+10% AD",
+    "+10% Tốc độ đánh",
+    "+20 Kháng Phép"
+   ],
+   "desc": "Đòn đánh cho 3.5% Sức Mạnh Công Kích cộng dồn, tối đa 15 đòn đánh. Sau 15 đòn đánh, nhận 15% Tốc Độ Đánh."
+  },
+  {
+   "name": "Giáp Tâm Linh",
+   "category": null,
+   "stats": [
+    "+300 Máu",
+    "+10% Chống Chịu",
+    "+2 Mana mỗi giây"
+   ],
+   "desc": "Hồi lại 2.5% Máu đã mất mỗi giây."
+  },
+  {
+   "name": "Lá Chắn Chiến Thuật",
+   "category": null,
+   "stats": [
+    "+1 kích cỡ đội hình"
+   ],
+   "desc": "10% cơ hội rớt ra 1 vàng khi chủ sở hữu tử trận. \"Chứa đầy tri thức của một Hiền Triết...\""
+  },
+  {
+   "name": "Áo Choàng Chiến Thuật",
+   "category": null,
+   "stats": [
+    "+1 kích cỡ đội hình"
+   ],
+   "desc": "10% cơ hội rớt ra 1 vàng sau khi giao tranh 10 giây. \"...và một chút may mắn.\""
+  },
+  {
+   "name": "Bùa Đỏ",
+   "category": null,
+   "stats": [
+    "+45% Tốc Độ Đánh",
+    "+6% Khuếch Đại Sát Thương"
+   ],
+   "desc": "Đòn Đánh và Kỹ Năng gây 1% Thiêu Đốt và 33% Vết Thương Sâu lên kẻ địch trong 5 giây. Thiêu Đốt: Gây sát thương chuẩn mỗi giây theo Máu tối đa của mục tiêu Vết Thương Sâu: Giảm hồi máu nhận được"
+  },
+  {
+   "name": "Trái Tim Kiên Định",
+   "category": null,
+   "stats": [
+    "+250 Máu",
+    "+25 Giáp",
+    "+20% Tỉ Lệ Chí Mạng"
+   ],
+   "desc": "Nhận 10% Chống Chịu. Khi còn hơn 50% Máu, thay vào đó nhận 18% Chống Chịu."
+  },
+  {
+   "name": "Móng Vuốt Sterak",
+   "category": null,
+   "stats": [
+    "+300 Máu",
+    "+40% AD"
+   ],
+   "desc": "Khi còn 60% Máu, nhận một Lá Chắn bằng 50% Máu tối đa của chủ sở hữu, giảm dần trong vòng 4 giây."
+  },
+  {
+   "name": "Vương Miện Hoàng Gia",
+   "category": null,
+   "stats": [
+    "+100 Máu",
+    "+20 AP",
+    "+20 Giáp"
+   ],
+   "desc": "Bắt Đầu Giao Tranh: Nhận Lá Chắn bằng 25% Máu tối đa trong 8 giây. Khi Lá Chắn hết hiệu lực, nhận thêm 25% Sức Mạnh Phép Thuật."
+  },
+  {
+   "name": "Giáp Vai Nguyệt Thần",
+   "category": null,
+   "stats": [
+    "+250 Máu",
+    "+20 Kháng Phép"
+   ],
+   "desc": "30% Phân Tách kẻ địch trong vòng 2 ô. Tăng 25 Giáp và Kháng Phép trong 15 giây đầu giao tranh. Phân Tách: Giảm Giáp"
+  },
+  {
+   "name": "Nanh Nashor",
+   "category": null,
+   "stats": [
+    "+150 Máu",
+    "+18 AP",
+    "+10% Tốc Độ Đánh",
+    "+20% Tỉ lệ chí mạng"
+   ],
+   "desc": "Các đòn đánh giúp hồi lại 2 Năng Lượng, tăng lên 4 nếu là đòn chí mạng."
+  },
+  {
+   "name": "Mũ Thích Nghi",
+   "category": null,
+   "stats": [
+    "+20 Kháng Phép",
+    "+3 Mana mỗi giây"
+   ],
+   "desc": "Nhận thêm 15% Năng Lượng từ mọi nguồn. Chủ sở hữu nhận thêm hiệu ứng tùy theo Vai Trò của họ: Đỡ Đòn và Đấu Sĩ: Nhận 45 Giáp và Kháng Phép. Các Vai Trò Khác: Nhận thêm 10% Sức Mạnh Công Kích và Sức Mạnh Phép Thuật."
+  },
+  {
+   "name": "Vô Cực Kiếm",
+   "category": null,
+   "stats": [
+    "+35% AD",
+    "+35% Tỉ Lệ Chí Mạng"
+   ],
+   "desc": "Sát thương từ kỹ năng có thể gây chí mạng. Nếu kỹ năng của tướng sở hữu đã có thể chí mạng, nhận 10% Sát Thương Chí Mạng."
+  },
+  {
+   "name": "Vương Miện Chiến Thuật",
+   "category": null,
+   "stats": [
+    "+1 kích cỡ đội hình"
+   ],
+   "desc": "10% cơ hội rớt ra 1 vàng khi chiến thắng giao tranh. \"...trái tim của một anh hùng...\""
+  },
+  {
+   "name": "Áo Choàng Thủy Ngân",
+   "category": null,
+   "stats": [
+    "+15% Tốc Độ Đánh",
+    "+20% Tỉ Lệ Chí Mạng",
+    "+20 Kháng Phép"
+   ],
+   "desc": "Bắt Đầu Giao Tranh: Miễn nhiễm khống chế trong 18 giây. Nhận 3% Tốc Độ Đánh cộng dồn mỗi giây."
+  },
+  {
+   "name": "Áo Choàng Lửa",
+   "category": null,
+   "stats": [
+    "+150 Máu",
+    "+20 Giáp"
+   ],
+   "desc": "Nhận thêm 8% Máu tối đa. Mỗi 2 giây, gây 1% Thiêu Đốt và 33% Vết Thương Sâu lên 1 kẻ địch trong phạm vi 2 ô trong 10 giây. Thiêu Đốt: Gây sát thương chuẩn mỗi giây theo Máu tối đa của mục tiêu Vết Thương Sâu: Giảm hồi máu nhận được"
+  },
+  {
+   "name": "Áo Choàng Gai",
+   "category": null,
+   "stats": [
+    "+65 Giáp"
+   ],
+   "desc": "Nhận 9% Máu tối đa. Giảm 5% sát thương từ đòn đánh. Khi bị trúng đòn đánh bất kỳ, gây 100 sát thương phép lên tất cả kẻ địch liền kề. Hồi chiêu: 2 giây"
+  },
+  {
+   "name": "Áo Choàng Bóng Tối",
+   "category": null,
+   "stats": [
+    "+10% AD",
+    "+10 AP",
+    "+20 Giáp",
+    "+15% Tốc độ đánh"
+   ],
+   "desc": "Khi còn 60% Máu, trở nên không thể bị nhắm tới trong thoáng chốc, loại bỏ mọi hiệu ứng bất lợi và hồi lại 20% Máu đã mất."
+  },
+  {
+   "name": "Vuốt Rồng",
+   "category": null,
+   "stats": [
+    "+75 Kháng Phép"
+   ],
+   "desc": "Nhận 9% máu tối đa. Sau mỗi 2 giây, hồi lại 2.5% Máu tối đa."
+  },
+  {
+   "name": "Thú Tượng Thạch Giáp",
+   "category": null,
+   "stats": [
+    "+30 Giáp",
+    "+30 Kháng Phép",
+    "+100 Máu"
+   ],
+   "desc": "Tăng 10 Giáp và 10 Kháng Phép với mỗi kẻ địch đang nhắm vào chủ sở hữu."
+  },
+  {
+   "name": "Quỷ thư Morello",
+   "category": null,
+   "stats": [
+    "+150 Máu",
+    "+20 AP",
+    "+1 Mana mỗi giây"
+   ],
+   "desc": "Đòn Đánh và Kỹ Năng gây 1% Thiêu Đốt và 33% Vết Thương Sâu lên kẻ địch trong 10 giây. Thiêu Đốt: Gây sát thương chuẩn mỗi giây theo Máu tối đa của mục tiêu Vết Thương Sâu: Giảm hồi máu nhận được"
+  },
+  {
+   "name": "Quyền Trượng Thiên Thần",
+   "category": null,
+   "stats": [
+    "+30 AP",
+    "+1 Mana mỗi giây"
+   ],
+   "desc": "Bắt đầu giao tranh: Nhận 20% Sức Mạnh Phép Thuật mỗi 5 giây trong giao tranh."
+  },
+  {
+   "name": "Quyền Năng Khổng Lồ",
+   "category": null,
+   "stats": [
+    "+20 Giáp",
+    "+10% Tốc Độ Đánh"
+   ],
+   "desc": "Nhận 2% Sức Mạnh Công Kích và 2% Sức Mạnh Phép Thuật khi tấn công hoặc nhận sát thương, cộng dồn tối đa 25 lần. Ở cộng dồn tối đa, nhận 10% Khuếch Đại Sát Thương và đồng thời được miễn nhiễm khống chế."
+  },
+  {
+   "name": "Nỏ Sét",
+   "category": null,
+   "stats": [
+    "+250 Máu",
+    "+15 AP",
+    "+35 Kháng Phép"
+   ],
+   "desc": "30% Cào Xé kẻ địch trong vòng 2 ô. Khi kẻ địch sử dụng Kỹ Năng, gây sát thương phép tương đương 150% Năng Lượng đã tiêu hao. Cào Xé: Giảm Kháng Phép"
+  },
+  {
+   "name": "Ngọn Giáo Shojin",
+   "category": null,
+   "stats": [
+    "+15% AD",
+    "+15 AP",
+    "+1 Mana mỗi giây"
+   ],
+   "desc": "Nhận 5 Năng Lượng sau mỗi đòn đánh thường."
+  },
+  {
+   "name": "Mũ Phù Thủy Rabadon",
+   "category": null,
+   "stats": [
+    "+50 AP",
+    "+15% Khuếch Đại Sát Thương"
+   ],
+   "desc": "Chiếc mũ này có thể giúp bạn xoay chuyển cả thế giới."
+  },
+  {
+   "name": "Lời Thề Hộ Vệ",
+   "category": null,
+   "stats": [
+    "+25 Giáp",
+    "+25 Kháng Phép",
+    "+1 Mana mỗi giây"
+   ],
+   "desc": "Bắt Đầu Giao Tranh: Nhận 20 Năng Lượng. Khi còn 40% Máu, nhận 15 Năng Lượng và Lá Chắn bằng 20% Máu tối đa."
+  },
+  {
+   "name": "Kiếm Tử Thần",
+   "category": null,
+   "stats": [
+    "+55% AD",
+    "+10% Khuếch Đại Sát Thương"
+   ],
+   "desc": "Đem tới sự yên bình vĩnh hằng cho người mang - và cả những kẻ phải đối đầu với nó."
+  },
+  {
+   "name": "Kiếm Súng Hextech",
+   "category": null,
+   "stats": [
+    "+20 AP",
+    "+20% AD",
+    "+15% Hút Máu Toàn Phần",
+    "+1 Mana mỗi giây"
+   ],
+   "desc": "Hồi máu cho đồng minh thấp Máu nhất bằng 20% lượng sát thương gây ra."
+  },
+  {
+   "name": "Huyết Kiếm",
+   "category": null,
+   "stats": [
+    "+15% AD",
+    "+15 AP",
+    "+20 Kháng Phép",
+    "+20% Hút Máu Toàn Phần"
+   ],
+   "desc": "Một lần mỗi giao tranh khi còn 40% Máu, nhận Lá Chắn bằng 25% Máu tối đa, duy trì trong 5 giây."
+  },
+  {
+   "name": "Găng Đạo Tặc",
+   "category": null,
+   "stats": [
+    "+150 Máu",
+    "+20% Tỉ Lệ Chí Mạng"
+   ],
+   "desc": "Mỗi vòng đấu: Tạo ra hai trang bị ngẫu nhiên."
+  },
+  {
+   "name": "Găng Bảo Thạch",
+   "category": null,
+   "stats": [
+    "+35 AP",
+    "+35% Tỉ Lệ Chí Mạng"
+   ],
+   "desc": "Kỹ năng có thể gây chí mạng. Nếu kỹ năng của tướng sở hữu đã có thể chí mạng, nhận 10% Sát Thương Chí Mạng."
+  },
+  {
+   "name": "Giáp Máu Warmog",
+   "category": null,
+   "stats": [
+    "+500 Máu",
+    "+200 Máu",
+    "+15 Mana",
+    "+10% Chống Chịu"
+   ],
+   "desc": "Tướng sở hữu nhận thêm 18% Máu tối đa. Dây Chuyền Chuộc Tội Hồi 2.5% máu đã mất mỗi giây Dây Chuyền Chuộc Tội -> Giáp Tâm Linh"
+  },
+  {
+   "name": "Diệt Khổng Lồ",
+   "category": null,
+   "stats": [
+    "+15% AD",
+    "+15 AP",
+    "+15% Tốc Độ Đánh",
+    "+15% Khuếch Đại Sát Thương"
+   ],
+   "desc": "Nhận thêm 15% Khuếch Đại Sát Thương trước Tướng Đỡ Đòn."
+  },
+  {
+   "name": "Trượng Hư Vô",
+   "category": null,
+   "stats": [
+    "+35 AP",
+    "+15% Tốc Độ Đánh",
+    "+1 Mana mỗi giây"
+   ],
+   "desc": "Sát thương từ Đòn Đánh và Kỹ Năng sẽ khiến mục tiêu phải chịu 30% Cào Xé trong 5 giây. Hiệu ứng này không cộng dồn. Cào Xé: Giảm Kháng Phép"
+  },
+  {
+   "name": "Cuồng Đao Guinsoo",
+   "category": null,
+   "stats": [
+    "+10 AP",
+    "+10% Tốc Độ Đánh"
+   ],
+   "desc": "Nhận 7% Tốc Độ Đánh cộng dồn mỗi giây."
+  },
+  {
+   "name": "Cung Xanh",
+   "category": null,
+   "stats": [
+    "+15% AD",
+    "+20% Tốc Độ Đánh",
+    "+20% Tỉ Lệ Chí Mạng"
+   ],
+   "desc": "Sát thương từ đòn đánh và Kỹ Năng sẽ khiến mục tiêu phải chịu 30% Phân Tách trong 3 giây. Hiệu ứng này không cộng dồn. Phân Tách: Giảm Giáp"
+  },
+  {
+   "name": "Chùy Đoản Côn",
+   "category": null,
+   "stats": [
+    "+150 Máu",
+    "+10% Tốc Độ Đánh",
+    "+20% Tỉ Lệ Chí Mạng",
+    "+5% Khuếch Đại Sát Thương"
+   ],
+   "desc": "Đòn Chí Mạng sẽ cho 5% Khuếch Đại Sát Thương trong 5 giây, cộng dồn tối đa 4 lần. Chùy Xuyên Phá -> Chùy Đoản Côn"
+  },
+  {
+   "name": "Bùa Xanh",
+   "category": null,
+   "stats": [
+    "+15 AP",
+    "+15% AD"
+   ],
+   "desc": "Hồi 5 Năng Lượng mỗi giây. Nhận thêm 10% Sức Mạnh Công Kích và Sức Mạnh Phép Thuật từ mọi nguồn."
+  },
+  {
+   "name": "Bàn Tay Công Lý",
+   "category": null,
+   "stats": [
+    "+20% Tỉ Lệ Chí Mạng",
+    "+1 Mana mỗi giây"
+   ],
+   "desc": "Cho 2 hiệu ứng. 15% Sức Mạnh Công Kích và 15% Sức Mạnh Phép Thuật. 12% Hút Máu Toàn Phần. Khi còn trên 50% Máu, tăng gấp đôi Sức Mạnh Công Kích và Sức Mạnh Phép Thuật. Khi còn dưới 50% Máu, nhận gấp đôi lượng Hút Máu Toàn Phần."
+  }
+ ],
+ "emblems": [
+  {
+   "name": "Ấn Tiên Hắc Ám",
+   "trait": "Tiên Hắc Ám",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "Chủ sở hữu nhận thêm tộc/hệ Tiên Hắc Ám."
+  },
+  {
+   "name": "Ấn Tàn Phá",
+   "trait": "Tàn Phá",
+   "stats": [
+    "+20 Giáp",
+    "+20 Kháng Phép"
+   ],
+   "desc": "Chủ sở hữu nhận thêm tộc/hệ Tàn Phá. Nhận 3% Khuếch Đại Sát Thương với mỗi 300 Máu hồi lại."
+  },
+  {
+   "name": "Ấn Nguyên Sinh",
+   "trait": "Nguyên Sinh",
+   "stats": [
+    "+20% Tỉ Lệ Chí Mạng"
+   ],
+   "desc": "Chủ sở hữu nhận thêm tộc/hệ Nguyên Sinh."
+  },
+  {
+   "name": "Ấn Hỏa Ngục",
+   "trait": "Hỏa Ngục",
+   "stats": [
+    "+40% Tốc Độ Đánh"
+   ],
+   "desc": "Chủ sở hữu nhận thêm tộc/hệ Hỏa Ngục."
+  },
+  {
+   "name": "Ấn Tinh Nghịch",
+   "trait": "Tinh Nghịch",
+   "stats": [
+    "+20 Giáp",
+    "+20 Kháng Phép"
+   ],
+   "desc": "Người sở hữu nhận được tộc/hệ Tinh Nghịch. Nếu chủ sở hữu đang cưỡi LXKL, nhận thêm 30% Tốc Độ Đánh, 20 Giáp & Kháng Phép"
+  },
+  {
+   "name": "Ấn Mặt Trăng",
+   "trait": "Mặt Trăng",
+   "stats": [],
+   "desc": "Hồi 3 Năng Lượng mỗi giây. Chủ sở hữu nhận thêm tộc/hệ Mặt Trăng."
+  },
+  {
+   "name": "Ấn Hoa Linh",
+   "trait": "Hoa Linh",
+   "stats": [
+    "+10% AD",
+    "+10% AP"
+   ],
+   "desc": "Chủ sở hữu nhận thêm tộc/hệ Hoa Linh."
+  },
+  {
+   "name": "Ấn Thực Vật",
+   "trait": "Thực Vật",
+   "stats": [
+    "+250 Máu"
+   ],
+   "desc": "Hồi 2 Năng Lượng mỗi giây. Chủ sở hữu nhận thêm tộc/hệ Thực Vật. Họ nhận gấp đôi các hiệu ứng từ Thực Vật."
+  },
+  {
+   "name": "Ấn Đấu Sĩ",
+   "trait": "Đấu Sĩ",
+   "stats": [
+    "+250 Máu"
+   ],
+   "desc": "Chủ sở hữu nhận thêm hệ Đấu Sĩ. Các đòn đánh gây sát thương phép bằng 2.5% máu tối đa của chủ sở hữu."
+  },
+  {
+   "name": "Ấn Thần Rừng",
+   "trait": "Thần Rừng",
+   "stats": [
+    "+35 Giáp",
+    "+35 Kháng Phép"
+   ],
+   "desc": "Chủ sở hữu nhận thêm tộc/hệ Thần Rừng."
+  },
+  {
+   "name": "Ấn Vệ Quân",
+   "trait": "Vệ Quân",
+   "stats": [
+    "+30 Giáp",
+    "+30 Kháng Phép"
+   ],
+   "desc": "Chủ sở hữu nhận thêm tộc/hệ Vệ Quân. Bắt Đầu Giao Tranh: tăng 6% Tốc Độ Đánh với mỗi đồng minh bắt đầu giao tranh ở hàng đầu."
+  },
+  {
+   "name": "Ấn Thuật Sĩ",
+   "trait": "Thuật Sĩ",
+   "stats": [],
+   "desc": "Hồi 3 Năng Lượng mỗi giây. Chủ sở hữu nhận thêm tộc/hệ Thuật Sĩ. Khi thi triển, nhận Sức Mạnh Phép Thuật tương đương 10% Năng Lượng tiêu hao."
+  },
+  {
+   "name": "Ấn Thuật Sư",
+   "trait": "Thuật Sư",
+   "stats": [
+    "+25 AP"
+   ],
+   "desc": "Chủ sở hữu nhận thêm tộc/hệ Thuật Sư. Nhận 2 Năng Lượng mỗi khi đồng minh sử dụng Kỹ Năng."
+  },
+  {
+   "name": "Ấn Tiên Phong",
+   "trait": "Tiên Phong",
+   "stats": [
+    "+30 Giáp",
+    "+30 Kháng Phép"
+   ],
+   "desc": "Chủ sở hữu nhận thêm hệ Tiên Phong. Nếu chủ sở hữu sống sót 22 giây trong giao tranh người chơi, nhận 1 máu Linh Thú."
+  },
+  {
+   "name": "Ấn Đao Phủ",
+   "trait": "Đao Phủ",
+   "stats": [
+    "+20% Tỉ lệ Chí Mạng"
+   ],
+   "desc": "Chủ sở hữu nhận thêm tộc/hệ Đao Phủ. Sát thương sẽ hành quyết kẻ địch còn dưới 8% Máu tối đa của chúng."
+  },
+  {
+   "name": "Ấn Liên Kích",
+   "trait": "Liên Kích",
+   "stats": [
+    "+20% Tốc Độ Đánh"
+   ],
+   "desc": "Chủ sở hữu nhận thêm tộc/hệ Liên Kích. Đòn đánh gây sát thương chuẩn bằng 1% Máu tối đa của mục tiêu."
+  },
+  {
+   "name": "Ấn Gai Đen",
+   "trait": "Gai Đen",
+   "stats": [
+    "+250 Máu"
+   ],
+   "desc": "Chủ sở hữu nhận thêm tộc/hệ Gai Đen."
+  },
+  {
+   "name": "Ấn Tiên Linh",
+   "trait": "Tiên Linh",
+   "stats": [
+    "+ 15% AD",
+    "+ 15% AP"
+   ],
+   "desc": "Chủ sở hữu nhận thêm tộc/hệ Tiên Linh."
+  },
+  {
+   "name": "Ấn Thợ Săn",
+   "trait": "Thợ Săn",
+   "stats": [
+    "+30% AD"
+   ],
+   "desc": "Chủ sở hữu nhận thêm tộc/hệ Thợ Săn. Tham gia hạ gục sẽ tăng 18% Sức Mạnh Công Kích."
+  },
+  {
+   "name": "Ấn Dũng Sĩ",
+   "trait": "Dũng Sĩ",
+   "stats": [
+    "+150 Máu"
+   ],
+   "desc": "Chủ sở hữu nhận thêm tộc/hệ Dũng Sĩ. Nhận 15 năng lượng mỗi khi 1 tướng Dũng Sĩ tử trận."
+  }
+ ],
+ "lightItems": [
+  {
+   "name": "Giáp Tâm Linh Ánh Sáng",
+   "upgradesFrom": "Giáp Thánh Linh",
+   "stats": [
+    "+700 Máu",
+    "+20% Chống Chịu",
+    "+4 Năng Lượng mỗi giây"
+   ],
+   "desc": "Hồi lại 5% Máu đã mất mỗi giây."
+  },
+  {
+   "name": "Bùa Xanh Ánh Sáng",
+   "upgradesFrom": "Bùa Xanh Mát Lành",
+   "stats": [
+    "+30 AP",
+    "+30% AD",
+    "+10 Năng Lượng mỗi giây"
+   ],
+   "desc": "Nhận thêm 20% Sức Mạnh Công Kích và Sức Mạnh Phép Thuật từ mọi nguồn."
+  },
+  {
+   "name": "Thịnh Nộ Thủy Quái Ánh Sáng",
+   "upgradesFrom": "Cung Cuồng Phong",
+   "stats": [
+    "+20%AD",
+    "+20% Tốc độ đánh",
+    "+40 Kháng phép"
+   ],
+   "desc": "Đòn đánh cho 7% Sức Mạnh Công Kích cộng dồn, tối đa 15 đòn đánh. Sau 15 đòn đánh, nhận 30% Tốc Độ Đánh."
+  },
+  {
+   "name": "Chùy Đoản Côn Ánh Sáng",
+   "upgradesFrom": "Liên Xích Thủ",
+   "stats": [
+    "+300 Máu",
+    "+20% Tốc Độ Đánh",
+    "+40% Tỉ Lệ Chí Mạng",
+    "+10% Khuếch Đại Sát Thương"
+   ],
+   "desc": "Đòn Chí Mạng sẽ cho 10% Khuếch Đại Sát Thương trong 5 giây, cộng dồn tối đa 4 lần."
+  },
+  {
+   "name": "Cung Xanh Ánh Sáng",
+   "upgradesFrom": "Cung Xanh Vĩnh Hằng",
+   "stats": [
+    "+45% AD",
+    "+40% Tốc Độ Đánh",
+    "+40% Tỉ Lệ Chí Mạng"
+   ],
+   "desc": "Sát thương từ Đòn Đánh và Kỹ Năng sẽ khiến mục tiêu phải chịu 30% Phân Tách cho đến hết giao tranh. Hiệu ứng này không cộng dồn. Phân Tách: Giảm Giáp"
+  },
+  {
+   "name": "Diệt Khổng Lồ Ánh Sáng",
+   "upgradesFrom": "Diệt Ác Quỷ",
+   "stats": [
+    "+30 AP",
+    "+30%AD",
+    "+30% Tốc độ đánh",
+    "+30% Khuếch đại sát thương"
+   ],
+   "desc": "Nhận thêm 30% Khuếch Đại Sát Thương trước Tướng Đỡ Đòn."
+  },
+  {
+   "name": "Áo Choàng Gai Ánh Sáng",
+   "upgradesFrom": "Giáp Gai Hồng Hoa",
+   "stats": [
+    "+130 Giáp"
+   ],
+   "desc": "Nhận 18% máu tối đa. Giảm 10% sát thương từ đòn đánh. Khi bị trúng đòn đánh bất kỳ, gây 200 sát thương phép lên tất cả kẻ địch liền kề. Hồi chiêu: 2 giây"
+  },
+  {
+   "name": "Giáp Máu Warmog Ánh Sáng",
+   "upgradesFrom": "Giáp Vinh Quang Warmog",
+   "stats": [
+    "+1200 Máu"
+   ],
+   "desc": "Nhận 36% Máu tối đa."
+  },
+  {
+   "name": "Găng Bảo Thạch Ánh Sáng",
+   "upgradesFrom": "Găng Ngọc Thạch",
+   "stats": [
+    "+75 AP",
+    "+75% Tỉ Lệ Chí Mạng"
+   ],
+   "desc": "Kỹ năng có thể gây chí mạng. Nếu kỹ năng của tướng sở hữu đã có thể chí mạng, nhận 10% Sát Thương Chí Mạng."
+  },
+  {
+   "name": "Bàn Tay Công Lý Ánh Sáng",
+   "upgradesFrom": "Găng Tay Thần Thánh",
+   "stats": [
+    "+40% Tỉ Lệ Chí Mạng",
+    "+2 Năng Lượng mỗi giây"
+   ],
+   "desc": "Nhận 2 hiệu ứng: 30% Sức Mạnh Công Kích và 30% Sức Mạnh Phép Thuật. 24% Hút Máu Toàn Phần. Khi còn trên 50% Máu, tăng gấp đôi Sức Mạnh Công Kích và Sức Mạnh Phép Thuật. Khi còn dưới 50% Máu, nhận gấp đôi lượng Hút Máu Toàn Phần."
+  },
+  {
+   "name": "Găng Đạo Tặc Ánh Sáng",
+   "upgradesFrom": "Găng Tinh Xảo",
+   "stats": [
+    "+150 Máu",
+    "+20% Tỉ Lệ Chí Mạng"
+   ],
+   "desc": "Mỗi vòng: Mang 2 trang bị Ánh Sáng ngẫu nhiên. Tốn 3 ô trang bị"
+  },
+  {
+   "name": "Huyết Kiếm Ánh Sáng",
+   "upgradesFrom": "Huyết Thần Kiếm",
+   "stats": [
+    "+30% AD",
+    "+30 AP",
+    "+40% Hút Máu Toàn Phần",
+    "+40 Kháng Phép"
+   ],
+   "desc": "Một lần mỗi giao tranh: Khi còn 40% Máu, nhận Lá Chắn bằng 50% Máu tối đa, duy trì trong 5 giây."
+  },
+  {
+   "name": "Mũ Phù Thủy Rabadon Ánh Sáng",
+   "upgradesFrom": "Mũ Thăng Hoa Rabadon",
+   "stats": [
+    "+100 AP",
+    "+50% Khuếch đại sát thương"
+   ],
+   "desc": "Nó đã từng chứng kiến và tạo ra vô số phép màu và cả thảm họa nữa."
+  },
+  {
+   "name": "Ngọn Giáo Shojin Ánh Sáng",
+   "upgradesFrom": "Ngọn Giáo Hirana",
+   "stats": [
+    "+30% AD",
+    "+30 AP",
+    "+2 Năng Lượng mỗi giây"
+   ],
+   "desc": "Các đòn đánh giúp hồi lại 10 Năng Lượng."
+  },
+  {
+   "name": "Nỏ Sét Ánh Sáng",
+   "upgradesFrom": null,
+   "stats": [
+    "+500 Máu",
+    "+30 AP",
+    "+70 Kháng Phép"
+   ],
+   "desc": "30% Cào Xé kẻ địch trong vòng 2 ô. Khi kẻ địch sử dụng Kỹ Năng, gây sát thương phép tương đương 300% Năng Lượng đã tiêu hao. Sát thương trực tiếp từ trang bị Cào Xé: Giảm Kháng Phép"
+  },
+  {
+   "name": "Cuồng Đao Guinsoo Ánh Sáng",
+   "upgradesFrom": "Phán Quyết Đao Guinsoo",
+   "stats": [
+    "+20 AP",
+    "+20% Tốc Độ Đánh"
+   ],
+   "desc": "Nhận 16% Tốc Độ Đánh cộng dồn mỗi giây."
+  },
+  {
+   "name": "Kiếm Tử Thần Ánh Sáng",
+   "upgradesFrom": "Quang Kiếm Tử Thần",
+   "stats": [
+    "+110% AD",
+    "+20% Khuếch đại sát thương"
+   ],
+   "desc": "Nó rực sáng khi đối mặt với kẻ thù. Hay đồng đội. Hay bất kỳ thứ gì, miễn là còn sống."
+  },
+  {
+   "name": "Quyền Năng Khổng Lồ Ánh Sáng",
+   "upgradesFrom": "Quyền Năng Khổng Thần",
+   "stats": [
+    "+40 Giáp",
+    "+20% Tốc Độ Đánh"
+   ],
+   "desc": "Nhận 4% Sức Mạnh Công Kích và 4% Sức Mạnh Phép Thuật khi tấn công hoặc nhận sát thương, cộng dồn tối đa 25 lần. Ở cộng dồn tối đa, nhận 20% Khuếch Đại Sát Thương và đồng thời được miễn nhiễm khống chế."
+  },
+  {
+   "name": "Quyền Trượng Thiên Thần Ánh Sáng",
+   "upgradesFrom": "Quyền Trượng Thần URF",
+   "stats": [
+    "+60 AP",
+    "+2 Năng Lượng mỗi giây"
+   ],
+   "desc": "Bắt đầu giao tranh: Nhận 40% Sức Mạnh Phép Thuật mỗi 5 giây trong giao tranh."
+  },
+  {
+   "name": "Vô Cực Kiếm Ánh Sáng",
+   "upgradesFrom": "Thiên Cực Kiếm",
+   "stats": [
+    "+75% AD",
+    "+75% Tỉ Lệ Chí Mạng"
+   ],
+   "desc": "Kỹ năng có thể gây chí mạng. Nếu kỹ năng của tướng sở hữu đã có thể chí mạng, nhận 10% Sát Thương Chí Mạng."
+  },
+  {
+   "name": "Kiếm Súng Hextech Ánh Sáng",
+   "upgradesFrom": "Thánh Kiếm Hextech",
+   "stats": [
+    "+40 AP",
+    "+40% AD",
+    "+30% Hút Máu Toàn Phần",
+    "+2 Năng Lượng mỗi giây"
+   ],
+   "desc": "Hồi máu cho đồng minh thấp Máu nhất bằng 40% lượng sát thương gây ra."
+  },
+  {
+   "name": "Quỷ thư Morello Ánh Sáng",
+   "upgradesFrom": "Thần Thư Morello",
+   "stats": [
+    "+300 Máu",
+    "+40 AP",
+    "+2 Năng Lượng mỗi giây"
+   ],
+   "desc": "Đòn Đánh và Kỹ Năng gây 2% Thiêu Đốt và 33% Vết Thương Sâu lên kẻ địch trong 10 giây. Thiêu Đốt: Gây sát thương chuẩn mỗi giây theo Máu tối đa của mục tiêu Vết Thương Sâu: Giảm hồi máu nhận được"
+  },
+  {
+   "name": "Lời Thề Hộ Vệ Ánh Sáng",
+   "upgradesFrom": "Thệ Ước Bảo Hộ",
+   "stats": [
+    "+50 Giáp",
+    "+50 Kháng Phép",
+    "+2 Năng Lượng mỗi giây"
+   ],
+   "desc": "Bắt Đầu Giao Tranh: Nhận 40 Năng Lượng. Khi còn 40% Máu, nhận 30 Năng Lượng và Lá Chắn bằng 40% Máu tối đa."
+  },
+  {
+   "name": "Vuốt Rồng Ánh Sáng",
+   "upgradesFrom": "Vuốt Thần Long",
+   "stats": [
+    "+150 Kháng Phép"
+   ],
+   "desc": "Nhận 28% Máu tối đa. Sau mỗi 2 giây, hồi lại 5% Máu tối đa."
+  },
+  {
+   "name": "Thú Tượng Thạch Giáp Ánh Sáng",
+   "upgradesFrom": "Vệ Thần Thạch Giáp",
+   "stats": [
+    "+300 Máu",
+    "+60 Giáp",
+    "+60 Kháng Phép"
+   ],
+   "desc": "Nhận 20 Giáp và 20 Kháng Phép với mỗi kẻ địch đang nhắm vào chủ sở hữu."
+  },
+  {
+   "name": "Áo Choàng Thủy Ngân Ánh Sáng",
+   "upgradesFrom": "Áo Choàng Giả Kim",
+   "stats": [
+    "+30% Tốc Độ Đánh",
+    "+40 Kháng Phép",
+    "+40% Tỉ Lệ Chí Mạng"
+   ],
+   "desc": "Bắt Đầu Giao Tranh: Miễn nhiễm khống chế trong 45 giây. Nhận 6% Tốc Độ Đánh cộng dồn mỗi giây."
+  },
+  {
+   "name": "Áo Choàng Bóng Tối Ánh Sáng",
+   "upgradesFrom": "Áo Choàng Hừng Đông",
+   "stats": [
+    "+30% AD",
+    "+30 AP",
+    "+40 Giáp",
+    "+30% Tốc Độ Đánh"
+   ],
+   "desc": "Khi còn 60% Máu, trở nên không thể bị nhắm tới trong thoáng chốc, loại bỏ mọi hiệu ứng bất lợi và hồi lại toàn bộ Máu đã mất."
+  },
+  {
+   "name": "Áo Choàng Lửa Ánh Sáng",
+   "upgradesFrom": "Áo Choàng Thái Dương",
+   "stats": [
+    "+300 Máu",
+    "+40 Giáp"
+   ],
+   "desc": "Nhận 16% Máu tối đa. Mỗi 2 giây, gây 2% Thiêu Đốt và 33% Vết Thương Sâu lên 1 kẻ địch trong phạm vi 2 ô trong 10 giây. Thiêu Đốt: Gây sát thương chuẩn mỗi giây theo Máu tối đa của mục tiêu Vết Thương Sâu: Giảm hồi máu nhận được"
+  },
+  {
+   "name": "Trượng Hư Vô Ánh Sáng",
+   "upgradesFrom": "Dao Phục Hận Icathia",
+   "stats": [
+    "+75 AP",
+    "+30% Tốc Độ Đánh",
+    "+2 Năng Lượng mỗi giây"
+   ],
+   "desc": "Sát thương từ đòn đánh và Kỹ Năng sẽ khiến mục tiêu phải chịu 30% Cào Xé cho đến hết giao tranh. Hiệu ứng này không cộng dồn. Cào Xé: Giảm Kháng Phép"
+  },
+  {
+   "name": "Trái Tim Kiên Định Ánh Sáng",
+   "upgradesFrom": "Di Sản Khổng Nhân",
+   "stats": [
+    "+600 Máu",
+    "+40 Giáp",
+    "+40% Tỉ Lệ Chí Mạng"
+   ],
+   "desc": "Nhận 20% Chống Chịu. Khi còn hơn 50% Máu, thay vào đó nhận 36% Chống Chịu."
+  },
+  {
+   "name": "Giáp Vai Nguyệt Thần Ánh Sáng",
+   "upgradesFrom": "Giáp Phân Cực",
+   "stats": [
+    "+500 Máu",
+    "+40 Kháng Phép"
+   ],
+   "desc": "30% Phân Tách kẻ địch trong vòng 3 ô. Nhận 50 Giáp và Kháng Phép trong 20 giây đầu tiên của giao tranh. Phân Tách: Giảm Giáp"
+  },
+  {
+   "name": "Mũ Thích Nghi Ánh Sáng",
+   "upgradesFrom": "Jak'Sho Vỏ Bọc Thích Nghi",
+   "stats": [
+    "+40 Kháng Phép",
+    "+7 Năng Lượng mỗi giây."
+   ],
+   "desc": "Nhận thêm 30% Năng Lượng từ mọi nguồn. Chủ sở hữu nhận thêm hiệu ứng tùy theo Vai Trò của họ: Đỡ Đòn/Đấu Sĩ: Nhận 80 Giáp và Kháng Phép. Xạ Thủ/Thuật Sư: Nhận thêm 40% Sức Mạnh Công Kích và Sức Mạnh Phép Thuật."
+  },
+  {
+   "name": "Bùa Đỏ Ánh Sáng",
+   "upgradesFrom": "Bùa Tro Tàn",
+   "stats": [
+    "+90% Tốc Độ Đánh",
+    "+6% Khuếch đại sát thương"
+   ],
+   "desc": "Đòn đánh và Kỹ Năng gây 2% Thiêu Đốt và 33% Vết Thương Sâu lên kẻ địch trong 5 giây. Thiêu Đốt: Gây sát thương chuẩn mỗi giây theo Máu tối đa của mục tiêu Vết Thương Sâu: Giảm hồi máu nhận được"
+  },
+  {
+   "name": "Vương Miện Hoàng Gia Ánh Sáng",
+   "upgradesFrom": "Khiên Chắn Hoàng Gia",
+   "stats": [
+    "+200 Máu",
+    "+40 AP",
+    "+40 Giáp"
+   ],
+   "desc": "Bắt Đầu Giao Tranh: Nhận Lá Chắn bằng 50% Máu tối đa trong 8 giây. Khi Lá Chắn hết hiệu lực, nhận thêm 50% Sức Mạnh Phép Thuật."
+  },
+  {
+   "name": "Móng Vuốt Sterak Ánh Sáng",
+   "upgradesFrom": "Vuốt Ngạ Quỷ",
+   "stats": [
+    "+600 Máu",
+    "+80% AD"
+   ],
+   "desc": "Khi còn 60% Máu, nhận một Lá Chắn bằng 100% Máu tối đa của chủ sở hữu, giảm dần trong vòng 6 giây."
+  },
+  {
+   "name": "Nanh Nashor Ánh Sáng",
+   "upgradesFrom": "Món Quà Của Baron",
+   "stats": [
+    "+300 Máu",
+    "+35 AP",
+    "+20% Tốc Độ Đánh",
+    "+40% Tỉ lệ chí mạng"
+   ],
+   "desc": "Các đòn đánh giúp hồi lại 4 Năng Lượng, tăng lên 6 nếu là đòn chí mạng."
+  }
+ ]
+}
