@@ -7,6 +7,24 @@
 
   var T = (global.TFT && global.TFT.tables) || require('./tables.js');
 
+  // Kho tuong dang dung. Mac dinh la bang trong tables.js; khi app doc duoc du lieu
+  // set that thi goi setPool() de thay so tuong moi muc gia cho dung set dang choi.
+  var POOL = T.POOL;
+
+  function setPool(pool) {
+    POOL = pool && pool[1] ? pool : T.POOL;
+    return POOL;
+  }
+
+  function getPool() {
+    return POOL;
+  }
+
+  function resetPool() {
+    POOL = T.POOL;
+    return POOL;
+  }
+
   // ------------------------------------------------------------------ shop
 
   function shopOdds(level) {
@@ -24,7 +42,7 @@
    */
   function slotProbability(opts) {
     var cost = clampInt(opts.cost, 1, 5);
-    var pool = T.POOL[cost];
+    var pool = POOL[cost];
     var tierOdds = shopOdds(opts.level)[cost - 1];
     if (!tierOdds) return 0;
 
@@ -58,7 +76,7 @@
       probabilityAtLeastNeeded: binomialAtLeast(slots, p, need),
       goldSpent: Math.max(0, num(opts.rolls)) * T.ROLL_COST,
       expectedGoldForOne: isFinite(expectedShopsToHit) ? expectedShopsToHit * T.ROLL_COST : Infinity,
-      copiesLeftInPool: Math.max(0, T.POOL[clampInt(opts.cost, 1, 5)].copies -
+      copiesLeftInPool: Math.max(0, POOL[clampInt(opts.cost, 1, 5)].copies -
         num(opts.copiesOwnedByYou) - num(opts.copiesTakenByOthers))
     };
   }
@@ -400,6 +418,9 @@
 
   var api = {
     shopOdds: shopOdds,
+    setPool: setPool,
+    getPool: getPool,
+    resetPool: resetPool,
     slotProbability: slotProbability,
     rollOutcome: rollOutcome,
     goldForConfidence: goldForConfidence,

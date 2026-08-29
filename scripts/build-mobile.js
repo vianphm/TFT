@@ -10,7 +10,7 @@ const path = require('path');
 const root = path.join(__dirname, '..');
 const out = process.argv[2] ? path.resolve(process.argv[2]) : path.join(root, 'dist-mobile');
 
-const SHARED = ['style.css', 'tables.js', 'calc.js', 'analyzer.js', 'cdragon.js'];
+const SHARED = ['style.css', 'tables.js', 'calc.js', 'analyzer.js', 'cdragon.js', 'db.js'];
 const ICONS = [['icon-192.png', 'icon-192.png'], ['icon-512.png', 'icon-512.png'], ['icon.png', 'icon.png']];
 
 fs.rmSync(out, { recursive: true, force: true });

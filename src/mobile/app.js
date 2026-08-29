@@ -13,6 +13,7 @@
   var tables = window.TFT.tables;
   var analyzer = window.TFT.analyzer;
   var cdragon = window.TFT.cdragon;
+  var db = window.TFT.db;
 
   var KEYS = { state: 'tft.state', comps: 'tft.comps', data: 'tft.data', pc: 'tft.pcUrl' };
 
@@ -30,6 +31,7 @@
   function init() {
     // App Android mo trang nay trong cua so noi voi ?compact=1
     if (/[?&]compact=1/.test(location.search)) document.body.classList.add('compact');
+    applyRealPool();
     bindTabs();
     bindSteppers();
     bindRoll();
@@ -80,6 +82,12 @@
         });
       });
     });
+  }
+
+  /** Ti le roll tinh theo so tuong that cua set dang choi. */
+  function applyRealPool() {
+    if (dataset && dataset.champions && dataset.champions.length) calc.setPool(db.poolFromDataset(dataset));
+    else calc.resetPool();
   }
 
   function renderTop() {
@@ -603,6 +611,7 @@
         if (!next || !next.champions || !next.champions.length) throw new Error('dữ liệu rỗng');
         dataset = next;
         save(KEYS.data, dataset);
+        applyRealPool();
         renderTop();
         renderComp();
         renderSyncStatus();
@@ -629,6 +638,7 @@
     if (payload.data && payload.data.champions && payload.data.champions.length) {
       dataset = payload.data;
       save(KEYS.data, dataset);
+      applyRealPool();
     }
     pcUrl = base;
     save(KEYS.pc, pcUrl);

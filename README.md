@@ -180,6 +180,33 @@ Ngược lại nếu chỉ còn 4 XP nữa là lên cấp, lên cấp thắng �
 
 Muốn đổi khẩu vị thì sửa `DEFAULT_WEIGHTS` trong `analyzer.js`.
 
+### Database của set (`src/renderer/shared/db.js`)
+
+Dữ liệu thô từ Community Dragon chỉ là hai danh sách phẳng. Lớp này đánh chỉ mục (tướng theo giá,
+theo tộc hệ, tra cứu theo tên, mốc của từng tộc hệ) và **suy ngược số tướng mỗi mức giá từ dữ liệu
+thật** thay vì tin vào bảng cứng — con số đó đi thẳng vào công thức xác suất roll, mỗi set Riot lại
+đổi. Tab *Tỉ lệ roll* hiển thị luôn chỗ nào lệch với bảng mặc định. Số bản sao mỗi tướng
+(22/20/17/10/9) không có trong dữ liệu nên vẫn lấy từ `tables.js`.
+
+### Đo đạc phần tối ưu
+
+Trên 6 bộ dữ liệu giả lập cỡ thật (62 tướng, 12 tộc hệ, mốc khác nhau), đội hình 9 ô:
+
+| Bề rộng beam | Điểm trung bình | Đạt điểm cao nhất | Thời gian |
+|---|---|---|---|
+| 12 | 183.7 | 2/6 | 30 ms |
+| 24 | 184.3 | 3/6 | 54 ms |
+| 48 | 187.6 | 3/6 | 105 ms |
+| **96 (mặc định)** | **193.1** | **6/6** | **211 ms** |
+
+Beam rộng hơn cho kết quả tốt hơn rõ rệt, nên mặc định để 96. Sở dĩ chạy được mức đó là vì hàm chấm
+điểm trong vòng lặp (`analyzer.scoreUnits`) làm thẳng trên biến đếm thay vì dựng lại bảng tra cứu và
+mảng trung gian mỗi lần gọi — nhanh hơn khoảng 7 lần (beam 96 từ 1336 ms xuống 181 ms), và có phép
+thử đối chiếu để nó luôn ra đúng cùng con số với `traitBreakdown`.
+
+Bước local search (thử đổi từng tướng lấy tướng khác) hầu như không cải thiện thêm khi beam đã rộng,
+nhưng gần như không tốn thời gian nên vẫn giữ để chặn trường hợp beam đi lệch.
+
 ## Chưa làm (nếu cần thì làm tiếp)
 
 - Bộ đọc riêng cho từng trang meta (chính xác hơn cách dò theo từ khoá hiện tại).

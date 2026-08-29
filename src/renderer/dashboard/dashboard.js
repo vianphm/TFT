@@ -7,6 +7,7 @@
 
   var calc = window.TFT.calc;
   var analyzer = window.TFT.analyzer;
+  var db = window.TFT.db;
   var tables = window.TFT.tables;
   var api = window.tft;
 
@@ -25,6 +26,7 @@
     config = await api.config.get();
     comps = await api.comps.list();
     dataset = await api.data.load();
+    applyRealPool();
     displays = await api.displays.list();
 
     bindTabs();
@@ -41,8 +43,10 @@
     api.on('game:status', renderGameStatus);
     api.on('data:updated', async function () {
       dataset = await api.data.load();
+      applyRealPool();
       renderSetInfo();
       renderChamps();
+      renderPoolTable();
     });
     api.on('displays:changed', async function () {
       displays = await api.displays.list();
@@ -51,6 +55,19 @@
     api.on('overlay:click-through', function (locked) {
       config.overlay.clickThrough = locked;
     });
+  }
+
+  /**
+   * Dung so tuong that cua set dang choi cho phan tinh ti le roll.
+   * Bang trong tables.js chi la mac dinh; moi set Riot doi so tuong tung muc gia,
+   * ma con so do vao thang cong thuc xac suat.
+   */
+  function applyRealPool() {
+    if (!dataset || !dataset.champions || !dataset.champions.length) {
+      calc.resetPool();
+      return;
+    }
+    calc.setPool(db.poolFromDataset(dataset));
   }
 
   // -------------------------------------------------------------------- tabs
@@ -712,15 +729,33 @@
         }).join('') + '</tr>';
       }).join('');
 
-    document.getElementById('dPoolTable').innerHTML =
-      '<tr><th>Gia</th><th class="num">Ban sao / tuong</th><th class="num">So tuong</th><th class="num">Tong kho</th></tr>' +
-      Object.keys(tables.POOL).map(function (cost) {
-        var p = tables.POOL[cost];
-        return '<tr><td class="cost-' + cost + '">' + cost + ' vang</td><td class="num">' + p.copies +
-          '</td><td class="num">' + p.champions + '</td><td class="num">' + (p.copies * p.champions) + '</td></tr>';
-      }).join('');
+    renderPoolTable();
 
     render();
+  }
+
+  /** Kho tuong: doi chieu bang mac dinh voi so dem duoc tu du lieu set. */
+  function renderPoolTable() {
+    var pool = calc.getPool();
+    var hasData = dataset && dataset.champions && dataset.champions.length;
+    var diff = hasData ? db.poolDiff(dataset) : [];
+
+    document.getElementById('dPoolTable').innerHTML =
+      '<tr><th>Gia</th><th class="num">Ban sao / tuong</th><th class="num">So tuong</th><th class="num">Tong kho</th></tr>' +
+      [1, 2, 3, 4, 5].map(function (cost) {
+        var p = pool[cost];
+        var row = diff.find(function (d) { return d.cost === cost; });
+        var note = row && row.changed
+          ? ' <span class="small muted">(bang mac dinh ghi ' + row.hardcoded + ')</span>'
+          : '';
+        return '<tr><td class="cost-' + cost + '">' + cost + ' vang</td><td class="num">' + p.copies +
+          '</td><td class="num">' + p.champions + note + '</td><td class="num">' + (p.copies * p.champions) + '</td></tr>';
+      }).join('') +
+      '<tr><td colspan="4" class="small muted">' +
+      (hasData
+        ? 'So tuong dem tu du lieu set ' + esc(dataset.setName || '') + '. So ban sao moi tuong lay tu bang chuan cua Riot.'
+        : 'Chua dong bo du lieu set nen dang dung bang mac dinh - ti le tinh ra co the lech.') +
+      '</td></tr>';
   }
 
   // ------------------------------------------------------------------- econ
@@ -814,9 +849,11 @@
       try {
         var res = await api.data.sync();
         dataset = await api.data.load();
+        applyRealPool();
         renderSetInfo();
         renderChamps();
-        toast('Da tai ' + res.champions + ' tuong cua ' + res.setName + '.');
+        renderPoolTable();
+        toast('Da tai ' + res.champions + ' tuong cua ' + res.setName + '. Kho tuong da cap nhat theo set nay.');
       } catch (err) {
         toast('Loi dong bo: ' + err.message);
       } finally {

@@ -13,6 +13,7 @@ var SHELL = [
   'shared/calc.js',
   'shared/analyzer.js',
   'shared/cdragon.js',
+  'shared/db.js',
   'manifest.webmanifest',
   'icon-192.png',
   'icon-512.png'

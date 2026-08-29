@@ -22,8 +22,86 @@
     tierGrowth: 2.2,   // moc cao hon nhan them (luy thua) -> uu tien bat sau thay vi bat rong
     wastePenalty: 3,   // tru diem cho tuong khong gop vao moc nao
     costPenalty: 0.6,  // tru nhe theo tong gia -> uu tien doi hinh de gom hon khi diem bang nhau
-    nearBonus: 1.5     // thuong nho khi chi con thieu 1 tuong la len moc (de mo rong tiep)
+    nearBonus: 1.5,    // thuong nho khi chi con thieu 1 tuong la len moc (de mo rong tiep)
+    wantedMultiplier: 3 // nhan diem cho toc he nguoi choi chi dinh muon choi (opts.wantTraits)
   };
+
+  // ------------------------------------------------- cham diem nhanh (dung trong vong lap)
+
+  /**
+   * Bang tra cuu dung lai duoc cho mot bo du lieu set.
+   * Beam search goi ham cham diem hang chuc nghin lan, nen khong the dung lai
+   * bang tra cuu moi lan goi nhu traitBreakdown lam.
+   */
+  var prepCache = typeof WeakMap !== 'undefined' ? new WeakMap() : null;
+
+  function prepare(dataset) {
+    if (prepCache && prepCache.has(dataset)) return prepCache.get(dataset);
+    var breakpoints = {};
+    (dataset.traits || []).forEach(function (t) {
+      breakpoints[t.name] = (t.breakpoints || [])
+        .filter(function (b) { return b > 0; })
+        .sort(function (a, b) { return a - b; });
+    });
+    var prep = { breakpoints: breakpoints };
+    if (prepCache) prepCache.set(dataset, prep);
+    return prep;
+  }
+
+  /**
+   * Cham diem mot nhom tuong ma khong dung mang trung gian nao.
+   * Cung cong thuc voi scoreRows, chi khac la lam thang tren bien dem.
+   */
+  function scoreUnits(units, prep, weights, wantedMap) {
+    var w = weights;
+    var counts = Object.create(null);
+    var i, j, traits;
+
+    for (i = 0; i < units.length; i++) {
+      traits = units[i].traits;
+      if (!traits) continue;
+      for (j = 0; j < traits.length; j++) {
+        counts[traits[j]] = (counts[traits[j]] || 0) + 1;
+      }
+    }
+
+    var score = 0;
+    var activeTraits = Object.create(null);
+
+    for (var name in counts) {
+      var points = prep.breakpoints[name];
+      var count = counts[name];
+      var tier = 0;
+      if (points) {
+        for (var k = 0; k < points.length; k++) {
+          if (count >= points[k]) tier = k + 1;
+        }
+      }
+      var wanted = wantedMap && wantedMap[name.toLowerCase()] ? w.wantedMultiplier : 1;
+      if (tier > 0) {
+        score += wanted * w.tierBase * Math.pow(w.tierGrowth, tier - 1);
+        activeTraits[name] = true;
+      } else if (points && points.length) {
+        var next = 0;
+        for (var m = 0; m < points.length; m++) {
+          if (points[m] > count) { next = points[m]; break; }
+        }
+        if (next - count === 1) score += w.nearBonus * wanted;
+      }
+    }
+
+    for (i = 0; i < units.length; i++) {
+      var contributes = false;
+      traits = units[i].traits || [];
+      for (j = 0; j < traits.length; j++) {
+        if (activeTraits[traits[j]]) { contributes = true; break; }
+      }
+      if (!contributes) score -= w.wastePenalty;
+      score -= (units[i].cost || 1) * w.costPenalty;
+    }
+
+    return score;
+  }
 
   // ------------------------------------------------------------ toc/he dang bat
 
@@ -70,23 +148,26 @@
       active: rows.filter(function (r) { return r.tier > 0; }),
       inactive: rows.filter(function (r) { return r.tier === 0; }),
       all: rows,
-      score: scoreRows(rows, dedupeUnits(units, dataset), opts.weights)
+      score: scoreRows(rows, dedupeUnits(units, dataset), opts.weights, opts.wantTraits)
     };
   }
 
-  function scoreRows(rows, units, weights) {
+  function scoreRows(rows, units, weights, wanted) {
     var w = Object.assign({}, DEFAULT_WEIGHTS, weights || {});
+    var want = {};
+    (wanted || []).forEach(function (name) { want[String(name).toLowerCase()] = true; });
     var score = 0;
     var contributing = {};
 
     rows.forEach(function (row) {
       if (row.tier > 0) {
-        score += w.tierBase * Math.pow(w.tierGrowth, row.tier - 1);
+        var bonus = want[row.name.toLowerCase()] ? w.wantedMultiplier : 1;
+        score += bonus * w.tierBase * Math.pow(w.tierGrowth, row.tier - 1);
         units.forEach(function (u) {
           if ((u.traits || []).indexOf(row.name) >= 0) contributing[unitKey(u)] = true;
         });
       } else if (row.missing === 1) {
-        score += w.nearBonus;
+        score += w.nearBonus * (want[row.name.toLowerCase()] ? w.wantedMultiplier : 1);
       }
     });
 
@@ -149,7 +230,9 @@
   function optimizeComp(dataset, options) {
     var opts = options || {};
     var size = Math.max(1, Math.min(10, opts.size || 8));
-    var beamWidth = opts.beamWidth || 24;
+    // Do duoc: beam cang rong ket qua cang tot (96 dat diem cao nhat o moi bo du lieu thu),
+    // va sau khi toi uu ham cham diem thi 96 chi ton khoang 200ms nen de mac dinh luon.
+    var beamWidth = opts.beamWidth || 96;
 
     var pool = (dataset.champions || []).filter(function (c) {
       if (opts.maxCost && c.cost > opts.maxCost) return false;
@@ -161,6 +244,14 @@
     var required = (opts.required || []).map(function (name) {
       return pool.find(function (c) { return c.name.toLowerCase() === String(name).toLowerCase(); });
     }).filter(Boolean);
+
+    var prep = prepare(dataset);
+    var weights = Object.assign({}, DEFAULT_WEIGHTS, opts.weights || {});
+    var wantedMap = null;
+    if (opts.wantTraits && opts.wantTraits.length) {
+      wantedMap = {};
+      opts.wantTraits.forEach(function (n) { wantedMap[String(n).toLowerCase()] = true; });
+    }
 
     var beams = [required.slice(0, size)];
     var seen = {};
@@ -176,7 +267,7 @@
           var key = candidate.map(unitKey).sort().join('|');
           if (seen[key]) return;
           seen[key] = true;
-          nextBeams.push({ units: candidate, score: traitBreakdown(candidate, dataset, opts).score });
+          nextBeams.push({ units: candidate, score: scoreUnits(candidate, prep, weights, wantedMap) });
         });
       });
       if (!nextBeams.length) break;
@@ -185,6 +276,11 @@
     }
 
     var best = beams[0] || [];
+
+    // Beam search de bo sot: no chi giu vai nhanh tot nhat o moi buoc, nen ket qua
+    // cuoi cung thuong con cai thien duoc bang cach thu doi tung tuong mot.
+    best = localSearch(best, pool, dataset, opts, prep, weights, wantedMap);
+
     var breakdown = traitBreakdown(best, dataset, opts);
     return {
       units: best.map(function (c) { return { name: c.name, cost: c.cost, traits: c.traits }; }),
@@ -192,6 +288,54 @@
       traits: breakdown,
       totalCost: best.reduce(function (sum, c) { return sum + (c.cost || 0); }, 0)
     };
+  }
+
+  /**
+   * Doi tung tuong trong doi hinh lay tuong khac trong kho, giu lai neu diem tang.
+   * Lap den khi khong con cai thien duoc (hoac het so vong cho phep).
+   */
+  function localSearch(units, pool, dataset, options, prep, weights, wantedMap) {
+    var opts = options || {};
+    prep = prep || prepare(dataset);
+    weights = weights || Object.assign({}, DEFAULT_WEIGHTS, opts.weights || {});
+    var required = (opts.required || []).map(function (n) { return String(n).toLowerCase(); });
+    var current = units.slice();
+    var currentScore = scoreUnits(current, prep, weights, wantedMap);
+    var rounds = opts.localSearchRounds || 4;
+
+    for (var round = 0; round < rounds; round++) {
+      var improved = false;
+
+      for (var i = 0; i < current.length; i++) {
+        if (required.indexOf(String(current[i].name).toLowerCase()) >= 0) continue; // tuong bat buoc thi giu
+
+        var bestSwap = null;
+        var bestScore = currentScore;
+
+        for (var j = 0; j < pool.length; j++) {
+          var candidate = pool[j];
+          if (current.some(function (u) { return unitKey(u) === unitKey(candidate); })) continue;
+
+          var trial = current.slice();
+          trial[i] = candidate;
+          var score = scoreUnits(trial, prep, weights, wantedMap);
+          if (score > bestScore + 1e-9) {
+            bestScore = score;
+            bestSwap = trial;
+          }
+        }
+
+        if (bestSwap) {
+          current = bestSwap;
+          currentScore = bestScore;
+          improved = true;
+        }
+      }
+
+      if (!improved) break;
+    }
+
+    return current;
   }
 
   // ------------------------------------------------------- nen chuyen doi hinh nao
@@ -295,6 +439,8 @@
     traitBreakdown: traitBreakdown,
     suggestNextUnit: suggestNextUnit,
     optimizeComp: optimizeComp,
+    scoreUnits: scoreUnits,
+    prepare: prepare,
     pivotSuggestions: pivotSuggestions,
     COPIES_FOR_STAR: COPIES_FOR_STAR
   };

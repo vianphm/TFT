@@ -133,6 +133,27 @@ test('mon co ban thua duoc bao lai', () => {
   assert.deepStrictEqual(plan.leftover, ['belt']);
 });
 
+console.log('\nCham diem nhanh dung trong vong lap toi uu');
+test('scoreUnits cho ket qua giong het traitBreakdown', () => {
+  const units = [dataset.champions[0], dataset.champions[2], dataset.champions[5], dataset.champions[6]];
+  const slow = analyzer.traitBreakdown(units, dataset).score;
+  const fast = analyzer.scoreUnits(units, analyzer.prepare(dataset),
+    Object.assign({}, analyzer.DEFAULT_WEIGHTS), null);
+  assert.ok(Math.abs(slow - fast) < 1e-9, `${slow} khac ${fast}`);
+});
+test('scoreUnits cong diem cho toc he duoc chi dinh', () => {
+  const units = [dataset.champions[0], dataset.champions[1]];
+  const prep = analyzer.prepare(dataset);
+  const plain = analyzer.scoreUnits(units, prep, Object.assign({}, analyzer.DEFAULT_WEIGHTS), null);
+  const wanted = analyzer.scoreUnits(units, prep, Object.assign({}, analyzer.DEFAULT_WEIGHTS), { 'sat thu': true });
+  assert.ok(wanted > plain);
+});
+test('ep choi mot toc he thi doi hinh toi uu phai bat toc he do', () => {
+  const out = analyzer.optimizeComp(dataset, { size: 4, wantTraits: ['Ve Binh'] });
+  const veBinh = out.traits.active.find((t) => t.name === 'Ve Binh');
+  assert.ok(veBinh, 'phai bat duoc Ve Binh: ' + out.units.map((u) => u.name).join(','));
+});
+
 console.log('\nNen chuyen doi hinh nao');
 const compLib = [
   { id: 'a', name: 'Dang danh do', units: [{ name: 'A', star: 3 }, { name: 'B', star: 3 }, { name: 'C', star: 2 }] },
