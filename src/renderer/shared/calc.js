@@ -543,27 +543,26 @@
 
   // ----------------------------------------------- chia trang bi cho tung tuong
 
-  function assignItems(componentIds, units) {
+  function assignItems(units, componentIds) {
     var pool = (componentIds || []).slice();
-    var sortedUnits = (units || []).slice().sort(function (a, b) {
-      if (Boolean(b.carry) !== Boolean(a.carry)) return b.carry ? 1 : -1;
-      return 0;
+    var ordered = (units || []).slice().sort(function (a, b) {
+      return (b.carry ? 1 : 0) - (a.carry ? 1 : 0);
     });
 
-    var assignments = [];
-    sortedUnits.forEach(function (unit) {
-      var desired = (unit.items || []).slice(0, 3);
-      var plan = bestItemPlan(pool, desired);
+    var rows = ordered.map(function (unit) {
+      var wishlist = (unit.items || []).slice(0, 3);
+      var plan = bestItemPlan(pool, wishlist);
       pool = plan.leftover;
-      assignments.push({
+      return {
         unit: unit.name,
         carry: Boolean(unit.carry),
-        crafted: plan.crafted,
-        missing: plan.missing
-      });
+        done: plan.crafted,
+        missing: plan.missing,
+        complete: plan.missing.length === 0 && wishlist.length > 0
+      };
     });
 
-    return { assignments: assignments, leftover: pool };
+    return { units: rows, leftover: pool };
   }
 
   // ---------------------------------------------------- lich trinh vong dau

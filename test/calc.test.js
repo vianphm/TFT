@@ -219,10 +219,10 @@ test('carouselPriorities xep hang dung linh kien can nhat o vong di cho', () => 
       { name: 'Jinx', carry: true, items: ['Infinity Edge', 'Last Whisper'] } // IE: bf_sword + gloves; LW: bow + gloves
     ]
   };
-  // Minh da co sẵn 1 bf_sword
-  const priorities = calc.carouselPriorities(comp, ['bf_sword']);
+  // Minh da co sẵn 1 bf
+  const priorities = calc.carouselPriorities(comp, ['bf']);
   assert.ok(priorities.length > 0);
-  assert.strictEqual(priorities[0].id, 'gloves'); // Can 2 gang tay cho IE + LW
+  assert.strictEqual(priorities[0].id, 'glove'); // Can 2 gang tay cho IE + LW
 });
 
 console.log(`\n${passed} phep thu da qua, ${failed} phep thu LOI.\n`);

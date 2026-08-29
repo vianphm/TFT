@@ -887,8 +887,10 @@
 
     // 1. Doi hinh muc tieu & phuong an du phong
     var pivots = pivotSuggestions(allUnits, comps, dataset, { level: level });
-    var targetComp = pivots[0] ? pivots[0].comp : (comps[0] || null);
-    var backupComps = pivots.slice(1, 3).map(function (p) { return p.comp; });
+    var compById = {};
+    comps.forEach(function (c) { compById[c.id] = c; });
+    var targetComp = pivots[0] ? compById[pivots[0].id] : (comps[0] || null);
+    var backupComps = pivots.slice(1, 3).map(function (p) { return compById[p.id]; }).filter(Boolean);
 
     // 2. Goi y mua/ban tu cua hang hien tai
     var shopAdvice = [];
