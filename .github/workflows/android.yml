@@ -1,0 +1,46 @@
+name: Build APK Android
+
+# Dong goi app Android (bong bong noi de len game) va dua APK len phan Artifacts
+# de tai ve dien thoai. Chay tu dong khi doi code trong android/ hoac src/mobile/,
+# hoac bam tay o tab Actions.
+on:
+  push:
+    paths:
+      - 'android/**'
+      - 'src/mobile/**'
+      - 'src/renderer/shared/**'
+      - '.github/workflows/android.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Kiem thu phan tinh toan
+        run: node test/calc.test.js && node test/analyzer.test.js
+
+      - name: Gom ban web vao assets cua app
+        run: node scripts/build-mobile.js android/app/src/main/assets/mobile
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Build APK (ban debug)
+        working-directory: android
+        run: gradle assembleDebug --no-daemon
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tft-companion-apk
+          path: android/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error

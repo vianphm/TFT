@@ -22,6 +22,7 @@ const EVENTS = [
   'data:updated',
   'game:status',
   'comps:changed',
+  'mobile:status',
   'hotkey:action'
 ];
 
@@ -60,6 +61,11 @@ contextBridge.exposeInMainWorld('tft', {
     save: (comps) => invoke('comps:save', comps),
     importUrl: (url) => invoke('comps:import-url', url),
     importText: (text) => invoke('comps:import-text', text)
+  },
+  mobile: {
+    status: () => invoke('mobile:status'),
+    start: (port) => invoke('mobile:start', port),
+    stop: () => invoke('mobile:stop')
   },
   data: {
     load: () => invoke('data:load'),

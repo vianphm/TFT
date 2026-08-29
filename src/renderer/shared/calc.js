@@ -201,6 +201,65 @@
     }).sort(function (x, y) { return x.missing.length - y.missing.length; })[0] || null;
   }
 
+  /**
+   * Lap ke hoach ghep do: co tung nay mon co ban, muon ra danh sach mon uu tien nay
+   * thi ghep duoc gi, con thua gi, con thieu gi.
+   * Duyet theo thu tu uu tien; moi mon chon cong thuc dung mon co ban dang du nhat,
+   * de danh mon hiem cho cac mon phia sau.
+   */
+  function bestItemPlan(componentIds, wishlist) {
+    var pool = (componentIds || []).slice();
+    var crafted = [];
+    var missing = [];
+
+    (wishlist || []).forEach(function (itemName) {
+      var recipes = Object.keys(T.RECIPES)
+        .filter(function (key) { return T.RECIPES[key] === itemName; })
+        .map(function (key) { return key.split('+'); });
+      if (!recipes.length) {
+        missing.push({ item: itemName, need: [], reason: 'khong ro cong thuc' });
+        return;
+      }
+
+      var doable = recipes.filter(function (parts) { return canTake(pool, parts); });
+      if (doable.length) {
+        // Uu tien cong thuc dung mon dang co nhieu nhat trong tui
+        doable.sort(function (a, b) { return abundance(pool, b) - abundance(pool, a); });
+        var chosen = doable[0];
+        chosen.forEach(function (part) { pool.splice(pool.indexOf(part), 1); });
+        crafted.push({ item: itemName, from: chosen });
+      } else {
+        var best = recipes.map(function (parts) {
+          return { parts: parts, need: shortfall(pool, parts) };
+        }).sort(function (a, b) { return a.need.length - b.need.length; })[0];
+        missing.push({ item: itemName, need: best.need, recipe: best.parts });
+      }
+    });
+
+    return { crafted: crafted, missing: missing, leftover: pool };
+  }
+
+  function canTake(pool, parts) {
+    return shortfall(pool, parts).length === 0;
+  }
+
+  function shortfall(pool, parts) {
+    var copy = pool.slice();
+    var need = [];
+    parts.forEach(function (part) {
+      var idx = copy.indexOf(part);
+      if (idx >= 0) copy.splice(idx, 1);
+      else need.push(part);
+    });
+    return need;
+  }
+
+  function abundance(pool, parts) {
+    return parts.reduce(function (sum, part) {
+      return sum + pool.filter(function (p) { return p === part; }).length;
+    }, 0);
+  }
+
   // ---------------------------------------------------------------- rounds
 
   /** Danh sach vong tiep theo kem ghi chu (chon do, lo bai tang, quai). */
@@ -264,6 +323,7 @@
     recipeGrid: recipeGrid,
     craftable: craftable,
     missingFor: missingFor,
+    bestItemPlan: bestItemPlan,
     upcomingRounds: upcomingRounds,
     parseRound: parseRound,
     percent: percent

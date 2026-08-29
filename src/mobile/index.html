@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+  <meta name="theme-color" content="#0d1117" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>TFT Companion</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <link rel="stylesheet" href="shared/style.css" />
+  <link rel="stylesheet" href="mobile.css" />
+</head>
+<body>
+<header class="top">
+  <span class="logo">T</span>
+  <div class="title">
+    <b>TFT Companion</b>
+    <span class="small muted" id="topSub">Bản điện thoại</span>
+  </div>
+  <button class="icon-btn" id="openSync" title="Đồng bộ">⇅</button>
+</header>
+
+<main id="main">
+  <!-- ============================================ ROLL -->
+  <section class="page" data-page="roll">
+    <div class="card">
+      <div class="stepper-grid">
+        <div class="stepper" data-for="mLevel">
+          <label>Cấp</label>
+          <div class="stepper-row">
+            <button data-step="-1">−</button><input type="number" id="mLevel" value="8" min="1" max="11" /><button data-step="1">+</button>
+          </div>
+        </div>
+        <div class="stepper" data-for="mCost">
+          <label>Giá tướng</label>
+          <div class="stepper-row">
+            <button data-step="-1">−</button><input type="number" id="mCost" value="4" min="1" max="5" /><button data-step="1">+</button>
+          </div>
+        </div>
+        <div class="stepper" data-for="mOwned">
+          <label>Mình đang cầm</label>
+          <div class="stepper-row">
+            <button data-step="-1">−</button><input type="number" id="mOwned" value="0" min="0" max="9" /><button data-step="1">+</button>
+          </div>
+        </div>
+        <div class="stepper" data-for="mTaken">
+          <label>Người khác cầm</label>
+          <div class="stepper-row">
+            <button data-step="-1">−</button><input type="number" id="mTaken" value="0" min="0" max="30" /><button data-step="1">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Vàng để roll: <b id="mGoldLabel">40</b> (<span id="mRollsLabel">20</span> lần)</label>
+        <input type="range" id="mGold" min="2" max="120" step="2" value="40" />
+      </div>
+      <div class="field">
+        <label>Cần thêm <b id="mNeedLabel">1</b> bản sao</label>
+        <div class="seg" id="mNeed">
+          <button data-v="1" class="on">1</button><button data-v="2">2</button>
+          <button data-v="3">3</button><button data-v="4">4</button><button data-v="6">6</button>
+        </div>
+      </div>
+    </div>
+    <div class="card hero" id="mRollHero"></div>
+    <div class="card"><table id="mRollTable"></table></div>
+    <div class="card">
+      <h3>Vàng cần để chắc ăn</h3>
+      <table id="mConfidence"></table>
+    </div>
+    <div class="card">
+      <h3>Tỉ lệ cửa hàng theo cấp</h3>
+      <div class="scroll-x"><table id="mOddsTable"></table></div>
+    </div>
+  </section>
+
+  <!-- ============================================ VÀNG -->
+  <section class="page hidden" data-page="econ">
+    <div class="card">
+      <div class="stepper-grid">
+        <div class="stepper" data-for="mMoney">
+          <label>Vàng</label>
+          <div class="stepper-row">
+            <button data-step="-1">−</button><input type="number" id="mMoney" value="50" min="0" /><button data-step="1">+</button>
+          </div>
+        </div>
+        <div class="stepper" data-for="mStreak">
+          <label>Chuỗi</label>
+          <div class="stepper-row">
+            <button data-step="-1">−</button><input type="number" id="mStreak" value="0" /><button data-step="1">+</button>
+          </div>
+        </div>
+      </div>
+      <label class="check"><input type="checkbox" id="mWin" /> Thắng vòng này</label>
+      <div id="mEconResult" style="margin-top:10px"></div>
+    </div>
+    <div class="card">
+      <h3>Nếu không tiêu gì</h3>
+      <table id="mProjection"></table>
+    </div>
+    <div class="card">
+      <h3>Lên cấp</h3>
+      <div class="stepper-grid">
+        <div class="stepper" data-for="mLvl">
+          <label>Cấp hiện tại</label>
+          <div class="stepper-row">
+            <button data-step="-1">−</button><input type="number" id="mLvl" value="7" min="1" max="10" /><button data-step="1">+</button>
+          </div>
+        </div>
+        <div class="stepper" data-for="mXp">
+          <label>XP đang có</label>
+          <div class="stepper-row">
+            <button data-step="-2">−</button><input type="number" id="mXp" value="0" min="0" /><button data-step="2">+</button>
+          </div>
+        </div>
+      </div>
+      <div id="mLevelResult" style="margin-top:8px"></div>
+    </div>
+    <div class="card">
+      <h3>Mốc lên cấp tham khảo</h3>
+      <table id="mRoadmap"></table>
+    </div>
+  </section>
+
+  <!-- ============================================ ĐỒ -->
+  <section class="page hidden" data-page="items">
+    <div class="card">
+      <h3>Túi đồ — chạm để thêm, chạm lâu để bớt</h3>
+      <div class="chips" id="mBag"></div>
+      <div id="mBagResult" style="margin-top:10px"></div>
+    </div>
+    <div class="card">
+      <h3>Bảng ghép</h3>
+      <div class="scroll-x"><table class="recipe-grid" id="mRecipeGrid"></table></div>
+      <div class="small muted" id="mRecipeHint" style="margin-top:8px">Chạm vào ô để xem tên đầy đủ.</div>
+    </div>
+  </section>
+
+  <!-- ============================================ ĐỘI HÌNH -->
+  <section class="page hidden" data-page="comps">
+    <div class="card">
+      <select id="mCompPick"></select>
+    </div>
+    <div id="mCompView"></div>
+  </section>
+
+  <!-- ============================================ VÒNG -->
+  <section class="page hidden" data-page="round">
+    <div class="card">
+      <h3>Vòng hiện tại</h3>
+      <div class="round-line">
+        <button class="big-btn" id="mRoundPrev">−</button>
+        <input id="mRound" value="2-1" />
+        <button class="big-btn" id="mRoundNext">+</button>
+      </div>
+      <div id="mRoundResult" style="margin-top:10px"></div>
+    </div>
+    <div class="card">
+      <h3>Ghi chú / soi đối thủ</h3>
+      <textarea id="mNotes" rows="6" placeholder="Nhà 3 ăn Ahri, nhà 7 tranh đồ phép..."></textarea>
+    </div>
+  </section>
+</main>
+
+<nav class="tabbar">
+  <button class="tab on" data-tab="roll"><span>🎲</span>Roll</button>
+  <button class="tab" data-tab="econ"><span>🪙</span>Vàng</button>
+  <button class="tab" data-tab="items"><span>⚔️</span>Đồ</button>
+  <button class="tab" data-tab="comps"><span>🧩</span>Đội hình</button>
+  <button class="tab" data-tab="round"><span>⏱</span>Vòng</button>
+</nav>
+
+<!-- Bảng đồng bộ -->
+<div class="sheet hidden" id="syncSheet">
+  <div class="sheet-box">
+    <div class="sheet-head">
+      <h2>Đồng bộ &amp; dữ liệu</h2>
+      <button class="icon-btn" id="closeSync">✕</button>
+    </div>
+    <div id="syncStatus" class="small muted"></div>
+
+    <div class="field" style="margin-top:12px">
+      <label>Địa chỉ app trên PC (cùng wifi)</label>
+      <div class="row">
+        <input id="pcUrl" placeholder="http://192.168.1.5:7333" />
+        <button id="pcConnect" style="flex:0 0 auto">Kết nối</button>
+      </div>
+      <div class="small muted" style="margin-top:4px">
+        Mở app trên PC → tab <b>Overlay &amp; cài đặt</b> → bật <b>Cho điện thoại truy cập</b>, rồi gõ địa chỉ hiện ở đó.
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Hoặc dán JSON đội hình xuất từ app PC</label>
+      <textarea id="pasteJson" rows="5" placeholder='[{"name": "...", "units": [...]}]'></textarea>
+      <button id="pasteGo" style="margin-top:6px">Nhập từ JSON</button>
+    </div>
+
+    <div class="field">
+      <button id="fetchSet">Tải dữ liệu set từ Community Dragon</button>
+      <div class="small muted" style="margin-top:4px">Cần mạng. Nếu bị chặn, lấy qua kết nối PC ở trên.</div>
+    </div>
+
+    <div id="syncMsg" class="small"></div>
+  </div>
+</div>
+
+<script src="shared/tables.js"></script>
+<script src="shared/calc.js"></script>
+<script src="shared/analyzer.js"></script>
+<script src="shared/cdragon.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

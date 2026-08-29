@@ -6,6 +6,7 @@
   'use strict';
 
   var calc = window.TFT.calc;
+  var analyzer = window.TFT.analyzer;
   var tables = window.TFT.tables;
   var api = window.tft;
 
@@ -181,6 +182,111 @@
 
     renderBoard(comp);
     renderUnitRows(comp);
+    renderAnalysis(comp);
+  }
+
+  /**
+   * Phan tich doi hinh dang chon: toc he bat duoc, tuong nen them,
+   * ke hoach ghep do, va nut tu tim to hop toi uu.
+   */
+  function renderAnalysis(comp) {
+    var host = document.getElementById('compAnalysis');
+    if (!dataset.champions || !dataset.champions.length) {
+      host.innerHTML = '<h3>Phan tich</h3><div class="muted small">Can du lieu set. Vao tab "Tuong trong set" bam "Dong bo du lieu set" roi quay lai day.</div>';
+      return;
+    }
+
+    var breakdown = analyzer.traitBreakdown(comp.units, dataset);
+    var suggestions = analyzer.suggestNextUnit(comp.units, dataset, { limit: 6 });
+    var almost = breakdown.inactive.filter(function (t) { return t.missing === 1; });
+
+    var wishlist = [];
+    comp.units.slice().sort(function (a, b) { return (b.carry ? 1 : 0) - (a.carry ? 1 : 0); })
+      .forEach(function (u) {
+        (u.items || []).forEach(function (i) { if (wishlist.indexOf(i) < 0) wishlist.push(i); });
+      });
+
+    host.innerHTML =
+      '<h3>Phan tich doi hinh</h3>' +
+      '<div class="two-col" style="gap:12px">' +
+        '<div>' +
+          '<div class="small muted">Toc he dang bat (diem ' + breakdown.score + ')</div>' +
+          (breakdown.active.length
+            ? breakdown.active.map(function (t) {
+                return '<div class="kv"><span>' + esc(t.name) + '</span><b class="cost-5">' + t.count + '/' + t.activeAt +
+                  (t.next ? ' <span class="muted small">-> ' + t.next + '</span>' : '') + '</b></div>';
+              }).join('')
+            : '<div class="muted small">Chua bat moc nao.</div>') +
+          (almost.length ? '<div class="small muted" style="margin-top:6px">Thieu 1 tuong la bat: ' +
+            almost.map(function (t) { return esc(t.name); }).join(', ') + '</div>' : '') +
+        '</div>' +
+        '<div>' +
+          '<div class="small muted">Nen them tuong nao</div>' +
+          suggestions.map(function (sg) {
+            return '<div class="kv"><span class="cost-' + sg.cost + '">' + esc(sg.name) +
+              ' <span class="muted small">' + sg.cost + 'v</span></span><span class="small muted">' +
+              (sg.unlocks.length ? esc(sg.unlocks.join(', ')) : '+' + sg.gain) + '</span></div>';
+          }).join('') +
+        '</div>' +
+      '</div>' +
+      (wishlist.length
+        ? '<div style="margin-top:10px"><div class="small muted">Bo do can gom (' + wishlist.length + ' mon): ' +
+          wishlist.map(esc).join(', ') + '</div></div>'
+        : '') +
+      '<div class="row" style="margin-top:12px">' +
+        '<div class="field" style="max-width:120px"><label>So o (cap)</label><input type="number" id="optSize" min="3" max="10" value="' +
+          Math.max(3, Math.min(10, comp.units.length || 8)) + '" /></div>' +
+        '<div class="field" style="max-width:140px"><label>Chi dung tuong toi</label>' +
+          '<select id="optMaxCost"><option value="5">5 vang</option><option value="4" selected>4 vang</option>' +
+          '<option value="3">3 vang</option><option value="2">2 vang</option></select></div>' +
+        '<div class="field"><label>&nbsp;</label><button id="optRun" style="width:100%">Tu tim to hop toi uu</button></div>' +
+      '</div>' +
+      '<div id="optResult"></div>';
+
+    document.getElementById('optRun').addEventListener('click', function () {
+      var size = Number(document.getElementById('optSize').value) || 8;
+      var maxCost = Number(document.getElementById('optMaxCost').value) || 4;
+      var carries = comp.units.filter(function (u) { return u.carry; }).map(function (u) { return u.name; });
+      var out = document.getElementById('optResult');
+      out.innerHTML = '<div class="muted small">Dang tinh...</div>';
+
+      // Cho trinh duyet ve xong roi moi tinh (beam search mat vai tram ms)
+      setTimeout(function () {
+        var best = analyzer.optimizeComp(dataset, { size: size, maxCost: maxCost, required: carries });
+        if (!best.units.length) {
+          out.innerHTML = '<div class="muted small">Khong tim duoc to hop nao.</div>';
+          return;
+        }
+        out.innerHTML =
+          '<div class="small muted" style="margin-top:8px">Goi y (diem ' + best.score + ', tong gia ' + best.totalCost + 'v)' +
+          (carries.length ? ' - da giu carry: ' + carries.map(esc).join(', ') : '') + '</div>' +
+          '<div class="chips" style="margin:6px 0">' + best.units.map(function (u) {
+            return '<span class="chip cost-' + u.cost + '">' + esc(u.name) + ' <span class="muted">' + u.cost + 'v</span></span>';
+          }).join('') + '</div>' +
+          '<div class="small">' + best.traits.active.map(function (t) {
+            return '<span class="badge" style="margin-right:4px">' + esc(t.name) + ' ' + t.activeAt + '</span>';
+          }).join('') + '</div>' +
+          '<button id="optApply" style="margin-top:8px">Thay doi hinh bang goi y nay</button>';
+
+        document.getElementById('optApply').addEventListener('click', function () {
+          var kept = {};
+          comp.units.forEach(function (u) { kept[u.name.toLowerCase()] = u; });
+          comp.units = best.units.map(function (u, i) {
+            var old = kept[u.name.toLowerCase()];
+            return {
+              name: u.name,
+              cost: u.cost,
+              star: old ? old.star : (u.cost <= 2 ? 3 : 2),
+              carry: old ? old.carry : false,
+              items: old ? old.items : [],
+              row: old && old.row !== null ? old.row : (u.cost >= 4 ? 3 : 0),
+              col: old && old.col !== null ? old.col : i % 7
+            };
+          });
+          saveComps();
+        });
+      }, 30);
+    });
   }
 
   function bindField(id, setter) {
@@ -708,6 +814,7 @@
     });
 
     document.getElementById('openSettings').addEventListener('click', function () { api.settings.open(); });
+    bindMobileServer();
 
     var names = {
       toggleOverlay: 'Bat/tat overlay',
@@ -723,6 +830,53 @@
         return '<tr><td>' + (names[action] || action) + '</td><td class="right"><code>' +
           esc(config.hotkeys[action]) + '</code></td></tr>';
       }).join('');
+  }
+
+  /** Bat/tat may chu cho dien thoai va hien dia chi de go tren may. */
+  async function bindMobileServer() {
+    var portInput = document.getElementById('mobilePort');
+    var toggle = document.getElementById('mobileToggle');
+    var auto = document.getElementById('mobileAuto');
+    portInput.value = (config.mobile && config.mobile.port) || 7333;
+    auto.checked = Boolean(config.mobile && config.mobile.autoStart);
+    auto.addEventListener('change', function () { api.config.set('mobile.autoStart', auto.checked); });
+
+    function render(status) {
+      var info = document.getElementById('mobileInfo');
+      toggle.textContent = status.running ? 'Tat' : 'Bat';
+      toggle.setAttribute('aria-pressed', String(status.running));
+      if (!status.running) {
+        info.innerHTML = '<span class="muted">Dang tat.</span>';
+        return;
+      }
+      info.innerHTML = '<div class="ok">Dang chay o cong ' + status.port + '. Go dia chi nay tren dien thoai:</div>' +
+        status.addresses.map(function (a) {
+          return '<div class="kv"><code>' + esc(a) + '</code>' +
+            '<button class="ghost small" data-copy="' + esc(a) + '">Chep</button></div>';
+        }).join('');
+      info.querySelectorAll('[data-copy]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          navigator.clipboard.writeText(btn.dataset.copy);
+          toast('Da chep: ' + btn.dataset.copy);
+        });
+      });
+    }
+
+    toggle.addEventListener('click', async function () {
+      toggle.disabled = true;
+      try {
+        var status = await api.mobile.status();
+        var next = status.running ? await api.mobile.stop() : await api.mobile.start(Number(portInput.value));
+        render(next);
+      } catch (err) {
+        toast('Loi: ' + err.message);
+      } finally {
+        toggle.disabled = false;
+      }
+    });
+
+    api.on('mobile:status', render);
+    render(await api.mobile.status());
   }
 
   function fillDisplaySelects() {

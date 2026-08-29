@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TFT Companion</string>
+    <string name="bubble_label">T</string>
+    <string name="collapse">–</string>
+    <string name="close">✕</string>
+    <string name="grant_overlay">Cấp quyền hiển thị trên ứng dụng khác</string>
+    <string name="start_overlay">Bật bong bóng nổi trên game</string>
+    <string name="overlay_permission_needed">Cần quyền "Hiển thị trên ứng dụng khác" để đặt bảng trợ thủ lên trên TFT Mobile.</string>
+    <string name="overlay_ready">Đã có quyền. Bấm để bật bong bóng rồi mở game.</string>
+    <string name="overlay_running">Bong bóng đang nổi trên màn hình</string>
+    <string name="overlay_channel">Cửa sổ nổi</string>
+    <string name="stop_overlay">Tắt</string>
+</resources>

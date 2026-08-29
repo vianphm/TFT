@@ -34,6 +34,11 @@ const DEFAULT_CONFIG = {
     lastTab: 'comps'
   },
 
+  mobile: {
+    autoStart: false,         // bat may chu cho dien thoai ngay khi mo app
+    port: 7333
+  },
+
   hotkeys: {
     toggleOverlay:     'Control+Shift+T',
     toggleClickThrough:'Control+Shift+E',

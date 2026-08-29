@@ -4,3 +4,14 @@ release/
 *.log
 .DS_Store
 .cache/
+
+# Ban web dong goi lai duoc bang: npm run build:mobile
+dist-mobile/
+android/app/src/main/assets/mobile/
+
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+*.apk

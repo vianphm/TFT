@@ -102,7 +102,7 @@ function crc32(buf) {
 
 const outDir = path.join(__dirname, '..', 'assets');
 fs.mkdirSync(outDir, { recursive: true });
-for (const [name, size] of [['tray.png', 32], ['icon.png', 256]]) {
+for (const [name, size] of [['tray.png', 32], ['icon.png', 256], ['icon-192.png', 192], ['icon-512.png', 512]]) {
   fs.writeFileSync(path.join(outDir, name), png(size, render(size)));
   console.log('da tao', name, size + 'px');
 }

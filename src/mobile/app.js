@@ -1,0 +1,622 @@
+/**
+ * TFT Companion - ban chay tren dien thoai (PWA).
+ *
+ * Dung chung tables.js / calc.js / analyzer.js voi ban PC. Khac biet:
+ *  - Luu trang thai vao localStorage thay vi file cau hinh
+ *  - Lay doi hinh + du lieu set tu app PC qua wifi, hoac tu Community Dragon, hoac dan JSON
+ *  - Giao dien mot cot, nut to, thanh tab duoi cung
+ */
+(function () {
+  'use strict';
+
+  var calc = window.TFT.calc;
+  var tables = window.TFT.tables;
+  var analyzer = window.TFT.analyzer;
+  var cdragon = window.TFT.cdragon;
+
+  var KEYS = { state: 'tft.state', comps: 'tft.comps', data: 'tft.data', pc: 'tft.pcUrl' };
+
+  var state = load(KEYS.state, {
+    level: 8, cost: 4, owned: 0, taken: 0, gold: 40, need: 1,
+    money: 50, streak: 0, win: false, lvl: 7, xp: 0,
+    round: '2-1', notes: '', bag: {}, tab: 'roll', compId: null
+  });
+  var comps = load(KEYS.comps, []);
+  var dataset = load(KEYS.data, { champions: [], traits: [], setName: null });
+  var pcUrl = load(KEYS.pc, '');
+
+  document.addEventListener('DOMContentLoaded', init);
+
+  function init() {
+    // App Android mo trang nay trong cua so noi voi ?compact=1
+    if (/[?&]compact=1/.test(location.search)) document.body.classList.add('compact');
+    bindTabs();
+    bindSteppers();
+    bindRoll();
+    bindEcon();
+    bindItems();
+    bindComps();
+    bindRound();
+    bindSync();
+    renderTop();
+    showTab(state.tab || 'roll');
+    registerServiceWorker();
+    if (pcUrl) pullFromPc(pcUrl).catch(function () { /* PC chua bat, khong sao */ });
+  }
+
+  // -------------------------------------------------------------- khung suon
+
+  function bindTabs() {
+    document.querySelectorAll('.tabbar .tab').forEach(function (btn) {
+      btn.addEventListener('click', function () { showTab(btn.dataset.tab); });
+    });
+  }
+
+  function showTab(name) {
+    state.tab = name;
+    save(KEYS.state, state);
+    document.querySelectorAll('.tabbar .tab').forEach(function (b) {
+      b.classList.toggle('on', b.dataset.tab === name);
+    });
+    document.querySelectorAll('.page').forEach(function (p) {
+      p.classList.toggle('hidden', p.dataset.page !== name);
+    });
+    window.scrollTo(0, 0);
+  }
+
+  /** Nut +/- cho moi o so. */
+  function bindSteppers() {
+    document.querySelectorAll('.stepper').forEach(function (box) {
+      var input = document.getElementById(box.dataset.for);
+      box.querySelectorAll('button[data-step]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var step = Number(btn.dataset.step);
+          var min = input.min === '' ? -99 : Number(input.min);
+          var max = input.max === '' ? 999 : Number(input.max);
+          input.value = Math.max(min, Math.min(max, (Number(input.value) || 0) + step));
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+      });
+    });
+  }
+
+  function renderTop() {
+    var sub = document.getElementById('topSub');
+    var bits = [];
+    bits.push(dataset.champions.length ? (dataset.setName || 'Set') + ' - ' + dataset.champions.length + ' tuong' : 'Chua co du lieu set');
+    if (comps.length) bits.push(comps.length + ' doi hinh');
+    sub.textContent = bits.join(' | ');
+  }
+
+  // --------------------------------------------------------------------- roll
+
+  function bindRoll() {
+    var el = ids(['mLevel', 'mCost', 'mOwned', 'mTaken', 'mGold']);
+    el.mLevel.value = state.level;
+    el.mCost.value = state.cost;
+    el.mOwned.value = state.owned;
+    el.mTaken.value = state.taken;
+    el.mGold.value = state.gold;
+
+    document.getElementById('mNeed').addEventListener('click', function (e) {
+      var btn = e.target.closest('button');
+      if (!btn) return;
+      state.need = Number(btn.dataset.v);
+      document.querySelectorAll('#mNeed button').forEach(function (b) {
+        b.classList.toggle('on', b === btn);
+      });
+      render();
+    });
+
+    function render() {
+      state.level = +el.mLevel.value;
+      state.cost = +el.mCost.value;
+      state.owned = +el.mOwned.value;
+      state.taken = +el.mTaken.value;
+      state.gold = +el.mGold.value;
+      save(KEYS.state, state);
+
+      var opts = {
+        level: state.level, cost: state.cost,
+        copiesOwnedByYou: state.owned, copiesTakenByOthers: state.taken,
+        rolls: Math.floor(state.gold / 2), copiesNeeded: state.need
+      };
+      var out = calc.rollOutcome(opts);
+
+      document.getElementById('mGoldLabel').textContent = state.gold;
+      document.getElementById('mRollsLabel').textContent = Math.floor(state.gold / 2);
+      document.getElementById('mNeedLabel').textContent = state.need;
+
+      document.getElementById('mRollHero').innerHTML =
+        '<div class="num">' + calc.percent(out.probabilityAtLeastNeeded, 0) + '</div>' +
+        '<div class="cap">kha nang trung it nhat ' + state.need + ' ban sao voi ' + state.gold + ' vang</div>' +
+        '<div class="bar"><i style="width:' + (out.probabilityAtLeastNeeded * 100).toFixed(0) + '%"></i></div>';
+
+      document.getElementById('mRollTable').innerHTML =
+        row('Moi o cua hang', calc.percent(out.slotProbability, 2)) +
+        row('Moi lan roll (5 o)', calc.percent(out.shopProbability, 1)) +
+        row('Ky vong so ban sao', out.expectedCopies.toFixed(2)) +
+        row('Vang trung binh cho 1 ban', isFinite(out.expectedGoldForOne) ? Math.round(out.expectedGoldForOne) + 'v' : '-') +
+        row('Con lai trong kho', out.copiesLeftInPool + ' ban');
+
+      document.getElementById('mConfidence').innerHTML =
+        '<tr><th>Chac chan</th><th class="num">Vang</th><th class="num">Lan roll</th></tr>' +
+        [0.5, 0.75, 0.9, 0.95].map(function (c) {
+          var g = calc.goldForConfidence(opts, c);
+          return '<tr><td>' + Math.round(c * 100) + '%</td><td class="num">' +
+            (isFinite(g) ? g + 'v' : '-') + '</td><td class="num">' + (isFinite(g) ? g / 2 : '-') + '</td></tr>';
+        }).join('');
+    }
+
+    ['mLevel', 'mCost', 'mOwned', 'mTaken', 'mGold'].forEach(function (id) {
+      el[id].addEventListener('input', render);
+    });
+
+    document.getElementById('mOddsTable').innerHTML =
+      '<tr><th>Cap</th>' + [1, 2, 3, 4, 5].map(function (c) {
+        return '<th class="num cost-' + c + '">' + c + 'v</th>';
+      }).join('') + '</tr>' +
+      Object.keys(tables.SHOP_ODDS).map(function (lv) {
+        return '<tr><td>' + lv + '</td>' + tables.SHOP_ODDS[lv].map(function (p) {
+          return '<td class="num">' + (p ? p + '%' : '-') + '</td>';
+        }).join('') + '</tr>';
+      }).join('');
+
+    render();
+  }
+
+  // --------------------------------------------------------------------- econ
+
+  function bindEcon() {
+    var el = ids(['mMoney', 'mStreak', 'mWin', 'mLvl', 'mXp']);
+    el.mMoney.value = state.money;
+    el.mStreak.value = state.streak;
+    el.mWin.checked = state.win;
+    el.mLvl.value = state.lvl;
+    el.mXp.value = state.xp;
+
+    function render() {
+      state.money = +el.mMoney.value;
+      state.streak = +el.mStreak.value;
+      state.win = el.mWin.checked;
+      state.lvl = +el.mLvl.value;
+      state.xp = +el.mXp.value;
+      save(KEYS.state, state);
+
+      var income = calc.incomeNextRound({ gold: state.money, streak: state.streak, win: state.win });
+      var toInterest = (Math.floor(state.money / 10) + 1) * 10 - state.money;
+      document.getElementById('mEconResult').innerHTML =
+        '<table>' +
+        row('Co ban', income.base + 'v') +
+        row('Lai', '+' + income.interest + 'v') +
+        row('Chuoi', '+' + income.streak + 'v') +
+        row('Thang', '+' + income.win + 'v') +
+        '<tr><td><b>Vong sau nhan</b></td><td class="num"><b style="color:var(--gold);font-size:20px">' +
+          income.total + 'v</b></td></tr>' +
+        row('Them 1 lai khi du', income.interest >= tables.MAX_INTEREST ? 'da toi da' : ((Math.floor(state.money / 10) + 1) * 10) + 'v (con ' + toInterest + 'v)') +
+        '</table>';
+
+      document.getElementById('mProjection').innerHTML =
+        '<tr><th>Vong</th><th class="num">Thu nhap</th><th class="num">Tong vang</th></tr>' +
+        calc.projectGold({ gold: state.money, streak: state.streak, win: state.win, rounds: 5, spendPerRound: 0 })
+          .map(function (r) {
+            return '<tr><td>+' + r.round + '</td><td class="num">' + r.income + 'v</td><td class="num">' + r.gold + 'v</td></tr>';
+          }).join('');
+
+      var next = calc.levelCost(state.lvl, state.xp, state.lvl + 1);
+      var two = calc.levelCost(state.lvl, state.xp, state.lvl + 2);
+      document.getElementById('mLevelResult').innerHTML =
+        '<table>' +
+        row('Len cap ' + (state.lvl + 1), '<b style="color:var(--gold)">' + next.gold + 'v</b> (' + next.xp + ' XP)') +
+        row('Len cap ' + (state.lvl + 2), two.gold + 'v') +
+        row('Neu khong mua XP', next.rounds + ' vong nua') +
+        '</table>';
+    }
+
+    ['mMoney', 'mStreak', 'mWin', 'mLvl', 'mXp'].forEach(function (id) {
+      el[id].addEventListener('input', render);
+      el[id].addEventListener('change', render);
+    });
+
+    document.getElementById('mRoadmap').innerHTML =
+      '<tr><th>Vong</th><th>Cap</th><th>Ghi chu</th></tr>' +
+      tables.LEVEL_ROADMAP.map(function (r) {
+        return '<tr><td>' + r.round + '</td><td class="cost-5">' + r.level + '</td><td class="small">' + esc(r.note) + '</td></tr>';
+      }).join('');
+
+    render();
+  }
+
+  // -------------------------------------------------------------------- items
+
+  function bindItems() {
+    var bagEl = document.getElementById('mBag');
+    bagEl.innerHTML = tables.COMPONENTS.map(function (c) {
+      return '<span class="chip" data-id="' + c.id + '">' + esc(c.vi) + '<span class="count" data-count="' + c.id + '"></span></span>';
+    }).join('');
+
+    var pressTimer = null;
+    bagEl.addEventListener('click', function (e) {
+      var chip = e.target.closest('.chip');
+      if (!chip || chip.dataset.skip) { if (chip) delete chip.dataset.skip; return; }
+      state.bag[chip.dataset.id] = (state.bag[chip.dataset.id] || 0) + 1;
+      renderBag();
+    });
+    // Cham lau -> bot mot mon
+    bagEl.addEventListener('touchstart', function (e) {
+      var chip = e.target.closest('.chip');
+      if (!chip) return;
+      pressTimer = setTimeout(function () {
+        chip.dataset.skip = '1';
+        state.bag[chip.dataset.id] = Math.max(0, (state.bag[chip.dataset.id] || 0) - 1);
+        renderBag();
+      }, 450);
+    }, { passive: true });
+    ['touchend', 'touchmove', 'touchcancel'].forEach(function (ev) {
+      bagEl.addEventListener(ev, function () { clearTimeout(pressTimer); }, { passive: true });
+    });
+    bagEl.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+      var chip = e.target.closest('.chip');
+      if (!chip) return;
+      state.bag[chip.dataset.id] = Math.max(0, (state.bag[chip.dataset.id] || 0) - 1);
+      renderBag();
+    });
+
+    var grid = document.getElementById('mRecipeGrid');
+    grid.innerHTML = '<tr><td class="cell head"></td>' + tables.COMPONENTS.map(function (c) {
+      return '<td class="cell head">' + esc(c.vi) + '</td>';
+    }).join('') + '</tr>' +
+      calc.recipeGrid().map(function (r) {
+        return '<tr><td class="cell head">' + esc(r.component.vi) + '</td>' +
+          r.cells.map(function (cell) {
+            return '<td class="cell" data-item="' + esc(cell.item || '') + '">' + esc(cell.item || '') + '</td>';
+          }).join('') + '</tr>';
+      }).join('');
+    grid.addEventListener('click', function (e) {
+      var td = e.target.closest('td[data-item]');
+      if (!td) return;
+      grid.querySelectorAll('.cell.on').forEach(function (c) { c.classList.remove('on'); });
+      td.classList.add('on');
+      var note = tables.ITEM_NOTES[td.dataset.item];
+      document.getElementById('mRecipeHint').innerHTML =
+        '<b class="cost-5">' + esc(td.dataset.item) + '</b>' + (note ? ' — ' + esc(note) : '');
+    });
+
+    renderBag();
+  }
+
+  function bagList() {
+    var out = [];
+    Object.keys(state.bag).forEach(function (id) {
+      for (var i = 0; i < state.bag[id]; i++) out.push(id);
+    });
+    return out;
+  }
+
+  function renderBag() {
+    save(KEYS.state, state);
+    tables.COMPONENTS.forEach(function (c) {
+      var el = document.querySelector('[data-count="' + c.id + '"]');
+      if (el) el.textContent = state.bag[c.id] ? ' x' + state.bag[c.id] : '';
+      var chip = document.querySelector('.chip[data-id="' + c.id + '"]');
+      if (chip) chip.setAttribute('aria-pressed', String(Boolean(state.bag[c.id])));
+    });
+
+    var list = bagList();
+    var host = document.getElementById('mBagResult');
+    if (!list.length) {
+      host.innerHTML = '<span class="small muted">Chạm vào món cơ bản để thêm vào túi.</span>';
+      return;
+    }
+
+    // Neu doi hinh dang chon co danh sach trang bi, uu tien ghep cho no truoc.
+    var comp = comps.find(function (c) { return c.id === state.compId; }) || comps[0];
+    var wishlist = [];
+    if (comp) {
+      comp.units.slice().sort(function (a, b) { return (b.carry ? 1 : 0) - (a.carry ? 1 : 0); })
+        .forEach(function (u) { (u.items || []).forEach(function (i) { if (wishlist.indexOf(i) < 0) wishlist.push(i); }); });
+    }
+
+    var uniq = {};
+    var craftable = calc.craftable(list).filter(function (x) {
+      if (uniq[x.item]) return false;
+      uniq[x.item] = true;
+      return true;
+    });
+
+    var html = '<div class="small muted">Ghép được ngay (' + craftable.length + '):</div>' +
+      craftable.map(function (x) {
+        return '<div class="kv"><b class="cost-5">' + esc(x.item) + '</b><span class="small muted">' +
+          x.from.map(compName).join(' + ') + '</span></div>';
+      }).join('');
+
+    if (wishlist.length) {
+      var plan = calc.bestItemPlan(list, wishlist);
+      html += '<div class="small muted" style="margin-top:10px">Theo đội hình "' + esc(comp.name) + '":</div>' +
+        plan.crafted.map(function (c) {
+          return '<div class="kv"><span class="ok">✓ ' + esc(c.item) + '</span><span class="small muted">' +
+            c.from.map(compName).join(' + ') + '</span></div>';
+        }).join('') +
+        plan.missing.slice(0, 4).map(function (m) {
+          return '<div class="kv"><span class="warn">✗ ' + esc(m.item) + '</span><span class="small muted">thiếu ' +
+            m.need.map(compName).join(', ') + '</span></div>';
+        }).join('') +
+        (plan.leftover.length ? '<div class="small muted">Thừa: ' + plan.leftover.map(compName).join(', ') + '</div>' : '');
+    }
+    host.innerHTML = html;
+  }
+
+  function compName(id) {
+    var c = tables.COMPONENTS.find(function (x) { return x.id === id; });
+    return c ? c.vi : id;
+  }
+
+  // -------------------------------------------------------------------- comps
+
+  function bindComps() {
+    document.getElementById('mCompPick').addEventListener('change', function (e) {
+      state.compId = e.target.value;
+      save(KEYS.state, state);
+      renderComp();
+    });
+    renderCompPicker();
+  }
+
+  function renderCompPicker() {
+    var pick = document.getElementById('mCompPick');
+    pick.innerHTML = comps.length
+      ? comps.map(function (c) { return '<option value="' + c.id + '">' + esc(c.name) + '</option>'; }).join('')
+      : '<option>Chua co doi hinh nao</option>';
+    if (state.compId && comps.some(function (c) { return c.id === state.compId; })) pick.value = state.compId;
+    else if (comps.length) state.compId = comps[0].id;
+    renderComp();
+  }
+
+  function renderComp() {
+    var host = document.getElementById('mCompView');
+    var comp = comps.find(function (c) { return c.id === state.compId; }) || comps[0];
+    if (!comp) {
+      host.innerHTML = '<div class="card muted">Chưa có đội hình. Bấm nút ⇅ ở góc trên để lấy đội hình từ app trên PC, hoặc dán JSON.</div>';
+      return;
+    }
+
+    // Ban co thu nho
+    var boardHtml = '';
+    for (var r = 0; r < 4; r++) {
+      boardHtml += '<div class="mini-row">';
+      for (var c = 0; c < 7; c++) {
+        var unit = comp.units.find(function (u) { return u.row === r && u.col === c; });
+        boardHtml += '<div class="mini-hex' + (unit ? ' filled' : '') + (unit && unit.carry ? ' carry' : '') + '">' +
+          (unit ? '<span class="cost-' + unit.cost + '">' + esc(clip(unit.name, 9)) + '</span>' : '') + '</div>';
+      }
+      boardHtml += '</div>';
+    }
+
+    var unitsHtml = comp.units.map(function (u) {
+      return '<div class="unit-card">' +
+        '<span class="nm cost-' + u.cost + '">' + esc(u.name) + '</span>' +
+        '<span class="small" style="color:var(--gold)">' + '★'.repeat(u.star || 2) + '</span>' +
+        (u.carry ? '<span class="badge">carry</span>' : '') +
+        '<span class="it">' + esc((u.items || []).join(', ')) + '</span>' +
+        '</div>';
+    }).join('');
+
+    // Phan tich toc he neu da co du lieu set
+    var traitHtml = '';
+    if (dataset.champions && dataset.champions.length) {
+      var breakdown = analyzer.traitBreakdown(comp.units, dataset);
+      traitHtml = '<div class="card"><h3>Tộc hệ đang bật</h3>' +
+        (breakdown.active.length
+          ? breakdown.active.map(function (t) {
+              return '<div class="kv"><span>' + esc(t.name) + '</span><b style="color:var(--gold)">' +
+                t.count + '/' + t.activeAt + (t.next ? ' → ' + t.next : '') + '</b></div>';
+            }).join('')
+          : '<span class="small muted">Chưa bật mốc nào.</span>') +
+        (breakdown.inactive.filter(function (t) { return t.missing === 1; }).length
+          ? '<div class="small muted" style="margin-top:8px">Thiếu 1 tướng là bật: ' +
+            breakdown.inactive.filter(function (t) { return t.missing === 1; })
+              .map(function (t) { return esc(t.name); }).join(', ') + '</div>'
+          : '') +
+        '</div>';
+
+      var suggestions = analyzer.suggestNextUnit(comp.units, dataset, { limit: 5 });
+      if (suggestions.length) {
+        traitHtml += '<div class="card"><h3>Nên thêm tướng nào</h3>' +
+          suggestions.map(function (s) {
+            return '<div class="kv"><span class="cost-' + s.cost + '">' + esc(s.name) + ' <span class="small muted">' +
+              s.cost + 'v</span></span><span class="small muted">' +
+              (s.unlocks.length ? esc(s.unlocks.join(', ')) : '+' + s.gain) + '</span></div>';
+          }).join('') + '</div>';
+      }
+    }
+
+    host.innerHTML =
+      '<div class="card">' +
+        '<b>' + esc(comp.name) + '</b>' + (comp.tier ? ' <span class="badge">' + esc(comp.tier) + '</span>' : '') +
+        (comp.style ? '<div class="small muted">' + esc(comp.style) + '</div>' : '') +
+        (comp.econ && comp.econ.rollDownAt ? '<div class="small muted">Roll xuống ở ' + esc(comp.econ.rollDownAt) + '</div>' : '') +
+        '<div class="mini-board" style="margin-top:10px">' + boardHtml + '</div>' +
+      '</div>' +
+      '<div class="card">' + unitsHtml + '</div>' +
+      traitHtml +
+      (comp.notes ? '<div class="card small">' + esc(comp.notes) + '</div>' : '');
+  }
+
+  // -------------------------------------------------------------------- round
+
+  function bindRound() {
+    var input = document.getElementById('mRound');
+    var notes = document.getElementById('mNotes');
+    input.value = state.round;
+    notes.value = state.notes;
+
+    function render() {
+      state.round = input.value;
+      save(KEYS.state, state);
+      var near = calc.upcomingRounds(state.round, 7);
+      var far = calc.upcomingRounds(state.round, 21);
+      if (!near.length) {
+        document.getElementById('mRoundResult').innerHTML = '<span class="muted small">Nhập dạng 3-2</span>';
+        return;
+      }
+      var nextAug = far.find(function (r) { return r.augment; });
+      var nextCar = far.find(function (r) { return r.carousel; });
+      document.getElementById('mRoundResult').innerHTML =
+        '<div class="round-tags">' + near.map(function (r) {
+          var cls = r.augment ? 'augment' : r.carousel ? 'carousel' : r.pve ? 'pve' : '';
+          return '<span class="tag ' + cls + '">' + r.label + (r.augment ? ' lõi' : r.carousel ? ' chọn đồ' : r.pve ? ' quái' : '') + '</span>';
+        }).join('') + '</div>' +
+        '<table>' +
+        row('Lõi nâng cấp kế tiếp', nextAug ? nextAug.label : '-') +
+        row('Vòng chọn đồ kế tiếp', nextCar ? nextCar.label : '-') +
+        '</table>';
+    }
+
+    input.addEventListener('input', render);
+    document.getElementById('mRoundPrev').addEventListener('click', function () { step(-1); });
+    document.getElementById('mRoundNext').addEventListener('click', function () { step(1); });
+    notes.addEventListener('input', function () {
+      state.notes = notes.value;
+      save(KEYS.state, state);
+    });
+
+    function step(delta) {
+      var parsed = calc.parseRound(input.value) || { stage: 2, round: 1 };
+      var round = parsed.round + delta;
+      var stage = parsed.stage;
+      if (round > tables.ROUND_INFO.roundsPerStage) { round = 1; stage++; }
+      if (round < 1) { stage = Math.max(1, stage - 1); round = tables.ROUND_INFO.roundsPerStage; }
+      input.value = stage + '-' + round;
+      render();
+    }
+
+    render();
+  }
+
+  // --------------------------------------------------------------- dong bo
+
+  function bindSync() {
+    var sheet = document.getElementById('syncSheet');
+    document.getElementById('openSync').addEventListener('click', function () {
+      sheet.classList.remove('hidden');
+      renderSyncStatus();
+    });
+    document.getElementById('closeSync').addEventListener('click', function () { sheet.classList.add('hidden'); });
+    sheet.addEventListener('click', function (e) { if (e.target === sheet) sheet.classList.add('hidden'); });
+
+    document.getElementById('pcUrl').value = pcUrl;
+    document.getElementById('pcConnect').addEventListener('click', async function () {
+      var url = document.getElementById('pcUrl').value.trim();
+      msg('Đang kết nối...');
+      try {
+        var result = await pullFromPc(url);
+        msg('<span class="ok">Đã lấy ' + result.comps + ' đội hình, ' + result.champions + ' tướng từ PC.</span>');
+      } catch (err) {
+        msg('<span class="warn">Không kết nối được: ' + esc(err.message) + '</span>');
+      }
+    });
+
+    document.getElementById('pasteGo').addEventListener('click', function () {
+      var text = document.getElementById('pasteJson').value.trim();
+      try {
+        var json = JSON.parse(text);
+        var list = Array.isArray(json) ? json : (json.comps || [json]);
+        comps = list.filter(function (c) { return c && c.units; });
+        save(KEYS.comps, comps);
+        renderCompPicker();
+        renderTop();
+        msg('<span class="ok">Đã nhập ' + comps.length + ' đội hình.</span>');
+      } catch (err) {
+        msg('<span class="warn">JSON không đọc được.</span>');
+      }
+    });
+
+    document.getElementById('fetchSet').addEventListener('click', async function () {
+      msg('Đang tải dữ liệu set (file nặng, chờ chút)...');
+      try {
+        var res = await fetch(cdragon.CDRAGON_URL);
+        if (!res.ok) throw new Error('máy chủ trả về ' + res.status);
+        dataset = cdragon.parseCdragon(await res.json());
+        save(KEYS.data, dataset);
+        renderTop();
+        renderComp();
+        msg('<span class="ok">Xong: ' + esc(dataset.setName) + ' - ' + dataset.champions.length + ' tướng.</span>');
+      } catch (err) {
+        msg('<span class="warn">Tải trực tiếp không được (' + esc(err.message) +
+          '). Lấy qua app PC ở trên là chắc nhất.</span>');
+      }
+    });
+  }
+
+  async function pullFromPc(url) {
+    var base = String(url || '').replace(/\/+$/, '');
+    if (!/^https?:\/\//i.test(base)) base = 'http://' + base;
+    var res = await fetch(base + '/api/state', { cache: 'no-store' });
+    if (!res.ok) throw new Error('máy chủ trả về ' + res.status);
+    var payload = await res.json();
+
+    if (payload.comps) { comps = payload.comps; save(KEYS.comps, comps); }
+    if (payload.data && payload.data.champions && payload.data.champions.length) {
+      dataset = payload.data;
+      save(KEYS.data, dataset);
+    }
+    pcUrl = base;
+    save(KEYS.pc, pcUrl);
+    renderCompPicker();
+    renderTop();
+    renderSyncStatus();
+    return { comps: comps.length, champions: dataset.champions.length };
+  }
+
+  function renderSyncStatus() {
+    var el = document.getElementById('syncStatus');
+    el.innerHTML = (pcUrl ? '<span class="online">Đã lưu địa chỉ PC: ' + esc(pcUrl) + '</span>' : '<span class="offline">Chưa nối với PC</span>') +
+      '<br />' + (dataset.champions.length ? esc(dataset.setName || 'Set') + ' - ' + dataset.champions.length + ' tướng' : 'Chưa có dữ liệu set') +
+      ' · ' + comps.length + ' đội hình';
+  }
+
+  function msg(html) {
+    document.getElementById('syncMsg').innerHTML = html;
+  }
+
+  // ---------------------------------------------------------------- tien ich
+
+  function registerServiceWorker() {
+    if (!('serviceWorker' in navigator)) return;
+    navigator.serviceWorker.register('sw.js').catch(function () { /* mo bang file:// thi bo qua */ });
+  }
+
+  function ids(list) {
+    var out = {};
+    list.forEach(function (id) { out[id] = document.getElementById(id); });
+    return out;
+  }
+
+  function row(label, value) {
+    return '<tr><td>' + label + '</td><td class="num">' + value + '</td></tr>';
+  }
+
+  function clip(text, max) {
+    var s = String(text || '');
+    return s.length > max ? s.slice(0, max - 1) + '…' : s;
+  }
+
+  function load(key, fallback) {
+    try {
+      var raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch (err) {
+      return fallback;
+    }
+  }
+
+  function save(key, value) {
+    try { localStorage.setItem(key, JSON.stringify(value)); } catch (err) { /* het cho luu */ }
+  }
+
+  function esc(text) {
+    return String(text == null ? '' : text)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+})();

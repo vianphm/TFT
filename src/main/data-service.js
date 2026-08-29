@@ -3,9 +3,8 @@
 const fs = require('fs');
 const path = require('path');
 const { net } = require('electron');
+const { CDRAGON_URL, parseCdragon } = require('../renderer/shared/cdragon.js');
 
-const CDRAGON_URL = 'https://raw.communitydragon.org/latest/cdragon/tft/en_us.json';
-const CDRAGON_CDN = 'https://raw.communitydragon.org/latest/game/';
 const BUNDLED_DIR = path.join(__dirname, '..', 'shared', 'data');
 
 /**
@@ -58,74 +57,6 @@ class DataService {
       syncedAt: parsed.syncedAt
     };
   }
-}
-
-/** Rut gon file en_us.json (rat nang) thanh dung nhung gi app can. */
-function parseCdragon(raw) {
-  const sets = raw.sets || {};
-  const setNumber = Object.keys(sets)
-    .map(Number)
-    .filter((n) => !Number.isNaN(n))
-    .sort((a, b) => b - a)[0];
-  const set = sets[String(setNumber)] || { champions: [], traits: [] };
-
-  const champions = (set.champions || [])
-    .filter((c) => c.cost > 0 && Array.isArray(c.traits) && c.traits.length)
-    .map((c) => ({
-      apiName: c.apiName,
-      name: c.name,
-      cost: c.cost,
-      traits: c.traits,
-      icon: toCdn(c.squareIcon || c.tileIcon)
-    }))
-    .sort((a, b) => a.cost - b.cost || a.name.localeCompare(b.name));
-
-  const traits = (set.traits || []).map((t) => ({
-    apiName: t.apiName,
-    name: t.name,
-    icon: toCdn(t.icon),
-    breakpoints: (t.effects || []).map((e) => e.minUnits)
-  }));
-
-  const allItems = raw.items || [];
-  const items = allItems
-    .filter((i) => Array.isArray(i.composition) && i.composition.length === 2)
-    .map((i) => ({
-      apiName: i.apiName,
-      name: i.name,
-      composition: i.composition,
-      icon: toCdn(i.icon),
-      desc: stripTags(i.desc || '')
-    }));
-
-  const components = allItems
-    .filter((i) => (!i.composition || !i.composition.length) && i.icon && /items\/hexcore/i.test(i.icon))
-    .map((i) => ({ apiName: i.apiName, name: i.name, icon: toCdn(i.icon) }));
-
-  const augments = allItems
-    .filter((i) => /augment/i.test(i.apiName || '') && i.name)
-    .map((i) => ({ apiName: i.apiName, name: i.name, icon: toCdn(i.icon), desc: stripTags(i.desc || '') }));
-
-  return {
-    source: 'communitydragon',
-    syncedAt: new Date().toISOString(),
-    setNumber,
-    setName: set.name || `Set ${setNumber}`,
-    champions,
-    traits,
-    items,
-    components,
-    augments
-  };
-}
-
-function toCdn(iconPath) {
-  if (!iconPath) return null;
-  return CDRAGON_CDN + String(iconPath).toLowerCase().replace(/\.(tex|dds)$/, '.png');
-}
-
-function stripTags(text) {
-  return String(text).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 }
 
 function fetchJson(url) {

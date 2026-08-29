@@ -10,6 +10,7 @@ const { HotkeyManager } = require('./hotkeys');
 const { GameWatcher } = require('./game-watcher');
 const { DataService } = require('./data-service');
 const importer = require('./comp-importer');
+const { MobileServer } = require('./mobile-server');
 const { SAMPLE_COMPS } = require('../shared/data/sample-comps');
 
 // Chi cho phep mot ban chay - mo lan hai thi bat dashboard cua ban dang chay.
@@ -24,6 +25,7 @@ let hotkeys;
 let watcher;
 let data;
 let tray;
+let mobile;
 
 app.on('second-instance', () => windows && windows.showDashboard());
 
@@ -34,6 +36,15 @@ app.whenReady().then(() => {
   data = new DataService(app.getPath('userData'));
   windows = new WindowManager(store);
   hotkeys = new HotkeyManager(store);
+
+  mobile = new MobileServer({
+    store,
+    dataService: data,
+    onChange: (status, comps) => {
+      windows.broadcast('mobile:status', status);
+      if (comps) windows.broadcast('comps:changed', comps);
+    }
+  });
 
   registerIpc();
   createTray();
@@ -47,6 +58,10 @@ app.whenReady().then(() => {
     opacityDown: () => windows.setOpacity(store.get('overlay.opacity', 0.92) - 0.05),
     moveOverlayScreen: () => windows.moveOverlayToDisplay()
   });
+
+  if (store.get('mobile.autoStart', false)) {
+    mobile.start(store.get('mobile.port', 7333)).catch((err) => console.error('[mobile]', err.message));
+  }
 
   windows.createOverlay();
   if (store.get('overlay.enabled', true)) windows.showOverlay();
@@ -85,6 +100,7 @@ app.on('window-all-closed', () => {});
 
 app.on('before-quit', () => {
   if (windows) windows.quitting = true;
+  if (mobile) mobile.stop();
   if (watcher) watcher.stop();
   if (hotkeys) hotkeys.dispose();
   if (store) store.saveNow();
@@ -199,6 +215,15 @@ function registerIpc() {
   });
   handle('comps:import-url', (url) => importer.importFromUrl(url, data.load()));
   handle('comps:import-text', (text) => importer.importFromText(text, data.load()));
+
+  // --- may chu cho dien thoai
+  handle('mobile:status', () => mobile.status());
+  handle('mobile:start', async (port) => {
+    const status = await mobile.start(port || store.get('mobile.port', 7333));
+    store.set('mobile.port', status.port);
+    return status;
+  });
+  handle('mobile:stop', () => mobile.stop());
 
   // --- linh tinh
   handle('game:status', () => (watcher ? watcher.snapshot : { gameRunning: false, clientRunning: false }));

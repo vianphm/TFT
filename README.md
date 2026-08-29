@@ -33,6 +33,8 @@ npm install
 npm start          # chạy app
 npm test           # chạy kiểm thử phần tính toán (không cần Electron)
 npm run dist       # đóng gói (nsis / dmg / AppImage) bằng electron-builder
+npm run build:mobile          # gom bản web cho điện thoại vào dist-mobile/
+npm run build:mobile:android  # nhồi bản web đó vào assets của app Android
 ```
 
 Lần đầu chạy, vào tab **Tướng trong set** hoặc cửa sổ **Cài đặt** bấm *Đồng bộ dữ liệu set* để tải
@@ -71,15 +73,51 @@ Tab **Đội hình → Nhập từ web / văn bản**:
 - Kết quả là **bản nháp** — mỗi trang có cách trình bày khác nhau, nên xem lại vị trí đứng và trang bị
   trước khi dùng. JSON xuất từ chính app này thì nhập lại chính xác 100%.
 
+## Bản điện thoại
+
+Có hai cách dùng trên điện thoại, dùng chung y hệt phần tính toán với bản PC.
+
+### 1. Web app (PWA) — chạy trên mọi máy, kể cả iPhone
+
+Trong app PC, tab **Overlay & cài đặt → Cho điện thoại truy cập → Bật**. App hiện địa chỉ dạng
+`http://192.168.1.x:7333`; gõ địa chỉ đó vào trình duyệt điện thoại (cùng wifi) là có ngay bản mobile,
+kèm toàn bộ đội hình và dữ liệu set đang dùng trên PC. Bấm *Thêm vào màn hình chính* để nó chạy như app
+thật, có icon riêng, mở được cả khi tắt máy tính (service worker giữ lại bản đã tải, dữ liệu nằm trong máy).
+
+Không muốn bật máy tính thì `npm run build:mobile` ra thư mục `dist-mobile/` — đưa lên GitHub Pages
+hay bất kỳ chỗ nào phục vụ file tĩnh là dùng được độc lập; đội hình nhập bằng cách dán JSON.
+
+### 2. App Android — bong bóng nổi đè lên TFT Mobile
+
+Đây mới là overlay thật trên điện thoại: một bong bóng luôn nổi trên game, kéo đi được, chạm vào thì
+bung ra bảng trợ thủ; nhấn Back hoặc nút – để thu lại, ✕ để tắt hẳn.
+
+- **Lấy APK:** mỗi lần push, GitHub Actions tự build và đính APK ở tab **Actions → Build APK Android →
+  Artifacts**. Tải về, mở file, cho phép cài từ nguồn này.
+- **Tự build:** mở thư mục `android/` bằng Android Studio, chạy `npm run build:mobile:android` trước
+  để nhồi bản web vào assets, rồi Run.
+- Lần đầu chạy, app xin quyền **"Hiển thị trên ứng dụng khác"** — đây là quyền Android bắt buộc để vẽ
+  đè lên game. Cấp xong bấm *Bật bong bóng nổi trên game* rồi mở TFT.
+- App không đọc màn hình, không chạm hộ, không nối vào game — chỉ là một cửa sổ nổi hiển thị bảng tính
+  của chính bạn.
+
+> **iPhone không làm được overlay.** iOS không cho phép app vẽ đè lên app khác, không có cách nào lách.
+> Trên iPhone chỉ dùng được bản PWA ở mục 1 (chuyển qua lại giữa hai app, hoặc để trên iPad ở chế độ Slide Over).
+
 ## Cấu trúc
 
 ```
-src/main/          tiến trình chính: cửa sổ, phím tắt, cấu hình, đồng bộ dữ liệu, nhập đội hình
+src/main/          tiến trình chính: cửa sổ, phím tắt, cấu hình, đồng bộ dữ liệu, nhập đội hình,
+                   máy chủ LAN cho điện thoại
 src/preload/       cầu nối IPC an toàn (contextIsolation, renderer không có Node)
-src/renderer/      giao diện: overlay/, dashboard/, settings/, shared/ (bảng số liệu + logic tính)
+src/renderer/      giao diện PC: overlay/, dashboard/, settings/
+src/renderer/shared/  dùng chung cho tất cả: tables.js (số liệu), calc.js (xác suất, kinh tế, đồ),
+                   analyzer.js (tộc hệ, tối ưu đội hình), cdragon.js (đọc dữ liệu set)
+src/mobile/        bản web cho điện thoại (PWA), cũng là ruột của app Android
 src/shared/data/   dữ liệu đóng gói sẵn (đội hình mẫu, bộ dữ liệu dự phòng)
-scripts/           tạo icon, tạo dữ liệu dự phòng, smoke test giao diện
-test/              kiểm thử logic tính toán
+android/           app Android: bong bóng nổi đè lên game (Kotlin + WebView)
+scripts/           tạo icon, dữ liệu dự phòng, gom bản mobile, smoke test giao diện
+test/              kiểm thử logic tính toán và bộ phân tích đội hình
 ```
 
 Cấu hình + cache lưu tại thư mục userData của Electron (Cài đặt → *Mở thư mục cấu hình*).
@@ -90,8 +128,24 @@ Bảng tỉ lệ cửa hàng theo cấp, kho tướng, XP, lãi và thưởng ch
 `src/renderer/shared/tables.js`. Riot có chỉnh các con số này giữa các set — sửa trực tiếp file đó
 là mọi phần tính toán cập nhật theo, không cần đổi gì khác.
 
+## Bộ phân tích đội hình
+
+`src/renderer/shared/analyzer.js` làm việc trên dữ liệu chính thức của set (tướng + tộc hệ), không cần
+trang meta nào:
+
+- **Tộc hệ đang bật**: đếm theo từng mốc, chỉ ra tộc hệ nào chỉ còn thiếu 1 tướng là lên mốc.
+- **Nên thêm tướng nào**: xếp hạng theo mức điểm tăng thêm, ưu tiên tướng rẻ khi điểm ngang nhau.
+- **Tự tìm tổ hợp tối ưu**: beam search chọn N tướng (N = cấp của bạn), giữ lại carry bạn đang cầm,
+  chặn theo giá tối đa. Cách chấm điểm: mốc càng cao điểm tăng càng nhanh (nên nó ưu tiên bật sâu thay
+  vì bật rộng), tướng không đóng góp mốc nào bị trừ điểm, tổng giá cao bị trừ nhẹ.
+- **Kế hoạch ghép đồ** (`calc.bestItemPlan`): từ túi đồ hiện có và danh sách trang bị của đội hình,
+  tính ghép được món nào trước, còn thiếu đúng món cơ bản nào, thừa gì.
+
+Muốn đổi khẩu vị thì sửa `DEFAULT_WEIGHTS` trong `analyzer.js`.
+
 ## Chưa làm (nếu cần thì làm tiếp)
 
 - Bộ đọc riêng cho từng trang meta (chính xác hơn cách dò theo từ khoá hiện tại).
 - Lịch sử đấu / thống kê qua Riot API (cần API key).
 - Tự nhận diện vòng đấu và số vàng bằng OCR.
+- Gửi ngược đội hình sửa trên điện thoại về PC (hiện đang một chiều PC → điện thoại).
