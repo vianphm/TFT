@@ -1,0 +1,58 @@
+[
+  {
+    "name": "vntft-dtcl",
+    "url": "https://vntft.com/dtcl",
+    "bytes": 175952,
+    "textBytes": 6369,
+    "champions": 55,
+    "traits": 1
+  },
+  {
+    "name": "metatft-units",
+    "url": "https://metatft.gg/units/",
+    "bytes": 189034,
+    "textBytes": 9702,
+    "champions": 56,
+    "traits": 0
+  },
+  {
+    "name": "metatft-comps",
+    "url": "https://metatft.gg/comps",
+    "bytes": 1352087,
+    "textBytes": 18968,
+    "champions": 51,
+    "traits": 0
+  },
+  {
+    "name": "doihinhtft-doi-hinh",
+    "url": "https://doihinhtft.vn/doi-hinh-mua-18/",
+    "bytes": 1424898,
+    "textBytes": 16131,
+    "champions": 52,
+    "traits": 0
+  },
+  {
+    "name": "doihinhtft-tuong",
+    "url": "https://doihinhtft.vn/tuong-tft-mua-18/",
+    "bytes": 252252,
+    "textBytes": 12076,
+    "champions": 53,
+    "traits": 0
+  },
+  {
+    "name": "doihinhtft-toc-he",
+    "url": "https://doihinhtft.vn/toc-he-mua-18/",
+    "bytes": 565479,
+    "textBytes": 17855,
+    "champions": 53,
+    "traits": 0
+  },
+  {
+    "name": "doihinhtft-loi-nang-cap",
+    "url": "https://doihinhtft.vn/loi-nang-cap-tft-mua-18/",
+    "bytes": 128515,
+    "textBytes": 1981,
+    "champions": 2,
+    "traits": 0
+  }
+]
