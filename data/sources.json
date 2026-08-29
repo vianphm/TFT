@@ -58,5 +58,10 @@
     "name": "vntft-toc-he",
     "url": "https://vntft.com/toc-he-dtcl",
     "render": true
+  },
+  {
+    "name": "vntft-doi-hinh",
+    "url": "https://vntft.com/doi-hinh-dtcl",
+    "render": true
   }
 ]
