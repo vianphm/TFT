@@ -9,7 +9,7 @@
  */
 const fs = require('fs');
 const path = require('path');
-const { CDRAGON_URL, parseCdragon } = require('../src/renderer/shared/cdragon.js');
+const { CDRAGON_URL, parseCdragon, diagnose } = require('../src/renderer/shared/cdragon.js');
 const tables = require('../src/renderer/shared/tables.js');
 
 const OUT = path.join(__dirname, '..', 'src', 'shared', 'data', 'set-fallback.json');
@@ -35,8 +35,18 @@ async function main() {
     clearTimeout(timer);
   }
 
-  const parsed = parseCdragon(raw);
+  // In ra tat ca nhanh du lieu de doi chieu - Community Dragon giu ca set cu lan set moi
+  console.log('\nCac nhanh set tim thay (theo thu tu uu tien):');
+  diagnose(raw).slice(0, 12).forEach(function (c, i) {
+    console.log(`  ${i === 0 ? '->' : '  '} [${c.source}] ${c.mutator || 'so ' + c.number}` +
+      ` "${c.name || '?'}" - ${c.champions} tuong, ${c.traits} toc he,` +
+      ` gia: ${[1, 2, 3, 4, 5].map((k) => c.byCost[k]).join('/')}`);
+  });
+
+  const wanted = process.env.TFT_SET_MUTATOR || null;
+  const parsed = parseCdragon(raw, wanted ? { mutator: wanted } : undefined);
   if (!parsed.champions.length) throw new Error('khong doc duoc tuong nao - cau truc du lieu co the da doi');
+  validate(parsed);
 
   // Giu lai bang cong thuc ghep do cua rieng app (ten tieng Anh chuan, khong doi theo set)
   const payload = {
@@ -68,4 +78,41 @@ async function main() {
   console.log(`  ${parsed.traits.length} toc he, ${parsed.items.length} trang bi ghep, ` +
     `${parsed.components.length} mon co ban`);
   console.log(`  Ghi vao ${path.relative(process.cwd(), OUT)} (${size} KB)`);
+}
+
+/**
+ * Chan du lieu vo ly truoc khi ghi de.
+ * Mot set that co khoang 13-14 tuong moi muc gia 1-4 va 8-10 tuong 5 vang.
+ * Neu lech xa nghia la da doc nham nhanh (vi du nhanh gop nhieu mua cu lai voi nhau).
+ */
+function validate(parsed) {
+  const byCost = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+  parsed.champions.forEach((c) => { if (byCost[c.cost] !== undefined) byCost[c.cost]++; });
+  const problems = [];
+
+  if (parsed.champions.length < 40 || parsed.champions.length > 80) {
+    problems.push(`so tuong bat thuong: ${parsed.champions.length}`);
+  }
+  if (byCost[5] > 12) {
+    problems.push(`co toi ${byCost[5]} tuong 5 vang - nhanh nay chac chan gop nhieu mua`);
+  }
+  if (byCost[1] < 8 || byCost[2] < 8 || byCost[3] < 8 || byCost[4] < 8) {
+    problems.push(`thieu tuong o mot muc gia: ${[1, 2, 3, 4, 5].map((k) => byCost[k]).join('/')}`);
+  }
+
+  // Nhieu ban sao cua cung mot tuong (Lux (Coven), Lux (Solar)...) = dau hieu gop mua cu
+  const baseNames = {};
+  parsed.champions.forEach((c) => {
+    const base = String(c.name).replace(/\s*\(.*\)\s*$/, '');
+    baseNames[base] = (baseNames[base] || 0) + 1;
+  });
+  const duplicated = Object.keys(baseNames).filter((n) => baseNames[n] > 2);
+  if (duplicated.length) {
+    problems.push(`co tuong lap nhieu lan (${duplicated.slice(0, 3).join(', ')}) - nhanh gop nhieu mua`);
+  }
+
+  if (problems.length) {
+    throw new Error('Du lieu doc duoc khong hop le:\n  - ' + problems.join('\n  - ') +
+      '\nDat bien moi truong TFT_SET_MUTATOR (vi du TFTSet14) de chi dinh nhanh dung.');
+  }
 }
