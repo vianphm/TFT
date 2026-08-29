@@ -33,12 +33,13 @@ jobs:
 
       - name: Commit ket qua
         run: |
-          if git diff --quiet -- data/sources/; then
+          # git diff khong thay file MOI chua duoc theo doi, nen phai add truoc roi moi kiem tra
+          git add data/sources/
+          if git diff --cached --quiet -- data/sources/; then
             echo "Khong co gi thay doi."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/sources/
           git commit -m "Tải các trang nguồn về repo" -m "Tải tự động bằng scripts/fetch-web-sources.js."
           git push

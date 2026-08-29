@@ -73,7 +73,10 @@ async function renderPage(url) {
   const browser = await chromium.launch();
   try {
     const page = await browser.newPage({ userAgent: UA, viewport: { width: 1440, height: 2200 } });
-    await page.goto(url, { waitUntil: 'networkidle', timeout: 90000 });
+    // Mot so trang (vd vntft.com) khong bao gio "yen" hoan toan (quang cao, dem nguoc...);
+    // cho DOM dung xong roi nghi mot chut la du, khong doi networkidle.
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
+    await page.waitForTimeout(2500);
     // Cuon xuong cho phan tai dan (lazy load) kip hien
     for (let i = 0; i < 6; i++) {
       await page.mouse.wheel(0, 2000);
