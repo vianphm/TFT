@@ -11,10 +11,12 @@ const root = path.join(__dirname, '..');
 const out = process.argv[2] ? path.resolve(process.argv[2]) : path.join(root, 'dist-mobile');
 
 const SHARED = ['style.css', 'tables.js', 'calc.js', 'analyzer.js', 'cdragon.js', 'db.js'];
+const DATA_FILES = ['set-fallback.json', 'set18-wisps.json', 'sample-comps.js'];
 const ICONS = [['icon-192.png', 'icon-192.png'], ['icon-512.png', 'icon-512.png'], ['icon.png', 'icon.png']];
 
 fs.rmSync(out, { recursive: true, force: true });
 fs.mkdirSync(path.join(out, 'shared'), { recursive: true });
+fs.mkdirSync(path.join(out, 'shared', 'data'), { recursive: true });
 
 for (const file of fs.readdirSync(path.join(root, 'src', 'mobile'))) {
   fs.copyFileSync(path.join(root, 'src', 'mobile', file), path.join(out, file));
@@ -22,8 +24,15 @@ for (const file of fs.readdirSync(path.join(root, 'src', 'mobile'))) {
 for (const file of SHARED) {
   fs.copyFileSync(path.join(root, 'src', 'renderer', 'shared', file), path.join(out, 'shared', file));
 }
+for (const file of DATA_FILES) {
+  const src = path.join(root, 'src', 'shared', 'data', file);
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, path.join(out, 'shared', 'data', file));
+  }
+}
 for (const [from, to] of ICONS) {
-  fs.copyFileSync(path.join(root, 'assets', from), path.join(out, to));
+  const src = path.join(root, 'assets', from);
+  if (fs.existsSync(src)) fs.copyFileSync(src, path.join(out, to));
 }
 
 const count = walk(out).length;
