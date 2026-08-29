@@ -53,8 +53,14 @@
         };
       });
 
+    // Mon co ban = mon duoc dung lam nguyen lieu trong cong thuc cua mon khac.
+    // Suy ra tu chinh du lieu, khong doan theo duong dan icon (moi set Riot doi mot kieu).
+    var usedAsPart = {};
+    allItems.forEach(function (i) {
+      (i.composition || []).forEach(function (part) { usedAsPart[part] = true; });
+    });
     var components = allItems
-      .filter(function (i) { return (!i.composition || !i.composition.length) && i.icon && /items\/hexcore/i.test(i.icon); })
+      .filter(function (i) { return usedAsPart[i.apiName]; })
       .map(function (i) { return { apiName: i.apiName, name: i.name, icon: toCdn(i.icon) }; });
 
     var augments = allItems

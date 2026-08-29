@@ -77,7 +77,23 @@ Tab **Đội hình → Nhập từ web / văn bản**:
 
 Có hai cách dùng trên điện thoại, dùng chung y hệt phần tính toán với bản PC.
 
-### 1. Web app (PWA) — chạy trên mọi máy, kể cả iPhone
+### 1a. Đưa lên Vercel — link dùng được cho cả Android lẫn iPhone
+
+Repo có sẵn `vercel.json` và một serverless function, import phát là chạy:
+
+1. Vào [vercel.com/new](https://vercel.com/new), chọn **Import Git Repository** → `vianphm/TFT`.
+2. Framework để **Other**; build command và output directory Vercel tự đọc từ `vercel.json`
+   (`node scripts/build-mobile.js dist-mobile` → `dist-mobile`). Bấm **Deploy**.
+3. Xong, mở link `*.vercel.app` trên điện thoại → **Thêm vào màn hình chính**. iPhone cũng cài được
+   theo cách này (Safari → nút Chia sẻ → Thêm vào MH chính).
+
+Kèm theo là `api/tft-data.js`: nó tải file dữ liệu của Community Dragon ở phía máy chủ, cắt còn vài
+trăm KB rồi trả về cho điện thoại kèm CORS và cache CDN 6 tiếng. Nhờ vậy điện thoại không phải tải
+file 10-30 MB và không dính chặn CORS. Bản web tự gọi endpoint này ngay lần mở đầu tiên.
+
+Muốn deploy bằng dòng lệnh: `npx vercel --prod` trong thư mục repo.
+
+### 1b. Web app (PWA) — chạy trên mọi máy, kể cả iPhone
 
 Trong app PC, tab **Overlay & cài đặt → Cho điện thoại truy cập → Bật**. App hiện địa chỉ dạng
 `http://192.168.1.x:7333`; gõ địa chỉ đó vào trình duyệt điện thoại (cùng wifi) là có ngay bản mobile,
@@ -92,8 +108,9 @@ hay bất kỳ chỗ nào phục vụ file tĩnh là dùng được độc lập
 Đây mới là overlay thật trên điện thoại: một bong bóng luôn nổi trên game, kéo đi được, chạm vào thì
 bung ra bảng trợ thủ; nhấn Back hoặc nút – để thu lại, ✕ để tắt hẳn.
 
-- **Lấy APK:** mỗi lần push, GitHub Actions tự build và đính APK ở tab **Actions → Build APK Android →
-  Artifacts**. Tải về, mở file, cho phép cài từ nguồn này.
+- **Tải APK:** [github.com/vianphm/TFT/releases/tag/android-latest](https://github.com/vianphm/TFT/releases/tag/android-latest)
+  — mở link đó bằng trình duyệt điện thoại, tải file `.apk`, mở ra cài (Android sẽ hỏi cho phép cài từ
+  nguồn này). Mỗi lần push, GitHub Actions build lại và cập nhật đúng release đó.
 - **Tự build:** mở thư mục `android/` bằng Android Studio, chạy `npm run build:mobile:android` trước
   để nhồi bản web vào assets, rồi Run.
 - Lần đầu chạy, app xin quyền **"Hiển thị trên ứng dụng khác"** — đây là quyền Android bắt buộc để vẽ
@@ -114,6 +131,7 @@ src/renderer/      giao diện PC: overlay/, dashboard/, settings/
 src/renderer/shared/  dùng chung cho tất cả: tables.js (số liệu), calc.js (xác suất, kinh tế, đồ),
                    analyzer.js (tộc hệ, tối ưu đội hình), cdragon.js (đọc dữ liệu set)
 src/mobile/        bản web cho điện thoại (PWA), cũng là ruột của app Android
+api/               serverless function của Vercel: cầu lấy dữ liệu set, cắt gọn cho điện thoại
 src/shared/data/   dữ liệu đóng gói sẵn (đội hình mẫu, bộ dữ liệu dự phòng)
 android/           app Android: bong bóng nổi đè lên game (Kotlin + WebView)
 scripts/           tạo icon, dữ liệu dự phòng, gom bản mobile, smoke test giao diện

@@ -11,7 +11,7 @@
     "dev": "electron . --dev",
     "dist": "electron-builder",
     "pack": "electron-builder --dir",
-    "test": "node test/calc.test.js && node test/analyzer.test.js",
+    "test": "node test/calc.test.js && node test/analyzer.test.js && node test/api.test.js",
     "smoke": "TFT_SMOKE=1 electron . --no-sandbox",
     "icons": "node scripts/make-icons.js",
     "data:fallback": "node scripts/make-fallback.js",

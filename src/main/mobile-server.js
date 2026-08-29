@@ -104,6 +104,7 @@ class MobileServer {
     }
 
     if (pathname === '/api/state') return this._sendState(res);
+    if (pathname === '/api/tft-data') return this._sendData(res);
     if (pathname === '/api/comps' && req.method === 'POST') return this._saveComps(req, res);
 
     return this._sendFile(pathname, res);
@@ -121,6 +122,21 @@ class MobileServer {
         traits: data.traits || []
       },
       state: this.store.get('state', {})
+    }));
+  }
+
+  /** Cung duong dan voi ham tren Vercel, de ban mobile dung chung mot cach goi. */
+  _sendData(res) {
+    const data = this.dataService.load();
+    send(res, 200, TYPES['.json'], JSON.stringify({
+      source: data.source,
+      syncedAt: data.syncedAt,
+      setNumber: data.setNumber,
+      setName: data.setName,
+      champions: data.champions || [],
+      traits: data.traits || [],
+      items: data.items || [],
+      components: data.components || []
     }));
   }
 

@@ -42,6 +42,8 @@
     showTab(state.tab || 'roll');
     registerServiceWorker();
     if (pcUrl) pullFromPc(pcUrl).catch(function () { /* PC chua bat, khong sao */ });
+    // Lan dau mo tren web: tu lay database cua set, khong bat nguoi dung phai bam
+    if (!dataset.champions.length) fetchSet(false).catch(function () { /* offline thi thoi */ });
   }
 
   // -------------------------------------------------------------- khung suon
@@ -567,27 +569,59 @@
       }
     });
 
-    document.getElementById('fetchSet').addEventListener('click', async function () {
-      msg('Đang tải dữ liệu set (file nặng, chờ chút)...');
+    document.getElementById('fetchSet').addEventListener('click', function () {
+      fetchSet(true);
+    });
+  }
+
+  /**
+   * Tai database cua set. Thu lan luot:
+   *   1. /api/tft-data cua chinh trang nay (ban dua len Vercel co san, nhe va khong dinh CORS)
+   *   2. May chu cua app tren PC neu da noi
+   *   3. Goi thang Community Dragon (nang, co the bi CORS chan)
+   */
+  async function fetchSet(loud) {
+    var say = loud ? msg : function () {};
+    var sources = [];
+    if (location.protocol === 'http:' || location.protocol === 'https:') {
+      sources.push({ name: 'may chu cua trang', url: location.origin + '/api/tft-data?slim=1', parse: false });
+    }
+    if (pcUrl) sources.push({ name: 'app tren PC', url: pcUrl + '/api/state', parse: 'pc' });
+    sources.push({ name: 'Community Dragon', url: cdragon.CDRAGON_URL, parse: true });
+
+    var lastError = null;
+    for (var i = 0; i < sources.length; i++) {
+      var source = sources[i];
+      say('Đang tải dữ liệu set từ ' + source.name + '...');
       try {
-        var res = await fetch(cdragon.CDRAGON_URL);
+        var res = await fetchWithTimeout(source.url, source.parse === true ? 40000 : 15000);
         if (!res.ok) throw new Error('máy chủ trả về ' + res.status);
-        dataset = cdragon.parseCdragon(await res.json());
+        var json = await res.json();
+        var next = source.parse === true ? cdragon.parseCdragon(json)
+          : source.parse === 'pc' ? json.data
+          : json;
+        if (!next || !next.champions || !next.champions.length) throw new Error('dữ liệu rỗng');
+        dataset = next;
         save(KEYS.data, dataset);
         renderTop();
         renderComp();
-        msg('<span class="ok">Xong: ' + esc(dataset.setName) + ' - ' + dataset.champions.length + ' tướng.</span>');
+        renderSyncStatus();
+        say('<span class="ok">Xong: ' + esc(dataset.setName || 'Set') + ' - ' +
+          dataset.champions.length + ' tướng (nguồn: ' + source.name + ').</span>');
+        return dataset;
       } catch (err) {
-        msg('<span class="warn">Tải trực tiếp không được (' + esc(err.message) +
-          '). Lấy qua app PC ở trên là chắc nhất.</span>');
+        lastError = err;
       }
-    });
+    }
+    say('<span class="warn">Không lấy được dữ liệu set: ' + esc(lastError ? lastError.message : '?') +
+      '. Thử bật máy chủ trong app PC rồi kết nối ở trên.</span>');
+    throw lastError || new Error('khong co nguon du lieu');
   }
 
   async function pullFromPc(url) {
     var base = String(url || '').replace(/\/+$/, '');
     if (!/^https?:\/\//i.test(base)) base = 'http://' + base;
-    var res = await fetch(base + '/api/state', { cache: 'no-store' });
+    var res = await fetchWithTimeout(base + '/api/state', 10000);
     if (!res.ok) throw new Error('máy chủ trả về ' + res.status);
     var payload = await res.json();
 
@@ -616,6 +650,18 @@
   }
 
   // ---------------------------------------------------------------- tien ich
+
+  /** fetch co han gio - mang yeu thi bao loi chu khong treo mai. */
+  function fetchWithTimeout(url, ms) {
+    var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var timer = setTimeout(function () { if (controller) controller.abort(); }, ms || 15000);
+    return fetch(url, { cache: 'no-store', signal: controller ? controller.signal : undefined })
+      .then(function (res) { clearTimeout(timer); return res; })
+      .catch(function (err) {
+        clearTimeout(timer);
+        throw new Error(err && err.name === 'AbortError' ? 'quá hạn chờ' : (err.message || 'lỗi mạng'));
+      });
+  }
 
   function registerServiceWorker() {
     if (!('serviceWorker' in navigator)) return;
