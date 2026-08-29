@@ -9,6 +9,7 @@ const { WindowManager } = require('./windows');
 const { HotkeyManager } = require('./hotkeys');
 const { GameWatcher } = require('./game-watcher');
 const { LiveClientService } = require('./live-client');
+const { AppUpdater } = require('./updater');
 const { DataService } = require('./data-service');
 const importer = require('./comp-importer');
 const { MobileServer } = require('./mobile-server');
@@ -24,6 +25,8 @@ let store;
 let windows;
 let hotkeys;
 let watcher;
+let liveClient;
+let updater;
 let data;
 let tray;
 let mobile;
@@ -91,6 +94,13 @@ app.whenReady().then(() => {
     }
   });
   liveClient.start();
+
+  updater = new AppUpdater({
+    onUpdateAvailable: (info) => {
+      windows.broadcast('app:update-available', info);
+    }
+  });
+  updater.startAutoCheck();
 
   // Cam/rut man hinh thi dat lai overlay cho dung cho.
   screen.on('display-added', () => refreshDisplays());
@@ -238,6 +248,10 @@ function registerIpc() {
     return status;
   });
   handle('mobile:stop', () => mobile.stop());
+
+  // --- kiem tra phien ban & cap nhat
+  handle('updater:check', () => (updater ? updater.checkForUpdates() : { hasUpdate: false }));
+  handle('updater:open-download', (downloadUrl) => shell.openExternal(downloadUrl || 'https://github.com/vianphm/TFT/releases'));
 
   // --- linh tinh
   handle('game:status', () => (watcher ? watcher.snapshot : { gameRunning: false, clientRunning: false }));

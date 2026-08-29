@@ -23,6 +23,7 @@ const EVENTS = [
   'game:status',
   'live:game-data',
   'live:status',
+  'app:update-available',
   'comps:changed',
   'mobile:status',
   'hotkey:action'
@@ -75,6 +76,10 @@ contextBridge.exposeInMainWorld('tft', {
   },
   game: {
     status: () => invoke('game:status')
+  },
+  updater: {
+    check: () => invoke('updater:check'),
+    openDownload: (url) => invoke('updater:open-download', url)
   },
   app: {
     info: () => invoke('app:info'),

@@ -29,6 +29,18 @@
   </aside>
 
   <main class="main">
+    <!-- Banner thong bao khi co phien ban moi -->
+    <div id="updateBanner" class="card hidden" style="background:linear-gradient(90deg, rgba(200,170,110,0.18), rgba(59,130,246,0.18));border:1px solid var(--gold);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;padding:12px 16px">
+      <div>
+        <b style="color:var(--gold);font-size:14px">✨ Có phiên bản mới: <span id="updateVerText">v1.1.0</span></b>
+        <div class="small muted" id="updateNotesText" style="margin-top:2px">Bấm nút để tải về và cập nhật ngay.</div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button id="updateNowBtn" class="primary">Tải bản mới ngay</button>
+        <button id="updateDismissBtn">Để sau</button>
+      </div>
+    </div>
+
     <!-- ================================================== DOI HINH -->
     <section class="page" data-page="comps">
       <div class="page-head">
@@ -365,6 +377,11 @@
             <table id="hotkeyTable"></table>
             <div class="small muted" style="margin-top:6px">Doi phim trong cua so Cai dat.</div>
             <button id="openSettings" style="margin-top:8px">Mo cai dat day du</button>
+          </div>
+          <div class="card">
+            <h3>Phien ban &amp; Cap nhat</h3>
+            <div id="updateStatusText" class="small muted" style="margin-bottom:8px">Dang su dung phien ban moi nhat.</div>
+            <button id="checkUpdateBtn" class="primary">Kiem tra ban cap nhat</button>
           </div>
         </div>
       </div>

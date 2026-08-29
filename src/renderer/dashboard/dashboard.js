@@ -39,6 +39,7 @@
     bindScout();
     bindChamps();
     bindTools();
+    bindUpdater();
     refreshGameStatus();
     renderSetInfo();
 
@@ -1471,6 +1472,72 @@
     }
 
     counterEl.innerHTML = counterHtml + '<ul style="margin:0;padding-left:18px" class="small">' + adviceList + '</ul>' + itemsList;
+  }
+
+  // ------------------------------------------------------------------- updater
+
+  var currentUpdateInfo = null;
+
+  function bindUpdater() {
+    var banner = document.getElementById('updateBanner');
+    var verText = document.getElementById('updateVerText');
+    var notesText = document.getElementById('updateNotesText');
+    var nowBtn = document.getElementById('updateNowBtn');
+    var dismissBtn = document.getElementById('updateDismissBtn');
+    var checkBtn = document.getElementById('checkUpdateBtn');
+    var statusText = document.getElementById('updateStatusText');
+
+    if (nowBtn) {
+      nowBtn.addEventListener('click', function () {
+        if (currentUpdateInfo && currentUpdateInfo.downloadUrl) {
+          api.updater.openDownload(currentUpdateInfo.downloadUrl);
+        } else {
+          api.updater.openDownload('https://github.com/vianphm/TFT/releases');
+        }
+      });
+    }
+
+    if (dismissBtn) {
+      dismissBtn.addEventListener('click', function () {
+        if (banner) banner.classList.add('hidden');
+      });
+    }
+
+    if (checkBtn) {
+      checkBtn.addEventListener('click', async function () {
+        checkBtn.disabled = true;
+        if (statusText) statusText.textContent = 'Đang kiểm tra từ GitHub...';
+        try {
+          var res = await api.updater.check();
+          if (res && res.hasUpdate) {
+            showUpdateBanner(res);
+            if (statusText) statusText.innerHTML = '<span class="ok">Có bản mới: <b>v' + esc(res.latestVersion) + '</b></span>';
+          } else {
+            if (statusText) statusText.innerHTML = '<span class="ok">Bạn đang dùng phiên bản mới nhất (' + esc(res.currentVersion) + ').</span>';
+            toast('Bạn đang ở phiên bản mới nhất (' + (res.currentVersion || '1.0.0') + ')');
+          }
+        } catch (err) {
+          if (statusText) statusText.textContent = 'Lỗi kiểm tra: ' + err.message;
+        } finally {
+          checkBtn.disabled = false;
+        }
+      });
+    }
+
+    api.on('app:update-available', function (info) {
+      showUpdateBanner(info);
+    });
+  }
+
+  function showUpdateBanner(info) {
+    if (!info || !info.hasUpdate) return;
+    currentUpdateInfo = info;
+    var banner = document.getElementById('updateBanner');
+    var verText = document.getElementById('updateVerText');
+    var notesText = document.getElementById('updateNotesText');
+    if (banner) banner.classList.remove('hidden');
+    if (verText) verText.textContent = 'v' + info.latestVersion;
+    if (notesText && info.releaseName) notesText.textContent = info.releaseName;
   }
 
   // ------------------------------------------------------------------- misc

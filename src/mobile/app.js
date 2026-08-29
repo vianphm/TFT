@@ -46,6 +46,7 @@
     renderTop();
     showTab(state.tab || 'roll');
     registerServiceWorker();
+    checkMobileUpdates();
     if (pcUrl) pullFromPc(pcUrl).catch(function () { /* PC chua bat, khong sao */ });
     // Lan dau mo tren web: tu lay database cua set, khong bat nguoi dung phai bam
     if (!dataset.champions.length) fetchSet(false).catch(function () { /* offline thi thoi */ });
@@ -982,6 +983,29 @@
     }).join('');
 
     counterEl.innerHTML = counterHtml + '<ul style="margin:0;padding-left:16px" class="small">' + adviceList + '</ul>';
+  }
+
+  function checkMobileUpdates() {
+    var banner = document.getElementById('mUpdateBanner');
+    var verText = document.getElementById('mUpdateVer');
+    var updateBtn = document.getElementById('mUpdateBtn');
+
+    fetch('https://api.github.com/repos/vianphm/TFT/releases/latest', { cache: 'no-cache' })
+      .then(function (res) { return res.ok ? res.json() : null; })
+      .then(function (data) {
+        if (!data || !data.tag_name) return;
+        var latestVer = data.tag_name.replace(/^v/, '');
+        var currentVer = '1.0.0';
+        if (latestVer > currentVer) {
+          if (banner) banner.classList.remove('hidden');
+          if (verText) verText.textContent = 'v' + latestVer;
+          if (updateBtn) {
+            updateBtn.addEventListener('click', function () {
+              window.open(data.html_url || 'https://github.com/vianphm/TFT/releases', '_blank');
+            });
+          }
+        }
+      }).catch(function () { /* offline */ });
   }
 
   // ---------------------------------------------------------------- tien ich
