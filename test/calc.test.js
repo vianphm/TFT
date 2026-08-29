@@ -212,6 +212,19 @@ test('buildCompRerollPlan tao ke hoach reroll cho doi hinh da chot', () => {
   assert.strictEqual(plan.matchedInShop[0].buyNow, true);
 });
 
+test('carouselPriorities xep hang dung linh kien can nhat o vong di cho', () => {
+  const comp = {
+    name: 'Jinx Carry',
+    units: [
+      { name: 'Jinx', carry: true, items: ['Infinity Edge', 'Last Whisper'] } // IE: bf_sword + gloves; LW: bow + gloves
+    ]
+  };
+  // Minh da co sẵn 1 bf_sword
+  const priorities = calc.carouselPriorities(comp, ['bf_sword']);
+  assert.ok(priorities.length > 0);
+  assert.strictEqual(priorities[0].id, 'gloves'); // Can 2 gang tay cho IE + LW
+});
+
 console.log(`\n${passed} phep thu da qua, ${failed} phep thu LOI.\n`);
 if (failed) console.error(`==> CO ${failed} PHEP THU KHONG QUA <==\n`);
 

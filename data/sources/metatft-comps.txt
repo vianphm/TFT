@@ -17,7 +17,7 @@ MetaTFT
 Top Đội Hình DTCL Mạnh Nhất Mùa 18 [Phiên Bản 18.1]
 Tổng hợp top đội hình DTCL mạnh nhất mùa 18 phiên bản 18.1 trong META TFT hiện tại, được hỗ trợ bởi dữ liệu. Nhấn vào tên từng đội hình để xem hướng dẫn chi tiết cách triển khai đội hình đó.
 Path 18.1
-Cập nhật lần cuối: 5 giờ trước
+Cập nhật lần cuối: 2 giờ trước
 Đội Hình Exodia
 Đội Hình Reroll
 Tiên Hắc Ám

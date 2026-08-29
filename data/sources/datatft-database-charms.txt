@@ -1,37 +1,26 @@
-云顶大数据 | 资料库
-S18
-新
-一图流
-模拟器
-大数据
-信息差
-电竞
-更多
 S18
 S17
-S16.5
 S16
-📝 提交反馈
-数据版本
+📝 Submit Feedback
+Data Version
 18.1
-最近更新
-2026/08/29 05:09
-弈子
-装备
-羁绊
-强化符文
-仙灵
-城邦
-定位
-升级效果
-全部
-弈子
-装备
-商店
-战斗
-金币经验
-冒险
-杂项
+Last Update
+2026/08/28 14:40
+Units
+Items
+Traits
+Augments
+Wisps
+Role
+Upgrade Effect
+All
+Champion
+Item
+Shop
+Combat
+Gold/XP
+Risky
+Misc
 2-1
 3-1
 4-1
@@ -41,2134 +30,1246 @@ S16
 8-1
 2-1
 8-1
-全1费商店
+All Ones
 0
-刷新你的商店，使其充满1费弈子。
+Reroll your shop with all 1-cost champions.
 回合：2-1 ~ 2-7
-升级效果
+Upgrade Effect
 0
-刷新你的商店，使其充满1费弈子。获得1金币。
-防微杜渐
+Reroll your shop with all 1-cost champions. Gain 1 Gold.
+Early Fix
 0
-获得1个【装备重铸器】
+Gain 1 Item Reforger.
 回合：2-1 ~ 2-7
-升级效果
+Upgrade Effect
 0
-获得2个【装备重铸器】。
-森林魔法师
+Gain 2 Item Reforgers.
+Forest Mage
 1
-用【自然仙灵】填满你的商店。但你只能购买1个。
+Fill your shop with Wisps. You can only buy one.
 回合：3-5 ~ 10-1
-准备阶段的前8秒内
-升级效果
+Upgrade Effect
 1
-用升级后的【自然仙灵】填满你的商店。但你只能购买1个。
-以命为注
+Fill your shop with upgraded Wisps. You can only buy one.
+Life Debt
 0
-每失去12玩家生命值，获得1金币。
+Gain 1 gold for every 12 missing Player Health.
 回合：5-1 ~ 10-1
-已损失至少10点生命值
-升级效果
+Upgrade Effect
 0
-每失去12玩家生命值，获得1金币。然后治疗3生命值。
-元气满满
+Gain 1 gold for every 12 missing Player Health. Then heal 3 Health.
+Prolific Power
 0
-你的弈子们获得4%物理加成和法术加成。
+Your champions gain 4% Attack Damage and Ability Power.
 回合：4-2 ~ 10-1
-金币少于10
-升级效果
+Upgrade Effect
 0
-你的弈子们获得6%物理加成和法术加成。
-绿意盎然
+Your champions gain 6% Attack Damage and Ability Power.
+Verdant Vitality
 0
-你的弈子们获得50生命值。
+Your champions gain 50 Health.
 回合：4-2 ~ 10-1
-金币少于10
-升级效果
+Upgrade Effect
 0
-你的弈子们获得75生命值。
-弃船
+Your champions gain 75 Health.
+Abandon Ship
 0
-出售你棋盘上和备战席的所有弈子，获得6金币和8次刷新。
+Sell your board and bench, gain 6 gold and 8 rerolls.
 回合：3-1 ~ 3-4
-没有3星弈子
-棋盘价值在12到20之间
-处于短连胜中
-准备阶段的前15秒内
-升级效果
+Upgrade Effect
 0
-出售你棋盘上和备战席的所有弈子，获得10金币和10次刷新。
-神器化
+Sell your board and bench, gain 10 gold and 10 rerolls.
+Artifactinate
 2
-失去3个基础装备，包括已合成为成装的基础装备。获得1个【神器锻造器】。
+Lose 3 components, including ones built into items. Gain an Artifact anvil.
 回合：2-1 ~ 3-4
-至少拥有3件基础装备
-升级效果
+Upgrade Effect
 2
-失去3个基础装备，包括已合成为成装的基础装备。获得1个【神器锻造器】和1个【装备重铸器】。
-抛硬币
+Lose 3 components, including ones built into items. Gain an Artifact anvil and 1 Reforger.
+Coin Flip
 0
-抛掷1枚硬币，如果硬币正面朝上，获得1金币。
+Flip a coin, gain 1 gold if it's heads.
 回合：2-1 ~ 2-7
-升级效果
+Upgrade Effect
 0
-抛掷2枚硬币，如果硬币正面朝上，获得1金币。
-打捞术
+Flip 2 coins, gain 1 gold if it's heads.
+Salvager
 0
-你备战席的任何弈子都会被移除装备，且这些装备会被拆解。
+Any units you bench have items removed and broken apart.
 回合：4-2 ~ 5-7
-升级效果
+Upgrade Effect
 0
-你备战席的任何弈子都会被移除装备，且这些装备会被拆解。获得2金币。
-小贩
+Any units you bench have items removed and broken apart. Gain 2 Gold.
+Peddler
 0
-开启1个随机装备商店。随机装备的费用在0到14金币之间。
+Open a random item store. Random items cost 0 to 14 gold.
 回合：4-2 ~ 5-7
-升级效果
+Upgrade Effect
 0
-开启1个随机装备商店。随机装备的费用在0到14金币之间。获得2金币。
-珍品摆摊车
+Open a random item store. Random items cost 0 to 14 gold. Gain 2 Gold.
+Curio Cart
 0
-开启1个装备商店。装备的费用在0到15金币之间。
+Open an item store. Items cost 0 to 15 gold.
 回合：3-1 ~ 4-7
-拥有足够的金币
-升级效果
+Upgrade Effect
 0
-开启1个装备商店。装备的费用在0到15金币之间。获得2金币。
-树皮护甲
+Open an item store. Items cost 0 to 15 gold. Gain 2 Gold.
+Bark Armor
 0
-你的弈子们获得150护盾值，持续10秒。
+Your champions gain 150 shield for 10 seconds.
 回合：2-1 ~ 2-7
-升级效果
+Upgrade Effect
 0
-你的弈子们获得225护盾值，持续10秒。
-高阶变形术
+Your champions gain 225 shield for 10 seconds.
+Major Polymorph
 0
-你拥有的1个随机4费弈子会永久变形为1个5费弈子。
+A random 4-cost you own permanently transforms into a 5-cost.
 回合：4-2 ~ 5-7
-拥有对应费用的弈子
-升级效果
+Upgrade Effect
 0
-你拥有的那个星级最高的4费弈子永久变形为1个5费弈子。
-低阶变形术
+The highest star level 4-cost you own permanently transforms into a 5-cost.
+Minor Polymorph
 0
-你拥有的1个随机1费弈子永久变形为1个2费弈子。
+A random 1-cost you own permanently transforms into a 2-cost.
 回合：2-1 ~ 3-4
-拥有对应费用的弈子
-升级效果
+Upgrade Effect
 0
-你拥有的那个星级最高的1费弈子永久变形为1个2费弈子。
-变形术
+The highest star level 1-cost you own permanently transforms into a 2-cost.
+Polymorph
 0
-你拥有的1个随机2费弈子永久变形为1个3费弈子。
+A random 2-cost you own permanently transforms into a 3-cost.
 回合：2-1 ~ 4-1
-拥有对应费用的弈子
-升级效果
+Upgrade Effect
 0
-你拥有的那个星级最高的2费弈子永久变形为1个3费弈子。
-小玩具罐
+The highest star level 2-cost you own permanently transforms into a 3-cost.
+Doodad Jar
 0
-获得1个消耗品，其能提供永久的护甲与魔抗或生命值。
+Gain 1 consumable that gives permanent Armor and Magic Resist or Health.
 回合：2-1 ~ 2-7
-升级效果
+Upgrade Effect
 1
-获得2个消耗品，其能提供永久的护甲与魔抗或生命值。
-找个朋友
+Gain 2 consumables that give permanent Armor and Magic Resist or Health.
+Found Friend
 0
-获得1个携带着1个【巨人腰带】的【训练假人】。
+Gain a temporary Training Dummy with a Giant's Belt.
 回合：2-1 ~ 2-7
-升级效果
+Upgrade Effect
 0
-获得1个携带着1个【日炎斗篷】的【训练假人】。
-小饰品罐
+Gain a Training Dummy with a Sunfire Cape.
+Knick-Knack Jar
 0
-获得1个消耗品，其能提供永久的物理加成或攻击速度。
+Gain 1 consumable that gives permanent Attack Damage or Attack Speed.
 回合：2-1 ~ 2-7
-升级效果
+Upgrade Effect
 0
-获得2个消耗品，其能提供永久的物理加成或攻击速度。
-小装置罐
+Gain 2 consumables that give permanent Attack Damage or Attack Speed.
+Thingamajig Jar
 0
-获得1个消耗品，其能提供永久的法术加成或法力回复。
+Gain 1 consumable that gives permanent Ability Power or Mana Regen.
 回合：2-1 ~ 2-7
-升级效果
+Upgrade Effect
 1
-获得2个消耗品，其能提供永久的法术加成或法力回复。
-仙灵的怜悯
+Gain 2 consumables that give permanent Ability Power or Mana Regen.
+Beggar's Wisp
 0
-本次刷新未能使你在自然奇境中寻找到【自然仙灵】。获得3金币。
+The wilds couldn't find a wisp for you this roll. Gain 3 gold.
 回合：2-1 ~ 10-1
-升级效果
+Upgrade Effect
 0
-本次刷新未能使你在自然奇境中寻找到【自然仙灵】。获得5金币。
-休战
+The wilds couldn't find a wisp for you this roll. Gain 5 gold.
+Truce
 0
-获得1金币。你的对手获得1金币。
+Gain 1 gold. Your opponent gains 1 gold.
 回合：2-1 ~ 2-7
-升级效果
+Upgrade Effect
 0
-获得2金币。你的对手获得1金币。
-棱彩效果
+Gain 2 gold. Your opponent gains 1 gold.
+Prismatic Effect
 0
-获得100金币。你的对手获得1金币。
-不祥交易
+Gain 100 gold. Your opponent gains 1 gold.
+Sinister Deal
 0
-失去4玩家生命值。获得2金币。
+Lose 4 Player Health. Gain 2 Gold.
 回合：2-1 ~ 3-4
-处于高生命值
-升级效果
+Upgrade Effect
 0
-失去3玩家生命值。获得3金币。
-终极飞升
+Lose 3 Player Health. Gain 3 Gold.
+Ultra Ascension
 1
-在25秒后，友军获得300%伤害增幅。
+After 25 seconds, allies gain 300% Damage Amp.
 回合：3-1 ~ 4-1
-升级效果
+Upgrade Effect
 1
-在23秒后，友军获得300%伤害增幅。
-棱彩效果
+After 23 seconds, allies gain 300% Damage Amp.
+Prismatic Effect
 1
-在12秒后，友军获得300%伤害增幅。
-蜂鸟
+After 12 seconds, allies gain 300% Damage Amp.
+Hummingbird
 1
-你攻击速度最高的那个单位变小，获得20%攻击速度。
+Your highest Attack Speed unit shrinks, gaining 20% Attack Speed.
 回合：3-1 ~ 4-1
-升级效果
+Upgrade Effect
 1
-你攻击速度最高的那个单位变小，获得35%攻击速度。
-棱彩效果
+Your highest Attack Speed unit shrinks, gaining 35% Attack Speed.
+Prismatic Effect
 0
-你攻击速度最高的10个单位变小，获得100%攻击速度。
-衣衫褴褛
+Your 10 highest Attack Speed units shrink, gaining 100% Attack Speed.
+Tattered Armor
 1
-对敌人施加30%魔抗击碎与护甲击碎，持续10秒。
+30% Shred and Sunder enemies for 10 seconds.
 回合：3-5 ~ 4-7
-尚未对敌人施加【魔抗击碎】或【护甲击碎】
-升级效果
+Upgrade Effect
 1
-对敌人施加30%魔抗击碎与护甲击碎，持续15秒。
-棱彩效果
+30% Shred and Sunder enemies for 15 seconds.
+Prismatic Effect
 0
-对敌人施加90%魔抗击碎与护甲击碎，持续45秒。
-巨大化
+90% Shred and Sunder enemies for 45 seconds.
+Hugify
 1
-你生命值最高的那个单位成长，获得350生命值。
+Your highest Health unit grows, gaining 350 Health.
 回合：3-1 ~ 4-1
-升级效果
+Upgrade Effect
 1
-你生命值最高的那个单位成长，获得600生命值。
-棱彩效果
+Your highest Health unit grows, gaining 600 Health.
+Prismatic Effect
 0
-你生命值最高的10个单位成长，获得2500生命值。
-全2费商店
+Your 10 highest Health units grow, gaining 2500 Health.
+All Twos
 1
-刷新你的商店，使其充满2费弈子。
+Reroll your shop with all 2-cost champions.
 回合：2-1 ~ 3-4
-升级效果
+Upgrade Effect
 1
-刷新你的商店，使其充满2费弈子。获得1金币。
-老练
+Reroll your shop with all 2-cost champions. Gain 1 gold.
+Experienced
 1
-获得2经验值。
+Gain 2 XP.
 回合：2-1 ~ 2-7
-升级效果
+Upgrade Effect
 0
-获得2经验值。
-肥料
+Gain 2 XP.
+Fertilize
 1
-每有1名阵亡的敌人，获得1经验值。
+Gain 1 XP for each enemy that dies.
 回合：2-1 ~ 3-4
-升级效果
+Upgrade Effect
 1
-每有1名阵亡的敌人，获得1经验值。获得2经验值。
-有丝分裂
+Gain 1 XP for each enemy that dies. Gain 2 XP.
+Mitosis
 1
-获得1个【微型英雄复制器】。
+Gain a Tiny Champion Duplicator.
 回合：2-1 ~ 2-7
-升级效果
+Upgrade Effect
 0
-获得1个【微型英雄复制器】。
-零花钱
+Gain a Tiny Champion Duplicator.
+Pocket Change
 1
-你的1星弈子们在阵亡时掉落1金币。
+Your one-star champions drop 1 gold on death.
 回合：3-1 ~ 4-1
-拥有至少2个1星弈子
-升级效果
+Upgrade Effect
 1
-你的1星弈子们在阵亡时掉落1金币。获得1金币。
-星落
+Your one-star champions drop 1 gold on death. Gain 1 gold.
+Starfall
 1
-这回合你前6次刷新商店时，会使费用最低的那个弈子会变为2星。
+The first 6 times you reroll your shop this round, the lowest cost champion becomes 2-star.
 回合：3-1 ~ 4-1
-升级效果
+Upgrade Effect
 0
-这回合你前8次刷新商店时，费用最低的那个弈子会变为2星。
-大爆炸
+The first 8 times you reroll your shop this round, the lowest cost champion becomes 2-star.
+Big Boom
 1
-第一名阵亡的友军会产生爆炸，造成25%最大生命值魔法伤害。
+The first ally to die explodes, dealing 25% Max Health magic damage.
 回合：3-1 ~ 4-1
-升级效果
+Upgrade Effect
 1
-最先阵亡的2名友军会产生爆炸，造成25%最大生命值魔法伤害。
-爆炸药水
+The first 2 allies to die explode, dealing 25% Max Health magic damage.
+Blast Potion
 1
-获得1个临时的、可装备的【爆炸药水】。
+Gain a temporary equippable Blast Potion.
 回合：3-1 ~ 4-7
-升级效果
+Upgrade Effect
 1
-获得1个临时的、可装备的【光明版爆炸药水】。
-借来的装备
+Gain a temporary equippable Radiant Blast Potion.
+Borrowed Gear
 1
-1个弈子获得1件临时推荐装备。
+A champion gains a temporary recommended item.
 回合：3-1 ~ 4-7
-升级效果
+Upgrade Effect
 1
-1个弈子获得1件临时推荐装备和250生命值。
-摄魂夺魄
+A champion gains a temporary recommended item and 250 Health.
+Essence Theft
 1
-本场对战额外获得50%【女巫精粹】。
+Gain 50% bonus Coven Essence this combat.
 回合：2-1 ~ 4-1
-已激活【魔女】
-升级效果
+Upgrade Effect
 0
-本场对战额外获得90%【女巫精粹】。
-疯狂掷币人
+Gain 90% bonus Coven Essence this combat.
+Flip Frenzy
 1
-抛掷1枚硬币，如果硬币正面朝上，获得1金币。重复抛掷，直至你抛掷的硬币反面朝上。
+Flip a coin, gain 1 gold if it's heads. Continue until you flip tails.
 回合：3-1 ~ 4-1
-升级效果
+Upgrade Effect
 0
-抛掷1枚硬币，如果硬币正面朝上，获得1金币。重复抛掷，直至你抛掷的硬币反面朝上。
-招财猫
+Flip a coin, gain 1 gold if it's heads. Continue until you flip tails.
+Golden Goose
 1
-你造成伤害最高的那个弈子，每造成1700伤害，获得1金币。
+Gain 1 gold for every 1700 damage your highest damage champion deals.
 回合：4-2 ~ 5-7
-升级效果
+Upgrade Effect
 1
-你造成伤害最高的那个弈子，每造成1000伤害，获得1金币。
-生命药水
+Gain 1 gold for every 1000 damage your highest damage champion deals.
+Health Potion
 1
-获得1个临时的、可装备的【生命药水】。
+Gain a tempoary equippable Health Potion.
 回合：3-1 ~ 4-7
-升级效果
+Upgrade Effect
 1
-获得1个临时的、可装备的【光明版生命药水】。
-拼一把小的！
+Gain a temporary equippable Radiant Health Potion.
+Lesser Chaos
 1
-随机施放1个【自然仙灵】。
+Cast a random Wisp.
 回合：2-1 ~ 3-4
-升级效果
+Upgrade Effect
 1
-随机施放1个价值在1或以上金币的【自然仙灵】。
-法力药水
+Cast a random Wisp worth 1 or more gold.
+Mana Potion
 1
-获得1个临时的、可装备的【法力药水】。
+Gain a temporary equippable Mana Potion.
 回合：3-1 ~ 4-7
-升级效果
+Upgrade Effect
 1
-获得1个临时的、可装备的【光明版法力药水】。
-泪雨
+Gain a temporary equippable Radiant Mana Potion.
+Rain
 1
-你的队伍获得1法力回复。
+Your team gains 1 Mana Regen.
 回合：3-1 ~ 4-7
-升级效果
+Upgrade Effect
 1
-你的队伍获得2法力回复。
-鬼鬼祟祟
+Your team gains 2 Mana Regen.
+Stealthy
 0
-你最强大的2个【战士】或【刺客】获得持续6秒的不可被选取效果。
+Your 2 strongest Fighters or Assassins are untargetable for 6 seconds.
 回合：4-2 ~ 5-7
-升级效果
+Upgrade Effect
 0
-你后排的2个随机弈子获得持续10秒的不可被选取效果。
-自然之怒
+2 random champions on the back row are untargetable for 10 seconds.
+Nature's Wrath
 1
-在10秒后，将所有未携带装备的单位击杀。
+Kill EVERYONE without an item after 10 seconds.
 回合：6-1 ~ 10-1
-拥有携带装备的弈子
-升级效果
+Upgrade Effect
 1
-在8秒后，将所有未携带装备的单位击杀。
-小玩具包
+Kill EVERYONE without an item after 8 seconds.
+Doodad Bag
 1
-获得2个消耗品，其能提供永久的护甲与魔抗或生命值。
+Gain 2 consumables that give permanent Armor and Magic Resist or Health.
 回合：3-1 ~ 4-1
-升级效果
+Upgrade Effect
 1
-获得3个消耗品，其能提供永久的护甲与魔抗或生命值。
-小饰品包
+Gain 3 consumables that give permanent Armor and Magic Resist or Health.
+Knick-Knack Bag
 1
-获得2个消耗品，其能提供永久的物理加成或攻击速度。
+Gain 2 consumables that give permanent Attack Damage or Attack Speed.
 回合：3-1 ~ 4-1
-升级效果
+Upgrade Effect
 2
-获得3个消耗品，其能提供永久的物理加成或攻击速度。
-小装置包
+Gain 3 consumables that give permanent Attack Damage or Attack Speed.
+Thingamajig Bag
 1
-获得2个消耗品，其能提供永久的法术加成或法力回复。
+Gain 2 consumables that give permanent Ability Power or Mana Regen.
 回合：3-1 ~ 4-1
-升级效果
+Upgrade Effect
 1
-获得3个消耗品，其能提供永久的法术加成或法力回复。
-带一个走
+Gain 3 consumables that give permanent Ability Power or Mana Regen.
+Take One With Ya
 1
-如果你失败但至少击杀了1名敌人，获得4经验值。
+If you lose and kill at least one enemy, gain 4 XP.
 回合：2-1 ~ 2-7
-处于短连胜中
-升级效果
+Upgrade Effect
 1
-如果你失败但至少击杀了1名敌人，获得6经验值。
-低阶胜负手
+If you lose and kill at least one enemy, gain 6 XP.
+Minor Gambit
 1
-如果你赢得下一场玩家对战，获得2金币。
+If you win the next player combat, gain 2 Gold.
 回合：2-1 ~ 2-7
-处于短连败中
-未激活【魔女】
-升级效果
+Upgrade Effect
 1
-如果你赢得下一场玩家对战，获得3金币。
-干旱
+If you win the next player combat, gain 3 Gold.
+Drought
 1
-你的连败数加2。
+Add 2 to your loss streak.
 回合：2-1 ~ 2-7
-处于连胜或连败中
-升级效果
+Upgrade Effect
 1
-你的连败数加3。
-洪涝
+Add 3 to your loss streak.
+Flood
 1
-你的连胜数加1。
+Add 1 to your win streak.
 回合：2-1 ~ 2-7
-处于连胜或连败中
-升级效果
+Upgrade Effect
 1
-你的连胜数加2。
-以物易物
+Add 2 to your win streak.
+Barter
 2
-在本回合内，你下次出售的弈子将以200%金币卖出。
+The next champion sold this round sells for 200% gold.
 回合：3-5 ~ 5-7
-升级效果
+Upgrade Effect
 2
-在本回合内，你下次出售的弈子将以250%金币卖出。
-法术反制
+The next champion sold this round sells for 250% gold.
+Counterspell
 2
-使所有敌人的最大法力值提高15，直至敌人下一次施放技能。
+Increase all enemies' Max Mana by 15 until their next cast.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 2
-使所有敌人的最大法力值提高22，直至敌人下一次施放技能。
-棱彩效果
+Increase all enemies' Max Mana by 22 until their next cast.
+Prismatic Effect
 0
-使所有敌人的最大法力值提高150，直至敌人下一次施放技能。
-幻影护甲
+Increase all enemies' Max Mana by 150 until their next cast.
+Phantom Armor
 2
-获得1个临时的【狂徒铠甲】。
+Gain a temporary Warmog's Armor.
 回合：3-1 ~ 5-7
-升级效果
+Upgrade Effect
 2
-获得1个临时的【顽强不屈】。
-棱彩效果
+Gain a temporary The Indomitable.
+Prismatic Effect
 0
-获得6个临时的【光明版狂徒铠甲】和5个【装备拆卸器】。
-余震
+Gain 6 temporary Radiant Warmog's Armors and 5 Removers.
+Aftershock
 2
-在8秒后，晕眩所有敌人1.5秒。
+After 8 seconds, stun all enemies for 1.5 seconds.
 回合：4-2 ~ 10-1
-升级效果
+Upgrade Effect
 2
-在8和18秒后，晕眩所有敌人1.5秒。
-全3费商店
+After 8 and 18 seconds, stun all enemies for 1.5 seconds.
+All Threes
 2
-刷新你的商店，使其充满3费弈子。
+Reroll your shop with all 3-cost champions.
 回合：3-5 ~ 4-7
-升级效果
+Upgrade Effect
 2
-刷新你的商店，使其充满3费弈子。获得2金币。
-染血之币
+Reroll your shop with all 3-cost champions. Gain 2 gold.
+Blood Money
 2
-每击杀1个弈子，获得1金币。
+Gain 1 gold for every champion you kill.
 回合：3-1 ~ 4-7
-升级效果
+Upgrade Effect
 1
-每击杀1个弈子，获得1金币。获得1金币。
-免费刷新术
+Gain 1 gold for every champion you kill. Gain 1 gold.
+Freeroller
 2
-获得2次刷新。
+Gain 2 rerolls.
 回合：2-1 ~ 4-1
-升级效果
+Upgrade Effect
 2
-获得3次刷新。
-闪电打击
+Gain 3 rerolls.
+Lightning Strike
 2
-对所有敌人造成10%最大生命值真实伤害。
+Deal 10% Max Health true damage to all enemies.
 回合：4-2 ~ 5-7
-升级效果
+Upgrade Effect
 2
-对所有敌人造成18%最大生命值真实伤害。
-皓月当空
+Deal 18% Max Health true damage to all enemies.
+Moonrise
 2
-在8秒后，提升100%【月蚀骑士】羁绊效果。
+After 8 seconds, increase Lunar's effects by 100%.
 回合：4-2 ~ 5-7
-已激活【月光射线】
-升级效果
+Upgrade Effect
 2
-在8秒后，提升175%【月蚀骑士】羁绊效果。
-未雨绸缪
+After 8 seconds, increase Lunar's effects by 175%.
+Preppers
 2
-你的叠层型装备在下次战斗开始时，拥有部分初始层数。
+Your stacking items start next combat partially stacked.
 回合：3-1 ~ 5-7
-升级效果
+Upgrade Effect
 2
-你的叠层型装备在下次战斗开始时，拥有额外初始层数。
-繁殖
+Your stacking items start next combat extra stacked.
+Propagate
 2
-获得第1名阵亡的友军的1个复制体。
+Gain a copy of the first allied champion to die.
 回合：2-1 ~ 4-1
-升级效果
+Upgrade Effect
 1
-获得第1个阵亡的友军的1个复制体。
-抵抗
+Gain a copy of the first allied champion to die.
+Resistant
 2
-【坦克】使即将到来的每段伤害减少10。
+Tanks reduce instances of incoming damage by 10.
 回合：4-2 ~ 10-1
-升级效果
+Upgrade Effect
 2
-【坦克】使即将到来的每段伤害减少18。
-日炎巫术
+Tanks reduce instances of incoming damage by 18.
+Sunfire Sorcery
 2
-对敌人施加持续10秒的灼烧和重伤效果。
+Burn and Wound enemies for 10 seconds.
 回合：3-5 ~ 4-7
-尚未对敌人施加【灼烧】或【重伤】，除非已激活【炼狱】
-升级效果
+Upgrade Effect
 2
-对敌人施加持续15秒的灼烧和重伤效果。
-腰带批发
+Burn and Wound enemies for 15 seconds.
+Bunch-o'-Belts
 2
-你的友军获得7个无法移除的临时【巨人腰带】。
+Your allies gain 7 temporary, non-removable Giant's Belts.
 回合：3-5 ~ 4-7
-升级效果
+Upgrade Effect
 2
-你的友军获得10个无法移除的临时【巨人腰带】。
-掷骰子
+Your allies gain 10 temporary, non-removable Giant's Belts.
+Die Roll
 2
-投掷1个6面体骰子。获得相当于结果点数的金币。
+Roll a six-sided die. Gain gold equal to the result.
 回合：3-1 ~ 4-1
-升级效果
+Upgrade Effect
 3
-投掷2个6面体骰子。获得相当于结果点数的金币。
-爆燃
+Roll two six-sided dice. Gain gold equal to the result.
+Flash Fire
 2
-刷新你的商店。【地狱火】引燃2个商店栏位，将其升级。
+Reroll your shop. Inferno lights 2 shop slots on fire, upgrading them.
 回合：3-5 ~ 5-7
-已激活【炼狱】
-升级效果
+Upgrade Effect
 2
-刷新你的商店。【地狱火】引燃3个商店栏位，将其升级。
-萤火虫之家
+Reroll your shop. Inferno lights 3 shop slots on fire, upgrading them.
+Homing Fireflies
 2
-你的【术师】每消耗20法力值，召唤1只萤火虫。每只造成110魔法伤害。
+Your Casters spawn a firefly per 20 Mana spent. Each deals 110 magic damage.
 回合：3-5 ~ 10-1
-场上至少有2个术师
-升级效果
+Upgrade Effect
 2
-你的【术师】每消耗15法力值，召唤1只萤火虫。每只造成110魔法伤害。
-瞄准镜
+Your Casters spawn a firefly per 15 Mana spent. Each deals 110 magic damage.
+Improved Reach
 2
-你的【战士】获得+1攻击距离。
+Your Fighters gain 1 range.
 回合：5-1 ~ 10-1
-场上至少有2个战士
-拥有1个带装备的战士
-升级效果
+Upgrade Effect
 2
-你的【战士】获得+2攻击距离。
-钢铁核心
+Your Fighters gain 2 range.
+Iron Core
 2
-每有1个位于前排的单位，你前排中心的那个弈子就会获得6%最大生命值。
+Your front center champion gains 6% Max Health per front-row unit.
 回合：4-2 ~ 5-7
-升级效果
+Upgrade Effect
 2
-每有1个位于前排的单位，你前排中心的那个弈子就会获得8%最大生命值。
-侩子手的悔恨
+Your front center champion gains 8% Max Health per front-row unit.
+Killer's Regret
 2
-你最先阵亡的3个弈子会将其击杀者晕眩1.5秒。
+Your first 3 champions to die stun their killer for 1.5 seconds.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 2
-你最先阵亡的4个弈子会将其击杀者晕眩1.75秒。
-活体土壤
+Your first 4 champions to die stun their killer for 1.75 second.
+Living Soil
 2
-每过4秒，根须会晕眩1名敌人1秒。
+Every 4 seconds, roots stun an enemy for 1 second.
 回合：4-2 ~ 5-7
-升级效果
+Upgrade Effect
 2
-每过4秒，根须会晕眩2名敌人1秒。
-射手狂风
+Every 4 seconds, roots stun 2 enemies for 1 second.
+Marksmen's Gale
 2
-你【射手】的攻击提供3%可叠加的攻击速度。
+Your Marksmen's attacks grant 3% stacking Attack Speed.
 回合：4-2 ~ 10-1
-场上至少有2个射手
-拥有1个带装备的射手
-升级效果
+Upgrade Effect
 2
-你【射手】的攻击提供5%可叠加的攻击速度。
-月光仪式
+Your Marksmen's attacks grant 5% stacking Attack Speed.
+Moonlight Ritual
 2
-在战斗期间，你最低星级的那个1费或2费弈子将会升星。
+Your lowest star 1-cost or 2-cost champion stars up in combat.
 回合：3-1 ~ 4-7
-拥有1个2星1费或2费弈子
-升级效果
+Upgrade Effect
 2
-在战斗期间，你最低星级的2个1费或2费弈子将会升星。
-自然之友
+Your two lowest star 1-cost or 2-cost champions star up in combat.
+Nature's Ally
 2
-每有3名友军阵亡，召唤1个随机【峡谷野怪】。
+Every 3 ally deaths, summon a random Riftbeast.
 回合：4-2 ~ 10-1
-升级效果
+Upgrade Effect
 2
-每有3名友军阵亡，召唤1个随机【峡谷野怪】 有时会召唤出2星的版本。
-石化术
+Every 3 ally deaths, summon a random Riftbeast that's sometimes 2-star.
+Petrified Dummy
 2
-你第1个阵亡的弈子在阵亡时，会转化为1个拥有其防御属性和900生命值的【训练假人】。
+Your first champion to die turns into a 900 Health dummy with their defenses.
 回合：3-1 ~ 4-7
-升级效果
+Upgrade Effect
 2
-你第1个阵亡的弈子在阵亡时，会转化为1个拥有其防御属性和1350生命值的【训练假人】。
-破盾秘法
+Your first champion to die turns into a 1350 Health dummy with their defenses.
+Petrify Shields
 2
-使敌人缓速10%，并将其护盾值削减0.8，持续10秒。
+10% Slow enemies and reduce their shields by 0.8 for 10 seconds.
 回合：4-2 ~ 4-7, 6-1 ~ 10-1
-升级效果
+Upgrade Effect
 2
-使敌人缓速10%，并将其护盾值削减0.7，持续10秒。
-幻影浪花
+10% Slow enemies and reduce their shields by 0.7 for 10 seconds.
+Phantom Splash
 2
-战斗开始时：至多有2个未激活的羁绊会以最低层级激活。
+Combat start: Up to 2 inactive traits activate at the lowest level.
 回合：4-2 ~ 10-1
-升级效果
+Upgrade Effect
 2
-战斗开始时：至多有4个未激活的羁绊会以最低层级激活。
-幻影背心
+Combat Start: Up to 4 inactive traits activate at the lowest level.
+Phantom Vest
 2
-获得1个临时的【棘刺背心】。
+Gain a temporary Bramble Vest.
 回合：3-1 ~ 5-7
-升级效果
+Upgrade Effect
 2
-获得1个临时的【黎明圣盾】。
-镀板护盾
+Gain a temporary Aegis of Dawn.
+Plated Shields
 2
-护盾强度提升15%。友军获得持续10秒的150护盾值。
+Shields are 15% stronger. Allies gain 150 shield for 10 seconds.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 2
-护盾强度提升20%。友军获得持续10秒的300护盾值。
-生态改造
+Shields are 20% stronger. Allies gain 300 shield for 10 seconds.
+Terraforming
 2
-战斗开始时，获得7颗种子。
+Gain 7 seeds at start of combat.
 回合：4-2 ~ 10-1
-已激活【翠神】
-升级效果
+Upgrade Effect
 2
-战斗开始时，获得10颗种子。
-猎手的黄金之路
+Gain 10 seeds at start of combat.
+Trophy Hunter
 2
-下一场玩家对战，你的【宿敌】获得双倍参与击杀数。
+Next player combat, your Rivals' takedowns count twice.
 回合：2-1 ~ 4-7
-已激活【宿敌】
-升级效果
+Upgrade Effect
 0
-下一场玩家对战，你的【宿敌】获得双倍参与击杀数。
-荆棘环身
+Next player combat, your Rivals' takedowns count twice.
+Wrapped In Thorns
 2
-你的【坦克】每4秒将承受伤害的12%反射给邻格的敌人。
+Your Tanks reflect 12% of damage taken to adjacent enemies every 4 seconds.
 回合：3-5 ~ 10-1
-升级效果
+Upgrade Effect
 2
-你的【坦克】每4秒将所受伤害的18%反射给邻格的敌人。
-加速
+Your Tanks reflect 18% of damage taken to adjacent enemies every 4 seconds.
+Quicken
 2
-施放技能时，你的弈子们获得30%攻击速度，持续4秒。
+On cast, your champions gain 30% Attack Speed for 4 seconds.
 回合：3-5 ~ 4-7
-不适用于满装备的无蓝弈子
-升级效果
+Upgrade Effect
 2
-施放技能时，你的弈子们获得40%攻击速度，持续5秒。
-治疗池
+On cast, your champions gain 40% Attack Speed for 5 seconds.
+Healing Pool
 2
-获得5玩家生命值。
+Heal 5 Player Health.
 回合：2-1 ~ 3-4
-已损失至少10点生命值
-升级效果
+Upgrade Effect
 2
-获得7玩家生命值。
-黄金之路
+Heal 7 Player Health.
+Golden Road
 2
-在3场玩家对
-战后，获得2x期间胜场数的金币。
+After 3 player combats, gain 2 Gold per fight won.
 回合：2-1 ~ 3-4
-处于短连败中
-升级效果
+Upgrade Effect
 2
-在3场玩家对战回合后，获得2x期间胜场数的金币外加1金币。
-倾盆大雨
+After 3 player combats, gain 2 Gold per fight won plus 1 Gold.
+Downpour
 3
-你的队伍获得2法力回复。
+Your team gains 2 Mana Regen.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 3
-你的队伍获得3法力回复。
-棱彩效果
+Your team gains 3 Mana Regen.
+Prismatic Effect
 0
-你的队伍获得15法力回复。
-梁上君子
+Your team gains 15 Mana Regen.
+Cutpurse
 3
-每过5秒，你的弈子们就有15%几率掉落1金币。
+Every 5 seconds, your champions have a 15% chance to drop 1 Gold.
 回合：3-5 ~ 4-7
-升级效果
+Upgrade Effect
 3
-每过4秒，你的弈子们就有15%几率掉落1金币。
-行云流水
+Every 4 seconds, your champions have a 15% chance to drop 1 Gold.
+Flow
 3
-你的弈子们获得持续10秒的不可阻挡效果和15%攻击速度。
+Your champions are Unstoppable and gain 15% Attack Speed for 10 seconds.
 回合：4-2 ~ 10-1
-升级效果
+Upgrade Effect
 3
-你的弈子们获得持续15秒的不可阻挡效果和15%攻击速度。
-回复
+Your champions are Unstoppable and gain 15% Attack Speed for 15 seconds.
+Regeneration
 3
-你的队伍每秒治疗1%最大生命值。
+Your team heals 1% max Health per second.
 回合：3-5 ~ 4-7
-升级效果
+Upgrade Effect
 3
-你的队伍每秒治疗2%最大生命值。
-孤身站场
+Your team heals 2% max Health per second.
+Stand Alone
 3
-独自处于所在排的弈子们获得15%生命值和15%伤害增幅。
+Champions alone in their row gain 15% Health and 15% Damage Amp.
 回合：3-5 ~ 10-1
-未激活【永恒之森】
-未激活【月光射线】
-未激活【翠神】
-升级效果
+Upgrade Effect
 3
-独自处于所在排的弈子们获得22%生命值和22%伤害增幅。
-棱彩效果
+Champions alone in their row gain 22% Health and 22% Damage Amp.
+Prismatic Effect
 0
-独自处于所在排的弈子们获得100%生命值和150%伤害增幅。
-铜汤匙
+Champions alone in their row gain 100% Health and 150% Damage Amp.
+Bronze Spoon
 3
-获得4经验值。
+Gain 4 XP.
 回合：2-1 ~ 4-1
-升级效果
+Upgrade Effect
 2
-获得4经验值。
-鏖战不休
+Gain 4 XP.
+Heated Rivalry
 3
-获得1个【雷恩加尔】或1个【卡兹克】。其获得+3参与击杀数。
+Gain a Rengar or a Kha'Zix. They gain 3 takedowns.
 回合：2-1 ~ 2-7
-升级效果
+Upgrade Effect
 3
-获得1个【雷恩加尔】或1个【卡兹克】。其获得+7参与击杀数。
-屠戮狂暴
+Gain a Rengar or a Kha'Zix. They gain 7 takedowns.
+Killing Frenzy
 3
-【战士】会处决生命值低于12%的目标。他们在完成击杀时获得15%攻击速度。
+Fighters execute targets under 12% Health. They gain 15% Attack Speed on kill.
 回合：5-1 ~ 10-1
-拥有1个带装备的战士
-升级效果
+Upgrade Effect
 3
-【战士】会处决生命值低于15%的目标。他们在完成击杀时获得40%攻击速度。
-迷路的游客
+Fighters execute targets under 15% Health. They gain 40% Attack Speed on kill.
+Lost Travelers
 3
-获得总价值3金币的随机弈子。
+Gain 3 gold worth of random champions.
 回合：2-1 ~ 2-7
-升级效果
+Upgrade Effect
 4
-获得总价值4金币的随机弈子。
-金钱之力
+Gain 4 gold worth of random champions.
+Mercenary Force
 3
-每拥有10金币，获得3%伤害增幅。
+Gain 3% Damage Amp for every 10 gold you have.
 回合：4-2 ~ 5-7
-至少拥有30金币
-升级效果
+Upgrade Effect
 3
-每拥有10金币，获得4.5%伤害增幅。
-超级暴击
+Gain 4.5% Damage Amp for every 10 gold you have.
+Supercritical
 3
-拥有【技能暴击】的友军获得25%暴击伤害。
+Allies with Precision gain 25% Critical Strike Damage.
 回合：4-2 ~ 10-1
-拥有2个具有【技能暴击】的单位
-升级效果
+Upgrade Effect
 3
-拥有【技能暴击】的友军获得40%暴击伤害。
-约德尔之灵
+Allies with Precision gain 40% Critical Strike Damage.
+Yordle Spirit
 3
-友军有99%几率闪避攻击，持续4秒。
+Allies have a 99% chance to dodge attacks for 4 seconds.
 回合：4-2 ~ 5-7
-升级效果
+Upgrade Effect
 3
-友军有99%几率闪避攻击，持续5秒。
-学徒
+Allies have a 99% chance to dodge attacks for 5 seconds.
+Apprentice
 3
-获得1个随机2星1费弈子。
+Gain a random 2-star 1-cost champion.
 回合：2-1 ~ 2-7
-升级效果
+Upgrade Effect
 2
-获得1个随机2星1费弈子。
-鲜血与铁
+Gain a random 2-star 1-cost champion.
+Blood and Iron
 3
-在20个弈子阵亡后，获得1个【基础装备锻造器】。
+After 20 champion deaths, gain a component anvil.
 回合：3-1 ~ 4-1
-升级效果
+Upgrade Effect
 3
-在16个弈子阵亡后，获得1个【基础装备锻造器】。
-壁垒
+After 16 champion deaths, gain a component anvil.
+Bulwark
 3
-你的【坦克】在生命值降至50%时，会获得20%最大生命值护盾。
+Your Tanks gain a 20% Max Health shield upon falling below 50% Health.
 回合：4-2 ~ 10-1
-场上至少有2个坦克
-升级效果
+Upgrade Effect
 3
-你的【坦克】在生命值降至50%时，会获得30%最大生命值护盾。
-小玩具袋
+Your Tanks gain a 30% Max Health shield upon falling below 50% Health.
+Doodad Sack
 3
-获得3个消耗品，其能提供永久的护甲与魔抗或生命值。
+Gain 3 consumables that give permanent Armor and Magic Resist or Health.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 3
-获得4个消耗品，其能提供永久的护甲与魔抗或生命值。
-坚硬木材
+Gain 4 consumables that give permanent Armor and Magic Resist or Health.
+Ironwood
 3
-敌人攻击你生命值最高的那个弈子时，造成的伤害降低14%。
+Enemies attacking your highest health champion deal 14% less damage.
 回合：4-2 ~ 10-1
-升级效果
+Upgrade Effect
 3
-敌人攻击你生命值最高的那个弈子时，造成的伤害降低20%。
-小饰品袋
+Enemies attacking your highest health champion deal 20% less damage.
+Knick-Knack Sack
 3
-获得3个消耗品，其能提供永久的物理加成或攻击速度。
+Gain 3 consumables that give permanent Attack Damage or Attack Speed.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 3
-获得4个消耗品，其能提供永久的物理加成或攻击速度。
-富魔之壤
+Gain 4 consumables that give permanent Attack Damage or Attack Speed.
+Mana-Rich Soil
 3
-你的【术师】最大法力值减少0.82。
+Your Casters have 0.82 reduced Max Mana.
 回合：5-1 ~ 10-1
-场上至少有2个术师
-拥有1个带装备的术师
-升级效果
+Upgrade Effect
 3
-你的【术师】最大法力值减少0.75。
-射手标记
+Your Casters have 0.75 reduced Max Mana.
+Marksmen's Marks
 3
-你的【射手】有30%几率双重攻击。
+Your Marksmen have a 30% chance to double attack.
 回合：5-1 ~ 10-1
-场上至少有2个射手
-拥有1个带装备的射手
-升级效果
+Upgrade Effect
 3
-你的【射手】有45%几率双重攻击。
-幻影手套
+Your Marksmen have a 45% chance to double attack.
+Phantom Gloves
 3
-获得1个临时的【窃贼手套】。
+Gain a temporary Thief's Gloves.
 回合：3-1 ~ 5-7
-升级效果
+Upgrade Effect
 3
-获得1个临时的【连指手套】。
-药学博士
+Gain a temporary Mittens.
+Potioncraft
 3
-获得3个临时的、可装备的【药水】。
+Gain three temporary equippable Potions.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 3
-获得3个临时的、可装备的【光明版药水】。
-复仇
+Gain three temporary equippable Radiant Potions.
+Revenge
 3
-每当1名友军阵亡时，你的弈子们获得4%可叠加的伤害增幅。
+Whenever an ally dies, your champions gain 4% stacking Damage Amp.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 3
-每当1名友军阵亡时，你的弈子们获得6%可叠加的伤害增幅。
-顺流而下
+Whenever an ally dies, your champions gain 6% stacking Damage Amp.
+Ride the Wave
 3
-在本回合内，在上场对战中登场的2+个弈子会出现在你的下2次刷新的商店中。
+The next 2 rerolls this round will have 2+ champions fielded last combat.
 回合：4-2 ~ 5-7
-准备阶段的前20秒内
-至少拥有20金币
-升级效果
+Upgrade Effect
 3
-在本回合内，在上场对战中登场的2+个弈子会出现在你的下3次刷新的商店中。
-骨头滚滚
+The next 3 rerolls this round will have 2+ champions fielded last combat.
+Rolling Bones
 3
-每获得1次击杀，你都有50%几率获得1次免费刷新。
+You have a 50% chance to get a free reroll with each kill.
 回合：3-1 ~ 4-7
-升级效果
+Upgrade Effect
 3
-每获得1次击杀，你都有60%几率获得1次刷新，如果获胜该几率提升1。
-零碎
+60% chance to get a reroll with each kill, and 1 more if you win.
+Scrappy
 3
-战斗开始时：未携带任何装备的2个弈子会获得1件临时的推荐装备。
+Combat start: 2 champions without items gain a temporary recommended item.
 回合：4-2 ~ 5-7
-升级效果
+Upgrade Effect
 3
-战斗开始时：未携带任何装备的3个弈子会获得1件临时的推荐装备。
-搜查队
+Combat Start: 3 champions without items gain a temporary recommended item.
+Search Party
 3
-在本回合内，你每次刷新商店都会出现1个4费弈子，直到你购买其中一名为止。
+Each of your shops has a 4-cost in it this round until you buy one.
 回合：3-5 ~ 4-7
-升级效果
+Upgrade Effect
 2
-在本回合内，你每次刷新商店都会出现1个4费弈子，直到你购买其中一名为止。
-独行斗篷
+Each of your shops has a 4-cost in it this round until you buy one.
+Solitude's Cloak
 3
-邻格无友军的弈子们获得10%最大生命值和10%伤害增幅。
+Champions with no adjacent allies gain 10% Max Health and 10% Damage Amp.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 3
-邻格无友军的弈子们获得15%最大生命值和15%伤害增幅。
-小装置袋
+Champions with no adjacent allies gain 15% Max Health and 15% Damage Amp.
+Thingamajig Sack
 3
-获得3个消耗品，其能提供永久的法术加成或法力回复。
+Gain 3 consumables that give permanent Ability Power or Mana Regen.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 3
-获得4个消耗品，其能提供永久的法术加成或法力回复。
-训练场
+Gain 4 consumables that give permanent Ability Power or Mana Regen.
+Training Yard
 3
-获得2个携带着1件随机坦克装备的【训练假人】。
+Gain 2 Training Dummies each with a random tank item.
 回合：4-2 ~ 5-7
-升级效果
+Upgrade Effect
 3
-获得3个携带着1件随机坦克装备的【训练假人】。
-多样化
+Gain 3 Training Dummies each with a random tank item.
+Diversified
 3
-每有1个已激活的非唯一羁绊，你的队伍获得30生命值。
+Your team gains 30 Health for each active non-unique trait.
 回合：4-2 ~ 5-7
-已激活至少5个羁绊
-升级效果
+Upgrade Effect
 3
-每有1个已激活的非唯一羁绊，你的队伍获得45生命值。
-新手村
+Your team gains 45 Health for each active non-unique trait.
+Starting Town
 3
-刷新你的商店，使其充满2星1费弈子。
+Reroll your shop with all 2-star 1-cost champions.
 回合：2-1 ~ 3-4
-升级效果
+Upgrade Effect
 2
-刷新你的商店，使其充满2星1费弈子。
-幻影纹章
+Reroll your shop with all 2-star 1-cost champions.
+Phantom Emblem
 3
-获得1个你层级最高羁绊的临时的纹章。
+Gain a temporary emblem of your most active trait.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 1
-获得1个你层级最高羁绊的临时的纹章。
-小型血祭
+Gain a temporary emblem of your most active trait.
+Minor Blood Ritual
 3
-失去3玩家生命值。获得1个【次级英雄复制器】。
+Lose 3 Player Health. Gain a Lesser Champion Duplicator.
 回合：2-1 ~ 3-4
-处于高生命值
-升级效果
+Upgrade Effect
 3
-失去1玩家生命值。获得1个【次级英雄复制器】。
-高阶胜负手
+Lose 1 Player Health. Gain a Lesser Champion Duplicator.
+Major Gambit
 3
-如果你赢得下一场玩家对战，获得8金币。
+If you win the next player combat, gain 8 Gold.
 回合：4-2 ~ 5-7
-处于短连败中
-升级效果
+Upgrade Effect
 3
-如果你赢得下一场对战，获得10金币。
-庆功宴
+If you win next combat, gain 10 Gold.
+Payday
 4
-每有1个己方弈子在战斗中存活，获得2金币。
+For each ally champion that survives combat, gain 2 Gold.
 回合：3-5 ~ 4-7
-升级效果
+Upgrade Effect
 4
-每有1个己方弈子在战斗中存活，获得3金币。
-不倒翁
+For each ally champion that survives combat, gain 3 Gold.
+Roly-Polys
 4
-在18秒后，每有1名存活的友军，获得1次刷新。
+For each ally champion alive after 18 seconds, gain a reroll.
 回合：3-1 ~ 4-1
-升级效果
+Upgrade Effect
 4
-在16秒后，每有1名存活的友军，获得1次刷新。
-慢速学习
+For each ally champion alive after 16 seconds, gain a reroll.
+Slow Study
 4
-在15秒后，每有1名存活的友军，获得2经验值。
+For each ally champion alive after 15 seconds, gain 2 XP.
 回合：3-5 ~ 4-7
-升级效果
+Upgrade Effect
 4
-在12秒后，每有1名存活的友军，获得2经验值。
-地动山摇
+For each ally champion alive after 12 seconds, gain 2 XP.
+Tremors
 4
-每8秒，晕眩敌人1秒。
+Every 8 seconds, Stun enemies for 1 second.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 4
-每8秒，晕眩敌人1.5秒。
-棱彩效果
+Every 8 seconds, Stun enemies for 1.5 seconds.
+Prismatic Effect
 0
-每3秒，晕眩敌人1.5秒。
-全4费商店
+Every 3 seconds, Stun enemies for 1.5 seconds.
+All Fours
 4
-刷新你的商店，使其充满4费弈子。
+Reroll your shop with all 4-cost champions.
 回合：5-1 ~ 5-7
-升级效果
+Upgrade Effect
 4
-刷新你的商店，使其充满4费弈子。获得2金币。
-后排之星
+Reroll your shop with all 4-cost champions. Gain 2 gold.
+Backrow Star
 3
-1个随机后排弈子获得85%攻击速度，持续7秒。
+A random back row champion gains 85% Attack Speed for 7 seconds.
 回合：4-2 ~ 10-1
-升级效果
+Upgrade Effect
 3
-1个随机后排弈子获得115%攻击速度，持续8秒。
-贴贴
+A random back row champion gains 115% Attack Speed for 8 seconds.
+Fellowship
 4
-每有1名相邻的友军，弈子们就会获得4%最大生命值护盾和4%伤害增幅。
+Champions gain 4% Max Health Shield and 4% Damage Amp per adjacent ally.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 4
-每有1名相邻的友军，弈子们就会获得6%最大生命值护盾和6%伤害增幅。
-巨型增长
+Champions gain 6% Max Health Shield and 6% Damage Amp per adjacent ally.
+Giant Growth
 4
-你生命值最高的那个单位成长，获得750生命值。
+Your highest Health unit grows, gaining 750 Health.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 4
-你生命值最高的2个单位成长，获得750生命值。
-森林多胞胎
+Your 2 highest Health units grow, gaining 750 Health.
+Forest Twins
 4
-获得2个相同的弈子，他们是你尚未拥有的2费弈子的其中一个的复制体。
+Gain 2 copies of a 2-cost champion you don't have.
 回合：2-1 ~ 2-7
-升级效果
+Upgrade Effect
 5
-获得3个相同的弈子，他们是你尚未拥有的2费弈子的其中一个的复制体。
-拼一把大的！
+Gain 3 copies of a 2-cost champion you don't have.
+Greater Chaos
 4
-随机施放2个【自然仙灵】。
+Cast 2 random Wisps.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 4
-随机施放2个价值在2或以上金币的【自然仙灵】。
-英雄登场
+Cast 2 random Wisps worth 2 or more gold.
+Hero's Entrance
 4
-在8秒后，备战席最左侧的弈子加入战斗，并获得2件推荐装备。
+After 8 seconds, the leftmost benched champion joins combat and gains 2 recommended items.
 回合：6-1 ~ 10-1
-备战席上有弈子
-升级效果
+Upgrade Effect
 4
-在5秒后，备战席最左侧的弈子加入战斗，并获得2件推荐装备。
-闲散工匠
+After 5 seconds, the leftmost benched champion joins combat and gains 2 recommended items.
+Idle Craftsman
 4
-将你备战席的1件基础装备转化为它可合成的1件成装。
+A component on your bench turns into a completed item it builds.
 回合：3-1 ~ 4-1
-备战席上至少有1件基础装备
-升级效果
+Upgrade Effect
 2
-将你备战席的1件基础装备转化为它可合成的1件成装。
-野区
+A component on your bench turns into a completed item it builds.
+Jungling
 4
-让【峡谷野怪】占据你的商店。
+Overrun the shop with Riftbeasts.
 回合：3-1 ~ 4-7
-已激活【峡谷怪物】
-升级效果
+Upgrade Effect
 3
-让【峡谷野怪】占据你的商店。
-屏障
+Overrun the shop with Riftbeasts.
+Barrier
 4
-友军获得1250护盾值，在6秒内持续衰减。
+Allies gain 1250 Shield, decaying over 6 seconds.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 4
-友军获得1250护盾值，在9秒内持续衰减。
-棱彩效果
+Allies gain 1250 Shield, decaying over 9 seconds.
+Prismatic Effect
 0
-友军获得7500护盾值，在30秒内持续衰减。
-散件赏金
+Allies gain 7500 Shield, decaying over 30 seconds.
+Component Bounty
 4
-如果你赢得下一个玩家对战回合，获得1个随机基础装备。
+If you win the next player combat, gain a random component.
 回合：3-1 ~ 4-7
-处于短连败中
-升级效果
+Upgrade Effect
 2
-如果你赢得下一个玩家对战回合，获得1个随机基础装备。
-闪电风暴
+If you win the next player combat, gain a random component.
+Lightning Storm
 5
-每过1秒，对1名敌人造成5%最大生命值真实伤害。
+Every 1 second deal 5% Max Health true damage to an enemy.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 5
-每过1秒，对1名敌人造成7%最大生命值真实伤害。
-棱彩效果
+Every 1 seconds deal 7% Max Health true damage to an enemy.
+Prismatic Effect
 0
-每过0.15秒，对1名敌人造成5%最大生命值真实伤害。
-炽焰
+Every 0.15 seconds deal 5% Max Health true damage to an enemy.
+Blaze
 5
-火焰席卷整个棋盘，对敌人造成持续递增的真实伤害。
+Fire spreads across the board, dealing true damage to enemies.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 5
-火焰席卷整个棋盘，对敌人造成更高的真实伤害。
-棱彩效果
+Fire spreads across the board, dealing more true damage to enemies.
+Prismatic Effect
 0
-猛烈的火焰席卷整个棋盘！
-克隆弈子
+Spread a raging fire across the board!
+Clone Companion
 5
-复制你伤害最高的弈子。复制体造成20%伤害。
+Clone your highest damage champion. The clone deals 20% damage.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 5
-复制你伤害最高的弈子。复制体造成30%伤害。
-棱彩效果
+Clone your highest damage champion. The clone deals 30% damage.
+Prismatic Effect
 0
-复制你伤害最高的弈子。复制体造成100%伤害。
-易燃物
+Clone your highest damage champion. The clone deals 100% damage.
+Combust
 5
-你的弈子们在阵亡时产生爆炸，造成15%最大生命值魔法伤害。
+Your champions explode on death, dealing 15% Max Health magic damage.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 5
-你的弈子们在阵亡时产生爆炸，造成22%最大生命值魔法伤害。
-棱彩效果
+Your champions explode on death, dealing 22% Max Health magic damage.
+Prismatic Effect
 0
-你的弈子们在阵亡时产生爆炸，造成100%最大生命值魔法伤害。
-巨人光环
+Your champions explode on death, dealing 100% Max Health magic damage.
+Giant's Aura
 5
-你生命值最高的那名友军，每秒在一片区域内造成2%最大生命值伤害。
+Your highest Health ally deals 2% max Health damage per second in an area.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 5
-你生命值最高的那名友军，每秒在一片区域内造成3%最大生命值伤害。
-棱彩效果
+Your highest Health ally deals 3% max Health damage per second in an area.
+Prismatic Effect
 0
-你生命值最高的那名友军，成为了一名极其危险的人物。
-雇佣兵
+Your highest Health ally becomes an absolute menace.
+Hireling
 5
-1个携带着1件推荐装备的临时1星5费弈子加入你的队伍。
+A temporary 1-star 5-cost with 1 recommended items joins your team.
 回合：6-1 ~ 10-1
-升级效果
+Upgrade Effect
 5
-1个携带着2件推荐装备的临时1星5费弈子加入你的队伍。
-棱彩效果
+A temporary 1-star 5-cost with 2 recommended items joins your team.
+Prismatic Effect
 0
-3个临时的、携带着2件推荐装备的2星5费弈子加入你的队伍。
-树顶弓箭手
+3 temporary 2-star 5-costs with 2 recommended items each join your team.
+Treetop Archers
 5
-弓箭手自林间放箭，每3秒造成500物理伤害。
+Archers fire from the trees, dealing 500 physical damage every 3 seconds.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 5
-弓箭手自林间放箭，每3秒造成900物理伤害。
-棱彩效果
+Archers fire from the trees, dealing 900 physical damage every 3 seconds.
+Prismatic Effect
 0
-数量多到难以置信的弓箭手自林间放箭。
-英勇就义
+An implausible number of archers fire from the trees.
+Heroic Sacrifice
 5
-你最强大的3个弈子获得史！诗！级！强！化！，但其他友军将会牺牲。
+Your 3 strongest Champions gain HEROIC POWER, but other allies are sacrificed.
 回合：4-2 ~ 5-7
-拥有携带装备的弈子
-满装备单位少于4个
-升级效果
+Upgrade Effect
 5
-你最强大的3个弈子获得史！诗！级！强！化！，但其他友军将会牺牲。
-森林向导
+Your 3 strongest Champions gain HEROIC POWER, but other allies are sacrificed.
+Forest Guide
 5
-获得1个随机4费弈子。
+Gain a random 4-cost champion.
 回合：2-1 ~ 2-7
-升级效果
+Upgrade Effect
 4
-获得1个随机4费弈子。
-光明化
+Gain a random 4-cost champion.
+Radiantize
 4
-在8秒后，1件被携带着的随机装备暂时变为光明版。
+After 8 seconds, 1 random equipped item temporarily becomes Radiant.
 回合：5-1 ~ 10-1
-升级效果
+Upgrade Effect
 4
-在5秒后，1件被携带着的随机装备暂时变为光明版。
-输得漂亮
+After 5 seconds, 1 random equipped item temporarily becomes Radiant.
+Good Loss
 5
-在接下来的3场玩家对战回合，你每输掉一场就会获得4经验值。
+For the next 3 player combats, gain 4 XP if you lose.
 回合：3-1 ~ 4-1
-处于短连胜中
-升级效果
+Upgrade Effect
 5
-在接下来的3场玩家对战回合，你每输掉一场就会获得6经验值。
-日蚀之礼
+For the next 3 player combats, gain 6 XP if you lose.
+Solar Gift
 6
-获得1个【蕾欧娜】、1个【瑟庄妮】和1个【凯尔】。
+Gain a Leona, Sejuani, and Kayle
 回合：2-1 ~ 3-4
-已激活【日光射线】
-升级效果
+Upgrade Effect
 4
-获得1个【蕾欧娜】、1个【瑟庄妮】和1个【凯尔】。
-强化激素
+Gain a Leona, Sejuani, and Kayle
+Booster Shot
 6
-至多2个1星弈子会在战斗期间暂时升星。
+Up to 2 1-star champions temporarily star up during combat.
 回合：5-1 ~ 10-1
-拥有2个1星弈子，或1个满装备的5费弈子
-升级效果
+Upgrade Effect
 6
-至多3个1星弈子会在战斗期间暂时升星。
-折磨
+Up to 3 1-star champions temporarily star up during combat.
+Infliction
 6
-对所有敌人施加持续8秒的缓速、灼烧、魔抗击碎与护甲击碎效果。
+Slow, Burn, Shred, and Sunder enemies for 8 seconds.
 回合：5-1 ~ 10-1
-尚未对敌人施加【魔抗击碎】或【护甲击碎】
-尚未对敌人施加【灼烧】或【重伤】，除非已激活【炼狱】
-升级效果
+Upgrade Effect
 6
-对所有敌人施加持续12秒的缓速、灼烧、魔抗击碎与护甲击碎效果。
-大器晚成
+Slow, Burn, Shred, and Sunder enemies for 12 seconds.
+Late Bloomer
 6
-一个临时的3星1费弈子加入你的队伍。
+A temporary 3-star 1-cost joins your team.
 回合：4-2 ~ 5-7
-升级效果
+Upgrade Effect
 6
-一名携带着 1件推荐装备的临时3星1费弈子加入己方队伍。
-棱彩效果
+A temporary 3-star 1-cost with 1recommend item joins your team.
+Prismatic Effect
 0
-一队(包含5个)临时的4星1费弈子加入你的队伍。
-边境村庄
+A squad of 5 temporary 4-star 1-costs joins your team.
+Border Village
 6
-刷新你的商店，使其充满2星2费弈子。
+Reroll your shop with all 2-star 2-cost champions.
 回合：3-1 ~ 4-1
-升级效果
+Upgrade Effect
 4
-刷新你的商店，使其充满2星2费弈子。
-男爵之手
+Reroll your shop with all 2-star 2-cost champions.
+Hand Of Baron
 6
-你的队伍获得【纳什男爵】增益，提升他们的属性。
+Your team gains Baron Buff, increasing their stats.
 回合：5-1 ~ 10-1
-已激活【峡谷怪物】
-升级效果
+Upgrade Effect
 6
-你的队伍获得【纳什男爵】增益，极大提升他们的属性。
-旅行者
+Your team gains Baron Buff, greatly increasing their stats.
+Journeyman
 6
-获得1个随机2星2费弈子。
+Gain a random 2-star 2-cost champion.
 回合：2-1 ~ 3-4
-升级效果
+Upgrade Effect
 5
-获得1个随机2星2费弈子。
-中央大道
+Gain a random 2-star 2-cost champion.
+Middle Path
 6
-刷新你的商店，使其充满2星3费弈子。
+Reroll your shop with all 2-star 3-cost champions.
 回合：3-5 ~ 4-7
-升级效果
+Upgrade Effect
 4
-刷新你的商店，使其充满2星3费弈子。
-焕新之光
+Reroll your shop with all 2-star 3-cost champions.
+Refreshing Light
 6
-你的【日蚀骑士】弈子每有1星级(相同弈子不重复计数)，获得1次免费重随。
+Gain a free reroll per star level of each unique Solar champion.
 回合：3-5 ~ 4-7
-已激活【日光射线】
-升级效果
+Upgrade Effect
 5
-你的【日蚀骑士】弈子每有1星级(相同弈子不重复计数)，获得1次免费重随。
-血祭
+Gain a free reroll per star level of each unique Solar champion.
+Blood Ritual
 6
-失去10玩家生命值。获得1个【英雄复制器】。
+Lose 10 Player Health. Gain a Champion Duplicator.
 回合：4-2 ~ 4-7
-处于高生命值
-升级效果
+Upgrade Effect
 6
-失去8玩家生命值。获得1个【英雄复制器】。
-幸运7
+Lose 8 Player Health. Gain a Champion Duplicator.
+Lucky 7
 7
-获得7次商店刷新。
+Gain 7 shop rerolls.
 回合：6-1 ~ 10-1
-升级效果
+Upgrade Effect
 7
-获得10次商店刷新。
-棱彩效果
+Gain 10 shop rerolls.
+Prismatic Effect
 0
-获得777次商店刷新。
-炸鱼行为
+Gain 777 shop rerolls.
+Smurfing
 7
-获得1个随机5费弈子。
+Gain a random 5 cost champion.
 回合：3-5 ~ 4-1
-升级效果
+Upgrade Effect
 6
-获得1个随机5费弈子。
-长大
+Gain a random 5-cost champion.
+Grow Up
 7
-获得10经验值。
+Gain 10 XP.
 回合：3-1 ~ 4-7
-升级效果
+Upgrade Effect
 7
-获得12经验值。
-小人国
+Gain 12 XP.
+Field of Mice
 8
-上回合每登场1个不同的1费弈子，获得1个【微型英雄复制器】。
+Gain a Tiny Champion Duplicator for each unique one-cost fielded last round.
 回合：3-1 ~ 4-1
-上一场战斗中上阵了5个1费弈子
-升级效果
+Upgrade Effect
 8
-上回合每登场1个不同的1费弈子，获得1个【微型英雄复制器】和1金币。
-活体商店
+Gain a Tiny Duplicator and a gold for each unique 1-cost champion you fielded last round.
+Animate Shop
 8
-在18秒的持续时间内，你的商店每2秒免费刷新1次。
+For 18 seconds, your shop rerolls for free every 2 seconds.
 回合：4-2 ~ 5-7
-升级效果
+Upgrade Effect
 8
-在26秒的持续时间里，你的商店每2秒免费刷新一次。
-大腕
+For 26 seconds, your shop rerolls for free every 2 seconds.
+Big Guns
 8
-获得2个随机1星4费弈子。
+Gain 2 random 1-star 4-cost champions.
 回合：4-2 ~ 4-7
-升级效果
+Upgrade Effect
 7
-获得2个随机1星4费弈子。
-对影成三
+Gain 2 random 1-star 4-cost champions.
+Three Me
 9
-获得1个随机2星3费弈子。
+Gain a random 2-star 3-cost champion.
 回合：3-1 ~ 4-1
-升级效果
+Upgrade Effect
 8
-获得1个随机2星3费弈子。
-全5费商店
+Gain a random 2-star 3-cost champion.
+All Fives
 10
-刷新你的商店，使其充满5费弈子。
+Reroll your shop with all 5-cost champions.
 回合：6-1 ~ 10-1
-升级效果
+Upgrade Effect
 10
-刷新你的商店，使其充满5费弈子。获得5金币。
-奇境宗师
+Reroll your shop with all 5-cost champions. Gain 5 gold.
+Grandmaster
 18
-获得1个随机2星5费弈子。
+Gain a random 2-star 5-cost champion.
 回合：6-1 ~ 10-1
-升级效果
+Upgrade Effect
 14
-获得1个随机2星5费弈子。
-预言之子
+Gain a random 2-star 5-cost champion.
+Hero Of Prophecy
 35
-获得1个5费弈子。每回合都会再获得1个该弈子(永远！直至游戏结束)。
+Gain a 5-cost champion. Gain them again each round FOREVER.
 回合：6-1 ~ 10-1
-至少拥有35金币
-生命值高于50
-等级达到10级或以上
-升级效果
+Upgrade Effect
 33
-获得1个5费弈子。每回合都会再获得1个该弈子(永远！直至游戏结束)。
-长者之环
+Gain a 5-cost champion. Gain them again each round FOREVER.
+Circle of Elders
 45
-获得每个5费弈子各1个。
+Gain one of each 5-cost champion.
 回合：6-1 ~ 10-1
-升级效果
+Upgrade Effect
 40
-获得每个5费弈子各1个。
-加入社群
-CN微信群
-外服微信群
-金铲铲微信群
-联系我们
-内容授权
-更多合作
-网站反馈
-提交
-浙ICP备18014005号-25 ©2024 云顶大数据
-, All rights reserved.
-乐芙兰
-费德提克
-凯尔
-易
-阿利斯塔
-希维尔
-索拉卡
-提莫
-崔丝塔娜
-沃里克
-艾希
-莫甘娜
-阿木木
-拉莫斯
-卡尔玛
-塔里克
-维迦
-凯特琳
-墨菲特
-茂凯
-伊莉丝
-卡西奥佩娅
-奈德丽
-伊泽瑞尔
-约里克
-阿卡丽
-凯南
-蕾欧娜
-克格莫
-慎
-拉克丝
-阿狸
-雷恩加尔
-韦鲁斯
-瑟庄妮
-德莱文
-赫卡里姆
-卡兹克
-黛安娜
-婕拉
-纳尔
-卡蜜尔
-蔚
-阿兹尔
-雷克塞
-艾翁
-洛
-霞
-奥恩
-厄斐琉斯
-芸阿娜
-瑟提
-莉莉娅
-可酷伯
-拉露恩
-苍蓝哨戒
-绯红树怪
-魔沼蛙
-暗影狼
-远古石甲虫
-峡谷迅捷蟹
-深红锋喙鸟
-绯红印记树怪
-苍蓝雕纹魔像
-远古巨龙
-死亡之刃
-巨人杀手
-海克斯科技枪刃
-朔极之矛
-夜之锋刃
-饮血剑
-斯特拉克的挑战护手
-无尽之刃
-红霸符
-鬼索的狂暴之刃
-虚空之杖
-泰坦的坚决
-海妖之怒
-纳什之牙
-最后的轻语
-灭世者的死亡之帽
-大天使之杖
-冕卫
-离子火花
-莫雷洛秘典
-珠光护手
-蓝霸符
-圣盾使的誓约
-适应性头盔
-振奋盔甲
-正义之手
-棘刺背心
-石像鬼石板甲
-日炎斗篷
-坚定之心
-巨龙之爪
-薄暮法袍
-水银
-狂徒铠甲
-强袭者的链枷
-窃贼手套
-金铲铲冠冕
-金锅锅冠冕
-金锅铲冠冕
-虚空护手
-黎明圣盾
-恶火小斧
-黄昏圣盾
-永恒契约
-黎明核心
-纳沃利烁刃
-斯塔缇克电刃
-巨型九头蛇
-顽强不屈
-死亡蔑视
-三相之力
-金币收集者
-中娅悖论
-碎舰者
-大亨之铠
-投机者之刃
-飞升护符
-鱼骨头
-连指手套
-疾射火炮
-密银黎明
-暗行者之爪
-枯萎珠宝
-智慧末刃
-巫妖之祸
-光盾徽章
-探索者的护臂
-卢登的激荡
-魔蕴
-禁忌雕像
-视界专注
-光明版死亡之刃
-光明版巨人杀手
-光明版海克斯科技枪刃
-光明版朔极之矛
-光明版夜之锋刃
-光明版饮血剑
-光明版斯特拉克的挑战护手
-光明版无尽之刃
-光明版红霸符
-光明版鬼索的狂暴之刃
-光明版虚空之杖
-光明版泰坦的坚决
-光明版海妖之怒
-光明版纳什之牙
-光明版最后的轻语
-光明版灭世者的死亡之帽
-光明版大天使之杖
-光明版冕卫
-光明版离子火花
-光明版莫雷洛秘典
-光明版珠光护手
-光明版蓝霸符
-光明版圣盾使的誓约
-光明版适应性头盔
-光明版振奋盔甲
-光明版正义之手
-光明版棘刺背心
-光明版石像鬼石板甲
-光明版日炎斗篷
-光明版坚定之心
-光明版巨龙之爪
-光明版薄暮法袍
-光明版水银
-光明版狂徒铠甲
-光明版强袭者的链枷
-光明版窃贼手套
-灵魂莲华纹章
-月蚀骑士纹章
-约德尔人和朋友纹章
-花仙子纹章
-地狱火纹章
-永恒之森纹章
-黑荆棘纹章
-野兽之灵纹章
-裁决使纹章
-斗士纹章
-神谕纹章
-迅捷射手纹章
-法师纹章
-重装战士纹章
-猎人纹章
-狂战士纹章
-魔女纹章
-绝命花妖纹章
-绝命花妖纹章
-护卫纹章
-主宰纹章
-生命药水
-光明版生命药水
-法力药水
-光明版法力药水
-爆炸药水
-光明版爆炸药水
-阿尔法印记
-毛绒绒大朋友
-毛绒绒大朋友
-2 法师
-4 法师
-6 法师
-2 魔战士
-3 魔战士
-4 魔战士
-2 狂战士
-4 狂战士
-6 狂战士
-2 斗士
-4 斗士
-6 斗士
-2 迅捷射手
-3 迅捷射手
-4 迅捷射手
-5 迅捷射手
-2 猎人
-3 猎人
-4 猎人
-5 猎人
-2 裁决使
-3 裁决使
-4 裁决使
-2 召唤师
-3 召唤师
-2 重装战士
-4 重装战士
-6 重装战士
-2 护卫
-4 护卫
-6 护卫
-2 主宰
-4 主宰
-6 主宰
-2 神谕
-3 神谕
-4 神谕
-5 神谕
-3 灵魂莲华
-5 灵魂莲华
-7 灵魂莲华
-9 灵魂莲华
-11 灵魂莲华
-2 地狱火
-3 地狱火
-5 地狱火
-7 地狱火
-3 约德尔人和朋友
-5 约德尔人和朋友
-7 约德尔人和朋友
-3 永恒之森
-5 永恒之森
-7 永恒之森
-9 永恒之森
-11 永恒之森
-2 黑荆棘
-4 黑荆棘
-6 黑荆棘
-3 魔女
-4 魔女
-5 魔女
-7 魔女
-3 峡谷野怪
-5 峡谷野怪
-7 峡谷野怪
-10 峡谷野怪
-1 宿敌
-1 宿敌
-2 宿敌
-2 花仙子
-4 花仙子
-2 野兽之灵
-4 野兽之灵
-1 绝命花妖
-2 绝命花妖
-3 日蚀骑士
-2 月蚀骑士
-3 月蚀骑士
-4 月蚀骑士
-5 月蚀骑士
-1 日月双蚀
-1 帝王斑蝶
-1 魔岩巨兽
-1 宝石骑士
-1 远古树精
-1 荆棘之兴
-1 翠神
-1 月华神女
-1 赏金猎人
-1 自然之力！大元素使
-1 顶级掠食者
-烧起来
-C位的觉悟
-D个痛快！
-一一二三
-一，二，五！
-不拘一格
-人生切片
-仙灵报恩
-仙灵报恩+
-休眠锻炉
-假人化
-别再错过
-博弈开启
-双子守护神
-变形重组器
-后期专家
-阵容构筑
-基础装备自助餐
-小小福袋
-应急护甲 I
-弈子配送
-弈子配送+
-弈子配送++
-弑君突刺
-强化之能量
-战时补给：反曲之弓
-战时补给：女神之泪
-战时补给：巨人腰带
-战时补给：暴风大剑
-手气不错
-拥抱 I
-拳击课程
-星界恩典I
-有用之材 I
-残留魔力
-残留魔力+
-残留魔力++
-治疗法球 I
-游神的盟友
-潘朵拉的装备 I
-灌铅骰子
-锻造挚友
-玻璃大炮 I
-电火花 I
-白银命运
-白银命运+
-白银命运++
-窃贼帮派
-精心打造
-纵深 I
-耐心是一种美德
-联合作战
-腐蚀
-节外生枝
-节外生枝+
-装备百宝袋 I
-认知税
-认知税+
-资本利得 I
-轻量魔法投掷
-进攻宣告
-远征
-连败连胜才能连鸡
-部分飞升
-银汤匙
-集中火力
-高塔
-高瞻远瞩
-黑铁资产
-世纪和解
-兽性本能
-兽性本能
-兽性本能+
-兽性本能+
-太阳的抉择
-女巫使魔
-巨化术
-日月同辉
-日月同辉+
-欧米茄之怪
-毛茸茸小朋友
-绽灵花的约定
-自然庇护所
-致命丽花
-致命丽花
-装备提炼
-黑暗仪式
-8级D干的传说
-DD街区
-DD街区+
-一波带走俩
-三幻神
-三相庇护
-不侦察，不变阵
-专属定制
-便携锻炉
-值得等待
-挑个好伙计！
-利落保镖
-前线地基
-剑之工匠
-单身板甲
-厨神阿福
-双城赢家
-双排
-反响
-发条增速器
-后排蓝图
-后期收益
-四之力
-大百宝袋
-好事成双
-存心失利
-宝宝学院
-应急护甲 II
-应急护盾
-征战之路
-心之钢
-恶意货币化
-意外之礼
-意外之礼+
-成吨的属性
-成吨的属性！
-打捞桶
-打捞桶+
-扩展包
-扩展包+
-扩展包++
-承诺之护
-投资策略 I
-拥抱 II
-挑战者的优雅
-挖角
-救赎盔甲
-新纪元
-新纪元+
-时间跳跃
-星界赐福 II
-是我，宝贝！
-杖之工匠
-治疗法球 II
-泪流成河
-清晰头脑
-游神的眷顾
-源计划上行链路
-源计划植入
-潘朵拉的备战席
-潘朵拉的装备 II
-灵活
-炽天使之拥
-爆炸式增长
-爆炸式增长+
-物尽其用
-物尽其用+
-独自升级
-玻璃大炮 II
-珠光莲花 I
-生日聚会
-电火花 II
-砍价高手
-等待得值
-纵深 II
-纷乱头脑
-终身黄铜 I
-耐心学习
-花到上头
-英勇福袋
-英勇福袋+
-英勇福袋++
-获得21金币
-蔓延之根
-蔓延之根+
-认知过载
-贪财
-贪财+
-资本利得 II
-金色炊具
-金霖龙
-镀金钢铁
-顶尖构筑
-飞升
-高级贷款
-高级贷款+
-魔法投掷
-黄金命运
-黄金命运+
-纺织魔法
-四费增援
-创世神
-1个霸符，2个霸符
-上进心
-值得等待 II
-光明圣物
-光明无赖
-加冕礼
-升级咯！
-可大可小
-坚守防线
-基础装备大冒险
-大买特买
-更要命的帽子
-更要命的战刃
-大剑溢流
-大而有力
-奢侈品订购
-对冲基金
-幸运手套
-幸运手套+
-弈子套娃
-弈子套娃
-投资+
-投资++
-投资策略 II
-摇钱树
-星界赐福 III
-棱彩命运
-棱彩命运+
-来个好伙计
-棱彩门票
-正义报复
-水乳交融
-法杖溢流
-活体锻炉
-混沌召唤
-潘朵拉的装备 III
-灵魂唤醒
-珍藏财宝 III
-珠光莲花 II
-甜点
-生日礼物
-男爵幻域
-硬性承诺
-神力天铸
-窃贼帮派 II
-窃贼帮派 II+
-窃贼帮派 II++
-纵深 III
-终身黄铜 II
-绝境反击
-羁绊天梯
-羁绊树
-羁绊树+
-腰带溢流
-诅咒冠冕
-贸易中心
-遥遥领先
-金蛋
-金鳞精萃
-锅铲厨房
-锻造器套娃
-锻造器套娃+
-阿福的百宝袋
-黄金赌约
-黄金赌约+
-黄金赌约++
-交给运气
-全1费商店
-防微杜渐
-森林魔法师
-以命为注
-元气满满
-绿意盎然
-弃船
-神器化
-抛硬币
-打捞术
-小贩
-珍品摆摊车
-树皮护甲
-高阶变形术
-低阶变形术
-变形术
-小玩具罐
-找个朋友
-小饰品罐
-小装置罐
-仙灵的怜悯
-休战
-不祥交易
-终极飞升
-蜂鸟
-衣衫褴褛
-巨大化
-全2费商店
-老练
-肥料
-有丝分裂
-零花钱
-星落
-大爆炸
-爆炸药水
-借来的装备
-摄魂夺魄
-疯狂掷币人
-招财猫
-生命药水
-拼一把小的！
-法力药水
-泪雨
-鬼鬼祟祟
-自然之怒
-小玩具包
-小饰品包
-小装置包
-带一个走
-低阶胜负手
-干旱
-洪涝
-以物易物
-法术反制
-幻影护甲
-余震
-全3费商店
-染血之币
-免费刷新术
-闪电打击
-皓月当空
-未雨绸缪
-繁殖
-抵抗
-日炎巫术
-腰带批发
-掷骰子
-爆燃
-萤火虫之家
-瞄准镜
-钢铁核心
-侩子手的悔恨
-活体土壤
-射手狂风
-月光仪式
-自然之友
-石化术
-破盾秘法
-幻影浪花
-幻影背心
-镀板护盾
-生态改造
-猎手的黄金之路
-荆棘环身
-加速
-治疗池
-黄金之路
-倾盆大雨
-梁上君子
-行云流水
-回复
-孤身站场
-铜汤匙
-鏖战不休
-屠戮狂暴
-迷路的游客
-金钱之力
-超级暴击
-约德尔之灵
-学徒
-鲜血与铁
-壁垒
-小玩具袋
-坚硬木材
-小饰品袋
-富魔之壤
-射手标记
-幻影手套
-药学博士
-复仇
-顺流而下
-骨头滚滚
-零碎
-搜查队
-独行斗篷
-小装置袋
-训练场
-多样化
-新手村
-幻影纹章
-小型血祭
-高阶胜负手
-庆功宴
-不倒翁
-慢速学习
-地动山摇
-全4费商店
-后排之星
-贴贴
-巨型增长
-森林多胞胎
-拼一把大的！
-英雄登场
-闲散工匠
-野区
-屏障
-散件赏金
-闪电风暴
-炽焰
-克隆弈子
-易燃物
-巨人光环
-雇佣兵
-树顶弓箭手
-英勇就义
-森林向导
-光明化
-输得漂亮
-日蚀之礼
-强化激素
-折磨
-大器晚成
-边境村庄
-男爵之手
-旅行者
-中央大道
-焕新之光
-血祭
-幸运7
-炸鱼行为
-长大
-小人国
-活体商店
-大腕
-对影成三
-全5费商店
-奇境宗师
-预言之子
-长者之环
-模拟器
-资料库
-概率表
-完美装备
-新
-羁绊天梯
-新手认卡
-新
-完美羁绊
-黑荆棘格计算器
-强化互斥规则
-装备适配器
-打捞桶模拟器
-我要反馈
-阵容榜单
-热门阵容
-一图流
-强化评级
-装备评级
-模拟器
-强度表制作
-抽卡模拟器
-概率计算器
-检索器
-弈子
-装备
-羁绊
-版本趋势
-实时趋势
-PBE 检索器
-信息差
-周报
-版本改动
-改动汇总
-直播间
-比赛
-KAI巅
-大数据杯
-S17工具库
-神明
-羁绊追踪
-男枪武器库
-S16工具库
-瑞兹/世界符文解锁器
-狗熊解锁器
-以绪塔尔任务列表
-人格测试
-历史相似分析
-DIY强化
-Kai巅报名
-攻略阅读器
-全球选手排名
-Google Login
-手机登录
-中文（简体）
-中文（繁體）
-中文（MY）
-English (US)
-English (UK)
-English (AU)
-English (SG)
-English (PH)
-Tiếng Việt
-日本語
-한국어
-Türkçe
-Español (ES)
-Español (MX)
-Español (AR)
-Português
-Deutsch
-Français
-Русский
-ไทย
-Italiano
-Polski
-Română
-Ελληνικά
-Čeština
-Magyar
-Bahasa Indonesia
-العربية
-新功能介绍
--完美装备：快速查询搜索当前环境最好的特殊装备
-点击跳转
--新手识卡：没玩过也可以在非游戏时间快速上手辨识S18单位，还有竞速模式
-点击跳转
+Gain one of each 5-cost champion.

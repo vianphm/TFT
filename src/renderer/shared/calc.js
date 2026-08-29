@@ -427,6 +427,50 @@
     return { crafted: crafted, missing: missing, leftover: pool };
   }
 
+  /**
+   * Tinh toan do uu tien nhan do o vong di cho (Carousel Priority Picker):
+   * Dua tren do chuan cua Carry va Tank trong doi hinh va cac linh kien dang giu.
+   */
+  function carouselPriorities(comp, currentComponents) {
+    if (!comp || !comp.units) return [];
+    var have = (currentComponents || []).slice();
+    var neededComponents = {};
+
+    comp.units.forEach(function (u) {
+      if (u.items && (u.carry || u.role === 'tank' || u.role === 'main_tank')) {
+        u.items.forEach(function (itemName) {
+          var recipes = Object.keys(T.RECIPES).filter(function (k) { return T.RECIPES[k] === itemName; });
+          if (recipes.length) {
+            var parts = recipes[0].split('+');
+            parts.forEach(function (part) {
+              neededComponents[part] = (neededComponents[part] || 0) + (u.carry ? 2 : 1);
+            });
+          }
+        });
+      }
+    });
+
+    have.forEach(function (part) {
+      if (neededComponents[part] && neededComponents[part] > 0) {
+        neededComponents[part]--;
+      }
+    });
+
+    var sorted = Object.keys(neededComponents)
+      .filter(function (k) { return neededComponents[k] > 0; })
+      .map(function (k) {
+        var compObj = T.COMPONENTS.find(function (c) { return c.id === k; }) || { id: k, name: k };
+        return {
+          id: k,
+          name: compObj.name,
+          demandScore: neededComponents[k]
+        };
+      })
+      .sort(function (a, b) { return b.demandScore - a.demandScore; });
+
+    return sorted;
+  }
+
   function canTake(pool, parts) {
     return shortfall(pool, parts).length === 0;
   }
@@ -677,6 +721,7 @@
     craftable: craftable,
     missingFor: missingFor,
     bestItemPlan: bestItemPlan,
+    carouselPriorities: carouselPriorities,
     classifyItem: classifyItem,
     itemSynergyWithChampion: itemSynergyWithChampion,
     itemSlamWarning: itemSlamWarning,

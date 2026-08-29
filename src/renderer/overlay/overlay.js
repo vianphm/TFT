@@ -459,6 +459,16 @@
 
     var advice = analyzer.generateComprehensiveAdvice(state, dataset, comps);
     var carryUnit = activeComp && (activeComp.units || []).find(function (u) { return u.carry; });
+    var carouselItems = calc.carouselPriorities(activeComp, config.state.components || []);
+
+    var carouselHtml = '';
+    if (carouselItems.length) {
+      carouselHtml = '<div style="background:rgba(59,130,246,0.1);color:#93c5fd;padding:4px 6px;border-radius:4px">' +
+        '<b>🎪 Ưu tiên nhặt chợ:</b> ' + carouselItems.slice(0, 3).map(function (c) {
+          return '<span class="tag" style="background:rgba(59,130,246,0.2);margin-right:2px">' + escapeHtml(c.name) + '</span>';
+        }).join('') +
+      '</div>';
+    }
 
     resultEl.innerHTML = '<div style="font-size:11px;display:flex;flex-direction:column;gap:5px">' +
       '<div style="display:flex;justify-content:space-between;align-items:center">' +
@@ -469,6 +479,7 @@
         '<b>👑 Carry chính:</b> ' + escapeHtml(carryUnit ? carryUnit.name : 'Đa dụng') +
         (carryUnit && carryUnit.items ? ' • Đồ chuẩn: <span style="color:var(--gold)">' + carryUnit.items.map(function(it) { return escapeHtml((tables.ITEM_NAMES_VI && tables.ITEM_NAMES_VI[it]) || it); }).join(', ') + '</span>' : '') +
       '</div>' +
+      carouselHtml +
       '<div style="color:#68d391;background:rgba(104,211,145,0.1);padding:4px 6px;border-radius:4px">' +
         '<b>💡 Hành động vòng này:</b> ' + escapeHtml(advice.econDecision.message) +
       '</div>' +

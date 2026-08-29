@@ -2,15 +2,15 @@
   {
     "name": "vntft-dtcl",
     "url": "https://vntft.com/dtcl",
-    "bytes": 176962,
-    "textBytes": 6352,
-    "champions": 55,
+    "bytes": 236180,
+    "textBytes": 8654,
+    "champions": 56,
     "traits": 1
   },
   {
     "name": "metatft-units",
     "url": "https://metatft.gg/units/",
-    "bytes": 188797,
+    "bytes": 188853,
     "textBytes": 9702,
     "champions": 56,
     "traits": 0
@@ -18,74 +18,10 @@
   {
     "name": "metatft-comps",
     "url": "https://metatft.gg/comps",
-    "bytes": 1352098,
+    "bytes": 1352083,
     "textBytes": 18968,
     "champions": 51,
     "traits": 0
-  },
-  {
-    "name": "blitz-set18-comps-vi",
-    "url": "https://blitz.gg/vi/tft/comps",
-    "bytes": 1095951,
-    "textBytes": 8105,
-    "champions": 55,
-    "traits": 1
-  },
-  {
-    "name": "blitz-set18-champion-stats-vi",
-    "url": "https://blitz.gg/vi/tft/set18/stats/champions",
-    "bytes": 506165,
-    "textBytes": 3876,
-    "champions": 57,
-    "traits": 1
-  },
-  {
-    "name": "blitz-set18-early-comps-vi",
-    "url": "https://blitz.gg/vi/tft/set18/comps-early",
-    "bytes": 326004,
-    "textBytes": 3486,
-    "champions": 24,
-    "traits": 1
-  },
-  {
-    "name": "blitz-set18-champions-vi",
-    "url": "https://blitz.gg/vi/tft/set18/champions",
-    "bytes": 366141,
-    "textBytes": 24565,
-    "champions": 57,
-    "traits": 8
-  },
-  {
-    "name": "blitz-set18-wisps-vi",
-    "url": "https://blitz.gg/vi/tft/set18/wisps",
-    "bytes": 342399,
-    "textBytes": 19643,
-    "champions": 6,
-    "traits": 2
-  },
-  {
-    "name": "blitz-set18-traits-vi",
-    "url": "https://blitz.gg/vi/tft/set18/traits",
-    "bytes": 309463,
-    "textBytes": 10804,
-    "champions": 8,
-    "traits": 2
-  },
-  {
-    "name": "blitz-set18-augments-vi",
-    "url": "https://blitz.gg/vi/tft/set18/augments",
-    "bytes": 1025437,
-    "textBytes": 35207,
-    "champions": 25,
-    "traits": 1
-  },
-  {
-    "name": "blitz-set18-augment-stats-vi",
-    "url": "https://blitz.gg/vi/tft/set18/stats/augments",
-    "bytes": 2054760,
-    "textBytes": 6577,
-    "champions": 1,
-    "traits": 1
   },
   {
     "name": "doihinhtft-doi-hinh",
@@ -120,114 +56,50 @@
     "traits": 0
   },
   {
-    "name": "datatft-database-units",
-    "url": "https://www.datatft.com/database#unit",
-    "bytes": 1819998,
-    "textBytes": 22605,
-    "champions": 1,
-    "traits": 1
-  },
-  {
-    "name": "datatft-database-items",
-    "url": "https://www.datatft.com/database#item",
-    "bytes": 1479549,
-    "textBytes": 4876,
-    "champions": 1,
-    "traits": 0
-  },
-  {
-    "name": "datatft-database-traits",
-    "url": "https://www.datatft.com/database#trait",
-    "bytes": 1493391,
-    "textBytes": 8639,
-    "champions": 1,
-    "traits": 0
-  },
-  {
-    "name": "datatft-database-augments",
-    "url": "https://www.datatft.com/database#augment",
-    "bytes": 1573779,
-    "textBytes": 20105,
-    "champions": 1,
-    "traits": 0
-  },
-  {
-    "name": "datatft-database-charms",
-    "url": "https://www.datatft.com/database#charm",
-    "bytes": 1646624,
-    "textBytes": 18724,
-    "champions": 1,
-    "traits": 0
-  },
-  {
-    "name": "datatft-database-roles",
-    "url": "https://www.datatft.com/database#role",
-    "bytes": 1432181,
-    "textBytes": 5298,
-    "champions": 1,
-    "traits": 0
-  },
-  {
     "name": "vntft-trang-bi",
     "url": "https://vntft.com/trang-bi-tft",
-    "bytes": 188097,
-    "textBytes": 12428,
-    "champions": 14,
+    "bytes": 247967,
+    "textBytes": 14824,
+    "champions": 17,
     "traits": 0
-  },
-  {
-    "name": "vntft-trang-bi-tao-tac",
-    "url": "https://vntft.com/trang-bi-tao-tac-tft",
-    "bytes": 255527,
-    "textBytes": 16253,
-    "champions": 31,
-    "traits": 0
-  },
-  {
-    "name": "vntft-trang-bi-ho-tro",
-    "url": "https://vntft.com/trang-bi-ho-tro-tft",
-    "bytes": 110387,
-    "textBytes": 8221,
-    "champions": 13,
-    "traits": 1
   },
   {
     "name": "vntft-phan-thuong-tien-hac-am",
     "url": "https://vntft.com/phan-thuong-tien-hac-am-dtcl-mua-18",
-    "bytes": 105216,
-    "textBytes": 5728,
+    "bytes": 100875,
+    "textBytes": 5761,
     "champions": 13,
     "traits": 0
   },
   {
     "name": "vntft-trang-bi-anh-sang",
     "url": "https://vntft.com/trang-bi-anh-sang-tft",
-    "bytes": 151766,
-    "textBytes": 14196,
-    "champions": 13,
+    "bytes": 151310,
+    "textBytes": 14101,
+    "champions": 12,
     "traits": 0
   },
   {
     "name": "vntft-ghep-an",
     "url": "https://vntft.com/ghep-an-tft",
-    "bytes": 145187,
-    "textBytes": 7868,
-    "champions": 14,
+    "bytes": 144300,
+    "textBytes": 7821,
+    "champions": 15,
     "traits": 0
   },
   {
     "name": "vntft-toc-he",
     "url": "https://vntft.com/toc-he-dtcl",
-    "bytes": 249035,
-    "textBytes": 13787,
-    "champions": 18,
+    "bytes": 276128,
+    "textBytes": 14895,
+    "champions": 19,
     "traits": 1
   },
   {
     "name": "vntft-doi-hinh",
     "url": "https://vntft.com/doi-hinh-dtcl",
-    "bytes": 1908715,
-    "textBytes": 37301,
+    "bytes": 1968757,
+    "textBytes": 39529,
     "champions": 56,
     "traits": 0
   }
