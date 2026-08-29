@@ -2,15 +2,15 @@
   {
     "name": "vntft-dtcl",
     "url": "https://vntft.com/dtcl",
-    "bytes": 175952,
-    "textBytes": 6369,
-    "champions": 55,
+    "bytes": 236180,
+    "textBytes": 8654,
+    "champions": 56,
     "traits": 1
   },
   {
     "name": "metatft-units",
     "url": "https://metatft.gg/units/",
-    "bytes": 189034,
+    "bytes": 188853,
     "textBytes": 9702,
     "champions": 56,
     "traits": 0
@@ -18,7 +18,7 @@
   {
     "name": "metatft-comps",
     "url": "https://metatft.gg/comps",
-    "bytes": 1352087,
+    "bytes": 1352083,
     "textBytes": 18968,
     "champions": 51,
     "traits": 0
@@ -53,6 +53,54 @@
     "bytes": 128515,
     "textBytes": 1981,
     "champions": 2,
+    "traits": 0
+  },
+  {
+    "name": "vntft-trang-bi",
+    "url": "https://vntft.com/trang-bi-tft",
+    "bytes": 247967,
+    "textBytes": 14824,
+    "champions": 17,
+    "traits": 0
+  },
+  {
+    "name": "vntft-phan-thuong-tien-hac-am",
+    "url": "https://vntft.com/phan-thuong-tien-hac-am-dtcl-mua-18",
+    "bytes": 100875,
+    "textBytes": 5761,
+    "champions": 13,
+    "traits": 0
+  },
+  {
+    "name": "vntft-trang-bi-anh-sang",
+    "url": "https://vntft.com/trang-bi-anh-sang-tft",
+    "bytes": 151310,
+    "textBytes": 14101,
+    "champions": 12,
+    "traits": 0
+  },
+  {
+    "name": "vntft-ghep-an",
+    "url": "https://vntft.com/ghep-an-tft",
+    "bytes": 144300,
+    "textBytes": 7821,
+    "champions": 15,
+    "traits": 0
+  },
+  {
+    "name": "vntft-toc-he",
+    "url": "https://vntft.com/toc-he-dtcl",
+    "bytes": 276128,
+    "textBytes": 14895,
+    "champions": 19,
+    "traits": 1
+  },
+  {
+    "name": "vntft-doi-hinh",
+    "url": "https://vntft.com/doi-hinh-dtcl",
+    "bytes": 1968757,
+    "textBytes": 39529,
+    "champions": 56,
     "traits": 0
   }
 ]
