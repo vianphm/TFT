@@ -1,0 +1,1773 @@
+Linh Hồn Đấu Trường Chân Lý Mùa 18 - Blitz.gg
+Blitz.gg
+Liên Minh Huyền Thoại
+Đấu Trường Chân Lý
+VALORANT
+Counter-Strike 2
+Fortnite
+Escape From Tarkov
+Apex Legends
+Marvel Rivals
+Deadlock
+Tìm kiếm Hồ Sơ (Tên#Tag), Tướng, Trang Bị, Tộc Hệ, v.v.
+Ctrl
+K
+Go Ad-Free
+Log In
+Khách
+Đăng nhập/Đăng ký
+Tài Khoản
+Mua Premium
+Ngôn Ngữ
+Hỗ Trợ
+Điều Khoản Dịch Vụ
+Chính Sách Bảo Mật
+Đăng Nhập
+Download Blitz
+Trang Chủ
+Mùa 18
+MỚI
+Thông Tin Vùng Đất Phù Thủy
+Đội Hình
+Đội Hình Đầu Game
+Tướng
+Linh Hồn
+Tộc Hệ
+Lõi Công Nghệ
+Mùa 17
+Thông Tin Space Gods
+Đội Hình
+Tướng
+Vị Thần
+Tộc Hệ
+Lõi Công Nghệ
+Trang Bị
+Đội Hình
+Đội Hình
+Mùa 18
+Set 18 Early Comps
+Set 17 Revival Comps
+Thống Kê
+Chỉ Số Tướng
+Chỉ Số Tộc Hệ
+Chỉ Số Trang Bị
+Chỉ Số Lõi Công Nghệ
+Bảng Xếp Hạng
+BXH Tướng
+BXH Trang Bị
+BXH Lõi Công Nghệ
+Overlay
+Wisps Mùa 18
+Khám phá các nguồn sức mạnh tạm thời, sử dụng một lần có sẵn trong suốt Vùng Đất Phù Thủy.
+Vòng
+Show Blossom Upgrade
+Giao Tranh
+Misc
+Risky
+Shop
+Trang Bị
+Tướng
+Vàng / XP
+Vòng
+Show Blossom Upgrade
+Giao Tranh
+Misc
+Risky
+Shop
+Trang Bị
+Tướng
+Vàng / XP
+Baron Chi Viện
+6
+Giao Tranh
+Đội của bạn nhận Bùa Baron, tăng chỉ số cho họ.
+Appears:
+5-1
+onward
+Cơ Hội Tăng Cường
+6
+Giao Tranh
+Tối đa
+2
+tướng 1 sao sẽ tạm thời được nâng sao trong giao tranh.
+Appears:
+5-1
+onward
+Lớn Muộn
+6
+Giao Tranh
+1 tướng
+1
+vàng
+3
+sao sẽ tạm thời gia nhập đội của bạn.
+Appears:
+4-2
+to
+5-7
+Trừng Trị
+6
+Giao Tranh
+Gây Làm Chậm, Thiêu Đốt, Cào Xé và Phân Tách lên kẻ địch trong
+8
+giây.
+Appears:
+5-1
+onward
+Bản Sao Đồng Hành
+5
+Giao Tranh
+Nhân bản tướng gây sát thương cao nhất của bạn. Bản sao gây
+20%
+sát thương.
+Appears:
+5-1
+onward
+Bão Sét
+5
+Giao Tranh
+Mỗi
+1
+giây, gây sát thương chuẩn bằng
+5%
+Máu tối đa lên một kẻ địch.
+Appears:
+5-1
+onward
+Bốc Cháy
+5
+Giao Tranh
+Tướng của bạn phát nổ khi bị hạ gục, gây sát thương phép bằng
+15%
+Máu Tối Đa.
+Appears:
+5-1
+onward
+Bỏng
+5
+Giao Tranh
+Lửa lan rộng khắp bàn đấu, gây sát thương chuẩn lên kẻ địch.
+Appears:
+5-1
+onward
+Cung Thủ Ngọn Cây
+5
+Giao Tranh
+Cung thủ bắn từ trên cây, gây
+500
+sát thương vật lý mỗi
+3
+giây.
+Appears:
+5-1
+onward
+Hào Quang Khổng Lồ
+5
+Giao Tranh
+Đồng minh nhiều Máu nhất gây sát thương bằng
+2%
+Máu tối đa mỗi giây trong 1 khu vực.
+Appears:
+5-1
+onward
+Hy Sinh Anh Dũng
+5
+Giao Tranh
+3
+tướng mạnh nhất của bạn nhận SỨC MẠNH ANH HÙNG, nhưng các đồng minh khác sẽ bị hiến tế.
+Appears:
+4-2
+to
+5-7
+Tay Sai
+5
+Giao Tranh
+1 tướng
+5
+vàng
+1
+sao tạm thời với
+1
+trang bị khuyên dùng sẽ gia nhập đội của bạn.
+Appears:
+6-1
+onward
+Ánh Sáng Hóa
+4
+Giao Tranh
+Sau
+8
+giây,
+1
+trang bị ngẫu nhiên đã được lắp sẽ tạm thời trở thành dạng Ánh Sáng.
+Appears:
+5-1
+onward
+Động Đất
+4
+Giao Tranh
+Mỗi
+8
+giây, Làm Choáng kẻ địch trong
+1
+giây.
+Appears:
+5-1
+onward
+Lá Chắn
+4
+Giao Tranh
+Đồng minh nhận được
+1250
+Lá Chắn, giảm dần trong
+6
+giây.
+Appears:
+5-1
+onward
+Siêu Hùng Giáng Thế
+4
+Giao Tranh
+Sau
+8
+giây, tướng ngoài cùng bên trái hàng chờ vào giao tranh với
+2
+trang bị khuyên dùng.
+Appears:
+6-1
+onward
+Tăng Trưởng Khổng Lồ
+4
+Giao Tranh
+Đơn vị có lượng Máu cao nhất của bạn sẽ lớn lên, nhận thêm
+750
+Máu.
+Appears:
+5-1
+onward
+Tình Bằng Hữu
+4
+Giao Tranh
+Tướng nhận Lá Chắn bằng
+4%
+Máu Tối Đa và
+4%
+Khuếch Đại Sát Thương với mỗi đồng minh liền kề.
+Appears:
+5-1
+onward
+Ấn Ma Mị
+3
+Giao Tranh
+Nhận 1 ấn tạm thời cho tộc/hệ kích hoạt cao nhất của bạn.
+Appears:
+5-1
+onward
+Áo Choàng Cô Độc
+3
+Giao Tranh
+Các tướng không có đồng minh liền kề nhận
+10%
+Máu Tối Đa và
+10%
+Khuếch Đại Sát Thương.
+Appears:
+5-1
+onward
+Báo Thù
+3
+Giao Tranh
+Khi đồng minh hy sinh, đội bạn nhận
+4%
+Khuếch Đại Sát Thương cộng dồn.
+Appears:
+5-1
+onward
+Chiến Lũy
+3
+Giao Tranh
+Tướng Đỡ Đòn của bạn nhận lá chắn bằng
+20%
+Máu Tối Đa khi còn dưới
+50%
+Máu.
+Appears:
+4-2
+onward
+Cuồng Nộ Sát Nhân
+3
+Giao Tranh
+Tướng Đấu Sĩ kết liễu mục tiêu khi mục tiêu còn dưới
+12
+% Máu. Họ nhận được
+15%
+Tốc Độ Đánh khi hạ gục.
+Appears:
+5-1
+onward
+Đa Dạng Hóa
+3
+Giao Tranh
+Đội của bạn nhận
+30
+Máu cho mỗi tộc/hệ không độc nhất đang kích hoạt.
+Appears:
+4-2
+to
+5-7
+Đất Giàu Năng Lượng
+3
+Giao Tranh
+Tướng Thuật Sư của bạn được giảm
+18%
+Năng Lượng Tối Đa.
+Appears:
+5-1
+onward
+Dấu Ấn Xạ Thủ
+3
+Giao Tranh
+Xạ Thủ của bạn có
+30%
+cơ hội tung đòn đánh kép.
+Appears:
+5-1
+onward
+Đứng Một Mình
+3
+Giao Tranh
+Tướng đứng một mình 1 hàng nhận
+15%
+Máu và
+15%
+Khuếch Đại Sát Thương.
+Appears:
+3-5
+onward
+Găng Ma Mị
+3
+Giao Tranh
+Nhận 1 Găng Đạo Tặc tạm thời.
+Appears:
+3-1
+to
+5-7
+Gấu Ghé Thăm
+3
+Giao Tranh
+Nhận bùa lợi Gấu Nguyên Sinh trong giao tranh này.
+Appears:
+3-5
+to
+5-7
+Hổ Ghé Thăm
+3
+Giao Tranh
+Nhận bùa lợi Hổ Nguyên Sinh trong giao tranh này.
+Appears:
+3-5
+to
+5-7
+Hồi Phục
+3
+Giao Tranh
+Đội của bạn hồi
+1%
+Máu tối đa mỗi giây.
+Appears:
+3-5
+to
+4-7
+Linh Hồn Yordle
+3
+Giao Tranh
+Đồng minh có
+99
+% cơ hội né đòn trong
+4
+giây.
+Appears:
+4-2
+to
+5-7
+Mưa Như Trút
+3
+Giao Tranh
+Đội của bạn nhận
+2
+Hồi Năng Lượng.
+Appears:
+5-1
+onward
+Ngoại Binh
+3
+Giao Tranh
+Nhận
+3%
+Khuếch Đại Sát Thương với mỗi
+10
+vàng bạn có.
+Appears:
+4-2
+to
+5-7
+Ngôi Sao Hàng Sau
+3
+Giao Tranh
+Một tướng ngẫu nhiên ở hàng sau nhận
+85%
+Tốc Độ Đánh trong
+7
+giây.
+Appears:
+4-2
+onward
+Nhặt Nhạnh
+3
+Giao Tranh
+Bắt đầu giao tranh:
+2
+tướng không có trang bị nhận 1 trang bị khuyên dùng tạm thời.
+Appears:
+4-2
+to
+5-7
+Nhịp
+3
+Giao Tranh
+Các tướng của bạn trở nên Không Thể Cản Phá và nhận thêm
+15%
+Tốc Độ Đánh trong
+10
+giây.
+Appears:
+4-2
+onward
+Rùa Ghé Thăm
+3
+Giao Tranh
+Nhận bùa lợi Rùa Nguyên Sinh trong giao tranh này.
+Appears:
+3-5
+to
+5-7
+Sân Huấn Luyện
+3
+Giao Tranh
+Nhận
+2
+Hình Nhân, mỗi Hình Nhân mang 1 trang bị đỡ đòn ngẫu nhiên.
+Appears:
+4-2
+to
+5-7
+Siêu Chí Mạng
+3
+Giao Tranh
+Các đồng minh có Chuẩn Xác nhận
+25%
+Sát Thương Chí Mạng.
+Appears:
+4-2
+onward
+Thiết Mộc
+3
+Giao Tranh
+Kẻ địch tấn công tướng có lượng máu cao nhất của bạn sẽ bị giảm
+14%
+sát thương gây ra.
+Appears:
+4-2
+onward
+Ác Giả Ác Báo
+2
+Giao Tranh
+3
+tướng đầu tiên của bạn bị hạ gục sẽ làm choáng kẻ đã hạ gục họ trong
+1.5
+giây.
+Appears:
+5-1
+onward
+Bao Phủ Bởi Gai
+2
+Giao Tranh
+Các Tướng Chống Chịu của bạn phản lại
+12%
+sát thương nhận vào lên kẻ địch liền kề mỗi
+4
+giây.
+Appears:
+3-5
+onward
+Bão Xạ Thủ
+2
+Giao Tranh
+Đòn đánh của tướng Xạ Thủ cho
+3%
+Tốc Độ Đánh cộng dồn.
+Appears:
+4-2
+onward
+Bù Nhìn Hóa Đá
+2
+Giao Tranh
+Tướng đầu tiên hy sinh hóa hình nhân
+900
+Máu với chỉ số phòng thủ của họ.
+Appears:
+3-1
+to
+4-7
+Chậu Cây Vỏ Đá
+2
+Giao Tranh
+Nhận 1 Cây Vỏ Đá tạm thời.
+Appears:
+3-1
+to
+4-7
+Chậu Hoa Sinh Mệnh
+2
+Giao Tranh
+Nhận 1 Hoa Sinh Mệnh tạm thời.
+Appears:
+3-1
+to
+4-7
+Chống Chịu
+2
+Giao Tranh
+Tướng Đỡ Đòn được giảm
+10
+sát thương nhận vào mỗi lần nhận sát thương.
+Appears:
+4-2
+onward
+Đất Hiện Thế
+2
+Giao Tranh
+Mỗi
+4
+giây, rễ cây trói chân làm choáng một kẻ địch trong
+1
+giây.
+Appears:
+4-2
+to
+5-7
+Đến Giờ Ăn Nhẹ Rồi!
+2
+Giao Tranh
+LXKL nuốt sống những kẻ địch còn dưới
+16%
+Máu Tối Đa mà nó gây sát thương lên.
+Appears:
+4-2
+onward
+Đom Đóm Dẫn Đường
+2
+Giao Tranh
+Thuật Sư tạo 1 đom đóm mỗi
+20
+Năng Lượng tiêu hao. Đom đóm gây
+110
+sát thương phép.
+Appears:
+3-5
+onward
+Dư Chấn
+2
+Giao Tranh
+Sau
+8
+giây, làm choáng tất cả kẻ địch trong
+1.5
+giây.
+Appears:
+4-2
+onward
+Dự Phòng
+2
+Giao Tranh
+Các trang bị cộng dồn của bạn được tích sẵn một phần khi bắt đầu giao tranh tiếp theo.
+Appears:
+3-1
+to
+5-7
+Dương Hỏa Thuật
+2
+Giao Tranh
+Gây Thiêu Đốt và Vết Thương Sâu lên kẻ địch trong
+10
+giây.
+Appears:
+3-5
+to
+4-7
+Gần Gũi Thiên Nhiên
+2
+Giao Tranh
+Mỗi
+3
+lần đồng minh bị hạ gục, triệu hồi một Quái Rừng ngẫu nhiên.
+Appears:
+4-2
+onward
+Giáp Bóng Ma
+2
+Giao Tranh
+Nhận 1 Giáp Máu Warmog tạm thời.
+Appears:
+3-1
+to
+5-7
+Giáp Ma Mị
+2
+Giao Tranh
+Nhận 1 Áo Choàng Gai tạm thời.
+Appears:
+3-1
+to
+5-7
+Kết Hợp Linh Hoạt
+2
+Giao Tranh
+Bắt đầu giao tranh: Tối đa
+2
+tộc/hệ chưa kích hoạt sẽ được kích hoạt ở mốc thấp nhất.
+Appears:
+4-2
+onward
+Khiên Hóa Đá
+2
+Giao Tranh
+Làm chậm kẻ địch
+10
+% và giảm
+20%
+lá chắn của chúng trong
+10
+giây.
+Appears:
+4-2
+to
+4-7
+,
+6-1
+onward
+Lá Chắn Bọc Thép
+2
+Giao Tranh
+Lá Chắn sẽ mạnh hơn
+15%
+. Đồng minh nhận
+150
+lá chắn trong
+10
+giây.
+Appears:
+5-1
+onward
+Mưa Đai Lưng
+2
+Giao Tranh
+Đồng minh của bạn nhận
+7
+Đai Khổng Lồ tạm thời, không thể gỡ bỏ.
+Appears:
+3-5
+to
+4-7
+Nghi Thức Ánh Trăng
+2
+Giao Tranh
+Tướng 1 vàng hoặc 2 vàng có cấp sao thấp nhất của bạn sẽ được nâng sao trong giao tranh.
+Appears:
+3-1
+to
+4-7
+Nhanh Lẹ
+2
+Giao Tranh
+Khi thi triển, các tướng của bạn nhận
+30%
+Tốc Độ Đánh trong
+4
+giây.
+Appears:
+3-5
+to
+4-7
+Phản Phép
+2
+Giao Tranh
+Tăng Năng Lượng Tối Đa của tất cả kẻ địch thêm
+15
+cho đến lần tung chiêu tiếp theo của chúng.
+Appears:
+5-1
+onward
+Sét Đánh
+2
+Giao Tranh
+Gây sát thương chuẩn bằng
+10%
+Máu Tối Đa lên toàn bộ kẻ địch.
+Appears:
+4-2
+to
+5-7
+Tăng Tầm Với
+2
+Giao Tranh
+Các Đấu Sĩ của bạn nhận
+1
+tầm đánh.
+Appears:
+5-1
+onward
+Trăng Lên
+2
+Giao Tranh
+Sau
+8
+giây, tăng hiệu ứng của Mặt Trăng thêm
+100%
+.
+Appears:
+4-2
+to
+5-7
+Trụ Cột Sắt Đá
+2
+Giao Tranh
+Tướng ở vị trí trung tâm hàng trước của bạn nhận
+6%
+Máu tối đa cho mỗi đơn vị ở hàng trước.
+Appears:
+4-2
+to
+5-7
+Chim Ruồi
+1
+Giao Tranh
+Tướng có Tốc Độ Đánh cao nhất của bạn sẽ bị thu nhỏ, nhận thêm
+20%
+Tốc Độ Đánh.
+Appears:
+3-1
+to
+4-1
+Chưởng Lực Cỡ Đại
+1
+Giao Tranh
+Đồng minh đầu tiên hy sinh sẽ phát nổ, gây sát thương phép bằng
+25%
+Máu Tối Đa.
+Appears:
+3-1
+to
+4-1
+Giáp Tả Tơi
+1
+Giao Tranh
+Gây Cào Xé và Phân Tách
+30
+% lên kẻ địch trong
+10
+giây.
+Appears:
+3-5
+to
+4-7
+Khổng Lồ Hóa
+1
+Giao Tranh
+Đơn vị có lượng Máu cao nhất của bạn sẽ lớn lên, nhận thêm
+350
+Máu.
+Appears:
+3-1
+to
+4-1
+Mưa
+1
+Giao Tranh
+Đội của bạn nhận
+1
+Hồi Năng Lượng.
+Appears:
+3-1
+to
+4-7
+Siêu Thăng Hoa
+1
+Giao Tranh
+Sau
+25
+giây, đồng minh nhận được
+300%
+Khuếch Đại Sát Thương.
+Appears:
+3-1
+to
+4-1
+Thịnh Nộ Thiên Nhiên
+1
+Giao Tranh
+Tiêu diệt TẤT CẢ ĐƠN VỊ không có trang bị sau
+10
+giây.
+Appears:
+6-1
+onward
+Trang Bị Vay Mượn
+1
+Giao Tranh
+1 tướng nhận 1 trang bị khuyên dùng tạm thời.
+Appears:
+3-1
+to
+4-7
+Ẩn Náu
+Giao Tranh
+2
+Đấu Sĩ hoặc Sát Thủ mạnh nhất của bạn không thể bị chọn làm mục tiêu trong
+6
+giây.
+Appears:
+4-2
+to
+5-7
+Giáp Vỏ Cây
+Giao Tranh
+Các tướng của bạn nhận
+150
+lá chắn trong
+10
+giây.
+Appears:
+2-1
+to
+2-7
+Sức Mạnh Dồi Dào
+Giao Tranh
+Tướng của bạn nhận
+4%
+Sức Mạnh Công Kích và Sức Mạnh Phép Thuật.
+Appears:
+4-2
+onward
+Sức Sống Xanh Tươi
+Giao Tranh
+Các tướng của bạn nhận
+50
+Máu.
+Appears:
+4-2
+onward
+Tìm Được Bạn Nè
+Giao Tranh
+Nhận tạm thời 1 Hình Nhân mang Đai Khổng Lồ.
+Appears:
+2-1
+to
+2-7
+Nghi Lễ Máu
+6
+Misc
+Mất
+10
+Máu Người Chơi. Nhận 1 Máy Sao Chép Tướng.
+Appears:
+4-2
+to
+4-7
+Hỗn Loạn Lớn
+4
+Misc
+Thi triển
+2
+Tinh Linh ngẫu nhiên.
+Appears:
+5-1
+onward
+Bao Bảo Bối
+3
+Misc
+Nhận
+3
+vật phẩm tiêu thụ giúp tăng vĩnh viễn Giáp & Kháng Phép hoặc Máu.
+Appears:
+5-1
+onward
+Chế Tạo Thuốc
+3
+Misc
+Nhận ba Bình Thuốc tạm thời có thể trang bị.
+Appears:
+5-1
+onward
+Tiểu Huyết Lễ
+3
+Misc
+Mất
+3
+Máu Người Chơi. Nhận 1 Máy Sao Chép Tướng Cỡ Nhỏ.
+Appears:
+2-1
+to
+3-4
+Túi Đồ Lỉnh Kỉnh
+3
+Misc
+Nhận
+3
+vật phẩm tiêu thụ giúp tăng vĩnh viễn Sức Mạnh Công Kích hoặc Tốc Độ Đánh.
+Appears:
+5-1
+onward
+Túi Đồ Linh Tinh
+3
+Misc
+Nhận
+3
+vật phẩm tiêu thụ giúp tăng vĩnh viễn Sức Mạnh Phép Thuật hoặc Hồi Năng Lượng.
+Appears:
+5-1
+onward
+Bể Hồi Máu
+2
+Misc
+Hồi
+5
+Máu Người Chơi.
+Appears:
+2-1
+to
+3-4
+Tái Tạo Địa Hình
+2
+Misc
+Nhận
+7
+hạt giống khi bắt đầu giao tranh.
+Appears:
+4-2
+onward
+Bị Đồ Lỉnh Kỉnh
+1
+Misc
+Nhận
+2
+vật phẩm tiêu thụ giúp tăng vĩnh viễn Sức Mạnh Công Kích hoặc Tốc Độ Đánh.
+Appears:
+3-1
+to
+4-1
+Bình Máu
+1
+Misc
+Nhận 1 Bình Máu tạm thời có thể trang bị.
+Appears:
+3-1
+to
+4-7
+Bình Năng Lượng
+1
+Misc
+Nhận 1 Bình Năng Lượng tạm thời có thể trang bị.
+Appears:
+3-1
+to
+4-7
+Gói Đồ Vặt Vãnh
+1
+Misc
+Nhận
+2
+vật phẩm tiêu thụ giúp tăng vĩnh viễn Sức Mạnh Phép Thuật hoặc Hồi Năng Lượng.
+Appears:
+3-1
+to
+4-1
+Hỗn Loạn Nhỏ
+1
+Misc
+Thi triển 1 Tinh Linh ngẫu nhiên.
+Appears:
+2-1
+to
+3-4
+Lọ Thuốc Phát Nổ
+1
+Misc
+Nhận 1 Lọ Thuốc Phát Nổ tạm thời có thể trang bị.
+Appears:
+3-1
+to
+4-7
+Pháp Sư Rừng Già
+1
+Misc
+Lấp đầy cửa hàng của bạn với các Tinh Linh. Bạn chỉ có thể mua 1 Tinh Linh.
+Appears:
+3-5
+onward
+Túi Bảo Bối
+1
+Misc
+Nhận
+2
+vật phẩm tiêu thụ giúp tăng vĩnh viễn Giáp & Kháng Phép hoặc Máu.
+Appears:
+3-1
+to
+4-1
+Giao Kèo Hắc Ám
+Misc
+Mất
+4
+Máu Người Chơi. Nhận
+2
+Vàng.
+Appears:
+2-1
+to
+3-4
+Hũ Bảo Bối
+Misc
+Nhận
+1
+vật phẩm tiêu thụ giúp tăng vĩnh viễn Giáp & Kháng Phép hoặc Máu.
+Appears:
+2-1
+to
+2-7
+Hũ Đồ Lỉnh Kỉnh
+Misc
+Nhận
+1
+vật phẩm tiêu thụ giúp tăng vĩnh viễn Sức Mạnh Công Kích hoặc Tốc Độ Đánh.
+Appears:
+2-1
+to
+2-7
+Hũ Đồ Vặt Vãnh
+Misc
+Nhận
+1
+vật phẩm tiêu thụ giúp tăng vĩnh viễn Sức Mạnh Phép Thuật hoặc Hồi Năng Lượng.
+Appears:
+2-1
+to
+2-7
+Máy Tái Chế
+Misc
+Tất cả trang bị trên tướng bạn chuyển về hàng chờ sẽ bị gỡ bỏ và phân tách.
+Appears:
+4-2
+to
+5-7
+Sửa Lỗi Sớm
+Misc
+Nhận
+1
+Búa Rèn Trang Bị.
+Appears:
+2-1
+to
+2-7
+Thua Có Lời
+5
+Risky
+Trong
+3
+giao tranh người chơi tiếp theo, nhận
+4
+XP nếu bạn thua.
+Appears:
+3-1
+to
+4-1
+Hoàn Tất Phi Vụ
+4
+Risky
+Với mỗi tướng đồng minh sống sót sau giao tranh, nhận
+2
+Vàng.
+Appears:
+3-5
+to
+4-7
+Tiền Thưởng Thành Phần
+4
+Risky
+Nếu bạn thắng giao tranh người chơi tiếp theo, nhận 1 trang bị thành phần ngẫu nhiên.
+Appears:
+3-1
+to
+4-7
+Móc Túi
+3
+Risky
+Mỗi
+5
+giây, các tướng của bạn có
+15%
+xác suất rơi ra
+1
+Vàng.
+Appears:
+3-5
+to
+4-7
+Ván Cược Để Đời
+3
+Risky
+Nếu bạn thắng giao tranh người chơi tiếp theo, nhận
+8
+vàng.
+Appears:
+4-2
+to
+5-7
+Con Đường Hoàng Kim
+2
+Risky
+Sau
+3
+giao tranh người chơi, nhận
+2
+Vàng với mỗi trận thắng.
+Appears:
+2-1
+to
+3-4
+Thợ Săn Chiến Lợi Phẩm
+2
+Risky
+Ở giao tranh người chơi sau, tham gia hạ gục của Khắc Tinh được tính x2.
+Appears:
+2-1
+to
+4-7
+Đi Chung Cho Vui
+1
+Risky
+Nếu bạn thua và hạ gục ít nhất một kẻ địch, nhận
+4
+XP.
+Appears:
+2-1
+to
+2-7
+Hạn Hán
+1
+Risky
+Thêm
+2
+vào chuỗi thua của bạn.
+Appears:
+2-1
+to
+2-7
+Hút Hồn
+1
+Risky
+Nhận thêm
+50%
+Tinh Hoa Tiên Hắc Ám trong giao tranh này.
+Appears:
+2-1
+to
+4-1
+Lũ Lụt
+1
+Risky
+Thêm
+1
+vào chuỗi thắng của bạn.
+Appears:
+2-1
+to
+2-7
+Phân Bón
+1
+Risky
+Nhận
+1
+XP cho mỗi kẻ địch bị hạ gục.
+Appears:
+2-1
+to
+3-4
+Tung Xu Liên Hoàn
+1
+Risky
+Tung đồng xu, nhận
+1
+vàng nếu ra mặt ngửa. Tiếp tục đến khi lật ra mặt sấp.
+Appears:
+3-1
+to
+4-1
+Ván Cược Nhỏ
+1
+Risky
+Nếu bạn thắng giao tranh người chơi tiếp theo, nhận
+2
+vàng.
+Appears:
+2-1
+to
+2-7
+Biến Hóa
+Risky
+Một tướng 2 vàng ngẫu nhiên bạn sở hữu vĩnh viễn biến thành tướng 3 vàng.
+Appears:
+2-1
+to
+4-1
+Biến Hóa Cỡ Nhỏ
+Risky
+Một tướng 1 vàng ngẫu nhiên bạn sở hữu vĩnh viễn biến thành tướng 2 vàng.
+Appears:
+2-1
+to
+3-4
+Biến Hóa Để Đời
+Risky
+Một tướng 4 vàng ngẫu nhiên bạn sở hữu vĩnh viễn biến thành tướng 5 vàng.
+Appears:
+4-2
+to
+5-7
+Rời Tàu
+Risky
+Bán toàn bộ bàn đấu và hàng chờ của bạn, nhận
+6
+vàng và
+8
+lượt đổi.
+Appears:
+3-1
+to
+3-4
+Chỉ 5 Vàng
+10
+Shop
+Làm mới cửa hàng với toàn tướng 5 vàng.
+Appears:
+6-1
+onward
+Cửa Hàng Động
+8
+Shop
+Trong
+18
+giây, cửa hàng của bạn sẽ làm mới miễn phí sau mỗi
+2
+giây.
+Appears:
+4-2
+to
+5-7
+Số 7 May Mắn
+7
+Shop
+Nhận
+7
+lượt đổi cửa hàng.
+Appears:
+6-1
+onward
+Ánh Sáng Tươi Mới
+6
+Shop
+Nhận 1 lượt đổi miễn phí cho mỗi cấp sao của mỗi tướng Mặt Trời độc nhất.
+Appears:
+3-5
+to
+4-7
+Chơi Đường Giữa
+6
+Shop
+Làm mới cửa hàng với toàn tướng 3 vàng 2 sao.
+Appears:
+3-5
+to
+4-7
+Ngôi Làng Vùng Biên
+6
+Shop
+Làm mới cửa hàng với toàn tướng 2 vàng 2 sao.
+Appears:
+3-1
+to
+4-1
+Càng Đông Càng Vui
+4
+Shop
+Với mỗi tướng đồng minh còn sống sau
+18
+giây, nhận 1 lượt đổi.
+Appears:
+3-1
+to
+4-1
+Chỉ 4 Vàng
+4
+Shop
+Làm mới cửa hàng với toàn tướng 4 vàng.
+Appears:
+5-1
+to
+5-7
+Đi Rừng
+4
+Shop
+Lấp đầy cửa hàng với tướng Quái Rừng.
+Appears:
+3-1
+to
+4-7
+Đổ Xúc Xắc
+3
+Shop
+Bạn có
+50%
+cơ hội nhận được 1 lượt đổi miễn phí với mỗi mạng hạ gục.
+Appears:
+3-1
+to
+4-7
+Đón Sóng
+3
+Shop
+2
+lượt đổi sau ở vòng này có
+2
++ tướng đã triển khai ở giao tranh trước.
+Appears:
+4-2
+to
+5-7
+Thị Trấn Khởi Động
+3
+Shop
+Làm mới cửa hàng với toàn tướng 1 vàng 2 sao.
+Appears:
+2-1
+to
+3-4
+Tổ Đội Tìm Kiếm
+3
+Shop
+Mỗi cửa hàng của bạn sẽ có 1 tướng 4 vàng trong vòng này cho đến khi bạn mua 1 tướng 4 vàng.
+Appears:
+3-5
+to
+4-7
+Châm Lửa
+2
+Shop
+Làm mới cửa hàng. Hỏa Ngục thắp lửa
+2
+ô cửa hàng, nâng cấp chúng.
+Appears:
+3-5
+to
+5-7
+Chỉ 3 Vàng
+2
+Shop
+Làm mới cửa hàng với toàn tướng 3 vàng.
+Appears:
+3-5
+to
+4-7
+Quay Miễn Phí
+2
+Shop
+Nhận
+2
+lượt đổi.
+Appears:
+2-1
+to
+4-1
+Chỉ 2 Vàng
+1
+Shop
+Làm mới cửa hàng với toàn tướng 2 vàng.
+Appears:
+2-1
+to
+3-4
+Vẫn Tinh
+1
+Shop
+6
+lần đầu bạn làm mới cửa hàng trong vòng này, tướng có giá thấp nhất sẽ trở thành 2 sao.
+Appears:
+3-1
+to
+4-1
+Chỉ 1 Vàng
+Shop
+Làm mới cửa hàng với toàn tướng 1 vàng.
+Appears:
+2-1
+to
+2-7
+Thợ Thủ Công Nhàn Rỗi
+4
+Trang Bị
+Một trang bị thành phần trên hàng chờ sẽ biến thành trang bị hoàn chỉnh.
+Appears:
+3-1
+to
+4-1
+Máu Và Sắt
+3
+Trang Bị
+Sau
+20
+lần tướng tử trận, nhận 1 gói trang bị thành phần.
+Appears:
+3-1
+to
+4-1
+Hóa Tạo Tác
+2
+Trang Bị
+Mất
+3
+trang bị thành phần, kể cả đã ghép. Nhận 1 gói Trang Bị Tạo Tác.
+Appears:
+2-1
+to
+3-4
+Gánh Hàng Rong
+Trang Bị
+Mở cửa hàng trang bị ngẫu nhiên. Trang bị ngẫu nhiên có giá từ 0 đến
+14
+vàng.
+Appears:
+4-2
+to
+5-7
+Xe Đồ Lạ
+Trang Bị
+Mở cửa hàng trang bị. Trang bị có giá từ 0 đến
+15
+vàng.
+Appears:
+3-1
+to
+4-7
+Hội Đồng Trưởng Lão
+45
+Tướng
+Nhận một bản sao của mỗi tướng 5 vàng.
+Appears:
+6-1
+onward
+Anh Hùng Tiên Tri
+35
+Tướng
+Nhận 1 tướng 5 vàng. VĨNH VIỄN nhận lại tướng đó mỗi vòng.
+Appears:
+6-1
+onward
+Đại Cao Thủ
+18
+Tướng
+Nhận 1 tướng 5 vàng 2 sao ngẫu nhiên.
+Appears:
+6-1
+onward
+Ba Chúng Tôi
+9
+Tướng
+Nhận 1 tướng 3 vàng 2 sao ngẫu nhiên.
+Appears:
+3-1
+to
+4-1
+Chuột Nhắt Lan Tràn
+8
+Tướng
+Nhận 1 Máy Sao Chép Tướng Tí Hon với mỗi tướng 1 vàng khác nhau triển khai vòng trước.
+Appears:
+3-1
+to
+4-1
+Súng Cỡ Lớn
+8
+Tướng
+Nhận 2 tướng 4 vàng 1 sao ngẫu nhiên.
+Appears:
+4-2
+to
+4-7
+Smurf
+7
+Tướng
+Nhận 1 tướng 5 vàng ngẫu nhiên.
+Appears:
+3-5
+to
+4-1
+Lính Lành Nghề
+6
+Tướng
+Nhận 1 tướng 2 vàng 2 sao ngẫu nhiên.
+Appears:
+2-1
+to
+3-4
+Món Quà Mặt Trời
+6
+Tướng
+Nhận 1 Leona, 1 Sejuani và 1 Kayle
+Appears:
+2-1
+to
+3-4
+Dẫn Lối Rừng Già
+5
+Tướng
+Nhận 1 tướng 4 vàng ngẫu nhiên.
+Appears:
+2-1
+to
+2-7
+Song Sinh Rừng Già
+4
+Tướng
+Nhận 2 bản sao của 1 tướng 2 vàng mà bạn chưa sở hữu.
+Appears:
+2-1
+to
+2-7
+Kình Địch Nảy Lửa
+3
+Tướng
+Nhận 1 Rengar hoặc 1 Kha'Zix. Tướng này nhận
+3
+điểm hạ gục.
+Appears:
+2-1
+to
+2-7
+Lữ Khách Lạc Lối
+3
+Tướng
+Nhận các tướng ngẫu nhiên có tổng giá là 3 vàng.
+Appears:
+2-1
+to
+2-7
+Tập Sự
+3
+Tướng
+Nhận 1 tướng 1 vàng 2 sao ngẫu nhiên.
+Appears:
+2-1
+to
+2-7
+Nhân Giống
+2
+Tướng
+Nhận 1 bản sao của tướng đồng minh đầu tiên hy sinh.
+Appears:
+2-1
+to
+4-1
+Nguyên Phân
+1
+Tướng
+Nhận 1 Máy Sao Chép Tướng Tí Hon.
+Appears:
+2-1
+to
+2-7
+Phát Triển
+7
+Vàng / XP
+Nhận
+10
+XP.
+Appears:
+3-1
+to
+4-7
+Học Chậm Rãi
+4
+Vàng / XP
+Với mỗi tướng đồng minh còn sống sau
+15
+giây, nhận
+2
+XP.
+Appears:
+3-5
+to
+4-7
+Thìa Đồng
+3
+Vàng / XP
+Nhận
+4
+XP.
+Appears:
+2-1
+to
+4-1
+Đổ Xúc Xắc
+2
+Vàng / XP
+Đổ 1 xúc xắc sáu mặt. Nhận lượng vàng bằng với kết quả đổ xúc xắc.
+Appears:
+3-1
+to
+4-1
+Mặc Cả
+2
+Vàng / XP
+Tướng tiếp theo được bán trong vòng này sẽ cho
+200%
+vàng.
+Appears:
+3-5
+to
+5-7
+Tài Lộc Từ Máu
+2
+Vàng / XP
+Nhận
+1
+vàng cho mỗi tướng bạn hạ gục.
+Appears:
+3-1
+to
+4-7
+Con Ngỗng Vàng
+1
+Vàng / XP
+Nhận
+1
+vàng mỗi
+1700
+sát thương của tướng mạnh nhất của bạn.
+Appears:
+4-2
+to
+5-7
+Lên Kinh Nghiệm
+1
+Vàng / XP
+Nhận
+2
+XP.
+Appears:
+2-1
+to
+2-7
+Tiền Lẻ
+1
+Vàng / XP
+Tướng 1 sao của bạn sẽ rơi ra
+1
+vàng khi hy sinh.
+Appears:
+3-1
+to
+4-1
+Đình Chiến
+Vàng / XP
+Nhận
+1
+vàng. Đối thủ của bạn nhận
+1
+vàng.
+Appears:
+2-1
+to
+2-7
+Món Nợ Sinh Mệnh
+Vàng / XP
+Nhận
+1
+vàng cho mỗi
+12
+Máu người chơi đã mất.
+Appears:
+5-1
+onward
+Tinh Linh Nghèo Khó
+Vàng / XP
+Đại ngàn không tìm được tinh linh nào cho bạn trong lượt này. Nhận
+3
+vàng.
+Appears:
+2-1
+onward
+Tung Đồng Xu
+Vàng / XP
+Tung đồng xu, nhận
+1
+vàng nếu ra mặt ngửa.
+Appears:
+2-1
+to
+2-7
+Download Blitz
+Công Ty
+Về Chúng Tôi
+Hợp Tác
+Tuyển Dụng
+Liên Hệ Hỗ Trợ
+Chính Sách Bảo Mật
+Mạng Xã Hội
+X/Twitter
+Discord
+Facebook
+Instagram
+TikTok
+Trò Chơi
+Liên Minh Huyền Thoại
+Đấu Trường Chân Lý
+VALORANT
+Counter-Strike 2
+Fortnite
+Escape From Tarkov
+Apex Legends
+Marvel Rivals
+Deadlock
+Được làm với rất nhiều Tình Yêu và Sự Cay Cú tại
+Pháp
+Tiếng Việt
+Điều Khoản Dịch Vụ
+Chính Sách Bảo Mật
+Gỡ bỏ quảng cáo với Premium
+English
+Deutsch
+Español
+Français
+Italiano
+Nederlands
+Português
+Polski
+Русский
+Türkçe
+Čeština
+Ελληνικά
+한국어
+日本語
+Tiếng Việt
+简体中文
+繁體中文
