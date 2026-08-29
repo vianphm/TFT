@@ -1,0 +1,44 @@
+name: Tai trang web nguon
+
+# May chay CI khong bi chan mang, nen dung no de tai cac trang meta ve repo.
+# Trang nao dung JavaScript de dung noi dung thi mo bang Chromium that.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'data/sources.json'
+      - 'scripts/fetch-web-sources.js'
+      - '.github/workflows/sources.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Cai trinh duyet cho phan render
+        run: |
+          npm install --no-save playwright@1.49.1
+          npx playwright install --with-deps chromium
+
+      - name: Tai cac trang
+        run: node scripts/fetch-web-sources.js
+
+      - name: Commit ket qua
+        run: |
+          if git diff --quiet -- data/sources/; then
+            echo "Khong co gi thay doi."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/sources/
+          git commit -m "Tải các trang nguồn về repo" -m "Tải tự động bằng scripts/fetch-web-sources.js."
+          git push
