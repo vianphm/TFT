@@ -9,6 +9,8 @@ on:
       - 'android/**'
       - 'src/mobile/**'
       - 'src/renderer/shared/**'
+      - 'test/**'
+      - 'scripts/build-mobile.js'
       - '.github/workflows/android.yml'
   workflow_dispatch:
 
