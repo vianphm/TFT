@@ -143,5 +143,20 @@
     "name": "vntft-doi-hinh",
     "url": "https://vntft.com/doi-hinh-dtcl",
     "render": true
+  },
+  {
+    "name": "tactics-tools-comps",
+    "url": "https://tactics.tools/team-compositions",
+    "render": true
+  },
+  {
+    "name": "tactics-tools-augments",
+    "url": "https://tactics.tools/augments",
+    "render": true
+  },
+  {
+    "name": "tftacademy-tierlist",
+    "url": "https://tftacademy.com/tierlist/comps",
+    "render": true
   }
 ]

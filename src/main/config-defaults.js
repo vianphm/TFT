@@ -25,6 +25,14 @@ const DEFAULT_CONFIG = {
       advisor:  { visible: false, x: 680,  y: 270, collapsed: false },
       comp:     { visible: false, x: 350,  y: 530, collapsed: false },
       notes:    { visible: false, x: 680,  y: 470, collapsed: false }
+    },
+    blitzModules: {
+      augmentInfo: true,
+      championInfo: true,
+      compositions: true,
+      levelingBreakpoints: true,
+      matchupTracking: true,
+      shopHighlights: true
     }
   },
 

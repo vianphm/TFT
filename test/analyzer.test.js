@@ -321,6 +321,37 @@ test('loi kich hoat dung toc he dang choi duoc diem cao', () => {
   assert.ok(ranked[0].reason.includes('Ve Binh') || ranked[0].reason.includes('ve binh'));
 });
 
+test('rankAugments tra ve categoryLabel va recommendationLabel', () => {
+  const augs = [
+    { name: 'Khu Giao Dịch', tier: 'gold', tags: ['reroll'], desc: 'Mỗi vòng 1 lượt làm mới miễn phí' }
+  ];
+  const ranked = analyzer.rankAugments(augs, { stage: '2-1', hp: 90, gold: 10, targetComp: { name: 'Vệ Quân Reroll', style: 'reroll' } }, dataset);
+  assert.strictEqual(ranked[0].category, 'reroll');
+  assert.ok(ranked[0].categoryLabel.includes('Reroll'));
+  assert.ok(ranked[0].recommendationLabel);
+});
+
+test('getCompAugmentStrategy khuyen dung chuan theo bai Reroll vs Fast 8 va muc Mau', () => {
+  const rerollComp = { name: 'Vệ Quân Reroll', style: 'slowroll cấp 7', traits: ['Vệ Quân', 'Tiên Linh'] };
+  const fastComp = { name: 'Thần Rừng Draven', style: 'fast 8/9', traits: ['Thần Rừng', 'Tử Thần'] };
+
+  // 1. Bai Reroll + Mau thap
+  const stLow = analyzer.getCompAugmentStrategy(rerollComp, { hp: 35, gold: 20 }, dataset);
+  assert.strictEqual(stLow.isReroll, true);
+  assert.strictEqual(stLow.hpStatus, 'critical');
+  assert.ok(stLow.preferredCategories.includes('combat'));
+  assert.ok(stLow.avoidCategories.includes('econ'));
+  assert.ok(stLow.advice.includes('Combat'));
+  assert.strictEqual(stLow.recommendedEmblems[0].name, 'Ấn Vệ Quân');
+
+  // 2. Bai Fast 8 + Mau cao
+  const stHigh = analyzer.getCompAugmentStrategy(fastComp, { hp: 85, gold: 50 }, dataset);
+  assert.strictEqual(stHigh.isFastLevel, true);
+  assert.strictEqual(stHigh.hpStatus, 'safe');
+  assert.ok(stHigh.preferredCategories.includes('xp') || stHigh.preferredCategories.includes('econ'));
+  assert.strictEqual(stHigh.recommendedEmblems[0].name, 'Ấn Thần Rừng');
+});
+
 console.log('\nGoi y doi hinh dau game');
 test('goi y chuoi thang khi co tuong 2 sao va do slam duoc', () => {
   const board = [{ name: 'Leona', star: 2 }, { name: 'Shen', star: 2 }, { name: 'Tristana', star: 1 }];

@@ -83,7 +83,7 @@ class LiveClientService {
 
     // Tim thong tin chi tiet cua nguoi choi trong allPlayers
     const myPlayer = allPlayers.find((p) => p.summonerName === summonerName) || {};
-    const isDead = myPlayer.isDead || false;
+    const currentExp = activePlayer.experience !== undefined ? Number(activePlayer.experience) : (activePlayer.currentExp !== undefined ? Number(activePlayer.currentExp) : null);
 
     const payload = {
       liveApiActive: true,
@@ -93,9 +93,16 @@ class LiveClientService {
       round: round,
       level: level,
       gold: currentGold,
+      xp: currentExp,
       summonerName: summonerName,
       isDead: isDead,
-      playerCount: allPlayers.length
+      playerCount: allPlayers.length,
+      allPlayers: allPlayers.map((p) => ({
+        summonerName: p.summonerName || '',
+        isDead: Boolean(p.isDead),
+        level: p.level ? Number(p.level) : 1,
+        health: p.championStats && p.championStats.currentHealth ? Math.round(p.championStats.currentHealth) : (p.scores && p.scores.creepScore ? Number(p.scores.creepScore) : 100)
+      }))
     };
 
     this.onData(payload);

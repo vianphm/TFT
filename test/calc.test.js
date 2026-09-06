@@ -225,6 +225,59 @@ test('carouselPriorities xep hang dung linh kien can nhat o vong di cho', () => 
   assert.strictEqual(priorities[0].id, 'glove'); // Can 2 gang tay cho IE + LW
 });
 
+test('calcLevelBreakpoints tinh dung XP con thieu, vang sau khi up va canh bao loi tuc', () => {
+  // Cap 5 -> 6 can 20 XP. Hien co 8 XP -> con thieu 12 XP.
+  // 12 XP = 3 lan mua = 12 vang.
+  // Co 47 vang -> sau khi mua con 35 vang.
+  // Lai hien tai: 47/10 = 4 vang. Lai sau do: 35/10 = 3 vang. Mat 1 vang lai.
+  const bp = calc.calcLevelBreakpoints(5, 47, 8);
+  assert.strictEqual(bp.currentLevel, 5);
+  assert.strictEqual(bp.nextLevel, 6);
+  assert.strictEqual(bp.xpRemaining, 12);
+  assert.strictEqual(bp.buysNeeded, 3);
+  assert.strictEqual(bp.goldCost, 12);
+  assert.strictEqual(bp.goldAfter, 35);
+  assert.strictEqual(bp.interestNow, 4);
+  assert.strictEqual(bp.interestAfter, 3);
+  assert.strictEqual(bp.interestLost, 1);
+  assert.strictEqual(bp.canLevelNow, true);
+  assert.ok(bp.recommendedTiming.includes('3-2'));
+});
+
+test('calcMatchupPool xac dinh dung Last Played va cac doi thu co the gap', () => {
+  const allPlayers = [
+    { summonerName: 'Me', isDead: false },
+    { summonerName: 'Player1', isDead: false },
+    { summonerName: 'Player2', isDead: false },
+    { summonerName: 'Player3', isDead: false },
+    { summonerName: 'Player4', isDead: false },
+    { summonerName: 'Player5', isDead: false },
+    { summonerName: 'Player6', isDead: false },
+    { summonerName: 'Player7', isDead: false }
+  ];
+  // Lich su: vua gap Player1 o vong truoc, Player2 o 2 vong truoc, Player3 o 3 vong truoc, Player4 o 4 vong truoc
+  const history = ['Player1', 'Player2', 'Player3', 'Player4'];
+  const pool = calc.calcMatchupPool(allPlayers, 'Me', history);
+
+  assert.strictEqual(pool.aliveCount, 7);
+  assert.strictEqual(pool.excludeCount, 4);
+  assert.strictEqual(pool.lastPlayedName, 'player1');
+
+  // Player1 phai la 'last_played'
+  const p1 = pool.opponents.find(p => p.summonerName === 'Player1');
+  assert.strictEqual(p1.status, 'last_played');
+  assert.strictEqual(p1.isLastPlayed, true);
+
+  // Player2, Player3, Player4 la 'recent'
+  const p2 = pool.opponents.find(p => p.summonerName === 'Player2');
+  assert.strictEqual(p2.status, 'recent');
+
+  // Player5, Player6, Player7 phai la 'possible' (nhom co the gap)
+  const p5 = pool.opponents.find(p => p.summonerName === 'Player5');
+  assert.strictEqual(p5.status, 'possible');
+  assert.strictEqual(pool.possibleOpponents.length, 3);
+});
+
 console.log(`\n${passed} phep thu da qua, ${failed} phep thu LOI.\n`);
 if (failed) console.error(`==> CO ${failed} PHEP THU KHONG QUA <==\n`);
 

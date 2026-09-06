@@ -1,8 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "node scripts/build-mobile.js dist-mobile",
-  "outputDirectory": "dist-mobile",
-  "installCommand": "echo 'khong can cai gi - app khong dung thu vien ngoai'",
+  "buildCommand": "echo 'PC web app'",
+  "outputDirectory": "src/renderer/dashboard",
   "framework": null,
   "functions": {
     "api/tft-data.js": {
@@ -12,16 +11,11 @@
   },
   "headers": [
     {
-      "source": "/sw.js",
-      "headers": [{ "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }]
-    },
-    {
-      "source": "/manifest.webmanifest",
-      "headers": [{ "key": "Content-Type", "value": "application/manifest+json; charset=utf-8" }]
-    },
-    {
       "source": "/(.*)",
-      "headers": [{ "key": "X-Content-Type-Options", "value": "nosniff" }]
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
     }
   ]
 }

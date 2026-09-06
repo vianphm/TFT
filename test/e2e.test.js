@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 const http = require('http');
 const fs = require('fs');
@@ -20,7 +20,7 @@ const MIME = {
 function startServer() {
   const server = http.createServer((req, res) => {
     let reqPath = decodeURIComponent(req.url.split('?')[0]);
-    if (reqPath === '/' || reqPath === '') reqPath = '/src/mobile/index.html';
+    if (reqPath === '/' || reqPath === '') reqPath = '/src/renderer/dashboard/dashboard.html';
     if (!reqPath.startsWith('/src') && !reqPath.startsWith('/assets') && !reqPath.startsWith('/data') && !reqPath.startsWith('/api')) {
       reqPath = '/src' + reqPath;
     }
@@ -111,16 +111,7 @@ async function main() {
     }
   }
 
-  // 1. Mobile Web App
-  await testPage('Mobile Web App - Giao dien Touch 7 Tab & Reroll Planner', `http://127.0.0.1:${PORT}/src/mobile/index.html`, [
-    'TFT Companion',
-    'id="mRerollCompSelect"',
-    'id="mRerollStrategy"',
-    'id="mRerollList"',
-    'id="mOpponentsList"',
-    'id="mFreeCompsResult"',
-    'id="mCounterAdviceResult"'
-  ]);
+
 
   // 2. In-Game Overlay
   await testPage('In-Game Overlay - HUD Controls & Auto-Pilot Advisor', `http://127.0.0.1:${PORT}/src/renderer/overlay/overlay.html`, [

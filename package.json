@@ -1,35 +1,46 @@
 {
-  "name": "tft-companion",
-  "version": "0.1.0",
-  "description": "TFT Companion - overlay trong game + dashboard cho man hinh phu",
-  "main": "src/main/main.js",
-  "author": "vianphm",
-  "license": "MIT",
-  "private": true,
-  "scripts": {
-    "start": "electron .",
-    "dev": "electron . --dev",
-    "dist": "electron-builder",
-    "pack": "electron-builder --dir",
-    "test": "node test/calc.test.js && node test/analyzer.test.js && node test/api.test.js && node test/db.test.js",
-    "smoke": "TFT_SMOKE=1 electron . --no-sandbox",
-    "icons": "node scripts/make-icons.js",
-    "data:fallback": "node scripts/make-fallback.js",
-    "data:fetch": "node scripts/fetch-set-data.js",
-    "data:update-all": "node scripts/fetch-web-sources.js && node scripts/parse-vntft-items.js && node scripts/parse-doihinhtft-comps.js && node scripts/parse-datatft-charms.js && node scripts/fetch-set-data.js && npm test",
-    "build:mobile": "node scripts/build-mobile.js",
-    "build:mobile:android": "node scripts/build-mobile.js android/app/src/main/assets/mobile"
+  "name": "Blitz",
+  "productName": "Blitz",
+  "version": "2.1.630",
+  "description": "Blitz App",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theblitzapp/blitz-core.git"
   },
-  "devDependencies": {
-    "electron": "^38.0.0",
-    "electron-builder": "^26.0.0"
+  "author": "Blitz, Inc.",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/theblitzapp/blitz-core/issues"
   },
-  "build": {
-    "appId": "com.vianphm.tftcompanion",
-    "productName": "TFT Companion",
-    "files": ["src/**/*", "assets/**/*", "package.json"],
-    "win": { "target": ["nsis"] },
-    "mac": { "target": ["dmg"] },
-    "linux": { "target": ["AppImage"] }
+  "homepage": "https://github.com/theblitzapp/blitz-core#readme",
+  "dependencies": {
+    "@vscode/sudo-prompt": "^9.3.1",
+    "axios": "^1.5.1",
+    "chokidar": "^3.5.3",
+    "cross-fetch": "^4.0.0",
+    "dotenv": "^16.3.1",
+    "electron-updater": "6.1.4",
+    "flatbuffers": "^25.1.24",
+    "fs-extra": "^11.1.1",
+    "glob": "^10.3.10",
+    "i18next": "^23.5.1",
+    "ini": "^4.1.1",
+    "level": "^8.0.0",
+    "lodash": "^4.17.21",
+    "log-rotate": "^0.2.8",
+    "lzma-native": "^8.0.6",
+    "npmlog": "^7.0.1",
+    "semver": "^7.5.4",
+    "steam-acf2json": "^0.1.1",
+    "systeminformation": "^5.21.9",
+    "unbzip2-stream": "^1.4.3",
+    "uuid": "^9.0.1",
+    "vdf-parser": "^1.2.1"
+  },
+  "lint-staged": {
+    "*.{mjs,jsx,js,ts,tsx,mts}": [
+      "prettier --write"
+    ]
   }
 }

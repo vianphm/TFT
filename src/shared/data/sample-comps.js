@@ -13,6 +13,99 @@
  */
 const SAMPLE_COMPS = [
   {
+    "id": "blitz18-than-rung-draven",
+    "name": "Thần Rừng Draven",
+    "tier": "S",
+    "style": "Fast 10",
+    "avgPlace": 3.12,
+    "pickRate": "8,4%",
+    "winRate": "37,2%",
+    "top4": "71,6%",
+    "traits": ["Thần Rừng", "Tiên Linh", "Bắn Tỉa"],
+    "units": [
+      { "name": "Gnar", "cost": 1, "star": 2, "items": [] },
+      { "name": "Ivern", "cost": 1, "star": 2, "items": [] },
+      { "name": "Kennen", "cost": 2, "star": 2, "items": ["Ionic Spark", "Morellonomicon", "Protector's Vow"] },
+      { "name": "Maokai", "cost": 2, "star": 2, "items": ["Warmog's Armor", "Bramble Vest", "Dragon's Claw"] },
+      { "name": "Draven", "cost": 3, "star": 2, "carry": true, "items": ["Infinity Edge", "Guinsoo's Rageblade", "Deathblade"] },
+      { "name": "Taric", "cost": 4, "star": 2, "items": [] },
+      { "name": "Ezreal", "cost": 4, "star": 2, "items": ["Blue Buff", "Jeweled Gauntlet", "Spear of Shojin"] },
+      { "name": "Amumu", "cost": 4, "star": 2, "items": [] },
+      { "name": "Alistar", "cost": 5, "star": 2, "items": [] }
+    ],
+    "flexUnits": []
+  },
+  {
+    "id": "blitz18-thich-ung-hoa-linh-reroll",
+    "name": "Thích Ứng Hoa Linh Reroll",
+    "tier": "S",
+    "style": "Slowroll - Cấp 7",
+    "avgPlace": 3.97,
+    "pickRate": "15,4%",
+    "winRate": "15,3%",
+    "top4": "60,1%",
+    "traits": ["Hoa Linh", "Thích Ứng", "Đồ Tể"],
+    "units": [
+      { "name": "Sett", "cost": 1, "star": 2, "items": [] },
+      { "name": "Nidalee", "cost": 2, "star": 2, "items": ["Guinsoo's Rageblade", "Bloodthirster", "Titan's Resolve"] },
+      { "name": "Master Yi", "cost": 3, "star": 3, "carry": true, "items": ["Bloodthirster", "Titan's Resolve", "Sterak's Gage"] },
+      { "name": "Quái Đao", "cost": 3, "star": 2, "items": [] },
+      { "name": "Vi", "cost": 3, "star": 3, "items": ["Bramble Vest", "Sunfire Cape", "Gargoyle Stoneplate"] },
+      { "name": "Yorick", "cost": 1, "star": 2, "items": [] }
+    ],
+    "flexUnits": [
+      { "name": "Rengar", "cost": 3, "star": 3, "items": ["Hand of Justice", "Edge of Night"] },
+      { "name": "Kog'Maw", "cost": 4, "star": 2, "items": [] }
+    ]
+  },
+  {
+    "id": "blitz18-ve-quan-reroll",
+    "name": "Vệ Quân Reroll",
+    "tier": "S",
+    "style": "Slowroll - Cấp 7",
+    "avgPlace": 3.97,
+    "pickRate": "21,6%",
+    "winRate": "13,9%",
+    "top4": "60,5%",
+    "traits": ["Vệ Quân", "Phù Thủy", "Đấu Sĩ"],
+    "units": [
+      { "name": "Lillia", "cost": 1, "star": 2, "items": [] },
+      { "name": "Cassiopeia", "cost": 2, "star": 3, "carry": true, "items": ["Blue Buff", "Jeweled Gauntlet", "Nashor's Tooth"] },
+      { "name": "Rammus", "cost": 3, "star": 3, "items": ["Warmog's Armor", "Bramble Vest", "Dragon's Claw"] },
+      { "name": "Fiddlesticks", "cost": 3, "star": 3, "items": ["Ionic Spark", "Sunfire Cape", "Crownguard"] },
+      { "name": "Shen", "cost": 3, "star": 2, "items": [] },
+      { "name": "Leona", "cost": 4, "star": 2, "items": [] },
+      { "name": "Ornn", "cost": 5, "star": 2, "items": [] }
+    ],
+    "flexUnits": [
+      { "name": "Soraka", "cost": 4, "star": 2, "items": ["Spear of Shojin", "Morellonomicon"] }
+    ]
+  },
+  {
+    "id": "blitz18-thuat-si-hoa-linh-ahri",
+    "name": "Thuật Sĩ Hoa Linh Ahri",
+    "tier": "S",
+    "style": "Fast 8",
+    "avgPlace": 4.07,
+    "pickRate": "17,7%",
+    "winRate": "14,2%",
+    "top4": "58,8%",
+    "traits": ["Thuật Sĩ", "Hoa Linh"],
+    "units": [
+      { "name": "Ahri", "cost": 4, "star": 2, "carry": true, "items": ["Blue Buff", "Jeweled Gauntlet", "Hextech Gunblade"] },
+      { "name": "Morgana", "cost": 4, "star": 2, "items": ["Spear of Shojin", "Statikk Shiv", "Morellonomicon"] },
+      { "name": "Sett", "cost": 1, "star": 2, "items": ["Bramble Vest", "Warmog's Armor", "Dragon's Claw"] },
+      { "name": "Người Đá", "cost": 2, "star": 2, "items": [] },
+      { "name": "Quái Đao", "cost": 3, "star": 2, "items": [] },
+      { "name": "Sòi", "cost": 4, "star": 2, "items": [] },
+      { "name": "Karma", "cost": 5, "star": 2, "items": [] }
+    ],
+    "flexUnits": [
+      { "name": "Ivern", "cost": 1, "star": 2, "items": [] },
+      { "name": "Taric", "cost": 4, "star": 2, "items": [] }
+    ]
+  },
+  {
     "id": "dhtft18-cassiopeia-v-qu-n",
     "name": "Cassiopeia Vệ Quân",
     "tier": "S",
@@ -1598,4 +1691,10 @@ const SAMPLE_COMPS = [
   }
 ];
 
-module.exports = { SAMPLE_COMPS };
+if (typeof window !== 'undefined') {
+  window.TFT = window.TFT || {};
+  window.TFT.SAMPLE_COMPS = SAMPLE_COMPS;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { SAMPLE_COMPS };
+}

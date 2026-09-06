@@ -32,6 +32,19 @@ class HotkeyManager {
         this.failed.push({ action, accelerator, reason: err.message });
       }
     }
+
+    // Dang ky them F2 lam phim tat nhanh tien loi cho toggleOverlay
+    try {
+      const toggleHandler = this.handlers.get('toggleOverlay');
+      if (toggleHandler && !globalShortcut.isRegistered('F2')) {
+        globalShortcut.register('F2', toggleHandler);
+      }
+      const clickThroughHandler = this.handlers.get('toggleClickThrough');
+      if (clickThroughHandler && !globalShortcut.isRegistered('F3')) {
+        globalShortcut.register('F3', clickThroughHandler);
+      }
+    } catch (_) {}
+
     if (this.failed.length) {
       console.warn('[hotkeys] khong dang ky duoc:', this.failed);
     }

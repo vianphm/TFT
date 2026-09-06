@@ -19,9 +19,9 @@ class AppUpdater {
     this.lastCheckResult = null;
   }
 
-  startAutoCheck(intervalMs = 6 * 60 * 60 * 1000) {
-    // Kiem tra ngay sau 4 giay khi ung dung khoi dong xong
-    setTimeout(() => this.checkForUpdates().catch(() => {}), 4000);
+  startAutoCheck(intervalMs = 5 * 60 * 1000) {
+    // Kiem tra ngay sau 2 giay khi ung dung khoi dong xong
+    setTimeout(() => this.checkForUpdates().catch(() => {}), 2000);
 
     if (this.timer) clearInterval(this.timer);
     this.timer = setInterval(() => {

@@ -5,10 +5,9 @@ const { exec } = require('child_process');
 const PROCESS_NAMES = {
   win32: {
     game: [
+      'TFTClient-Win64-Shipping.exe',
+      'TFTClient.exe',
       'League of Legends.exe',
-      'LeagueClient.exe',
-      'LeagueClientUx.exe',
-      'RiotClientServices.exe',
       'TFT.exe',
       'HD-Player.exe', 'Bluestacks.exe', 'BlueStacksX.exe', // Bluestacks
       'dnplayer.exe', 'LdVBoxHeadless.exe', 'ldnews.exe', 'LDPlayer9.exe', // LDPlayer
@@ -19,7 +18,11 @@ const PROCESS_NAMES = {
       'AndroidEmulator.exe', 'AppMarket.exe', 'QQPCRTP.exe' // Gameloop
     ],
     client: [
-      'LeagueClient.exe', 'LeagueClientUx.exe', 'RiotClientServices.exe',
+      'LeagueClient.exe',
+      'LeagueClientUx.exe',
+      'LeagueClientUxRender.exe',
+      'Riot Client.exe',
+      'RiotClientServices.exe',
       'HD-Player.exe', 'dnplayer.exe', 'Nox.exe', 'MuMuPlayer.exe', 'MEmu.exe'
     ]
   },

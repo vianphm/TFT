@@ -337,6 +337,119 @@
     return Math.max(0, need - num(xp));
   }
 
+  var STANDARD_LEVEL_CURVE = {
+    4: '2-1 (Thắng/chuỗi)',
+    5: '2-5 (Sau đi chợ)',
+    6: '3-2 (Sau lõi 2)',
+    7: '4-1 (Lên 7 roll nhẹ/giữ máu)',
+    8: '4-2 hoặc 4-5 (Xả tiền roll carry 4 vàng)',
+    9: '5-2 hoặc 5-5 (Kẹp 5 vàng 2 sao)'
+  };
+
+  /**
+   * Tinh toan moc len cap, vang con lai va canh bao loi tuc (Leveling Breakpoints).
+   */
+  function calcLevelBreakpoints(level, currentGold, currentXp) {
+    var lv = clampInt(level || 1, 1, 11);
+    var gold = Math.max(0, num(currentGold));
+    var xp = Math.max(0, num(currentXp));
+    var targetXp = T.XP_TO_NEXT[lv] || 0;
+    var xpRemaining = Math.max(0, targetXp - xp);
+    var buysNeeded = Math.ceil(xpRemaining / T.XP_PER_BUY);
+    var goldCost = buysNeeded * T.GOLD_PER_BUY;
+    var goldAfter = Math.max(0, gold - goldCost);
+
+    var interestNow = interest(gold);
+    var interestAfter = interest(goldAfter);
+    var interestLost = interestNow - interestAfter;
+
+    return {
+      currentLevel: lv,
+      nextLevel: Math.min(11, lv + 1),
+      currentXp: xp,
+      targetXp: targetXp,
+      xpRemaining: xpRemaining,
+      buysNeeded: buysNeeded,
+      goldCost: goldCost,
+      goldAfter: goldAfter,
+      interestNow: interestNow,
+      interestAfter: interestAfter,
+      interestLost: interestLost,
+      canLevelNow: gold >= goldCost,
+      recommendedTiming: STANDARD_LEVEL_CURVE[lv + 1] || 'Tùy kinh tế'
+    };
+  }
+
+  /**
+   * Tinh toan nhom doi thu co the gap dua tren luat xoay vong matchmaking TFT.
+   * history: mang ten summoner da gap gan day nhat [moi_nhat, cu_hon, ...]
+   */
+  function calcMatchupPool(allPlayers, mySummonerName, history) {
+    var myName = (mySummonerName || '').toLowerCase();
+    var hist = (history || []).map(function (n) { return String(n).toLowerCase(); });
+
+    var opponents = (allPlayers || []).filter(function (p) {
+      return p && p.summonerName && p.summonerName.toLowerCase() !== myName;
+    });
+
+    var aliveOpponents = opponents.filter(function (p) { return !p.isDead; });
+    var aliveCount = aliveOpponents.length;
+
+    // So doi thu gan nhat bi loai khoi pool theo luat TFT
+    var excludeCount = 0;
+    if (aliveCount >= 7) excludeCount = 4;
+    else if (aliveCount === 6) excludeCount = 3;
+    else if (aliveCount === 5 || aliveCount === 4) excludeCount = 2;
+    else if (aliveCount === 3) excludeCount = 1;
+    else excludeCount = 0;
+
+    var recentExcluded = [];
+    for (var i = 0; i < hist.length && recentExcluded.length < excludeCount; i++) {
+      var name = hist[i];
+      if (recentExcluded.indexOf(name) === -1) {
+        var isAlive = aliveOpponents.some(function (p) { return p.summonerName.toLowerCase() === name; });
+        if (isAlive) recentExcluded.push(name);
+      }
+    }
+
+    var lastPlayedName = hist.length > 0 ? hist[0] : null;
+
+    var evaluated = opponents.map(function (p) {
+      var name = p.summonerName;
+      var nameLower = name.toLowerCase();
+      var isDead = Boolean(p.isDead);
+
+      var status = 'possible';
+      if (isDead) {
+        status = 'dead';
+      } else if (lastPlayedName && nameLower === lastPlayedName) {
+        status = 'last_played';
+      } else if (recentExcluded.indexOf(nameLower) !== -1) {
+        status = 'recent';
+      } else {
+        status = 'possible';
+      }
+
+      return {
+        summonerName: name,
+        isDead: isDead,
+        level: p.level || 1,
+        health: p.health !== undefined ? p.health : 100,
+        status: status,
+        isLastPlayed: status === 'last_played',
+        isEligible: status === 'possible'
+      };
+    });
+
+    return {
+      aliveCount: aliveCount,
+      excludeCount: excludeCount,
+      lastPlayedName: lastPlayedName,
+      opponents: evaluated,
+      possibleOpponents: evaluated.filter(function (p) { return p.status === 'possible'; })
+    };
+  }
+
   // ----------------------------------------------------------------- items
 
   function normalizeComponentId(id) {
@@ -741,6 +854,8 @@
     projectGold: projectGold,
     levelCost: levelCost,
     xpToNext: xpToNext,
+    calcLevelBreakpoints: calcLevelBreakpoints,
+    calcMatchupPool: calcMatchupPool,
     combine: combine,
     recipeKey: recipeKey,
     recipeGrid: recipeGrid,

@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'none'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' http: https:;" />
   <title>TFT Companion</title>
   <link rel="stylesheet" href="../shared/style.css" />
   <link rel="stylesheet" href="dashboard.css" />
@@ -10,29 +10,118 @@
 <body>
 <div class="app">
   <aside class="side">
-    <div class="brand"><span class="logo">T</span> TFT Companion</div>
+    <div class="brand">
+      <span class="logo">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </span>
+      <div class="brand-text">
+        <span class="brand-title">TFT COMPANION</span>
+        <span class="brand-badge">BLITZ METATFT PRO</span>
+      </div>
+    </div>
+    
+    <!-- Nut bat tat Overlay noi bat tren Sidebar -->
+    <div class="overlay-quick-box">
+      <button id="quickOverlayBtn" class="primary overlay-main-btn" title="Bật hoặc tắt overlay hiển thị đè lên game">
+        <span class="btn-icon svg-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </span>
+        <div class="btn-text">
+          <b id="quickOverlayText">BẬT OVERLAY GAME</b>
+          <span class="btn-sub">Phím tắt: F2 / Ctrl+Shift+T</span>
+        </div>
+      </button>
+      <div class="overlay-status-row">
+        <span class="status-indicator">
+          <span class="dot" id="overlayDot"></span>
+          <span id="overlayStatusText">Đang ẩn</span>
+        </span>
+        <button id="quickLockBtn" class="mini-btn" title="Mở khóa để bấm chuột vào overlay hoặc khóa để chuột xuyên vào game">
+          <span class="svg-icon" style="width:12px;height:12px;margin-right:3px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="7"/><line x1="12" y1="6" x2="12" y2="10"/></svg></span>
+          <span>Xuyên chuột</span>
+        </button>
+      </div>
+    </div>
+
     <nav class="tabs">
-      <button class="tab" data-tab="comps">Doi hinh</button>
-      <button class="tab" data-tab="items">Trang bi</button>
-      <button class="tab" data-tab="odds">Ti le roll</button>
-      <button class="tab" data-tab="econ">Kinh te &amp; cap</button>
-      <button class="tab" data-tab="augments">Loi nang cap</button>
-      <button class="tab" data-tab="reroll">San tuong &amp; Reroll</button>
-      <button class="tab" data-tab="scout">Soi doi thu &amp; Khac che</button>
-      <button class="tab" data-tab="champs">Tuong trong set</button>
-      <button class="tab" data-tab="tools">Overlay &amp; cai dat</button>
+      <button class="tab" data-tab="comps">
+        <span class="tab-icon svg-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" y1="14" x2="9" y2="18"/><line x1="7" y1="17" x2="4" y2="20"/><line x1="3" y1="19" x2="5" y2="21"/></svg></span>
+        <span class="tab-label">Đội hình Meta</span>
+        <span class="tab-badge">Tier List</span>
+      </button>
+      <button class="tab" data-tab="items">
+        <span class="tab-icon svg-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+        <span class="tab-label">Trang bị &amp; BiS</span>
+      </button>
+      <button class="tab" data-tab="odds">
+        <span class="tab-icon svg-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="8" cy="8" r="1.5" fill="currentColor"/><circle cx="16" cy="16" r="1.5" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><circle cx="16" cy="8" r="1.5" fill="currentColor"/><circle cx="8" cy="16" r="1.5" fill="currentColor"/></svg></span>
+        <span class="tab-label">Tỉ lệ roll &amp; Shop</span>
+      </button>
+      <button class="tab" data-tab="econ">
+        <span class="tab-icon svg-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.5 9h-4a1.5 1.5 0 0 0 0 3h3a1.5 1.5 0 0 1 0 3h-4"/><line x1="12" y1="7" x2="12" y2="9"/><line x1="12" y1="15" x2="12" y2="17"/></svg></span>
+        <span class="tab-label">Kinh tế &amp; Lên cấp</span>
+      </button>
+      <button class="tab" data-tab="augments">
+        <span class="tab-icon svg-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg></span>
+        <span class="tab-label">Lõi nâng cấp</span>
+      </button>
+      <button class="tab" data-tab="reroll">
+        <span class="tab-icon svg-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg></span>
+        <span class="tab-label">Săn tướng &amp; Reroll</span>
+      </button>
+      <button class="tab" data-tab="scout">
+        <span class="tab-icon svg-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span>
+        <span class="tab-label">Soi đối thủ (Scout)</span>
+      </button>
+      <button class="tab" data-tab="champs">
+        <span class="tab-icon svg-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <span class="tab-label">Tướng trong set</span>
+      </button>
+      <button class="tab" data-tab="tools">
+        <span class="tab-icon svg-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+        <span class="tab-label">Overlay &amp; Cài đặt</span>
+      </button>
     </nav>
     <div class="side-foot">
-      <div class="status"><span class="dot" id="gameDot"></span><span id="gameText">Chua chay game</span></div>
-      <div class="small muted" id="setInfo">Chua dong bo du lieu</div>
+      <div class="status"><span class="dot" id="gameDot"></span><span id="gameText">Chưa chạy game</span></div>
+      <div class="small muted" id="setInfo">Đang đồng bộ dữ liệu...</div>
     </div>
   </aside>
 
   <main class="main">
+    <!-- Thanh dieu khien nhanh Overlay toan cuc tren dinh Dashboard -->
+    <div class="main-topbar card">
+      <div class="topbar-left">
+        <span class="game-status-pill" id="globalGameStatus">
+          <span class="dot" id="globalGameDot"></span>
+          <span id="globalGameText">Chưa chạy game</span>
+        </span>
+        <span class="meta-status-pill">Set 18 • Bản 18.1 • Blitz Meta</span>
+      </div>
+      <div class="topbar-right">
+        <button id="topToggleOverlayBtn" class="primary btn-glow" title="Nhấn để bật / tắt Overlay hiển thị đè trong game (Phím tắt F2)">
+          <span class="svg-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+          <b>BẬT / TẮT OVERLAY</b>
+          <kbd class="kbd-pill">F2</kbd>
+        </button>
+        <button id="topToggleLockBtn" title="Khóa để chuột xuyên vào game, hoặc mở khóa để tương tác với menu overlay">
+          <span class="svg-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="7"/><line x1="12" y1="6" x2="12" y2="10"/></svg></span>
+          <span>Xuyên chuột: BẬT</span>
+        </button>
+        <button id="topOpenOverlaySettingsBtn">
+          <span class="svg-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+          <span>Cài đặt Overlay</span>
+        </button>
+      </div>
+    </div>
+
     <!-- Banner thong bao khi co phien ban moi -->
     <div id="updateBanner" class="card hidden" style="background:linear-gradient(90deg, rgba(200,170,110,0.18), rgba(59,130,246,0.18));border:1px solid var(--gold);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;padding:12px 16px">
       <div>
-        <b style="color:var(--gold);font-size:14px">✨ Có phiên bản mới: <span id="updateVerText">v1.1.0</span></b>
+        <b style="color:var(--gold-bright);font-size:14px;display:flex;align-items:center;gap:6px">
+          <span class="svg-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          Có phiên bản mới: <span id="updateVerText">v1.1.0</span>
+        </b>
         <div class="small muted" id="updateNotesText" style="margin-top:2px">Bấm nút để tải về và cập nhật ngay.</div>
       </div>
       <div style="display:flex;gap:8px">
@@ -41,17 +130,70 @@
       </div>
     </div>
 
-    <!-- ================================================== DOI HINH -->
+    <!-- ================================================== DOI HINH (BLITZ TIER LIST) -->
     <section class="page" data-page="comps">
       <div class="page-head">
-        <h1>Doi hinh</h1>
+        <div class="page-title-group">
+          <h1>Đội hình Meta</h1>
+          <div class="comp-view-toggle">
+            <button id="viewBlitzCompsBtn" class="mode-btn active" title="Xem danh sách Meta Tier List chuẩn Blitz">
+              <span class="svg-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span>
+              <span>Meta Tier List</span>
+            </button>
+            <button id="viewCompEditorBtn" class="mode-btn" title="Trình tạo & Xếp cờ trên bàn đấu">
+              <span class="svg-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+              <span>Bàn cờ &amp; Xếp tướng</span>
+            </button>
+          </div>
+        </div>
         <div class="actions">
-          <button id="compNew">+ Tao moi</button>
-          <button id="compImport">Nhap tu web / van ban</button>
-          <button id="compExport">Xuat JSON</button>
+          <button id="compNew" class="primary">+ Tạo mới</button>
+          <button id="compImport">Nhập từ web / văn bản</button>
+          <button id="compExport">Xuất JSON</button>
         </div>
       </div>
-      <div class="comp-layout">
+
+      <!-- Filter Bar chuẩn Blitz / MetaTFT -->
+      <div class="blitz-dash-filter-bar card" id="blitzFilterBar">
+        <div class="filter-search-wrap">
+          <span class="filter-search-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </span>
+          <input id="dashCompSearch" placeholder="Tìm kiếm Tướng, Tộc Hệ hoặc Tên Đội hình..." />
+        </div>
+        <div class="filter-tier-pills" id="dashTierPills">
+          <button class="tier-pill active" data-tier="">Tất cả bậc</button>
+          <button class="tier-pill tier-s" data-tier="S">Tier S</button>
+          <button class="tier-pill tier-a" data-tier="A">Tier A</button>
+          <button class="tier-pill tier-b" data-tier="B">Tier B</button>
+        </div>
+        <select id="dashCompTraitFilter" class="filter-trait-select">
+          <option value="">✳ Tất cả Tộc Hệ</option>
+        </select>
+        <div class="filter-sort-wrap">
+          <span class="small muted">Sắp xếp:</span>
+          <select id="dashCompSort">
+            <option value="tier">Bậc xếp hạng</option>
+            <option value="avg">Hạng trung bình</option>
+            <option value="pick">Tỉ lệ chọn</option>
+            <option value="win">Tỉ lệ thắng (Hạng 1)</option>
+            <option value="top4">Tỉ lệ vào Top 4</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 1. GIAO DIỆN META TIER LIST CHUẨN BLITZ -->
+      <div id="blitzTierListView" class="blitz-tier-list-wrap">
+        <div class="blitz-meta-subline">
+          <span>Bản Cập Nhật 18.1 • Dữ Liệu Phân Tích Máy Chủ Cao Thủ • Đồng Bộ Cùng In-Game HUD</span>
+        </div>
+        <div id="blitzCardsContainer" class="blitz-cards-flow">
+          <!-- Render danh sách comp cards chuẩn Blitz tại đây -->
+        </div>
+      </div>
+
+      <!-- 2. GIAO DIỆN TRÌNH TẠO & XẾP CỜ CỔ ĐIỂN (BUILDER) -->
+      <div id="compEditorView" class="comp-layout hidden">
         <div class="comp-list card" id="compList"></div>
         <div>
           <div class="comp-editor card" id="compEditor"></div>
@@ -363,16 +505,6 @@
             <div class="small muted">Meo: de dashboard o man hinh phu, overlay o man hinh choi game.</div>
           </div>
           <div class="card">
-            <h3>Cho dien thoai truy cap</h3>
-            <div class="small muted">Bat cai nay roi mo dia chi ben duoi tren dien thoai (cung wifi) de dung ban mobile va lay doi hinh.</div>
-            <div class="row" style="margin-top:8px">
-              <div class="field" style="max-width:110px"><label>Cong</label><input type="number" id="mobilePort" min="1024" max="65535" /></div>
-              <div class="field"><label>&nbsp;</label><button id="mobileToggle" style="width:100%">Bat</button></div>
-            </div>
-            <div id="mobileInfo" class="small"></div>
-            <label style="margin-top:8px"><input type="checkbox" id="mobileAuto" style="width:auto" /> Tu bat khi mo app</label>
-          </div>
-          <div class="card">
             <h3>Phim tat</h3>
             <table id="hotkeyTable"></table>
             <div class="small muted" style="margin-top:6px">Doi phim trong cua so Cai dat.</div>
@@ -420,6 +552,8 @@
 <script src="../shared/calc.js"></script>
 <script src="../shared/analyzer.js"></script>
 <script src="../shared/db.js"></script>
+<script src="../../shared/data/sample-comps.js"></script>
+<script src="../shared/browser-bridge.js"></script>
 <script src="dashboard.js"></script>
 </body>
 </html>

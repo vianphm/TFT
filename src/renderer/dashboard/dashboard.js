@@ -41,6 +41,7 @@
     bindTools();
     bindUpdater();
     refreshGameStatus();
+    setInterval(refreshGameStatus, 2500);
     renderSetInfo();
 
     api.on('comps:changed', function (next) { comps = next; renderCompList(); renderCompEditor(); });
@@ -132,12 +133,73 @@
 
   // ---------------------------------------------------------------- doi hinh
 
+  var currentCompFilter = {
+    search: '',
+    tier: '',
+    trait: '',
+    sort: 'tier'
+  };
+
   function bindComps() {
+    var blitzBtn = document.getElementById('viewBlitzCompsBtn');
+    var editorBtn = document.getElementById('viewCompEditorBtn');
+    var blitzView = document.getElementById('blitzTierListView');
+    var editorView = document.getElementById('compEditorView');
+
+    if (blitzBtn && editorBtn && blitzView && editorView) {
+      blitzBtn.addEventListener('click', function () {
+        blitzBtn.classList.add('active');
+        editorBtn.classList.remove('active');
+        blitzView.classList.remove('hidden');
+        editorView.classList.add('hidden');
+      });
+      editorBtn.addEventListener('click', function () {
+        editorBtn.classList.add('active');
+        blitzBtn.classList.remove('active');
+        editorView.classList.remove('hidden');
+        blitzView.classList.add('hidden');
+      });
+    }
+
+    var searchInput = document.getElementById('dashCompSearch');
+    if (searchInput) {
+      searchInput.addEventListener('input', function () {
+        currentCompFilter.search = searchInput.value.trim().toLowerCase();
+        renderBlitzTierList();
+      });
+    }
+
+    var tierPills = document.querySelectorAll('#dashTierPills .tier-pill');
+    tierPills.forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        tierPills.forEach(function (p) { p.classList.remove('active'); });
+        pill.classList.add('active');
+        currentCompFilter.tier = pill.dataset.tier || '';
+        renderBlitzTierList();
+      });
+    });
+
+    var traitFilter = document.getElementById('dashCompTraitFilter');
+    if (traitFilter) {
+      traitFilter.addEventListener('change', function () {
+        currentCompFilter.trait = traitFilter.value;
+        renderBlitzTierList();
+      });
+    }
+
+    var sortSelect = document.getElementById('dashCompSort');
+    if (sortSelect) {
+      sortSelect.addEventListener('change', function () {
+        currentCompFilter.sort = sortSelect.value;
+        renderBlitzTierList();
+      });
+    }
+
     document.getElementById('compNew').addEventListener('click', function () {
       var comp = {
         id: 'c-' + Date.now().toString(36),
-        name: 'Doi hinh moi',
-        tier: '', style: '', traits: [],
+        name: 'Đội hình mới',
+        tier: 'A', style: 'Cấp 8', traits: [],
         econ: { levelAt: {}, rollDownAt: '', keepGold: 50 },
         notes: '',
         units: []
@@ -145,24 +207,194 @@
       comps.push(comp);
       activeCompId = comp.id;
       saveComps();
+      if (editorBtn) editorBtn.click();
     });
+
     document.getElementById('compExport').addEventListener('click', function () {
       var text = JSON.stringify(comps, null, 2);
       navigator.clipboard.writeText(text).then(function () {
-        toast('Da chep ' + comps.length + ' doi hinh vao clipboard (dang JSON).');
+        toast('Đã chép ' + comps.length + ' đội hình vào clipboard (dạng JSON).');
       });
     });
+
     bindImportModal();
     if (comps.length) activeCompId = comps[0].id;
+    fillCompTraitFilter();
     renderCompList();
     renderCompEditor();
+    renderBlitzTierList();
+  }
+
+  function fillCompTraitFilter() {
+    var sel = document.getElementById('dashCompTraitFilter');
+    if (!sel) return;
+    var traitSet = new Set();
+    comps.forEach(function (c) {
+      (c.traits || []).forEach(function (t) { if (t) traitSet.add(t); });
+    });
+    var cur = sel.value;
+    var opts = ['<option value="">✳ Tất cả Tộc Hệ</option>'];
+    Array.from(traitSet).sort().forEach(function (t) {
+      opts.push('<option value="' + esc(t) + '">' + esc(t) + '</option>');
+    });
+    sel.innerHTML = opts.join('');
+    sel.value = cur;
   }
 
   function saveComps() {
     api.comps.save(comps).then(function (saved) {
       comps = saved;
+      fillCompTraitFilter();
       renderCompList();
       renderCompEditor();
+      renderBlitzTierList();
+    });
+  }
+
+  function renderBlitzTierList() {
+    var host = document.getElementById('blitzCardsContainer');
+    if (!host) return;
+    if (!comps || !comps.length) {
+      host.innerHTML = '<div class="muted small" style="padding:24px;text-align:center">Chưa có đội hình nào trong cơ sở dữ liệu. Bấm "+ Tạo mới" hoặc "Nhập từ web".</div>';
+      return;
+    }
+
+    var filtered = comps.filter(function (c) {
+      if (currentCompFilter.tier && (c.tier || '').toUpperCase() !== currentCompFilter.tier.toUpperCase()) {
+        return false;
+      }
+      if (currentCompFilter.trait) {
+        var hasTrait = (c.traits || []).some(function (t) { return t.toLowerCase().includes(currentCompFilter.trait.toLowerCase()); });
+        if (!hasTrait) return false;
+      }
+      if (currentCompFilter.search) {
+        var q = currentCompFilter.search;
+        var nameMatch = (c.name || '').toLowerCase().includes(q);
+        var traitMatch = (c.traits || []).some(function (t) { return t.toLowerCase().includes(q); });
+        var unitMatch = (c.units || []).some(function (u) { return (u.name || '').toLowerCase().includes(q); });
+        if (!nameMatch && !traitMatch && !unitMatch) return false;
+      }
+      return true;
+    });
+
+    // Sap xep
+    filtered.sort(function (a, b) {
+      if (currentCompFilter.sort === 'tier') {
+        var order = { 'S': 1, 'S+': 1, 'A': 2, 'B': 3, 'C': 4, 'D': 5 };
+        return (order[a.tier] || 9) - (order[b.tier] || 9);
+      } else if (currentCompFilter.sort === 'avg') {
+        return (parseFloat(a.avgPlace) || 5) - (parseFloat(b.avgPlace) || 5);
+      } else if (currentCompFilter.sort === 'pick') {
+        return (parseFloat(b.pickRate) || 0) - (parseFloat(a.pickRate) || 0);
+      } else if (currentCompFilter.sort === 'win') {
+        return (parseFloat(b.winRate) || 0) - (parseFloat(a.winRate) || 0);
+      } else if (currentCompFilter.sort === 'top4') {
+        return (parseFloat(b.top4) || 0) - (parseFloat(a.top4) || 0);
+      }
+      return 0;
+    });
+
+    if (!filtered.length) {
+      host.innerHTML = '<div class="muted small" style="padding:24px;text-align:center">Không tìm thấy đội hình nào khớp bộ lọc.</div>';
+      return;
+    }
+
+    host.innerHTML = filtered.map(function (c) {
+      var tier = (c.tier || 'B').toUpperCase();
+      var tierClass = tier.toLowerCase().replace('+', '');
+      
+      var traitHtml = (c.traits || []).map(function (t) {
+        return '<span class="bcard-trait-pill">' + esc(t) + '</span>';
+      }).join('');
+
+      var unitsHtml = (c.units || []).map(function (u) {
+        var champData = (dataset && dataset.champions) ? dataset.champions.find(function (ch) {
+          return ch.name && ch.name.toLowerCase() === (u.name || '').toLowerCase();
+        }) : null;
+        var cost = u.cost || (champData ? champData.cost : 1);
+        var costClass = 'bd-' + cost;
+        var starStr = u.star === 3 ? '★★★' : (u.star === 2 ? '★★' : '');
+        var avatarInner = champData && champData.icon 
+          ? '<img src="' + champData.icon + '" alt="' + esc(u.name) + '" onerror="this.style.display=\'none\'" />'
+          : '<span class="bcard-avatar-initials">' + esc((u.name || '').substring(0, 2)) + '</span>';
+        
+        var itemsHtml = '';
+        if (u.items && u.items.length) {
+          itemsHtml = '<div class="bcard-items-row">' + u.items.slice(0, 3).map(function (it) {
+            var itemData = (dataset && dataset.items) ? dataset.items.find(function (i) {
+              return i.name && i.name.toLowerCase() === it.toLowerCase();
+            }) : null;
+            if (itemData && itemData.icon) {
+              return '<div class="bcard-item-icon" title="' + esc(it) + '"><img src="' + itemData.icon + '" alt="" /></div>';
+            }
+            return '<div class="bcard-item-icon" title="' + esc(it) + '">' + esc(it.substring(0, 1)) + '</div>';
+          }).join('') + '</div>';
+        }
+
+        return '<div class="bcard-unit" title="' + esc(u.name) + ' (' + cost + ' vàng)">' +
+          '<div class="bcard-avatar-box ' + costClass + '">' +
+            (starStr ? '<span class="bcard-star-badge">' + starStr + '</span>' : '') +
+            avatarInner +
+          '</div>' +
+          '<span class="bcard-unit-name">' + esc(u.name) + '</span>' +
+          itemsHtml +
+        '</div>';
+      }).join('');
+
+      var avgVal = c.avgPlace ? Number(c.avgPlace).toFixed(2) : '4.15';
+      var pickVal = c.pickRate || '10.2%';
+      var winVal = c.winRate || '14.5%';
+      var top4Val = c.top4 || '53.8%';
+
+      return '<div class="blitz-comp-card" data-id="' + c.id + '">' +
+        '<div class="bcard-info">' +
+          '<div class="bcard-head">' +
+            '<span class="badge ' + tierClass + ' bcard-tier-badge">' + tier + '</span>' +
+            '<span class="bcard-name" title="' + esc(c.name) + '">' + esc(c.name) + '</span>' +
+          '</div>' +
+          '<div class="bcard-style">' + (c.style ? esc(c.style) : 'Lối chơi linh hoạt') + '</div>' +
+          (traitHtml ? '<div class="bcard-traits">' + traitHtml + '</div>' : '') +
+        '</div>' +
+        '<div class="bcard-lineup">' +
+          unitsHtml +
+        '</div>' +
+        '<div class="bcard-stats">' +
+          '<div class="bcard-stat-grid">' +
+            '<div class="bcard-stat-item"><span class="bcard-stat-label">Hạng TB</span><span class="bcard-stat-val avg">' + avgVal + '</span></div>' +
+            '<div class="bcard-stat-item"><span class="bcard-stat-label">TL Chọn</span><span class="bcard-stat-val">' + pickVal + '</span></div>' +
+            '<div class="bcard-stat-item"><span class="bcard-stat-label">Hạng 1</span><span class="bcard-stat-val win">' + winVal + '</span></div>' +
+            '<div class="bcard-stat-item"><span class="bcard-stat-label">Top 4</span><span class="bcard-stat-val top4">' + top4Val + '</span></div>' +
+          '</div>' +
+          '<div class="bcard-actions">' +
+            '<button class="bcard-btn pin" data-action="pin" title="Chọn làm đội hình chính cho In-Game Overlay">★ Ghim In-game</button>' +
+            '<button class="bcard-btn" data-action="edit" title="Mở trên bàn cờ để xếp vị trí và xem trang bị">Xếp cờ &amp; Sửa</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    host.querySelectorAll('.blitz-comp-card').forEach(function (cardEl) {
+      var id = cardEl.dataset.id;
+      var pinBtn = cardEl.querySelector('[data-action="pin"]');
+      var editBtn = cardEl.querySelector('[data-action="edit"]');
+      if (pinBtn) {
+        pinBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          api.config.set('overlay.activeCompId', id);
+          toast('Đã ghim đội hình vào In-Game HUD Overlay!');
+        });
+      }
+      if (editBtn) {
+        editBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          activeCompId = id;
+          selectedUnitIndex = null;
+          renderCompList();
+          renderCompEditor();
+          var editorBtn = document.getElementById('viewCompEditorBtn');
+          if (editorBtn) editorBtn.click();
+        });
+      }
     });
   }
 
@@ -997,7 +1229,6 @@
     });
 
     document.getElementById('openSettings').addEventListener('click', function () { api.settings.open(); });
-    bindMobileServer();
 
     var names = {
       toggleOverlay: 'Bat/tat overlay',
@@ -1013,53 +1244,6 @@
         return '<tr><td>' + (names[action] || action) + '</td><td class="right"><code>' +
           esc(config.hotkeys[action]) + '</code></td></tr>';
       }).join('');
-  }
-
-  /** Bat/tat may chu cho dien thoai va hien dia chi de go tren may. */
-  async function bindMobileServer() {
-    var portInput = document.getElementById('mobilePort');
-    var toggle = document.getElementById('mobileToggle');
-    var auto = document.getElementById('mobileAuto');
-    portInput.value = (config.mobile && config.mobile.port) || 7333;
-    auto.checked = Boolean(config.mobile && config.mobile.autoStart);
-    auto.addEventListener('change', function () { api.config.set('mobile.autoStart', auto.checked); });
-
-    function render(status) {
-      var info = document.getElementById('mobileInfo');
-      toggle.textContent = status.running ? 'Tat' : 'Bat';
-      toggle.setAttribute('aria-pressed', String(status.running));
-      if (!status.running) {
-        info.innerHTML = '<span class="muted">Dang tat.</span>';
-        return;
-      }
-      info.innerHTML = '<div class="ok">Dang chay o cong ' + status.port + '. Go dia chi nay tren dien thoai:</div>' +
-        status.addresses.map(function (a) {
-          return '<div class="kv"><code>' + esc(a) + '</code>' +
-            '<button class="ghost small" data-copy="' + esc(a) + '">Chep</button></div>';
-        }).join('');
-      info.querySelectorAll('[data-copy]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          navigator.clipboard.writeText(btn.dataset.copy);
-          toast('Da chep: ' + btn.dataset.copy);
-        });
-      });
-    }
-
-    toggle.addEventListener('click', async function () {
-      toggle.disabled = true;
-      try {
-        var status = await api.mobile.status();
-        var next = status.running ? await api.mobile.stop() : await api.mobile.start(Number(portInput.value));
-        render(next);
-      } catch (err) {
-        toast('Loi: ' + err.message);
-      } finally {
-        toggle.disabled = false;
-      }
-    });
-
-    api.on('mobile:status', render);
-    render(await api.mobile.status());
   }
 
   /** Ten tieng Viet cho tung phuong an quyet dinh. */
@@ -1540,6 +1724,163 @@
     if (notesText && info.releaseName) notesText.textContent = info.releaseName;
   }
 
+  // ------------------------------------------------------------------- tools
+
+  var isOverlayVisible = false;
+  var isClickThrough = true;
+
+  function bindTools() {
+    fillDisplaySelects();
+
+    // Nut bat tat Overlay noi bat (Sidebar + Topbar + Tab Tools)
+    var quickBtn = document.getElementById('quickOverlayBtn');
+    var topBtn = document.getElementById('topToggleOverlayBtn');
+    var toolsBtn = document.getElementById('toggleOverlay');
+    var quickLockBtn = document.getElementById('quickLockBtn');
+    var topLockBtn = document.getElementById('topToggleLockBtn');
+    var toolsLockBtn = document.getElementById('toggleLock');
+    var topSettingsBtn = document.getElementById('topOpenOverlaySettingsBtn');
+
+    function toggleOverlayHandler() {
+      api.overlay.toggle();
+    }
+
+    if (quickBtn) quickBtn.addEventListener('click', toggleOverlayHandler);
+    if (topBtn) topBtn.addEventListener('click', toggleOverlayHandler);
+    if (toolsBtn) toolsBtn.addEventListener('click', toggleOverlayHandler);
+
+    function toggleLockHandler() {
+      isClickThrough = !isClickThrough;
+      api.overlay.setClickThrough(isClickThrough);
+      updateLockUI(isClickThrough);
+    }
+
+    if (quickLockBtn) quickLockBtn.addEventListener('click', toggleLockHandler);
+    if (topLockBtn) topLockBtn.addEventListener('click', toggleLockHandler);
+    if (toolsLockBtn) toolsLockBtn.addEventListener('click', toggleLockHandler);
+
+    if (topSettingsBtn) {
+      topSettingsBtn.addEventListener('click', function () {
+        var tabBtn = document.querySelector('.tabs .tab[data-tab="tools"]');
+        if (tabBtn) tabBtn.click();
+      });
+    }
+
+    // Dong bo trang thai Overlay tu Electron
+    api.on('overlay:visibility', updateOverlayUI);
+    api.on('overlay:click-through', updateLockUI);
+
+    // Khoi tao trang thai ban dau
+    if (config && config.overlay) {
+      isClickThrough = config.overlay.clickThrough !== false;
+      updateLockUI(isClickThrough);
+      updateOverlayUI(config.overlay.enabled !== false);
+    }
+
+    var opacity = document.getElementById('opacity');
+    if (opacity && config && config.overlay) {
+      opacity.value = Math.round((config.overlay.opacity || 0.92) * 100);
+      var opLabel = document.getElementById('opacityLabel');
+      if (opLabel) opLabel.textContent = opacity.value + '%';
+      opacity.addEventListener('input', function () {
+        if (opLabel) opLabel.textContent = opacity.value + '%';
+        api.overlay.setOpacity(opacity.value / 100);
+      });
+    }
+
+    var auto = document.getElementById('autoShow');
+    if (auto && config && config.general) {
+      auto.checked = config.general.autoShowWithGame !== false;
+      auto.addEventListener('change', function () {
+        api.config.set('general.autoShowWithGame', auto.checked);
+      });
+    }
+
+    var toggles = document.getElementById('widgetToggles');
+    if (toggles && config && config.overlay && config.overlay.widgets) {
+      var labels = { odds: 'Tỉ lệ roll', econ: 'Kinh tế', timer: 'Vòng đấu', items: 'Ghép đồ', augments: 'Lõi nâng cấp', comp: 'Đội hình', notes: 'Ghi chú' };
+      toggles.innerHTML = Object.keys(config.overlay.widgets).map(function (name) {
+        return '<span class="chip" data-w="' + name + '" aria-pressed="' +
+          Boolean(config.overlay.widgets[name].visible) + '">' + (labels[name] || name) + '</span>';
+      }).join('');
+      toggles.addEventListener('click', function (e) {
+        var chip = e.target.closest('.chip');
+        if (!chip) return;
+        var name = chip.dataset.w;
+        var visible = chip.getAttribute('aria-pressed') !== 'true';
+        chip.setAttribute('aria-pressed', String(visible));
+        api.overlay.updateWidget(name, { visible: visible });
+      });
+    }
+
+    var openSettings = document.getElementById('openSettings');
+    if (openSettings) {
+      openSettings.addEventListener('click', function () { api.settings.open(); });
+    }
+
+    // Bang phim tat
+    var hotkeyTable = document.getElementById('hotkeyTable');
+    if (hotkeyTable && config && config.hotkeys) {
+      var names = {
+        toggleOverlay: 'Bật/tắt overlay (F2 / Phím tắt)',
+        toggleClickThrough: 'Khóa/mở chuột overlay',
+        toggleDashboard: 'Bật/tắt dashboard',
+        resetTimer: 'Đếm ngược 30 giây',
+        opacityUp: 'Tăng độ mờ',
+        opacityDown: 'Giảm độ mờ',
+        moveOverlayScreen: 'Chuyển overlay sang màn khác'
+      };
+      hotkeyTable.innerHTML = Object.keys(config.hotkeys).map(function (action) {
+        return '<tr><td>' + (names[action] || action) + '</td><td class="right"><code>' +
+          esc(config.hotkeys[action]) + '</code></td></tr>';
+      }).join('');
+    }
+  }
+
+  function updateOverlayUI(visible) {
+    isOverlayVisible = Boolean(visible);
+    var dot = document.getElementById('overlayDot');
+    var text = document.getElementById('overlayStatusText');
+    var qText = document.getElementById('quickOverlayText');
+    var topBtn = document.getElementById('topToggleOverlayBtn');
+
+    if (dot) dot.classList.toggle('on', isOverlayVisible);
+    if (text) text.textContent = isOverlayVisible ? 'Đang bật' : 'Đang ẩn';
+    if (qText) qText.textContent = isOverlayVisible ? 'ẨN OVERLAY GAME' : 'HIỆN OVERLAY GAME';
+    if (topBtn) {
+      topBtn.textContent = isOverlayVisible ? '🖥️ ẨN OVERLAY (F2)' : '🖥️ BẬT OVERLAY GAME (F2)';
+      topBtn.classList.toggle('btn-glow', !isOverlayVisible);
+    }
+  }
+
+  function updateLockUI(clickThrough) {
+    isClickThrough = Boolean(clickThrough);
+    var qLock = document.getElementById('quickLockBtn');
+    var topLock = document.getElementById('topToggleLockBtn');
+    var toolsLock = document.getElementById('toggleLock');
+
+    var label = isClickThrough ? '🖱️ Xuyên chuột' : '🖱️ Đã mở khóa';
+    if (qLock) qLock.textContent = label;
+    if (topLock) topLock.textContent = isClickThrough ? '🖱️ Xuyên chuột: BẬT' : '🖱️ Chuột tương tác: BẬT';
+    if (toolsLock) toolsLock.textContent = isClickThrough ? 'Khóa/xuyên chuột: Đang bật' : 'Chuột tương tác: Đang mở';
+  }
+
+  function fillDisplaySelects() {
+    ['overlayDisplay', 'dashDisplay'].forEach(function (id) {
+      var sel = document.getElementById(id);
+      if (!sel || !displays || !displays.length) return;
+      var current = id === 'overlayDisplay' ? (config && config.overlay && config.overlay.displayId) : (config && config.dashboard && config.dashboard.displayId);
+      sel.innerHTML = displays.map(function (d) {
+        return '<option value="' + d.id + '"' + (d.id === current ? ' selected' : '') + '>' + esc(d.label) + '</option>';
+      }).join('');
+      sel.onchange = function () {
+        var value = Number(sel.value);
+        if (id === 'overlayDisplay') api.overlay.moveToDisplay(value);
+        else api.dashboard.moveToDisplay(value);
+      };
+    });
+  }
+
   // ------------------------------------------------------------------- misc
 
   async function refreshGameStatus() {
@@ -1547,11 +1888,30 @@
   }
 
   function renderGameStatus(status) {
+    if (!status) return;
     var dot = document.getElementById('gameDot');
     var text = document.getElementById('gameText');
-    dot.classList.toggle('on', Boolean(status.gameRunning || status.clientRunning));
-    text.textContent = status.gameRunning ? 'Dang trong tran' :
-      status.clientRunning ? 'Dang mo client' : 'Chua chay game';
+    var gDot = document.getElementById('globalGameDot');
+    var gText = document.getElementById('globalGameText');
+    var isRunning = Boolean(status.gameRunning || status.clientRunning);
+
+    var color = status.gameRunning ? '#10b981' : status.clientRunning ? '#38bdf8' : '#ef4444';
+    var glow = isRunning ? (status.gameRunning ? '0 0 10px #10b981' : '0 0 10px #38bdf8') : 'none';
+
+    if (dot) {
+      dot.classList.toggle('on', isRunning);
+      dot.style.background = color;
+      dot.style.boxShadow = glow;
+    }
+    if (gDot) {
+      gDot.classList.toggle('on', isRunning);
+      gDot.style.background = color;
+      gDot.style.boxShadow = glow;
+    }
+    var desc = status.gameRunning ? 'Đang trong trận TFT' :
+      status.clientRunning ? 'Đang mở Client LMHT / Riot' : 'Chưa chạy game';
+    if (text) text.textContent = desc;
+    if (gText) gText.textContent = desc;
   }
 
   function toast(text) {

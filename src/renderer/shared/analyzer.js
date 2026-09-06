@@ -603,36 +603,92 @@
     var activeTraitNames = (breakdown.active || []).map(function (t) { return t.name.toLowerCase(); });
     var inactiveTraitNames = (breakdown.inactive || []).map(function (t) { return t.name.toLowerCase(); });
 
+    var targetComp = st.targetComp || opts.targetComp || null;
+    var compStyle = (targetComp && targetComp.style) ? String(targetComp.style).toLowerCase() : '';
+    var isReroll = compStyle.indexOf('reroll') >= 0 || compStyle.indexOf('slowroll') >= 0;
+    var isFastLevel = compStyle.indexOf('fast') >= 0 || compStyle.indexOf('cấp 8') >= 0 || compStyle.indexOf('cấp 9') >= 0 || compStyle.indexOf('cấp 10') >= 0;
+    var targetCompTraits = (targetComp && targetComp.traits ? targetComp.traits : []).map(function(t) { return String(t).toLowerCase(); });
+    if (targetComp && targetComp.units) {
+      (targetComp.units || []).forEach(function(u) {
+        (u.traits || []).forEach(function(t) {
+          var tl = String(t).toLowerCase();
+          if (targetCompTraits.indexOf(tl) < 0) targetCompTraits.push(tl);
+        });
+      });
+    }
+
     var results = (augments || []).map(function (aug) {
       if (!aug) return null;
       var score = 50;
       var reasons = [];
-      var tags = aug.tags || [];
+      var tags = (aug.tags || []).slice();
       var tier = aug.tier || 'gold';
       var text = (String(aug.name || '') + ' ' + String(aug.desc || '')).toLowerCase();
 
-      // 1. Giai doan tran dau (Stage)
+      // Tu dong bo sung tag neu thieu tu noi dung loi
+      if (tags.indexOf('reroll') < 0 && (text.indexOf('làm mới') >= 0 || text.indexOf('reroll') >= 0 || text.indexOf('vé trúng thưởng') >= 0 || text.indexOf('free refresh') >= 0)) {
+        tags.push('reroll');
+      }
+      if (tags.indexOf('xp') < 0 && (text.indexOf('kinh nghiệm') >= 0 || text.indexOf('experience') >= 0 || text.indexOf('xp') >= 0)) {
+        tags.push('xp');
+      }
+      if (tags.indexOf('combat') < 0 && (text.indexOf('sát thương') >= 0 || text.indexOf('hút máu') >= 0 || text.indexOf('giáp') >= 0 || text.indexOf('kháng phép') >= 0 || text.indexOf('máu tối đa') >= 0 || text.indexOf('tốc độ đánh') >= 0 || text.indexOf('khiên') >= 0)) {
+        tags.push('combat');
+      }
+      if (tags.indexOf('emblem') < 0 && (text.indexOf('ấn ') >= 0 || text.indexOf('crest') >= 0 || text.indexOf('crown') >= 0 || text.indexOf('vương miện') >= 0)) {
+        tags.push('emblem');
+      }
+
+      // Category chinh cua loi
+      var category = 'combat';
+      if (tags.indexOf('reroll') >= 0) category = 'reroll';
+      else if (tags.indexOf('xp') >= 0) category = 'xp';
+      else if (tags.indexOf('emblem') >= 0) category = 'emblem';
+      else if (tags.indexOf('econ') >= 0) category = 'econ';
+
+      // 1. Phù hợp theo Bài đang muốn chơi (Target Comp Playstyle)
+      if (isReroll) {
+        if (tags.indexOf('reroll') >= 0) {
+          score += 35;
+          reasons.push('Hoàn hảo cho bài Reroll (' + targetComp.name + '): hỗ trợ dát vàng chủ lực 3 sao sớm');
+        }
+        if (tags.indexOf('xp') >= 0) {
+          score -= 20;
+          reasons.push('Lõi tăng cấp không tối ưu cho bài Reroll (cần tích tiền roll ở cấp thấp)');
+        }
+      } else if (isFastLevel) {
+        if (tags.indexOf('xp') >= 0 || tags.indexOf('econ') >= 0) {
+          score += 35;
+          reasons.push('Chuẩn bài Fast Level (' + targetComp.name + '): cung cấp tiền và XP để đẩy thẳng cấp 8-10');
+        }
+        if (tags.indexOf('reroll') >= 0) {
+          score -= 25;
+          reasons.push('Lõi Reroll không hợp với bài Fast 8/10');
+        }
+      }
+
+      // 2. Giai doan tran dau (Stage)
       if (stage.indexOf('2-') === 0) {
         if (tags.indexOf('econ') >= 0 || tags.indexOf('xp') >= 0) {
           score += 25;
           reasons.push('Đầu trận (2-1) chọn lõi kinh tế/kinh nghiệm giúp tích luỹ lợi tức và lên cấp sớm');
         }
         if (tags.indexOf('reroll') >= 0) {
-          score += 15;
-          reasons.push('Phù hợp nếu định hướng chơi bài reroll tướng 1-2 vàng');
+          score += 20;
+          reasons.push('Lõi Reroll từ 2-1 giúp định hình chuỗi roll 3 sao');
         }
       } else if (stage.indexOf('3-') === 0) {
         if (tags.indexOf('emblem') >= 0) {
-          score += 20;
-          reasons.push('Giữa trận (3-2) lấy Ấn/Mốc tộc hệ giúp định hình khung bài vững chắc');
+          score += 25;
+          reasons.push('Giữa trận (3-2) lấy Ấn/Mốc tộc hệ giúp kích hoạt mốc lớn');
         }
         if (tags.indexOf('combat') >= 0) {
-          score += 15;
+          score += 20;
           reasons.push('Tăng cường sức mạnh giao tranh giữ máu giữa trận');
         }
       } else if (stage.indexOf('4-') === 0 || stage.indexOf('5-') === 0) {
         if (tags.indexOf('combat') >= 0) {
-          score += 30;
+          score += 35;
           reasons.push('Cuối trận (4-2+) ưu tiên tối đa chỉ số giao tranh để tranh top');
         }
         if (tags.indexOf('items') >= 0) {
@@ -640,25 +696,25 @@
           reasons.push('Bổ sung trang bị hoàn chỉnh cho các chủ lực cuối trận');
         }
         if (tags.indexOf('econ') >= 0 && hp < 50) {
-          score -= 25;
+          score -= 30;
           reasons.push('Máu thấp ở cuối trận không nên chọn lõi kinh tế chậm');
         }
       }
 
-      // 2. Máu và Vàng hiện tại
-      if (hp <= 40) {
+      // 3. Sức mạnh đội hình hiện tại & Máu
+      if (hp <= 45) {
         if (tags.indexOf('combat') >= 0 || tags.indexOf('items') >= 0) {
-          score += 25;
-          reasons.push('Máu đang ở ngưỡng nguy hiểm (<40), cần sức mạnh tức thì để tránh bị loại');
+          score += 35;
+          reasons.push('ƯU TIÊN COMBAT: Máu thấp (' + hp + ' HP), bắt buộc lấy chỉ số giao tranh để giữ máu');
         }
         if (tags.indexOf('econ') >= 0 && text.indexOf('gain') < 0 && text.indexOf('nhận ngay') < 0) {
-          score -= 30;
-          reasons.push('Máu quá thấp, không đủ thời gian phát huy lõi tăng trưởng kinh tế');
+          score -= 35;
+          reasons.push('CẢNH BÁO NGUY HIỂM: Máu yếu không được lấy lõi kinh tế chậm, dễ chết sớm');
         }
-      } else if (hp >= 80) {
-        if (tags.indexOf('econ') >= 0 || tags.indexOf('xp') >= 0) {
-          score += 15;
-          reasons.push('Máu dồi dào (>80), an toàn để đánh chuỗi hoặc tích luỹ kinh tế mạnh mẽ');
+      } else if (hp >= 75) {
+        if (tags.indexOf('econ') >= 0 || tags.indexOf('xp') >= 0 || tags.indexOf('emblem') >= 0) {
+          score += 20;
+          reasons.push('Máu dồi dào (' + hp + ' HP): Thoải mái lấy lõi Kinh Tế / Ấn để snowball ván đấu');
         }
       }
 
@@ -689,22 +745,132 @@
 
       // 4. Nhãn khuyên dùng
       var recommendation = 'situational';
-      if (score >= 80) recommendation = 'must_pick';
-      else if (score >= 65) recommendation = 'recommended';
-      else if (score < 40) recommendation = 'avoid';
+      var recommendationLabel = '⚠️ Cân Nhắc';
+      if (score >= 80) {
+        recommendation = 'must_pick';
+        recommendationLabel = '★ Rất Chuẩn Bài';
+      } else if (score >= 65) {
+        recommendation = 'recommended';
+        recommendationLabel = '✓ Khuyên Dùng';
+      } else if (score < 40) {
+        recommendation = 'avoid';
+        recommendationLabel = '⛔ Tránh Chọn';
+      }
+
+      var categoryLabels = {
+        reroll: '🎲 Lõi Reroll',
+        xp: '📈 Lõi Up Cấp',
+        econ: '🪙 Lõi Vàng Tiền',
+        combat: '⚔️ Lõi Combat',
+        emblem: '📜 Lõi Ấn Tộc Hệ'
+      };
 
       return {
         augment: aug,
         score: Math.max(0, Math.min(100, Math.round(score))),
         tier: tier,
         tags: tags,
+        category: category,
+        categoryLabel: categoryLabels[category] || '⚔️ Lõi Combat',
         recommendation: recommendation,
+        recommendationLabel: recommendationLabel,
         reason: reasons.join('. ') || 'Lõi cân bằng chỉ số tổng thể.'
       };
     }).filter(Boolean);
 
     results.sort(function (a, b) { return b.score - a.score; });
     return results;
+  }
+
+  /**
+   * Đưa ra chiến lược chọn Lõi Nâng Cấp (Augments) dựa trên Đội hình mục tiêu và Sức mạnh máu hiện tại.
+   */
+  function getCompAugmentStrategy(targetComp, state, dataset) {
+    var st = state || {};
+    var hp = typeof st.hp === 'number' ? st.hp : 100;
+    var comp = targetComp || null;
+    var compName = comp ? (comp.name || 'Chưa chọn bài') : 'Tự do / Chưa chọn bài';
+    var style = (comp && comp.style) ? String(comp.style).toLowerCase() : '';
+    var isReroll = style.indexOf('reroll') >= 0 || style.indexOf('slowroll') >= 0;
+    var isFastLevel = style.indexOf('fast') >= 0 || style.indexOf('cấp 8') >= 0 || style.indexOf('cấp 9') >= 0 || style.indexOf('cấp 10') >= 0;
+
+    var playstyleLabel = isReroll ? 'Slowroll Cấp 6/7' : isFastLevel ? 'Fast 8 / Fast 9' : 'Lên Cấp Tiêu Chuẩn';
+    var hpStatus = hp <= 45 ? 'critical' : hp >= 75 ? 'safe' : 'medium';
+    var hpLabel = hp <= 45 ? 'Máu Thấp (' + hp + ' HP)' : hp >= 75 ? 'Máu Dồi Dào (' + hp + ' HP)' : 'Máu Trung Bình (' + hp + ' HP)';
+
+    var advice = '';
+    var preferredCategories = [];
+    var avoidCategories = [];
+
+    if (hp <= 45) {
+      preferredCategories.push('combat');
+      avoidCategories.push('econ', 'xp');
+      advice = '⚡ Máu nguy hiểm (' + hp + ' HP): Bắt buộc lấy [⚔️ Lõi Combat] tăng sức mạnh ngay để giữ máu! Tuyệt đối tránh Lõi Kinh Tế chậm hoặc Lõi Lên Cấp (nên bấm Đổi Lại/Reroll lõi).';
+    } else if (hp >= 75) {
+      if (isReroll) {
+        preferredCategories.push('reroll', 'combat');
+        avoidCategories.push('xp');
+        advice = '⭐ Máu dồi dào (' + hp + ' HP) - Bài Reroll: Ưu tiên [🎲 Lõi Reroll] để dát vàng 3 sao hoặc [⚔️ Lõi Combat] giữ thế áp đảo. Bấm Đổi Lại nếu ra Lõi Lên Cấp.';
+      } else if (isFastLevel) {
+        preferredCategories.push('econ', 'xp');
+        avoidCategories.push('reroll');
+        advice = '⭐ Máu dồi dào (' + hp + ' HP) - Bài Fast 8/9: Thoải mái lấy [📈 Lõi Up Cấp / XP] hoặc [🪙 Lõi Vàng Tiền] để đẩy sớm cấp 8-9 giành tướng đắt tiền. Bấm Đổi Lại nếu ra Lõi Reroll.';
+      } else {
+        preferredCategories.push('combat', 'econ');
+        advice = '⭐ Máu dồi dào (' + hp + ' HP): Thoải mái chọn Lõi Vàng Tiền / Kinh Tế để Snowball ván đấu về cuối trận.';
+      }
+    } else {
+      if (isReroll) {
+        preferredCategories.push('reroll', 'combat');
+        avoidCategories.push('xp');
+        advice = '🎯 Máu ổn định (' + hp + ' HP) - Bài Reroll: Cân đối giữa [🎲 Lõi Reroll] và [⚔️ Lõi Combat] giữ máu. Không lấy Lõi Up Cấp.';
+      } else if (isFastLevel) {
+        preferredCategories.push('xp', 'combat');
+        avoidCategories.push('reroll');
+        advice = '🎯 Máu ổn định (' + hp + ' HP) - Bài Fast 8/9: Ưu tiên [📈 Lõi Up Cấp] hoặc [⚔️ Lõi Combat] để vừa giữ máu vừa đẩy cấp độ theo tiến độ.';
+      } else {
+        preferredCategories.push('combat', 'econ');
+        advice = 'Cân bằng giữa chỉ số Combat giao tranh và tích lũy tài chính.';
+      }
+    }
+
+    // Danh sách Ấn Tộc Hệ khuyên dùng cho bài
+    var compTraits = [];
+    if (comp && comp.traits) {
+      compTraits = comp.traits.slice();
+    }
+    if (comp && comp.units) {
+      comp.units.forEach(function (u) {
+        (u.traits || []).forEach(function (t) {
+          if (compTraits.indexOf(t) < 0) compTraits.push(t);
+        });
+      });
+    }
+
+    var recommendedEmblems = compTraits.slice(0, 4).map(function (traitName) {
+      var isCore = comp && comp.traits && comp.traits.indexOf(traitName) >= 0;
+      return {
+        trait: traitName,
+        name: 'Ấn ' + traitName,
+        isCore: isCore,
+        priority: isCore ? 'Top 1 (Trấn phái)' : 'Linh hoạt',
+        reason: isCore ? 'Kích hoạt mốc lớn cho chủ lực ' + compName : 'Kẹp thêm hệ hỗ trợ phòng thủ/đa dụng'
+      };
+    });
+
+    return {
+      compName: compName,
+      isReroll: isReroll,
+      isFastLevel: isFastLevel,
+      playstyleLabel: playstyleLabel,
+      hp: hp,
+      hpStatus: hpStatus,
+      hpLabel: hpLabel,
+      advice: advice,
+      preferredCategories: preferredCategories,
+      avoidCategories: avoidCategories,
+      recommendedEmblems: recommendedEmblems
+    };
   }
 
   /**
@@ -1113,6 +1279,7 @@
     pivotSuggestions: pivotSuggestions,
     recommendEmblems: recommendEmblems,
     rankAugments: rankAugments,
+    getCompAugmentStrategy: getCompAugmentStrategy,
     suggestEarlyGameComps: suggestEarlyGameComps,
     rankWisps: rankWisps,
     generateComprehensiveAdvice: generateComprehensiveAdvice,

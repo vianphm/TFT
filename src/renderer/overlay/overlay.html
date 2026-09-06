@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'none'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' http: https:;" />
   <title>TFT Companion Overlay</title>
   <link rel="stylesheet" href="../shared/style.css" />
   <link rel="stylesheet" href="overlay.css" />
@@ -22,12 +22,14 @@
     <button class="mini" data-widget-toggle="comp" title="Doi hinh">Doi hinh</button>
     <button class="mini" data-widget-toggle="notes" title="Ghi chu">Ghi chu</button>
     <span class="sep"></span>
-    <button class="mini" id="hudLockBtn" title="Bam de Khoa / Mo chuot">🔒 Khoa chuot</button>
-    <button class="mini" id="hudTimerBtn" title="Dem 30 giay chuan bi">⏱️ 30s</button>
-    <button class="mini" id="hudOpacityBtn" title="Doi do mo">☀️ Do mo</button>
-    <button class="mini" id="hudScreenBtn" title="Doi man hinh">🖥️ Man hinh</button>
-    <button class="mini" id="hudDashBtn" title="Mo Dashboard">📊 Dashboard</button>
-    <button class="mini" id="hudHideBtn" title="An Overlay" style="color:var(--red)">✕</button>
+    <button class="mini primary" id="hudBlitzBtn" title="Cài đặt 6 Module Overlay Blitz / MetaTFT" style="font-weight:bold;background:#059669;color:#fff;border-color:#10b981"><span class="svg-icon" style="width:11px;height:11px"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span> <span>Blitz HUD</span></button>
+    <button class="mini" id="hudUpdateBtn" title="Có bản cập nhật mới từ GitHub! Bấm để cập nhật ngay" style="display:none;font-weight:bold;background:linear-gradient(135deg, #ec4899, #8b5cf6);color:#fff;border-color:#f472b6;"><span class="svg-icon" style="width:11px;height:11px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span> <span>Có bản mới</span></button>
+    <button class="mini" id="hudLockBtn" title="Bấm để Khóa / Mở xuyên chuột"><span class="svg-icon" style="width:11px;height:11px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> <span id="hudLockLabel">Khóa chuột</span></button>
+    <button class="mini" id="hudTimerBtn" title="Đếm 30 giây chuẩn bị"><span class="svg-icon" style="width:11px;height:11px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span> <span>30s</span></button>
+    <button class="mini" id="hudOpacityBtn" title="Đổi độ mờ"><span class="svg-icon" style="width:11px;height:11px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span> <span>Độ mờ</span></button>
+    <button class="mini" id="hudScreenBtn" title="Đổi màn hình"><span class="svg-icon" style="width:11px;height:11px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span> <span>Màn hình</span></button>
+    <button class="mini" id="hudDashBtn" title="Mở Dashboard"><span class="svg-icon" style="width:11px;height:11px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></span> <span>Dashboard</span></button>
+    <button class="mini" id="hudHideBtn" title="Ẩn Overlay (F2)" style="color:var(--red)">✕</button>
   </div>
 
   <!-- Widget: ti le roll ------------------------------------------------ -->
@@ -172,10 +174,345 @@
     </div>
   </section>
 
+  <!-- ================================================================= -->
+  <!-- 6 MODULES HUDS CHUẨN BLITZ / METATFT NEO THEO MÀN HÌNH IN-GAME       -->
+  <!-- ================================================================= -->
+
+  <!-- 1. LEVELING BREAKPOINTS (Neo góc dưới trái cạnh nút Buy XP như Blitz) -->
+  <aside class="blitz-anchor" id="hudLeveling" data-hit>
+    <div class="blitz-leveling-badge">
+      <div class="blitz-leveling-row1">
+        <span class="blitz-coin-icon svg-icon" style="width:13px;height:13px;color:var(--gold)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M14.5 9h-4a1.5 1.5 0 0 0 0 3h3a1.5 1.5 0 0 1 0 3h-4"/><line x1="12" y1="7" x2="12" y2="9"/><line x1="12" y1="15" x2="12" y2="17"/></svg>
+        </span>
+        <span class="blitz-xp-calc" id="blitzXpText">4 / 2 để lên cấp</span>
+      </div>
+      <div class="blitz-leveling-row2" id="blitzGoldSub">
+        <span class="blitz-afford-text afford-no" id="blitzAffordText">Không đủ (2 / 4)</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 2. SHOP HIGHLIGHTS (Neo đè lên 5 ô Cửa hàng ở đáy màn hình) -->
+  <aside class="blitz-anchor" id="hudShopHighlights" data-hit>
+    <div class="blitz-shop-container">
+      <div class="blitz-shop-bar">
+        <span class="blitz-shop-title">Đội hình đang theo:</span>
+        <select id="blitzShopCompSelect" class="mini"></select>
+        <span class="blitz-shop-count" id="blitzShopCompCount">0/0 tướng</span>
+        <button class="mini" id="blitzShopTestBtn" title="Test ngẫu nhiên cửa hàng">
+          <span class="svg-icon" style="width:10px;height:10px"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/></svg></span>
+          <span>Test Shop</span>
+        </button>
+      </div>
+      <div class="blitz-shop-slots" id="blitzShopSlots">
+        <div class="blitz-slot" data-slot="0">
+          <div class="blitz-slot-tag" id="blitzSlotTag0"></div>
+          <input class="blitz-slot-input" id="blitzSlotInput0" list="blitzChampList" placeholder="Ô 1..." />
+        </div>
+        <div class="blitz-slot" data-slot="1">
+          <div class="blitz-slot-tag" id="blitzSlotTag1"></div>
+          <input class="blitz-slot-input" id="blitzSlotInput1" list="blitzChampList" placeholder="Ô 2..." />
+        </div>
+        <div class="blitz-slot" data-slot="2">
+          <div class="blitz-slot-tag" id="blitzSlotTag2"></div>
+          <input class="blitz-slot-input" id="blitzSlotInput2" list="blitzChampList" placeholder="Ô 3..." />
+        </div>
+        <div class="blitz-slot" data-slot="3">
+          <div class="blitz-slot-tag" id="blitzSlotTag3"></div>
+          <input class="blitz-slot-input" id="blitzSlotInput3" list="blitzChampList" placeholder="Ô 4..." />
+        </div>
+        <div class="blitz-slot" data-slot="4">
+          <div class="blitz-slot-tag" id="blitzSlotTag4"></div>
+          <input class="blitz-slot-input" id="blitzSlotInput4" list="blitzChampList" placeholder="Ô 5..." />
+        </div>
+      </div>
+    </div>
+    <datalist id="blitzChampList"></datalist>
+  </aside>
+
+  <!-- 3. MATCHUP TRACKING (Neo dọc cột 8 người chơi bên phải) -->
+  <aside class="blitz-anchor" id="hudMatchupTracker" data-hit>
+    <div class="blitz-matchup-panel">
+      <div class="blitz-matchup-head">
+        <span class="blitz-matchup-title">
+          <span class="svg-icon" style="width:12px;height:12px;color:var(--cyan)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/></svg></span>
+          Matchup Tracking
+        </span>
+        <span class="blitz-matchup-sub" id="blitzMatchupSub">Pool: 3 nhà</span>
+      </div>
+      <div class="blitz-matchup-list" id="blitzMatchupList">
+        <!-- 7 đối thủ được render tự động -->
+      </div>
+      <div class="blitz-matchup-footer">
+        <small>Click vào đối thủ để đánh dấu Last Played</small>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 4. AUGMENT INFO (3 thẻ Lõi Nâng Cấp ở giữa màn hình - ẩn mặc định, chỉ hiện khi chọn lõi) -->
+  <aside class="blitz-anchor hidden" id="hudAugmentInfo" data-hit>
+    <div class="blitz-aug-container">
+      <div class="blitz-aug-header">
+        <div class="blitz-aug-header-left">
+          <span class="blitz-aug-title">
+            <span class="svg-icon" style="width:13px;height:13px;color:var(--gold)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg></span>
+            Đề Xuất Lõi Nâng Cấp (Vòng <b id="blitzAugRound">2-1</b>)
+          </span>
+          <span class="blitz-aug-comp-pill" id="blitzAugCompBadge">Đang chơi: Thần Rừng Draven</span>
+        </div>
+        <button class="mini" id="blitzAugCloseBtn">✕ Đóng</button>
+      </div>
+
+      <!-- Thanh chiến lược chọn Lõi Nâng Cấp dựa trên Lối chơi & Sức mạnh đội hình / Máu -->
+      <div class="blitz-aug-strategy-bar" id="blitzAugStrategyBar">
+        <div class="blitz-strategy-icon svg-icon" style="width:16px;height:16px;color:var(--gold-bright)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="blitz-strategy-info">
+          <div class="blitz-strategy-line1">
+            <span class="blitz-strategy-hp" id="blitzAugHpStatus">Máu: 85 HP</span>
+            <span class="blitz-strategy-style" id="blitzAugStyleStatus">Lối chơi: Fast 8 / Fast 9</span>
+          </div>
+          <div class="blitz-strategy-advice" id="blitzAugAdviceText">Đang tải phân tích chiến thuật chọn lõi...</div>
+        </div>
+      </div>
+
+      <div class="blitz-aug-cards" id="blitzAugCards">
+        <div class="blitz-aug-card" id="blitzAugCard0">
+          <div class="blitz-aug-action action-pick" id="blitzAugAction0">NÊN CHỌN NGAY</div>
+          <div class="blitz-aug-badge-row">
+            <span class="blitz-aug-cat" id="blitzAugCat0">Combat</span>
+            <span class="blitz-aug-rec" id="blitzAugRec0">Rất Chuẩn Bài</span>
+          </div>
+          <div class="blitz-aug-tier" id="blitzAugTier0">Tier S</div>
+          <div class="blitz-aug-name" id="blitzAugName0">Lõi 1</div>
+          <div class="blitz-aug-stats" id="blitzAugStats0">54.2% Top 4 • 14.5% Win</div>
+          <div class="blitz-aug-desc" id="blitzAugDesc0">Mô tả tác dụng của lõi...</div>
+          <div class="blitz-aug-reason" id="blitzAugReason0">Lý do phù hợp...</div>
+          <input class="blitz-aug-input" id="blitzAugInput0" list="overlayAugList" placeholder="Gõ hoặc chọn tên lõi..." />
+        </div>
+        <div class="blitz-aug-card" id="blitzAugCard1">
+          <div class="blitz-aug-action action-consider" id="blitzAugAction1">CÂN NHẮC</div>
+          <div class="blitz-aug-badge-row">
+            <span class="blitz-aug-cat" id="blitzAugCat1">Reroll</span>
+            <span class="blitz-aug-rec" id="blitzAugRec1">Khuyên Dùng</span>
+          </div>
+          <div class="blitz-aug-tier" id="blitzAugTier1">Tier A</div>
+          <div class="blitz-aug-name" id="blitzAugName1">Lõi 2</div>
+          <div class="blitz-aug-stats" id="blitzAugStats1">49.8% Top 4 • 11.8% Win</div>
+          <div class="blitz-aug-desc" id="blitzAugDesc1">Mô tả tác dụng của lõi...</div>
+          <div class="blitz-aug-reason" id="blitzAugReason1">Lý do phù hợp...</div>
+          <input class="blitz-aug-input" id="blitzAugInput1" list="overlayAugList" placeholder="Gõ hoặc chọn tên lõi..." />
+        </div>
+        <div class="blitz-aug-card" id="blitzAugCard2">
+          <div class="blitz-aug-action action-reroll" id="blitzAugAction2">NÊN ĐỔI LẠI (REROLL)</div>
+          <div class="blitz-aug-badge-row">
+            <span class="blitz-aug-cat" id="blitzAugCat2">Up Cấp</span>
+            <span class="blitz-aug-rec" id="blitzAugRec2">Không Hợp</span>
+          </div>
+          <div class="blitz-aug-tier" id="blitzAugTier2">Tier B</div>
+          <div class="blitz-aug-name" id="blitzAugName2">Lõi 3</div>
+          <div class="blitz-aug-stats" id="blitzAugStats2">44.1% Top 4 • 9.2% Win</div>
+          <div class="blitz-aug-desc" id="blitzAugDesc2">Mô tả tác dụng của lõi...</div>
+          <div class="blitz-aug-reason" id="blitzAugReason2">Lý do phù hợp...</div>
+          <input class="blitz-aug-input" id="blitzAugInput2" list="overlayAugList" placeholder="Gõ hoặc chọn tên lõi..." />
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 5. CHAMPION INFO & BIS ITEMS (Tra cứu trang bị chuẩn & Roll Odds) -->
+  <aside class="blitz-anchor" id="hudChampInfo" data-hit>
+    <div class="blitz-champ-panel">
+      <div class="blitz-champ-head">
+        <span>Champion Info &amp; Best Items</span>
+        <button class="mini" id="blitzChampCloseBtn">✕</button>
+      </div>
+      <div class="blitz-odds-preview" id="blitzOddsPreview">
+        <!-- Render 5 mức giá theo level -->
+      </div>
+      <div class="blitz-champ-search">
+        <input id="blitzChampSearchInput" list="blitzChampList" placeholder="Tìm tướng xem 3 đồ chuẩn (BiS)..." />
+      </div>
+      <div class="blitz-champ-bis-result" id="blitzChampBisResult"></div>
+    </div>
+  </aside>
+
+  <!-- 6. COMPOSITIONS PANEL (Góc trên trái: Đang gợi ý đội hình như Blitz) -->
+  <aside class="blitz-anchor" id="hudCompositions" data-hit>
+    <div class="blitz-suggest-panel">
+      <div class="blitz-suggest-head">
+        <span class="blitz-suggest-title">Đang gợi ý đội hình...</span>
+        <span class="blitz-comp-badge" id="blitzCompBadge">Thần Rừng Draven</span>
+      </div>
+      <div class="blitz-suggest-tabs">
+        <button class="blitz-tab active" id="blitzTabEarly">Đầu Game</button>
+        <button class="blitz-tab" id="blitzTabFinal">Cuối cùng</button>
+      </div>
+      <div class="blitz-suggest-units" id="blitzSuggestUnits">
+        <!-- Render avatar tướng đầu game ➔ tướng cuối game -->
+      </div>
+      <div class="blitz-suggest-actions">
+        <button class="blitz-action-btn primary" id="blitzUseCompBtn">Dùng đội hình này</button>
+        <button class="blitz-action-btn" id="blitzAllCompsBtn">Tất cả đội hình</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================================================================= -->
+  <!-- MODAL: CÀI ĐẶT OVERLAY BLITZ / METATFT (TÀI KHOẢN - OVERLAY)        -->
+  <!-- ================================================================= -->
+  <div class="blitz-modal-backdrop hidden" id="blitzSettingsModal" data-hit>
+    <div class="blitz-modal">
+      <div class="blitz-modal-head">
+        <h2>Tài Khoản - Overlay</h2>
+        <button class="blitz-modal-close" id="blitzSettingsClose">✕</button>
+      </div>
+      <div class="blitz-modal-grid">
+        <!-- Card 1: Augment Info -->
+        <div class="blitz-card" data-module="augmentInfo">
+          <div class="blitz-card-banner banner-augment">
+            <div class="blitz-demo-badge">Tier S</div>
+            <div class="blitz-demo-title">Money Monsoon</div>
+            <div class="blitz-demo-desc">Gain gold now and every round for the game</div>
+          </div>
+          <div class="blitz-card-content">
+            <h3>Augment Info</h3>
+            <p>Get tier information on Augments offered in the game.</p>
+            <button class="blitz-toggle-btn active" data-mod="augmentInfo">Đã Bật</button>
+          </div>
+        </div>
+
+        <!-- Card 2: Champion Info -->
+        <div class="blitz-card" data-module="championInfo">
+          <div class="blitz-card-banner banner-champ">
+            <div class="blitz-demo-row">1 Cost • 2 Cost • 3 Cost • 4 Cost • 5 Cost</div>
+            <div class="blitz-demo-sub">Tỉ lệ roll & Trang bị chuẩn BiS</div>
+          </div>
+          <div class="blitz-card-content">
+            <h3>Champion Info</h3>
+            <p>Discover the best items for any Champion and the probability of their appearance.</p>
+            <button class="blitz-toggle-btn active" data-mod="championInfo">Đã Bật</button>
+          </div>
+        </div>
+
+        <!-- Card 3: Compositions -->
+        <div class="blitz-card" data-module="compositions">
+          <div class="blitz-card-banner banner-comps">
+            <div class="blitz-demo-comp-name">Space Groove Ornn</div>
+            <div class="blitz-demo-stats">Avg 4.04 • 21.4% Win • 51.9% Top4</div>
+          </div>
+          <div class="blitz-card-content">
+            <h3>Compositions</h3>
+            <p>View an up-to-date breakdown of the strongest unit comps and ideal items for those units.</p>
+            <button class="blitz-toggle-btn active" data-mod="compositions">Đã Bật</button>
+          </div>
+        </div>
+
+        <!-- Card 4: Leveling Breakpoints -->
+        <div class="blitz-card" data-module="levelingBreakpoints">
+          <div class="blitz-card-banner banner-leveling">
+            <div class="blitz-demo-xp">🪙 12/12 to level</div>
+            <div class="blitz-demo-gold">🪙 47 &rsaquo; 35</div>
+          </div>
+          <div class="blitz-card-content">
+            <h3>Leveling Breakpoints</h3>
+            <p>Monitor your XP and find out when it's a good time to level up.</p>
+            <button class="blitz-toggle-btn active" data-mod="levelingBreakpoints">Đã Bật</button>
+          </div>
+        </div>
+
+        <!-- Card 5: Matchup Tracking -->
+        <div class="blitz-card" data-module="matchupTracking">
+          <div class="blitz-card-banner banner-matchup">
+            <div class="blitz-demo-player">Sobermann <span class="hp">43 HP</span> <span class="badge-last">Last Played</span></div>
+          </div>
+          <div class="blitz-card-content">
+            <h3>Matchup Tracking</h3>
+            <p>Keep track of opponents you've faced previously.</p>
+            <button class="blitz-toggle-btn active" data-mod="matchupTracking">Đã Bật</button>
+          </div>
+        </div>
+
+        <!-- Card 6: Shop Highlights -->
+        <div class="blitz-card" data-module="shopHighlights">
+          <div class="blitz-card-banner banner-shop">
+            <div class="blitz-demo-slot highlight">Viktor <span>⭐ Comp</span></div>
+            <div class="blitz-demo-slot highlight">Pyke <span>⭐ Comp</span></div>
+          </div>
+          <div class="blitz-card-content">
+            <h3>Shop Highlights</h3>
+            <p>Highlight Champions in your Shop that are part of your selected composition.</p>
+            <button class="blitz-toggle-btn active" data-mod="shopHighlights">Đã Bật</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thanh Tự Động Cập Nhật (Auto Update) -->
+      <div class="blitz-update-box">
+        <div class="blitz-update-row">
+          <div class="blitz-update-info">
+            <div class="blitz-update-header">
+              <span class="blitz-update-icon svg-icon" style="width:14px;height:14px;color:var(--gold-bright)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+              </span>
+              <b style="color:var(--gold-bright);font-size:12px">Tự Động Cập Nhật (Auto Update)</b>
+              <span class="blitz-version-pill" id="blitzCurrentVersion">v0.1.0</span>
+            </div>
+            <div class="blitz-update-desc" id="blitzUpdateDesc">Tự động kiểm tra bản mới mỗi khi bạn deploy lên GitHub.</div>
+          </div>
+          <button class="blitz-action-btn primary" id="blitzCheckUpdateBtn" style="padding:6px 14px;white-space:nowrap">Kiểm tra cập nhật</button>
+        </div>
+        <div class="blitz-update-alert hidden" id="blitzUpdateAlert">
+          <div class="blitz-alert-msg" id="blitzAlertMsg">Đã có phiên bản mới: <b id="blitzAlertVer">v1.1.0</b></div>
+          <button class="blitz-action-btn" id="blitzDownloadUpdateBtn" style="background:#22c55e;color:#000;font-weight:800">Cập nhật ngay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- MODAL: XEM TẤT CẢ ĐỘI HÌNH (CHUẨN BLITZ THEO SCREENSHOT MỚI)       -->
+  <!-- ================================================================= -->
+  <div class="blitz-comps-modal-backdrop hidden" id="blitzAllCompsModal" data-hit>
+    <div class="blitz-comps-modal">
+      <div class="blitz-comps-modal-head">
+        <div class="blitz-filter-bar">
+          <div class="blitz-search-wrap">
+            <input id="blitzCompSearchInput" class="blitz-search-input" placeholder="Tìm kiếm Tướng và Tộc Hệ..." />
+          </div>
+          <select id="blitzCompTraitFilter" class="blitz-filter-select">
+            <option value="">Tất Cả Tộc Hệ</option>
+          </select>
+          <div class="blitz-sort-wrap">
+            <span class="blitz-sort-label">Sắp xếp theo:</span>
+            <select id="blitzCompSort" class="blitz-filter-select">
+              <option value="tier">Bậc</option>
+              <option value="avg">Hạng TB</option>
+              <option value="pick">TL Chọn</option>
+              <option value="win">Hạng 1</option>
+              <option value="top4">Top 4</option>
+            </select>
+          </div>
+        </div>
+        <button class="blitz-modal-close" id="blitzAllCompsClose">✕</button>
+      </div>
+      <div class="blitz-comps-meta-info">
+        <span>Bản Cập Nhật 18.1 • Updated 1 giờ trước • Đội Hình 1.948.739</span>
+      </div>
+      <div class="blitz-comps-cards-list" id="blitzAllCompsList">
+        <!-- Render danh sách comp cards -->
+      </div>
+    </div>
+  </div>
+
   <script src="../shared/tables.js"></script>
   <script src="../shared/calc.js"></script>
   <script src="../shared/analyzer.js"></script>
   <script src="../shared/db.js"></script>
+  <script src="../../shared/data/sample-comps.js"></script>
+  <script src="../shared/browser-bridge.js"></script>
   <script src="overlay.js"></script>
 </body>
 </html>
