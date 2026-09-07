@@ -1,0 +1,101 @@
+[
+  {
+    "id": "comp-caitlyn-enforcer",
+    "name": "Caitlyn & Vi Cảnh Binh (Enforcers Fast 8)",
+    "tier": "S",
+    "playstyle": "Fast 8 / Standard",
+    "avgPlace": 3.82,
+    "winRate": "21.4%",
+    "top4Rate": "62.8%",
+    "traits": [
+      { "name": "Cảnh Binh", "count": 6 },
+      { "name": "Bắn Tỉa", "count": 2 },
+      { "name": "Đấu Sĩ", "count": 2 }
+    ],
+    "units": [
+      { "name": "Caitlyn", "cost": 5, "star": 2, "carry": true, "items": ["Vô Cực Kiếm", "Ngọn Giáo Shojin", "Diệt Khổng Lồ"] },
+      { "name": "Vi", "cost": 4, "star": 2, "carry": false, "items": ["Huyết Kiếm", "Quyền Năng Khổng Lồ", "Móng Vuốt Sterak"] },
+      { "name": "Loris", "cost": 3, "star": 2, "carry": false, "items": ["Giáp Máu Warmog", "Giáp Gai", "Vuốt Rồng"] },
+      { "name": "Maddie", "cost": 1, "star": 2, "carry": false, "items": [] },
+      { "name": "Steb", "cost": 1, "star": 2, "carry": false, "items": [] },
+      { "name": "Camille", "cost": 2, "star": 2, "carry": false, "items": [] },
+      { "name": "Twisted Fate", "cost": 3, "star": 2, "carry": false, "items": [] },
+      { "name": "Sevika", "cost": 5, "star": 1, "carry": false, "items": [] }
+    ],
+    "notes": "Lên cấp 8 ở vòng 4-2, roll cạn tiền tìm Caitlyn 2 sao và Vi gánh đồ. Caitlyn xếp góc an toàn bắn tỉa hàng sau."
+  },
+  {
+    "id": "comp-ambessa-conqueror",
+    "name": "Ambessa & Mordekaiser Chinh Phục (Conqueror Fast 8)",
+    "tier": "S",
+    "playstyle": "Fast 8 / Chuỗi Thắng",
+    "avgPlace": 3.95,
+    "winRate": "19.8%",
+    "top4Rate": "60.5%",
+    "traits": [
+      { "name": "Chinh Phục", "count": 6 },
+      { "name": "Vệ Binh", "count": 2 },
+      { "name": "Võ Sĩ", "count": 2 }
+    ],
+    "units": [
+      { "name": "Ambessa", "cost": 4, "star": 2, "carry": true, "items": ["Huyết Kiếm", "Móng Vuốt Sterak", "Quyền Năng Khổng Lồ"] },
+      { "name": "Mordekaiser", "cost": 5, "star": 2, "carry": false, "items": ["Giáp Máu Warmog", "Nỏ Sét", "Trái Tim Kiên Định"] },
+      { "name": "Draven", "cost": 3, "star": 2, "carry": false, "items": ["Cung Xanh", "Vô Cực Kiếm"] },
+      { "name": "Swain", "cost": 3, "star": 2, "carry": false, "items": [] },
+      { "name": "Darius", "cost": 1, "star": 2, "carry": false, "items": [] },
+      { "name": "Rell", "cost": 2, "star": 2, "carry": false, "items": [] },
+      { "name": "Violet", "cost": 1, "star": 2, "carry": false, "items": [] },
+      { "name": "Rumble", "cost": 5, "star": 1, "carry": false, "items": [] }
+    ],
+    "notes": "Tích cộng dồn Rương Chinh Phục đầu trận bằng chuỗi thắng. Ambessa lướt liên tục gây sát thương diện rộng cực lớn."
+  },
+  {
+    "id": "comp-silco-chembaron",
+    "name": "Silco Trùm Hóa Kỹ & Thống Trị (Chem-Baron Dominator)",
+    "tier": "A",
+    "playstyle": "Fast 8 / Flex Phép",
+    "avgPlace": 4.15,
+    "winRate": "18.2%",
+    "top4Rate": "56.4%",
+    "traits": [
+      { "name": "Hóa Kỹ", "count": 5 },
+      { "name": "Thống Trị", "count": 4 },
+      { "name": "Hắc Hóa", "count": 2 }
+    ],
+    "units": [
+      { "name": "Silco", "cost": 4, "star": 2, "carry": true, "items": ["Bùa Xanh", "Quỷ Thư Morello", "Mũ Phù Thủy Rabadon"] },
+      { "name": "Singed", "cost": 1, "star": 3, "carry": false, "items": ["Giáp Máu Warmog", "Nỏ Sét", "Vuốt Rồng"] },
+      { "name": "Renata Glasc", "cost": 2, "star": 2, "carry": false, "items": [] },
+      { "name": "Smeech", "cost": 3, "star": 2, "carry": false, "items": [] },
+      { "name": "Blitzcrank", "cost": 3, "star": 2, "carry": false, "items": [] },
+      { "name": "Cassiopeia", "cost": 3, "star": 2, "carry": false, "items": [] },
+      { "name": "Dr. Mundo", "cost": 4, "star": 2, "carry": false, "items": [] },
+      { "name": "Malzahar", "cost": 5, "star": 1, "carry": false, "items": [] }
+    ],
+    "notes": "Tích Shimmer mở hòm trang bị Hóa Kỹ hoàng kim. Silco thả quái bọ lan độc cả sàn đấu kết liễu đối thủ."
+  },
+  {
+    "id": "comp-kogmaw-automata",
+    "name": "Kog'Maw & Scar Bắn Tỉa Tự Động (Reroll Cấp 7)",
+    "tier": "A",
+    "playstyle": "Slowroll Cấp 7",
+    "avgPlace": 4.22,
+    "winRate": "16.9%",
+    "top4Rate": "55.8%",
+    "traits": [
+      { "name": "Tự Động Máy", "count": 4 },
+      { "name": "Bắn Tỉa", "count": 2 },
+      { "name": "Vệ Binh", "count": 2 }
+    ],
+    "units": [
+      { "name": "Kog'Maw", "cost": 3, "star": 3, "carry": true, "items": ["Cuồng Đao Guinsoo", "Ngọn Giáo Shojin", "Bùa Đỏ"] },
+      { "name": "Scar", "cost": 3, "star": 3, "carry": false, "items": ["Giáp Máu Warmog", "Thú Tượng Thạch Giáp", "Vuốt Rồng"] },
+      { "name": "Amumu", "cost": 1, "star": 3, "carry": false, "items": [] },
+      { "name": "Nocturne", "cost": 2, "star": 2, "carry": false, "items": [] },
+      { "name": "Blitzcrank", "cost": 3, "star": 2, "carry": false, "items": [] },
+      { "name": "Caitlyn", "cost": 5, "star": 1, "carry": false, "items": [] },
+      { "name": "Malzahar", "cost": 5, "star": 1, "carry": false, "items": [] }
+    ],
+    "notes": "Tích 50 vàng ở cấp 7, slowroll tìm Kog'Maw 3 sao và Scar 3 sao. Kog'Maw xả đạn máy dồn sát thương cực nhanh."
+  }
+]

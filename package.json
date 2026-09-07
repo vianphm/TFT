@@ -1,46 +1,36 @@
 {
-  "name": "Blitz",
-  "productName": "Blitz",
-  "version": "2.1.630",
-  "description": "Blitz App",
-  "main": "src/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/theblitzapp/blitz-core.git"
+  "name": "blitz-tft-companion",
+  "productName": "Blitz TFT Companion",
+  "version": "1.0.0",
+  "description": "Blitz Clone - Trợ thủ Đấu Trường Chân Lý & In-Game Transparent Overlay",
+  "main": "src/main/index.js",
+  "author": "vianphm",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "test": "node test/app.test.js"
   },
-  "author": "Blitz, Inc.",
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/theblitzapp/blitz-core/issues"
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.0"
   },
-  "homepage": "https://github.com/theblitzapp/blitz-core#readme",
-  "dependencies": {
-    "@vscode/sudo-prompt": "^9.3.1",
-    "axios": "^1.5.1",
-    "chokidar": "^3.5.3",
-    "cross-fetch": "^4.0.0",
-    "dotenv": "^16.3.1",
-    "electron-updater": "6.1.4",
-    "flatbuffers": "^25.1.24",
-    "fs-extra": "^11.1.1",
-    "glob": "^10.3.10",
-    "i18next": "^23.5.1",
-    "ini": "^4.1.1",
-    "level": "^8.0.0",
-    "lodash": "^4.17.21",
-    "log-rotate": "^0.2.8",
-    "lzma-native": "^8.0.6",
-    "npmlog": "^7.0.1",
-    "semver": "^7.5.4",
-    "steam-acf2json": "^0.1.1",
-    "systeminformation": "^5.21.9",
-    "unbzip2-stream": "^1.4.3",
-    "uuid": "^9.0.1",
-    "vdf-parser": "^1.2.1"
-  },
-  "lint-staged": {
-    "*.{mjs,jsx,js,ts,tsx,mts}": [
-      "prettier --write"
-    ]
+  "build": {
+    "appId": "com.vianphm.blitztft",
+    "productName": "Blitz TFT Companion",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    }
   }
 }

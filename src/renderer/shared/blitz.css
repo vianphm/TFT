@@ -1,0 +1,165 @@
+/* ===================================================================
+   BLITZ TFT COMPANION - HEXTECH OBSIDIAN DESIGN SYSTEM
+   =================================================================== */
+
+:root {
+  --bg-main: #090d16;
+  --bg-sidebar: #060910;
+  --bg-panel: #0d1424;
+  --bg-card: #131c31;
+  --bg-card-hover: #1b2640;
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(200, 170, 110, 0.2);
+  --border-active: #c8aa6e;
+
+  --gold: #c8aa6e;
+  --gold-light: #f3e3be;
+  --gold-glow: rgba(200, 170, 110, 0.35);
+
+  --cyan: #38bdf8;
+  --emerald: #10b981;
+  --purple: #a855f7;
+  --red: #ef4444;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  --cost-1: #94a3b8;
+  --cost-2: #22c55e;
+  --cost-3: #38bdf8;
+  --cost-4: #c084fc;
+  --cost-5: #f59e0b;
+
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+  user-select: none;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Button styles */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #c8aa6e, #9e7f42);
+  color: #060910;
+  box-shadow: 0 0 12px var(--gold-glow);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #d8bc82, #b29150);
+  box-shadow: 0 0 18px var(--gold-glow);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-subtle);
+  color: var(--text-main);
+}
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline-gold {
+  background: rgba(200, 170, 110, 0.1);
+  border-color: var(--border-card);
+  color: var(--gold-light);
+}
+.btn-outline-gold:hover {
+  background: rgba(200, 170, 110, 0.22);
+  border-color: var(--gold);
+}
+
+/* Badge styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-s {
+  background: rgba(200, 170, 110, 0.2);
+  color: #f59e0b;
+  border: 1px solid #f59e0b;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.25);
+}
+.badge-a {
+  background: rgba(168, 85, 247, 0.2);
+  color: #c084fc;
+  border: 1px solid #c084fc;
+}
+.badge-b {
+  background: rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+  border: 1px solid #38bdf8;
+}
+
+/* Champion Cost Colors */
+.cost-1 { color: var(--cost-1); border-color: var(--cost-1); }
+.cost-2 { color: var(--cost-2); border-color: var(--cost-2); }
+.cost-3 { color: var(--cost-3); border-color: var(--cost-3); }
+.cost-4 { color: var(--cost-4); border-color: var(--cost-4); }
+.cost-5 { color: var(--cost-5); border-color: var(--cost-5); }
+
+.bg-cost-1 { background: rgba(148, 163, 184, 0.15); border: 1px solid var(--cost-1); }
+.bg-cost-2 { background: rgba(34, 197, 94, 0.15); border: 1px solid var(--cost-2); }
+.bg-cost-3 { background: rgba(56, 189, 248, 0.15); border: 1px solid var(--cost-3); }
+.bg-cost-4 { background: rgba(192, 132, 252, 0.15); border: 1px solid var(--cost-4); }
+.bg-cost-5 { background: rgba(245, 158, 11, 0.18); border: 1px solid var(--cost-5); }

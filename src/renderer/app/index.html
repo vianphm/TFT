@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blitz TFT Companion</title>
+  <link rel="stylesheet" href="../shared/blitz.css" />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <!-- HEADER TOÀN CỤC -->
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-title">BLITZ TFT</div>
+        <div class="brand-sub">COMPANION & OVERLAY</div>
+      </div>
+    </div>
+
+    <!-- TRẠNG THÁI GAME REALTIME -->
+    <div class="status-pill" id="statusPill">
+      <span class="status-dot offline" id="statusDot"></span>
+      <span id="statusText">Đang quét trận đấu TFT...</span>
+    </div>
+
+    <!-- NAVIGATION TABS -->
+    <nav class="nav-tabs">
+      <button class="nav-tab active" data-tab="comps">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+        <span>Đội Hình Meta</span>
+      </button>
+      <button class="nav-tab" data-tab="items">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/></svg>
+        <span>Công Thức Đồ</span>
+      </button>
+      <button class="nav-tab" data-tab="odds">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m16 8-8 8"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="15" r="1"/></svg>
+        <span>Tỉ Lệ Roll & Vàng</span>
+      </button>
+      <button class="nav-tab" data-tab="roadmap">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+        <span>Lịch Vòng Đấu</span>
+      </button>
+      <button class="nav-tab" data-tab="custom">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <span>Tự Tạo Đội Hình</span>
+      </button>
+    </nav>
+
+    <!-- ACTION BUTTONS -->
+    <div class="header-actions">
+      <button class="btn btn-primary" id="btnToggleOverlay" title="Bật / Tắt lớp phủ nổi trong game TFT (Phím tắt: F2)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <span>Bật Overlay (F2)</span>
+      </button>
+      <button class="btn btn-secondary" id="btnToggleClickThrough" title="Khóa / Mở xuyên chuột để điều khiển game">
+        <span id="clickThroughLabel">Xuyên Chuột: BẬT (F3)</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="main-content">
+    
+    <!-- TAB 1: COMPS (TIER LIST) -->
+    <section class="tab-view active" id="view-comps">
+      <div class="filter-bar">
+        <div class="search-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="compSearch" placeholder="Tìm kiếm tướng, bài meta, tộc hệ..." />
+        </div>
+        <div class="tier-buttons">
+          <button class="tier-btn active" data-tier="all">Tất Cả</button>
+          <button class="tier-btn tier-s" data-tier="S">Tier S</button>
+          <button class="tier-btn tier-a" data-tier="A">Tier A</button>
+          <button class="tier-btn tier-b" data-tier="B">Tier B</button>
+        </div>
+      </div>
+
+      <div class="comps-grid" id="compsList">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- TAB 2: ITEMS (CÔNG THỨC ĐỒ) -->
+    <section class="tab-view" id="view-items">
+      <div class="section-title">
+        <h2>Bảng Ghép Trang Bị TFT</h2>
+        <p class="section-sub">Chọn một mảnh trang bị cơ bản để xem toàn bộ công thức kết hợp</p>
+      </div>
+
+      <div class="components-selector" id="componentsSelector">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <div class="items-grid" id="itemsList">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- TAB 3: ODDS (TỈ LỆ ROLL & KINH TẾ) -->
+    <section class="tab-view" id="view-odds">
+      <div class="section-title">
+        <h2>Xác Suất Xuất Hiện Tướng Cửa Hàng & Kinh Tế</h2>
+        <p class="section-sub">Tỉ lệ xuất hiện tướng 1-5 vàng theo cấp độ và dự báo lợi tức</p>
+      </div>
+
+      <div class="odds-card">
+        <div class="level-selector-row">
+          <span class="label">Chọn cấp độ của bạn:</span>
+          <div class="level-buttons" id="levelButtons">
+            <!-- Rendered by app.js (1 to 11) -->
+          </div>
+        </div>
+
+        <div class="odds-display-grid" id="oddsDisplay">
+          <!-- Rendered by app.js -->
+        </div>
+      </div>
+
+      <div class="econ-calculator-card">
+        <h3>Máy Tính Vàng Vòng Sau & Lên Cấp</h3>
+        <div class="econ-inputs">
+          <div class="input-group">
+            <label>Số vàng hiện có:</label>
+            <input type="number" id="calcGold" value="34" min="0" max="150" />
+          </div>
+          <div class="input-group">
+            <label>Chuỗi thắng/thua:</label>
+            <select id="calcStreak">
+              <option value="0">Không có chuỗi (0 vàng)</option>
+              <option value="2">Chuỗi 2-3 (+1 vàng)</option>
+              <option value="5">Chuỗi 4-5 (+2 vàng)</option>
+              <option value="6">Chuỗi 6+ (+3 vàng)</option>
+            </select>
+          </div>
+        </div>
+        <div class="econ-result" id="econResult">
+          <!-- Rendered by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: ROADMAP -->
+    <section class="tab-view" id="view-roadmap">
+      <div class="section-title">
+        <h2>Lịch Trình Vòng Đấu Chuẩn TFT</h2>
+        <p class="section-sub">Các mốc vòng chọn Lõi Nâng Cấp, Vòng Đi Chợ và mốc lên cấp tối ưu</p>
+      </div>
+      <div class="roadmap-timeline" id="roadmapList">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- TAB 5: CUSTOM BUILDER -->
+    <section class="tab-view" id="view-custom">
+      <div class="section-title">
+        <h2>Tự Tạo Đội Hình Mới</h2>
+        <p class="section-sub">Tự tay thêm bài tủ của bạn để hiển thị ngay trên Client và In-Game Overlay</p>
+      </div>
+      <div class="custom-builder-card">
+        <form id="customCompForm">
+          <div class="form-row">
+            <div class="form-group flex-2">
+              <label>Tên Đội Hình:</label>
+              <input type="text" id="newCompName" placeholder="VD: Heimerdinger Tái Chế Fast 8..." required />
+            </div>
+            <div class="form-group flex-1">
+              <label>Bậc (Tier):</label>
+              <select id="newCompTier">
+                <option value="S">Tier S (Rất Mạnh)</option>
+                <option value="A">Tier A (Khá)</option>
+                <option value="B">Tier B (Tình Huống)</option>
+              </select>
+            </div>
+            <div class="form-group flex-1">
+              <label>Lối Chơi:</label>
+              <input type="text" id="newCompPlaystyle" placeholder="VD: Fast 8, Reroll 7..." value="Fast 8" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Danh Sách Tướng & Trang Bị (Cách nhau bởi dấu phẩy):</label>
+            <input type="text" id="newCompUnits" placeholder="VD: Caitlyn (Vô Cực Kiếm, Shojin), Vi (Huyết Kiếm, Quyền Năng), Loris, Steb" required />
+            <small style="color:var(--text-muted);margin-top:4px;display:block">
+              Nhập tên tướng và mở ngoặc đơn đồ bên cạnh nếu là tướng chủ lực.
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label>Ghi Chú & Hướng Dẫn Vận Hành:</label>
+            <textarea id="newCompNotes" rows="3" placeholder="Cách đánh đầu trận, vòng lên cấp và cách xếp bài..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="padding:12px 24px;font-size:14px">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            <span>Lưu & Ghim Lên In-Game Overlay Ngay</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

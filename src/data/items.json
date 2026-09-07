@@ -1,0 +1,40 @@
+{
+  "COMPONENTS": [
+    { "id": "BF", "name": "B.F. Sword", "vi": "Kiếm B.F", "stat": "+10 Sức Mạnh Công Kích" },
+    { "id": "Bow", "name": "Recurve Bow", "vi": "Cung Gỗ", "stat": "+10% Tốc Độ Đánh" },
+    { "id": "Rod", "name": "Needlessly Large Rod", "vi": "Gậy Quá Khổ", "stat": "+10 Sức Mạnh Phép Thuật" },
+    { "id": "Tear", "name": "Tear of the Goddess", "vi": "Nước Mắt Nữ Thần", "stat": "+15 Năng Lượng" },
+    { "id": "Vest", "name": "Chain Vest", "vi": "Giáp Lưới", "stat": "+20 Giáp" },
+    { "id": "Cloak", "name": "Negatron Cloak", "vi": "Áo Choàng Bạc", "stat": "+20 Kháng Phép" },
+    { "id": "Belt", "name": "Giant's Belt", "vi": "Đai Lưng Khổng Lồ", "stat": "+150 Máu" },
+    { "id": "Glove", "name": "Sparring Gloves", "vi": "Găng Đấu Tập", "stat": "+20% Tỉ Lệ Chí Mạng" },
+    { "id": "Spatula", "name": "Spatula", "vi": "Xẻng Vàng", "stat": "Chế tạo ấn tộc hệ" }
+  ],
+  "RECIPES": [
+    { "id": "IE", "name": "Infinity Edge", "vi": "Vô Cực Kiếm", "from": ["BF", "Glove"], "role": "AD", "desc": "Tăng mạnh sát thương vật lý và đòn đánh chí mạng." },
+    { "id": "DB", "name": "Deathblade", "vi": "Kiếm Tử Thần", "from": ["BF", "BF"], "role": "AD", "desc": "Cực nhiều SMCK thuần, tối ưu cho carry vật lý." },
+    { "id": "GS", "name": "Giant Slayer", "vi": "Diệt Khổng Lồ", "from": ["BF", "Bow"], "role": "AD/AP", "desc": "Gây thêm 25% sát thương lên tướng trên 1600 Máu." },
+    { "id": "BT", "name": "Bloodthirster", "vi": "Huyết Kiếm", "from": ["BF", "Cloak"], "role": "Fighter", "desc": "Hồi phục toàn phần 20% và nhận khiên bảo hộ khi dưới 40% máu." },
+    { "id": "Shojin", "name": "Spear of Shojin", "vi": "Ngọn Giáo Shojin", "from": ["BF", "Tear"], "role": "Mana", "desc": "Mỗi đòn đánh hồi thêm 5 Năng lượng, tối ưu xả chiêu liên tục." },
+    { "id": "EdgeOfNight", "name": "Edge of Night", "vi": "Áo Choàng Bóng Tối", "from": ["BF", "Vest"], "role": "Survival", "desc": "Khi tụt dưới 60% máu, tàng hình và xóa bỏ toàn bộ hiệu ứng bất lợi." },
+    { "id": "Sterak", "name": "Sterak's Gage", "vi": "Móng Vuốt Sterak", "from": ["BF", "Belt"], "role": "Fighter", "desc": "Tăng Máu tối đa và SMCK khi bị tụt máu sâu." },
+    { "id": "Rageblade", "name": "Guinsoo's Rageblade", "vi": "Cuồng Đao Guinsoo", "from": ["Bow", "Rod"], "role": "Attack Speed", "desc": "Mỗi đòn đánh cộng dồn 5% Tốc Độ Đánh đến hết giao tranh." },
+    { "id": "RFC", "name": "Red Buff", "vi": "Bùa Đỏ", "from": ["Bow", "Belt"], "role": "Burn", "desc": "Đòn đánh đốt máu theo % và giảm 33% hồi máu của mục tiêu." },
+    { "id": "Shiv", "name": "Statikk Shiv", "vi": "Dao Điện Statikk", "from": ["Bow", "Tear"], "role": "Magic Shred", "desc": "Mỗi đòn đánh thứ 3 giật sét và trừ 30% Kháng Phép của 4 kẻ địch." },
+    { "id": "Titans", "name": "Titan's Resolve", "vi": "Quyền Năng Khổng Lồ", "from": ["Bow", "Vest"], "role": "Fighter/Tank", "desc": "Cộng dồn SMCK, SMPT và Giáp/Kháng Phép khi đánh hoặc nhận sát thương." },
+    { "id": "Runaans", "name": "Runaan's Hurricane", "vi": "Cuồng Cung Runaan", "from": ["Bow", "Cloak"], "role": "AD", "desc": "Bắn thêm tia phụ gây 55% sát thương vật lý." },
+    { "id": "LW", "name": "Last Whisper", "vi": "Cung Xanh", "from": ["Bow", "Glove"], "role": "Armor Shred", "desc": "Sát thương vật lý trừ 30% Giáp của mục tiêu trong 3 giây." },
+    { "id": "JG", "name": "Jeweled Gauntlet", "vi": "Găng Bảo Thạch", "from": ["Rod", "Glove"], "role": "AP", "desc": "Kỹ năng có thể gây sát thương chí mạng và nhận thêm SMPT." },
+    { "id": "Rabadon", "name": "Rabadon's Deathcap", "vi": "Mũ Phù Thủy Rabadon", "from": ["Rod", "Rod"], "role": "AP", "desc": "Tăng lượng lớn Sức Mạnh Phép Thuật thuần (+50 SMPT)." },
+    { "id": "Archangel", "name": "Archangel's Staff", "vi": "Quyền Trượng Thiên Thần", "from": ["Rod", "Tear"], "role": "AP Ramp", "desc": "Mỗi 5 giây trong giao tranh nhận thêm 20 Sức Mạnh Phép Thuật." },
+    { "id": "Morello", "name": "Morellonomicon", "vi": "Quỷ Thư Morello", "from": ["Rod", "Belt"], "role": "Burn/AP", "desc": "Sát thương kỹ năng gây vết thương sâu và thiêu đốt mục tiêu." },
+    { "id": "Spark", "name": "Ionic Spark", "vi": "Nỏ Sét", "from": ["Rod", "Cloak"], "role": "Magic Shred", "desc": "Kẻ địch trong phạm vi 2 ô bị trừ 30% Kháng Phép." },
+    { "id": "Crownguard", "name": "Crownguard", "vi": "Vương Miện Hoàng Gia", "from": ["Rod", "Vest"], "role": "Tank/AP", "desc": "Bắt đầu giao tranh nhận lá chắn lớn, khi vỡ tăng thêm SMPT." },
+    { "id": "BlueBuff", "name": "Blue Buff", "vi": "Bùa Xanh", "from": ["Tear", "Tear"], "role": "Mana", "desc": "Giảm 10 Năng lượng tối đa của tướng và hồi thêm Năng lượng khi hạ gục." },
+    { "id": "AdaptiveHelm", "name": "Adaptive Helm", "vi": "Mũ Thích Nghi", "from": ["Tear", "Cloak"], "role": "Flex", "desc": "Hàng trên tăng Giáp/Kháng Phép; hàng sau tăng SMPT và hồi Năng lượng." },
+    { "id": "Warmogs", "name": "Warmog's Armor", "vi": "Giáp Máu Warmog", "from": ["Belt", "Belt"], "role": "Tank", "desc": "Cung cấp lượng Máu tối đa khổng lồ (+1000 Máu)." },
+    { "id": "Bramble", "name": "Bramble Vest", "vi": "Giáp Gai", "from": ["Vest", "Vest"], "role": "Tank", "desc": "Kháng đòn đánh chí mạng và phản lại sát thương phép." },
+    { "id": "DragonsClaw", "name": "Dragon's Claw", "vi": "Vuốt Rồng", "from": ["Cloak", "Cloak"], "role": "Tank", "desc": "Tăng mạnh Kháng Phép và hồi máu theo % Máu tối đa mỗi 2 giây." },
+    { "id": "SteadfastHeart", "name": "Steadfast Heart", "vi": "Trái Tim Kiên Định", "from": ["Vest", "Glove"], "role": "Tank", "desc": "Giảm 8% sát thương gánh chịu; khi trên 50% máu giảm tới 15%." }
+  ]
+}

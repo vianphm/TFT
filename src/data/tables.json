@@ -1,0 +1,59 @@
+{
+  "SHOP_ODDS": {
+    "1":  [1.00, 0.00, 0.00, 0.00, 0.00],
+    "2":  [1.00, 0.00, 0.00, 0.00, 0.00],
+    "3":  [0.75, 0.25, 0.00, 0.00, 0.00],
+    "4":  [0.55, 0.30, 0.15, 0.00, 0.00],
+    "5":  [0.45, 0.33, 0.20, 0.02, 0.00],
+    "6":  [0.30, 0.40, 0.25, 0.05, 0.00],
+    "7":  [0.19, 0.30, 0.40, 0.10, 0.01],
+    "8":  [0.17, 0.24, 0.34, 0.22, 0.03],
+    "9":  [0.10, 0.17, 0.28, 0.35, 0.10],
+    "10": [0.05, 0.10, 0.20, 0.40, 0.25],
+    "11": [0.01, 0.02, 0.12, 0.50, 0.35]
+  },
+  "POOL_SIZES": {
+    "1": 30,
+    "2": 25,
+    "3": 18,
+    "4": 10,
+    "5": 9
+  },
+  "XP_COSTS": {
+    "1": 0,
+    "2": 2,
+    "3": 2,
+    "4": 6,
+    "5": 10,
+    "6": 20,
+    "7": 36,
+    "8": 48,
+    "9": 72,
+    "10": 84
+  },
+  "INTEREST_CAP": 5,
+  "STREAK_GOLD": [
+    { "streak": 0, "gold": 0 },
+    { "streak": 1, "gold": 0 },
+    { "streak": 2, "gold": 1 },
+    { "streak": 3, "gold": 1 },
+    { "streak": 4, "gold": 1 },
+    { "streak": 5, "gold": 2 },
+    { "streak": 6, "gold": 3 }
+  ],
+  "ROUND_ROADMAP": [
+    { "round": "2-1", "level": 4, "event": "Lõi 1 (Chọn Lõi Nâng Cấp)", "type": "augment" },
+    { "round": "2-4", "level": 4, "event": "Vòng Đi Chợ (Chọn Đồ)", "type": "carousel" },
+    { "round": "2-7", "level": 5, "event": "Quái Đá (PvE)", "type": "pve" },
+    { "round": "3-2", "level": 6, "event": "Lõi 2 (Chọn Lõi Nâng Cấp)", "type": "augment" },
+    { "round": "3-4", "level": 6, "event": "Vòng Đi Chợ (Chọn Đồ)", "type": "carousel" },
+    { "round": "3-7", "level": 7, "event": "Sói Điên (PvE)", "type": "pve" },
+    { "round": "4-1", "level": 8, "event": "Lên Cấp 8 & Roll Hoàn Thiện Bài", "type": "power" },
+    { "round": "4-2", "level": 8, "event": "Lõi 3 (Chọn Lõi Nâng Cấp)", "type": "augment" },
+    { "round": "4-4", "level": 8, "event": "Vòng Đi Chợ (Chọn Đồ)", "type": "carousel" },
+    { "round": "4-7", "level": 8, "event": "Chim Biến Dị (PvE)", "type": "pve" },
+    { "round": "5-1", "level": 8, "event": "Đẩy Máu & Cạnh Tranh Top 4", "type": "power" },
+    { "round": "5-4", "level": 9, "event": "Vòng Đi Chợ Lớn", "type": "carousel" },
+    { "round": "5-7", "level": 9, "event": "Rồng Ngàn Tuổi / Cua Khổng Lồ", "type": "pve" }
+  ]
+}

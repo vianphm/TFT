@@ -1,5 +1,0 @@
-
-[31116:0907/020117.020:WARNING:electron\shell\browser\ui\win\notify_icon.cc:60] Unable to create status tray icon.
-[31116:0907/020117.020:WARNING:electron\shell\browser\ui\win\notify_icon.cc:140] Error setting status tray icon image
-[31116:0907/020117.022:WARNING:electron\shell\browser\ui\win\notify_icon.cc:168] Unable to set tooltip for status tray icon
-[31116:0907/020118.003:INFO:CONSOLE:175] "Uncaught SyntaxError: missing ) after argument list", source: file:///C:/Users/Admin/Documents/GitHub/TFT/src/renderer/overlay/overlay.js (175)
