@@ -11,8 +11,35 @@ const { createMainWindow } = require('./windows/mainWindow');
 const { OverlayManager } = require('./windows/overlayWindow');
 const { ShortcutManager } = require('./shortcuts');
 
+// Vô hiệu hóa tăng tốc phần cứng để đảm bảo hiển thị 100% trên mọi dòng GPU Windows
+app.disableHardwareAcceleration();
+
+const logPath = path.join(app.getPath('userData'), 'main.log');
+function log(msg) {
+  try {
+    fs.appendFileSync(logPath, `[${new Date().toISOString()}] ${msg}\n`);
+  } catch (_) {}
+}
+
+process.on('uncaughtException', (err) => {
+  log(`UNCAUGHT EXCEPTION: ${err.stack || err.message}`);
+});
+
+process.on('unhandledRejection', (reason) => {
+  log(`UNHANDLED REJECTION: ${reason && reason.stack ? reason.stack : reason}`);
+});
+
+process.on('exit', (code) => {
+  log(`PROCESS EXIT EVENT: code=${code}`);
+});
+
+log('App starting...');
+
 // Chỉ cho phép 1 instance duy nhất chạy
-if (!app.requestSingleInstanceLock()) {
+const gotLock = app.requestSingleInstanceLock();
+log(`SingleInstanceLock result: ${gotLock}`);
+if (!gotLock) {
+  log('Could not get single instance lock, exiting.');
   app.quit();
   process.exit(0);
 }
@@ -42,6 +69,7 @@ function loadJsonData(fileName, fallback) {
 }
 
 app.whenReady().then(() => {
+  log('app.whenReady fired');
   const configPath = path.join(app.getPath('userData'), 'config.json');
   store = new Store(configPath, {
     overlay: {
@@ -55,11 +83,37 @@ app.whenReady().then(() => {
 
   overlayManager = new OverlayManager(store, PRELOAD_PATH);
   mainWindow = createMainWindow(store, PRELOAD_PATH);
+  log('mainWindow created');
 
-  // Tạo System Tray
-  createTray();
+  mainWindow.on('show', () => log('mainWindow emitted show'));
+  mainWindow.on('hide', () => log('mainWindow emitted hide'));
+  mainWindow.on('close', (e) => {
+    log('mainWindow emitted close');
+    if (!app.isQuitting) {
+      if (!tray || tray.isDestroyed()) {
+        app.isQuitting = true;
+        app.quit();
+        return;
+      }
+      e.preventDefault();
+      mainWindow.hide();
+    }
+  });
+  mainWindow.on('closed', () => {
+    log('mainWindow emitted closed');
+    mainWindow = null;
+  });
+
+  log('creating tray...');
+  try {
+    createTray();
+    log('createTray done');
+  } catch (e) {
+    log('createTray error: ' + e.message);
+  }
 
   // Khởi tạo phím tắt toàn cầu
+  log('registering shortcuts...');
   shortcuts = new ShortcutManager({
     onToggleOverlay: () => {
       const isVisible = overlayManager.toggle();
@@ -82,8 +136,10 @@ app.whenReady().then(() => {
     }
   });
   shortcuts.register();
+  log('shortcuts registered');
 
   // Khởi động dịch vụ theo dõi trận đấu TFT
+  log('starting gameWatcher...');
   gameWatcher = new GameWatcher({
     onChange: (status) => {
       broadcast('game:status', status);
@@ -93,8 +149,10 @@ app.whenReady().then(() => {
     }
   });
   gameWatcher.start();
+  log('gameWatcher started');
 
   // Khởi động dịch vụ kết nối Riot Live Client API (Port 2999)
+  log('starting liveClient...');
   liveClient = new RiotLiveClient({
     onData: (liveData) => {
       broadcast('live:data', liveData);
@@ -104,34 +162,37 @@ app.whenReady().then(() => {
     }
   });
   liveClient.start();
+  log('liveClient started');
 
   // Khởi tạo các IPC Handlers
+  log('registering IPC...');
   registerIpc();
+  log('registerIpc completed successfully!');
 
-  // Ẩn cửa sổ chính xuống Tray khi bấm X thay vì thoát app hoàn toàn
-  mainWindow.on('close', (e) => {
-    if (!app.isQuitting) {
-      e.preventDefault();
-      mainWindow.hide();
-    }
-  });
+
 
   app.on('second-instance', () => {
-    if (mainWindow && !mainWindow.isDestroyed()) {
-      if (mainWindow.isMinimized()) mainWindow.restore();
+    log('second-instance triggered');
+    if (!mainWindow || mainWindow.isDestroyed()) {
+      mainWindow = createMainWindow(store, PRELOAD_PATH);
+    } else {
       mainWindow.show();
+      if (mainWindow.isMinimized()) mainWindow.restore();
       mainWindow.focus();
+      mainWindow.setAlwaysOnTop(true);
+      mainWindow.setAlwaysOnTop(false);
     }
   });
 });
 
 function createTray() {
   const iconPath = path.join(__dirname, '..', '..', 'assets', 'icon.png');
-  // Nếu chưa có icon thì dùng icon mặc định của electron
+  if (!fs.existsSync(iconPath)) return;
   try {
-    tray = new Tray(fs.existsSync(iconPath) ? iconPath : path.join(__dirname, '..', 'renderer', 'shared', 'tray.png'));
-  } catch (_) {
-    // Bỏ qua lỗi icon nếu đường dẫn chưa có ảnh nhị phân
+    tray = new Tray(iconPath);
+  } catch (err) {
+    console.warn('[tray] Loi khoi tao tray:', err.message);
+    return;
   }
 
   const contextMenu = Menu.buildFromTemplate([
@@ -220,13 +281,19 @@ function registerIpc() {
   handle('settings:set', (key, val) => store.set(key, val));
 }
 
+app.on('before-quit', () => {
+  log('app before-quit');
+});
+
 app.on('will-quit', () => {
+  log('app will-quit');
   if (shortcuts) shortcuts.unregister();
   if (gameWatcher) gameWatcher.stop();
   if (liveClient) liveClient.stop();
 });
 
 app.on('window-all-closed', () => {
+  log('app window-all-closed');
   if (process.platform !== 'darwin') {
     // Không thoát app khi đóng cửa sổ vì overlay và game watcher vẫn chạy ngầm
   }
