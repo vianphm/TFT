@@ -34,78 +34,145 @@
     setupListeners();
   }
 
-  // ------------------------------------------------------------- Smart Hover
-  // Khi chuột rê vào các thành phần có data-hit hoặc widget thì cho phép click,
-  // khi rê ra ngoài khoảng trống thì chuột tự động xuyên thẳng vào game TFT.
-  let isDraggingAny = false;
-  let lastHoverState = null;
-
-  function setHoverInteractive(hovering) {
-    if (!blitz.setHover) return;
-    if (hovering !== lastHoverState) {
-      lastHoverState = hovering;
-      blitz.setHover(hovering);
+  // ------------------------------------------------------------- Widget Bounds & Dragging
+  function syncWidgetBounds() {
+    const bounds = [];
+    const elements = document.querySelectorAll('.widget:not(.hidden), .hud-bar');
+    elements.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.width > 0 && r.height > 0) {
+        bounds.push({
+          x: Math.round(r.left),
+          y: Math.round(r.top),
+          width: Math.round(r.width),
+          height: Math.round(r.height)
+        });
+      }
+    });
+    if (blitz.updateOverlayBounds) {
+      blitz.updateOverlayBounds(bounds);
     }
   }
 
-  function setupMouseHover() {
-    window.addEventListener('mousemove', (event) => {
-      if (isDraggingAny) {
-        setHoverInteractive(true);
-        return;
+  function savePositions() {
+    const positions = {};
+    document.querySelectorAll('.widget, .hud-bar').forEach((el) => {
+      if (el.id && el.style.left && el.style.top) {
+        positions[el.id] = {
+          left: el.style.left,
+          top: el.style.top
+        };
       }
-      const target = event.target;
-      const hit = target && target.closest && target.closest('[data-hit], .widget, .hud-bar, button');
-      setHoverInteractive(Boolean(hit));
     });
+    try {
+      localStorage.setItem('blitz_overlay_positions', JSON.stringify(positions));
+    } catch (_) {}
+    syncWidgetBounds();
   }
 
-  // ------------------------------------------------------------- Dragging
-  function setupDragging() {
-    document.querySelectorAll('.widget').forEach((widget) => {
-      const header = widget.querySelector('.widget-header');
-      if (!header) return;
-
-      let isDragging = false;
-      let startX = 0, startY = 0;
-      let origX = 0, origY = 0;
-
-      header.addEventListener('mousedown', (e) => {
-        if (e.target.closest('button')) return;
-        isDragging = true;
-        isDraggingAny = true;
-        setHoverInteractive(true);
-
-        startX = e.screenX;
-        startY = e.screenY;
-
-        const rect = widget.getBoundingClientRect();
-        origX = rect.left;
-        origY = rect.top;
-
-        widget.style.bottom = 'auto';
-        widget.style.right = 'auto';
-        widget.style.left = `${origX}px`;
-        widget.style.top = `${origY}px`;
-
-        e.preventDefault();
-      });
-
-      window.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        const dx = e.screenX - startX;
-        const dy = e.screenY - startY;
-        widget.style.left = `${Math.max(0, origX + dx)}px`;
-        widget.style.top = `${Math.max(0, origY + dy)}px`;
-      });
-
-      window.addEventListener('mouseup', () => {
-        if (isDragging) {
-          isDragging = false;
-          isDraggingAny = false;
+  function restorePositions() {
+    try {
+      const raw = localStorage.getItem('blitz_overlay_positions');
+      if (!raw) return;
+      const positions = JSON.parse(raw);
+      for (const [id, pos] of Object.entries(positions)) {
+        const el = document.getElementById(id);
+        if (el && pos.left && pos.top) {
+          el.style.bottom = 'auto';
+          el.style.right = 'auto';
+          el.style.left = pos.left;
+          el.style.top = pos.top;
+          if (id === 'hudBar') {
+            el.style.transform = 'none';
+          }
         }
-      });
+      }
+    } catch (_) {}
+  }
+
+  function makeDraggable(element, handle) {
+    if (!element || !handle) return;
+
+    let isDragging = false;
+    let startX = 0, startY = 0;
+    let origLeft = 0, origTop = 0;
+
+    handle.addEventListener('pointerdown', (e) => {
+      if (e.target.closest('button, input, select')) return;
+      isDragging = true;
+      if (blitz.setDragging) blitz.setDragging(true);
+
+      try {
+        handle.setPointerCapture(e.pointerId);
+      } catch (_) {}
+
+      startX = e.clientX;
+      startY = e.clientY;
+
+      const rect = element.getBoundingClientRect();
+      origLeft = rect.left;
+      origTop = rect.top;
+
+      element.style.bottom = 'auto';
+      element.style.right = 'auto';
+      element.style.left = `${origLeft}px`;
+      element.style.top = `${origTop}px`;
+      if (element.id === 'hudBar') {
+        element.style.transform = 'none';
+      }
+
+      e.preventDefault();
     });
+
+    handle.addEventListener('pointermove', (e) => {
+      if (!isDragging) return;
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+
+      const maxLeft = Math.max(0, window.innerWidth - element.offsetWidth);
+      const maxTop = Math.max(0, window.innerHeight - element.offsetHeight);
+
+      const newLeft = Math.max(0, Math.min(maxLeft, origLeft + dx));
+      const newTop = Math.max(0, Math.min(maxTop, origTop + dy));
+
+      element.style.left = `${newLeft}px`;
+      element.style.top = `${newTop}px`;
+    });
+
+    const stopDrag = (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      try {
+        if (e && e.pointerId) handle.releasePointerCapture(e.pointerId);
+      } catch (_) {}
+      if (blitz.setDragging) blitz.setDragging(false);
+      savePositions();
+    };
+
+    handle.addEventListener('pointerup', stopDrag);
+    handle.addEventListener('pointercancel', stopDrag);
+  }
+
+  function setupDragging() {
+    restorePositions();
+
+    // Kéo thả các widget
+    document.querySelectorAll('.widget').forEach((widget) => {
+      const header = widget.querySelector('.widget-header') || widget;
+      makeDraggable(widget, header);
+    });
+
+    // Kéo thả thanh HUD bar
+    const hudBar = document.getElementById('hudBar');
+    if (hudBar) {
+      const hudBrand = hudBar.querySelector('.hud-brand') || hudBar;
+      hudBrand.style.cursor = 'move';
+      makeDraggable(hudBar, hudBrand);
+    }
+
+    // Cập nhật vị trí bounds ban đầu
+    setTimeout(syncWidgetBounds, 100);
+    window.addEventListener('resize', syncWidgetBounds);
   }
 
   // ------------------------------------------------------------- HUD Controls
@@ -117,6 +184,7 @@
       btnComp.addEventListener('click', () => {
         const isHidden = widgetComp.classList.toggle('hidden');
         btnComp.classList.toggle('active', !isHidden);
+        setTimeout(syncWidgetBounds, 50);
       });
     }
 
@@ -127,6 +195,7 @@
       btnOdds.addEventListener('click', () => {
         const isHidden = widgetOdds.classList.toggle('hidden');
         btnOdds.classList.toggle('active', !isHidden);
+        setTimeout(syncWidgetBounds, 50);
       });
     }
 
@@ -137,6 +206,7 @@
       btnItems.addEventListener('click', () => {
         const isHidden = widgetItems.classList.toggle('hidden');
         btnItems.classList.toggle('active', !isHidden);
+        setTimeout(syncWidgetBounds, 50);
       });
     }
 

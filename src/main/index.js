@@ -272,6 +272,14 @@ function registerIpc() {
   handle('overlay:toggle', (force) => overlayManager.toggle(force));
   handle('overlay:setHover', (hovering) => overlayManager.setHover(hovering));
   handle('overlay:setClickThrough', (enabled) => overlayManager.setClickThrough(enabled));
+  handle('overlay:updateBounds', (bounds) => {
+    overlayManager.updateBounds(bounds);
+    return true;
+  });
+  handle('overlay:setDragging', (dragging) => {
+    overlayManager.setDragging(dragging);
+    return true;
+  });
 
   // --- Game Status
   handle('game:getStatus', () => gameWatcher ? gameWatcher.getState() : { gameRunning: false });

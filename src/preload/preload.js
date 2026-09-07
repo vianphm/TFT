@@ -25,6 +25,8 @@ contextBridge.exposeInMainWorld('blitz', {
   toggleOverlay: (force) => invoke('overlay:toggle', force),
   setHover: (hovering) => invoke('overlay:setHover', hovering),
   setClickThrough: (enabled) => invoke('overlay:setClickThrough', enabled),
+  updateOverlayBounds: (bounds) => invoke('overlay:updateBounds', bounds),
+  setDragging: (dragging) => invoke('overlay:setDragging', dragging),
 
   // Trạng thái trận đấu & Riot Live Client API
   getGameStatus: () => invoke('game:getStatus'),
