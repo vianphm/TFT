@@ -11,9 +11,6 @@ const { createMainWindow } = require('./windows/mainWindow');
 const { OverlayManager } = require('./windows/overlayWindow');
 const { ShortcutManager } = require('./shortcuts');
 
-// Vô hiệu hóa tăng tốc phần cứng để đảm bảo hiển thị 100% trên mọi dòng GPU Windows
-app.disableHardwareAcceleration();
-
 const logPath = path.join(app.getPath('userData'), 'main.log');
 function log(msg) {
   try {
@@ -35,15 +32,6 @@ process.on('exit', (code) => {
 
 log('App starting...');
 
-// Chỉ cho phép 1 instance duy nhất chạy
-const gotLock = app.requestSingleInstanceLock();
-log(`SingleInstanceLock result: ${gotLock}`);
-if (!gotLock) {
-  log('Could not get single instance lock, exiting.');
-  app.quit();
-  process.exit(0);
-}
-
 let store;
 let mainWindow = null;
 let overlayManager = null;
@@ -54,6 +42,33 @@ let tray = null;
 
 const PRELOAD_PATH = path.join(__dirname, '..', 'preload', 'preload.js');
 const DATA_DIR = path.join(__dirname, '..', 'data');
+
+// Đăng ký second-instance ở cấp ứng dụng cao nhất
+app.on('second-instance', () => {
+  log('second-instance triggered by user');
+  if (!mainWindow || mainWindow.isDestroyed()) {
+    if (store) mainWindow = createMainWindow(store, PRELOAD_PATH);
+  } else {
+    mainWindow.show();
+    if (mainWindow.isMinimized()) mainWindow.restore();
+    mainWindow.focus();
+    mainWindow.setAlwaysOnTop(true);
+    setTimeout(() => {
+      if (mainWindow && !mainWindow.isDestroyed()) {
+        mainWindow.setAlwaysOnTop(false);
+      }
+    }, 600);
+  }
+});
+
+// Chỉ cho phép 1 instance duy nhất chạy
+const gotLock = app.requestSingleInstanceLock();
+log(`SingleInstanceLock result: ${gotLock}`);
+if (!gotLock) {
+  log('Could not get single instance lock, exiting duplicate.');
+  app.quit();
+  process.exit(0);
+}
 
 // Load static initial data
 function loadJsonData(fileName, fallback) {
@@ -168,21 +183,6 @@ app.whenReady().then(() => {
   log('registering IPC...');
   registerIpc();
   log('registerIpc completed successfully!');
-
-
-
-  app.on('second-instance', () => {
-    log('second-instance triggered');
-    if (!mainWindow || mainWindow.isDestroyed()) {
-      mainWindow = createMainWindow(store, PRELOAD_PATH);
-    } else {
-      mainWindow.show();
-      if (mainWindow.isMinimized()) mainWindow.restore();
-      mainWindow.focus();
-      mainWindow.setAlwaysOnTop(true);
-      mainWindow.setAlwaysOnTop(false);
-    }
-  });
 });
 
 function createTray() {

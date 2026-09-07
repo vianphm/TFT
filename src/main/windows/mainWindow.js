@@ -40,6 +40,12 @@ function createMainWindow(store, preloadPath) {
 
   win.show();
   win.focus();
+  win.setAlwaysOnTop(true);
+  setTimeout(() => {
+    if (!win.isDestroyed()) {
+      win.setAlwaysOnTop(false);
+    }
+  }, 600);
 
   const saveBounds = () => {
     if (!win.isDestroyed() && !win.isMinimized() && !win.isMaximized()) {
